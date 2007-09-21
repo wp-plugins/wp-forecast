@@ -1,0 +1,30 @@
+div.wp-forecast {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 1px solid;
+                  padding: 10px;
+                  text-align:center;
+		  margin-left:auto;
+		  margin-right:auto;
+}
+
+table.wp-forecast { 
+                    font-size: 11px;
+                    font-family: Arial;
+                    font-weight: bolder;
+                    font-variant: small-caps;
+		    border-spacing:2px;
+		    border-collapse:collapse;
+                    text-align:left;
+                    margin-left:auto; 
+                    margin-right:auto; 
+}
+
+div.wp-forecast-details {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 10px;
+                  text-align:left;
+
+}
