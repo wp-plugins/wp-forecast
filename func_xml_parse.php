@@ -1,13 +1,17 @@
 <?php
 
 if (!function_exists('wpf_xml_parser')) {
-  global $wpf_weather,$wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber;
+  global $wpf_weather,$wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber,$wpf_debug;
 
 
   // start_element() - called for every start tag
   function start_element( $parser, $name, $attribute )
     {
-      global $wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber,$wpf_weather;
+      global $wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber;
+      global $wpf_weather,$wpf_debug;
+
+      if ($wpf_debug > 1)
+	pdebug("Start of start_element ()");
 
       $wpf_path_table = 
 	array(
@@ -70,31 +74,46 @@ if (!function_exists('wpf_xml_parser')) {
 	else
 	  $wpf_weather['gmtdiffdls'] = 0;
       }
+    
+      if ($wpf_debug > 1)
+	pdebug("End of start_element ()");
     }
   
   // end_element() - called for every end tag
   function end_element( $parser, $name )
     {
-      global $wpf_pstack,$wpf_fc_daynumber;
+      global $wpf_pstack,$wpf_fc_daynumber,$wpf_debug;
       
+      if ($wpf_debug > 1)
+	pdebug("Start of end_element ()");
+
       // reduce xml path
       $wpf_pstack = substr($wpf_pstack,0, strrpos($wpf_pstack,"/"));
       
       if ($name=="DAY")
 	$wpf_fc_daynumber=0;
+
+      if ($wpf_debug > 1)
+	pdebug("End of end_element ()");
     }
   
   
   // daten() - called for everey cdata 
   function daten( $parser, $data )
     {
-      global $wpf_weather,$wpf_go_ahead;
+      global $wpf_weather,$wpf_go_ahead,$wpf_debug;
+ 
+      if ($wpf_debug > 1)
+	pdebug("Start of daten ()");
 
       if ( strlen($wpf_go_ahead) > 0 and $wpf_go_ahead != "sun" and $wpf_go_ahead != "gmtdiffdls")
 	{
 	  $wpf_weather[$wpf_go_ahead]=$data;
 	  $wpf_go_ahead = '';
 	}
+
+      if ($wpf_debug > 1)
+	pdebug("End of daten ()");
     }
 
   //
@@ -102,7 +121,10 @@ if (!function_exists('wpf_xml_parser')) {
   //
   
   function wpf_xml_parser($xmlstring) {
-    global $wpf_weather,$wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber;
+    global $wpf_weather,$wpf_pstack,$wpf_go_ahead,$wpf_fc_daynumber,$wpf_debug;
+
+    if ($wpf_debug > 0)
+	pdebug("Start of wpf_xml_parser ()");
 
     $wpf_weather=array();
     $xmlerror="";
@@ -139,7 +161,10 @@ if (!function_exists('wpf_xml_parser')) {
     if ($xmlerror!="") {
       $wpf_weather=array();
     }
-    
+
+    if ($wpf_debug > 0)
+      pdebug("End of wpf_xml_parser ()");
+
     // and return result, empty array if error
     return $wpf_weather;
   }

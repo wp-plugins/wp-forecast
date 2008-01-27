@@ -24,7 +24,10 @@
 //
 function wp_forecast_activate()
 {
-  global $wpf_idstr;
+  global $wpf_debug;
+  
+  if ($wpf_debug > 0)
+    pdebug("Start of wp_forecast_activate ()");
 
   // add number of widgets, default: 1
   $count=get_option("wp-forecast-count");
@@ -36,7 +39,7 @@ function wp_forecast_activate()
   };
   
   for ($i=0;$i<$count;$i++) {
-    $wpfcid=substr($wpf_idstr,$i,1);
+    $wpfcid = get_widget_id( $i );
 
     // get options just in case
     $location=get_option("wp-forecast-location".$wpfcid);
@@ -51,6 +54,7 @@ function wp_forecast_activate()
     $weather = get_option("wp-forecast-cache".$wpfcid);
     $expire = get_option("wp-forecast-expire".$wpfcid);
     $currtime = get_option("wp-forecast-currtime".$wpfcid);
+    $title = get_option("wp-forecast-title".$wpfcid);
  
     // if the options dont exists, add the defaults
     if ($location == "") {
@@ -79,7 +83,7 @@ function wp_forecast_activate()
     };
     
     if ($wpf_language == "") {
-      $wpf_language="en";
+      $wpf_language="en_US";
       add_option("wp-forecast-language".$wpfcid,$wpf_language,
 		 "The lanugage code","yes");
     };
@@ -112,6 +116,12 @@ function wp_forecast_activate()
       $currtime="1";
       add_option("wp-forecast-currtime".$wpfcid,$currtime,
 		 "1 if you want to use current time, else 0","yes");
+    }; 
+
+    if ($title == "") {
+      $title=__("The Weather","wp-forecast_".$wpf_language);
+      add_option("wp-forecast-title".$wpfcid,$title,
+		 "Contains the widget title","yes");
     };
     
     // Displayconfigurationmatrix
@@ -142,8 +152,11 @@ function wp_forecast_activate()
       add_option("wp-forecast-windunit".$wpfcid,$windunit,
 		 "Choose between ms, kmh, mph or kts","yes");
     }
-  } // end of for
-  }
+  } // end of for 
+
+  if ($wpf_debug > 0)
+    pdebug("End of wp_forecast_activate ()");
+}
 
 //
 // is called when plugin is deactivated and removes all
@@ -151,26 +164,33 @@ function wp_forecast_activate()
 //
 function wp_forecast_deactivate($wpfcid) 
 { 
-   global $wpf_idstr;
+   global $wpf_debug;
    
+   if ($wpf_debug > 0)
+     pdebug("Start of wp_forecast_deactivate ()");
+
    $count=get_option('wp-forecast-count');
-
+   
    for ($i=0;$i<$count;$i++) {
-    $wpfcid=substr($wpf_idstr,$i,1);
-
-    delete_option("wp-forecast-location".$wpfcid);
-    delete_option("wp-forecast-locname".$wpfcid);
-    delete_option("wp-forecast-refresh".$wpfcid); 
-    delete_option("wp-forecast-metric".$wpfcid); 
-    delete_option("wp-forecast-language".$wpfcid);
-    delete_option("wp-forecast-daytime".$wpfcid);
-    delete_option("wp-forecast-nighttime".$wpfcid);
-    delete_option("wp-forecast-dispconfig".$wpfcid);
-    delete_option("wp-forecast-windunit".$wpfcid);
-    delete_option("wp-forecast-cache".$wpfcid);
-    delete_option("wp-forecast-expire".$wpfcid);
-    delete_option("wp-forecast-currtime".$wpfcid);
-  }
+     $wpfcid = get_widget_id( $i );
+     
+     delete_option("wp-forecast-location".$wpfcid);
+     delete_option("wp-forecast-locname".$wpfcid);
+     delete_option("wp-forecast-refresh".$wpfcid); 
+     delete_option("wp-forecast-metric".$wpfcid); 
+     delete_option("wp-forecast-language".$wpfcid);
+     delete_option("wp-forecast-daytime".$wpfcid);
+     delete_option("wp-forecast-nighttime".$wpfcid);
+     delete_option("wp-forecast-dispconfig".$wpfcid);
+     delete_option("wp-forecast-windunit".$wpfcid);
+     delete_option("wp-forecast-cache".$wpfcid);
+     delete_option("wp-forecast-expire".$wpfcid);
+     delete_option("wp-forecast-currtime".$wpfcid); 
+     delete_option("wp-forecast-title".$wpfcid);
+   }
    delete_option('wp-forecast-count');
+   
+   if ($wpf_debug > 0)
+     pdebug("End of wp_forecast_deactivate ()");
 }
 ?>
