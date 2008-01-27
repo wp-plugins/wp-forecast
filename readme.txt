@@ -1,3 +1,12 @@
+=== wp-forecast ===
+Tags: weather,forecast,widget
+Requires at least: 2.2
+Tested up to: 2.3.2
+Stable tag: 1.4
+
+wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
+
+== Description ==
 /*
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
