@@ -1,14 +1,16 @@
-div.wp-forecast {
+/* style for current weather data */
+div.wp-forecast-curr {
                   font-size: 11px; 
                   font-family: Arial;
-                  border: 1px solid;
+                  border: 0px solid;
                   padding: 10px;
                   text-align:center;
 		  margin-left:auto;
 		  margin-right:auto;
 }
 
-table.wp-forecast { 
+/* style for current weather data table section */
+table.wp-forecast-curr { 
                     font-size: 11px;
                     font-family: Arial;
                     font-weight: bolder;
@@ -20,7 +22,42 @@ table.wp-forecast {
                     margin-right:auto; 
 }
 
-div.wp-forecast-details {
+/* style for current weather data details */
+div.wp-forecast-curr-details {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 10px;
+                  text-align:left;
+
+}
+
+/* style for forecast data */
+div.wp-forecast-fc {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 10px;
+                  text-align:center;
+		  margin-left:auto;
+		  margin-right:auto;
+}
+
+/* style for forecast data table section */
+table.wp-forecast-fc { 
+                    font-size: 11px;
+                    font-family: Arial;
+                    font-weight: bolder;
+                    font-variant: small-caps;
+		    border-spacing:2px;
+		    border-collapse:collapse;
+                    text-align:left;
+                    margin-left:auto; 
+                    margin-right:auto; 
+}
+
+/* style for forecast data details */
+div.wp-forecast-fc-details {
                   font-size: 11px; 
                   font-family: Arial;
                   border: 0px solid;

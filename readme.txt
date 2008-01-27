@@ -3,7 +3,7 @@ Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description:  wp-forecast is a highly customizable plugin for wordpress, 
 	      showing weather-data from accuweather.com.
-Version: 1.0 
+Version: 1.4
 Author: Hans Matzen <webmaster at tuxlog dot de>
 Author URI: http://www.tuxlog.de
 */
@@ -35,6 +35,11 @@ the terms of usage of accuweather.com
      Frans Lieshout		translation to dutch
      Luís Reis			translation to portugues
      Håkan Carlström		translation to swedish
+     Gabriele von der Ohe	translation to german with entities 
+				(for iso-8859-1 or latin1 blogs)
+     Martin Loyer		translation to french
+     Robert Lang		language file for en_US
+     Detti Giulio		translation to italian
      
  
    All the others giving feedback about missing features and bugs
@@ -117,35 +122,20 @@ the terms of usage of accuweather.com
 
 == translations ==
 
-If you would like to add a new langauge to wp-forecast, just take the
-few steps written below and send the result to webmaster at tuxlog dot de
+   wp-forecast comes with various translations, located in the directory lang.
+   if you would like to add a new translation, just take the file
+   wp-forecast.pot (in the wp-forecast main directory) copy it to
+   <iso-code>.po and edit it to add your translations (e.g. with poedit).
 
-    1. edit language.php copy section
-      
-       if ($LANGUAGE=="en") {
-       ...
-       
-       ...
-       }
-       
-       and place it again at the end of the file (but before ?>)
 
-    2. change the language code en to <your language code> in the
-       copied section
-       
-    3. translate all these words   
+   there are different translations for the german language using
+   different charsets. the defaukt de_DE uses UTF-8, de_DE-iso-8859-1
+   uses iso-8859-1 and de_DE-latin1 uses HTML entitites.
 
-    4. save the file :-)
 
-    5. edit wp-forecast-admin.php
-       
-       look for  "<b>Language: </b>"
-       below enter one line containing
-	     <option value="your-language-code" <?php if
-	     ($wpf_language=="your-language-code") echo
-	     "selected"?>>your-lanuage (e.g. french)</option>
+   to use a different as the defalult just rename the appropriate file
+   to de_DE.po and de_DE.mo
 
-    6. save the file :-)
 
 
 == history ==
@@ -202,9 +192,28 @@ few steps written below and send the result to webmaster at tuxlog dot de
 2007-09-09 v1.0	   fixed accuweather call for us locations
 		   now works with wordpress mu
 
+2007-10-01 v1.1    fixed: setting the current time could not be disabled
+		   fixed: on some servers the current date was converted to 0,
+		   switched translations to gettext as recommended by wp codex
+
+2007-11-05 v1.2	   extend error handling for serverloss, added iso8859-1 coded 
+		   german translation, fixed bug with german winddirections, 
+		   added a widget title, removed standard location label (this 
+		   can be handled via alternate location
+
+2007-12-26 v1.3	   added french translation, added german icon 11
+		   (fog, 11_de.gif), extended css classes to support horizontal
+		    view via css, removed repeating section title 
+
+2008-01-26 v1.4	    fix loading the wright textdomain when called from outside 
+		    wordpress, added a bit debug code, work around for a bug 
+		    in k2rc3 theme, added italian translation, added english 
+		    lanuage file, a bit of code cleanup, extend function 
+		    wp-forecast to select language per widget, added functions
+		    to display a set and a range of widgets at once
+
 
 == todo ==
-   - add more languages (I am missing french and spanish  ;-) )
    - write a little manual for the setup
    - enhance icon management on a per widget basis
 
