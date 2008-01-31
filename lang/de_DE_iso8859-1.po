@@ -1,0 +1,484 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-forecast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-26 08:35+0100\n"
+"PO-Revision-Date: 2007-11-25 13:18+0100\n"
+"Last-Translator: Hans Matzen <webmaster (at) tuxlog (dot) de>\n"
+"Language-Team: Hans Matzen <webmaster (ät) tuxlog (dott) de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+
+#: setup.php:122
+msgid "The Weather"
+msgstr "Das Wetter"
+
+#: wp-forecast-admin.php:107
+msgid "Title:"
+msgstr "Titel:"
+
+#: wp-forecast-admin.php:110
+msgid "widget_hint"
+msgstr ""
+"Zum Konfigurieren der wp-forecast Widgets,<br /> rufen Sie bitte die WP-"
+"Forecast Admin Seite unter Einstellungen / WP-Forecast auf."
+
+#: wp-forecast-admin.php:238 wp-forecast.php:255
+msgid "How many wp-forecast widgets would you like?"
+msgstr "Wieviele wp-forecast widgets möchten Sie verwenden?"
+
+#: wp-forecast-admin.php:247 wp-forecast.php:264
+msgid "Save"
+msgstr "Speichern"
+
+#: wp-forecast-admin.php:250
+msgid "Available widgets"
+msgstr "Verfügbare Widgets"
+
+#: wp-forecast-admin.php:265
+msgid "Select widget"
+msgstr "Widget auswählen"
+
+#: wp-forecast-admin.php:424
+msgid "Settings successfully updated"
+msgstr "Die Einstellungen wurden erfolgreich gespeichert."
+
+#: wp-forecast-admin.php:426
+msgid "You have to change a field to update settings."
+msgstr ""
+"Um die Einstellungen zu aktualisieren, müssen Sie mindestens ein Feld "
+"verändern."
+
+#: wp-forecast-admin.php:447
+msgid "WP-Forecast Setup"
+msgstr "WP-Forecast Einstellungen"
+
+#: wp-forecast-admin.php:450
+msgid "Location"
+msgstr "Ort"
+
+#: wp-forecast-admin.php:453
+msgid "Press Update options to save new location."
+msgstr "Klick auf Einstellungen speichern sichert den Ort."
+
+#: wp-forecast-admin.php:456
+msgid "Locationname"
+msgstr "Ortsname"
+
+#: wp-forecast-admin.php:458
+msgid "Refresh cache after"
+msgstr "Cache erneuern nach"
+
+#: wp-forecast-admin.php:460
+msgid "secs."
+msgstr "Sekunden"
+
+#: wp-forecast-admin.php:461
+msgid "Use metric units"
+msgstr "metrische Einheiten verwenden"
+
+#: wp-forecast-admin.php:464
+msgid "Use current time"
+msgstr "Verwende aktuelle Zeit"
+
+#: wp-forecast-admin.php:467
+msgid "Windspeed-Unit"
+msgstr "Einheit der Windgeschwindigkeit"
+
+#: wp-forecast-admin.php:468
+msgid "Meter/Second (m/s)"
+msgstr "Meter/Sekunde (m/s)"
+
+#: wp-forecast-admin.php:469
+msgid "Kilometer/Hour (km/h)"
+msgstr "Kilometer/Stunde (km/h)"
+
+#: wp-forecast-admin.php:470
+msgid "Miles/Hour (mph)"
+msgstr "Meilen/Stunde (mph)"
+
+#: wp-forecast-admin.php:471
+msgid "Knots (kts)"
+msgstr "Knoten (kts)"
+
+#: wp-forecast-admin.php:476
+msgid "Language"
+msgstr "Sprache"
+
+#: wp-forecast-admin.php:486 wp-forecast-show.php:183
+msgid "Forecast"
+msgstr "Vorhersage"
+
+#: wp-forecast-admin.php:490 wp-forecast-admin.php:491
+#: wp-forecast-admin.php:492 wp-forecast-admin.php:493
+#: wp-forecast-admin.php:494 wp-forecast-admin.php:495
+#: wp-forecast-admin.php:496 wp-forecast-admin.php:497
+#: wp-forecast-admin.php:498
+msgid "Day"
+msgstr "Tag"
+
+#: wp-forecast-admin.php:500
+msgid "Daytime"
+msgstr "tagsüber"
+
+#: wp-forecast-admin.php:520
+msgid "Nighttime"
+msgstr "nachts"
+
+#: wp-forecast-admin.php:544
+msgid "Display Configuration"
+msgstr "Anzeige Einstellungen"
+
+#: wp-forecast-admin.php:548
+msgid "Current Conditions"
+msgstr "Aktuelles Wetter"
+
+#: wp-forecast-admin.php:549
+msgid "Forecast Day"
+msgstr "Vorhersage tagsüber"
+
+#: wp-forecast-admin.php:550
+msgid "Forecast Night"
+msgstr "Vorhersage nachts"
+
+#: wp-forecast-admin.php:553
+msgid "Icon"
+msgstr "Symbol"
+
+#: wp-forecast-admin.php:562
+msgid "Date"
+msgstr "Datum"
+
+#: wp-forecast-admin.php:569
+msgid "Time"
+msgstr "Zeit"
+
+#: wp-forecast-admin.php:576
+msgid "Short Description"
+msgstr "Kurzbezeichnung"
+
+#: wp-forecast-admin.php:585
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: wp-forecast-admin.php:594
+msgid "Realfeel"
+msgstr "Gefühlte Temperatur"
+
+#: wp-forecast-admin.php:601
+msgid "Pressure"
+msgstr "Luftdruck"
+
+#: wp-forecast-admin.php:608
+msgid "Humidity"
+msgstr "Luftfeuchtigkeit"
+
+#: wp-forecast-admin.php:615
+msgid "Wind"
+msgstr "Wind"
+
+#: wp-forecast-admin.php:624 wp-forecast-show.php:151 wp-forecast-show.php:223
+#: wp-forecast-show.php:267
+msgid "Windgusts"
+msgstr "Böen"
+
+#: wp-forecast-admin.php:633
+msgid "Sunrise"
+msgstr "Sonnenaufgang"
+
+#: wp-forecast-admin.php:640
+msgid "Sunset"
+msgstr "Sonnenuntergang"
+
+#: wp-forecast-admin.php:647
+msgid "Copyright"
+msgstr "Copyright"
+
+#: wp-forecast-admin.php:659
+msgid "Update options"
+msgstr "Einstellungen speichern"
+
+#: wp-forecast-admin.php:665 wp-forecast-admin.php:679
+msgid "Search location"
+msgstr "Ort suchen"
+
+#: wp-forecast-admin.php:668
+msgid "Searchterm"
+msgstr "Suchbegriff"
+
+#: wp-forecast-admin.php:671
+msgid "No locations found."
+msgstr "Keine Orte gefunden."
+
+#: wp-forecast-admin.php:673
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr ""
+"Bitte ersetzen Sie Umlaute im Suchbegriff durch die entsprechenden Vokale (z."
+"B. ä durch a)"
+
+#: wp-forecast-admin.php:682
+msgid "Search result"
+msgstr "Suchergebnis"
+
+#: wp-forecast-admin.php:688
+msgid "Please select your city and press set location."
+msgstr "Bitte einen Ort auswählen und Ort Übernehmen klicken."
+
+#: wp-forecast-admin.php:692
+msgid "Set location"
+msgstr "Ort übernehmen"
+
+#: wp-forecast.php:296
+#, php-format
+msgid "wp-forecast %s"
+msgstr ""
+
+#: wp-forecast-show.php:54
+msgid "Sorry, no valid weather data available."
+msgstr "Aktuell liegen keine gültigen Wetterinformationen vor."
+
+#: wp-forecast-show.php:55
+msgid "Please try again later."
+msgstr "Bitte versuchen Sie es später nochmal."
+
+#: wp-forecast-show.php:94
+msgid "time"
+msgstr "Uhrzeit"
+
+#: wp-forecast-show.php:119
+msgid "tmp"
+msgstr "Aktuelle Temperatur"
+
+#: wp-forecast-show.php:128
+msgid "flik"
+msgstr "Gefühlte Temperatur"
+
+#: wp-forecast-show.php:131
+msgid "barr"
+msgstr "Aktueller Luftdruck"
+
+#: wp-forecast-show.php:135
+msgid "hmid"
+msgstr "Luftfeuchtigkeit"
+
+#: wp-forecast-show.php:145 wp-forecast-show.php:217 wp-forecast-show.php:261
+msgid "winds"
+msgstr "Wind"
+
+#: wp-forecast-show.php:159
+msgid "sunrise"
+msgstr "Sonnenaufgang"
+
+#: wp-forecast-show.php:163
+msgid "sunset"
+msgstr "Sonnenuntergang"
+
+#: wp-forecast-show.php:190
+msgid "day"
+msgstr "Tag"
+
+#: wp-forecast-show.php:236
+msgid "night"
+msgstr "Nacht"
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr "Ort"
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "Wolkenlos"
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "Heiter"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "Heiter bis wolkig"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "Wolkig"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "Dunstiger Sonnenschein"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "Bewölkt"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "Stark bewölkt"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "Bedeckt"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "Nebel"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "Regenschauer"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "Bewölkt mit Regenschauern"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "Wolkig mit Regenschauern"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "Gewitter"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "Bewölkt mit Gewitterschauern"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "Wolkig mit Gewitterschauern"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "Regen"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "Schneeschauer"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "Bewölkt mit Schneeschauern"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "Wolkig mit Schneeschauern"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "Schneefall"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "Bewölkt mit Schneefall"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "Glatteis"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "Graupelschauer"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "Eisregen"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "Schneeregen"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "Heiß"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "Kalt"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "Windig"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "Klare Nacht"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "Überwiegend klar"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "Wolkig"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "Zeitweise wolkig"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "Dunstig"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "Bewölkt"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "Wolkig mit Regenschauern"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "Bewölkt mit Regenschauern"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "Wolkig mit Gewitterschauern"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "Bewölkt mit Gewitterschauern"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "Bewölkt mit Schneeschauern"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "Bewölkt mit Schneefall"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr "Montag"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "Freitag"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "Samstag"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "Sonntag"

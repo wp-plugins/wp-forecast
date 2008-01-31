@@ -1,0 +1,476 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-forecast dutch translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-26 08:35+0100\n"
+"PO-Revision-Date: 2007-11-04 10:18+0100\n"
+"Last-Translator: Hans Matzen <webmaster (at) tuxlog (dot) de>\n"
+"Language-Team:  Frans Lieshout\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+
+#: setup.php:122
+msgid "The Weather"
+msgstr ""
+
+#: wp-forecast-admin.php:107
+msgid "Title:"
+msgstr ""
+
+#: wp-forecast-admin.php:110
+msgid "widget_hint"
+msgstr ""
+
+#: wp-forecast-admin.php:238 wp-forecast.php:255
+msgid "How many wp-forecast widgets would you like?"
+msgstr ""
+
+#: wp-forecast-admin.php:247 wp-forecast.php:264
+msgid "Save"
+msgstr ""
+
+#: wp-forecast-admin.php:250
+msgid "Available widgets"
+msgstr ""
+
+#: wp-forecast-admin.php:265
+msgid "Select widget"
+msgstr ""
+
+#: wp-forecast-admin.php:424
+msgid "Settings successfully updated"
+msgstr "Succesvol bijgewerkt"
+
+#: wp-forecast-admin.php:426
+msgid "You have to change a field to update settings."
+msgstr "U moet een veld hebben gewijzigd om te kunnen bijwerken."
+
+#: wp-forecast-admin.php:447
+msgid "WP-Forecast Setup"
+msgstr "WP-Voorspelling Instellingen"
+
+#: wp-forecast-admin.php:450
+msgid "Location"
+msgstr "Plaats"
+
+#: wp-forecast-admin.php:453
+msgid "Press Update options to save new location."
+msgstr "Druk op bijwerken om nieuwe lokatie te bewaren."
+
+#: wp-forecast-admin.php:456
+msgid "Locationname"
+msgstr ""
+
+#: wp-forecast-admin.php:458
+msgid "Refresh cache after"
+msgstr "Ververs geheugen na"
+
+#: wp-forecast-admin.php:460
+msgid "secs."
+msgstr ""
+
+#: wp-forecast-admin.php:461
+msgid "Use metric units"
+msgstr "Gebruik metriek stelsel"
+
+#: wp-forecast-admin.php:464
+msgid "Use current time"
+msgstr ""
+
+#: wp-forecast-admin.php:467
+msgid "Windspeed-Unit"
+msgstr "Windsnelheid-Unit"
+
+#: wp-forecast-admin.php:468
+msgid "Meter/Second (m/s)"
+msgstr "Meter/Seconde (m/s)"
+
+#: wp-forecast-admin.php:469
+msgid "Kilometer/Hour (km/h)"
+msgstr "Kilometer/Uur (km/h)"
+
+#: wp-forecast-admin.php:470
+msgid "Miles/Hour (mph)"
+msgstr "Mijl/Uur (mph)"
+
+#: wp-forecast-admin.php:471
+msgid "Knots (kts)"
+msgstr "Knopen (knps)"
+
+#: wp-forecast-admin.php:476
+msgid "Language"
+msgstr "Taal"
+
+#: wp-forecast-admin.php:486 wp-forecast-show.php:183
+msgid "Forecast"
+msgstr "Voorspelling"
+
+#: wp-forecast-admin.php:490 wp-forecast-admin.php:491
+#: wp-forecast-admin.php:492 wp-forecast-admin.php:493
+#: wp-forecast-admin.php:494 wp-forecast-admin.php:495
+#: wp-forecast-admin.php:496 wp-forecast-admin.php:497
+#: wp-forecast-admin.php:498
+msgid "Day"
+msgstr "Dag"
+
+#: wp-forecast-admin.php:500
+msgid "Daytime"
+msgstr "Overdag"
+
+#: wp-forecast-admin.php:520
+msgid "Nighttime"
+msgstr "Nacht"
+
+#: wp-forecast-admin.php:544
+msgid "Display Configuration"
+msgstr "Weergeven Configuratie"
+
+#: wp-forecast-admin.php:548
+msgid "Current Conditions"
+msgstr "Huidig weerbeeld"
+
+#: wp-forecast-admin.php:549
+msgid "Forecast Day"
+msgstr "Voorspelling Dag"
+
+#: wp-forecast-admin.php:550
+msgid "Forecast Night"
+msgstr "Voorspelling Nacht"
+
+#: wp-forecast-admin.php:553
+msgid "Icon"
+msgstr "Ikoon"
+
+#: wp-forecast-admin.php:562
+msgid "Date"
+msgstr ""
+
+#: wp-forecast-admin.php:569
+msgid "Time"
+msgstr "Tijd"
+
+#: wp-forecast-admin.php:576
+msgid "Short Description"
+msgstr "Korte Omschrijving"
+
+#: wp-forecast-admin.php:585
+msgid "Temperature"
+msgstr "Temperatuur"
+
+#: wp-forecast-admin.php:594
+msgid "Realfeel"
+msgstr "Werkelijk gevoel"
+
+#: wp-forecast-admin.php:601
+msgid "Pressure"
+msgstr "Druk"
+
+#: wp-forecast-admin.php:608
+msgid "Humidity"
+msgstr "Vochtigheid"
+
+#: wp-forecast-admin.php:615
+msgid "Wind"
+msgstr "Wind"
+
+#: wp-forecast-admin.php:624 wp-forecast-show.php:151 wp-forecast-show.php:223
+#: wp-forecast-show.php:267
+msgid "Windgusts"
+msgstr ""
+
+#: wp-forecast-admin.php:633
+msgid "Sunrise"
+msgstr "Zon opgang"
+
+#: wp-forecast-admin.php:640
+msgid "Sunset"
+msgstr "Zon ondergang"
+
+#: wp-forecast-admin.php:647
+msgid "Copyright"
+msgstr ""
+
+#: wp-forecast-admin.php:659
+msgid "Update options"
+msgstr "Bijwerken opties"
+
+#: wp-forecast-admin.php:665 wp-forecast-admin.php:679
+msgid "Search location"
+msgstr "Zoek plaats"
+
+#: wp-forecast-admin.php:668
+msgid "Searchterm"
+msgstr "Zoek term"
+
+#: wp-forecast-admin.php:671
+msgid "No locations found."
+msgstr ""
+
+#: wp-forecast-admin.php:673
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr ""
+
+#: wp-forecast-admin.php:682
+msgid "Search result"
+msgstr "Zoek resultaten"
+
+#: wp-forecast-admin.php:688
+msgid "Please select your city and press set location."
+msgstr "Selecteer uw stad en druk op set lokatie."
+
+#: wp-forecast-admin.php:692
+msgid "Set location"
+msgstr "Set lokatie"
+
+#: wp-forecast.php:296
+#, php-format
+msgid "wp-forecast %s"
+msgstr ""
+
+#: wp-forecast-show.php:54
+msgid "Sorry, no valid weather data available."
+msgstr ""
+
+#: wp-forecast-show.php:55
+msgid "Please try again later."
+msgstr ""
+
+#: wp-forecast-show.php:94
+msgid "time"
+msgstr "tijd"
+
+#: wp-forecast-show.php:119
+msgid "tmp"
+msgstr "Huidige temperatuur"
+
+#: wp-forecast-show.php:128
+msgid "flik"
+msgstr "gevoel"
+
+#: wp-forecast-show.php:131
+msgid "barr"
+msgstr "huidige druk"
+
+#: wp-forecast-show.php:135
+msgid "hmid"
+msgstr "humidity"
+
+#: wp-forecast-show.php:145 wp-forecast-show.php:217 wp-forecast-show.php:261
+msgid "winds"
+msgstr "wind snelheid"
+
+#: wp-forecast-show.php:159
+msgid "sunrise"
+msgstr "zon opgang"
+
+#: wp-forecast-show.php:163
+msgid "sunset"
+msgstr "zon ondergang"
+
+#: wp-forecast-show.php:190
+msgid "day"
+msgstr "dag"
+
+#: wp-forecast-show.php:236
+msgid "night"
+msgstr "nacht"
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr ""
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "Zonnig"
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "Meestal Zonnig"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "Deels Zonnig"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "Af en toe bewolking"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "Nevel"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "Meest bewolkt"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "Bewolkt"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "Somber (betrokken lucht)"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "Mist"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "Stortbuien"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "Meest bewolkt met regen"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "Deels zonnig met buien"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "Onweer"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "Meest bewolkt met onweersbuinen"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "Deels zonnig met onweersbuien"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "Regen"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "Hagel en Regen"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "Meest bewolkt en hagel en regen"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "Deels zonnig met hagel en regen"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "Sneeuw"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "Meest bewolkt met sneeuw"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "IJs"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "Natte Sneeuw"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "Hagelbuien"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "Regen en sneeuw"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "Heet"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "Koud"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "Winderig"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "Helder"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "Meest helder"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "Deels bewolkt"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "Af en toe bewolking"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "Nevelig"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "Meest bewolkt"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "Deels bewolkt met buien"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "Meest bewoikt met buien"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "Deels bewolkt met onweer"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "Meest bewolkt met onweer"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "Meest bewolkt met hagel en regen"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "Meest bewolkt met sneeuw"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr "Maandag"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "Woensdag"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "Donderdag"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "Vrijdag"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "Zaterdag"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "Zondag"
