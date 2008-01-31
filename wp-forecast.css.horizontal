@@ -1,0 +1,98 @@
+/* style for the widget wrapper */
+div.wp-forecast {
+                  width: 800px;
+                  column-count: 2;
+                  column-width: 350px;
+                  column-gap: 10px
+                  column-rule: none; 
+}
+div.test { 
+           font-size: 11px; 
+           font-family: Arial;
+           border: 0px solid;
+           padding: 0px;
+           text-align:center;
+           margin-left:auto;
+           margin-right:auto;
+}
+
+/* style for current weather data */
+div.wp-forecast-curr {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 0px;
+                  text-align:center;
+		  margin-left:auto;
+		  margin-right:auto;
+}
+
+/* style for current weather data table section */
+table.wp-forecast-curr { 
+                    float: left; width: 12em;
+                    font-size: 11px;
+                    font-family: Arial;
+                    font-weight: bolder;
+                    font-variant: small-caps;
+		    border-spacing:2px;
+		    border-collapse:collapse;
+                    text-align:left;
+                    /* margin-left:auto; 
+                    margin-right:auto; */
+}
+
+/* style for current weather data details */
+div.wp-forecast-curr-details {
+                  margin-left: 12em;min-width: 16em; 
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 10px;
+                  text-align:left;
+
+}
+
+/* style for copyright */
+div.wp-forecast-copyright { 
+                  font-size: 10px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 0px;
+                  text-align:left;
+}
+
+/* style for forecast data */
+div.wp-forecast-fc {
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 0px;
+                  text-align:left;
+		  margin-left:auto;
+		  margin-right:auto; 
+}
+
+/* style for forecast data table section */
+table.wp-forecast-fc { 
+                   /*float: left; width: 12em;*/
+                    font-size: 11px;
+                    font-family: Arial;
+                    font-weight: bolder;
+                    font-variant: small-caps;
+		    border-spacing:2px;
+		    border-collapse:collapse;
+                    text-align:left;
+                    /*margin-left:auto; 
+                    margin-right:auto; */
+}
+
+/* style for forecast data details */
+div.wp-forecast-fc-details {
+                  margin-left: 12em;min-width: 16em;
+                  font-size: 11px; 
+                  font-family: Arial;
+                  border: 0px solid;
+                  padding: 10px;
+                  text-align:left;
+
+}
