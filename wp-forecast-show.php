@@ -102,7 +102,7 @@ function show($wpfcid,$w,$args,$wpfvars)
     // ortsnamen ausgeben
     if ( $locname == "" ) 
       $out .= "<div>" . $w["city"]." ".$w["state"]."</div>\n";
-    else if ( trim($locname) !="")
+    else if ( trim($locname) !="" and $locname != "&nbsp;")
       $out .= "<div>" . $locname."</div>\n";
     
     
