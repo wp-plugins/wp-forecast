@@ -1,7 +1,7 @@
 === wp-forecast ===
 Tags: weather,forecast,widget
 Requires at least: 2.2
-Tested up to: 2.3.2
+Tested up to: 2.5.1
 Stable tag: 1.6
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
