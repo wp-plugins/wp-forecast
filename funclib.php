@@ -30,6 +30,11 @@ function fetchURL($url)
   if ($wpf_debug > 0)
     pdebug("Start of fetchURL ()");
 
+  // get timeout parameter
+  $timeout = get_option("wp-forecast-timeout");
+  if ( $timeout =="")
+    $timeout = 30;
+
   $url_parsed = parse_url($url);
     $host = $url_parsed["host"];
     if (!isset($url_parsed["port"])) {
@@ -41,7 +46,9 @@ function fetchURL($url)
     $path = $url_parsed["path"];
     if ($url_parsed["query"] != "") $path .= "?" . $url_parsed["query"];
     $out = "GET $path HTTP/1.0\r\nHost: $host\r\n\r\n";
-    $fp = fsockopen($host, $port, $errno, $errstr, 30);
+    $fp = fsockopen($host, $port, $errno, $errstr, $timeout);
+    // set timeout for reading 
+    stream_set_timeout($fp, $timeout);
     $in = "";
     if ($fp) {
       fwrite($fp, $out);
@@ -216,7 +223,26 @@ function wp_forecast_css($wpfcid="A") {
     pdebug("End of function wp_forecast_css ()");
 }
 
+
+//
+// just return the css link when not using wordpress
+// this function is called when showing widget directly via wp-forecast-show.php
+//
+function wp_forecast_css_nowp($wpfcid="A") {
+  
+  global $wpf_debug;
+  
+  if ($wpf_debug > 0)
+    pdebug("Start of function wp_forecast_css_nowp ()");
+  
+  $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
+  echo "<link rel=\"stylesheet\" href=\"". $plugin_path. "/wp-forecast-nowp.css\" type=\"text/css\" media=\"screen\" />\n";
+  
+  
+  if ($wpf_debug > 0)
+    pdebug("End of function wp_forecast_css ()");
 }
+
 
 //
 // little debug output routine
@@ -241,5 +267,7 @@ function get_widget_id($number)
     return substr("ABCDEFGHIJKLMNOPQRSTUVWXYZ",$number,1);
   else
     return str_pad($number, 6, "0", STR_PAD_LEFT);
+}
+
 }
 ?>

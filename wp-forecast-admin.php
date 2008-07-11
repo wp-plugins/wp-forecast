@@ -202,6 +202,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     pdebug("Start of wpf_admin_form ()");  
 
   $count = get_option('wp-forecast-count');
+  $wpf_timeout = get_option("wp-forecast-timeout");
 
   // get locale 
   $locale = get_locale();
@@ -232,10 +233,22 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
       }
     } 
 
+    // if this is a post call, timeout
+    if ( isset($_POST['wpf-timeout-submit']) ) {
+      $timeout = (int) $_POST['wpf-timeout'];
+      if ( $timeout < 0 ) $timeout = 1;
+      
+      if ( $wpf_timeout != $timeout ) {
+	$wpf_timeout = $timeout;
+	update_option('wp-forecast-timeout', $wpf_timeout);
+      }
+    } 
+
     // print out number of widgets selection
-    $out  = "<div class='wrap'><form method='post' action=''>";
+    $out  = "<div class='wrap'>";
     $out .= "<h2>WP-Forecast Widgets</h2>";
-    $out .= "<table><tr><td>".__('How many wp-forecast widgets would you like?',"wp-forecast_".$locale)."</td>";
+    $out .= "<form name='options' id='options' method='post' action=''>";
+    $out .= "<table class='form-table'><tr><td>".__('How many wp-forecast widgets would you like?',"wp-forecast_".$locale)."</td>";
     $out .= "<td><select id='wpf-number' name='wpf-number'>";
     
     for ( $i = 1; $i <= $wpf_maxwidgets; ++$i ) {
@@ -262,8 +275,15 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "</select></td>";
     
     $out .="<td><span class=\"submit\"><input type=\"submit\" name=\"set_widget\" value=\"" ; 
-    $out .=__('Select widget',"wp-forecast_".$locale)." »\" /></span></td></tr></table></form></div>\n";
-    
+    $out .=__('Select widget',"wp-forecast_".$locale)." »\" /></span></td></tr>\n";
+   
+
+    // print out timeout input field for fsockopen 
+    // (timeout for accuweather connection)
+    $out .= "<tr><td>".__('Timeout for accuweather connections (secs.)?',"wp-forecast_".$locale)."</td>";
+    $out .= "<td><input id='wpf-timeout' name='wpf-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
+    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
+
     echo $out;
   }
 
@@ -481,6 +501,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
 	    <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
 	    <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
+	    <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
          </select></p>
           	
 	 <b><?php echo __('Forecast',"wp-forecast_".$locale)?></b>

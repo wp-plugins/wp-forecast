@@ -2,7 +2,7 @@
 Tags: weather,forecast,widget
 Requires at least: 2.2
 Tested up to: 2.3.2
-Stable tag: 1.4
+Stable tag: 1.6
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
 
@@ -12,7 +12,7 @@ Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description:  wp-forecast is a highly customizable plugin for wordpress, 
 	      showing weather-data from accuweather.com.
-Version: 1.4
+Version: 1.6
 Author: Hans Matzen <webmaster at tuxlog dot de>
 Author URI: http://www.tuxlog.de
 */
@@ -49,6 +49,7 @@ the terms of usage of accuweather.com
      Martin Loyer		translation to french
      Robert Lang		language file for en_US
      Detti Giulio		translation to italian
+     Eilif Nordseth		translation to norwegian
      
  
    All the others giving feedback about missing features and bugs
@@ -220,13 +221,17 @@ the terms of usage of accuweather.com
 		    lanuage file, a bit of code cleanup, extend function 
 		    wp-forecast to select language per widget, added functions
 		    to display a set and a range of widgets at once
-
-
-== todo ==
-   - write a little manual for the setup
-   - enhance icon management on a per widget basis
-
-
+2008-05-12 v1.5	    fixed two dutch phrases in dutch translation
+	   	    added norwegian translation (thanks to Eilif)
+2008-07-11 v1.6	    removed some hardcoded css, it is now possible to 
+	   	    call the widget directly outside from wp, fixed a problem 
+		    with wp >2.5 and the widget dialog, removed some redundant 
+		    html, when showing no current weather information, 
+		    placed forecast header into own table with own css class,
+		    added timeout parameter for the accuweather connections,
+		    rounded humidity to integer values, fixed some typos in 
+		    swedish translation and added norwegian selection 
+		    (thanks to RAM_OS)  
 
 
  

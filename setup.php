@@ -38,6 +38,14 @@ function wp_forecast_activate()
 	       "Contains the number of wp-widgets","yes");
   };
   
+  // add timeout for accuweather connections, default: 30
+  $timeout=get_option("wp-forecast-timeout");
+   
+  if ($timeout == "") {
+    $timeout="30";
+    add_option("wp-forecast-timeout",$timeout,
+	       "Timeout in seconds for accuweather connections","yes");
+  };
   for ($i=0;$i<$count;$i++) {
     $wpfcid = get_widget_id( $i );
 
@@ -55,7 +63,7 @@ function wp_forecast_activate()
     $expire = get_option("wp-forecast-expire".$wpfcid);
     $currtime = get_option("wp-forecast-currtime".$wpfcid);
     $title = get_option("wp-forecast-title".$wpfcid);
- 
+
     // if the options dont exists, add the defaults
     if ($location == "") {
       $location="EUR|DE|GM007|FRANKFURT AM MAIN";
@@ -188,6 +196,7 @@ function wp_forecast_deactivate($wpfcid)
      delete_option("wp-forecast-currtime".$wpfcid); 
      delete_option("wp-forecast-title".$wpfcid);
    }
+   delete_option('wp-forecast-timeout');
    delete_option('wp-forecast-count');
    
    if ($wpf_debug > 0)
