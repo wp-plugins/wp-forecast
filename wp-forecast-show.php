@@ -79,8 +79,9 @@ function show($wpfcid,$w,$args,$wpfvars)
   if(function_exists('load_textdomain')) 
      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
 
+
   // current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
-  if ( strpos(substr($dispconfig,0,9),"1") > 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
+  if ( strpos(substr($dispconfig,0,9),"1") >= 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
     // ouput current conditions
     $out ="";
     $out .="\n<div class=\"wp-forecast-curr\">\n";

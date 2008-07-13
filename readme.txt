@@ -232,11 +232,8 @@ the terms of usage of accuweather.com
 		    rounded humidity to integer values, fixed some typos in 
 		    swedish translation and added norwegian selection 
 		    (thanks to RAM_OS)  
-2008-xx-xx v1.7	    removed a bit of redundant html when widget title is empty,
-	   	    ???removed wp-forecast.css file from distribution to avoid 
-		    overwriting own settings, the sample template is now 
-		    wp-forecast.css.vertical and has to be renamed at 
-		    first installation.???
+2008-07-12 v1.7	    removed a bit of redundant html when widget title is empty,
+	   	    fixed bug in outut of current conditions
 
 
  
