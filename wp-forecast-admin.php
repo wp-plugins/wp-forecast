@@ -404,7 +404,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     }
     
     // set empty checkboxes to 0
-    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts');
+    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather');
     foreach ($do as $i) {
       if ($_POST[$i]=="")
 	$_POST["$i"]="0";
@@ -668,6 +668,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
         <td><?php echo __('Copyright',"wp-forecast_".$locale)?></td>
         <td align='center'><input type="checkbox" name="d_c_copyright" value="1" 
 		 <?php if (substr($dispconfig,21,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td align='center'>n/a</td>
+        <td align='center'>n/a</td>
+        </tr> 
+	<tr>
+        <td><?php echo __('Link to Accuweather',"wp-forecast_".$locale)?></td>
+        <td align='center'><input type="checkbox" name="d_c_accuweather" value="1" 
+		 <?php if (substr($dispconfig,25,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>n/a</td>
         <td align='center'>n/a</td>
         </tr> 
