@@ -232,8 +232,9 @@ the terms of usage of accuweather.com
 		    rounded humidity to integer values, fixed some typos in 
 		    swedish translation and added norwegian selection 
 		    (thanks to RAM_OS)  
-2008-07-12 v1.7	    removed a bit of redundant html when widget title is empty,
-	   	    fixed bug in outut of current conditions
+2008-07-15 v1.7	    removed a bit of redundant html when widget title is empty,
+	   	    fixed bug in outut of current conditions, added option to 
+		    show a link to the accuweather forecast.
 
 
  

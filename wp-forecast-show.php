@@ -100,13 +100,16 @@ function show($wpfcid,$w,$args,$wpfvars)
       return false;
     }
     
-    // ortsnamen ausgeben
+    // ortsnamen ausgeben 
+    $acculink="";
+    if (substr($dispconfig,25,1) == "1") 
+      $acculink= '<a href="http://www.accuweather.com/world-index-forecast.asp?locCode=' . get_option('wp-forecast-location'.$wpfcid) . '&amp;metric=' . get_option("wp-forecast-metric".$wpfcid) . '" rel="nofollow">';
+
     if ( $locname == "" ) 
-      $out .= "<div>" . $w["city"]." ".$w["state"]."</div>\n";
+      $out .= "<div>" . $acculink . $w["city"]." ".$w["state"]."</a></div>\n";
     else if ( trim($locname) !="" and $locname != "&nbsp;")
-      $out .= "<div>" . $locname."</div>\n";
-    
-    
+      $out .= "<div>" . $acculink . $locname."</a></div>\n";
+
     $out .="<table class=\"wp-forecast-curr\">\n";
     
     // show date / time   
