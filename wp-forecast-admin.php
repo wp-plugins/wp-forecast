@@ -496,12 +496,14 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="language" size="1">
 	    <option value="en_US" <?php if ($wpf_language=="en_US") echo "selected=\"selected\""?>>english</option>
 	    <option value="de_DE" <?php if ($wpf_language=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+            <option value="da_DK" <?php if ($wpf_language=="da_DK") echo "selected=\"selected\""?>>dansk</option>
 	    <option value="nl_NL" <?php if ($wpf_language=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fr_FR" <?php if ($wpf_language=="fr_FR") echo "selected=\"selected\""?>>french</option>
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
 	    <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
+            <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
 	    <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
-	    <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
+	    
          </select></p>
           	
 	 <b><?php echo __('Forecast',"wp-forecast_".$locale)?></b>
