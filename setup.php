@@ -147,10 +147,11 @@ function wp_forecast_activate()
     // Sonnenaufgang     8     -         -
     // Sonnenuntergang   9     -         - 
     // Copyright        21     -         -
+    // accuweather link 25     -         -
     //
     
     if ($dispconfig == "") {
-      $dispconfig="1111111111111111111111111";
+      $dispconfig="11111111111111111111111111";
       add_option("wp-forecast-dispconfig".$wpfcid,$dispconfig,
 		 "Switches for shown Information","yes");
     }

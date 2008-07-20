@@ -79,8 +79,9 @@ function show($wpfcid,$w,$args,$wpfvars)
   if(function_exists('load_textdomain')) 
      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
 
+
   // current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
-  if ( strpos(substr($dispconfig,0,9),"1") > 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
+  if ( strpos(substr($dispconfig,0,9),"1") >= 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
     // ouput current conditions
     $out ="";
     $out .="\n<div class=\"wp-forecast-curr\">\n";
@@ -99,13 +100,19 @@ function show($wpfcid,$w,$args,$wpfvars)
       return false;
     }
     
-    // ortsnamen ausgeben
+    // ortsnamen ausgeben 
+    $acculink="";
+    $acculink_end="";
+    if (substr($dispconfig,25,1) == "1") {
+      $acculink= '<a href="http://www.accuweather.com/world-index-forecast.asp?locCode=' . get_option('wp-forecast-location'.$wpfcid) . '&amp;metric=' . get_option("wp-forecast-metric".$wpfcid) . '" rel="nofollow">';
+      $acculink_end="</a>";
+    }
+    
     if ( $locname == "" ) 
-      $out .= "<div>" . $w["city"]." ".$w["state"]."</div>\n";
+      $out .= "<div>" . $acculink . $w["city"]." ".$w["state"]. $acculink_end. "</div>\n";
     else if ( trim($locname) !="" and $locname != "&nbsp;")
-      $out .= "<div>" . $locname."</div>\n";
-    
-    
+      $out .= "<div>" . $acculink . $locname . $acculink_end."</div>\n";
+
     $out .="<table class=\"wp-forecast-curr\">\n";
     
     // show date / time   

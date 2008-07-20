@@ -404,7 +404,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     }
     
     // set empty checkboxes to 0
-    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts');
+    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather');
     foreach ($do as $i) {
       if ($_POST[$i]=="")
 	$_POST["$i"]="0";
@@ -496,12 +496,14 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="language" size="1">
 	    <option value="en_US" <?php if ($wpf_language=="en_US") echo "selected=\"selected\""?>>english</option>
 	    <option value="de_DE" <?php if ($wpf_language=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+            <option value="da_DK" <?php if ($wpf_language=="da_DK") echo "selected=\"selected\""?>>dansk</option>
 	    <option value="nl_NL" <?php if ($wpf_language=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fr_FR" <?php if ($wpf_language=="fr_FR") echo "selected=\"selected\""?>>french</option>
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
 	    <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
+            <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
 	    <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
-	    <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
+	    
          </select></p>
           	
 	 <b><?php echo __('Forecast',"wp-forecast_".$locale)?></b>
@@ -668,6 +670,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
         <td><?php echo __('Copyright',"wp-forecast_".$locale)?></td>
         <td align='center'><input type="checkbox" name="d_c_copyright" value="1" 
 		 <?php if (substr($dispconfig,21,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td align='center'>n/a</td>
+        <td align='center'>n/a</td>
+        </tr> 
+	<tr>
+        <td><?php echo __('Link to Accuweather',"wp-forecast_".$locale)?></td>
+        <td align='center'><input type="checkbox" name="d_c_accuweather" value="1" 
+		 <?php if (substr($dispconfig,25,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>n/a</td>
         <td align='center'>n/a</td>
         </tr> 

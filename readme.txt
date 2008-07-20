@@ -1,7 +1,7 @@
 === wp-forecast ===
 Tags: weather,forecast,widget
 Requires at least: 2.2
-Tested up to: 2.5.1
+Tested up to: 2.6
 Stable tag: 1.7
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
@@ -50,7 +50,8 @@ the terms of usage of accuweather.com
      Robert Lang		language file for en_US
      Detti Giulio		translation to italian
      Eilif Nordseth		translation to norwegian
-     
+     Michael S.R. Petersen	translation to dansk
+
  
    All the others giving feedback about missing features and bugs
    Thank you very much for your contribution to wp-forecast.
@@ -232,11 +233,10 @@ the terms of usage of accuweather.com
 		    rounded humidity to integer values, fixed some typos in 
 		    swedish translation and added norwegian selection 
 		    (thanks to RAM_OS)  
-2008-xx-xx v1.7	    removed a bit of redundant html when widget title is empty,
-	   	    ???removed wp-forecast.css file from distribution to avoid 
-		    overwriting own settings, the sample template is now 
-		    wp-forecast.css.vertical and has to be renamed at 
-		    first installation.???
+2008-07-20 v1.7	    removed a bit of redundant html when widget title is empty,
+	   	    fixed bug in output of current conditions, added option to 
+		    show a link to the accuweather forecast, added dansk 
+		    translation
 
 
  
