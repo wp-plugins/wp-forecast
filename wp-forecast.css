@@ -32,6 +32,13 @@ div.wp-forecast-curr-details {
 
 }
 
+/* style for current weather icon */
+img.wp-forecast-curr {
+                  border: 0;
+                  width: 48;
+                  padding: 0px;
+}
+
 /* style for forecast data */
 div.wp-forecast-fc {
                   font-size: 11px; 
@@ -77,3 +84,12 @@ div.wp-forecast-fc-details {
                   text-align:left;
 
 }
+
+/* style for current weather icon */
+img.wp-forecast-fc-details {
+                  border: 0;
+		  width: 48;
+                  padding: 0px;
+}
+
+

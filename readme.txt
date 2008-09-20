@@ -2,7 +2,7 @@
 Tags: weather,forecast,widget
 Requires at least: 2.2
 Tested up to: 2.6
-Stable tag: 1.7
+Stable tag: 1.8
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
 
@@ -12,7 +12,7 @@ Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description:  wp-forecast is a highly customizable plugin for wordpress, 
 	      showing weather-data from accuweather.com.
-Version: 1.7
+Version: 1.8
 Author: Hans Matzen <webmaster at tuxlog dot de>
 Author URI: http://www.tuxlog.de
 */
@@ -237,7 +237,10 @@ the terms of usage of accuweather.com
 	   	    fixed bug in output of current conditions, added option to 
 		    show a link to the accuweather forecast, added dansk 
 		    translation
-
+2008-09-17 v1.8	    added css class wpf-icon to make it easier formating 
+	   	    the weather icons, added autodetection for icon filetype,	
+		    gif, png and jpg are supported, corrected some
+		    translations
 
  
 

@@ -116,7 +116,7 @@ function show($wpfcid,$w,$args,$wpfvars)
     $out .="<table class=\"wp-forecast-curr\">\n";
     
     // show date / time   
-    
+    //echo $w['gmtdiff']."###".$w['gmtdiffdls'];
     // if current time should be used calc current local time
     if ($currtime=="1") {
       
@@ -147,7 +147,8 @@ function show($wpfcid,$w,$args,$wpfvars)
     
     // show icon
     if (substr($dispconfig,0,1) == "1") {
-      $out .= "<tr><td><img src='".$plugin_path."/icons/".$w["weathericon"].".gif' alt='".__($w["weathericon"],"wp-forecast_".$wpf_language)."' /></td>\n";
+      $iconfile=find_icon($w["weathericon"]);
+      $out .= "<tr><td><img class='wp-forecast-curr' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["weathericon"],"wp-forecast_".$wpf_language)."' /></td>\n";
     } else {
       $out .= "<tr><td></td>\n";
     }
@@ -242,7 +243,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       
       // show icon
       if (substr($dispconfig,10,1) == "1") {
-	$out1 .= "<img src='".$plugin_path."/icons/".$w["fc_dt_icon_".$i].".gif' width='48' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	 $iconfile=find_icon($w["fc_dt_icon_".$i]);
+	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }
@@ -286,7 +288,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       $out1 .="<table class=\"wp-forecast-fc\" cellpadding='3' cellspacing='2'>\n";
       $out1 .= "<tr><td>".__('night',"wp-forecast_".$wpf_language)."<br />";
       if (substr($dispconfig,14,1) == "1") { 
-	$out1 .= "<img src='".$plugin_path."/icons/".$w["fc_nt_icon_".$i].".gif' width='48' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	 $iconfile=find_icon($w["fc_nt_icon_".$i]);
+	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }

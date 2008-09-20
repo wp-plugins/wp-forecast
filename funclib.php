@@ -269,5 +269,32 @@ function get_widget_id($number)
     return str_pad($number, 6, "0", STR_PAD_LEFT);
 }
 
+//
+// function tries to determine the icon path for icon number ino
+//
+function find_icon($ino) 
+{
+  $path = ABSPATH . "wp-content/plugins/wp-forecast/icons/".$ino;
+  $ext=".gif";
+  
+  if ( file_exists($path.".gif") )
+    $ext= ".gif";
+  else if ( file_exists($path.".png") )
+    $ext= ".png";
+  else  if ( file_exists($path.".jpg") )
+    $ext= ".jpg";
+  else if ( file_exists($path.".GIF") )
+    $ext= ".GIF";
+  else if ( file_exists($path.".PNG") )
+    $ext= ".PNG";
+  else  if ( file_exists($path.".JPG") )
+    $ext= ".JPG";
+  else  if ( file_exists($path.".jpeg") )
+    $ext= ".jpeg"; 
+  else  if ( file_exists($path.".JPEG") )
+    $ext= ".JPEG";
+  return $ino . $ext;
+}
+
 }
 ?>
