@@ -35,7 +35,7 @@ div.wp-forecast-curr-details {
 /* style for current weather icon */
 img.wp-forecast-curr {
                   border: 0;
-                  width: 48;
+                  width: 48px;
                   padding: 0px;
 }
 
@@ -88,7 +88,7 @@ div.wp-forecast-fc-details {
 /* style for forecast weather icon */
 img.wp-forecast-fc-details {
                   border: 0;
-		  width: 48;
+		  width: 48px;
                   padding: 0px;
 }
 
