@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006,2007  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006,2007,2008  Hans Matzen (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -46,19 +46,27 @@ function fetchURL($url)
     $path = $url_parsed["path"];
     if ($url_parsed["query"] != "") $path .= "?" . $url_parsed["query"];
     $out = "GET $path HTTP/1.0\r\nHost: $host\r\n\r\n";
-    $fp = fsockopen($host, $port, $errno, $errstr, $timeout);
-    // set timeout for reading 
-    stream_set_timeout($fp, $timeout);
+    // open connection
+    $fp = @fsockopen($host, $port, $errno, $errstr, $timeout);
+   
     $in = "";
     if ($fp) {
+      // set timeout for reading 
+      stream_set_timeout($fp, $timeout);
+      // send request
       fwrite($fp, $out);
       $body = false;
+      // read answer
       while (!feof($fp)) {
 	$s = fgets($fp, 1024);
 	if ($body) $in .= $s;
         if ($s == "\r\n") $body = true;
       }
+      // close connection
       fclose($fp);
+    } else {
+      // error handling
+      echo '<!-- Connection-Error, Error-No.: ' . $errno . ' >> ' . $errstr . "-->\n";
     }  
 
     if ($wpf_debug > 0)
