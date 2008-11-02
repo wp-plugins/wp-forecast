@@ -76,9 +76,11 @@ function show($wpfcid,$w,$args,$wpfvars)
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
 
   // get translations
-  if(function_exists('load_textdomain')) 
-     load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
-
+  if(function_exists('load_textdomain')) {
+    global $l10n;
+    if (!isset($l10n["wp-forecast_".$wpf_language])) 
+      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+  }
 
   // current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
   if ( strpos(substr($dispconfig,0,9),"1") >= 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
@@ -147,6 +149,8 @@ function show($wpfcid,$w,$args,$wpfvars)
     
     // show icon
     if (substr($dispconfig,0,1) == "1") {
+      // debug keelung
+      //$out .= "<b>".$w["weathericon"]."</b>";
       $iconfile=find_icon($w["weathericon"]);
       $out .= "<tr><td><img class='wp-forecast-curr' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["weathericon"],"wp-forecast_".$wpf_language)."' /></td>\n";
     } else {
@@ -243,8 +247,10 @@ function show($wpfcid,$w,$args,$wpfvars)
       
       // show icon
       if (substr($dispconfig,10,1) == "1") {
-	 $iconfile=find_icon($w["fc_dt_icon_".$i]);
-	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	// debug keelung
+	//$out1 .= "<b>".$w["fc_dt_icon_".$i]."</b>#".$wpf_language;
+	$iconfile=find_icon($w["fc_dt_icon_".$i]);
+	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }
@@ -288,8 +294,10 @@ function show($wpfcid,$w,$args,$wpfvars)
       $out1 .="<table class=\"wp-forecast-fc\" cellpadding='3' cellspacing='2'>\n";
       $out1 .= "<tr><td>".__('night',"wp-forecast_".$wpf_language)."<br />";
       if (substr($dispconfig,14,1) == "1") { 
-	 $iconfile=find_icon($w["fc_nt_icon_".$i]);
-	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	// debug keelung
+	//$out1 .= "<b>".$w["fc_nt_icon_".$i]."</b>#";
+	$iconfile=find_icon($w["fc_nt_icon_".$i]);
+	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }
@@ -335,6 +343,10 @@ function show($wpfcid,$w,$args,$wpfvars)
   
   echo "<div class=\"wp-forecast\">" . $out . $out1 . "</div><br />";;
   
+  // debug keelung
+  //global $l10n;
+  //print_r($l10n["wp-forecast_".$wpf_language]);
+
   if ( $show_from_widget == 1 )
     echo $after_widget;
   
