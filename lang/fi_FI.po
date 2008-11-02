@@ -1,0 +1,504 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Forecast 1.9 Finnish Translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-20 19:01+0200\n"
+"PO-Revision-Date: 2008-10-11 18:11+0200\n"
+"Last-Translator: Jaakko Kangosjärvi <jaakko@kangosjarvi.net>\n"
+"Language-Team: Jaska <jaakko@kangosjarvi.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: C:\\D\\Blogit\\plugins\\wp-forecast\\1.9\\wp-forecast\\\n"
+"X-Poedit-SearchPath-0: setup.php\n"
+"X-Poedit-SearchPath-1: wp-forecast-admin.php\n"
+"X-Poedit-SearchPath-2: wp-forecast.php\n"
+"X-Poedit-SearchPath-3: xgettextdummy.php\n"
+
+#: setup.php:130
+msgid "The Weather"
+msgstr "S&auml;&auml;"
+
+#: wp-forecast-admin.php:107
+msgid "Title:"
+msgstr "Otsikko:"
+
+#: wp-forecast-admin.php:110
+msgid "widget_hint"
+msgstr "vimpain_vihje"
+
+#: wp-forecast-admin.php:251
+#: wp-forecast.php:255
+msgid "How many wp-forecast widgets would you like?"
+msgstr "WP-Forecast-vimpainten m&auml;&auml;r&auml;"
+
+#: wp-forecast-admin.php:260
+#: wp-forecast-admin.php:285
+#: wp-forecast.php:264
+msgid "Save"
+msgstr "Tallenna"
+
+#: wp-forecast-admin.php:263
+msgid "Available widgets"
+msgstr "WP-Forecast Vimpaimet"
+
+#: wp-forecast-admin.php:278
+msgid "Select widget"
+msgstr "Valitse vimpain"
+
+#: wp-forecast-admin.php:283
+msgid "Timeout for accuweather connections (secs.)?"
+msgstr "Accuweather-yhteyden aikakatkaisu (sekuntia)"
+
+#: wp-forecast-admin.php:444
+msgid "Settings successfully updated"
+msgstr "Asetukset p&auml;ivitetty"
+
+#: wp-forecast-admin.php:446
+msgid "You have to change a field to update settings."
+msgstr "Et tehnyt muutoksia. Asetuksia ei p&auml;ivitetty."
+
+#: wp-forecast-admin.php:467
+msgid "WP-Forecast Setup"
+msgstr "WP-Forecast Asetukset"
+
+#: wp-forecast-admin.php:470
+msgid "Location"
+msgstr "Paikkakunta"
+
+#: wp-forecast-admin.php:473
+msgid "Press Update options to save new location."
+msgstr "Tallenna uusi paikkakunta klikkaamalla P&auml;ivit&auml; asetukset"
+
+#: wp-forecast-admin.php:476
+msgid "Locationname"
+msgstr "Paikannimi"
+
+#: wp-forecast-admin.php:478
+msgid "Refresh cache after"
+msgstr "P&auml;ivit&auml; v&auml;limuisti"
+
+#: wp-forecast-admin.php:480
+msgid "secs."
+msgstr "sekunnin v&auml;lein"
+
+#: wp-forecast-admin.php:481
+msgid "Use metric units"
+msgstr "K&auml;yt&auml; metrisi&auml; yksikk&ouml;j&auml;"
+
+#: wp-forecast-admin.php:484
+msgid "Use current time"
+msgstr "K&auml;yt&auml; tietokoneen aikaa"
+
+#: wp-forecast-admin.php:487
+msgid "Windspeed-Unit"
+msgstr "Tuulennopeuden yksikk&ouml;"
+
+#: wp-forecast-admin.php:488
+msgid "Meter/Second (m/s)"
+msgstr "metri&auml; sekunnissa (m/s)"
+
+#: wp-forecast-admin.php:489
+msgid "Kilometer/Hour (km/h)"
+msgstr "kilometri&auml; tunnissa (km/h)"
+
+#: wp-forecast-admin.php:490
+msgid "Miles/Hour (mph)"
+msgstr "mailia tunnissa (mph)"
+
+#: wp-forecast-admin.php:491
+msgid "Knots (kts)"
+msgstr "solmua (kts)"
+
+#: wp-forecast-admin.php:496
+msgid "Language"
+msgstr "Kieli"
+
+#: wp-forecast-admin.php:509
+#: wp-forecast-show.php:234
+msgid "Forecast"
+msgstr "Ennuste"
+
+#: wp-forecast-admin.php:513
+#: wp-forecast-admin.php:514
+#: wp-forecast-admin.php:515
+#: wp-forecast-admin.php:516
+#: wp-forecast-admin.php:517
+#: wp-forecast-admin.php:518
+#: wp-forecast-admin.php:519
+#: wp-forecast-admin.php:520
+#: wp-forecast-admin.php:521
+msgid "Day"
+msgstr "P&auml;iv&auml;"
+
+#: wp-forecast-admin.php:523
+msgid "Daytime"
+msgstr "P&auml;iv&auml;ll&auml;"
+
+#: wp-forecast-admin.php:543
+msgid "Nighttime"
+msgstr "Y&ouml;ll&auml;"
+
+#: wp-forecast-admin.php:567
+msgid "Display Configuration"
+msgstr "N&auml;yt&auml; vimpaimessa"
+
+#: wp-forecast-admin.php:571
+msgid "Current Conditions"
+msgstr "S&auml;&auml;tila nyt"
+
+#: wp-forecast-admin.php:572
+msgid "Forecast Day"
+msgstr "Ennuste p&auml;iv&auml;ksi"
+
+#: wp-forecast-admin.php:573
+msgid "Forecast Night"
+msgstr "Ennuste y&ouml;ksi"
+
+#: wp-forecast-admin.php:576
+msgid "Icon"
+msgstr "Kuva"
+
+#: wp-forecast-admin.php:585
+msgid "Date"
+msgstr "P&auml;iv&auml;ys"
+
+#: wp-forecast-admin.php:592
+msgid "Time"
+msgstr "Kellonaika"
+
+#: wp-forecast-admin.php:599
+msgid "Short Description"
+msgstr "Lyhyt kuvaus"
+
+#: wp-forecast-admin.php:608
+msgid "Temperature"
+msgstr "L&auml;mp&ouml;tila"
+
+#: wp-forecast-admin.php:617
+msgid "Realfeel"
+msgstr "Tuntuma"
+
+#: wp-forecast-admin.php:624
+msgid "Pressure"
+msgstr "Ilmanpaine"
+
+#: wp-forecast-admin.php:631
+msgid "Humidity"
+msgstr "Kosteus"
+
+#: wp-forecast-admin.php:638
+msgid "Wind"
+msgstr "Tuuli"
+
+#: wp-forecast-admin.php:647
+#: wp-forecast-show.php:203
+#: wp-forecast-show.php:274
+#: wp-forecast-show.php:318
+msgid "Windgusts"
+msgstr "Puuskissa"
+
+#: wp-forecast-admin.php:656
+msgid "Sunrise"
+msgstr "Aurinko nousee"
+
+#: wp-forecast-admin.php:663
+msgid "Sunset"
+msgstr "Aurinko laskee"
+
+#: wp-forecast-admin.php:670
+msgid "Copyright"
+msgstr "Copyright"
+
+#: wp-forecast-admin.php:677
+msgid "Link to Accuweather"
+msgstr "Accuweather-linkki"
+
+#: wp-forecast-admin.php:689
+msgid "Update options"
+msgstr "P&auml;ivit&auml; asetukset"
+
+#: wp-forecast-admin.php:695
+#: wp-forecast-admin.php:709
+msgid "Search location"
+msgstr "Hae paikkakunta"
+
+#: wp-forecast-admin.php:698
+msgid "Searchterm"
+msgstr "Hakusana"
+
+#: wp-forecast-admin.php:701
+msgid "No locations found."
+msgstr "Paikkakuntaa ei l&ouml;ydy."
+
+#: wp-forecast-admin.php:703
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr "Korvaa &auml;, &ouml; ja &uuml; hakusanassa merkeill&auml; a, o ja u."
+
+#: wp-forecast-admin.php:712
+msgid "Search result"
+msgstr "Hakutulos"
+
+#: wp-forecast-admin.php:718
+msgid "Please select your city and press set location."
+msgstr "Valitse paikkakuntasi ja klikkaa Aseta paikkakunta."
+
+#: wp-forecast-admin.php:722
+msgid "Set location"
+msgstr "Aseta paikkakunta"
+
+#: wp-forecast.php:296
+#, php-format
+msgid "wp-forecast %s"
+msgstr "wp-forecast %s"
+
+#: wp-forecast-show.php:92
+msgid "Sorry, no valid weather data available."
+msgstr "S&auml;&auml;tietoja ei ole saatavilla."
+
+#: wp-forecast-show.php:93
+msgid "Please try again later."
+msgstr "Ole hyv&auml; ja yrit&auml; uudelleen."
+
+#: wp-forecast-show.php:138
+msgid "time"
+msgstr "Aika"
+
+#: wp-forecast-show.php:164
+msgid "tmp"
+msgstr "L&auml;mp&ouml;tila"
+
+#: wp-forecast-show.php:176
+msgid "flik"
+msgstr "Tuntuma"
+
+#: wp-forecast-show.php:179
+msgid "barr"
+msgstr "Ilmanpaine"
+
+#: wp-forecast-show.php:187
+msgid "hmid"
+msgstr "Kosteus"
+
+#: wp-forecast-show.php:197
+#: wp-forecast-show.php:268
+#: wp-forecast-show.php:312
+msgid "winds"
+msgstr "Tuuli"
+
+#: wp-forecast-show.php:209
+msgid "sunrise"
+msgstr "Aurinko nousee"
+
+#: wp-forecast-show.php:213
+msgid "sunset"
+msgstr "Aurinko laskee"
+
+#: wp-forecast-show.php:241
+msgid "day"
+msgstr "P&auml;iv&auml;ll&auml;"
+
+#: wp-forecast-show.php:287
+msgid "night"
+msgstr "Y&ouml;ll&auml;"
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr "Paikkakunta"
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "Selke&auml;&auml;"
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "Melko selke&auml;&auml;"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "Puolipilvist&auml;"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "Vaihtelevaa pilvisyytt&auml;"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "Utua"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "Melko pilvist&auml;"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "Pilvist&auml;"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "Synkk&auml;&auml;"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "Sumua"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "Sadekuuroja"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "Melko pilvist&auml;, sadekuuroja"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "Puolipilvist&auml;, sadekuuroja"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "Ukkosta"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "Melko pilvist&auml;, ukkoskuuroja"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "Puolipilvist&auml;, ukkoskuuroja"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "Sadetta"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "Lumikuuroja"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "Melko pilvist&auml;, lumikuuroja"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "Puolipilvist&auml;, lumikuuroja"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "Lumisadetta"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "Melko pilvist&auml;, lumisadetta"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "Rakeita"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "R&auml;nt&auml;&auml;"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "J&auml;&auml;t&auml;v&auml;&auml; tihkua"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "Vesi- ja lumisadetta"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "Kuumaa"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "Kylm&auml;&auml;"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "Tuulista"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "Selke&auml;&auml;"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "Melko selke&auml;&auml;"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "Puolipilvist&auml;"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "Vaihtelevaa pilvisyytt&auml;"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "Utua"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "Melko pilvist&auml;"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "Puolipilvist&auml;, sadekuuroja"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "Melko pilvist&auml;, sadekuuroja"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "Puolipilvist&auml;, ukkoskuuroja"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "Melko pilvist&auml;, ukkoskuuroja"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "Melko pilvist&auml;, lumikuuroja"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "Melko pilvist&auml;, lumisadetta"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr "Maanantai"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "Tiistai"
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "Keskiviikko"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "Torstai"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "Perjantai"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "Lauantai"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "Sunnuntai"
+
