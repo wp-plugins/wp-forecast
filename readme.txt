@@ -245,7 +245,7 @@ the terms of usage of accuweather.com
 	   	    problems and output the error as html comment
  
 
-2008-10-xx v2.0	    added finish translation (thanks to Jaska), fixed a problem
+2008-11-02 v2.0	    added finish translation (thanks to Jaska), fixed a problem
 	   	    with overloaded textdomains (translations), since wordpress
 		    does not a sanity check if a loaded domain is reloaded, 
 		    we have to do it
