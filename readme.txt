@@ -2,7 +2,7 @@
 Tags: weather,forecast,widget
 Requires at least: 2.2
 Tested up to: 2.6
-Stable tag: 1.9
+Stable tag: 2.1
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
 
@@ -12,12 +12,12 @@ Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description:  wp-forecast is a highly customizable plugin for wordpress, 
 	      showing weather-data from accuweather.com.
-Version: 1.9
+Version: 2.1
 Author: Hans Matzen <webmaster at tuxlog dot de>
 Author URI: http://www.tuxlog.de
 */
 
-/*  Copyright 2006,2007  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2008  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -51,7 +51,9 @@ the terms of usage of accuweather.com
      Detti Giulio		translation to italian
      Eilif Nordseth		translation to norwegian
      Michael S.R. Petersen	translation to dansk
-
+     Jaakko Kangosjärvi		translation to finish
+     Lukasz "linshi" Linhard	translation to polish
+     Castmir	     		translation to spanish
  
    All the others giving feedback about missing features and bugs
    Thank you very much for your contribution to wp-forecast.
@@ -243,5 +245,9 @@ the terms of usage of accuweather.com
 		    translations
 2008-10-04 v1.9	    surpress fsockopen warning messages in case of connection 
 	   	    problems and output the error as html comment
- 
-
+2008-11-02 v2.0	    added finish translation (thanks to Jaska), fixed a problem
+	   	    with overloaded textdomains (translations), since wordpress
+		    does not a sanity check if a loaded domain is reloaded, 
+		    we have to do it
+2008-11-09 v2.1	    added language support for spanish (thanks to Castmir) and 
+	   	    polish (thanks to Lukasz), fixed minor css bug 
