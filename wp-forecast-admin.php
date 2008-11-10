@@ -500,9 +500,11 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	    <option value="nl_NL" <?php if ($wpf_language=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fr_FR" <?php if ($wpf_language=="fr_FR") echo "selected=\"selected\""?>>french</option>
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
-	    <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
+	    <option value="pl_PL" <?php if ($wpf_language=="pl_PL") echo "selected=\"selected\""?>>polish</option>
+            <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
             <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
-	    <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
+	    <option value="es_ES" <?php if ($wpf_language=="es_ES") echo "selected=\"selected\""?>>spanish</option>
+            <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
 	    
          </select></p>
           	
