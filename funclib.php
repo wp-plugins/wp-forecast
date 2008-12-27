@@ -304,5 +304,14 @@ function find_icon($ino)
   return $ino . $ext;
 }
 
+function translate_winddir($wdir,$tdom)
+{
+  // translate winddir char by char
+  $winddir="";
+  for ($i=0;$i<strlen($wdir);$i++)
+    $winddir=$winddir . __($wdir{$i},$tdom);
+  return $winddir;
+}
+
 }
 ?>

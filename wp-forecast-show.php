@@ -45,6 +45,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   
   $wpfcid = attribute_escape($_GET['wpfcid']);
   $language_override = attribute_escape($_GET['language_override']);
+  $header = attribute_escape($_GET['header']);
   $args=array();
   
   $wpf_vars=get_wpf_opts($wpfcid);
@@ -53,8 +54,17 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   }
   $weather=str2arr(get_option("wp-forecast-cache".$wpfcid));
   
+
+  if ($header) {
+    echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'."\n";
+    echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">'."\n";
+    echo "<head><title>wp-forecast iframe</title>\n";
+    echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'."\n";
+  }
   wp_forecast_css_nowp($wpfcid);
+  echo "</head>\n<body>\n";
   show($wpfcid,$weather,$args,$wpf_vars);
+  echo "</body></html>\n";
  }
 
 function show($wpfcid,$w,$args,$wpfvars)
@@ -76,9 +86,11 @@ function show($wpfcid,$w,$args,$wpfvars)
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
 
   // get translations
-  if(function_exists('load_textdomain')) 
-     load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
-
+  if(function_exists('load_textdomain')) {
+    global $l10n;
+    if (!isset($l10n["wp-forecast_".$wpf_language])) 
+      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+  }
 
   // current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
   if ( strpos(substr($dispconfig,0,9),"1") >= 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
@@ -147,6 +159,8 @@ function show($wpfcid,$w,$args,$wpfvars)
     
     // show icon
     if (substr($dispconfig,0,1) == "1") {
+      // debug keelung
+      //$out .= "<b>".$w["weathericon"]."</b>";
       $iconfile=find_icon($w["weathericon"]);
       $out .= "<tr><td><img class='wp-forecast-curr' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["weathericon"],"wp-forecast_".$wpf_language)."' /></td>\n";
     } else {
@@ -190,12 +204,8 @@ function show($wpfcid,$w,$args,$wpfvars)
     // show wind
     if (substr($dispconfig,7,1) == "1") {
       $wstr=windstr($metric,$w["windspeed"],$windunit);
-      $winddir=$w["winddirection"];
-      // for german language replace East with Ost or E with O
-      if ($wpf_language=="de_DE")
-	$winddir=str_replace("E","O",$winddir);
-      
-      $out .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+
+      $out .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language)."<br />\n";
     }
     
     // show windgusts
@@ -215,7 +225,7 @@ function show($wpfcid,$w,$args,$wpfvars)
     
     // show copyright
     if (substr($dispconfig,21,1) == "1")
-      $out .= "<div class=\"wp-forecast-copyright\"><a href=\"http://www.accuweather.com\">&copy; 2007 AccuWeather, Inc.</a></div>";
+      $out .= "<div class=\"wp-forecast-copyright\"><a href=\"http://www.accuweather.com\">&copy; 2008 AccuWeather, Inc.</a></div>";
     
     $out .="</div></div>\n";
   }
@@ -243,8 +253,10 @@ function show($wpfcid,$w,$args,$wpfvars)
       
       // show icon
       if (substr($dispconfig,10,1) == "1") {
-	 $iconfile=find_icon($w["fc_dt_icon_".$i]);
-	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	// debug keelung
+	//$out1 .= "<b>".$w["fc_dt_icon_".$i]."</b>#".$wpf_language;
+	$iconfile=find_icon($w["fc_dt_icon_".$i]);
+	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }
@@ -262,12 +274,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       // show wind
       if (substr($dispconfig,13,1) == "1") {
 	$wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
-	$winddir=$w["fc_dt_winddir_".$i];
-	// for german language replace East with Ost or E with O
-	if ($wpf_language=="de_DE")
-	  $winddir=str_replace("E","O",$winddir);
 	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
       }
       
       // show windgusts
@@ -288,8 +296,10 @@ function show($wpfcid,$w,$args,$wpfvars)
       $out1 .="<table class=\"wp-forecast-fc\" cellpadding='3' cellspacing='2'>\n";
       $out1 .= "<tr><td>".__('night',"wp-forecast_".$wpf_language)."<br />";
       if (substr($dispconfig,14,1) == "1") { 
-	 $iconfile=find_icon($w["fc_nt_icon_".$i]);
-	 $out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
+	// debug keelung
+	//$out1 .= "<b>".$w["fc_nt_icon_".$i]."</b>#";
+	$iconfile=find_icon($w["fc_nt_icon_".$i]);
+	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
       } else {
 	$out1 .= "&nbsp;";
       }
@@ -308,11 +318,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       if (substr($dispconfig,17,1) == "1") {
 	$wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
 	$winddir=$w["fc_nt_winddir_".$i];
-	// for german language replace East with Ost or E with O
-	if ($wpf_language=="de_DE")
-	  $winddir=str_replace("E","O",$winddir);
 	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
       }
       
       // show windgusts

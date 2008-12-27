@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 1.9
+Version: 2.2
 Author: Hans Matzen <webmaster at tuxlog.de>
 Author URI: http://www.tuxlog.de
 */
@@ -198,6 +198,96 @@ function wp_forecast_set($wset, $numpercol=1, $language_override=null)
   // output table footer
   echo "</tr></table>";
 }
+
+//
+// returns the widget data as an array one line per item
+//
+function wp_forecast_data($wpfcid="A", $language_override=null)
+{
+  global $wpf_debug;
+
+  if ($wpf_debug > 0)
+    pdebug("Start of function wp_forecast_data ()");
+  
+  $wpf_vars=get_wpf_opts($wpfcid);
+  if (!empty($language_override)) {
+    $wpf_vars['wpf_language']=$language_override;
+  } 
+
+  extract($wpf_vars);
+  $w=str2arr(get_option("wp-forecast-cache".$wpfcid));
+
+  $weather_arr=array();
+
+  // --------------------------------------------------------------
+  // calc values for current conditions
+
+  $weather_arr['acculink']= 'http://www.accuweather.com/world-index-forecast.asp?locCode=' . get_option('wp-forecast-location'.$wpfcid) . '&amp;metric=' . get_option("wp-forecast-metric".$wpfcid);
+  $weather_arr['location']=get_option("wp-forecast-locname".$wpfcid);
+  $weather_arr['locname']= $w["city"]." ".$w["state"];
+  
+  
+  $lt = time() - date("Z"); // this is the GMT
+  $ct  = $lt + (3600 * ($w['gmtdiff'])); // local time
+  if ( $w['gmtdiffdls'] == 1)
+    $ct += 3600; // time with daylightsavings 
+  $weather_arr['blogdate']=date_i18n($fc_date_format, $ct);
+  $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
+  
+  $cts = $w['fc_obsdate_1']." ".$w['time'];
+  $ct = strtotime($cts);
+  $weather_arr['accudate']=date_i18n($fc_date_format, $ct);
+  $weather_arr['accutime']=date_i18n($fc_time_format, $ct);
+  
+  
+  $iconfile=find_icon($w["weathericon"]);
+  $weather_arr['icon']="icons/".$iconfile;
+  
+  $weather_arr['shorttext']= __($w["weathericon"],"wp-forecast_".$wpf_language);
+  
+  $weather_arr['temperature']=$w["temperature"]. "&deg;".$w['un_temp'];
+  $weather_arr['realfeel']=$w["realfeel"]."&deg;".$w['un_temp'];
+  $weather_arr['pressure']=$w["pressure"]." ".$w["un_pres"];
+  $weather_arr['humidity']=round($w["humidity"],0);
+  $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
+  $weather_arr['winddir']=$w["winddirection"];
+  $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
+  $sunarr = explode(" ",$w["sun"]);
+  $weather_arr['sunrise']=$sunarr[0];
+  $weather_arr['sunset']=$sunarr[1];
+  $weather_arr['copyright']="Copyright 2008 AccuWeather, Inc.";
+  
+
+  // calc values for forecast
+  for ($i = 1; $i < 10; $i++) {
+    // daytime forecast
+    $weather_arr['fc_obsdate_'.$i]= date_i18n($fc_date_format, strtotime($w['fc_obsdate_'.$i]));
+    $iconfile=find_icon($w["fc_dt_icon_".$i]);
+    $weather_arr["fc_dt_icon_".$i]="icons/".$iconfile;
+    $weather_arr["fc_dt_htemp_".$i]= $w["fc_dt_htemp_".$i]."&deg;".$w['un_temp'];
+    $wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
+    $weather_arr["fc_dt_windspeed_".$i]= $wstr;
+    $weather_arr["fc_dt_winddir_".$i]=translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language);
+    $weather_arr["fc_dt_wgusts_".$i] = windstr($metric,$w["fc_dt_wgusts_".$i],$windunit);
+  
+    // nighttime forecast
+    $iconfile=find_icon($w["fc_nt_icon_".$i]);
+    $weather_arr["fc_nt_icon_".$i]="icons/".$iconfile;
+    $weather_arr["fc_nt_desc_".$i]= __($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language);
+    $weather_arr["fc_nt_ltemp_".$i]= $w["fc_nt_ltemp_".$i]."&deg;".$w['un_temp'];
+    $wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
+    $weather_arr["fc_nt_windspeed_".$i]= $wstr;
+    $weather_arr["fc_nt_winddir_".$i]=translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language);
+    $weather_arr["fc_nt_wgusts_".$i] = windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
+
+  }
+
+  if ($wpf_debug > 0)
+    pdebug("End of function wp_forecast_data ()");
+  
+  return $weather_arr;
+}
+
 
 //
 // set the choosen number of widgets, set at the widget page

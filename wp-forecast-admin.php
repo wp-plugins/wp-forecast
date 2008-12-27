@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006,2007  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006,2007,2008  Hans Matzen  (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -203,6 +203,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 
   $count = get_option('wp-forecast-count');
   $wpf_timeout = get_option("wp-forecast-timeout");
+  $wpf_delopt = get_option("wp-forecast-delopt");
 
   // get locale 
   $locale = get_locale();
@@ -241,6 +242,15 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
       if ( $wpf_timeout != $timeout ) {
 	$wpf_timeout = $timeout;
 	update_option('wp-forecast-timeout', $wpf_timeout);
+      }
+    } 
+  
+    // if this is a post call, delopt 
+    if ( isset($_POST['wpf-delopt-submit']) ) {
+      $delopt = (int) ($_POST['wpf-delopt'] == "on");
+      if ( $wpf_delopt != $delopt ) {
+	$wpf_delopt = $delopt;
+	update_option('wp-forecast-delopt', $wpf_delopt);
       }
     } 
 
@@ -282,11 +292,19 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     // (timeout for accuweather connection)
     $out .= "<tr><td>".__('Timeout for accuweather connections (secs.)?',"wp-forecast_".$locale)."</td>";
     $out .= "<td><input id='wpf-timeout' name='wpf-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
-    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
+    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>\n"; 
 
+ 
+    // print out option deletion switch
+    $out .= "<tr><td>".__('Delete options during plugin deactivation?',"wp-forecast_".$locale)."</td>";
+    $out .= "<td><input id='wpf-delopt' name='wpf-delopt' type='checkbox' ";
+    if ($wpf_delopt)
+      $out .= 'checked="checked"';
+    $out .= " />";
+    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
+    
     echo $out;
   }
-
  
   // if this is a post call, select widget
   if (isset($_POST['set_widget']) and  $widgetcall==0)
@@ -462,7 +480,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 ?>
 
 	 <?php if ($widgetcall == 0): ?><div class="wrap">
-	    <form method="post" action=''><?php endif; ?>
+	    <form method="post" name='woptions' action=''><?php endif; ?>
 	 <input name='wid' type='hidden' value='<?php echo $wpfcid; ?>'/>   
 	 <h2><?php echo __('WP-Forecast Setup',"wp-forecast_".$locale)." (Widget ".$wpfcid.") ";?></h2>
 	  <?php if ($widgetcall == 0): ?><fieldset id="set1"><?php endif; ?>
@@ -498,18 +516,27 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	    <option value="de_DE" <?php if ($wpf_language=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
             <option value="da_DK" <?php if ($wpf_language=="da_DK") echo "selected=\"selected\""?>>dansk</option>
 	    <option value="nl_NL" <?php if ($wpf_language=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
+            <option value="fi_FI" <?php if ($wpf_language=="fi_FI") echo "selected=\"selected\""?>>finnish</option>
             <option value="fr_FR" <?php if ($wpf_language=="fr_FR") echo "selected=\"selected\""?>>french</option>
+            <option value="hu_HU" <?php if ($wpf_language=="hu_HU") echo "selected=\"selected\""?>>hungarian</option>
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
-	    <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
+	    <option value="pl_PL" <?php if ($wpf_language=="pl_PL") echo "selected=\"selected\""?>>polish</option>
+            <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
             <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
-	    <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
+	    <option value="es_ES" <?php if ($wpf_language=="es_ES") echo "selected=\"selected\""?>>spanish</option>
+            <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
 	    
          </select></p>
           	
 	 <b><?php echo __('Forecast',"wp-forecast_".$locale)?></b>
+         <!-- add javascript for checking/unchecking all boxes -->
+         <?php 
+	     include("wp-forecast-js.php"); 
+         ?>					      
          <table border="1">
          <tr>
              <td>&nbsp;</td>
+             <td><?php echo __('All',"wp-forecast_".$locale)?></td>
              <td><?php echo __('Day',"wp-forecast_".$locale)?> 1</td>
              <td><?php echo __('Day',"wp-forecast_".$locale)?> 2</td>
              <td><?php echo __('Day',"wp-forecast_".$locale)?> 3</td>
@@ -521,6 +548,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
              <td><?php echo __('Day',"wp-forecast_".$locale)?> 9</td>
          </tr>
          <tr><td><?php echo __('Daytime',"wp-forecast_".$locale)?></td>
+             <td><input type="checkbox" name="alldays" onClick="this.value=check('day')" /></td>
              <td><input type="checkbox" name="day1" value="1" 
 		   <?php if (substr($daytime,0,1)=="1") echo "checked=\"checked\""?> /></td>
              <td><input type="checkbox" name="day2" value="1" 
@@ -541,6 +569,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 		   <?php if (substr($daytime,8,1)=="1") echo "checked=\"checked\""?> /></td>
          </tr>
          <tr><td><?php echo __('Nighttime',"wp-forecast_".$locale)?></td>
+             <td><input type="checkbox" name="allnight" onClick="this.value=check('night')" /></td>
              <td><input type="checkbox" name="night1" value="1" 
 		 <?php if (substr($nighttime,0,1)=="1") echo "checked=\"checked\""?> /></td>
              <td><input type="checkbox" name="night2" value="1" 
