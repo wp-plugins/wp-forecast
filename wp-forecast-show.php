@@ -45,6 +45,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   
   $wpfcid = attribute_escape($_GET['wpfcid']);
   $language_override = attribute_escape($_GET['language_override']);
+  $header = attribute_escape($_GET['header']);
   $args=array();
   
   $wpf_vars=get_wpf_opts($wpfcid);
@@ -53,8 +54,17 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   }
   $weather=str2arr(get_option("wp-forecast-cache".$wpfcid));
   
+
+  if ($header) {
+    echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'."\n";
+    echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">'."\n";
+    echo "<head><title>wp-forecast iframe</title>\n";
+    echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'."\n";
+  }
   wp_forecast_css_nowp($wpfcid);
+  echo "</head>\n<body>\n";
   show($wpfcid,$weather,$args,$wpf_vars);
+  echo "</body></html>\n";
  }
 
 function show($wpfcid,$w,$args,$wpfvars)
@@ -194,12 +204,8 @@ function show($wpfcid,$w,$args,$wpfvars)
     // show wind
     if (substr($dispconfig,7,1) == "1") {
       $wstr=windstr($metric,$w["windspeed"],$windunit);
-      $winddir=$w["winddirection"];
-      // for german language replace East with Ost or E with O
-      if ($wpf_language=="de_DE")
-	$winddir=str_replace("E","O",$winddir);
-      
-      $out .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+
+      $out .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language)."<br />\n";
     }
     
     // show windgusts
@@ -219,7 +225,7 @@ function show($wpfcid,$w,$args,$wpfvars)
     
     // show copyright
     if (substr($dispconfig,21,1) == "1")
-      $out .= "<div class=\"wp-forecast-copyright\"><a href=\"http://www.accuweather.com\">&copy; 2007 AccuWeather, Inc.</a></div>";
+      $out .= "<div class=\"wp-forecast-copyright\"><a href=\"http://www.accuweather.com\">&copy; 2008 AccuWeather, Inc.</a></div>";
     
     $out .="</div></div>\n";
   }
@@ -268,12 +274,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       // show wind
       if (substr($dispconfig,13,1) == "1") {
 	$wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
-	$winddir=$w["fc_dt_winddir_".$i];
-	// for german language replace East with Ost or E with O
-	if ($wpf_language=="de_DE")
-	  $winddir=str_replace("E","O",$winddir);
 	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
       }
       
       // show windgusts
@@ -316,11 +318,8 @@ function show($wpfcid,$w,$args,$wpfvars)
       if (substr($dispconfig,17,1) == "1") {
 	$wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
 	$winddir=$w["fc_nt_winddir_".$i];
-	// for german language replace East with Ost or E with O
-	if ($wpf_language=="de_DE")
-	  $winddir=str_replace("E","O",$winddir);
 	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . $winddir."<br />\n";
+	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
       }
       
       // show windgusts
@@ -343,10 +342,6 @@ function show($wpfcid,$w,$args,$wpfvars)
   
   echo "<div class=\"wp-forecast\">" . $out . $out1 . "</div><br />";;
   
-  // debug keelung
-  //global $l10n;
-  //print_r($l10n["wp-forecast_".$wpf_language]);
-
   if ( $show_from_widget == 1 )
     echo $after_widget;
   

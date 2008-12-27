@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006,2007  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006,2007,2008  Hans Matzen  (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -46,6 +46,16 @@ function wp_forecast_activate()
     add_option("wp-forecast-timeout",$timeout,
 	       "Timeout in seconds for accuweather connections","yes");
   };
+
+  // add switch to control option deletion during plugin deactivation
+  $delopt=get_option("wp-forecast-delopt");
+   
+  if ($delopt == "") {
+    $delopt="0";
+    add_option("wp-forecast-delopt",$delopt,
+	       "Switch to control option deletion","yes");
+  };
+
   for ($i=0;$i<$count;$i++) {
     $wpfcid = get_widget_id( $i );
 
@@ -178,28 +188,33 @@ function wp_forecast_deactivate($wpfcid)
    if ($wpf_debug > 0)
      pdebug("Start of wp_forecast_deactivate ()");
 
-   $count=get_option('wp-forecast-count');
-   
-   for ($i=0;$i<$count;$i++) {
-     $wpfcid = get_widget_id( $i );
+   $delopt=get_option('wp-forecast-delopt');
+
+   // only delete options when sitch is set
+   if ($delopt == 1) {
+     $count=get_option('wp-forecast-count');
      
-     delete_option("wp-forecast-location".$wpfcid);
-     delete_option("wp-forecast-locname".$wpfcid);
-     delete_option("wp-forecast-refresh".$wpfcid); 
-     delete_option("wp-forecast-metric".$wpfcid); 
-     delete_option("wp-forecast-language".$wpfcid);
-     delete_option("wp-forecast-daytime".$wpfcid);
-     delete_option("wp-forecast-nighttime".$wpfcid);
-     delete_option("wp-forecast-dispconfig".$wpfcid);
-     delete_option("wp-forecast-windunit".$wpfcid);
-     delete_option("wp-forecast-cache".$wpfcid);
-     delete_option("wp-forecast-expire".$wpfcid);
-     delete_option("wp-forecast-currtime".$wpfcid); 
-     delete_option("wp-forecast-title".$wpfcid);
+     for ($i=0;$i<$count;$i++) {
+       $wpfcid = get_widget_id( $i );
+       
+       delete_option("wp-forecast-location".$wpfcid);
+       delete_option("wp-forecast-locname".$wpfcid);
+       delete_option("wp-forecast-refresh".$wpfcid); 
+       delete_option("wp-forecast-metric".$wpfcid); 
+       delete_option("wp-forecast-language".$wpfcid);
+       delete_option("wp-forecast-daytime".$wpfcid);
+       delete_option("wp-forecast-nighttime".$wpfcid);
+       delete_option("wp-forecast-dispconfig".$wpfcid);
+       delete_option("wp-forecast-windunit".$wpfcid);
+       delete_option("wp-forecast-cache".$wpfcid);
+       delete_option("wp-forecast-expire".$wpfcid);
+       delete_option("wp-forecast-currtime".$wpfcid); 
+       delete_option("wp-forecast-title".$wpfcid);
+     }
+     delete_option('wp-forecast-timeout');
+     delete_option('wp-forecast-count');
+     delete_option('wp-forecast-delopt');
    }
-   delete_option('wp-forecast-timeout');
-   delete_option('wp-forecast-count');
-   
    if ($wpf_debug > 0)
      pdebug("End of wp_forecast_deactivate ()");
 }

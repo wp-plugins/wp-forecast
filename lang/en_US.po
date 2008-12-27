@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-20 19:01+0200\n"
+"POT-Creation-Date: 2008-12-27 15:14+0100\n"
 "PO-Revision-Date: 2008-01-17 07:52+0100\n"
 "Last-Translator: Hans Matzen <webmaster (at) tuxlog (dot) de>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: setup.php:130
+#: setup.php:140
 msgid "The Weather"
 msgstr "The Weather"
 
@@ -25,265 +25,274 @@ msgstr "Title:"
 msgid "widget_hint"
 msgstr "widget_hint"
 
-#: wp-forecast-admin.php:251 wp-forecast.php:255
+#: wp-forecast-admin.php:261 wp-forecast.php:320
 msgid "How many wp-forecast widgets would you like?"
 msgstr "How many wp-forecast widgets would you like?"
 
-#: wp-forecast-admin.php:260 wp-forecast-admin.php:285 wp-forecast.php:264
+#: wp-forecast-admin.php:270 wp-forecast-admin.php:295
+#: wp-forecast-admin.php:304 wp-forecast.php:329
 msgid "Save"
 msgstr "Save"
 
-#: wp-forecast-admin.php:263
+#: wp-forecast-admin.php:273
 msgid "Available widgets"
 msgstr "Available widgets"
 
-#: wp-forecast-admin.php:278
+#: wp-forecast-admin.php:288
 msgid "Select widget"
 msgstr "Select widget"
 
-#: wp-forecast-admin.php:283
+#: wp-forecast-admin.php:293
 msgid "Timeout for accuweather connections (secs.)?"
 msgstr ""
 
-#: wp-forecast-admin.php:444
+#: wp-forecast-admin.php:299
+msgid "Delete options during plugin deactivation?"
+msgstr ""
+
+#: wp-forecast-admin.php:462
 msgid "Settings successfully updated"
 msgstr "Settings successfully updated"
 
-#: wp-forecast-admin.php:446
+#: wp-forecast-admin.php:464
 msgid "You have to change a field to update settings."
 msgstr "You have to change a field to update settings."
 
-#: wp-forecast-admin.php:467
+#: wp-forecast-admin.php:485
 msgid "WP-Forecast Setup"
 msgstr "WP-Forecast Setup"
 
-#: wp-forecast-admin.php:470
+#: wp-forecast-admin.php:488
 msgid "Location"
 msgstr "Location"
 
-#: wp-forecast-admin.php:473
+#: wp-forecast-admin.php:491
 msgid "Press Update options to save new location."
 msgstr "Press Update options to save new location."
 
-#: wp-forecast-admin.php:476
+#: wp-forecast-admin.php:494
 msgid "Locationname"
 msgstr "Locationname"
 
-#: wp-forecast-admin.php:478
+#: wp-forecast-admin.php:496
 msgid "Refresh cache after"
 msgstr "Refresh cache after"
 
-#: wp-forecast-admin.php:480
+#: wp-forecast-admin.php:498
 msgid "secs."
 msgstr "secs."
 
-#: wp-forecast-admin.php:481
+#: wp-forecast-admin.php:499
 msgid "Use metric units"
 msgstr "Use metric units"
 
-#: wp-forecast-admin.php:484
+#: wp-forecast-admin.php:502
 msgid "Use current time"
 msgstr "Use current time"
 
-#: wp-forecast-admin.php:487
+#: wp-forecast-admin.php:505
 msgid "Windspeed-Unit"
 msgstr "Windspeed-Unit"
 
-#: wp-forecast-admin.php:488
+#: wp-forecast-admin.php:506
 msgid "Meter/Second (m/s)"
 msgstr "Meter/Second (m/s)"
 
-#: wp-forecast-admin.php:489
+#: wp-forecast-admin.php:507
 msgid "Kilometer/Hour (km/h)"
 msgstr "Kilometer/Hour (km/h)"
 
-#: wp-forecast-admin.php:490
+#: wp-forecast-admin.php:508
 msgid "Miles/Hour (mph)"
 msgstr "Miles/Hour (mph)"
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:509
 msgid "Knots (kts)"
 msgstr "Knots (kts)"
 
-#: wp-forecast-admin.php:496
+#: wp-forecast-admin.php:514
 msgid "Language"
 msgstr "Language"
 
-#: wp-forecast-admin.php:509 wp-forecast-show.php:234
+#: wp-forecast-admin.php:531 wp-forecast-show.php:245
 msgid "Forecast"
 msgstr "Forecast"
 
-#: wp-forecast-admin.php:513 wp-forecast-admin.php:514
-#: wp-forecast-admin.php:515 wp-forecast-admin.php:516
-#: wp-forecast-admin.php:517 wp-forecast-admin.php:518
-#: wp-forecast-admin.php:519 wp-forecast-admin.php:520
-#: wp-forecast-admin.php:521
+#: wp-forecast-admin.php:539
+msgid "All"
+msgstr ""
+
+#: wp-forecast-admin.php:540 wp-forecast-admin.php:541
+#: wp-forecast-admin.php:542 wp-forecast-admin.php:543
+#: wp-forecast-admin.php:544 wp-forecast-admin.php:545
+#: wp-forecast-admin.php:546 wp-forecast-admin.php:547
+#: wp-forecast-admin.php:548
 msgid "Day"
 msgstr "Day"
 
-#: wp-forecast-admin.php:523
+#: wp-forecast-admin.php:550
 msgid "Daytime"
 msgstr "Daytime"
 
-#: wp-forecast-admin.php:543
+#: wp-forecast-admin.php:571
 msgid "Nighttime"
 msgstr "Nighttime"
 
-#: wp-forecast-admin.php:567
+#: wp-forecast-admin.php:596
 msgid "Display Configuration"
 msgstr "Display Configuration"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:600
 msgid "Current Conditions"
 msgstr "Current Conditions"
 
-#: wp-forecast-admin.php:572
+#: wp-forecast-admin.php:601
 msgid "Forecast Day"
 msgstr "Forecast Day"
 
-#: wp-forecast-admin.php:573
+#: wp-forecast-admin.php:602
 msgid "Forecast Night"
 msgstr "Forecast Night"
 
-#: wp-forecast-admin.php:576
+#: wp-forecast-admin.php:605
 msgid "Icon"
 msgstr "Icon"
 
-#: wp-forecast-admin.php:585
+#: wp-forecast-admin.php:614
 msgid "Date"
 msgstr "Date"
 
-#: wp-forecast-admin.php:592
+#: wp-forecast-admin.php:621
 msgid "Time"
 msgstr "Time"
 
-#: wp-forecast-admin.php:599
+#: wp-forecast-admin.php:628
 msgid "Short Description"
 msgstr "Short Description"
 
-#: wp-forecast-admin.php:608
+#: wp-forecast-admin.php:637
 msgid "Temperature"
 msgstr "Temperature"
 
-#: wp-forecast-admin.php:617
+#: wp-forecast-admin.php:646
 msgid "Realfeel"
 msgstr "Realfeel"
 
-#: wp-forecast-admin.php:624
+#: wp-forecast-admin.php:653
 msgid "Pressure"
 msgstr "Pressure"
 
-#: wp-forecast-admin.php:631
+#: wp-forecast-admin.php:660
 msgid "Humidity"
 msgstr "Humidity"
 
-#: wp-forecast-admin.php:638
+#: wp-forecast-admin.php:667
 msgid "Wind"
 msgstr "Wind"
 
-#: wp-forecast-admin.php:647 wp-forecast-show.php:203 wp-forecast-show.php:274
-#: wp-forecast-show.php:318
+#: wp-forecast-admin.php:676 wp-forecast-show.php:214 wp-forecast-show.php:284
+#: wp-forecast-show.php:328
 msgid "Windgusts"
 msgstr "Windgusts"
 
-#: wp-forecast-admin.php:656
+#: wp-forecast-admin.php:685
 msgid "Sunrise"
 msgstr "Sunrise"
 
-#: wp-forecast-admin.php:663
+#: wp-forecast-admin.php:692
 msgid "Sunset"
 msgstr "Sunset"
 
-#: wp-forecast-admin.php:670
+#: wp-forecast-admin.php:699
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:677
+#: wp-forecast-admin.php:706
 msgid "Link to Accuweather"
 msgstr ""
 
-#: wp-forecast-admin.php:689
+#: wp-forecast-admin.php:718
 msgid "Update options"
 msgstr "Update options"
 
-#: wp-forecast-admin.php:695 wp-forecast-admin.php:709
+#: wp-forecast-admin.php:724 wp-forecast-admin.php:738
 msgid "Search location"
 msgstr "Search location"
 
-#: wp-forecast-admin.php:698
+#: wp-forecast-admin.php:727
 msgid "Searchterm"
 msgstr "Searchterm"
 
-#: wp-forecast-admin.php:701
+#: wp-forecast-admin.php:730
 msgid "No locations found."
 msgstr "No locations found."
 
-#: wp-forecast-admin.php:703
+#: wp-forecast-admin.php:732
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 
-#: wp-forecast-admin.php:712
+#: wp-forecast-admin.php:741
 msgid "Search result"
 msgstr "Search result"
 
-#: wp-forecast-admin.php:718
+#: wp-forecast-admin.php:747
 msgid "Please select your city and press set location."
 msgstr "Please select your city and press set location."
 
-#: wp-forecast-admin.php:722
+#: wp-forecast-admin.php:751
 msgid "Set location"
 msgstr "Set location"
 
-#: wp-forecast.php:296
+#: wp-forecast.php:361
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:92
+#: wp-forecast-show.php:104
 msgid "Sorry, no valid weather data available."
 msgstr "Sorry, no valid weather data available."
 
-#: wp-forecast-show.php:93
+#: wp-forecast-show.php:105
 msgid "Please try again later."
 msgstr "Please try again later."
 
-#: wp-forecast-show.php:138
+#: wp-forecast-show.php:150
 msgid "time"
 msgstr "time"
 
-#: wp-forecast-show.php:164
+#: wp-forecast-show.php:179
 msgid "tmp"
 msgstr "current temperature"
 
-#: wp-forecast-show.php:176
+#: wp-forecast-show.php:191
 msgid "flik"
 msgstr "real feel"
 
-#: wp-forecast-show.php:179
+#: wp-forecast-show.php:194
 msgid "barr"
 msgstr "current pressure"
 
-#: wp-forecast-show.php:187
+#: wp-forecast-show.php:202
 msgid "hmid"
 msgstr "humidity"
 
-#: wp-forecast-show.php:197 wp-forecast-show.php:268 wp-forecast-show.php:312
+#: wp-forecast-show.php:208 wp-forecast-show.php:278 wp-forecast-show.php:322
 msgid "winds"
 msgstr "wind speed"
 
-#: wp-forecast-show.php:209
+#: wp-forecast-show.php:220
 msgid "sunrise"
 msgstr "sunrise"
 
-#: wp-forecast-show.php:213
+#: wp-forecast-show.php:224
 msgid "sunset"
 msgstr "sunset"
 
-#: wp-forecast-show.php:241
+#: wp-forecast-show.php:252
 msgid "day"
 msgstr "day"
 
-#: wp-forecast-show.php:287
+#: wp-forecast-show.php:297
 msgid "night"
 msgstr "night"
 
@@ -478,3 +487,19 @@ msgstr "Saturday"
 #: xgettextdummy.php:52
 msgid "Sunday"
 msgstr "Sunday"
+
+#: xgettextdummy.php:53
+msgid "N"
+msgstr ""
+
+#: xgettextdummy.php:54
+msgid "E"
+msgstr ""
+
+#: xgettextdummy.php:55
+msgid "W"
+msgstr ""
+
+#: xgettextdummy.php:56
+msgid "S"
+msgstr ""

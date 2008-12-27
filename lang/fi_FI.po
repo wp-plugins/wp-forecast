@@ -1,29 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: WP-Forecast 1.9 Finnish Translation\n"
+"Project-Id-Version: kangosjarvi.net\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-20 19:01+0200\n"
-"PO-Revision-Date: 2008-10-11 18:11+0200\n"
-"Last-Translator: Jaakko Kangosjärvi <jaakko@kangosjarvi.net>\n"
-"Language-Team: Jaska <jaakko@kangosjarvi.net>\n"
+"POT-Creation-Date: 2008-12-27 15:14+0100\n"
+"PO-Revision-Date: 2008-11-22 06:19+0100\n"
+"Last-Translator: Jaakko KangosjÃ¤rvi <jaakko@kangosjarvi.net>\n"
+"Language-Team: Monttu <jaakko@kangosjarvi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Finnish\n"
 "X-Poedit-Country: FINLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: C:\\D\\Blogit\\plugins\\wp-forecast\\1.9\\wp-forecast\\\n"
-"X-Poedit-SearchPath-0: setup.php\n"
-"X-Poedit-SearchPath-1: wp-forecast-admin.php\n"
-"X-Poedit-SearchPath-2: wp-forecast.php\n"
-"X-Poedit-SearchPath-3: xgettextdummy.php\n"
 
-#: setup.php:130
+#: setup.php:140
 msgid "The Weather"
 msgstr "S&auml;&auml;"
 
@@ -33,280 +23,276 @@ msgstr "Otsikko:"
 
 #: wp-forecast-admin.php:110
 msgid "widget_hint"
-msgstr "vimpain_vihje"
+msgstr "vimpain_apu"
 
-#: wp-forecast-admin.php:251
-#: wp-forecast.php:255
+#: wp-forecast-admin.php:261 wp-forecast.php:320
 msgid "How many wp-forecast widgets would you like?"
-msgstr "WP-Forecast-vimpainten m&auml;&auml;r&auml;"
+msgstr "WP-Forecast-vimpainten m&auml;&auml;r&auml;:"
 
-#: wp-forecast-admin.php:260
-#: wp-forecast-admin.php:285
-#: wp-forecast.php:264
+#: wp-forecast-admin.php:270 wp-forecast-admin.php:295
+#: wp-forecast-admin.php:304 wp-forecast.php:329
 msgid "Save"
 msgstr "Tallenna"
 
-#: wp-forecast-admin.php:263
+#: wp-forecast-admin.php:273
 msgid "Available widgets"
-msgstr "WP-Forecast Vimpaimet"
+msgstr "Vimpaimet"
 
-#: wp-forecast-admin.php:278
+#: wp-forecast-admin.php:288
 msgid "Select widget"
 msgstr "Valitse vimpain"
 
-#: wp-forecast-admin.php:283
+#: wp-forecast-admin.php:293
 msgid "Timeout for accuweather connections (secs.)?"
-msgstr "Accuweather-yhteyden aikakatkaisu (sekuntia)"
+msgstr "Accuweather-yhteysaika (sekuntia):"
 
-#: wp-forecast-admin.php:444
+#: wp-forecast-admin.php:299
+msgid "Delete options during plugin deactivation?"
+msgstr ""
+
+#: wp-forecast-admin.php:462
 msgid "Settings successfully updated"
 msgstr "Asetukset p&auml;ivitetty"
 
-#: wp-forecast-admin.php:446
+#: wp-forecast-admin.php:464
 msgid "You have to change a field to update settings."
-msgstr "Et tehnyt muutoksia. Asetuksia ei p&auml;ivitetty."
+msgstr "Asetukset p&auml;ivitet&auml;&auml;n ylemp&auml;n&auml;."
 
-#: wp-forecast-admin.php:467
+#: wp-forecast-admin.php:485
 msgid "WP-Forecast Setup"
-msgstr "WP-Forecast Asetukset"
+msgstr "WP-Forecast Asennus"
 
-#: wp-forecast-admin.php:470
+#: wp-forecast-admin.php:488
 msgid "Location"
 msgstr "Paikkakunta"
 
-#: wp-forecast-admin.php:473
+#: wp-forecast-admin.php:491
 msgid "Press Update options to save new location."
-msgstr "Tallenna uusi paikkakunta klikkaamalla P&auml;ivit&auml; asetukset"
+msgstr "Tallenna uusi paikkakunta klikkaamalla P&auml;ivit&auml; valinnat."
 
-#: wp-forecast-admin.php:476
+#: wp-forecast-admin.php:494
 msgid "Locationname"
 msgstr "Paikannimi"
 
-#: wp-forecast-admin.php:478
+#: wp-forecast-admin.php:496
 msgid "Refresh cache after"
-msgstr "P&auml;ivit&auml; v&auml;limuisti"
+msgstr "Virkist&auml; v&auml;limuisti"
 
-#: wp-forecast-admin.php:480
+#: wp-forecast-admin.php:498
 msgid "secs."
-msgstr "sekunnin v&auml;lein"
+msgstr "sekunnin j&auml;lkeen"
 
-#: wp-forecast-admin.php:481
+#: wp-forecast-admin.php:499
 msgid "Use metric units"
 msgstr "K&auml;yt&auml; metrisi&auml; yksikk&ouml;j&auml;"
 
-#: wp-forecast-admin.php:484
+#: wp-forecast-admin.php:502
 msgid "Use current time"
-msgstr "K&auml;yt&auml; tietokoneen aikaa"
+msgstr "K&auml;yt&auml; t&auml;m&auml;nhetkist&auml; aikaa"
 
-#: wp-forecast-admin.php:487
+#: wp-forecast-admin.php:505
 msgid "Windspeed-Unit"
 msgstr "Tuulennopeuden yksikk&ouml;"
 
-#: wp-forecast-admin.php:488
+#: wp-forecast-admin.php:506
 msgid "Meter/Second (m/s)"
-msgstr "metri&auml; sekunnissa (m/s)"
+msgstr "Metri&auml; sekunnissa (m/s)"
 
-#: wp-forecast-admin.php:489
+#: wp-forecast-admin.php:507
 msgid "Kilometer/Hour (km/h)"
-msgstr "kilometri&auml; tunnissa (km/h)"
+msgstr "Kilometri&auml; tunnissa (km/h)"
 
-#: wp-forecast-admin.php:490
+#: wp-forecast-admin.php:508
 msgid "Miles/Hour (mph)"
-msgstr "mailia tunnissa (mph)"
+msgstr "Mailia tunnissa (mph)"
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:509
 msgid "Knots (kts)"
-msgstr "solmua (kts)"
+msgstr "Solmua (kts)"
 
-#: wp-forecast-admin.php:496
+#: wp-forecast-admin.php:514
 msgid "Language"
 msgstr "Kieli"
 
-#: wp-forecast-admin.php:509
-#: wp-forecast-show.php:234
+#: wp-forecast-admin.php:531 wp-forecast-show.php:245
 msgid "Forecast"
 msgstr "Ennuste"
 
-#: wp-forecast-admin.php:513
-#: wp-forecast-admin.php:514
-#: wp-forecast-admin.php:515
-#: wp-forecast-admin.php:516
-#: wp-forecast-admin.php:517
-#: wp-forecast-admin.php:518
-#: wp-forecast-admin.php:519
-#: wp-forecast-admin.php:520
-#: wp-forecast-admin.php:521
+#: wp-forecast-admin.php:539
+msgid "All"
+msgstr ""
+
+#: wp-forecast-admin.php:540 wp-forecast-admin.php:541
+#: wp-forecast-admin.php:542 wp-forecast-admin.php:543
+#: wp-forecast-admin.php:544 wp-forecast-admin.php:545
+#: wp-forecast-admin.php:546 wp-forecast-admin.php:547
+#: wp-forecast-admin.php:548
 msgid "Day"
 msgstr "P&auml;iv&auml;"
 
-#: wp-forecast-admin.php:523
+#: wp-forecast-admin.php:550
 msgid "Daytime"
 msgstr "P&auml;iv&auml;ll&auml;"
 
-#: wp-forecast-admin.php:543
+#: wp-forecast-admin.php:571
 msgid "Nighttime"
 msgstr "Y&ouml;ll&auml;"
 
-#: wp-forecast-admin.php:567
+#: wp-forecast-admin.php:596
 msgid "Display Configuration"
-msgstr "N&auml;yt&auml; vimpaimessa"
+msgstr "N&auml;yt&auml; muotoilu"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:600
 msgid "Current Conditions"
-msgstr "S&auml;&auml;tila nyt"
+msgstr "S&auml;&auml; t&auml;n&auml;&auml;n"
 
-#: wp-forecast-admin.php:572
+#: wp-forecast-admin.php:601
 msgid "Forecast Day"
-msgstr "Ennuste p&auml;iv&auml;ksi"
+msgstr "Ennuste p&auml;iv&auml;lle"
 
-#: wp-forecast-admin.php:573
+#: wp-forecast-admin.php:602
 msgid "Forecast Night"
-msgstr "Ennuste y&ouml;ksi"
+msgstr "Ennuste y&ouml;lle"
 
-#: wp-forecast-admin.php:576
+#: wp-forecast-admin.php:605
 msgid "Icon"
-msgstr "Kuva"
+msgstr "Kuvake"
 
-#: wp-forecast-admin.php:585
+#: wp-forecast-admin.php:614
 msgid "Date"
 msgstr "P&auml;iv&auml;ys"
 
-#: wp-forecast-admin.php:592
+#: wp-forecast-admin.php:621
 msgid "Time"
-msgstr "Kellonaika"
+msgstr "Aika"
 
-#: wp-forecast-admin.php:599
+#: wp-forecast-admin.php:628
 msgid "Short Description"
-msgstr "Lyhyt kuvaus"
+msgstr "Kuvaus"
 
-#: wp-forecast-admin.php:608
+#: wp-forecast-admin.php:637
 msgid "Temperature"
 msgstr "L&auml;mp&ouml;tila"
 
-#: wp-forecast-admin.php:617
+#: wp-forecast-admin.php:646
 msgid "Realfeel"
 msgstr "Tuntuma"
 
-#: wp-forecast-admin.php:624
+#: wp-forecast-admin.php:653
 msgid "Pressure"
 msgstr "Ilmanpaine"
 
-#: wp-forecast-admin.php:631
+#: wp-forecast-admin.php:660
 msgid "Humidity"
 msgstr "Kosteus"
 
-#: wp-forecast-admin.php:638
+#: wp-forecast-admin.php:667
 msgid "Wind"
 msgstr "Tuuli"
 
-#: wp-forecast-admin.php:647
-#: wp-forecast-show.php:203
-#: wp-forecast-show.php:274
-#: wp-forecast-show.php:318
+#: wp-forecast-admin.php:676 wp-forecast-show.php:214 wp-forecast-show.php:284
+#: wp-forecast-show.php:328
 msgid "Windgusts"
 msgstr "Puuskissa"
 
-#: wp-forecast-admin.php:656
+#: wp-forecast-admin.php:685
 msgid "Sunrise"
 msgstr "Aurinko nousee"
 
-#: wp-forecast-admin.php:663
+#: wp-forecast-admin.php:692
 msgid "Sunset"
 msgstr "Aurinko laskee"
 
-#: wp-forecast-admin.php:670
+#: wp-forecast-admin.php:699
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:677
+#: wp-forecast-admin.php:706
 msgid "Link to Accuweather"
 msgstr "Accuweather-linkki"
 
-#: wp-forecast-admin.php:689
+#: wp-forecast-admin.php:718
 msgid "Update options"
-msgstr "P&auml;ivit&auml; asetukset"
+msgstr "P&auml;ivit&auml; valinnat"
 
-#: wp-forecast-admin.php:695
-#: wp-forecast-admin.php:709
+#: wp-forecast-admin.php:724 wp-forecast-admin.php:738
 msgid "Search location"
-msgstr "Hae paikkakunta"
+msgstr "Hae paikkakuntaa"
 
-#: wp-forecast-admin.php:698
+#: wp-forecast-admin.php:727
 msgid "Searchterm"
 msgstr "Hakusana"
 
-#: wp-forecast-admin.php:701
+#: wp-forecast-admin.php:730
 msgid "No locations found."
-msgstr "Paikkakuntaa ei l&ouml;ydy."
+msgstr "Ei tuloksia"
 
-#: wp-forecast-admin.php:703
-msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Korvaa &auml;, &ouml; ja &uuml; hakusanassa merkeill&auml; a, o ja u."
+#: wp-forecast-admin.php:732
+msgid "Please replace german Umlaute Ã¤,Ã¶,Ã¼ with a, o, u in your searchterm."
+msgstr "Korvaa &auml; ja &ouml; hakusanassa kirjaimilla a ja o."
 
-#: wp-forecast-admin.php:712
+#: wp-forecast-admin.php:741
 msgid "Search result"
 msgstr "Hakutulos"
 
-#: wp-forecast-admin.php:718
+#: wp-forecast-admin.php:747
 msgid "Please select your city and press set location."
 msgstr "Valitse paikkakuntasi ja klikkaa Aseta paikkakunta."
 
-#: wp-forecast-admin.php:722
+#: wp-forecast-admin.php:751
 msgid "Set location"
 msgstr "Aseta paikkakunta"
 
-#: wp-forecast.php:296
+#: wp-forecast.php:361
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:92
+#: wp-forecast-show.php:104
 msgid "Sorry, no valid weather data available."
-msgstr "S&auml;&auml;tietoja ei ole saatavilla."
+msgstr "S&auml;&auml;tietoja ei l&ouml;ytynyt."
 
-#: wp-forecast-show.php:93
+#: wp-forecast-show.php:105
 msgid "Please try again later."
 msgstr "Ole hyv&auml; ja yrit&auml; uudelleen."
 
-#: wp-forecast-show.php:138
+#: wp-forecast-show.php:150
 msgid "time"
 msgstr "Aika"
 
-#: wp-forecast-show.php:164
+#: wp-forecast-show.php:179
 msgid "tmp"
 msgstr "L&auml;mp&ouml;tila"
 
-#: wp-forecast-show.php:176
+#: wp-forecast-show.php:191
 msgid "flik"
 msgstr "Tuntuma"
 
-#: wp-forecast-show.php:179
+#: wp-forecast-show.php:194
 msgid "barr"
 msgstr "Ilmanpaine"
 
-#: wp-forecast-show.php:187
+#: wp-forecast-show.php:202
 msgid "hmid"
 msgstr "Kosteus"
 
-#: wp-forecast-show.php:197
-#: wp-forecast-show.php:268
-#: wp-forecast-show.php:312
+#: wp-forecast-show.php:208 wp-forecast-show.php:278 wp-forecast-show.php:322
 msgid "winds"
 msgstr "Tuuli"
 
-#: wp-forecast-show.php:209
+#: wp-forecast-show.php:220
 msgid "sunrise"
 msgstr "Aurinko nousee"
 
-#: wp-forecast-show.php:213
+#: wp-forecast-show.php:224
 msgid "sunset"
 msgstr "Aurinko laskee"
 
-#: wp-forecast-show.php:241
+#: wp-forecast-show.php:252
 msgid "day"
 msgstr "P&auml;iv&auml;ll&auml;"
 
-#: wp-forecast-show.php:287
+#: wp-forecast-show.php:297
 msgid "night"
 msgstr "Y&ouml;ll&auml;"
 
@@ -324,7 +310,7 @@ msgstr "Melko selke&auml;&auml;"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Puolipilvist&auml;"
+msgstr "Osin selke&auml;&auml;"
 
 #: xgettextdummy.php:9
 msgid "04"
@@ -344,7 +330,7 @@ msgstr "Pilvist&auml;"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Synkk&auml;&auml;"
+msgstr "Synk&auml;n pilvist&auml;"
 
 #: xgettextdummy.php:14
 msgid "11"
@@ -356,15 +342,15 @@ msgstr "Sadekuuroja"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Melko pilvist&auml;, sadekuuroja"
+msgstr "Melko selke&auml;&auml;"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Puolipilvist&auml;, sadekuuroja"
+msgstr "Osin pilvist&auml;"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Ukkosta"
+msgstr "Vaihtelevaa pilvisyytt&auml;"
 
 #: xgettextdummy.php:19
 msgid "16"
@@ -372,7 +358,7 @@ msgstr "Melko pilvist&auml;, ukkoskuuroja"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Puolipilvist&auml;, ukkoskuuroja"
+msgstr "Melko pilvist&auml;"
 
 #: xgettextdummy.php:21
 msgid "18"
@@ -388,7 +374,7 @@ msgstr "Melko pilvist&auml;, lumikuuroja"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Puolipilvist&auml;, lumikuuroja"
+msgstr "Osin selke&auml;&auml;, lumikuuroja"
 
 #: xgettextdummy.php:25
 msgid "22"
@@ -396,15 +382,15 @@ msgstr "Lumisadetta"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Melko pilvist&auml;, lumisadetta"
+msgstr "Sadekuuroja"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "Rakeita"
+msgstr "R&auml;nt&auml;&auml;"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "R&auml;nt&auml;&auml;"
+msgstr "Osin selke&auml;&auml;, sadekuuroja"
 
 #: xgettextdummy.php:29
 msgid "26"
@@ -412,7 +398,7 @@ msgstr "J&auml;&auml;t&auml;v&auml;&auml; tihkua"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "Vesi- ja lumisadetta"
+msgstr "R&auml;nt&auml;&auml;"
 
 #: xgettextdummy.php:31
 msgid "30"
@@ -436,7 +422,7 @@ msgstr "Melko selke&auml;&auml;"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Puolipilvist&auml;"
+msgstr "Lumisadetta"
 
 #: xgettextdummy.php:37
 msgid "36"
@@ -452,19 +438,19 @@ msgstr "Melko pilvist&auml;"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Puolipilvist&auml;, sadekuuroja"
+msgstr "Osin pilvist&auml;, sadekuuroja"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Melko pilvist&auml;, sadekuuroja"
+msgstr "Melko selke&auml;&auml;"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Puolipilvist&auml;, ukkoskuuroja"
+msgstr "Melko pilvist&auml;"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "Melko pilvist&auml;, ukkoskuuroja"
+msgstr "R&auml;nt&auml;&auml;"
 
 #: xgettextdummy.php:44
 msgid "43"
@@ -472,7 +458,7 @@ msgstr "Melko pilvist&auml;, lumikuuroja"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Melko pilvist&auml;, lumisadetta"
+msgstr "Melko pilvist&auml;, lumikuuroja"
 
 #: xgettextdummy.php:46
 msgid "Monday"
@@ -502,3 +488,18 @@ msgstr "Lauantai"
 msgid "Sunday"
 msgstr "Sunnuntai"
 
+#: xgettextdummy.php:53
+msgid "N"
+msgstr ""
+
+#: xgettextdummy.php:54
+msgid "E"
+msgstr ""
+
+#: xgettextdummy.php:55
+msgid "W"
+msgstr ""
+
+#: xgettextdummy.php:56
+msgid "S"
+msgstr ""

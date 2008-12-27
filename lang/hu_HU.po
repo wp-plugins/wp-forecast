@@ -1,54 +1,49 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-forecast dutch translation\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-27 15:14+0100\n"
-"PO-Revision-Date: 2008-04-11 07:11+0100\n"
-"Last-Translator: Hans Matzen <webmaster (at) tuxlog (dot) de>\n"
-"Language-Team: Frans Lieshout\n"
+"PO-Revision-Date: 2008-12-18 07:47+0100\n"
+"Last-Translator: KOOS, Tamas <tamas@pumpkingood.com>\n"
+"Language-Team: KOOS, Tamas <tamas@koosfoto.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
 
 #: setup.php:140
 msgid "The Weather"
-msgstr ""
+msgstr "Időjárás"
 
 #: wp-forecast-admin.php:107
 msgid "Title:"
-msgstr ""
+msgstr "Cím : "
 
 #: wp-forecast-admin.php:110
 msgid "widget_hint"
-msgstr ""
+msgstr "Trükk"
 
 #: wp-forecast-admin.php:261 wp-forecast.php:320
 msgid "How many wp-forecast widgets would you like?"
-msgstr ""
+msgstr "Hány wp-forecast widget-et (várost) szeretnél ?"
 
 #: wp-forecast-admin.php:270 wp-forecast-admin.php:295
 #: wp-forecast-admin.php:304 wp-forecast.php:329
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: wp-forecast-admin.php:273
 msgid "Available widgets"
-msgstr ""
+msgstr "Használható widget-ek"
 
 #: wp-forecast-admin.php:288
 msgid "Select widget"
-msgstr ""
+msgstr "Válassz egy widget-et (várost)"
 
 #: wp-forecast-admin.php:293
 msgid "Timeout for accuweather connections (secs.)?"
-msgstr ""
+msgstr "Accuweather kapcsolódási idő (másodpercben)"
 
 #: wp-forecast-admin.php:299
 msgid "Delete options during plugin deactivation?"
@@ -56,71 +51,71 @@ msgstr ""
 
 #: wp-forecast-admin.php:462
 msgid "Settings successfully updated"
-msgstr "Succesvol bijgewerkt"
+msgstr "Sikeresen mentve"
 
 #: wp-forecast-admin.php:464
 msgid "You have to change a field to update settings."
-msgstr "U moet een veld hebben gewijzigd om te kunnen bijwerken."
+msgstr "Változtass egy mezőn a mentéshez."
 
 #: wp-forecast-admin.php:485
 msgid "WP-Forecast Setup"
-msgstr "WP-Voorspelling Instellingen"
+msgstr "WP-Forecast beállítás"
 
 #: wp-forecast-admin.php:488
 msgid "Location"
-msgstr "Plaats"
+msgstr "Hely "
 
 #: wp-forecast-admin.php:491
 msgid "Press Update options to save new location."
-msgstr "Druk op bijwerken om nieuwe lokatie te bewaren."
+msgstr "Klikk Update az új hely beállításához "
 
 #: wp-forecast-admin.php:494
 msgid "Locationname"
-msgstr ""
+msgstr "A hely neve "
 
 #: wp-forecast-admin.php:496
 msgid "Refresh cache after"
-msgstr "Ververs geheugen na"
+msgstr "A cahce frissítése"
 
 #: wp-forecast-admin.php:498
 msgid "secs."
-msgstr ""
+msgstr "másodperc"
 
 #: wp-forecast-admin.php:499
 msgid "Use metric units"
-msgstr "Gebruik metriek stelsel"
+msgstr "méterben"
 
 #: wp-forecast-admin.php:502
 msgid "Use current time"
-msgstr ""
+msgstr "A jelenlegi időt használjuk"
 
 #: wp-forecast-admin.php:505
 msgid "Windspeed-Unit"
-msgstr "Windsnelheid-Unit"
+msgstr "A szél-sebesség mértékegysége"
 
 #: wp-forecast-admin.php:506
 msgid "Meter/Second (m/s)"
-msgstr "Meter/Seconde (m/s)"
+msgstr "méter/másodperc (m/s)"
 
 #: wp-forecast-admin.php:507
 msgid "Kilometer/Hour (km/h)"
-msgstr "Kilometer/Uur (km/h)"
+msgstr "Km/óra (km/h)"
 
 #: wp-forecast-admin.php:508
 msgid "Miles/Hour (mph)"
-msgstr "Mijl/Uur (mph)"
+msgstr "Mérföld/óra (mph)"
 
 #: wp-forecast-admin.php:509
 msgid "Knots (kts)"
-msgstr "Knopen (knps)"
+msgstr "Csomó (kts)"
 
 #: wp-forecast-admin.php:514
 msgid "Language"
-msgstr "Taal"
+msgstr "Nyelv"
 
 #: wp-forecast-admin.php:531 wp-forecast-show.php:245
 msgid "Forecast"
-msgstr "Voorspelling"
+msgstr "Előjelzés"
 
 #: wp-forecast-admin.php:539
 msgid "All"
@@ -132,120 +127,120 @@ msgstr ""
 #: wp-forecast-admin.php:546 wp-forecast-admin.php:547
 #: wp-forecast-admin.php:548
 msgid "Day"
-msgstr "Dag"
+msgstr "Nap"
 
 #: wp-forecast-admin.php:550
 msgid "Daytime"
-msgstr "Overdag"
+msgstr "Nappal"
 
 #: wp-forecast-admin.php:571
 msgid "Nighttime"
-msgstr "Nacht"
+msgstr "Éjszaka"
 
 #: wp-forecast-admin.php:596
 msgid "Display Configuration"
-msgstr "Weergeven Configuratie"
+msgstr "A konfiguráció megjelenítése"
 
 #: wp-forecast-admin.php:600
 msgid "Current Conditions"
-msgstr "Huidig weerbeeld"
+msgstr "Jelenlegi állapot"
 
 #: wp-forecast-admin.php:601
 msgid "Forecast Day"
-msgstr "Voorspelling Dag"
+msgstr "Nappal várható:"
 
 #: wp-forecast-admin.php:602
 msgid "Forecast Night"
-msgstr "Voorspelling Nacht"
+msgstr "Éjjel várható:"
 
 #: wp-forecast-admin.php:605
 msgid "Icon"
-msgstr "Ikoon"
+msgstr "Ikon"
 
 #: wp-forecast-admin.php:614
 msgid "Date"
-msgstr ""
+msgstr "Dátum"
 
 #: wp-forecast-admin.php:621
 msgid "Time"
-msgstr "Tijd"
+msgstr "Óra"
 
 #: wp-forecast-admin.php:628
 msgid "Short Description"
-msgstr "Korte Omschrijving"
+msgstr "Rövid leírás"
 
 #: wp-forecast-admin.php:637
 msgid "Temperature"
-msgstr "Temperatuur"
+msgstr "Hőmérséklet"
 
 #: wp-forecast-admin.php:646
 msgid "Realfeel"
-msgstr "Werkelijk gevoel"
+msgstr "Érzékelhető hő"
 
 #: wp-forecast-admin.php:653
 msgid "Pressure"
-msgstr "Druk"
+msgstr "Nyomás"
 
 #: wp-forecast-admin.php:660
 msgid "Humidity"
-msgstr "Vochtigheid"
+msgstr "Páratartalom"
 
 #: wp-forecast-admin.php:667
 msgid "Wind"
-msgstr "Wind"
+msgstr "Szél"
 
 #: wp-forecast-admin.php:676 wp-forecast-show.php:214 wp-forecast-show.php:284
 #: wp-forecast-show.php:328
 msgid "Windgusts"
-msgstr ""
+msgstr "Széllökések"
 
 #: wp-forecast-admin.php:685
 msgid "Sunrise"
-msgstr "Zonsopgang"
+msgstr "Napfelkelte"
 
 #: wp-forecast-admin.php:692
 msgid "Sunset"
-msgstr "Zonsondergang"
+msgstr "Napnyugta"
 
 #: wp-forecast-admin.php:699
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: wp-forecast-admin.php:706
 msgid "Link to Accuweather"
-msgstr ""
+msgstr "Linkelés az Accuweather-re"
 
 #: wp-forecast-admin.php:718
 msgid "Update options"
-msgstr "Bijwerken opties"
+msgstr "Beállítások mentése"
 
 #: wp-forecast-admin.php:724 wp-forecast-admin.php:738
 msgid "Search location"
-msgstr "Zoek plaats"
+msgstr "A hely keresése"
 
 #: wp-forecast-admin.php:727
 msgid "Searchterm"
-msgstr "Zoek term"
+msgstr "keresendő"
 
 #: wp-forecast-admin.php:730
 msgid "No locations found."
-msgstr ""
+msgstr "Nincs találat"
 
 #: wp-forecast-admin.php:732
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr ""
+msgstr "Ékezetes betűk nélkül ! (azaz, ne használj á, é, í, ó, ö, ő, ü, ű -t)"
 
 #: wp-forecast-admin.php:741
 msgid "Search result"
-msgstr "Zoek resultaten"
+msgstr "A keresés eredménye"
 
 #: wp-forecast-admin.php:747
 msgid "Please select your city and press set location."
-msgstr "Selecteer uw stad en druk op set lokatie."
+msgstr "Jelöld ki a várost, amit szeretnél és klikkelj a Hely beállítása -ra."
 
 #: wp-forecast-admin.php:751
 msgid "Set location"
-msgstr "Set lokatie"
+msgstr "Hely beállítása"
 
 #: wp-forecast.php:361
 #, php-format
@@ -254,243 +249,243 @@ msgstr ""
 
 #: wp-forecast-show.php:104
 msgid "Sorry, no valid weather data available."
-msgstr ""
+msgstr "Bocsi, nincs adat."
 
 #: wp-forecast-show.php:105
 msgid "Please try again later."
-msgstr ""
+msgstr "Próbáld újra később."
 
 #: wp-forecast-show.php:150
 msgid "time"
-msgstr "tijd"
+msgstr "idő"
 
 #: wp-forecast-show.php:179
 msgid "tmp"
-msgstr "Huidige temperatuur"
+msgstr "Hőmérséklet"
 
 #: wp-forecast-show.php:191
 msgid "flik"
-msgstr "gevoel"
+msgstr "Hő-érzet"
 
 #: wp-forecast-show.php:194
 msgid "barr"
-msgstr "huidige druk"
+msgstr "Nyomás"
 
 #: wp-forecast-show.php:202
 msgid "hmid"
-msgstr "humidity"
+msgstr "Pára"
 
 #: wp-forecast-show.php:208 wp-forecast-show.php:278 wp-forecast-show.php:322
 msgid "winds"
-msgstr "wind snelheid"
+msgstr "Szelek"
 
 #: wp-forecast-show.php:220
 msgid "sunrise"
-msgstr "zonsopgang"
+msgstr "Napkelte"
 
 #: wp-forecast-show.php:224
 msgid "sunset"
-msgstr "zonsondergang"
+msgstr "Napnyugta"
 
 #: wp-forecast-show.php:252
 msgid "day"
-msgstr "dag"
+msgstr "nappal"
 
 #: wp-forecast-show.php:297
 msgid "night"
-msgstr "nacht"
+msgstr "éjszaka"
 
 #: xgettextdummy.php:5
 msgid "loc"
-msgstr ""
+msgstr "hely"
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr "Zonnig"
+msgstr "napos"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Meestal Zonnig"
+msgstr "Főleg napos"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Deels Zonnig"
+msgstr "Részben napos"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Af en toe bewolking"
+msgstr "Változó felhőzet"
 
 #: xgettextdummy.php:10
 msgid "05"
-msgstr "Nevel"
+msgstr "Fátyolos napsütés"
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr "Meest bewolkt"
+msgstr "Főleg felhős"
 
 #: xgettextdummy.php:12
 msgid "07"
-msgstr "Bewolkt"
+msgstr "Felhős"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Somber (betrokken lucht)"
+msgstr "Szomorkás (borult)"
 
 #: xgettextdummy.php:14
 msgid "11"
-msgstr "Mist"
+msgstr "Köd"
 
 #: xgettextdummy.php:15
 msgid "12"
-msgstr "Stortbuien"
+msgstr "Záporok"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Meest bewolkt met regen"
+msgstr "Főleg felhős, záporokkal"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Deels zonnig met buien"
+msgstr "Részben napos, záporokkal"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Onweer"
+msgstr "Vihar, villámlás"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Meest bewolkt met onweersbuinen"
+msgstr "Főleg felhős, zivatar, villámlás"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Deels zonnig met onweersbuien"
+msgstr "Részben napos, záporok, villámlás"
 
 #: xgettextdummy.php:21
 msgid "18"
-msgstr "Regen"
+msgstr "Eső"
 
 #: xgettextdummy.php:22
 msgid "19"
-msgstr "Hagel en Regen"
+msgstr "Széllökések"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Meest bewolkt en hagel en regen"
+msgstr "Főleg felhős, széllökések"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Deels zonnig met hagel en regen"
+msgstr "Részben napos, széllökések"
 
 #: xgettextdummy.php:25
 msgid "22"
-msgstr "Sneeuw"
+msgstr "Havazás"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Meest bewolkt met sneeuw"
+msgstr "Főleg felhős havazással"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "IJs"
+msgstr "Jég"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "Natte Sneeuw"
+msgstr "Hódara"
 
 #: xgettextdummy.php:29
 msgid "26"
-msgstr "Hagelbuien"
+msgstr "Jegeseső"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "Regen en sneeuw"
+msgstr "Eső és havazás"
 
 #: xgettextdummy.php:31
 msgid "30"
-msgstr "Heet"
+msgstr "Meleg"
 
 #: xgettextdummy.php:32
 msgid "31"
-msgstr "Koud"
+msgstr "Hideg"
 
 #: xgettextdummy.php:33
 msgid "32"
-msgstr "Winderig"
+msgstr "Szeles"
 
 #: xgettextdummy.php:34
 msgid "33"
-msgstr "Helder"
+msgstr "Tiszta"
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr "Meest helder"
+msgstr "Főleg tiszta"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Deels bewolkt"
+msgstr "Részben felhős"
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr "Af en toe bewolking"
+msgstr "Változó felhőzet"
 
 #: xgettextdummy.php:38
 msgid "37"
-msgstr "Nevelig"
+msgstr "Ködös höldfény"
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr "Meest bewolkt"
+msgstr "Főleg felhős"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Deels bewolkt met buien"
+msgstr "Részben felhős, záporokkal"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Meest bewoikt met buien"
+msgstr "Főleg felhős, záporokkal"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Deels bewolkt met onweer"
+msgstr "Részben felhős, vihar, villámlás"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "Meest bewolkt met onweer"
+msgstr "Főleg felhős, vihar, villámlás"
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr "Meest bewolkt met hagel en regen"
+msgstr "Főleg felhős, széllökések"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Meest bewolkt met sneeuw"
+msgstr "Főleg felhős, havazás"
 
 #: xgettextdummy.php:46
 msgid "Monday"
-msgstr "Maandag"
+msgstr "hétfő"
 
 #: xgettextdummy.php:47
 msgid "Tuesday"
-msgstr "Dinsdag"
+msgstr "kedd"
 
 #: xgettextdummy.php:48
 msgid "Wednesday"
-msgstr "Woensdag"
+msgstr "szerda"
 
 #: xgettextdummy.php:49
 msgid "Thursday"
-msgstr "Donderdag"
+msgstr "csütörtök"
 
 #: xgettextdummy.php:50
 msgid "Friday"
-msgstr "Vrijdag"
+msgstr "péntek"
 
 #: xgettextdummy.php:51
 msgid "Saturday"
-msgstr "Zaterdag"
+msgstr "szombat"
 
 #: xgettextdummy.php:52
 msgid "Sunday"
-msgstr "Zondag"
+msgstr "vasárnap"
 
 #: xgettextdummy.php:53
 msgid "N"
