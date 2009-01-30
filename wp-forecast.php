@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 2.2
+Version: 2.3
 Author: Hans Matzen <webmaster at tuxlog.de>
 Author URI: http://www.tuxlog.de
 */
@@ -73,6 +73,12 @@ function wp_forecast_init()
     if ($expire < time()) {
       $w = get_weather($wpf_vars['BASE_URI'],$wpf_vars['location'],
 		       $wpf_vars['metric']);
+      
+      if ($wpf_debug > 0) {
+	pdebug("Fetched xml was:\n");
+	pdebug($w);
+      }
+
       $weather=wpf_xml_parser($w);
       
       // store weather to database and set expire time
@@ -216,7 +222,14 @@ function wp_forecast_data($wpfcid="A", $language_override=null)
 
   extract($wpf_vars);
   $w=str2arr(get_option("wp-forecast-cache".$wpfcid));
-
+  
+  // get translations
+  if(function_exists('load_textdomain')) {
+    global $l10n;
+    if (!isset($l10n["wp-forecast_".$wpf_language])) 
+      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+  }
+  
   $weather_arr=array();
 
   // --------------------------------------------------------------
@@ -264,7 +277,8 @@ function wp_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['fc_obsdate_'.$i]= date_i18n($fc_date_format, strtotime($w['fc_obsdate_'.$i]));
     $iconfile=find_icon($w["fc_dt_icon_".$i]);
     $weather_arr["fc_dt_icon_".$i]="icons/".$iconfile;
-    $weather_arr["fc_dt_htemp_".$i]= $w["fc_dt_htemp_".$i]."&deg;".$w['un_temp'];
+    $weather_arr["fc_dt_desc_".$i]= __($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language);
+     $weather_arr["fc_dt_htemp_".$i]= $w["fc_dt_htemp_".$i]."&deg;".$w['un_temp'];
     $wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
     $weather_arr["fc_dt_windspeed_".$i]= $wstr;
     $weather_arr["fc_dt_winddir_".$i]=translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language);
@@ -280,6 +294,10 @@ function wp_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr["fc_nt_winddir_".$i]=translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language);
     $weather_arr["fc_nt_wgusts_".$i] = windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
 
+    // additional info
+    $weather_arr['failure']=$w['failure'];
+    $weather_arr['lat']=$w['lat'];
+    $weather_arr['lon']=$w['lon'];
   }
 
   if ($wpf_debug > 0)
@@ -395,10 +413,14 @@ function widget_wp_forecast_init()
     else
       register_sidebar_widget(array($id,$name),
 			      $i < $count ? 'wp_forecast_widget' : '',$wpfcid);
+    
+    unregister_sidebar_widget($i >= $count ? 'wp_forecast_widget'.$wpfcid:'');
 
     register_widget_control(array($id,$name),
 			    $i < $count ? 'wpf_admin_hint' : ''
 			    ,300,150,$wpfcid,1);
+
+    unregister_widget_control($i >= $count ? 'wpf_admin_hint'.$wpfcid : '');
   } 
   // add actions for setup the count of wanted wpf widgets
   add_action('sidebar_admin_setup', 'wpf_widget_setup');

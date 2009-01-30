@@ -1,8 +1,8 @@
 === wp-forecast ===
 Tags: weather,forecast,widget
 Requires at least: 2.2
-Tested up to: 2.6.4
-Stable tag: 2.2
+Tested up to: 2.7
+Stable tag: 2.3
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
 
@@ -12,7 +12,7 @@ Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description:  wp-forecast is a highly customizable plugin for wordpress, 
 	      showing weather-data from accuweather.com.
-Version: 2.2
+Version: 2.3
 Author: Hans Matzen <webmaster at tuxlog dot de>
 Author URI: http://www.tuxlog.de
 */
@@ -55,6 +55,7 @@ the terms of usage of accuweather.com
      Lukasz "linshi" Linhard	translation to polish
      Castmir	     		translation to spanish
      Tamas Koos			translation to hungarian
+     Stefano Boeri		translation to russian
  
    All the others giving feedback about missing features and bugs
    Thank you very much for your contribution to wp-forecast.
@@ -287,3 +288,11 @@ the terms of usage of accuweather.com
 		    in admin-dialog (for convenience only), added translation 
 		    for winddirections, added data api for wordpress-pro's to 
 		    design layouts individually
+
+2009-01-30 v2.3	    fixed some wrong italian translations, added shorttext 
+	   	    for api daily forecast, fixed translation in api, process 
+		    failure notice from accuweather if it occures, added 
+		    lat and lon to data api, switched to wordpress default
+		    function to get remote data from accuweather, changed 
+		    default value of cache refresh to 1800 seconds, added
+		    translation to russian.

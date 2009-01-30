@@ -23,6 +23,8 @@ if (!function_exists('wpf_xml_parser')) {
 	      "/ADC_DATABASE/LOCAL/CITY"  => "city",
 	      "/ADC_DATABASE/LOCAL/STATE" => "state",
 	      "/ADC_DATABASE/LOCAL/TIME"  => "time",
+	      "/ADC_DATABASE/LOCAL/LAT"   => "lat",
+	      "/ADC_DATABASE/LOCAL/LON"   => "lon",
 	      "/ADC_DATABASE/LOCAL/GMTDIFF"  => "gmtdiff",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/PRESSURE"  => "pressure",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/TEMPERATURE"  => "temperature",
@@ -47,7 +49,8 @@ if (!function_exists('wpf_xml_parser')) {
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDSPEED"  => "fc_nt_windspeed",
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDDIRECTION"  => "fc_nt_winddir",
 	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/WINDGUST"  => "fc_dt_wgusts",
-	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDGUST"  => "fc_nt_wgusts"
+	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDGUST"  => "fc_nt_wgusts",
+	      "/ADC_DATABASE/FAILURE" => "failure"
 	      );
 
       $wpf_pstack .= "/$name";

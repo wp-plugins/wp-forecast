@@ -1,6 +1,6 @@
 <?php
 
-/*  Copyright 2006,2007,2008  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006,2007,2008,2009  Hans Matzen  (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -99,6 +99,21 @@ function show($wpfcid,$w,$args,$wpfvars)
     $out .="\n<div class=\"wp-forecast-curr\">\n";
     
     
+    // if accuweather sends us a failure notice print it and return
+    if ( array_key_exists('failure',$w) ) {
+      $out .= __("Accuweather failure notice","wp-forecast_".$wpf_language).":<br />";
+      $out .= $w['failure']."</div>";
+
+      // print it
+      if ( $show_from_widget == 1 )
+	echo $before_widget . $before_title . $title . $after_title . $out . $after_widget;
+      else
+	echo $out;
+      
+      return false;
+    }
+
+
     // if error print an error message and return
     if ( count($w)<=0) {
       $out .= __("Sorry, no valid weather data available.","wp-forecast_".$wpf_language)."<br /></div>";

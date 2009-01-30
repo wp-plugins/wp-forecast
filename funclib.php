@@ -35,21 +35,37 @@ function fetchURL($url)
   if ( $timeout =="")
     $timeout = 30;
 
-  $url_parsed = parse_url($url);
+
+  if ( function_exists("wp_remote_request") ) {
+    // use generic wordpress function to retrieve data
+    $resp = wp_remote_request($url, array('timeout' => $timeout));
+    
+    if ( is_wp_error($resp) ) {
+      $errcode = $resp->get_error_code();
+      $errmesg = $resp->get_error_message($errcode);
+      
+      $erg="<ADC_DATABASE><FAILURE>Connection Error:".$errcode . "<br/>";
+      $erg .= $errmesg ."</FAILURE></ADC_DATABASE>\n";
+    } else
+      $erg = $resp['body'];
+    
+    
+  } else {
+    // fallback to old fsockopen variant
+    $url_parsed = parse_url($url);
     $host = $url_parsed["host"];
-    if (!isset($url_parsed["port"])) {
-	$port = 80;
-    }
-    else {
-	$port = $url_parsed["port"];
-    }
+    if (!isset($url_parsed["port"])) 
+      $port = 80;
+    else 
+      $port = $url_parsed["port"];
+    
     $path = $url_parsed["path"];
     if ($url_parsed["query"] != "") $path .= "?" . $url_parsed["query"];
     $out = "GET $path HTTP/1.0\r\nHost: $host\r\n\r\n";
     // open connection
     $fp = @fsockopen($host, $port, $errno, $errstr, $timeout);
    
-    $in = "";
+    $erg = "";
     if ($fp) {
       // set timeout for reading 
       stream_set_timeout($fp, $timeout);
@@ -59,20 +75,21 @@ function fetchURL($url)
       // read answer
       while (!feof($fp)) {
 	$s = fgets($fp, 1024);
-	if ($body) $in .= $s;
+	if ($body) $erg .= $s;
         if ($s == "\r\n") $body = true;
       }
       // close connection
       fclose($fp);
     } else {
       // error handling
-      echo '<!-- Connection-Error, Error-No.: ' . $errno . ' >> ' . $errstr . "-->\n";
-    }  
-
-    if ($wpf_debug > 0)
-      pdebug("End of fetchURL ()");
+      $erg="<ADC_DATABASE><FAILURE>Connection Error:".$errno. " >> ". $errstr ."</FAILURE></ADC_DATABASE>\n";
+    }
+  }  
     
-    return $in;
+  if ($wpf_debug > 0)
+    pdebug("End of fetchURL ()");
+  
+  return $erg;
 }
 
 //
@@ -202,7 +219,7 @@ function get_weather($uri,$loc,$metric)
     pdebug("Start of get_weather ()");
 
   $url=$uri . "location=" . urlencode($loc) . "&metric=" . 
-    $metric;// . "&partner=forecastfox";
+    $metric; // . "&partner=forecastfox";
   
   $xml = fetchURL($url);
 

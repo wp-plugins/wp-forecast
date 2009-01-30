@@ -88,7 +88,7 @@ function wp_forecast_activate()
     };
     
     if ($refresh == "") {
-      $refresh="600";
+      $refresh="1800";
       add_option("wp-forecast-refresh".$wpfcid,$refresh,
 		 "Contains the intervall the local weather data is renewed",
 		 "yes");

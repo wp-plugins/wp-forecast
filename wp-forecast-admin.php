@@ -275,7 +275,8 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     for ($i=0;$i<$count;$i++) {
       $id = get_widget_id( $i );
       $out .="<option value='".$id."' ";
-      if ( ($id==$_POST['widgetid'] and isset($_POST['set_widget'])) or
+      if ( (array_key_exists('wodgetid', $_POST) and 
+	    $id==$_POST['widgetid'] and isset($_POST['set_widget'])) or
 	   (isset($_POST['info_update']) and  $id==$_POST['wid']) or
 	   (isset($_POST['search_loc']) and  $id==$_POST['wid']) or
 	   (isset($_POST['set_loc']) and  $id==$_POST['wid']))
@@ -521,7 +522,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
             <option value="hu_HU" <?php if ($wpf_language=="hu_HU") echo "selected=\"selected\""?>>hungarian</option>
             <option value="it_IT" <?php if ($wpf_language=="it_IT") echo "selected=\"selected\""?>>italian</option>
 	    <option value="pl_PL" <?php if ($wpf_language=="pl_PL") echo "selected=\"selected\""?>>polish</option>
-            <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option> 
+            <option value="pt_PT" <?php if ($wpf_language=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option>
+            <option value="ru_RU" <?php if ($wpf_language=="ru_RU") echo "selected=\"selected\""?>>russian</option> 
             <option value="nb_NO" <?php if ($wpf_language=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
 	    <option value="es_ES" <?php if ($wpf_language=="es_ES") echo "selected=\"selected\""?>>spanish</option>
             <option value="sv_SE" <?php if ($wpf_language=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
