@@ -1,0 +1,565 @@
+<?xml version="1.0" ?>
+<adc_database xmlns="http://www.accuweather.com">
+	<units>
+		<temp>C</temp>
+		<dist>km</dist>
+		<speed>m/s</speed>
+		<pres>mb</pres>
+		<prec>cm</prec>
+	</units>
+	<local>
+		<ufdb>LFC5</ufdb>
+		<city>Nailloux</city>
+		<state>Midi-Pyrenees France</state>
+		<lat>43.36</lat>
+		<lon>1.63</lon>
+		<time>07:14</time>
+		<gmtdiff daylightsavings="0" >1.00</gmtdiff>
+	</local>
+
+	<watchwarnareas zone="z" county="c" isactive="0">
+	<url></url>
+	</watchwarnareas>
+	
+	<currentconditions>
+		
+		<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7035/forecastfox.gif|www.accuweather.com/world-forecast-current-conditions.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|</url>
+		
+		<pressure state="Rising">1018</pressure>
+		<temperature>7</temperature>
+		<realfeel>7</realfeel>
+		<humidity>94.33183%</humidity>
+		<weathertext>Cloudy</weathertext>
+		<weathericon>07</weathericon>
+		<windgusts>2</windgusts>
+		<windspeed>1</windspeed>
+		<winddirection>SW</winddirection>
+		<visibility>12</visibility>
+		<precip>0.0</precip>
+		<uvindex index="0">Low</uvindex>
+		<radurl>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7032/forecastfox.gif|www.accuweather.com/world-maps-satellite.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;myadc=0&amp;traveler=1&amp;level=regional&amp;type=IR&amp;site=eurm&amp;anim=STILL</radurl>
+	</currentconditions>
+	
+	<airandpollen>
+		
+		<tree>N(0)</tree>
+		<weed>N(0)</weed>
+		<grass>N(0)</grass>
+		<mold>N(0)</mold>
+		<airquality>G(0)</airquality>
+		<airqualitytype>0</airqualitytype>
+		
+	</airandpollen>
+	<planets>
+		<sun rise="8:15" set="17:17"/>
+<moon rise="14:30" set="4:16"/>
+<mercury rise="8:57" set="17:37"/>
+<venus rise="11:22" set="20:30"/>
+<mars rise="8:12" set="17:10"/>
+<jupiter rise="10:47" set="20:00"/>
+<saturn rise="0:48" set="13:35"/>
+<uranus rise="13:16" set="0:45"/>
+<neptune rise="12:11" set="22:25"/>
+<pluto rise="8:48" set="18:36"/>
+
+	</planets>
+	<moon>
+	
+		
+		<phase date="12/9/2008" text="Waxing Gibbous" >11</phase>
+		
+		<phase date="12/10/2008" text="Waxing Gibbous" >12</phase>
+		
+		<phase date="12/11/2008" text="Waxing Gibbous" >13</phase>
+		
+		<phase date="12/12/2008" text="Full" >14</phase>
+		
+		<phase date="12/13/2008" text="Waning Gibbous" >15</phase>
+		
+		<phase date="12/14/2008" text="Waning Gibbous" >16</phase>
+		
+		<phase date="12/15/2008" text="Waning Gibbous" >17</phase>
+		
+		<phase date="12/16/2008" text="Waning Gibbous" >18</phase>
+		
+		<phase date="12/17/2008" text="Waning Gibbous" >19</phase>
+		
+		<phase date="12/18/2008" text="Waning Gibbous" >20</phase>
+		
+		<phase date="12/19/2008" text="Last" >21</phase>
+		
+		<phase date="12/20/2008" text="Waning Crescent" >21</phase>
+		
+		<phase date="12/21/2008" text="Waning Crescent" >22</phase>
+		
+		<phase date="12/22/2008" text="Waning Crescent" >23</phase>
+		
+		<phase date="12/23/2008" text="Waning Crescent" >24</phase>
+		
+		<phase date="12/24/2008" text="Waning Crescent" >25</phase>
+		
+		<phase date="12/25/2008" text="Waning Crescent" >26</phase>
+		
+		<phase date="12/26/2008" text="Waning Crescent" >27</phase>
+		
+		<phase date="12/27/2008" text="New" >1</phase>
+		
+		<phase date="12/28/2008" text="Waxing Crescent" >1</phase>
+		
+		<phase date="12/29/2008" text="Waxing Crescent" >1</phase>
+		
+		<phase date="12/30/2008" text="Waxing Crescent" >2</phase>
+		
+		<phase date="12/31/2008" text="Waxing Crescent" >3</phase>
+		
+		<phase date="1/1/2009" text="Waxing Crescent" >4</phase>
+		
+		<phase date="1/2/2009" text="Waxing Crescent" >5</phase>
+		
+		<phase date="1/3/2009" text="Waxing Crescent" >6</phase>
+		
+		<phase date="1/4/2009" text="First" >7</phase>
+		
+		<phase date="1/5/2009" text="Waxing Gibbous" >8</phase>
+		
+		<phase date="1/6/2009" text="Waxing Gibbous" >9</phase>
+		
+		<phase date="1/7/2009" text="Waxing Gibbous" >10</phase>
+		
+		<phase date="1/8/2009" text="Waxing Gibbous" >11</phase>
+		
+		<phase date="1/9/2009" text="Waxing Gibbous" >12</phase>
+		
+	</moon>
+	<images>
+	<radar>
+	http://sirocco.accuweather.com/adc_sat_108x81_public/ir/iseurm.gif</radar>
+
+	</images>
+	
+	<forecast>
+		
+		<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7040/forecastfox.gif|www.accuweather.com/world-forecast.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|</url>
+		<hbh>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7041/forecastfox.gif|www.accuweather.com/world-forecast-hourly.asp?partner=forecastfox&amp;locCode=EUR|FR|FR016|NAILLOUX|&amp;metric=1</hbh>
+		
+			<day number="1">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=1</url>
+							
+				<obsdate>12/9/2008</obsdate>
+				<daycode>Tuesday</daycode>
+				<sunrise>8:15</sunrise>
+				<sunset>17:17</sunset>
+				<daytime>
+				
+					<txtshort>Colder with rain</txtshort>
+					<txtlong>Colder with rain</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>8</hightemperature>
+					<lowtemperature>4</lowtemperature>
+					<realfeelhigh>9</realfeelhigh>
+					<realfeellow>1</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>NNW</winddirection>
+					<windgust>3</windgust>
+					<maxuv>0</maxuv>
+					<rainamount>0.97</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.97</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Chilly with rain</txtshort>
+					<txtlong>Chilly with rain</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>8</hightemperature>
+					<lowtemperature>4</lowtemperature>
+					<realfeelhigh>9</realfeelhigh>
+					<realfeellow>1</realfeellow>
+					<windspeed>3</windspeed>
+					<winddirection>WNW</winddirection>
+					<windgust>6</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.81</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.81</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="2">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=2</url>
+							
+				<obsdate>12/10/2008</obsdate>
+				<daycode>Wednesday</daycode>
+				<sunrise>8:16</sunrise>
+				<sunset>17:17</sunset>
+				<daytime>
+				
+					<txtshort>Colder with rain and drizzle</txtshort>
+					<txtlong>Colder with rain and drizzle</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>4</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>0</realfeelhigh>
+					<realfeellow>-6</realfeellow>
+					<windspeed>4</windspeed>
+					<winddirection>WNW</winddirection>
+					<windgust>9</windgust>
+					<maxuv>0</maxuv>
+					<rainamount>0.66</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.66</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>A mix of snow and rain late</txtshort>
+					<txtlong>Cold; rain and drizzle in the evening followed by a mix of snow and rain late</txtlong>
+					<weathericon>29</weathericon>
+					<hightemperature>4</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>0</realfeelhigh>
+					<realfeellow>-6</realfeellow>
+					<windspeed>6</windspeed>
+					<winddirection>WNW</winddirection>
+					<windgust>12</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.33</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.46</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="3">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=3</url>
+							
+				<obsdate>12/11/2008</obsdate>
+				<daycode>Thursday</daycode>
+				<sunrise>8:17</sunrise>
+				<sunset>17:17</sunset>
+				<daytime>
+				
+					<txtshort>A.M. snow, then a few showers</txtshort>
+					<txtlong>Cloudy and cold; periods of snow in the morning followed by a couple of showers in the afternoon</txtlong>
+					<weathericon>29</weathericon>
+					<hightemperature>4</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>-3</realfeelhigh>
+					<realfeellow>-2</realfeellow>
+					<windspeed>6</windspeed>
+					<winddirection>WNW</winddirection>
+					<windgust>12</windgust>
+					<maxuv>0</maxuv>
+					<rainamount>0.03</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.13</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Cold and rainy</txtshort>
+					<txtlong>Cold and rainy</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>4</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>-3</realfeelhigh>
+					<realfeellow>-2</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>W</winddirection>
+					<windgust>9</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.10</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.10</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="4">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=4</url>
+							
+				<obsdate>12/12/2008</obsdate>
+				<daycode>Friday</daycode>
+				<sunrise>8:18</sunrise>
+				<sunset>17:18</sunset>
+				<daytime>
+				
+					<txtshort>A shower in the a.m.; cloudy</txtshort>
+					<txtlong>A passing shower in the morning; otherwise, remaining cloudy and cold</txtlong>
+					<weathericon>07</weathericon>
+					<hightemperature>5</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>4</realfeelhigh>
+					<realfeellow>-7</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SSW</winddirection>
+					<windgust>5</windgust>
+					<maxuv>0</maxuv>
+					<rainamount>0.03</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.03</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Cloudy and cold</txtshort>
+					<txtlong>Considerable cloudiness and cold</txtlong>
+					<weathericon>07</weathericon>
+					<hightemperature>5</hightemperature>
+					<lowtemperature>1</lowtemperature>
+					<realfeelhigh>4</realfeelhigh>
+					<realfeellow>-7</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>S</winddirection>
+					<windgust>8</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="5">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=5</url>
+							
+				<obsdate>12/13/2008</obsdate>
+				<daycode>Saturday</daycode>
+				<sunrise>8:19</sunrise>
+				<sunset>17:18</sunset>
+				<daytime>
+				
+					<txtshort>Cold with clouds and sun</txtshort>
+					<txtlong>A passing flurry in the morning; otherwise, cold with times of sun and clouds</txtlong>
+					<weathericon>04</weathericon>
+					<hightemperature>5</hightemperature>
+					<lowtemperature>-1</lowtemperature>
+					<realfeelhigh>1</realfeelhigh>
+					<realfeellow>-2</realfeellow>
+					<windspeed>4</windspeed>
+					<winddirection>W</winddirection>
+					<windgust>10</windgust>
+					<maxuv>1</maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Partly cloudy and cold</txtshort>
+					<txtlong>Partly cloudy and cold</txtlong>
+					<weathericon>35</weathericon>
+					<hightemperature>5</hightemperature>
+					<lowtemperature>-1</lowtemperature>
+					<realfeelhigh>1</realfeelhigh>
+					<realfeellow>-2</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SW</winddirection>
+					<windgust>6</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="6">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=6</url>
+							
+				<obsdate>12/14/2008</obsdate>
+				<daycode>Sunday</daycode>
+				<sunrise>8:19</sunrise>
+				<sunset>17:18</sunset>
+				<daytime>
+				
+					<txtshort>Chilly with rain</txtshort>
+					<txtlong>Chilly with rain</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>8</hightemperature>
+					<lowtemperature>2</lowtemperature>
+					<realfeelhigh>7</realfeelhigh>
+					<realfeellow>-1</realfeellow>
+					<windspeed>3</windspeed>
+					<winddirection>WSW</winddirection>
+					<windgust>11</windgust>
+					<maxuv>1</maxuv>
+					<rainamount>0.23</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.23</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Chilly with rain</txtshort>
+					<txtlong>Chilly with rain</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>8</hightemperature>
+					<lowtemperature>2</lowtemperature>
+					<realfeelhigh>7</realfeelhigh>
+					<realfeellow>-1</realfeellow>
+					<windspeed>4</windspeed>
+					<winddirection>WNW</winddirection>
+					<windgust>11</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.28</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.28</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="7">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=7</url>
+							
+				<obsdate>12/15/2008</obsdate>
+				<daycode>Monday</daycode>
+				<sunrise>8:20</sunrise>
+				<sunset>17:18</sunset>
+				<daytime>
+				
+					<txtshort>Morning rain; cloudy, chilly</txtshort>
+					<txtlong>Occasional rain in the morning; otherwise, cloudy and chilly</txtlong>
+					<weathericon>12</weathericon>
+					<hightemperature>9</hightemperature>
+					<lowtemperature>4</lowtemperature>
+					<realfeelhigh>10</realfeelhigh>
+					<realfeellow>3</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SW</winddirection>
+					<windgust>7</windgust>
+					<maxuv>1</maxuv>
+					<rainamount>0.08</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.08</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Mainly clear and chilly</txtshort>
+					<txtlong>Mainly clear and chilly</txtlong>
+					<weathericon>34</weathericon>
+					<hightemperature>9</hightemperature>
+					<lowtemperature>4</lowtemperature>
+					<realfeelhigh>10</realfeelhigh>
+					<realfeellow>3</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SSE</winddirection>
+					<windgust>5</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="8">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=8</url>
+							
+				<obsdate>12/16/2008</obsdate>
+				<daycode>Tuesday</daycode>
+				<sunrise>8:21</sunrise>
+				<sunset>17:19</sunset>
+				<daytime>
+				
+					<txtshort>Times of clouds and sun</txtshort>
+					<txtlong>Times of clouds and sun</txtlong>
+					<weathericon>04</weathericon>
+					<hightemperature>12</hightemperature>
+					<lowtemperature>6</lowtemperature>
+					<realfeelhigh>13</realfeelhigh>
+					<realfeellow>4</realfeellow>
+					<windspeed>1</windspeed>
+					<winddirection>SSE</winddirection>
+					<windgust>3</windgust>
+					<maxuv>1</maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Mostly cloudy</txtshort>
+					<txtlong>Mostly cloudy</txtlong>
+					<weathericon>38</weathericon>
+					<hightemperature>12</hightemperature>
+					<lowtemperature>6</lowtemperature>
+					<realfeelhigh>13</realfeelhigh>
+					<realfeellow>4</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SSE</winddirection>
+					<windgust>4</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.00</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.00</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+			<day number="9">
+				
+				<url>http://spotlight.accuweather.com/dyndoc/goto/spotlight/adc_qxa7045/forecastfox.gif|www.accuweather.com/world-forecast-detail.asp?partner=forecastfox&amp;zipcode=EUR|FR|FR016|NAILLOUX|&amp;fday=9</url>
+							
+				<obsdate>12/17/2008</obsdate>
+				<daycode>Wednesday</daycode>
+				<sunrise>8:21</sunrise>
+				<sunset>17:19</sunset>
+				<daytime>
+				
+					<txtshort>Rainy</txtshort>
+					<txtlong>Rainy</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>9</hightemperature>
+					<lowtemperature>6</lowtemperature>
+					<realfeelhigh>9</realfeelhigh>
+					<realfeellow>7</realfeellow>
+					<windspeed>2</windspeed>
+					<winddirection>SE</winddirection>
+					<windgust>4</windgust>
+					<maxuv>1</maxuv>
+					<rainamount>0.25</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.25</precipamount>
+					<tstormprob>0</tstormprob>
+				</daytime>
+				<nighttime>
+					
+					<txtshort>Periods of rain</txtshort>
+					<txtlong>Periods of rain</txtlong>
+					<weathericon>18</weathericon>
+					<hightemperature>9</hightemperature>
+					<lowtemperature>6</lowtemperature>
+					<realfeelhigh>9</realfeelhigh>
+					<realfeellow>7</realfeellow>
+					<windspeed>1</windspeed>
+					<winddirection>ENE</winddirection>
+					<windgust>2</windgust>
+					<maxuv></maxuv>
+					<rainamount>0.18</rainamount>
+					<snowamount>0.00</snowamount>
+					<precipamount>0.18</precipamount>
+					<tstormprob>0</tstormprob>
+				</nighttime>
+			</day>
+			
+	</forecast>
+	
+	<copyright>Copyright 2008 AccuWeather.com</copyright>
+	<use>This document is intended only for use by authorized licensees of AccuWeather.com. Unauthorized use is prohibited. All Rights Reserved.</use>
+	<product>Forecastfox</product>
+	<redistribution>Redistribution Prohibited.</redistribution>
+</adc_database>

@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006,2007,2008  Hans Matzen (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,21 +25,44 @@ if (!function_exists('fetchURL')) {
 //
 function fetchURL($url) 
 {
-  global $wpf_debug;
-    
-  if ($wpf_debug > 0)
-    pdebug("Start of fetchURL ()");
+  pdebug(1,"Start of fetchURL ()");
 
   // get timeout parameter
   $timeout = get_option("wp-forecast-timeout");
   if ( $timeout =="")
-    $timeout = 30;
+    $timeout = 10;
 
 
   if ( function_exists("wp_remote_request") ) {
-    // use generic wordpress function to retrieve data
-    $resp = wp_remote_request($url, array('timeout' => $timeout));
+    pdebug(1,"Using wp_remote_request");
+
+    // switch to wp-forecast transport
+    switch_wpf_transport(true);
     
+    $wprr_args = array(
+	'timeout' => $timeout,
+	'headers' => array(
+	    'Connection' => 'Close',
+	    'Accept' => '*/*'
+	    ) 
+	); 
+
+
+    // use generic wordpress function to retrieve data
+    $s = time();
+    $resp = wp_remote_request($url, $wprr_args);
+    $e = time();
+
+    if ( is_wp_error($resp) )
+	$blen = "-1";
+    else
+	$blen = strlen( $resp['body'] );
+
+    pdebug(1,"Fetch took ".(int) ($e-$s) . " seconds and got ".$blen." Bytes.");
+
+    // switch to wp-forecast transport
+    switch_wpf_transport(false);
+
     if ( is_wp_error($resp) ) {
       $errcode = $resp->get_error_code();
       $errmesg = $resp->get_error_message($errcode);
@@ -51,6 +74,7 @@ function fetchURL($url)
     
     
   } else {
+    pdebug(1,"Using build in fsockopen method");
     // fallback to old fsockopen variant
     $url_parsed = parse_url($url);
     $host = $url_parsed["host"];
@@ -86,61 +110,18 @@ function fetchURL($url)
     }
   }  
     
-  if ($wpf_debug > 0)
-    pdebug("End of fetchURL ()");
+  pdebug(1,"End of fetchURL ()");
   
   return $erg;
 }
 
-//
-// converts an array to an cookie like string
-// e.g. a=5&b=6&c=7
-function arr2str($a)
-{
-  global $wpf_debug;
-    
-  if ($wpf_debug > 0)
-    pdebug("Start of arr2str ()");
-
-  $s="";
-  foreach ($a as $name => $value){
-    $s=$s . $name . "=" . $value . "&";
-  }
-
-  if ($wpf_debug > 0)
-    pdebug("End of arr2str ()");
-
-  return $s;
-}
-
-//
-// converts a cookie like string (see above) to an array
-//
-function str2arr($s)
-{
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of str2arr ()");
-
-  $a=array();
-  parse_str($s,$a);
-
-  if ($wpf_debug > 0)
-    pdebug("End of str2arr ()");
-
-  return $a;
-}
 
 //
 // converts the given wind parameters into a suitable windstring
 //
 function windstr($metric,$wspeed,$windunit) 
 {
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of windstr ()");
+  pdebug(2,"Start of windstr ()");
 
   // if its mph convert it to m/s
   if ($metric != 1)
@@ -165,8 +146,7 @@ function windstr($metric,$wspeed,$windunit)
     break;
   }
   
-  if ($wpf_debug > 0)
-    pdebug("End of windstr ()");
+  pdebug(2,"End of windstr ()");
   
   return $wspeed." ".$wunit;
 }
@@ -174,35 +154,75 @@ function windstr($metric,$wspeed,$windunit)
 
 function get_wpf_opts($wpfcid) 
 {
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of get_wpf_opts ()");
-
+  pdebug(1,"Start of get_wpf_opts ($wpfcid)");
+ 
   $av=array();
-  
-  // get options from database
-  $av['location']=get_option("wp-forecast-location".$wpfcid);
-  $av['locname']=get_option("wp-forecast-locname".$wpfcid);
-  $av['refresh']=get_option("wp-forecast-refresh".$wpfcid); 
-  $av['metric']=get_option("wp-forecast-metric".$wpfcid); 
-  $av['wpf_language']=get_option("wp-forecast-language".$wpfcid);
-  $av['daytime']=get_option("wp-forecast-daytime".$wpfcid);
-  $av['nighttime']=get_option("wp-forecast-nighttime".$wpfcid);
+  $opt = get_option("wp-forecast-opts".$wpfcid);
+  if (! empty($opt)) 
+  {
+      // get widget options from database
+      $av=unserialize($opt);
+  } 
+  else if (get_option("wp-forecast-location".$wpfcid) !="" ) 
+  {
+      // get old widget options from database
+      $av['service']      = get_option("wp-forecast-service".$wpfcid);
+      $av['apikey1']      = get_option("wp-forecast-apikey1".$wpfcid);
+      $av['apikey2']      = get_option("wp-forecast-apikey2".$wpfcid);
+      $av['location']     = get_option("wp-forecast-location".$wpfcid);
+      $av['locname']      = get_option("wp-forecast-locname".$wpfcid);
+      $av['refresh']      = get_option("wp-forecast-refresh".$wpfcid); 
+      $av['metric']       = get_option("wp-forecast-metric".$wpfcid); 
+      $av['wpf_language'] = get_option("wp-forecast-language".$wpfcid);
+      $av['daytime']      = get_option("wp-forecast-daytime".$wpfcid);
+      $av['nighttime']    = get_option("wp-forecast-nighttime".$wpfcid);
+      $av['dispconfig']   = get_option("wp-forecast-dispconfig".$wpfcid);
+      $av['windunit']     = get_option("wp-forecast-windunit".$wpfcid);
+      $av['currtime']     = get_option("wp-forecast-currtime".$wpfcid);
+      $av['title']        = get_option("wp-forecast-title".$wpfcid);
+      // replace old options by new one row option
+      add_option("wp-forecast-opts".$wpfcid,serialize($av));
+      // remove old options from database
+      delete_option("wp-forecast-location".$wpfcid);
+      delete_option("wp-forecast-locname".$wpfcid);
+      delete_option("wp-forecast-refresh".$wpfcid); 
+      delete_option("wp-forecast-metric".$wpfcid); 
+      delete_option("wp-forecast-language".$wpfcid);
+      delete_option("wp-forecast-daytime".$wpfcid);
+      delete_option("wp-forecast-nighttime".$wpfcid);
+      delete_option("wp-forecast-dispconfig".$wpfcid);
+      delete_option("wp-forecast-windunit".$wpfcid);
+      delete_option("wp-forecast-currtime".$wpfcid); 
+      delete_option("wp-forecast-title".$wpfcid);
+      delete_option("wp-forecast-service".$wpfcid); 
+      delete_option("wp-forecast-apikey1".$wpfcid);
+      delete_option("wp-forecast-apikey2".$wpfcid);
+  } 
+  else 
+  {
+      $av=array();
+  }
+
+  // add expire options
+  $av['expire']=get_option("wp-forecast-expire".$wpfcid);
+
+  // add generic options
   $av['fc_date_format']=get_option("date_format");
   $av['fc_time_format']=get_option("time_format");
-  $av['dispconfig']=get_option("wp-forecast-dispconfig".$wpfcid);
-  $av['windunit']=get_option("wp-forecast-windunit".$wpfcid);
-  $av['currtime']=get_option("wp-forecast-currtime".$wpfcid);
-  $av['title'] = get_option("wp-forecast-title".$wpfcid);
   $av['xmlerror']="";
-
-  // set accuweather uri
-  $av['BASE_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/weather_data.asp?";
-
-  if ($wpf_debug > 0)
-    pdebug("End of get_wpf_opts ()");  
-
+  
+  // set static uris for each provider
+  //$av['BASE_URI']="http://host1/accuweather/weather_data.php?"; // for testing
+  $av['ACCU_LOC_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/locate_city.asp?location=";
+  $av['ACCU_BASE_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/weather_data.asp?";
+  
+  $av['BUG_LOC_URI']="http://#apicode#.api.wxbug.net/getLocationsXML.aspx?ACode=#apicode#&SearchString=";
+  //$av['BUG_STAT_URI']="http://#apicode#.api.wxbug.net/getStationsXML.aspx?ACode=#apicode#&cityCode=";
+  $av['BUG_BASE_URI']="http://#apicode#.api.wxbug.net/getLiveWeatherRSS.aspx?ACode=#apicode#&cityCode=";
+  $av['BUG_FORC_URI']="http://#apicode#.api.wxbug.net/getForecastRSS.aspx?ACode=#apicode#&cityCode=";
+  
+  pdebug(1,"End of get_wpf_opts ()");  
+  
   return $av;
 }
 
@@ -213,18 +233,14 @@ function get_wpf_opts($wpfcid)
 //
 function get_weather($uri,$loc,$metric)
 {
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of get_weather ()");
+  pdebug(1,"Start of get_weather ()");
 
   $url=$uri . "location=" . urlencode($loc) . "&metric=" . 
-    $metric; // . "&partner=forecastfox";
+    $metric; 
   
   $xml = fetchURL($url);
 
-  if ($wpf_debug > 0)
-    pdebug("End of get_weather ()");
+  pdebug(1,"End of get_weather ()");
   
   return $xml;
 }
@@ -235,17 +251,13 @@ function get_weather($uri,$loc,$metric)
 //
 function wp_forecast_css($wpfcid="A") {
 
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast_css ()");
+  pdebug(1,"Start of function wp_forecast_css ()");
 
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
   echo "<link rel=\"stylesheet\" href=\"". $plugin_path. "/wp-forecast.css\" type=\"text/css\" media=\"screen\" />\n";
 
   
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast_css ()");
+  pdebug(1,"End of function wp_forecast_css ()");
 }
 
 
@@ -255,26 +267,24 @@ function wp_forecast_css($wpfcid="A") {
 //
 function wp_forecast_css_nowp($wpfcid="A") {
   
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast_css_nowp ()");
+  pdebug(1,"Start of function wp_forecast_css_nowp ()");
   
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
   echo "<link rel=\"stylesheet\" href=\"". $plugin_path. "/wp-forecast-nowp.css\" type=\"text/css\" media=\"screen\" />\n";
   
   
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast_css ()");
+  pdebug(1,"End of function wp_forecast_css_nowp ()");
 }
 
 
 //
 // little debug output routine
 //
-function pdebug($dstr)
+function pdebug($level,$dstr)
 {
-  echo $dstr."<br />\n";
+  global $wpf_debug;
+  if ($wpf_debug >= $level)
+    echo $dstr."<br />\n";
 }
 
 //
@@ -330,5 +340,119 @@ function translate_winddir($wdir,$tdom)
   return $winddir;
 }
 
+}
+
+/*
+  functions to check the wordpress transport methods
+
+  if wpf selected transport option is set to empty,
+  then we are in probing mode and do not change the wordpress result
+  else we only keep alive what was selected via admin dialog
+
+*/
+
+function wpf_check_fsockopen($use, $args = array()) 
+{
+    $sel_transport = get_option("wp-forecast-wp-transport");
+    if ( $sel_transport == "" || $sel_transport == "default" )
+	return $use;
+    else if ( $sel_transport == "fsockopen" )
+	return true;
+    else
+	return false;
+}
+
+function wpf_check_fopen($use, $args = array()) 
+{ 
+    $sel_transport = get_option("wp-forecast-wp-transport");
+    if ( $sel_transport == "" || $sel_transport == "default" )
+	return $use; 
+    else if ( $sel_transport == "fopen" )
+	return true;
+    else
+	return false;
+}
+
+function wpf_check_streams($use, $args = array()) 
+{
+    $sel_transport = get_option("wp-forecast-wp-transport");
+    if ( $sel_transport == "" || $sel_transport == "default" )
+	return $use;
+    else if ( $sel_transport == "streams" )
+	return true;
+    else
+	return false;
+}
+
+function wpf_check_exthttp($use, $args = array()) 
+{
+    $sel_transport = get_option("wp-forecast-wp-transport");
+    if ( $sel_transport == "" || $sel_transport == "default" )
+	return $use; 
+    else if ( $sel_transport == "exthttp" )
+	return true;
+    else
+	return false;
+}
+
+function wpf_check_curl($use, $args = array()) 
+{
+    $sel_transport = get_option("wp-forecast-wp-transport"); 
+    if ( $sel_transport == "" || $sel_transport == "default" )
+	return $use;
+    else if ( $sel_transport == "curl" )
+	return true;
+    else
+	return false;
+}
+
+// function to get the list of supported transports ignoring
+// any preset method
+function get_wp_transports()
+{
+    $tlist = array();
+ 
+    // remove but store selected transport
+    $wp_transport = get_option("wp-forecast-wp-transport"); 
+    update_option("wp-forecast-wp-transport","default");
+
+    // get wordpress default transports
+    $wplist = array();
+    
+    if ( true === WP_Http_ExtHttp::test( array() ) ) 
+	$tlist[] = "exthttp";
+    
+    if ( true === WP_Http_Fsockopen::test( array() ) ) 
+	$tlist[] = "fsockopen";
+
+    if ( true === WP_Http_Streams::test( array() ) ) 
+	$tlist[] = "streams";
+    
+    // disabled fopen, since this class sends no headers
+    //if ( true === WP_Http_Fopen::test( array() ) ) 
+    // $tlist[] = "fopen";
+
+    if ( true === WP_Http_Curl::test( array() ) ) 
+	$tlist[] = "curl";	
+
+    
+    // write back selected transport
+    update_option("wp-forecast-wp-transport",$wp_transport);
+
+    return $tlist;
+}
+
+//
+// function to turn on/off wp-forecast repselected transport
+// 
+function switch_wpf_transport($sw)
+{
+    $wptrans = "default";
+
+    if ($sw == true)
+	$wptrans = get_option("wp-forecast-pre-transport");
+
+    pdebug(1,"Setting preselected transport to ".$wptrans);
+    update_option("wp-forecast-wp-transport",$wptrans);
 }
 ?>

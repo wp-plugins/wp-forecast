@@ -1,6 +1,6 @@
 <?php
 
-/*  Copyright 2006,2007,2008,2009  Hans Matzen  (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,22 +21,44 @@
 // display the weather-data 
 //
 // the following structure will be used:
-//
-// <div class=wp-forecast">
-//    <div class="wp-forecast-curr">
-//      <div class="wp-forecast-curr-details">
-//      </div>
-//      <div class="wp-forecast-copyright">
-//      </div>
-//    </div>
-//    <div class="wp-forecast-fc">
-//      <div class="wp-forecast-fc-details">
-//      </div>
-//    </div>
-// </div>
-//
-//
-//
+/*
+<div class="wp-forecast">
+  <div class="wp-forecast-curr">
+    <div class="wp-forecast-curr-head">
+    </div>
+    <div class="wp-forecast-curr-block">
+      <div class='wp-forecast-curr-left'>
+      </div>
+      <div class='wp-forecast-curr-right'>
+      </div>
+    </div>
+    <div class="wp-forecast-curr-details">
+      <div class="wp-forecast-copyright">
+      </div>
+    </div>
+  </div>
+  <div class="wp-forecast-fc">
+
+    <div class="wp-forecast-fc-oneday">
+      <div class="wp-forecast-fc-head">
+      </div>
+      <div class="wp-forecast-fc-block">
+        <div class="wp-forecast-fc-left">
+        </div>
+        <div class='wp-forecast-fc-right'>
+        </div>
+      </div>
+      <div class="wp-forecast-fc-block">
+        <div class="wp-forecast-fc-left">
+        </div>
+        <div class='wp-forecast-fc-right'>
+        </div>
+      </div>
+    </div>
+    ... repetead for everey forecast day ...
+  </div>
+</div>
+*/
 
 // if called directly, get parameters from GET and output the forecast html
 if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { 
@@ -52,7 +74,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   if (!empty($language_override)) {
     $wpf_vars['wpf_language']=$language_override;
   }
-  $weather=str2arr(get_option("wp-forecast-cache".$wpfcid));
+  $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
   
 
   if ($header) {
@@ -63,16 +85,13 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   }
   wp_forecast_css_nowp($wpfcid);
   echo "</head>\n<body>\n";
-  show($wpfcid,$weather,$args,$wpf_vars);
+  show($wpfcid,$args,$wpf_vars);
   echo "</body></html>\n";
  }
 
-function show($wpfcid,$w,$args,$wpfvars)
+function show($wpfcid,$args,$wpfvars)
 {
-  global $wpf_debug;
-
-  if ($wpf_debug > 0)
-    pdebug("Start of show ()");
+  pdebug(1,"Start of show ()");
 
   // check how we are called as a widget or from sidebar
   if (sizeof($args)==0)
@@ -82,6 +101,7 @@ function show($wpfcid,$w,$args,$wpfvars)
 
   extract($args);
   extract($wpfvars);
+  $w = wp_forecast_data($wpfcid, $wpf_language);
 
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
 
@@ -93,74 +113,75 @@ function show($wpfcid,$w,$args,$wpfvars)
   }
 
   // current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
-  if ( strpos(substr($dispconfig,0,9),"1") >= 0 or substr($dispconfig,18,1) == "1" or substr($dispconfig,21,1) == "1" or substr($dispconfig,22,1) == "1" ) {
-    // ouput current conditions
-    $out ="";
-    $out .="\n<div class=\"wp-forecast-curr\">\n";
+  if ( strpos(substr($dispconfig,0,9),"1") >= 0 or 
+       substr($dispconfig,18,1) == "1" or 
+       substr($dispconfig,21,1) == "1" or 
+       substr($dispconfig,22,1) == "1" ) 
+    {
+      // ouput current conditions
+      $out ="";
+      $out .="\n<div class=\"wp-forecast-curr\">\n";
     
-    
-    // if accuweather sends us a failure notice print it and return
-    if ( array_key_exists('failure',$w) ) {
-      $out .= __("Accuweather failure notice","wp-forecast_".$wpf_language).":<br />";
-      $out .= $w['failure']."</div>";
+      // if the provider sends us a failure notice print it and return
+      if ( $w['failure'] != "" ) 
+	{
+	  $out .= __("Failure notice from provider","wp-forecast_".$wpf_language).":<br />";
+	  $out .= $w['failure']."</div>";
+	  
+	  // print it
+	  if ( $show_from_widget == 1 )
+	    echo $before_widget . $before_title . $title . $after_title 
+	      . $out . $after_widget;
+	  else
+	    echo $out;
+	  
+	  return false;
+	}
 
-      // print it
-      if ( $show_from_widget == 1 )
-	echo $before_widget . $before_title . $title . $after_title . $out . $after_widget;
-      else
-	echo $out;
-      
-      return false;
-    }
 
+      // if error print an error message and return
+      if ( count($w)<=0) 
+	{
+	  $out .= __("Sorry, no valid weather data available.","wp-forecast_".$wpf_language)."<br />";
+	  $out .= __("Please try again later.","wp-forecast_".$wpf_language)."</div>";
+	  // print it
+	  if ( $show_from_widget == 1 )
+	    echo $before_widget . $before_title . $title . $after_title . 
+	      $out . $after_widget;
+	  else
+	    echo $out;
+	  
+	  return false;
+	}
 
-    // if error print an error message and return
-    if ( count($w)<=0) {
-      $out .= __("Sorry, no valid weather data available.","wp-forecast_".$wpf_language)."<br /></div>";
-      $out .= __("Please try again later.","wp-forecast_".$wpf_language)."</div>";
-      // print it
-      if ( $show_from_widget == 1 )
-	echo $before_widget . $before_title . $title . $after_title . $out . $after_widget;
-      else
-	echo $out;
-      
-      return false;
-    }
-    
     // ortsnamen ausgeben 
-    $acculink="";
-    $acculink_end="";
+    $servicelink="";
+    $servicelink_end="";
     if (substr($dispconfig,25,1) == "1") {
-      $acculink= '<a href="http://www.accuweather.com/world-index-forecast.asp?locCode=' . get_option('wp-forecast-location'.$wpfcid) . '&amp;metric=' . get_option("wp-forecast-metric".$wpfcid) . '" rel="nofollow">';
-      $acculink_end="</a>";
+      $servicelink= '<a href="'.urlencode($w['servicelink']).'">';
+      $servicelink_end="</a>";
     }
-    
-    if ( $locname == "" ) 
-      $out .= "<div>" . $acculink . $w["city"]." ".$w["state"]. $acculink_end. "</div>\n";
-    else if ( trim($locname) !="" and $locname != "&nbsp;")
-      $out .= "<div>" . $acculink . $locname . $acculink_end."</div>\n";
+    $out .= '<div class="wp-forecast-curr-head">';
+    if ( $w['location'] == "" ) 
+      $out .= "<div>".$servicelink.$w['locname']. $servicelink_end."</div>\n";
+    else if ( trim($w['location']) !="" and $w['location'] != "&nbsp;")
+      $out .= "<div>".$servicelink.$w['location'].$servicelink_end."</div>\n";
 
-    $out .="<table class=\"wp-forecast-curr\">\n";
-    
     // show date / time   
-    //echo $w['gmtdiff']."###".$w['gmtdiffdls'];
-    // if current time should be used calc current local time
+    // if current time should be used 
     if ($currtime=="1") {
-      
-      $lt = time() - date("Z"); // this is the GMT
-      $ct  = $lt + (3600 * ($w['gmtdiff'])); // local time
-      if ( $w['gmtdiffdls'] == 1)
-	$ct += 3600; // time with daylightsavings 
+      $cd = $w['blogdate'];
+      $ct = $w['blogtime'];
     } else {
       // else take given accuweather time
-      $cts = $w['fc_obsdate_1']." ".$w['time'];
-      $ct = strtotime($cts);
+      $cd = $w['accudate'];
+      $ct = $w['accutime'];
     }
-    
+
     if (substr($dispconfig,18,1) == "1" or substr($dispconfig,1,1) == "1") {
-      $out .= "<tr><td colspan=\"2\">"; 
+      $out .= "<div>"; 
       if (substr($dispconfig,18,1) == "1") 
-	$out .= date_i18n($fc_date_format, $ct);
+	$out .= $cd;
       else
 	$out .= __('time',"wp-forecast_".$wpf_language).": ";
       
@@ -168,45 +189,40 @@ function show($wpfcid,$w,$args,$wpfvars)
 	$out .= ", ";
       
       if (substr($dispconfig,1,1) == "1") 
-	$out .= date_i18n($fc_time_format, $ct)."<br />";
-      $out .= "</td></tr>";
+	$out .= $ct;
+      $out .= "</div></div>\n";
     }
-    
+
+    $out .= '<div class="wp-forecast-curr-block">';
+
     // show icon
     if (substr($dispconfig,0,1) == "1") {
-      // debug keelung
-      //$out .= "<b>".$w["weathericon"]."</b>";
-      $iconfile=find_icon($w["weathericon"]);
-      $out .= "<tr><td><img class='wp-forecast-curr' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["weathericon"],"wp-forecast_".$wpf_language)."' /></td>\n";
-    } else {
-      $out .= "<tr><td></td>\n";
-    }
+      if ($service=="accu")
+	$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+      if ($service=="bug")
+	$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+    }     
     
-    
-    $out .= "<td>";
+    $out .= "<div class='wp-forecast-curr-right'>";
     
     // show short description
     if (substr($dispconfig,2,1) == "1") 
-      $out .= __($w["weathericon"],"wp-forecast_".$wpf_language)."<br />";
+      $out .= "<div>". $w["shorttext"]."</div>";
     
     // show temperatur
-    if (substr($dispconfig,3,1) == "1") {
-      $out .= __('tmp',"wp-forecast_".$wpf_language).": ".$w["temperature"]."&deg;";
-      $out .= $w['un_temp']."</td></tr>\n";
-    } else {
-      $out .="</td></tr>\n";
-    }
-    
-    $out .= "</table>\n";
-    
+    if (substr($dispconfig,3,1) == "1") 
+      $out .= $w["temperature"];
+    //$out .= __('tmp',"wp-forecast_".$wpf_language).": ".$w["temperature"];
+    $out .= "</div>\n"; // end of right
+    $out .= "</div>\n";  // end of block
     
     $out .= "<div class=\"wp-forecast-curr-details\">";
     // show realfeel
     if (substr($dispconfig,4,1) == "1") 
-      $out .= __('flik',"wp-forecast_".$wpf_language).": ".$w["realfeel"]."&deg;".$w['un_temp']."<br />\n";
+      $out .= "<div>".__('flik',"wp-forecast_".$wpf_language).": ".$w["realfeel"]."</div>\n";
     // show pressure
     if (substr($dispconfig,5,1) == "1") 
-      $out .= __('barr',"wp-forecast_".$wpf_language).": ".$w["pressure"]." ".$w["un_pres"]."<br />\n";
+      $out .= "<div>".__('barr',"wp-forecast_".$wpf_language).": ".$w["pressure"]."</div>\n";
     
     // show humiditiy
     if (substr($dispconfig,6,1) == "1") 
@@ -214,35 +230,34 @@ function show($wpfcid,$w,$args,$wpfvars)
       // you can change the decimals of humditiy by switching 
       // the 0 to whatever you need
       //
-      $out .= __('hmid',"wp-forecast_".$wpf_language).": ".round($w["humidity"],0)."%<br />\n";
+      $out .= "<div>".__('hmid',"wp-forecast_".$wpf_language).": ".$w["humidity"]."%</div>\n";
     
     // show wind
-    if (substr($dispconfig,7,1) == "1") {
-      $wstr=windstr($metric,$w["windspeed"],$windunit);
-
-      $out .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language)."<br />\n";
-    }
+    if (substr($dispconfig,7,1) == "1") 
+      $out .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".$w['windspeed']." " . $w['winddir']."</div>\n";
+    
     
     // show windgusts
-    if (substr($dispconfig,22,1) == "1") {
-      $wstr=windstr($metric,$w["wgusts"],$windunit);
-      $out .= __('Windgusts',"wp-forecast_".$wpf_language).": ".$wstr."<br />\n";
-    }
+    if (substr($dispconfig,22,1) == "1") 
+      $out .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".$w['windgusts']."</div>\n";
     
-    $sunarr = explode(" ",$w["sun"]);
+    
     // show sunrise
     if (substr($dispconfig,8,1) == "1")
-      $out .= __('sunrise',"wp-forecast_".$wpf_language).": ".$sunarr[0]."<br />\n";
+      $out .="<div>". __('sunrise',"wp-forecast_".$wpf_language).": ".$w['sunrise']."</div>\n";
     
     // show sunset
     if (substr($dispconfig,9,1) == "1")
-      $out .= __('sunset',"wp-forecast_".$wpf_language).": ".$sunarr[1]."<br />\n";
+      $out .= "<div>".__('sunset',"wp-forecast_".$wpf_language).": ".$w['sunset']."</div>\n";
     
     // show copyright
     if (substr($dispconfig,21,1) == "1")
-      $out .= "<div class=\"wp-forecast-copyright\"><a href=\"http://www.accuweather.com\">&copy; 2008 AccuWeather, Inc.</a></div>";
+      $out .= "<div class=\"wp-forecast-copyright\">".$w['copyright']."</div>";
     
-    $out .="</div></div>\n";
+    $out .="</div>\n"; // end of details
+    $out .="</div>\n"; // end of curr
+
+    
   }
  
   // ------------------
@@ -250,118 +265,148 @@ function show($wpfcid,$w,$args,$wpfvars)
   // output forecast
   //
   // -------------------
-  $out1="";
-  for ($i = 1; $i < 10; $i++) {
-    
-    // check active forecast for day number i
-    if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") {
-      $out1 .="\n<div class=\"wp-forecast-fc\">\n";
-      $out1 .="<table class=\"wp-forecast-fc-head\" cellpadding='3' cellspacing='2'><tr><td>\n";
-      $out1 .= __("Forecast","wp-forecast_".$wpf_language)." ";
-      $out1 .= date_i18n($fc_date_format, strtotime($w['fc_obsdate_'.$i]))."</td></tr></table>";
-    }
-    
-    // check for daytime information
-    if (substr($daytime,$i-1,1)=="1" ) {
-      $out1 .="<table class=\"wp-forecast-fc\" cellpadding='3' cellspacing='2'>\n";
-      $out1 .= "<tr><td>".__('day',"wp-forecast_".$wpf_language)."<br />";
-      
-      // show icon
-      if (substr($dispconfig,10,1) == "1") {
-	// debug keelung
-	//$out1 .= "<b>".$w["fc_dt_icon_".$i]."</b>#".$wpf_language;
-	$iconfile=find_icon($w["fc_dt_icon_".$i]);
-	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
-      } else {
-	$out1 .= "&nbsp;";
-      }
-      $out1 .= "</td><td>\n";
-      
-      // show short description
-      if (substr($dispconfig,11,1) == "1")
-	$out1 .= __($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language)."<br />";
-      
-      // show temperature
-      if (substr($dispconfig,12,1) == "1") 
-	$out1 .= $w["fc_dt_htemp_".$i]."&deg;".$w['un_temp']."<br />";
-      
-      
-      // show wind
-      if (substr($dispconfig,13,1) == "1") {
-	$wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
-	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
-      }
-      
-      // show windgusts
-      if (substr($dispconfig,23,1) == "1") {
-	$wstr=windstr($metric,$w["fc_dt_wgusts_".$i],$windunit);
-	$out1 .= __('Windgusts',"wp-forecast_".$wpf_language).": ".$wstr."\n";
-      }
-      
-      $out1 .= "</td></tr></table>\n";
-    }
-
-    // open div class for css if applicable 
-    if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") 
-	$out1.="<div class=\"wp-forecast-fc-details\">";
-    
-    // check for nighttime information
-    if (substr($nighttime,$i-1,1)=="1" ) {
-      $out1 .="<table class=\"wp-forecast-fc\" cellpadding='3' cellspacing='2'>\n";
-      $out1 .= "<tr><td>".__('night',"wp-forecast_".$wpf_language)."<br />";
-      if (substr($dispconfig,14,1) == "1") { 
-	// debug keelung
-	//$out1 .= "<b>".$w["fc_nt_icon_".$i]."</b>#";
-	$iconfile=find_icon($w["fc_nt_icon_".$i]);
-	$out1 .= "<img class='wp-forecast-fc-details' src='".$plugin_path."/icons/".$iconfile."' alt='".__($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."' />";
-      } else {
-	$out1 .= "&nbsp;";
-      }
-      $out1 .= "</td><td>\n";
-      
-      // show short description
-      if (substr($dispconfig,15,1) == "1") 
-	$out1 .= __($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language)."<br />";
-      
-      // show temperature
-      if (substr($dispconfig,16,1) == "1") {
-	$out1 .= $w["fc_nt_ltemp_".$i]."&deg;".$w['un_temp']."<br />";
-      }
-      
-      // show wind
-      if (substr($dispconfig,17,1) == "1") {
-	$wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
-	$winddir=$w["fc_nt_winddir_".$i];
-	
-	$out1 .= __('winds',"wp-forecast_".$wpf_language).": ".$wstr." " . translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language)."<br />\n";
-      }
-      
-      // show windgusts
-      if (substr($dispconfig,24,1) == "1") {
-	$wstr=windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
-	$out1 .= __('Windgusts',"wp-forecast_".$wpf_language).": ".$wstr."\n";
-      }
-      
-      $out1 .= "</td></tr></table>\n";
-    }	
-    // close div block
-    if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") 
-      $out1 .="</div></div>\n";
+  // calc max forecast days depending on provider
+  switch ($service) 
+  {
+  case "accu":
+      $maxdays=9; break;
+  case "bug":
+      $maxdays=7;  break;
+  case "com":
+      // to be done
+      break;
   }
 
-  
+  $out1="<div class=\"wp-forecast-fc\">\n";
+  for ($i = 1; $i <= $maxdays; $i++) 
+  {
+      // check active forecast for day number i
+      if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") 
+      {
+	  $out1 .="<div class=\"wp-forecast-fc-oneday\">\n";
+	  
+	  $out1 .="<div class=\"wp-forecast-fc-head\">";
+	  $out1 .= __("Forecast","wp-forecast_".$wpf_language)." ";
+	  $out1 .= $w['fc_obsdate_'.$i]."</div>\n";
+      }
+    
+      // check for daytime information
+      if (substr($daytime,$i-1,1)=="1" ) 
+      {
+	  $out1 .="<div class=\"wp-forecast-fc-block\">\n";
+	  $out1 .="<div class=\"wp-forecast-fc-left\">\n";
+	  $out1 .= "<div>".__('day',"wp-forecast_".$wpf_language)."</div>\n";
+	  
+	  // show icon
+	  if (substr($dispconfig,10,1) == "1") 
+	  {
+	      if ($service=="accu")
+		  $out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/".
+		      $w['fc_dt_icon_'.$i]."' alt='".
+		      __($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language)."' />";
+
+	  if ($service=="bug")
+	    $out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
+		"' alt='".$w["fc_dt_desc_".$i]."' />"; 
+	  } 
+	  else 
+	  {
+	      $out1 .= "&nbsp;";
+	  }
+	  $out1 .= "\n</div>\n"; // end of wp-forecast-fc-left
+	  $out1 .= "<div class='wp-forecast-fc-right'>";
+	
+	  // show short description
+	  if (substr($dispconfig,11,1) == "1")
+	      $out1 .= "<div>".$w["fc_dt_desc_".$i]."</div>";
+	
+	  // show temperature
+	  if (substr($dispconfig,12,1) == "1") 
+	  { 
+	      $out1 .= "<div>";
+	      $out1 .= ($service=="bug" ? $w["fc_dt_ltemp_".$i]." - ":"");
+	      $out1 .= $w["fc_dt_htemp_".$i]. "</div>";
+	  }
+	
+	  // show wind
+	  if (substr($dispconfig,13,1) == "1") 
+	      $out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".
+		  $w["fc_dt_windspeed_".$i]." ".$w["fc_dt_winddir_".$i]."</div>";
+	
+	  // show windgusts
+	  if (substr($dispconfig,23,1) == "1") 
+	      $out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".
+		  $w["fc_dt_wgusts_".$i]."</div>\n";
+	  
+	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
+      }
+    
+    
+    // check for nighttime information
+    if (substr($nighttime,$i-1,1)=="1" and $service != "bug") 
+      {
+	$out1 .="<div class=\"wp-forecast-fc-block\">\n";
+	$out1 .="<div class=\"wp-forecast-fc-left\">\n";
+	$out1 .= "<div>". __('night',"wp-forecast_".$wpf_language)."</div>\n";
+	if (substr($dispconfig,14,1) == "1") 
+	  { 
+	    $iconfile=find_icon($w["fc_nt_icon_".$i]);
+	    $out1 .= "<img class='wp-forecast-fc-left' src='"
+	      .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
+	      .__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' />";
+	  } 
+	else 
+	  {
+	    $out1 .= "&nbsp;";
+	  }
+	$out1 .= "\n</div>\n<div class='wp-forecast-fc-right'>";
+	
+	// show short description
+	if (substr($dispconfig,15,1) == "1") 
+	  $out1 .= "<div>".$w["fc_nt_desc_".$i]."</div>";
+	
+	// show temperature
+	if (substr($dispconfig,16,1) == "1") 
+	  $out1 .= "<div>".$w["fc_nt_ltemp_".$i]."</div>";
+	
+	
+      // show wind
+	if (substr($dispconfig,17,1) == "1") 
+	  $out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language)
+	    .": ".$w["fc_nt_windspeed_".$i]." "
+	    . $w["fc_nt_winddir_".$i]  ."</div>";
+	
+	
+	// show windgusts
+	if (substr($dispconfig,24,1) == "1") 
+	  $out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language)
+	    .": ".$w["fc_nt_wgusts_".$i]."</div>\n";
+	
+	
+	$out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
+      } 
+
+   	
+    
+    // close div block
+    if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") 
+      $out1 .="</div>\n";
+  }
+
+  $out1 .= "</div>\n"; // end of wp-forecast-fc
+
   // print it
   if ( $show_from_widget == 1 )
     echo $before_widget . $before_title . $title . $after_title;
   
-  echo "<div class=\"wp-forecast\">" . $out . $out1 . "</div><br />";;
+  echo '<div class="wp-forecast">' . $out . $out1 . '</div>'."\n";
+  // to come back to theme floating status
+  echo '<div style="clear:inherit;">&nbsp;</div>';
   
   if ( $show_from_widget == 1 )
     echo $after_widget;
   
-  if ($wpf_debug > 0)
-    pdebug("End of show ()");    
+  pdebug(1,"End of show ()");    
   
 }
 ?>

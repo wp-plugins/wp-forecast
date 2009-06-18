@@ -1,31 +1,25 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-forecast\n"
+"Project-Id-Version: wp-forecast 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-17 19:32+0200\n"
-"PO-Revision-Date: 2008-11-04 17:18-0000\n"
-"Last-Translator: cast <cast@nada.com>\n"
-"Language-Team: castmir <castmir4@gmail.com>\n"
+"PO-Revision-Date: 2009-05-24 21:47+0100\n"
+"Last-Translator: Roland Geci <rolandgeci@gmail.com>\n"
+"Language-Team: Roland Geci <rolandgeci@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: s\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: class-wpf_widget.php:63 wp-forecast-admin.php:98
 msgid "Title:"
-msgstr "Título:"
+msgstr "Názov:"
 
 #: class-wpf_widget.php:71 wp-forecast-admin.php:213
 msgid "Available widgets"
-msgstr "Wiggets disponibles"
+msgstr "Dostupné widgety"
 
 #: func_bug.php:222
 msgid "Location does not exist"
@@ -37,7 +31,7 @@ msgstr ""
 
 #: setup.php:92
 msgid "The Weather"
-msgstr "El Tiempo"
+msgstr "Počasie"
 
 #: shortcodes.php:30
 msgid "wp-forecast shortcode: This browser does not support iframes."
@@ -49,20 +43,20 @@ msgstr "widget_hint"
 
 #: wp-forecast-admin.php:201 wp-forecast.php:315
 msgid "How many wp-forecast widgets would you like?"
-msgstr "¿Cuántos widgets de wp-forecast quieres?"
+msgstr "Koľko wp-forecast widgetov si prajete ?"
 
 #: wp-forecast-admin.php:210 wp-forecast-admin.php:236
 #: wp-forecast-admin.php:252 wp-forecast-admin.php:261 wp-forecast.php:324
 msgid "Save"
-msgstr "Guardar"
+msgstr "Uložiť"
 
 #: wp-forecast-admin.php:229
 msgid "Select widget"
-msgstr "Elije un widget"
+msgstr "Vyberte widget"
 
 #: wp-forecast-admin.php:234
 msgid "Timeout for accuweather connections (secs.)?"
-msgstr "\tTiempo de espera para las conexiones Accuweather (seg.)"
+msgstr ""
 
 #: wp-forecast-admin.php:240
 msgid "Preselect wordpress transfer method"
@@ -78,15 +72,15 @@ msgstr ""
 
 #: wp-forecast-admin.php:407
 msgid "Settings successfully updated"
-msgstr "Configuración actualizada con éxito"
+msgstr "Nastavenia boli úspešne aktualizované."
 
 #: wp-forecast-admin.php:409
 msgid "You have to change a field to update settings."
-msgstr "\tDebe cambiar un campo para actualizar la configuración."
+msgstr "Musíte zmeniť toto pole pre aktualizáciu nastavení."
 
 #: wp-forecast-admin.php:455
 msgid "WP-Forecast Setup"
-msgstr "Configuración de WP-Forecast"
+msgstr "Nastavenie WP-Forecast"
 
 #: wp-forecast-admin.php:458
 msgid "Weatherservice"
@@ -95,17 +89,17 @@ msgstr ""
 #: wp-forecast-admin.php:460
 #, fuzzy
 msgid "AccuWeather"
-msgstr "Enlace"
+msgstr "Odkaz na Accuweather"
 
 #: wp-forecast-admin.php:461
 #, fuzzy
 msgid "WeatherBug"
-msgstr "El Tiempo"
+msgstr "Počasie"
 
 #: wp-forecast-admin.php:463
 #, fuzzy
 msgid "Weather.com"
-msgstr "El Tiempo"
+msgstr "Počasie"
 
 #: wp-forecast-admin.php:466
 msgid "Partner ID"
@@ -117,120 +111,120 @@ msgstr ""
 
 #: wp-forecast-admin.php:474
 msgid "Location"
-msgstr "Población"
+msgstr "Poloha"
 
 #: wp-forecast-admin.php:477
 msgid "Press Update options to save new location."
-msgstr "Pulse actualizar para Guardar una nueva población."
+msgstr "Kliknite Aktualizovať voľby pre uloženie novej polohy."
 
 #: wp-forecast-admin.php:480
 msgid "Locationname"
-msgstr "Nombre de la Población"
+msgstr "Názov polohy"
 
 #: wp-forecast-admin.php:482
 msgid "Refresh cache after"
-msgstr "Actualiza la página después"
+msgstr "Obnov cache po"
 
 #: wp-forecast-admin.php:484
 msgid "secs."
-msgstr "seg."
+msgstr "sek."
 
 #: wp-forecast-admin.php:485
 msgid "Use metric units"
-msgstr "usar unidades métricas"
+msgstr "Použiť metrické jednotky"
 
 #: wp-forecast-admin.php:488
 msgid "Use current time"
-msgstr "Usar hora actual"
+msgstr "Použiť aktuálny čas"
 
 #: wp-forecast-admin.php:491
 msgid "Windspeed-Unit"
-msgstr "Unidad Viento"
+msgstr "Jednotka rýchlosti vetra"
 
 #: wp-forecast-admin.php:492
 msgid "Meter/Second (m/s)"
-msgstr "Metros/Segundo (m/s)"
+msgstr "Meter/Sekunda (m/s)"
 
 #: wp-forecast-admin.php:493
 msgid "Kilometer/Hour (km/h)"
-msgstr "Kilómetros/Hora (km/h)"
+msgstr "Kilometer/Hodina (km/h)"
 
 #: wp-forecast-admin.php:494
 msgid "Miles/Hour (mph)"
-msgstr "Millas/Hora (mph)"
+msgstr "Míľ/Hodina (mph)"
 
 #: wp-forecast-admin.php:495
 msgid "Knots (kts)"
-msgstr "Nudos (kts)"
+msgstr "Uzly (kts)"
 
 #: wp-forecast-admin.php:500
 msgid "Language"
-msgstr "Idioma"
+msgstr "Jazyk"
 
 #: wp-forecast-admin.php:521
 msgid "Display Configuration"
-msgstr "Mostar configuración"
+msgstr "Zobraziť konfiguráciu"
 
 #: wp-forecast-admin.php:525
 msgid "Current Conditions"
-msgstr "Condiciones actuales"
+msgstr "aktuálne podmienky"
 
 #: wp-forecast-admin.php:526
 msgid "Forecast Day"
-msgstr "Previsión Día"
+msgstr "predpoveď na deň"
 
 #: wp-forecast-admin.php:527
 msgid "Forecast Night"
-msgstr "Previsión Noche"
+msgstr "predpoveď na noc"
 
 #: wp-forecast-admin.php:530
 msgid "Icon"
-msgstr "Icono"
+msgstr "ikona"
 
 #: wp-forecast-admin.php:539
 msgid "Date"
-msgstr "Fecha"
+msgstr "dátum"
 
 #: wp-forecast-admin.php:546
 msgid "Time"
-msgstr "Hora"
+msgstr "čas"
 
 #: wp-forecast-admin.php:553
 msgid "Short Description"
-msgstr "Descripción breve"
+msgstr "skrátený popis"
 
 #: wp-forecast-admin.php:562
 msgid "Temperature"
-msgstr "Temperatura"
+msgstr "teplota"
 
 #: wp-forecast-admin.php:571
 msgid "Realfeel"
-msgstr "Sensación térmica"
+msgstr "pocitová teplota"
 
 #: wp-forecast-admin.php:578
 msgid "Pressure"
-msgstr "Presión"
+msgstr "tlak"
 
 #: wp-forecast-admin.php:585
 msgid "Humidity"
-msgstr "Humedad"
+msgstr "vlhkosť"
 
 #: wp-forecast-admin.php:592
 msgid "Wind"
-msgstr "Viento"
+msgstr "vietor"
 
 #: wp-forecast-admin.php:601 wp-forecast-show.php:242 wp-forecast-show.php:338
 #: wp-forecast-show.php:382
 msgid "Windgusts"
-msgstr "Ráfagas"
+msgstr "nárazy vetra"
 
 #: wp-forecast-admin.php:610
 msgid "Sunrise"
-msgstr "Salida del Sol"
+msgstr "Východ Slnka"
 
 #: wp-forecast-admin.php:617
 msgid "Sunset"
-msgstr "Puesta de Sol"
+msgstr "Západ Slnka"
 
 #: wp-forecast-admin.php:624
 msgid "Copyright"
@@ -239,11 +233,11 @@ msgstr "Copyright"
 #: wp-forecast-admin.php:631
 #, fuzzy
 msgid "Link to Weatherprovider"
-msgstr "Enlace"
+msgstr "Odkaz na Accuweather"
 
 #: wp-forecast-admin.php:640 wp-forecast-show.php:289
 msgid "Forecast"
-msgstr "Previsión"
+msgstr "Predpoveď na"
 
 #: wp-forecast-admin.php:645
 msgid "All"
@@ -255,47 +249,47 @@ msgstr ""
 #: wp-forecast-admin.php:652 wp-forecast-admin.php:653
 #: wp-forecast-admin.php:654
 msgid "Day"
-msgstr "Día"
+msgstr "deň"
 
 #: wp-forecast-admin.php:656
 msgid "Daytime"
-msgstr "Día"
+msgstr "cez deň"
 
 #: wp-forecast-admin.php:677
 msgid "Nighttime"
-msgstr "Noche"
+msgstr "v noci"
 
 #: wp-forecast-admin.php:707
 msgid "Update options"
-msgstr "Actualizar Opciones"
+msgstr "Aktualizovať voľby"
 
 #: wp-forecast-admin.php:714 wp-forecast-admin.php:731
 msgid "Search location"
-msgstr "Buscar población"
+msgstr "Vyhľadať polohu"
 
 #: wp-forecast-admin.php:718
 msgid "Searchterm"
-msgstr "Término de búsqueda"
+msgstr "Hľadaný výraz"
 
 #: wp-forecast-admin.php:722
 msgid "No locations found."
-msgstr "No se ha encontrado ninguna población."
+msgstr "Žiadna poloha nebola nájdená."
 
 #: wp-forecast-admin.php:726
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Por favor no uses acentos o ñ en la búsqueda."
+msgstr "Nahraďte prosím prehlásky ä,ö,ü  s  a, o, u v hľadanom výraze."
 
 #: wp-forecast-admin.php:736
 msgid "Search result"
-msgstr "Resultados de la búsqueda"
+msgstr "Výsledok hľadania"
 
 #: wp-forecast-admin.php:743
 msgid "Please select your city and press set location."
-msgstr "Selecciona tú ciudad y pulsa 'Establecer ubicación'"
+msgstr "Vyberte prosím mesto a kliknite na nastavenie polohy."
 
 #: wp-forecast-admin.php:747
 msgid "Set location"
-msgstr "Establecer ubicación"
+msgstr "Nastaviť polohu"
 
 #: wp-forecast.php:354
 #, php-format
@@ -308,255 +302,255 @@ msgstr ""
 
 #: wp-forecast-show.php:145
 msgid "Sorry, no valid weather data available."
-msgstr "Disculpa, no hay datos disponibles"
+msgstr "Prepáčte, nie sú dostupné žiadne aktuálne dáta."
 
 #: wp-forecast-show.php:146
 msgid "Please try again later."
-msgstr "Por favor, inténtalo de nuevo."
+msgstr "Skúste prosím neskôr."
 
 #: wp-forecast-show.php:186
 msgid "time"
-msgstr "hora"
+msgstr "čas"
 
 #: wp-forecast-show.php:222
 msgid "flik"
-msgstr "sensación térmica"
+msgstr "pocitová teplota"
 
 #: wp-forecast-show.php:225
 msgid "barr"
-msgstr "presión"
+msgstr "tlak vzduchu"
 
 #: wp-forecast-show.php:233
 msgid "hmid"
-msgstr "humedad"
+msgstr "vlhkosť vzduchu"
 
 #: wp-forecast-show.php:237 wp-forecast-show.php:333 wp-forecast-show.php:375
 msgid "winds"
-msgstr "viento"
+msgstr "rýchlosť vetra"
 
 #: wp-forecast-show.php:247
 msgid "sunrise"
-msgstr "salida del sol"
+msgstr "Východ Slnka"
 
 #: wp-forecast-show.php:251
 msgid "sunset"
-msgstr "puesta de sol"
+msgstr "Západ Slnka"
 
 #: wp-forecast-show.php:298
 msgid "day"
-msgstr "día"
+msgstr "deň"
 
 #: wp-forecast-show.php:350
 msgid "night"
-msgstr "noche"
+msgstr "noc"
 
 #: xgettextdummy.php:5
 msgid "loc"
-msgstr "población"
+msgstr "poloha"
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr "Soleado"
+msgstr "jasno"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Más claros que nubes"
+msgstr "prevažne jasno"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Parcialmente Soleado"
+msgstr "polojasno"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Nuboso"
+msgstr "prerušovaná oblačnosť"
 
 #: xgettextdummy.php:10
 msgid "05"
-msgstr "Muy Soleado"
+msgstr "hmlisto"
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr "Más nubes que claros"
+msgstr "prevažne zamračené"
 
 #: xgettextdummy.php:12
 msgid "07"
-msgstr "Cubierto"
+msgstr "zamračené"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Muy nuboso"
+msgstr "sychravo"
 
 #: xgettextdummy.php:14
 msgid "11"
-msgstr "Niebla"
+msgstr "hmla"
 
 #: xgettextdummy.php:15
 msgid "12"
-msgstr "Chubasco"
+msgstr "prehánky"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Principalmente Nuboso con Chubascos"
+msgstr "prevažne zamračené s prehánkami"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Parcialmente Soleado con Chubascos"
+msgstr "polojasno s prehánkami"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Tormentas"
+msgstr "búrky"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Principalmente Nuboso y Tormentas"
+msgstr "prevažne zamračené s búrkami"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Parcialmente Soleado y Tormentas"
+msgstr "polojasno, ojedinele s  búrkami a prehánkami"
 
 #: xgettextdummy.php:21
 msgid "18"
-msgstr "Lluvia"
+msgstr "dážď"
 
 #: xgettextdummy.php:22
 msgid "19"
-msgstr "Ráfagas de viento"
+msgstr "fujavica"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Principalmente Nuboso con Ráfagas"
+msgstr "prevažne zamračené s fujavicou"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Parcialmente Soleado con Ráfagas"
+msgstr "polojasno s fujavicou"
 
 #: xgettextdummy.php:25
 msgid "22"
-msgstr "Nieve"
+msgstr "sneženie"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Principalmente Nuboso con Nieve"
+msgstr "prevažne zamračené so snežením"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "Helada"
+msgstr "poľadovica"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "Aguanieve"
+msgstr "krupobitie"
 
 #: xgettextdummy.php:29
 msgid "26"
-msgstr "Granizo"
+msgstr "mrznúci dážď"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "Aguanieve"
+msgstr "dážď so snehom"
 
 #: xgettextdummy.php:31
 msgid "30"
-msgstr "Calor"
+msgstr "horúco"
 
 #: xgettextdummy.php:32
 msgid "31"
-msgstr "Frio"
+msgstr "chladno"
 
 #: xgettextdummy.php:33
 msgid "32"
-msgstr "Ventoso"
+msgstr "veterno"
 
 #: xgettextdummy.php:34
 msgid "33"
-msgstr "Despejado"
+msgstr "jasno"
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr "Principalmente Despejado"
+msgstr "prevažne jasno"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Parcialmente Nuboso"
+msgstr "čiastočne zamračené"
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr "Nubes intermitentes"
+msgstr "prerušovaná oblačnosť"
 
 #: xgettextdummy.php:38
 msgid "37"
-msgstr "Neblina"
+msgstr "hmlisto"
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr "Parcialmente Cubierto"
+msgstr "prevažne zamračené"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Parcialmente Cubierto con Chubascos"
+msgstr "čiastočne zamračené s prehánkami"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Principalmente Nuboso con Chubascos"
+msgstr "prevažne zamračené s prehánkami"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Parcialmente Nuboso con Chubascos"
+msgstr "čiastočne zamračené s búrkami"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "Principalmente Nuboso con Tormentas"
+msgstr "prevažne zamračené s búrkami"
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr "Principalmente Nuboso con Chubascos"
+msgstr "prevažne zamračené s fujavicou"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Principalmente Nuboso con Nevadass"
+msgstr "prevažne zamračené so snehom"
 
 #: xgettextdummy.php:46
 msgid "Monday"
-msgstr "Lunes"
+msgstr "Pondelok"
 
 #: xgettextdummy.php:47
 msgid "Tuesday"
-msgstr "Martes"
+msgstr "Utorok"
 
 #: xgettextdummy.php:48
 msgid "Wednesday"
-msgstr "Miércoles"
+msgstr "Streda"
 
 #: xgettextdummy.php:49
 msgid "Thursday"
-msgstr "Jueves"
+msgstr "Štvrtok"
 
 #: xgettextdummy.php:50
 msgid "Friday"
-msgstr "Viernes"
+msgstr "Piatok"
 
 #: xgettextdummy.php:51
 msgid "Saturday"
-msgstr "Sábado"
+msgstr "Sobota"
 
 #: xgettextdummy.php:52
 msgid "Sunday"
-msgstr "Domingo"
+msgstr "Nedeľa"
 
 #: xgettextdummy.php:53
 msgid "N"
-msgstr ""
+msgstr "S"
 
 #: xgettextdummy.php:54
 msgid "E"
-msgstr ""
+msgstr "V"
 
 #: xgettextdummy.php:55
 msgid "W"
-msgstr ""
+msgstr "Z"
 
 #: xgettextdummy.php:56
 msgid "S"
-msgstr ""
+msgstr "J"
 
 #: xgettextdummy.php:57
 msgid "30% Chance Drizzle"
@@ -881,7 +875,7 @@ msgstr ""
 #: xgettextdummy.php:138
 #, fuzzy
 msgid "Nowcast"
-msgstr "Previsión"
+msgstr "Predpoveď na"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"
@@ -922,7 +916,7 @@ msgstr ""
 #: xgettextdummy.php:148
 #, fuzzy
 msgid "Sunny"
-msgstr "Domingo"
+msgstr "Nedeľa"
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
@@ -943,7 +937,7 @@ msgstr ""
 #: xgettextdummy.php:154
 #, fuzzy
 msgid "Windy"
-msgstr "Viento"
+msgstr "vietor"
 
 #~ msgid "tmp"
-#~ msgstr "temperatura"
+#~ msgstr "teplota"

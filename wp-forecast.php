@@ -3,12 +3,12 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 2.3
+Version: 2.4
 Author: Hans Matzen <webmaster at tuxlog.de>
 Author URI: http://www.tuxlog.de
 */
 
-/*  Copyright 2006,2007,2008  Hans Matzen (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009  Hans Matzen (email : webmaster at tuxlog.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,6 +25,22 @@ Author URI: http://www.tuxlog.de
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+
+//
+// only use this in case of severe problems accessing the admin dialog
+//
+// preselected transport method for fetching the weather data
+// valid values are
+//       curl      - uses libcurl
+//       fsockopen - uses fsockopen
+//       streams   - uses fopen with streams
+//       exthttp   - uses pecl http extension
+// this will override every setting from the admin dialog
+// you have to assure that the chosen transport is supported by the
+// wordpress class WP_Http;
+//
+static $wp_forecast_pre_transport="";
+
 //
 // maximal number of widgets to use
 //
@@ -33,12 +49,17 @@ static $wpf_maxwidgets=20;
 //
 // set to 0 for no debugging information
 // set to 1 for call stack
-// set to 2 for call stack and variables ( not implemented yet)
+// set to 2 for call stack including xml parser
 //
 static $wpf_debug=0;
 
-// xml parser for accuweather xml
-require_once("func_xml_parse.php");
+
+/* ---------- no parameters to change after this point -------------------- */
+
+// accuweather data functions
+require_once("func_accu.php");
+// weatherbug data functions
+require_once("func_bug.php");
 
 // generic functions
 require_once("funclib.php");
@@ -48,6 +69,8 @@ require_once("setup.php");
 require_once("wp-forecast-admin.php");
 // display functions
 require_once("wp-forecast-show.php");
+// shortcodes
+require_once("shortcodes.php");
 
 //
 // set cache with weather data for current parameters
@@ -56,41 +79,68 @@ require_once("wp-forecast-show.php");
 
 function wp_forecast_init() 
 {
-  global $wpf_debug;
-
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast_init ()");
-  
-  $count=(int) get_option('wp-forecast-count');
-  $weather=array();
-
-  for ($i=0;$i<$count;$i++) {
-    $wpfcid=get_widget_id($i);
-
-    $wpf_vars=get_wpf_opts($wpfcid);
-    $expire=get_option("wp-forecast-expire".$wpfcid);
-   
-    if ($expire < time()) {
-      $w = get_weather($wpf_vars['BASE_URI'],$wpf_vars['location'],
-		       $wpf_vars['metric']);
-      
-      if ($wpf_debug > 0) {
-	pdebug("Fetched xml was:\n");
-	pdebug($w);
-      }
-
-      $weather=wpf_xml_parser($w);
-      
-      // store weather to database and set expire time
-      // if the current data wasnt available use old data
-      if ( count($weather)>0) {
-	update_option("wp-forecast-cache".$wpfcid, arr2str($weather));
-	update_option("wp-forecast-expire".$wpfcid, time()+$wpf_vars['refresh']);
-      }
+    pdebug(1,"Start of function wp_forecast_init ()");
+    
+    // first of all check if we have to set a hard given
+    // transport method
+    if ($wp_forecast_pre_transport!="" && 
+	get_option("wp-forecast-pre-transport") != $wp_forecast_pre_transport )
+    {
+	pdebug(1,"Setting hard coded transport method to $wp_forecast_pre_transport");
+	update_option("wp-forecast-pre-transport",$wp_forecast_pre_transport);
     }
-  }
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast_init ()");
+
+    $count=(int) get_option('wp-forecast-count');
+    
+    $weather=array();
+    
+    for ($i=0;$i<$count;$i++) 
+    {
+	$wpfcid=get_widget_id($i);
+	
+	$wpf_vars=get_wpf_opts($wpfcid);
+   
+	if ($wpf_vars['expire'] < time()) 
+	{
+	    switch ($wpf_vars['service']) 
+	    {
+	    case "accu":
+		$w = accu_get_weather($wpf_vars['ACCU_BASE_URI'],
+				      $wpf_vars['location'],
+				      $wpf_vars['metric']);
+		$weather=accu_xml_parser($w);
+		break;
+	 
+	    case "bug":
+		$w1 = bug_get_weather($wpf_vars['BUG_BASE_URI'],$wpf_vars['apikey1'],
+				      $wpf_vars['location'],$wpf_vars['metric']);
+		$weather1=bug_xml_parser($w1);
+		$w2 = bug_get_weather($wpf_vars['BUG_FORC_URI'],$wpf_vars['apikey1'],
+				      $wpf_vars['location'],$wpf_vars['metric']);
+		$weather2=bug_xml_parser($w2);
+		$weather = array_merge($weather2,$weather1);
+		break;
+
+	    case "com":
+		// to be done
+		break;
+	    }
+
+	    pdebug(1,"Fetched xml was:\n".$w);
+
+	    // store weather to database and set expire time
+	    // if the current data wasnt available use old data
+	    if ( count($weather)>0) 
+	    {
+		update_option("wp-forecast-cache".$wpfcid, serialize($weather));
+		if ( empty($weather['failure']) or $weather['failure'] == "" )
+		    update_option("wp-forecast-expire".$wpfcid, time()+$wpf_vars['refresh']);
+		else
+		    update_option("wp-forecast-expire".$wpfcid, 0); 
+	    }
+	}
+    }
+    pdebug(1,"End of function wp_forecast_init ()");
 }
 
 
@@ -102,21 +152,19 @@ function wp_forecast_init()
 function wp_forecast_widget($args=array(),$wpfcid="A", $language_override=null)
 { 
 
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast_widget ()");
+  pdebug(1,"Start of function wp_forecast_widget ()");
   
   $wpf_vars=get_wpf_opts($wpfcid);
   if (!empty($language_override)) {
     $wpf_vars['wpf_language']=$language_override;
   }
-  $weather=str2arr(get_option("wp-forecast-cache".$wpfcid));
-  show($wpfcid,$weather,$args,$wpf_vars);
+  $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
+  show($wpfcid,$args,$wpf_vars);
 
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast_widget ()");
+  pdebug(1,"End of function wp_forecast_widget ()");
 }
+
+
 
 //
 // this is the wrapper function for displaying from sidebar.php
@@ -124,15 +172,11 @@ function wp_forecast_widget($args=array(),$wpfcid="A", $language_override=null)
 //
 function wp_forecast($wpfcid="A", $language_override=null)
 { 
-  global $wpf_debug;
-  
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast ()");
+  pdebug(1,"Start of function wp_forecast ()");
   
   wp_forecast_widget( array(), $wpfcid, $language_override);
 
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast ()");
+  pdebug(1,"End of function wp_forecast ()");
 }
 
 //
@@ -206,104 +250,40 @@ function wp_forecast_set($wset, $numpercol=1, $language_override=null)
 }
 
 //
-// returns the widget data as an array one line per item
+// returns the widget data as an array 
 //
 function wp_forecast_data($wpfcid="A", $language_override=null)
 {
-  global $wpf_debug;
-
-  if ($wpf_debug > 0)
-    pdebug("Start of function wp_forecast_data ()");
+  pdebug(1,"Start of function wp_forecast_data ()");
   
   $wpf_vars=get_wpf_opts($wpfcid);
+
   if (!empty($language_override)) {
     $wpf_vars['wpf_language']=$language_override;
   } 
 
   extract($wpf_vars);
-  $w=str2arr(get_option("wp-forecast-cache".$wpfcid));
-  
-  // get translations
-  if(function_exists('load_textdomain')) {
-    global $l10n;
-    if (!isset($l10n["wp-forecast_".$wpf_language])) 
-      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
-  }
-  
+  $w=unserialize(get_option("wp-forecast-cache".$wpfcid));
+
   $weather_arr=array();
 
-  // --------------------------------------------------------------
-  // calc values for current conditions
-
-  $weather_arr['acculink']= 'http://www.accuweather.com/world-index-forecast.asp?locCode=' . get_option('wp-forecast-location'.$wpfcid) . '&amp;metric=' . get_option("wp-forecast-metric".$wpfcid);
-  $weather_arr['location']=get_option("wp-forecast-locname".$wpfcid);
-  $weather_arr['locname']= $w["city"]." ".$w["state"];
-  
-  
-  $lt = time() - date("Z"); // this is the GMT
-  $ct  = $lt + (3600 * ($w['gmtdiff'])); // local time
-  if ( $w['gmtdiffdls'] == 1)
-    $ct += 3600; // time with daylightsavings 
-  $weather_arr['blogdate']=date_i18n($fc_date_format, $ct);
-  $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
-  
-  $cts = $w['fc_obsdate_1']." ".$w['time'];
-  $ct = strtotime($cts);
-  $weather_arr['accudate']=date_i18n($fc_date_format, $ct);
-  $weather_arr['accutime']=date_i18n($fc_time_format, $ct);
-  
-  
-  $iconfile=find_icon($w["weathericon"]);
-  $weather_arr['icon']="icons/".$iconfile;
-  
-  $weather_arr['shorttext']= __($w["weathericon"],"wp-forecast_".$wpf_language);
-  
-  $weather_arr['temperature']=$w["temperature"]. "&deg;".$w['un_temp'];
-  $weather_arr['realfeel']=$w["realfeel"]."&deg;".$w['un_temp'];
-  $weather_arr['pressure']=$w["pressure"]." ".$w["un_pres"];
-  $weather_arr['humidity']=round($w["humidity"],0);
-  $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
-  $weather_arr['winddir']=$w["winddirection"];
-  $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
-  $sunarr = explode(" ",$w["sun"]);
-  $weather_arr['sunrise']=$sunarr[0];
-  $weather_arr['sunset']=$sunarr[1];
-  $weather_arr['copyright']="Copyright 2008 AccuWeather, Inc.";
-  
-
-  // calc values for forecast
-  for ($i = 1; $i < 10; $i++) {
-    // daytime forecast
-    $weather_arr['fc_obsdate_'.$i]= date_i18n($fc_date_format, strtotime($w['fc_obsdate_'.$i]));
-    $iconfile=find_icon($w["fc_dt_icon_".$i]);
-    $weather_arr["fc_dt_icon_".$i]="icons/".$iconfile;
-    $weather_arr["fc_dt_desc_".$i]= __($w["fc_dt_icon_".$i],"wp-forecast_".$wpf_language);
-     $weather_arr["fc_dt_htemp_".$i]= $w["fc_dt_htemp_".$i]."&deg;".$w['un_temp'];
-    $wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
-    $weather_arr["fc_dt_windspeed_".$i]= $wstr;
-    $weather_arr["fc_dt_winddir_".$i]=translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language);
-    $weather_arr["fc_dt_wgusts_".$i] = windstr($metric,$w["fc_dt_wgusts_".$i],$windunit);
-  
-    // nighttime forecast
-    $iconfile=find_icon($w["fc_nt_icon_".$i]);
-    $weather_arr["fc_nt_icon_".$i]="icons/".$iconfile;
-    $weather_arr["fc_nt_desc_".$i]= __($w["fc_nt_icon_".$i],"wp-forecast_".$wpf_language);
-    $weather_arr["fc_nt_ltemp_".$i]= $w["fc_nt_ltemp_".$i]."&deg;".$w['un_temp'];
-    $wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
-    $weather_arr["fc_nt_windspeed_".$i]= $wstr;
-    $weather_arr["fc_nt_winddir_".$i]=translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language);
-    $weather_arr["fc_nt_wgusts_".$i] = windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
-
-    // additional info
-    $weather_arr['failure']=$w['failure'];
-    $weather_arr['lat']=$w['lat'];
-    $weather_arr['lon']=$w['lon'];
+  // read service dependent weather data
+  switch ($wpf_vars['service']) {
+  case "accu":
+    $weather_arr= accu_forecast_data($wpfcid,$language_override);
+    break;
+  case "bug":
+    $weather_arr= bug_forecast_data($wpfcid,$language_override);
+    break;
+  case "com":
+    // to be done
+    break;
   }
 
-  if ($wpf_debug > 0)
-    pdebug("End of function wp_forecast_data ()");
-  
   return $weather_arr;
+  
+  pdebug(1,"End of function wp_forecast_data ()");
+  
 }
 
 
@@ -311,10 +291,9 @@ function wp_forecast_data($wpfcid="A", $language_override=null)
 // set the choosen number of widgets, set at the widget page
 //
 function wpf_widget_setup() {
-  global $wpf_debug,$wpf_maxwidgets;
+  global $wpf_maxwidgets;
 
-  if ($wpf_debug > 0)
-    pdebug("Start of function wpf_widget_setup ()");
+  pdebug(1,"Start of function wpf_widget_setup ()");
   
   $count = $newcount = get_option('wp-forecast-count');
   if ( isset($_POST['wpf-count-submit']) ) {
@@ -332,8 +311,7 @@ function wpf_widget_setup() {
     widget_wp_forecast_init($count);
   }
 
-  if ($wpf_debug > 0)
-    pdebug("End of function wpf_widget_setup ()");
+  pdebug(1,"End of function wpf_widget_setup ()");
 }
 
 //
@@ -341,10 +319,9 @@ function wpf_widget_setup() {
 // the widget page
 //
 function wpf_widget_page() {
-  global $wpf_debug,$wpf_maxwidgets;
+  global $wpf_maxwidgets;
   
-  if ($wpf_debug > 0)
-    pdebug("Start of function wpf_widget_page ()");
+  pdebug(1,"Start of function wpf_widget_page ()");
   
   $count = $newcount = get_option('wp-forecast-count');
   
@@ -372,17 +349,15 @@ function wpf_widget_page() {
   $out .= "</select> <span class='submit'><input type='submit' name='wpf-count-submit' id='wpf-count-submit' value=".attribute_escape(__('Save'))." /></span></p></form></div>";
   echo $out;
 
-  if ($wpf_debug > 0)
-    pdebug("End of function wpf_widget_page ()");
+  pdebug(1,"End of function wpf_widget_page ()");
 }
 
 function widget_wp_forecast_init()
 {
 
-  global $wp_version,$wpf_debug,$wpf_maxwidgets;
+  global $wp_version,$wpf_maxwidgets;
 
-  if ($wpf_debug > 0)
-    pdebug("Start of function widget_wp_forecast_init ()");
+  pdebug(1,"Start of function widget_wp_forecast_init ()");
   
   $count=(int) get_option('wp-forecast-count');
 
@@ -396,38 +371,53 @@ function widget_wp_forecast_init()
   
   // add css in header
   add_action('wp_head', 'wp_forecast_css');
-  
+
   for ($i=0;$i<=$wpf_maxwidgets;$i++) {
     $wpfcid = get_widget_id( $i );
 
     // register our widget and add a control
     $name = sprintf(__('wp-forecast %s'), $wpfcid);
-    $id = "wp-forecast$wpfcid"; 
+    $id = "wp-forecast-$wpfcid"; 
+    
     
     // register / unregister widget and control form
     // the first part is to work around bug 4275 which was
     // corrected with v2.2.1
-    if ($wp_version < "2.2.1") 
-      register_sidebar_widget(array($id,$name),
-			      $i < $count ? 'wp_forecast_widget' : '','',$wpfcid);
-    else
-      register_sidebar_widget(array($id,$name),
-			      $i < $count ? 'wp_forecast_widget' : '',$wpfcid);
+    if (version_compare($wp_version, '2.2.1', '<') )
+	register_sidebar_widget(array($id,$name),
+				$i < $count ? 'wp_forecast_widget' : '','',$wpfcid);
+    else if (version_compare($wp_version, '2.8', '<')) 
+    {
+	register_sidebar_widget(array($id,$name),
+				$i < $count ? 'wp_forecast_widget' : '',$wpfcid);
+    } 
+    else /* version 2.8 and up */
+    {
+	// include widget class (new widget api)
+	require_once("class-wpf_widget.php");
+	// register class
+ 	add_action('widgets_init', create_function('', 'return register_widget("wpf_widget");')); 
+    }
     
     unregister_sidebar_widget($i >= $count ? 'wp_forecast_widget'.$wpfcid:'');
-
-    register_widget_control(array($id,$name),
-			    $i < $count ? 'wpf_admin_hint' : ''
-			    ,300,150,$wpfcid,1);
-
+    
+    register_widget_control(array($id,$name), $i < $count ? 'wpf_admin_hint' : ''
+    		    ,300,150,$wpfcid,2);
+    
     unregister_widget_control($i >= $count ? 'wpf_admin_hint'.$wpfcid : '');
   } 
   // add actions for setup the count of wanted wpf widgets
   add_action('sidebar_admin_setup', 'wpf_widget_setup');
   add_action('sidebar_admin_page', 'wpf_widget_page');
 
-  if ($wpf_debug > 0)
-    pdebug("End of function widget_wp_forecast_init ()");
+  // add filters for transport method check
+  add_filter('use_fsockopen_transport','wpf_check_fsockopen');
+  add_filter('use_fopen_transport','wpf_check_fopen');
+  add_filter('use_streams_transport','wpf_check_streams');
+  add_filter('use_http_extension_transport','wpf_check_exthttp');
+  add_filter('use_curl_transport','wpf_check_curl');
+
+  pdebug(1,"End of function widget_wp_forecast_init ()");
 
 }
 
@@ -435,8 +425,7 @@ function widget_wp_forecast_init()
 
 // MAIN
 
-if ($wpf_debug > 0)
-     pdebug("Start of MAIN");
+pdebug(1,"Start of MAIN");
 
 // activating deactivating the plugin
 register_activation_hook(__FILE__,'wp_forecast_activate');
@@ -448,6 +437,5 @@ add_action('admin_menu', 'wp_forecast_admin');
 // Run our code later in case this loads prior to any required plugins.
 add_action('plugins_loaded', 'widget_wp_forecast_init');
 
-if ($wpf_debug > 0)
-     pdebug("End of MAIN");
+pdebug(1,"End of MAIN");
 ?>

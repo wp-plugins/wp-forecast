@@ -1,70 +1,23 @@
 === wp-forecast ===
 Tags: weather,forecast,widget
 Requires at least: 2.2
-Tested up to: 2.7
-Stable tag: 2.3
+Tested up to: 2.8
+Stable tag: 2.4
+Contributors: tuxlog
+Donate link: http://www.tuxlog.de/
 
-wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
+wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
 == Description ==
-/*
-Plugin Name: wp-forecast
-Plugin URI: http://www.tuxlog.de
-Description:  wp-forecast is a highly customizable plugin for wordpress, 
-	      showing weather-data from accuweather.com.
-Version: 2.3
-Author: Hans Matzen <webmaster at tuxlog dot de>
-Author URI: http://www.tuxlog.de
-*/
-
-/*  Copyright 2006-2008  Hans Matzen  (email : webmaster at tuxlog dot de)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-*/
-
-you are reading the readme.txt file for the wp-forecast plugin.
+You are reading the readme.txt file for the wp-forecast plugin.
 wp-forecast is a plugin for the famous wordpress blogging package,
-showing the weather-data from accuweather.com. please also refer to
-the terms of usage of accuweather.com
+showing the weather-data from accuweather.com and/or weatherbug.com. 
+please also refer to the terms of usage of accuweather.com and weatherbug.com
 
-== credits ==
-     Barbary Jany		testing a lot and bring it to valid XHTML
-     Frans Lieshout		translation to dutch
-     Luís Reis			translation to portugues
-     Håkan Carlström		translation to swedish
-     Gabriele von der Ohe	translation to german with entities 
-				(for iso-8859-1 or latin1 blogs)
-     Martin Loyer		translation to french
-     Robert Lang		language file for en_US
-     Detti Giulio		translation to italian
-     Eilif Nordseth		translation to norwegian
-     Michael S.R. Petersen	translation to dansk
-     Jaakko Kangosjärvi		translation to finish
-     Lukasz "linshi" Linhard	translation to polish
-     Castmir	     		translation to spanish
-     Tamas Koos			translation to hungarian
-     Stefano Boeri		translation to russian
- 
-   All the others giving feedback about missing features and bugs
-   Thank you very much for your contribution to wp-forecast.
+Features:
 
-
-== features ==
-
-   + Displays the weather data from AccuWeather.com at your wordpress
-   pages
+   + Displays the weather data from AccuWeather.com and or WeatherBug.com 
+     at your wordpress pages
    + Let you choose the 
 	 * location (of course)
 	 * the time after the weather data is refreshed
@@ -73,7 +26,7 @@ the terms of usage of accuweather.com
 	 * metric or american measures
 	 * windspeed unit 
 	 * the forecast days 
-	 * the daytime forecast for up to nine days
+	 * the daytime forecast for up to nine/seven days
 	 * the nighttime forecast for up to nine nights
    + support wordpress widgets, easy placement :-)
    + customize the information you want to show
@@ -81,64 +34,71 @@ the terms of usage of accuweather.com
    + integration into your site via css (see below)
    + comes with an api for wordpress-pro's ;-)
 
+Credits:
 
-== requirements ==
-
-   + PHP >=4.3
-   + Wordpress >2.2.x
-
-
-== installation ==
-	
-	1.  Upload to your plugins folder, usually
-	    `wp-content/plugins/`, keeping the directory structure intact
-	    (i.e. `wp-forecast.php` should end up in
-	    `wp-content/plugins/wp-forecast/`).
-
-	2.  Activate the plugin on the plugin screen.
-
-	3.  Visit the configuration page (Options -> WP-forecast) to
-            pick the number of widgets, data to display and to change 
-	    any other option.
-
-	4a. Visit the Themes/Widgets page to place your wp-forecat 
-	    widget within your themes sidebars
-
-	and/or
-	   
-	4b. Edit your template file and put the wp-forecast function
-            where you want your weather data to show up. 
-	    Example:
-	   
-	    <ul>
-	     <li>
-	       <?php if(function_exists(wp_forecast)) { 
-	                wp_forecast( <widget_id> ); 
-		} ?>
-	     </li>
-	    </ul>
- 
-	    You have to replace <widget_id> with the choosen widget id.
-	    For the first widget use wp_firecast("A"), for the second 
-	    wp_forecast("B") and so on.
-
-            In some cases you must put the call into a div environment.
-
-	5.  Optional
-	    If you would like to have another set of icons download it
-	    from http://accunet.accuweather.com/wx/accunet/graphics_icons.htm 
-	    and put it into the wp-content/plugins/wp-forecast/icons folder
-
-        6.  Optional
-	    If you would like to change the style, just edit wp-forecast.css
-	    there are three classes div.wp-forecast for outer formatting, 
-	    table.wp-forecast for the middle part or iconpart and 
-	    wp-forecast-details for everything below the icon
+ + Barbary Jany			testing a lot and bring it to valid XHTML
+ + Frans Lieshout		translation to dutch
+ + Luís Reis			translation to portugues
+ + Håkan Carlström		translation to swedish
+ + Gabriele von der Ohe		translation to german with entities
+	        		(for iso-8859-1 or latin1 blogs)
+ + Martin Loyer/Jean-Pierre	translation to french
+ + Robert Lang			language file for en_US
+ + Detti Giulio/Stefano Boeri	translation to italian
+ + Eilif Nordseth		translation to norwegian
+ + Michael S.R. Petersen	translation to dansk
+ + Jaakko Kangosjärvi		translation to finish
+ + Lukasz "linshi" Linhard	translation to polish
+ + Castmir	     		translation to spanish
+ + Tamas Koos			translation to hungarian
+ + Valeria Pellegrini		translation to russian
+ + Valentina Boeri		translation to romanian
+ + Roland Geci			translation to slovak
+ + All the others giving feedback about missing features and bugs.   
+   Thank you very much for your contribution to wp-forecast.   
 
 
-== translations ==
+== Installation ==
 
-   wp-forecast comes with various translations, located in the directory lang.
+1. Upload to your plugins folder, usually `wp-content/plugins/`, keeping 
+   the directory structure intact \(i.e. wp-forecast.php should end up 
+   in `wp-content/plugins/wp-forecast/`\).
+
+1. Activate the plugin on the plugin screen.
+
+3. Visit the configuration page \(`Options -> WP-forecast`\) to pick the 
+   number of widgets, data to display and to change any other option.
+
+4. Visit the Themes/Widgets page to place your wp-forecast widget within 
+   your themes sidebars or insert it manually and edit your template 
+   file and put the wp-forecast function where you want your weather 
+   data to show up.
+   Example: `<ul><li>
+                 <?php if(function_exists(wp_forecast)) { 
+                   wp_forecast( <widget_id> ); 
+                 } ?>
+             </li></ul>`
+
+     You have to replace <widget\_id> with the choosen widget id.
+     For the first widget use wp\_forecast("A"), for the second 
+     wp\_forecast("B") and so on.
+     In most cases it is advisable to put the call into a div environment.
+
+5. Optional
+   If you would like to have another set of icons download it
+   from <http://accunet.accuweather.com/wx/accunet/graphics_icons.htm>
+   and put it into the wp-content/plugins/wp-forecast/icons folder
+
+6. Optional
+   If you would like to change the style, just edit wp-forecast.css
+   there are three classes div.wp-forecast for outer formatting, 
+   table.wp-forecast for the middle part or iconpart and 
+   wp-forecast-details for everything below the icon
+
+
+== Translations ==
+
+   wp-forecast comes with various translations, located in the directory `lang`.
    if you would like to add a new translation, just take the file
    wp-forecast.pot (in the wp-forecast main directory) copy it to
    <iso-code>.po and edit it to add your translations (e.g. with poedit).
@@ -147,18 +107,25 @@ the terms of usage of accuweather.com
    you can see the mapping in en_US.po. there are also the letters N, S, W, E
    they stand for the winddirections and can be translates either.
 
-
    there are different translations for the german language using
-   different charsets. the defaukt de_DE uses UTF-8, de_DE-iso-8859-1
-   uses iso-8859-1 and de_DE-latin1 uses HTML entitites.
+   different charsets. the default de\_DE uses UTF-8, de\_DE-iso-8859-1
+   uses iso-8859-1 and de\_DE-latin1 uses HTML entitites.
+
+   to use a different as the default just rename the appropriate file
+   to de\_DE.po and de\_DE.mo
 
 
-   to use a different as the defalult just rename the appropriate file
-   to de_DE.po and de_DE.mo
+== Frequently Asked Questions ==
+= My smilies are gone? What's wrong? =
 
+Plase check and double check the path to your smiley directory.
 
+== Screenshots ==
+1. wp-forecast as a widget with two day forecast
+2. wp-forecast admin dialog
+3. wp-forecast in an iframe with a two day forecast
 
-== history ==
+== History ==
 2007-01-15 v0.1	   Initial beta release 
 
 2007-05-17 v0.2    Fixed some incorrect XHTML code
@@ -296,3 +263,18 @@ the terms of usage of accuweather.com
 		    function to get remote data from accuweather, changed 
 		    default value of cache refresh to 1800 seconds, added
 		    translation to russian.
+
+2009-06-18 v2.4	    fixed translation of winddirection in api, added 
+	   	    translation for romanian, fixed russian and italian 
+		    translation, modified show function to use data api,
+		    avoid to store new cache when http fetch results in 
+		    failure notice from acuweather, add support for weatherbug,
+		    reduced the number of database reads and writes and raise
+		    performance, changed the xhtml using only div and not 
+		    table or others, added shortcode wpforecast, catch error 
+		    when weather bug does not deliver a shorttext,  
+		    since it leads to problems with some installations, 
+		    added menu icon, moved settings to main menu, switched 
+		    the widget dialog to new oo-progamming for versions 
+		    after 2.7.1, added a preselection of the transfer method 
+		    to be used with wp-forecast
