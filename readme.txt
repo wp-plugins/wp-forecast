@@ -2,7 +2,7 @@
 Tags: weather,forecast,widget
 Requires at least: 2.2
 Tested up to: 2.8
-Stable tag: 2.4
+Stable tag: 2.4beta
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de/
 
