@@ -38,7 +38,7 @@ function wp_forecast_activate()
   $timeout=get_option("wp-forecast-timeout");
    
   if ($timeout == "") {
-    $timeout="30";
+    $timeout="10";
     add_option("wp-forecast-timeout",$timeout);
   };
 
@@ -133,28 +133,32 @@ function wp_forecast_activate()
 //
 function wp_forecast_deactivate($wpfcid) 
 { 
-  pdebug(1,"Start of wp_forecast_deactivate ()");
-
-   $delopt=get_option('wp-forecast-delopt');
-
-   // only delete options when switch is set
-   if ($delopt == 1) {
-     $count=get_option('wp-forecast-count');
-     
-     for ($i=0;$i<$count;$i++) {
-       $wpfcid = get_widget_id( $i );
+    pdebug(1,"Start of wp_forecast_deactivate ()");
+    
+    global $wpf_maxwidgets;
+    
+    $delopt=get_option('wp-forecast-delopt');
+    
+    // only delete options when switch is set
+    if ($delopt == 1) 
+    {
+	$count = $wpf_maxwidgets; //get_option('wp-forecast-count');
+	
+	for ($i=0;$i<$count;$i++) 
+	{
+	    $wpfcid = get_widget_id( $i );
        
-       delete_option("wp-forecast-opts".$wpfcid);
-       delete_option("wp-forecast-cache".$wpfcid);
-       delete_option("wp-forecast-expire".$wpfcid);
-     }
-     delete_option('wp-forecast-timeout');
-     delete_option('wp-forecast-count');
-     delete_option('wp-forecast-delopt');
-     delete_option("wp-forecast-pre-transport");
-     delete_option("wp-forecast-wp-transport");
-   }
-   
-   pdebug(1,"End of wp_forecast_deactivate ()");
+	    delete_option("wp-forecast-opts".$wpfcid);
+	    delete_option("wp-forecast-cache".$wpfcid);
+	    delete_option("wp-forecast-expire".$wpfcid);
+	}
+	delete_option('wp-forecast-timeout');
+	delete_option('wp-forecast-count');
+	delete_option('wp-forecast-delopt');
+	delete_option("wp-forecast-pre-transport");
+	delete_option("wp-forecast-wp-transport");
+    }
+    
+    pdebug(1,"End of wp_forecast_deactivate ()");
 }
 ?>

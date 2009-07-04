@@ -207,7 +207,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 	$out .= "selected='selected' ";
       $out .= ">$i</option>";
     } 
-    $out .= "</select></td><td><span class='submit'><input type='submit' name='wpf-count-submit' id='wpf-count-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "</select></td><td><span class='submit'><input class='button' type='submit' name='wpf-count-submit' id='wpf-count-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
     // print out widget selection form
     $out .="<tr><td>".__('Available widgets',"wp-forecast_".$locale).": </td>";
@@ -225,7 +225,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     }
     $out .= "</select></td>";
     
-    $out .="<td><span class=\"submit\"><input type=\"submit\" name=\"set_widget\" value=\"" ; 
+    $out .='<td><span class="submit"><input class="button" type="submit" name="set_widget" value="' ; 
     $out .=__('Select widget',"wp-forecast_".$locale)." »\" /></span></td></tr>\n";
    
 
@@ -233,7 +233,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     // (timeout for data connection)
     $out .= "<tr><td>".__('Timeout for accuweather connections (secs.)?',"wp-forecast_".$locale)."</td>";
     $out .= "<td><input id='wpf-timeout' name='wpf-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
-    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
     
     // show transport method selection 
@@ -249,7 +249,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 	$out .= "<option value='$t'" . ($t == $pre_trans ? 'selected="selected"':'')  . ">$t</option>";
     }
     $out .= "</select></td>";
-    $out .= "<td><span class='submit'><input type='submit' name='wpf-pre-transport-submit' id='wpf-pre-transport-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "<td><span class='submit'><input class='button' type='submit' name='wpf-pre-transport-submit' id='wpf-pre-transport-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
 
     // print out option deletion switch
@@ -258,7 +258,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     if ($wpf_delopt)
       $out .= 'checked="checked"';
     $out .= " />";
-    $out .= "</td><td><span class='submit'><input type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
+    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
     
     echo $out;
   }
@@ -704,7 +704,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
 <?php
    if ($widgetcall ==0) 
-     echo "<div class='submit'><input type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
+     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
    else
      echo "<input type='hidden' name='info_update' value='1' />";
    
@@ -726,10 +726,10 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	       echo "<p>".__('Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm.',"wp-forecast_".$locale)."</p>";
 	     }
 	   echo "</fieldset>\n";
-	   echo "<div class=\"submit\">\n";
-	   echo "<input type=\"submit\" name=\"search_loc\" value=\"" ;
+	   echo "<div class='submit'>\n";
+	   echo "<input class='button-primary' type='submit' name='search_loc' value='" ;
 	   echo __('Search location',"wp-forecast_".$locale);
-	   echo " »\" />\n";
+	   echo " »' />\n";
 	 } 
        else 
 	 {
@@ -742,10 +742,10 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	     }
 	   echo "</select><br /><p>".__('Please select your city and press set location.',"wp-forecast_".$locale)."</p>\n";
 	   echo "</fieldset>\n";
-	   echo "<div class=\"submit\">\n";
-	   echo "<input type=\"submit\" name=\"set_loc\" value=\"" ;
+	   echo "<div class='submit'>\n";
+	   echo "<input class='button-primary' type='submit' name='set_loc' value='" ;
 	   echo  __('Set location',"wp-forecast_".$locale);
-	   echo " »\" />\n";
+	   echo " »' />\n";
 	 }
        echo "</div></form></div>";
      }

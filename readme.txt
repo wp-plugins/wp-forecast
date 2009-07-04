@@ -2,7 +2,7 @@
 Tags: weather,forecast,widget
 Requires at least: 2.2
 Tested up to: 2.8
-Stable tag: 2.4beta
+Stable tag: 2.4
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de/
 
@@ -116,165 +116,279 @@ Credits:
 
 
 == Frequently Asked Questions ==
-= My smilies are gone? What's wrong? =
+= Where can I get further information about the plugin? =
 
-Plase check and double check the path to your smiley directory.
+There are severeal ressources to visit:
+
+* [The german reference][germanref] 
+* [A short FAQ list in german][gerfaq]
+* [A checklist in case of problems (german and english)][checklist] 
+* [The english readme.txt][engreadme]
+* [The english reference (a bit out of date but still useful)][engref]
+
+[germanref]: http://www.tuxlog.de/wordpress/2008/wp-forecast-referenz-v14/ 
+          "German wp-forecastreference"
+[gerfaq]: http://www.tuxlog.de/wordpress/2007/wp-forecast-wie-geht-das/
+	  "wp-forecast FAQ - Wie geht das?"
+[checklist]: http://www.tuxlog.de/uncategorized/2009/checkliste-fur-wp-forecast-checklist-for-wp-worecast/
+          "wp-forecast checklist for connection problems"
+[engreadme]: http://www.tuxlog.de/wp-content/downloads/wp-forecast-readme-2.4.txt
+          "you are actually reading this one"
+[engref]: http://www.tuxlog.de/wordpress/2008/wp-forecast-reference-v17-english/
+          "english reference for wp-forecast"
+
+= After upgrading the plugin my widgets are gone. Any Ideas? =
+
+Probably you used the automatic upgrade which disables the widget during update and therefore removes the configured widgets. Just add the widgets again.
+
+= After upgrading my settings are gone. How can this be? =
+
+Probably you have enabled "Delete options during plugin deactivation?" and used automatically update or disabled the plugin during update. When this option is marked everey database entries inserted by wp-forecast are removed from the database.
 
 == Screenshots ==
 1. wp-forecast as a widget with two day forecast
 2. wp-forecast admin dialog
 3. wp-forecast in an iframe with a two day forecast
 
-== History ==
-2007-01-15 v0.1	   Initial beta release 
 
-2007-05-17 v0.2    Fixed some incorrect XHTML code
-		   Fixed path settings for icons and css
-		   Tested with various browsers
+== Changelog ==
 
-2007-05-18 v0.3    Integrate forecast
+= v2.4 (2009-xx-xx) =
 
-2007-05-31 v0.4	   -- never published
+* changed readme to support new changelog feature at wordpress.org
+* fixed faq section in readme, resized icon
+* added default css file which is used when no user specific one is available
+* fixed div container when date/time is disabled
+* fixed widget title to be display correct
 
-2007-06-03 v0.5	   added support for wp widgets
-		   Fixed some further incorrect XHTML code
-		   added selection of the firlds to show
-		   added windspeed unit support (hope you like
-		   it Barbara :-))
-		   added german language support for admin page
+= v2.4beta (2009-06-18) =
 
-2007-06-07 v0.6	   Fixed a lot of incorrect XHTML 
-		   added translation for winddirection
-		   changed display of low- and hightemperature in forecast
-		   no decimals for windspeed
-		   fixed two phrases in translation
-		   added hint for dealing with german umlaute and search
-		   location dialog
-		   added a bit error handling to surpress long error messages
-	  	   when receiving no or invalid xml from accuweather
-
-2007-06-11 v0.7    Fixed an incompatibility with wpSEO (used same global
-                   variable language which should never happen)
-
-2007-06-18 v0.8	   added dutch language support
-		   show time in wordpress format (option: time_format)
-
-2007-06-23 v0.9	   added copyright notice
-		   added date for current conditions
-		   added alternative location name
-
-2007-07-01 v0.9.1  added new field windgusts
-                   fixed some incompatibility with complex themes
-
-2007-07-17 v1.0b   added support for up to 20 widgets with different 
-		   locations and settings, 
-		   added portugese language support,
-		   weather data is now cached in the database, 
-		   no cookies needed anymore
-		   default value of missing translations is now english,
-		   removed configuration dialog from widgets page,
-		   to avoid misunderstanding about setup
-		   fixed some minor errors
-
-2007-07-25 v1.0b2  work around for bug 4275 in wordpress 2.2
-		   removed widget id from output
-		   
-
-2007-07-29 v1.0b3  fixed output of before/after widget stuff for empty forecast
-		   fixed different parameters for calling wp_forecast as 
-		   widget and from sidebar.php
-		   added swedish translation (thx to Håkan Carlström)
+* fixed translation of winddirection in api
+* added translation for romanian
+* fixed russian and italian translation
+* modified show function to use data api
+* avoid to store new cache when http fetch results in failure notice from acuweather
+* add support for weatherbug
+* reduced the number of database reads and writes and raise performance
+* changed the xhtml using only div and not table or others
+* added shortcode wpforecast
+* catch error when weather bug does not deliver a shorttext
+* since it leads to problems with some installations
+* added menu icon
+* moved settings to main menu
+* switched the widget dialog to new oo-progamming for versions after 2.7.1
+* added a preselection of the transfer method to be used with wp-forecast
 
 
-2007-09-01 v1.0b4  fixed humidity / pressure checkbox
-		   removed hard coded formatting, added css class
-		   added support to show current time
+= v2.3 (2009-01-30) =
 
-2007-09-09 v1.0	   fixed accuweather call for us locations
-		   now works with wordpress mu
+* fixed some wrong italian translations
+* added shorttext for api daily forecast
+* fixed translation in api
+* process failure notice from accuweather if it occures
+* added lat and lon to data api
+* switched to wordpress default function to get remote data from accuweather
+* changed default value of cache refresh to 1800 seconds
+* added translation to russian
 
 
-2007-10-01 v1.1    fixed: setting the current time could not be disabled
-		   fixed: on some servers the current date was converted to 0,
-		   switched translations to gettext as recommended by wp codex
+= v2.2 (2008-12-29) =
 
-2007-11-05 v1.2	   extend error handling for serverloss, added iso8859-1 coded 
-		   german translation, fixed bug with german winddirections, 
-		   added a widget title, removed standard location label (this 
-		   can be handled via alternate location
+* fixed some mistakes in finish translation (thanks to Jaska)
+* added hungarian translation
+* added parameter to avoid option deletion when deactivating the plugin
+* added parameter for direct call to add a html-header
+* added multi-checkbox-switch in admin-dialog (for convenience only)
+* added translation for winddirections
+* added data api for wordpress-pro's to design layouts individually
 
-2007-12-26 v1.3	   added french translation, added german icon 11
-		   (fog, 11_de.gif), extended css classes to support horizontal
-		    view via css, removed repeating section title 
 
-2008-01-26 v1.4	    fix loading the wright textdomain when called from outside 
-		    wordpress, added a bit debug code, work around for a bug 
-		    in k2rc3 theme, added italian translation, added english 
-		    lanuage file, a bit of code cleanup, extend function 
-		    wp-forecast to select language per widget, added functions
-		    to display a set and a range of widgets at once
+= v2.1 (2008-11-09) =
 
-2008-05-12 v1.5	    fixed two dutch phrases in dutch translation
-	   	    added norwegian translation (thanks to Eilif)
+* added language support for spanish (thanks to Castmir) and 
+* polish (thanks to Lukasz)
+* fixed minor css bug 
 
-2008-07-11 v1.6	    removed some hardcoded css, it is now possible to 
-	   	    call the widget directly outside from wp, fixed a problem 
-		    with wp >2.5 and the widget dialog, removed some redundant 
-		    html, when showing no current weather information, 
-		    placed forecast header into own table with own css class,
-		    added timeout parameter for the accuweather connections,
-		    rounded humidity to integer values, fixed some typos in 
-		    swedish translation and added norwegian selection 
-		    (thanks to RAM_OS)  
 
-2008-07-20 v1.7	    removed a bit of redundant html when widget title is empty,
-	   	    fixed bug in output of current conditions, added option to 
-		    show a link to the accuweather forecast, added dansk 
-		    translation
+= v2.0 (2008-11-02) =
 
-2008-09-17 v1.8	    added css class wpf-icon to make it easier formating 
-	   	    the weather icons, added autodetection for icon filetype,	
-		    gif, png and jpg are supported, corrected some
-		    translations
+* added finish translation (thanks to Jaska)
+* fixed a problem with overloaded textdomains (translations)
+* since wordpress does not a sanity check if a loaded domain is reloaded, we have to do it
 
-2008-10-04 v1.9	    surpress fsockopen warning messages in case of connection 
-	   	    problems and output the error as html comment
 
-2008-11-02 v2.0	    added finish translation (thanks to Jaska), fixed a problem
-	   	    with overloaded textdomains (translations), since wordpress
-		    does not a sanity check if a loaded domain is reloaded, 
-		    we have to do it
+= v1.9 (2008-10-04) =
 
-2008-11-09 v2.1	    added language support for spanish (thanks to Castmir) and 
-	   	    polish (thanks to Lukasz), fixed minor css bug 
+* surpress fsockopen warning messages in case of connection problems and output the error as html comment
 
-2008-12-29 v2.2	    fixed some mistakes in finish translation (thanks to Jaska),
-	    	    added hungarian translation, added parameter to avoid option
-                    deletion when deactivating the plugin, added parameter for 
-	   	    direct call to add a html-header, added multi-checkbox-switch
-		    in admin-dialog (for convenience only), added translation 
-		    for winddirections, added data api for wordpress-pro's to 
-		    design layouts individually
 
-2009-01-30 v2.3	    fixed some wrong italian translations, added shorttext 
-	   	    for api daily forecast, fixed translation in api, process 
-		    failure notice from accuweather if it occures, added 
-		    lat and lon to data api, switched to wordpress default
-		    function to get remote data from accuweather, changed 
-		    default value of cache refresh to 1800 seconds, added
-		    translation to russian.
+= v1.8 (2008-09-17) =
 
-2009-06-18 v2.4	    fixed translation of winddirection in api, added 
-	   	    translation for romanian, fixed russian and italian 
-		    translation, modified show function to use data api,
-		    avoid to store new cache when http fetch results in 
-		    failure notice from acuweather, add support for weatherbug,
-		    reduced the number of database reads and writes and raise
-		    performance, changed the xhtml using only div and not 
-		    table or others, added shortcode wpforecast, catch error 
-		    when weather bug does not deliver a shorttext,  
-		    since it leads to problems with some installations, 
-		    added menu icon, moved settings to main menu, switched 
-		    the widget dialog to new oo-progamming for versions 
-		    after 2.7.1, added a preselection of the transfer method 
-		    to be used with wp-forecast
+* added css class wpf-icon to make it easier formating the weather icons
+* added autodetection for icon filetype
+* gif, png and jpg are supported
+* corrected some translations
+
+
+= v1.7 (2008-07-20) =
+
+* removed a bit of redundant html when widget title is empty
+* fixed bug in output of current conditions
+* added option to show a link to the accuweather forecast
+* added dansk translation
+
+
+= v1.6 (2008-07-11) =
+
+* removed some hardcoded css
+* it is now possible to call the widget directly outside from wp
+* fixed a problem with wp >2.5 and the widget dialog
+* removed some redundant html
+* when showing no current weather information 
+* placed forecast header into own table with own css class
+* added timeout parameter for the accuweather connections
+* rounded humidity to integer values
+* fixed some typos in swedish translation and added norwegian selection (thanks to RAM_OS) 
+
+
+= v1.5 (2008-05-12) =
+
+* fixed two dutch phrases in dutch translation
+* added norwegian translation (thanks to Eilif)
+
+
+= v1.4 (2008-01-26) =
+
+* fix loading the wright textdomain when called from outside wordpress
+* added a bit debug code
+* work around for a bug in k2rc3 theme
+* added italian translation
+* added english lanuage file
+* a bit of code cleanup
+* extend function wp-forecast to select language per widget
+* added functions to display a set and a range of widgets at once
+
+
+= v1.3 (2007-12-26) = 
+
+* added french translation
+* added german icon 11 (fog, 11_de.gif)
+* extended css classes to support horizontal view via css
+* removed repeating section title 
+
+
+= v1.2 (2007-11-05) =
+
+* extend error handling for serverloss
+* added iso8859-1 coded german translation
+* fixed bug with german winddirections
+* added a widget title
+* removed standard location label (this can be handled via alternate location)
+
+
+= v1.1 (2007-10-01) =
+
+* fixed: setting the current time could not be disabled
+* fixed: on some servers the current date was converted to 0
+* switched translations to gettext as recommended by wp codex
+
+
+= v1.0 (2007-09-09) =
+
+* fixed accuweather call for us locations
+* now works with wordpress mu
+
+
+= v1.0b4 (2007-09-01) = 
+
+* fixed humidity / pressure checkbox
+* removed hard coded formatting, added css class
+* added support to show current time
+
+
+= v1.0b3 (2007-07-29) =
+
+* fixed output of before/after widget stuff for empty forecast
+* fixed different parameters for calling wp_forecast as widget and from sidebar.php
+* added swedish translation (thx to Håkan Carlström)
+
+
+= v1.0b2 (2007-07-25) =
+
+* work around for bug 4275 in wordpress 2.2
+* removed widget id from output
+
+
+= v1.0b (2007-07-17) =
+
+* added support for up to 20 widgets with different locations and settings 
+* added portugese language support
+* weather data is now cached in the database 
+* no cookies needed anymore
+* default value of missing translations is now english
+* removed configuration dialog from widgets page to avoid misunderstanding about setup
+* fixed some minor errors
+
+
+= v0.9.1 (2007-07-01) =
+
+* added new field windgusts
+* fixed some incompatibility with complex themes
+
+
+= v0.9 (2007-06-23) =
+
+* added copyright notice
+* added date for current conditions
+* added alternative location name
+
+
+= v0.8 (2007-06-18) =
+
+* added dutch language support
+* show time in wordpress format (option: time_format)
+
+= v0.7 (2007-06-11) =
+* Fixed an incompatibility with wpSEO (used same global variable language which should never happen)
+
+
+= v0.6 (2007-06-07) =
+
+* Fixed a lot of incorrect XHTML 
+* added translation for winddirection
+* changed display of low- and hightemperature in forecast
+* no decimals for windspeed
+* fixed two phrases in translation
+* added hint for dealing with german umlaute and search location dialog
+* added a bit error handling to surpress long error messages when receiving no or invalid xml from accuweather
+
+
+= v0.5 (2007-06-03) =
+
+* added support for wp widgets
+* Fixed some incorrect XHTML code
+* added selection of the fields to show
+* added windspeed unit support (hope you like it Barbara :-))
+* added german language support for admin page
+
+
+= v0.4 (2007-05-31) =
+
+* never published, only code cleaning done
+
+
+= v0.3 (2007-05-18) =
+
+* Integrate forecast
+
+
+= v0.2 (2007-05-17) =
+
+* Fixed some incorrect XHTML code
+* Fixed path settings for icons and css
+* Tested with various browsers
+
+
+= v0.1 (2007-01-15) =
+
+* Initial beta release 

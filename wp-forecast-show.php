@@ -99,8 +99,10 @@ function show($wpfcid,$args,$wpfvars)
   else
     $show_from_widget=1;
 
-  extract($args);
+  // order is important to override old title in wpfvars with new in args
   extract($wpfvars);
+  extract($args);
+
   $w = wp_forecast_data($wpfcid, $wpf_language);
 
   $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
@@ -161,38 +163,47 @@ function show($wpfcid,$args,$wpfvars)
       $servicelink= '<a href="'.urlencode($w['servicelink']).'">';
       $servicelink_end="</a>";
     }
+
     $out .= '<div class="wp-forecast-curr-head">';
     if ( $w['location'] == "" ) 
-      $out .= "<div>".$servicelink.$w['locname']. $servicelink_end."</div>\n";
+	$out .= "<div>".$servicelink.$w['locname']. $servicelink_end."</div>\n";
     else if ( trim($w['location']) !="" and $w['location'] != "&nbsp;")
-      $out .= "<div>".$servicelink.$w['location'].$servicelink_end."</div>\n";
-
+	$out .= "<div>".$servicelink.$w['location'].$servicelink_end."</div>\n";
+    
     // show date / time   
     // if current time should be used 
-    if ($currtime=="1") {
-      $cd = $w['blogdate'];
-      $ct = $w['blogtime'];
-    } else {
-      // else take given accuweather time
-      $cd = $w['accudate'];
-      $ct = $w['accutime'];
-    }
-
+    if ($currtime=="1") 
+    {
+	$cd = $w['blogdate'];
+	$ct = $w['blogtime'];
+    } else  if ($service=="accu") 
+    {
+	// else take given accuweather time
+	$cd = $w['accudate'];
+	$ct = $w['accutime'];
+    } else  if ($service=="bug")
+    {
+	// else take given weatherbug time
+	$cd = $w['bugdate'];
+	$ct = $w['bugtime'];
+    }	
+    
     if (substr($dispconfig,18,1) == "1" or substr($dispconfig,1,1) == "1") {
-      $out .= "<div>"; 
-      if (substr($dispconfig,18,1) == "1") 
-	$out .= $cd;
-      else
-	$out .= __('time',"wp-forecast_".$wpf_language).": ";
-      
-      if (substr($dispconfig,18,1) == "1" and substr($dispconfig,1,1) == "1")
-	$out .= ", ";
-      
-      if (substr($dispconfig,1,1) == "1") 
-	$out .= $ct;
-      $out .= "</div></div>\n";
+	$out .= "<div>"; 
+	if (substr($dispconfig,18,1) == "1") 
+	    $out .= $cd;
+	else
+	    $out .= __('time',"wp-forecast_".$wpf_language).": ";
+	
+	if (substr($dispconfig,18,1) == "1" and substr($dispconfig,1,1) == "1")
+	    $out .= ", ";
+	
+	if (substr($dispconfig,1,1) == "1") 
+	    $out .= $ct;
+	$out .= "</div>\n";
     }
-
+    $out .= "</div>\n";
+    
     $out .= '<div class="wp-forecast-curr-block">';
 
     // show icon

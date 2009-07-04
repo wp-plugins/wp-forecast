@@ -17,14 +17,19 @@ if ( !class_exists('wpf_widget') )
 	{ 
 	    pdebug(1,"Start of function wp_forecast_widget ()");
 	    
-	    extract($args);
-	    extract($instance);
-  
+	    //extract($args);
+	    // get widget params from instance
+	    $title = $instance['title'];  
+	    $wpfcid = $instance['wpfcid']; 
+
+	    // pass title to show function
+	    $args['title'] = $title;
+
 	    $wpf_vars=get_wpf_opts($wpfcid);
 	    if (!empty($language_override)) {
 		$wpf_vars['wpf_language']=$language_override;
 	    }
-	    $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
+	    //$weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
 	    
 	    show($wpfcid,$args,$wpf_vars);
 	     
@@ -34,7 +39,7 @@ if ( !class_exists('wpf_widget') )
 	function update( $new_instance, $old_instance )
 	{ 
 	    pdebug(1,"Start of wpf_widget::update()");
-	    
+
 	    return $new_instance;
 	    
 	    pdebug(1,"End of wpf_widget::update()");

@@ -249,15 +249,22 @@ function get_weather($uri,$loc,$metric)
 // just return the css link
 // this function is called via the wp_head hook
 //
-function wp_forecast_css($wpfcid="A") {
-
-  pdebug(1,"Start of function wp_forecast_css ()");
-
-  $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
-  echo "<link rel=\"stylesheet\" href=\"". $plugin_path. "/wp-forecast.css\" type=\"text/css\" media=\"screen\" />\n";
-
-  
-  pdebug(1,"End of function wp_forecast_css ()");
+function wp_forecast_css($wpfcid="A") 
+{
+    pdebug(1,"Start of function wp_forecast_css ()");
+    
+    $def  = "wp-forecast-default.css";
+    $user = "wp-forecast.css";
+    
+    if (file_exists( WP_PLUGIN_DIR . "/wp-forecast/" . $user))
+	$def =$user;
+    
+    $plugin_url = plugins_url("wp-forecast/");
+    
+    echo '<link rel="stylesheet" id="wp-forecast-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
+    
+    
+    pdebug(1,"End of function wp_forecast_css ()");
 }
 
 
@@ -265,15 +272,21 @@ function wp_forecast_css($wpfcid="A") {
 // just return the css link when not using wordpress
 // this function is called when showing widget directly via wp-forecast-show.php
 //
-function wp_forecast_css_nowp($wpfcid="A") {
-  
-  pdebug(1,"Start of function wp_forecast_css_nowp ()");
-  
-  $plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
-  echo "<link rel=\"stylesheet\" href=\"". $plugin_path. "/wp-forecast-nowp.css\" type=\"text/css\" media=\"screen\" />\n";
-  
-  
-  pdebug(1,"End of function wp_forecast_css_nowp ()");
+function wp_forecast_css_nowp($wpfcid="A") 
+{
+    pdebug(1,"Start of function wp_forecast_css_nowp ()");
+    
+    $def  = "wp-forecast-default-nowp.css";
+    $user = "wp-forecast-nowp.css";
+    
+    if (file_exists( WP_PLUGIN_DIR . "/wp-forecast/" . $user))
+	$def =$user;
+    
+    $plugin_url = plugins_url("wp-forecast/");
+    
+    echo '<link rel="stylesheet" id="wp-forecast-nowp-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
+    
+    pdebug(1,"End of function wp_forecast_css_nowp ()");
 }
 
 
