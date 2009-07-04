@@ -153,7 +153,7 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
-= v2.4 (2009-xx-xx) =
+= v2.4 (2009-07-04) =
 
 * changed readme to support new changelog feature at wordpress.org
 * fixed faq section in readme, resized icon
