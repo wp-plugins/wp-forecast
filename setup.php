@@ -109,6 +109,8 @@ function wp_forecast_activate()
       //
       $av['dispconfig']="11111111111111111111111111"; 
       $av['windunit']="ms"; // Choose between ms, kmh, mph or kts
+      $av['pdforecast']="0"; // pulldown forecast 0=No, 1=Yes
+      $av['pdfirstday']="0"; // day to start pulldown with
 
       add_option( "wp-forecast-opts".$wpfcid, serialize($av) );
     }

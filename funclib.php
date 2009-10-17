@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -264,6 +264,7 @@ function wp_forecast_css($wpfcid="A")
     echo '<link rel="stylesheet" id="wp-forecast-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
     
     
+    
     pdebug(1,"End of function wp_forecast_css ()");
 }
 
@@ -456,7 +457,7 @@ function get_wp_transports()
 }
 
 //
-// function to turn on/off wp-forecast repselected transport
+// function to turn on/off wp-forecast preselected transport
 // 
 function switch_wpf_transport($sw)
 {

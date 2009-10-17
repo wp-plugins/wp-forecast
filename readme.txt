@@ -1,10 +1,10 @@
 === wp-forecast ===
+Contributors: tuxlog
+Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.2
-Tested up to: 2.8
-Stable tag: 2.4
-Contributors: tuxlog
-Donate link: http://www.tuxlog.de/
+Tested up to: 2.8.4
+Stable tag: 2.5
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -17,7 +17,7 @@ please also refer to the terms of usage of accuweather.com and weatherbug.com
 Features:
 
    + Displays the weather data from AccuWeather.com and or WeatherBug.com 
-     at your wordpress pages
+     at your wordpress pages, posts or sidebar
    + Let you choose the 
 	 * location (of course)
 	 * the time after the weather data is refreshed
@@ -30,9 +30,11 @@ Features:
 	 * the nighttime forecast for up to nine nights
    + support wordpress widgets, easy placement :-)
    + customize the information you want to show
+   + supports pull-down forecast data to efficiently use space
    + multiple wp-forecast widget support 
    + integration into your site via css (see below)
    + comes with an api for wordpress-pro's ;-)
+   + comes with a checklist to validate your connection settings
 
 Credits:
 
@@ -153,6 +155,15 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
+= v2.5 (2009-10-17) =
+
+* fixed wrong html in widget dialog with wordpress v2.8, that leads to problems with placing widgets in internet explorer
+* set default for widget call via v2.8.1 widgetdialog
+* replaced "Copyright" with &copy; 
+* added parameters width and height to shortcode
+* added feature to show/hide forecast data with javascript
+* added transport check to admin dialog
+
 = v2.4 (2009-07-04) =
 
 * changed readme to support new changelog feature at wordpress.org
@@ -160,6 +171,7 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 * added default css file which is used when no user specific one is available
 * fixed div container when date/time is disabled
 * fixed widget title to be display correct
+
 
 = v2.4beta (2009-06-18) =
 
