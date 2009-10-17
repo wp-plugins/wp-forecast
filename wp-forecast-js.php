@@ -86,6 +86,16 @@
 
       }
       return 0;
-    }        
+    }   
+<?php
+// this toggles the pulldown fields
+?>
+     
+function pdfields_update()
+{
+    obja=document.getElementById('pdforecast');
+    objb=document.getElementById('pdfirstday');
+    objb.disabled = (obja.checked == false);
+}
 </script>
 

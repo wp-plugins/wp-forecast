@@ -49,6 +49,10 @@ function wp_forecast_admin_init()
 	update_option("wp-forecast-cache".$wpfcid,"");
       }
     }
+ 
+  // add thickbox and jquery for checklist 
+  wp_enqueue_script( 'thickbox' );
+  wp_enqueue_style ( 'thickbox' );
 
   pdebug(1,"End of wp_forecast_admin_init ()");
 }
@@ -231,7 +235,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 
     // print out timeout input field for transport
     // (timeout for data connection)
-    $out .= "<tr><td>".__('Timeout for accuweather connections (secs.)?',"wp-forecast_".$locale)."</td>";
+    $out .= "<tr><td>".__('Timeout for weatherprovider connections (secs.)?',"wp-forecast_".$locale)."</td>";
     $out .= "<td><input id='wpf-timeout' name='wpf-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
     $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
@@ -260,6 +264,9 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     $out .= " />";
     $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
     
+    // add link to checklist dialog
+    $out .= '<div style="text-align:right"><a href="../wp-content/plugins/wp-forecast/wp-forecast-check.php?height=600&amp;width=800" class="thickbox" Title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
+
     echo $out;
   }
  
@@ -358,6 +365,18 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
       if ($av['currtime']=="") $av['currtime']="0";
       $upflag=true;
     } 
+
+    if ($av['pdfirstday'] != $_POST["pdfirstday"]) {
+      $av['pdfirstday'] =  $_POST["pdfirstday"];
+      if ($av['pdfirstday']=="") $av['pdfirstday']="0";
+      $upflag=true;
+    }
+
+    if ($av['pdforecast'] != $_POST["pdforecast"]) {
+	$av['pdforecast'] =  $_POST["pdforecast"];
+      if ($av['pdforecast']=="") $av['pdforecast']="0";
+      $upflag=true;
+    }
 
     // set checkbox value to zero if not set
     // for forecast options
@@ -485,7 +504,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	 <p><input type="checkbox" name="metric" value="1" <?php if ($av['metric']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use metric units',"wp-forecast_".$locale)?></b>
 	 </p>
 
-										         <p><input type="checkbox" name="currtime" value="1" <?php if ($av['currtime']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use current time',"wp-forecast_".$locale)?></b>
+	 <p><input type="checkbox" name="currtime" value="1" <?php if ($av['currtime']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use current time',"wp-forecast_".$locale)?></b>
          </p>
 
          <p><b><?php echo __('Windspeed-Unit',"wp-forecast_".$locale)?>: </b><select name="windunit" size="1">
@@ -495,6 +514,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
               <option value="kts" <?php if ($av['windunit']=="kts") echo "selected=\"selected\""?>><?php echo __('Knots (kts)',"wp-forecast_".$locale)?></option>
 	 </select></p>
 
+
+        
 
 	 <p>
          <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="language" size="1">
@@ -515,6 +536,24 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
             <option value="sv_SE" <?php if ($av['wpf_language']=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
 	    
          </select></p>
+ 
+         <p><input type="checkbox" id="pdforecast" name="pdforecast" value="1" <?php if ($av['pdforecast']=="1") echo "checked=\"checked\""?> onchange="pdfields_update();" /> <b><?php echo __('Show forecast as ajax pull-down',"wp-forecast_".$locale)?></b>
+         </p>
+
+         <p>
+         <b><?php echo __('First day in pull-down',"wp-forecast_".$locale)?>: </b><select id="pdfirstday" name="pdfirstday" size="1">
+   <option value="1" <?php if ($av['pdfirstday']=="1") echo "selected=\"selected\""?>>1</option>
+   <option value="2" <?php if ($av['pdfirstday']=="2") echo "selected=\"selected\""?>>2</option>
+   <option value="3" <?php if ($av['pdfirstday']=="3") echo "selected=\"selected\""?>>3</option>
+   <option value="4" <?php if ($av['pdfirstday']=="4") echo "selected=\"selected\""?>>4</option>
+   <option value="5" <?php if ($av['pdfirstday']=="5") echo "selected=\"selected\""?>>5</option>
+   <option value="6" <?php if ($av['pdfirstday']=="6") echo "selected=\"selected\""?>>6</option>
+   <option value="7" <?php if ($av['pdfirstday']=="7") echo "selected=\"selected\""?>>7</option>
+   <option value="8" <?php if ($av['pdfirstday']=="8") echo "selected=\"selected\""?>>8</option>
+   <option value="9" <?php if ($av['pdfirstday']=="9") echo "selected=\"selected\""?>>9</option>
+   </select></p>
+   <script type="text/javascript">pdfields_update();</script>
+
        </div>
        <!-- start of right column -->
        <div  style="padding-left: 2%; float: left; width: 49%;">

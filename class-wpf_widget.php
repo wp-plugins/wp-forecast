@@ -17,10 +17,12 @@ if ( !class_exists('wpf_widget') )
 	{ 
 	    pdebug(1,"Start of function wp_forecast_widget ()");
 	    
-	    //extract($args);
 	    // get widget params from instance
 	    $title = $instance['title'];  
 	    $wpfcid = $instance['wpfcid']; 
+
+	    if (trim($wpfcid) =="") 
+		$wpfcid="A";
 
 	    // pass title to show function
 	    $args['title'] = $title;
@@ -29,7 +31,6 @@ if ( !class_exists('wpf_widget') )
 	    if (!empty($language_override)) {
 		$wpf_vars['wpf_language']=$language_override;
 	    }
-	    //$weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
 	    
 	    show($wpfcid,$args,$wpf_vars);
 	     
@@ -82,7 +83,7 @@ if ( !class_exists('wpf_widget') )
 		    $out .=" selected='selected' ";
 		$out .=">".$id."</option>";
 	    }
-	    $out .= "</select></p>";
+	    $out .= "</select></label></p>";
 	    echo $out;
 	    
 	    pdebug(1,"End of wpf_widget::form()");

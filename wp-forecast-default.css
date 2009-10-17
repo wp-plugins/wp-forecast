@@ -112,3 +112,21 @@ img.wp-forecast-fc-left {
 }
 
 
+/* style for navigation when using ajax pulldown */
+div.wpff_nav {
+    font-size: 11px; 
+    border: 0px solid;
+    padding: 1px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    float: left;
+    height: 11px;
+}
+
+div.wpff_nav:hover {
+    color:#147;
+    text-decoration:underline; 
+    cursor:pointer;
+}
+

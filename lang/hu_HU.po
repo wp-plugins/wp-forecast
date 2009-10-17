@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 09:54+0200\n"
+"POT-Creation-Date: 2009-10-14 19:21+0200\n"
 "PO-Revision-Date: 2008-12-18 07:47+0100\n"
 "Last-Translator: KOOS, Tamas <tamas@pumpkingood.com>\n"
 "Language-Team: KOOS, Tamas <tamas@koosfoto.hu>\n"
@@ -12,11 +12,11 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: class-wpf_widget.php:68 wp-forecast-admin.php:98
+#: class-wpf_widget.php:69 wp-forecast-admin.php:102
 msgid "Title:"
 msgstr "Cím : "
 
-#: class-wpf_widget.php:76 wp-forecast-admin.php:213
+#: class-wpf_widget.php:77 wp-forecast-admin.php:217
 msgid "Available widgets"
 msgstr "Használható widget-ek"
 
@@ -32,265 +32,296 @@ msgstr ""
 msgid "The Weather"
 msgstr "Időjárás"
 
-#: shortcodes.php:30
+#: shortcodes.php:40
 msgid "wp-forecast shortcode: This browser does not support iframes."
 msgstr ""
 
-#: wp-forecast-admin.php:101
+#: wp-forecast-admin.php:105
 msgid "widget_hint"
 msgstr "Trükk"
 
-#: wp-forecast-admin.php:201 wp-forecast.php:340
+#: wp-forecast-admin.php:205 wp-forecast.php:342
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Hány wp-forecast widget-et (várost) szeretnél ?"
 
-#: wp-forecast-admin.php:210 wp-forecast-admin.php:236
-#: wp-forecast-admin.php:252 wp-forecast-admin.php:261 wp-forecast.php:349
+#: wp-forecast-admin.php:214 wp-forecast-admin.php:240
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:351
 msgid "Save"
 msgstr "Mentés"
 
-#: wp-forecast-admin.php:229
+#: wp-forecast-admin.php:233
 msgid "Select widget"
 msgstr "Válassz egy widget-et (várost)"
 
-#: wp-forecast-admin.php:234
-msgid "Timeout for accuweather connections (secs.)?"
+#: wp-forecast-admin.php:238
+#, fuzzy
+msgid "Timeout for weatherprovider connections (secs.)?"
 msgstr "Accuweather kapcsolódási idő (másodpercben)"
 
-#: wp-forecast-admin.php:240
+#: wp-forecast-admin.php:244
 msgid "Preselect wordpress transfer method"
 msgstr ""
 
-#: wp-forecast-admin.php:242
+#: wp-forecast-admin.php:246
 msgid "default"
 msgstr ""
 
-#: wp-forecast-admin.php:256
+#: wp-forecast-admin.php:260
 msgid "Delete options during plugin deactivation?"
 msgstr ""
 
-#: wp-forecast-admin.php:407
+#: wp-forecast-admin.php:268
+#, fuzzy
+msgid "Check connection to Weatherprovider"
+msgstr "Linkelés az Accuweather-re"
+
+#: wp-forecast-admin.php:426
 msgid "Settings successfully updated"
 msgstr "Sikeresen mentve"
 
-#: wp-forecast-admin.php:409
+#: wp-forecast-admin.php:428
 msgid "You have to change a field to update settings."
 msgstr "Változtass egy mezőn a mentéshez."
 
-#: wp-forecast-admin.php:455
+#: wp-forecast-admin.php:474
 msgid "WP-Forecast Setup"
 msgstr "WP-Forecast beállítás"
 
-#: wp-forecast-admin.php:458
+#: wp-forecast-admin.php:477
 msgid "Weatherservice"
 msgstr ""
 
-#: wp-forecast-admin.php:460
+#: wp-forecast-admin.php:479
 #, fuzzy
 msgid "AccuWeather"
 msgstr "Linkelés az Accuweather-re"
 
-#: wp-forecast-admin.php:461
+#: wp-forecast-admin.php:480
 #, fuzzy
 msgid "WeatherBug"
 msgstr "Időjárás"
 
-#: wp-forecast-admin.php:463
+#: wp-forecast-admin.php:482
 #, fuzzy
 msgid "Weather.com"
 msgstr "Időjárás"
 
-#: wp-forecast-admin.php:466
+#: wp-forecast-admin.php:485
 msgid "Partner ID"
 msgstr ""
 
-#: wp-forecast-admin.php:469
+#: wp-forecast-admin.php:488
 msgid "Licensekey"
 msgstr ""
 
-#: wp-forecast-admin.php:474
+#: wp-forecast-admin.php:493
 msgid "Location"
 msgstr "Hely "
 
-#: wp-forecast-admin.php:477
+#: wp-forecast-admin.php:496
 msgid "Press Update options to save new location."
 msgstr "Klikk Update az új hely beállításához "
 
-#: wp-forecast-admin.php:480
+#: wp-forecast-admin.php:499
 msgid "Locationname"
 msgstr "A hely neve "
 
-#: wp-forecast-admin.php:482
+#: wp-forecast-admin.php:501
 msgid "Refresh cache after"
 msgstr "A cahce frissítése"
 
-#: wp-forecast-admin.php:484
+#: wp-forecast-admin.php:503
 msgid "secs."
 msgstr "másodperc"
 
-#: wp-forecast-admin.php:485
+#: wp-forecast-admin.php:504
 msgid "Use metric units"
 msgstr "méterben"
 
-#: wp-forecast-admin.php:488
+#: wp-forecast-admin.php:507
 msgid "Use current time"
 msgstr "A jelenlegi időt használjuk"
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:510
 msgid "Windspeed-Unit"
 msgstr "A szél-sebesség mértékegysége"
 
-#: wp-forecast-admin.php:492
+#: wp-forecast-admin.php:511
 msgid "Meter/Second (m/s)"
 msgstr "méter/másodperc (m/s)"
 
-#: wp-forecast-admin.php:493
+#: wp-forecast-admin.php:512
 msgid "Kilometer/Hour (km/h)"
 msgstr "Km/óra (km/h)"
 
-#: wp-forecast-admin.php:494
+#: wp-forecast-admin.php:513
 msgid "Miles/Hour (mph)"
 msgstr "Mérföld/óra (mph)"
 
-#: wp-forecast-admin.php:495
+#: wp-forecast-admin.php:514
 msgid "Knots (kts)"
 msgstr "Csomó (kts)"
 
-#: wp-forecast-admin.php:500
+#: wp-forecast-admin.php:521
 msgid "Language"
 msgstr "Nyelv"
 
-#: wp-forecast-admin.php:521
+#: wp-forecast-admin.php:540
+msgid "Show forecast as ajax pull-down"
+msgstr ""
+
+#: wp-forecast-admin.php:544
+msgid "First day in pull-down"
+msgstr ""
+
+#: wp-forecast-admin.php:560
 msgid "Display Configuration"
 msgstr "A konfiguráció megjelenítése"
 
-#: wp-forecast-admin.php:525
+#: wp-forecast-admin.php:564
 msgid "Current Conditions"
 msgstr "Jelenlegi állapot"
 
-#: wp-forecast-admin.php:526
+#: wp-forecast-admin.php:565
 msgid "Forecast Day"
 msgstr "Nappal várható:"
 
-#: wp-forecast-admin.php:527
+#: wp-forecast-admin.php:566
 msgid "Forecast Night"
 msgstr "Éjjel várható:"
 
-#: wp-forecast-admin.php:530
+#: wp-forecast-admin.php:569
 msgid "Icon"
 msgstr "Ikon"
 
-#: wp-forecast-admin.php:539
+#: wp-forecast-admin.php:578
 msgid "Date"
 msgstr "Dátum"
 
-#: wp-forecast-admin.php:546
+#: wp-forecast-admin.php:585
 msgid "Time"
 msgstr "Óra"
 
-#: wp-forecast-admin.php:553
+#: wp-forecast-admin.php:592
 msgid "Short Description"
 msgstr "Rövid leírás"
 
-#: wp-forecast-admin.php:562
+#: wp-forecast-admin.php:601
 msgid "Temperature"
 msgstr "Hőmérséklet"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:610
 msgid "Realfeel"
 msgstr "Érzékelhető hő"
 
-#: wp-forecast-admin.php:578
+#: wp-forecast-admin.php:617
 msgid "Pressure"
 msgstr "Nyomás"
 
-#: wp-forecast-admin.php:585
+#: wp-forecast-admin.php:624
 msgid "Humidity"
 msgstr "Páratartalom"
 
-#: wp-forecast-admin.php:592
+#: wp-forecast-admin.php:631
 msgid "Wind"
 msgstr "Szél"
 
-#: wp-forecast-admin.php:601 wp-forecast-show.php:253 wp-forecast-show.php:349
-#: wp-forecast-show.php:393
+#: wp-forecast-admin.php:640 wp-forecast-show.php:253 wp-forecast-show.php:351
+#: wp-forecast-show.php:395
 msgid "Windgusts"
 msgstr "Széllökések"
 
-#: wp-forecast-admin.php:610
+#: wp-forecast-admin.php:649
 msgid "Sunrise"
 msgstr "Napfelkelte"
 
-#: wp-forecast-admin.php:617
+#: wp-forecast-admin.php:656
 msgid "Sunset"
 msgstr "Napnyugta"
 
-#: wp-forecast-admin.php:624
+#: wp-forecast-admin.php:663
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:631
+#: wp-forecast-admin.php:670
 #, fuzzy
 msgid "Link to Weatherprovider"
 msgstr "Linkelés az Accuweather-re"
 
-#: wp-forecast-admin.php:640 wp-forecast-show.php:300
+#: wp-forecast-admin.php:679 wp-forecast-show.php:302
 msgid "Forecast"
 msgstr "Előjelzés"
 
-#: wp-forecast-admin.php:645
+#: wp-forecast-admin.php:684
 msgid "All"
 msgstr ""
 
-#: wp-forecast-admin.php:646 wp-forecast-admin.php:647
-#: wp-forecast-admin.php:648 wp-forecast-admin.php:649
-#: wp-forecast-admin.php:650 wp-forecast-admin.php:651
-#: wp-forecast-admin.php:652 wp-forecast-admin.php:653
-#: wp-forecast-admin.php:654
+#: wp-forecast-admin.php:685 wp-forecast-admin.php:686
+#: wp-forecast-admin.php:687 wp-forecast-admin.php:688
+#: wp-forecast-admin.php:689 wp-forecast-admin.php:690
+#: wp-forecast-admin.php:691 wp-forecast-admin.php:692
+#: wp-forecast-admin.php:693
 msgid "Day"
 msgstr "Nap"
 
-#: wp-forecast-admin.php:656
+#: wp-forecast-admin.php:695
 msgid "Daytime"
 msgstr "Nappal"
 
-#: wp-forecast-admin.php:677
+#: wp-forecast-admin.php:716
 msgid "Nighttime"
 msgstr "Éjszaka"
 
-#: wp-forecast-admin.php:707
+#: wp-forecast-admin.php:746
 msgid "Update options"
 msgstr "Beállítások mentése"
 
-#: wp-forecast-admin.php:714 wp-forecast-admin.php:731
+#: wp-forecast-admin.php:753 wp-forecast-admin.php:770
 msgid "Search location"
 msgstr "A hely keresése"
 
-#: wp-forecast-admin.php:718
+#: wp-forecast-admin.php:757
 msgid "Searchterm"
 msgstr "keresendő"
 
-#: wp-forecast-admin.php:722
+#: wp-forecast-admin.php:761
 msgid "No locations found."
 msgstr "Nincs találat"
 
-#: wp-forecast-admin.php:726
+#: wp-forecast-admin.php:765
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Ékezetes betűk nélkül ! (azaz, ne használj á, é, í, ó, ö, ő, ü, ű -t)"
 
-#: wp-forecast-admin.php:736
+#: wp-forecast-admin.php:775
 msgid "Search result"
 msgstr "A keresés eredménye"
 
-#: wp-forecast-admin.php:743
+#: wp-forecast-admin.php:782
 msgid "Please select your city and press set location."
 msgstr "Jelöld ki a várost, amit szeretnél és klikkelj a Hely beállítása -ra."
 
-#: wp-forecast-admin.php:747
+#: wp-forecast-admin.php:786
 msgid "Set location"
 msgstr "Hely beállítása"
 
-#: wp-forecast.php:379
+#: wp-forecast-check.php:165
+msgid "Connection-check"
+msgstr ""
+
+#: wp-forecast-check.php:168
+#, fuzzy
+msgid "Select weatherprovider"
+msgstr "Linkelés az Accuweather-re"
+
+#: wp-forecast-check.php:180
+msgid "Start check"
+msgstr ""
+
+#: wp-forecast-check.php:183
+msgid "Close"
+msgstr ""
+
+#: wp-forecast.php:381
 #, php-format
 msgid "wp-forecast %s"
 msgstr ""
@@ -323,7 +354,7 @@ msgstr "Nyomás"
 msgid "hmid"
 msgstr "Pára"
 
-#: wp-forecast-show.php:248 wp-forecast-show.php:344 wp-forecast-show.php:386
+#: wp-forecast-show.php:248 wp-forecast-show.php:346 wp-forecast-show.php:388
 msgid "winds"
 msgstr "Szelek"
 
@@ -335,13 +366,21 @@ msgstr "Napkelte"
 msgid "sunset"
 msgstr "Napnyugta"
 
-#: wp-forecast-show.php:309
+#: wp-forecast-show.php:311
 msgid "day"
 msgstr "nappal"
 
-#: wp-forecast-show.php:361
+#: wp-forecast-show.php:363
 msgid "night"
 msgstr "éjszaka"
+
+#: wp-forecast-show.php:418
+msgid "Less forecast..."
+msgstr ""
+
+#: wp-forecast-show.php:419
+msgid "More forecast..."
+msgstr ""
 
 #: xgettextdummy.php:5
 msgid "loc"
