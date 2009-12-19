@@ -295,6 +295,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     
     $cts = $w['fc_obsdate_1']." ".$w['time'];
     $ct = strtotime($cts);
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['accudate']=date_i18n($fc_date_format, $ct);
     $weather_arr['accutime']=date_i18n($fc_time_format, $ct);
     

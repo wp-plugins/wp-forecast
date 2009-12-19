@@ -156,13 +156,19 @@ function show($wpfcid,$args,$wpfvars)
 	  return false;
 	}
 
-    // ortsnamen ausgeben 
+    // ortsnamen ausgeben parameter fuer open in new window berücksichtigen
     $servicelink="";
     $servicelink_end="";
     if (substr($dispconfig,25,1) == "1") {
-      $servicelink= '<a href="'.urlencode($w['servicelink']).'">';
+      $servicelink= '<a href="'.$w['servicelink'].'"';
       $servicelink_end="</a>";
+    
+      if (substr($dispconfig,26,1) == "1") 
+	  $servicelink= $servicelink . ' target="_blank" >';
+      else
+	  $servicelink= $servicelink.' >';
     }
+    
 
     $out .= '<div class="wp-forecast-curr-head">';
     if ( $w['location'] == "" ) 

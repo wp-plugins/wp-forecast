@@ -2,9 +2,9 @@
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
-Requires at least: 2.2
-Tested up to: 2.8.4
-Stable tag: 2.5
+Requires at least: 2.8
+Tested up to: 2.9
+Stable tag: 2.6
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -155,8 +155,15 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
-= v2.5 (2009-10-17) =
+= v2.6 (2009-12-17) =
+* fixed wrong urlencoded link to weather forecast at accuweather
+* fixed undefined variable warning for $wp_forecast_pre_transport in wp-forecast.php
+* fixed uncompress bug in wordpress 2.9 with workaround in fetch_url
+* fixed invalid xhtml/javascript in admin dialog once more
+* added open in new window feature for weather provider link
+* added time offset to correct wrong calculated accuweather times
 
+= v2.5 (2009-10-17) =
 * fixed wrong html in widget dialog with wordpress v2.8, that leads to problems with placing widgets in internet explorer
 * set default for widget call via v2.8.1 widgetdialog
 * replaced "Copyright" with &copy; 
@@ -171,7 +178,6 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 * added default css file which is used when no user specific one is available
 * fixed div container when date/time is disabled
 * fixed widget title to be display correct
-
 
 = v2.4beta (2009-06-18) =
 

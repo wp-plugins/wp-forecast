@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-14 19:21+0200\n"
+"POT-Creation-Date: 2009-12-19 08:23+0100\n"
 "PO-Revision-Date: 2009-05-24 21:47+0100\n"
 "Last-Translator: Roland Geci <rolandgeci@gmail.com>\n"
 "Language-Team: Roland Geci <rolandgeci@gmail.com>\n"
@@ -25,11 +25,11 @@ msgstr "Dostupné widgety"
 msgid "Location does not exist"
 msgstr ""
 
-#: func_bug.php:360 func_bug.php:387 xgettextdummy.php:150
+#: func_bug.php:361 func_bug.php:388 xgettextdummy.php:150
 msgid "Unknown"
 msgstr ""
 
-#: setup.php:92
+#: setup.php:93
 msgid "The Weather"
 msgstr "Počasie"
 
@@ -75,232 +75,240 @@ msgstr ""
 msgid "Check connection to Weatherprovider"
 msgstr "Odkaz na Accuweather"
 
-#: wp-forecast-admin.php:426
+#: wp-forecast-admin.php:431
 msgid "Settings successfully updated"
 msgstr "Nastavenia boli úspešne aktualizované."
 
-#: wp-forecast-admin.php:428
+#: wp-forecast-admin.php:433
 msgid "You have to change a field to update settings."
 msgstr "Musíte zmeniť toto pole pre aktualizáciu nastavení."
 
-#: wp-forecast-admin.php:474
+#: wp-forecast-admin.php:479
 msgid "WP-Forecast Setup"
 msgstr "Nastavenie WP-Forecast"
 
-#: wp-forecast-admin.php:477
+#: wp-forecast-admin.php:482
 msgid "Weatherservice"
 msgstr ""
 
-#: wp-forecast-admin.php:479
+#: wp-forecast-admin.php:484
 #, fuzzy
 msgid "AccuWeather"
 msgstr "Odkaz na Accuweather"
 
-#: wp-forecast-admin.php:480
+#: wp-forecast-admin.php:485
 #, fuzzy
 msgid "WeatherBug"
 msgstr "Počasie"
 
-#: wp-forecast-admin.php:482
+#: wp-forecast-admin.php:487
 #, fuzzy
 msgid "Weather.com"
 msgstr "Počasie"
 
-#: wp-forecast-admin.php:485
+#: wp-forecast-admin.php:490
 msgid "Partner ID"
 msgstr ""
 
-#: wp-forecast-admin.php:488
+#: wp-forecast-admin.php:493
 msgid "Licensekey"
 msgstr ""
 
-#: wp-forecast-admin.php:493
+#: wp-forecast-admin.php:498
 msgid "Location"
 msgstr "Poloha"
 
-#: wp-forecast-admin.php:496
+#: wp-forecast-admin.php:501
 msgid "Press Update options to save new location."
 msgstr "Kliknite Aktualizovať voľby pre uloženie novej polohy."
 
-#: wp-forecast-admin.php:499
+#: wp-forecast-admin.php:504
 msgid "Locationname"
 msgstr "Názov polohy"
 
-#: wp-forecast-admin.php:501
+#: wp-forecast-admin.php:506
 msgid "Refresh cache after"
 msgstr "Obnov cache po"
 
-#: wp-forecast-admin.php:503
+#: wp-forecast-admin.php:508
 msgid "secs."
 msgstr "sek."
 
-#: wp-forecast-admin.php:504
+#: wp-forecast-admin.php:509
 msgid "Use metric units"
 msgstr "Použiť metrické jednotky"
 
-#: wp-forecast-admin.php:507
+#: wp-forecast-admin.php:512
 msgid "Use current time"
 msgstr "Použiť aktuálny čas"
 
-#: wp-forecast-admin.php:510
+#: wp-forecast-admin.php:513
+msgid "Time-Offset"
+msgstr ""
+
+#: wp-forecast-admin.php:516
 msgid "Windspeed-Unit"
 msgstr "Jednotka rýchlosti vetra"
 
-#: wp-forecast-admin.php:511
+#: wp-forecast-admin.php:517
 msgid "Meter/Second (m/s)"
 msgstr "Meter/Sekunda (m/s)"
 
-#: wp-forecast-admin.php:512
+#: wp-forecast-admin.php:518
 msgid "Kilometer/Hour (km/h)"
 msgstr "Kilometer/Hodina (km/h)"
 
-#: wp-forecast-admin.php:513
+#: wp-forecast-admin.php:519
 msgid "Miles/Hour (mph)"
 msgstr "Míľ/Hodina (mph)"
 
-#: wp-forecast-admin.php:514
+#: wp-forecast-admin.php:520
 msgid "Knots (kts)"
 msgstr "Uzly (kts)"
 
-#: wp-forecast-admin.php:521
+#: wp-forecast-admin.php:527
 msgid "Language"
 msgstr "Jazyk"
 
-#: wp-forecast-admin.php:540
+#: wp-forecast-admin.php:546
 msgid "Show forecast as ajax pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:544
+#: wp-forecast-admin.php:550
 msgid "First day in pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:560
+#: wp-forecast-admin.php:566
 msgid "Display Configuration"
 msgstr "Zobraziť konfiguráciu"
 
-#: wp-forecast-admin.php:564
+#: wp-forecast-admin.php:570
 msgid "Current Conditions"
 msgstr "aktuálne podmienky"
 
-#: wp-forecast-admin.php:565
+#: wp-forecast-admin.php:571
 msgid "Forecast Day"
 msgstr "predpoveď na deň"
 
-#: wp-forecast-admin.php:566
+#: wp-forecast-admin.php:572
 msgid "Forecast Night"
 msgstr "predpoveď na noc"
 
-#: wp-forecast-admin.php:569
+#: wp-forecast-admin.php:575
 msgid "Icon"
 msgstr "ikona"
 
-#: wp-forecast-admin.php:578
+#: wp-forecast-admin.php:584
 msgid "Date"
 msgstr "dátum"
 
-#: wp-forecast-admin.php:585
+#: wp-forecast-admin.php:591
 msgid "Time"
 msgstr "čas"
 
-#: wp-forecast-admin.php:592
+#: wp-forecast-admin.php:598
 msgid "Short Description"
 msgstr "skrátený popis"
 
-#: wp-forecast-admin.php:601
+#: wp-forecast-admin.php:607
 msgid "Temperature"
 msgstr "teplota"
 
-#: wp-forecast-admin.php:610
+#: wp-forecast-admin.php:616
 msgid "Realfeel"
 msgstr "pocitová teplota"
 
-#: wp-forecast-admin.php:617
+#: wp-forecast-admin.php:623
 msgid "Pressure"
 msgstr "tlak"
 
-#: wp-forecast-admin.php:624
+#: wp-forecast-admin.php:630
 msgid "Humidity"
 msgstr "vlhkosť"
 
-#: wp-forecast-admin.php:631
+#: wp-forecast-admin.php:637
 msgid "Wind"
 msgstr "vietor"
 
-#: wp-forecast-admin.php:640 wp-forecast-show.php:253 wp-forecast-show.php:351
-#: wp-forecast-show.php:395
+#: wp-forecast-admin.php:646 wp-forecast-show.php:259 wp-forecast-show.php:357
+#: wp-forecast-show.php:401
 msgid "Windgusts"
 msgstr "nárazy vetra"
 
-#: wp-forecast-admin.php:649
+#: wp-forecast-admin.php:655
 msgid "Sunrise"
 msgstr "Východ Slnka"
 
-#: wp-forecast-admin.php:656
+#: wp-forecast-admin.php:662
 msgid "Sunset"
 msgstr "Západ Slnka"
 
-#: wp-forecast-admin.php:663
+#: wp-forecast-admin.php:669
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:670
+#: wp-forecast-admin.php:676
 #, fuzzy
 msgid "Link to Weatherprovider"
 msgstr "Odkaz na Accuweather"
 
-#: wp-forecast-admin.php:679 wp-forecast-show.php:302
+#: wp-forecast-admin.php:679
+msgid "Open in new Window"
+msgstr ""
+
+#: wp-forecast-admin.php:686 wp-forecast-show.php:308
 msgid "Forecast"
 msgstr "Predpoveď na"
 
-#: wp-forecast-admin.php:684
+#: wp-forecast-admin.php:691
 msgid "All"
 msgstr ""
 
-#: wp-forecast-admin.php:685 wp-forecast-admin.php:686
-#: wp-forecast-admin.php:687 wp-forecast-admin.php:688
-#: wp-forecast-admin.php:689 wp-forecast-admin.php:690
-#: wp-forecast-admin.php:691 wp-forecast-admin.php:692
-#: wp-forecast-admin.php:693
+#: wp-forecast-admin.php:692 wp-forecast-admin.php:693
+#: wp-forecast-admin.php:694 wp-forecast-admin.php:695
+#: wp-forecast-admin.php:696 wp-forecast-admin.php:697
+#: wp-forecast-admin.php:698 wp-forecast-admin.php:699
+#: wp-forecast-admin.php:700
 msgid "Day"
 msgstr "deň"
 
-#: wp-forecast-admin.php:695
+#: wp-forecast-admin.php:702
 msgid "Daytime"
 msgstr "cez deň"
 
-#: wp-forecast-admin.php:716
+#: wp-forecast-admin.php:723
 msgid "Nighttime"
 msgstr "v noci"
 
-#: wp-forecast-admin.php:746
+#: wp-forecast-admin.php:753
 msgid "Update options"
 msgstr "Aktualizovať voľby"
 
-#: wp-forecast-admin.php:753 wp-forecast-admin.php:770
+#: wp-forecast-admin.php:760 wp-forecast-admin.php:777
 msgid "Search location"
 msgstr "Vyhľadať polohu"
 
-#: wp-forecast-admin.php:757
+#: wp-forecast-admin.php:764
 msgid "Searchterm"
 msgstr "Hľadaný výraz"
 
-#: wp-forecast-admin.php:761
+#: wp-forecast-admin.php:768
 msgid "No locations found."
 msgstr "Žiadna poloha nebola nájdená."
 
-#: wp-forecast-admin.php:765
+#: wp-forecast-admin.php:772
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Nahraďte prosím prehlásky ä,ö,ü  s  a, o, u v hľadanom výraze."
 
-#: wp-forecast-admin.php:775
+#: wp-forecast-admin.php:782
 msgid "Search result"
 msgstr "Výsledok hľadania"
 
-#: wp-forecast-admin.php:782
+#: wp-forecast-admin.php:789
 msgid "Please select your city and press set location."
 msgstr "Vyberte prosím mesto a kliknite na nastavenie polohy."
 
-#: wp-forecast-admin.php:786
+#: wp-forecast-admin.php:793
 msgid "Set location"
 msgstr "Nastaviť polohu"
 
@@ -338,47 +346,47 @@ msgstr "Prepáčte, nie sú dostupné žiadne aktuálne dáta."
 msgid "Please try again later."
 msgstr "Skúste prosím neskôr."
 
-#: wp-forecast-show.php:196
+#: wp-forecast-show.php:202
 msgid "time"
 msgstr "čas"
 
-#: wp-forecast-show.php:233
+#: wp-forecast-show.php:239
 msgid "flik"
 msgstr "pocitová teplota"
 
-#: wp-forecast-show.php:236
+#: wp-forecast-show.php:242
 msgid "barr"
 msgstr "tlak vzduchu"
 
-#: wp-forecast-show.php:244
+#: wp-forecast-show.php:250
 msgid "hmid"
 msgstr "vlhkosť vzduchu"
 
-#: wp-forecast-show.php:248 wp-forecast-show.php:346 wp-forecast-show.php:388
+#: wp-forecast-show.php:254 wp-forecast-show.php:352 wp-forecast-show.php:394
 msgid "winds"
 msgstr "rýchlosť vetra"
 
-#: wp-forecast-show.php:258
+#: wp-forecast-show.php:264
 msgid "sunrise"
 msgstr "Východ Slnka"
 
-#: wp-forecast-show.php:262
+#: wp-forecast-show.php:268
 msgid "sunset"
 msgstr "Západ Slnka"
 
-#: wp-forecast-show.php:311
+#: wp-forecast-show.php:317
 msgid "day"
 msgstr "deň"
 
-#: wp-forecast-show.php:363
+#: wp-forecast-show.php:369
 msgid "night"
 msgstr "noc"
 
-#: wp-forecast-show.php:418
+#: wp-forecast-show.php:424
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:419
+#: wp-forecast-show.php:425
 msgid "More forecast..."
 msgstr ""
 

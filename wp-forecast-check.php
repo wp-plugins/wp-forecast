@@ -170,7 +170,7 @@ $out .= '<td><select name="wprovider" id="wprovider">'."\n";
 
 $out .= "<option value='Accuweather'>Accuweather</option>\n";
 $out .= "<option value='WeatherBug'>WeatherBug</option>\n";
-$out .= "<option value='Weather.com'>Weather.com</option>\n";
+//$out .= "<option value='Weather.com'>Weather.com</option>\n";
 $out .= "</select></td>\n";
 
 // add submit button to form

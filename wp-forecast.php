@@ -3,8 +3,8 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 2.5
-Author: Hans Matzen <webmaster at tuxlog dot de>
+Version: 2.6
+Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
 
@@ -84,7 +84,7 @@ function wp_forecast_init()
 
     // first of all check if we have to set a hard given
     // transport method
-    if ($wp_forecast_pre_transport!="" && 
+    if (isset($wp_forecast_pre_transport) && 
 	get_option("wp-forecast-pre-transport") != $wp_forecast_pre_transport )
     {
 	pdebug(1,"Setting hard coded transport method to $wp_forecast_pre_transport");
@@ -100,7 +100,7 @@ function wp_forecast_init()
 	$wpfcid=get_widget_id($i);
 	
 	$wpf_vars=get_wpf_opts($wpfcid);
-   
+
 	if ($wpf_vars['expire'] < time()) 
 	{
 	    switch ($wpf_vars['service']) 

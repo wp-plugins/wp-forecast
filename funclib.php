@@ -41,6 +41,7 @@ function fetchURL($url)
     
     $wprr_args = array(
 	'timeout' => $timeout,
+	'decompress' => false,
 	'headers' => array(
 	    'Connection' => 'Close',
 	    'Accept' => '*/*'
@@ -109,7 +110,12 @@ function fetchURL($url)
       $erg="<ADC_DATABASE><FAILURE>Connection Error:".$errno. " >> ". $errstr ."</FAILURE></ADC_DATABASE>\n";
     }
   }  
-    
+  
+  // workaround for bug in decompress function, class wp_http in wp 2.9
+  $derg = @gzinflate($erg);
+  if ($derg !== false)
+      $erg = $derg;
+  
   pdebug(1,"End of fetchURL ()");
   
   return $erg;
@@ -179,6 +185,7 @@ function get_wpf_opts($wpfcid)
       $av['dispconfig']   = get_option("wp-forecast-dispconfig".$wpfcid);
       $av['windunit']     = get_option("wp-forecast-windunit".$wpfcid);
       $av['currtime']     = get_option("wp-forecast-currtime".$wpfcid);
+      $av['timeoffset']   = get_option("wp-forecast-timeoffset".$wpfcid);
       $av['title']        = get_option("wp-forecast-title".$wpfcid);
       // replace old options by new one row option
       add_option("wp-forecast-opts".$wpfcid,serialize($av));
