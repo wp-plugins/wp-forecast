@@ -156,13 +156,19 @@ function show($wpfcid,$args,$wpfvars)
 	  return false;
 	}
 
-    // ortsnamen ausgeben 
+    // ortsnamen ausgeben parameter fuer open in new window berücksichtigen
     $servicelink="";
     $servicelink_end="";
     if (substr($dispconfig,25,1) == "1") {
-      $servicelink= '<a href="'.urlencode($w['servicelink']).'">';
+      $servicelink= '<a href="'.$w['servicelink'].'"';
       $servicelink_end="</a>";
+    
+      if (substr($dispconfig,26,1) == "1") 
+	  $servicelink= $servicelink . ' target="_blank" >';
+      else
+	  $servicelink= $servicelink.' >';
     }
+    
 
     $out .= '<div class="wp-forecast-curr-head">';
     if ( $w['location'] == "" ) 
@@ -270,7 +276,8 @@ function show($wpfcid,$args,$wpfvars)
 
     
   }
- 
+  
+  
   // ------------------
   // 
   // output forecast
@@ -288,7 +295,8 @@ function show($wpfcid,$args,$wpfvars)
       break;
   }
 
-  $out1="<div class=\"wp-forecast-fc\">\n";
+  $out1 = "<div class=\"wp-forecast-fc\">\n";
+  $out2 = "";
   for ($i = 1; $i <= $maxdays; $i++) 
   {
       // check active forecast for day number i
@@ -395,22 +403,37 @@ function show($wpfcid,$args,$wpfvars)
 	
 	
 	$out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
-      } 
+      }
 
    	
     
     // close div block
     if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1") 
       $out1 .="</div>\n";
+
+    // store first shown forecast in case pulldown is active
+    if ( $pdforecast == 1 and $pdfirstday == $i ) {
+	$out2 = $out1 . "</div>\n";
+    }
   }
 
   $out1 .= "</div>\n"; // end of wp-forecast-fc
+
+  // wrap a div around for pulldown and switch off complete forecast
+   if ( $pdforecast == 1 ) {
+       $out1 .= "<div class='wpff_nav' id='wpfbl' onclick=\"document.getElementById('wpfc1').style.display='none';document.getElementById('wpfc2').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n";
+       $out2 .= "<div class='wpff_nav' id='wpfbm' onclick=\"document.getElementById('wpfc2').style.display='none';document.getElementById('wpfc1').style.display='block';return false;\">" . __("More forecast...","wp-forecast_" . $wpf_language) . "</div>\n";
+ 
+       $out1 = '<div id="wpfc1"  style="display:none;">' . $out1 . "</div>\n";
+       $out2 = '<div id="wpfc2"  style="display:block;">' . $out2 . "</div>\n";
+   }
+ 
 
   // print it
   if ( $show_from_widget == 1 )
     echo $before_widget . $before_title . $title . $after_title;
   
-  echo '<div class="wp-forecast">' . $out . $out1 . '</div>'."\n";
+  echo '<div class="wp-forecast">' . $out . $out1 . $out2 . '</div>'."\n";
   // to come back to theme floating status
   echo '<div style="clear:inherit;">&nbsp;</div>';
   

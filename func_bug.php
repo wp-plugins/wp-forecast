@@ -346,8 +346,9 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
     
     $cts = $w['time'];
-    $gmtoffset=get_option("gmt_offset");
-    $ct = strtotime($cts) + ($gmtoffset * 3600);
+    $gmtoffset=0; // get_option("gmt_offset");
+    $ct = strtotime($cts) + ($gmtoffset * 3600); 
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['bugdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['bugtime']=date_i18n($fc_time_format, $ct);
     
@@ -368,7 +369,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     list($dummy, $weather_arr['sunrise']) = split(" ",$w['sunrise'],2);
     list($dummy, $weather_arr['sunset'] ) = split(" ",$w['sunset'] ,2);
-    $weather_arr['copyright']='<a href="http://www.weatherbug.com">Copyright 2009 WeatherBug</a>';
+    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; 2009 WeatherBug</a>';
     
     // additional info
     $weather_arr['lat']=$w['lat'];
