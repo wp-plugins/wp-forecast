@@ -72,6 +72,8 @@ require_once("wp-forecast-admin.php");
 require_once("wp-forecast-show.php");
 // shortcodes
 require_once("shortcodes.php");
+// support for wordpress autoupdate
+require_once("wpf_autoupdate.php");
 
 //
 // set cache with weather data for current parameters
