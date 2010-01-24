@@ -130,3 +130,8 @@ div.wpff_nav:hover {
     cursor:pointer;
 }
 
+/* style for selection widget */
+div.wpf-selector {
+    padding: 5px;
+    font-size: 11px;
+}

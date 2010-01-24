@@ -3,8 +3,8 @@ Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.8
-Tested up to: 2.9
-Stable tag: 2.6
+Tested up to: 2.9.1
+Stable tag: 2.7
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -155,6 +155,12 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
+= v2.7 (2010-01-22) =
+* added unit label to timeoffset field in admindialog
+* added selection dialog widget to let user choose which location to view
+* extended pulldown widget to use more than one pulldown widget per page 
+* prevent wp-forecast.css from being deleted during automatic plugin update
+
 = v2.6 (2009-12-17) =
 * fixed wrong urlencoded link to weather forecast at accuweather
 * fixed undefined variable warning for $wp_forecast_pre_transport in wp-forecast.php
@@ -172,7 +178,6 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 * added transport check to admin dialog
 
 = v2.4 (2009-07-04) =
-
 * changed readme to support new changelog feature at wordpress.org
 * fixed faq section in readme, resized icon
 * added default css file which is used when no user specific one is available

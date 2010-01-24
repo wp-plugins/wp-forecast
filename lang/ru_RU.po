@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-19 08:23+0100\n"
+"POT-Creation-Date: 2010-01-18 08:18+0100\n"
 "PO-Revision-Date: 2009-02-02 17:03+0100\n"
 "Last-Translator: Stefano <steve196404@virgilio.it>\n"
 "Language-Team: Valeria Pellegirini <info@2bsoftware>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: class-wpf_widget.php:69 wp-forecast-admin.php:102
+#: class-wpf_widget.php:73 wp-forecast-admin.php:102
 msgid "Title:"
 msgstr "Название"
 
-#: class-wpf_widget.php:77 wp-forecast-admin.php:217
+#: class-wpf_widget.php:81 wp-forecast-admin.php:217
 msgid "Available widgets"
 msgstr "Доступные виджеты"
 
@@ -47,12 +47,12 @@ msgstr ""
 msgid "widget_hint"
 msgstr "Виджет"
 
-#: wp-forecast-admin.php:205 wp-forecast.php:342
+#: wp-forecast-admin.php:205 wp-forecast.php:349
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Сколько WP-прогноз виджетов вы хотели?"
 
 #: wp-forecast-admin.php:214 wp-forecast-admin.php:240
-#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:351
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:358
 msgid "Save"
 msgstr "Сохранить"
 
@@ -153,6 +153,11 @@ msgstr "Использовать текущее время"
 msgid "Time-Offset"
 msgstr ""
 
+#: wp-forecast-admin.php:513
+#, fuzzy
+msgid "minutes"
+msgstr "Направление ветра"
+
 #: wp-forecast-admin.php:516
 msgid "Windspeed-Unit"
 msgstr "Скорость ветра"
@@ -237,8 +242,8 @@ msgstr "Влажность%"
 msgid "Wind"
 msgstr "Ветер"
 
-#: wp-forecast-admin.php:646 wp-forecast-show.php:259 wp-forecast-show.php:357
-#: wp-forecast-show.php:401
+#: wp-forecast-admin.php:646 wp-forecast-show.php:296 wp-forecast-show.php:394
+#: wp-forecast-show.php:438
 msgid "Windgusts"
 msgstr "Направление ветра"
 
@@ -263,59 +268,59 @@ msgstr "Ссылка на AccuWeather"
 msgid "Open in new Window"
 msgstr ""
 
-#: wp-forecast-admin.php:686 wp-forecast-show.php:308
+#: wp-forecast-admin.php:687 wp-forecast-show.php:345
 msgid "Forecast"
 msgstr "Прогноз "
 
-#: wp-forecast-admin.php:691
+#: wp-forecast-admin.php:692
 msgid "All"
 msgstr "Все"
 
-#: wp-forecast-admin.php:692 wp-forecast-admin.php:693
-#: wp-forecast-admin.php:694 wp-forecast-admin.php:695
-#: wp-forecast-admin.php:696 wp-forecast-admin.php:697
-#: wp-forecast-admin.php:698 wp-forecast-admin.php:699
-#: wp-forecast-admin.php:700
+#: wp-forecast-admin.php:693 wp-forecast-admin.php:694
+#: wp-forecast-admin.php:695 wp-forecast-admin.php:696
+#: wp-forecast-admin.php:697 wp-forecast-admin.php:698
+#: wp-forecast-admin.php:699 wp-forecast-admin.php:700
+#: wp-forecast-admin.php:701
 msgid "Day"
 msgstr "День "
 
-#: wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
 msgid "Daytime"
 msgstr "Дневное время"
 
-#: wp-forecast-admin.php:723
+#: wp-forecast-admin.php:724
 msgid "Nighttime"
 msgstr "Вечернее время"
 
-#: wp-forecast-admin.php:753
+#: wp-forecast-admin.php:754
 msgid "Update options"
 msgstr "Обновить  страницу"
 
-#: wp-forecast-admin.php:760 wp-forecast-admin.php:777
+#: wp-forecast-admin.php:761 wp-forecast-admin.php:778
 msgid "Search location"
 msgstr "Поиск местоположения"
 
-#: wp-forecast-admin.php:764
+#: wp-forecast-admin.php:765
 msgid "Searchterm"
 msgstr "Поиск"
 
-#: wp-forecast-admin.php:768
+#: wp-forecast-admin.php:769
 msgid "No locations found."
 msgstr "Местоположение не найдено"
 
-#: wp-forecast-admin.php:772
+#: wp-forecast-admin.php:773
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Просьба заменить немецкие Umlaute ä,ö,ü    на a ,o, u  при поиске"
 
-#: wp-forecast-admin.php:782
+#: wp-forecast-admin.php:783
 msgid "Search result"
 msgstr "Результат поиска"
 
-#: wp-forecast-admin.php:789
+#: wp-forecast-admin.php:790
 msgid "Please select your city and press set location."
 msgstr "Пожалуйста, выберите ваш город и нажмите поиск"
 
-#: wp-forecast-admin.php:793
+#: wp-forecast-admin.php:794
 msgid "Set location"
 msgstr "Установить местонахождение"
 
@@ -336,64 +341,69 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: wp-forecast.php:381
+#: wp-forecast.php:393
 #, php-format
 msgid "wp-forecast %s"
 msgstr "WP-прогноз "
 
-#: wp-forecast-show.php:130
+#: wp-forecast-show.php:126
+#, fuzzy
+msgid "Locations:"
+msgstr "Местонахождение"
+
+#: wp-forecast-show.php:167
 msgid "Failure notice from provider"
 msgstr ""
 
-#: wp-forecast-show.php:147
+#: wp-forecast-show.php:184
 msgid "Sorry, no valid weather data available."
 msgstr "К сожалению, отсутствуют данные о погоде"
 
-#: wp-forecast-show.php:148
+#: wp-forecast-show.php:185
 msgid "Please try again later."
 msgstr "Пожалуйста, повторите попытку позже."
 
-#: wp-forecast-show.php:202
+#: wp-forecast-show.php:239
 msgid "time"
 msgstr "Время"
 
-#: wp-forecast-show.php:239
+#: wp-forecast-show.php:276
 msgid "flik"
 msgstr "Температура на данный момент"
 
-#: wp-forecast-show.php:242
+#: wp-forecast-show.php:279
 msgid "barr"
 msgstr "Давление"
 
-#: wp-forecast-show.php:250
+#: wp-forecast-show.php:287
 msgid "hmid"
 msgstr "Влажность"
 
-#: wp-forecast-show.php:254 wp-forecast-show.php:352 wp-forecast-show.php:394
+#: wp-forecast-show.php:291 wp-forecast-show.php:389 wp-forecast-show.php:431
 msgid "winds"
 msgstr "Ветер"
 
-#: wp-forecast-show.php:264
+#: wp-forecast-show.php:301
 msgid "sunrise"
 msgstr "Восход"
 
-#: wp-forecast-show.php:268
+#: wp-forecast-show.php:305
 msgid "sunset"
 msgstr "Закат "
 
-#: wp-forecast-show.php:317
+#: wp-forecast-show.php:354
 msgid "day"
 msgstr "День"
 
-#: wp-forecast-show.php:369
+#: wp-forecast-show.php:406
 msgid "night"
 msgstr "Ночь"
 
-#: wp-forecast-show.php:424
+#: wp-forecast-show.php:461
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:425
+#: wp-forecast-show.php:462
 msgid "More forecast..."
 msgstr ""
 

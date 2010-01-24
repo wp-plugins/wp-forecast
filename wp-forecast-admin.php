@@ -510,7 +510,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	 </p>
 
 	 <p><input type="checkbox" name="currtime" value="1" <?php if ($av['currtime']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use current time',"wp-forecast_".$locale)?></b>
-            / <b><?php echo __('Time-Offset',"wp-forecast_".$locale)?> :</b> <input type="text" name="timeoffset" size="5" maxlength="5" value="<?php echo $av['timeoffset'] ?>" /> 
+												 / <b><?php echo __('Time-Offset',"wp-forecast_".$locale)?> :</b> <input type="text" name="timeoffset" size="5" maxlength="5" value="<?php echo $av['timeoffset'] ?>" /> <b><?php echo __('minutes',"wp-forecast_".$locale);?></b> 
          </p>
 
          <p><b><?php echo __('Windspeed-Unit',"wp-forecast_".$locale)?>: </b><select name="windunit" size="1">
@@ -548,6 +548,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 
          <p>
          <b><?php echo __('First day in pull-down',"wp-forecast_".$locale)?>: </b><select id="pdfirstday" name="pdfirstday" size="1">
+   <option value="0" <?php if ($av['pdfirstday']=="0") echo "selected=\"selected\""?>>0</option>
    <option value="1" <?php if ($av['pdfirstday']=="1") echo "selected=\"selected\""?>>1</option>
    <option value="2" <?php if ($av['pdfirstday']=="2") echo "selected=\"selected\""?>>2</option>
    <option value="3" <?php if ($av['pdfirstday']=="3") echo "selected=\"selected\""?>>3</option>

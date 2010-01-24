@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-19 08:23+0100\n"
+"POT-Creation-Date: 2010-01-18 08:18+0100\n"
 "PO-Revision-Date: 2009-01-31 03:50+0100\n"
 "Last-Translator: Stefano <stefano.boeri@2bsoftware.it>\n"
 "Language-Team: Valentina Boeri <valentina@2bsoftware.it>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-Country: ROMANIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: class-wpf_widget.php:69 wp-forecast-admin.php:102
+#: class-wpf_widget.php:73 wp-forecast-admin.php:102
 msgid "Title:"
 msgstr "Titlu"
 
-#: class-wpf_widget.php:77 wp-forecast-admin.php:217
+#: class-wpf_widget.php:81 wp-forecast-admin.php:217
 msgid "Available widgets"
 msgstr "Widgets disponibil"
 
@@ -47,12 +47,12 @@ msgstr ""
 msgid "widget_hint"
 msgstr "widget_hint"
 
-#: wp-forecast-admin.php:205 wp-forecast.php:342
+#: wp-forecast-admin.php:205 wp-forecast.php:349
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Cât de multe wp-forecast widgets ti-ar place?"
 
 #: wp-forecast-admin.php:214 wp-forecast-admin.php:240
-#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:351
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:358
 msgid "Save"
 msgstr "\tSalvare"
 
@@ -153,6 +153,11 @@ msgstr "Utiliza timpul curent"
 msgid "Time-Offset"
 msgstr ""
 
+#: wp-forecast-admin.php:513
+#, fuzzy
+msgid "minutes"
+msgstr "Rafale de vânt"
+
 #: wp-forecast-admin.php:516
 msgid "Windspeed-Unit"
 msgstr "Unitatea viteza vântului"
@@ -237,8 +242,8 @@ msgstr "Umiditate"
 msgid "Wind"
 msgstr "Vântul"
 
-#: wp-forecast-admin.php:646 wp-forecast-show.php:259 wp-forecast-show.php:357
-#: wp-forecast-show.php:401
+#: wp-forecast-admin.php:646 wp-forecast-show.php:296 wp-forecast-show.php:394
+#: wp-forecast-show.php:438
 msgid "Windgusts"
 msgstr "Rafale de vânt"
 
@@ -263,61 +268,61 @@ msgstr "Link la Accuweather"
 msgid "Open in new Window"
 msgstr ""
 
-#: wp-forecast-admin.php:686 wp-forecast-show.php:308
+#: wp-forecast-admin.php:687 wp-forecast-show.php:345
 msgid "Forecast"
 msgstr "Prognoza"
 
-#: wp-forecast-admin.php:691
+#: wp-forecast-admin.php:692
 msgid "All"
 msgstr "Toate"
 
-#: wp-forecast-admin.php:692 wp-forecast-admin.php:693
-#: wp-forecast-admin.php:694 wp-forecast-admin.php:695
-#: wp-forecast-admin.php:696 wp-forecast-admin.php:697
-#: wp-forecast-admin.php:698 wp-forecast-admin.php:699
-#: wp-forecast-admin.php:700
+#: wp-forecast-admin.php:693 wp-forecast-admin.php:694
+#: wp-forecast-admin.php:695 wp-forecast-admin.php:696
+#: wp-forecast-admin.php:697 wp-forecast-admin.php:698
+#: wp-forecast-admin.php:699 wp-forecast-admin.php:700
+#: wp-forecast-admin.php:701
 msgid "Day"
 msgstr "Zi"
 
-#: wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
 msgid "Daytime"
 msgstr "Timp de zi"
 
-#: wp-forecast-admin.php:723
+#: wp-forecast-admin.php:724
 msgid "Nighttime"
 msgstr "Timp de noapte"
 
-#: wp-forecast-admin.php:753
+#: wp-forecast-admin.php:754
 msgid "Update options"
 msgstr "Opţiuni de actualizare"
 
-#: wp-forecast-admin.php:760 wp-forecast-admin.php:777
+#: wp-forecast-admin.php:761 wp-forecast-admin.php:778
 msgid "Search location"
 msgstr "Căutare locaţie"
 
-#: wp-forecast-admin.php:764
+#: wp-forecast-admin.php:765
 msgid "Searchterm"
 msgstr "Termen de căutare"
 
-#: wp-forecast-admin.php:768
+#: wp-forecast-admin.php:769
 msgid "No locations found."
 msgstr "Nu au fost găsite locatii"
 
-#: wp-forecast-admin.php:772
+#: wp-forecast-admin.php:773
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr ""
 "Vă rugăm să înlocuiti germana Umlaute ä, o,, U, cu o, o, u, în termenul de "
 "căutare."
 
-#: wp-forecast-admin.php:782
+#: wp-forecast-admin.php:783
 msgid "Search result"
 msgstr "Rezultat căutare"
 
-#: wp-forecast-admin.php:789
+#: wp-forecast-admin.php:790
 msgid "Please select your city and press set location."
 msgstr "Selectaţi oraşul dumneavoastră şi apăsaţi locaţia stabilită."
 
-#: wp-forecast-admin.php:793
+#: wp-forecast-admin.php:794
 msgid "Set location"
 msgstr "Locaţia stabilită"
 
@@ -338,64 +343,69 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: wp-forecast.php:381
+#: wp-forecast.php:393
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:130
+#: wp-forecast-show.php:126
+#, fuzzy
+msgid "Locations:"
+msgstr "Locaţie"
+
+#: wp-forecast-show.php:167
 msgid "Failure notice from provider"
 msgstr ""
 
-#: wp-forecast-show.php:147
+#: wp-forecast-show.php:184
 msgid "Sorry, no valid weather data available."
 msgstr "Ne pare rău, datele vreme nu sunt disponibile."
 
-#: wp-forecast-show.php:148
+#: wp-forecast-show.php:185
 msgid "Please try again later."
 msgstr "Încercaţi din nou mai târziu."
 
-#: wp-forecast-show.php:202
+#: wp-forecast-show.php:239
 msgid "time"
 msgstr "Oră"
 
-#: wp-forecast-show.php:239
+#: wp-forecast-show.php:276
 msgid "flik"
 msgstr "Perceput de temperatură"
 
-#: wp-forecast-show.php:242
+#: wp-forecast-show.php:279
 msgid "barr"
 msgstr "Presiunea"
 
-#: wp-forecast-show.php:250
+#: wp-forecast-show.php:287
 msgid "hmid"
 msgstr "Umiditate"
 
-#: wp-forecast-show.php:254 wp-forecast-show.php:352 wp-forecast-show.php:394
+#: wp-forecast-show.php:291 wp-forecast-show.php:389 wp-forecast-show.php:431
 msgid "winds"
 msgstr "Vânt"
 
-#: wp-forecast-show.php:264
+#: wp-forecast-show.php:301
 msgid "sunrise"
 msgstr "Răsarit"
 
-#: wp-forecast-show.php:268
+#: wp-forecast-show.php:305
 msgid "sunset"
 msgstr "Apus"
 
-#: wp-forecast-show.php:317
+#: wp-forecast-show.php:354
 msgid "day"
 msgstr "Zi"
 
-#: wp-forecast-show.php:369
+#: wp-forecast-show.php:406
 msgid "night"
 msgstr "Noapte"
 
-#: wp-forecast-show.php:424
+#: wp-forecast-show.php:461
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:425
+#: wp-forecast-show.php:462
 msgid "More forecast..."
 msgstr ""
 
