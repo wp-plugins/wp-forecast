@@ -3,12 +3,13 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 2.4
-Author: Hans Matzen <webmaster at tuxlog.de>
+Version: 2.7
+Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
 
-/*  Copyright 2006-2009  Hans Matzen (email : webmaster at tuxlog.de)
+/*  
+    Copyright 2006-2009  Hans Matzen 
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -80,10 +81,10 @@ require_once("shortcodes.php");
 function wp_forecast_init() 
 {
     pdebug(1,"Start of function wp_forecast_init ()");
-    
+
     // first of all check if we have to set a hard given
     // transport method
-    if ($wp_forecast_pre_transport!="" && 
+    if (isset($wp_forecast_pre_transport) && 
 	get_option("wp-forecast-pre-transport") != $wp_forecast_pre_transport )
     {
 	pdebug(1,"Setting hard coded transport method to $wp_forecast_pre_transport");
@@ -99,7 +100,7 @@ function wp_forecast_init()
 	$wpfcid=get_widget_id($i);
 	
 	$wpf_vars=get_wpf_opts($wpfcid);
-   
+
 	if ($wpf_vars['expire'] < time()) 
 	{
 	    switch ($wpf_vars['service']) 
@@ -140,6 +141,7 @@ function wp_forecast_init()
 	    }
 	}
     }
+
     pdebug(1,"End of function wp_forecast_init ()");
 }
 
@@ -152,19 +154,26 @@ function wp_forecast_init()
 function wp_forecast_widget($args=array(),$wpfcid="A", $language_override=null)
 { 
 
-  pdebug(1,"Start of function wp_forecast_widget ()");
+  pdebug(1,"Start of function wp_forecast_widget (".$wpfcid.")");
   
-  $wpf_vars=get_wpf_opts($wpfcid);
+  if ($wpfcid == "?")
+      $wpf_vars=get_wpf_opts("A");
+  else
+      $wpf_vars=get_wpf_opts($wpfcid);
+
   if (!empty($language_override)) {
     $wpf_vars['wpf_language']=$language_override;
   }
-  $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
+
+  if ($wpfcid == "?")
+      $weather=unserialize(get_option("wp-forecast-cacheA"));
+  else
+      $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
+
   show($wpfcid,$args,$wpf_vars);
 
   pdebug(1,"End of function wp_forecast_widget ()");
 }
-
-
 
 //
 // this is the wrapper function for displaying from sidebar.php
@@ -371,6 +380,11 @@ function widget_wp_forecast_init()
   
   // add css in header
   add_action('wp_head', 'wp_forecast_css');
+ 
+  // javascript hinzufügen
+  wp_enqueue_script('wpf_update',
+		    '/' . PLUGINDIR . '/wp-forecast/wpf_update.js',
+		    array('jquery'), "9999");
 
   for ($i=0;$i<=$wpf_maxwidgets;$i++) {
     $wpfcid = get_widget_id( $i );

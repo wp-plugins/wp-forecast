@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@ function fetchURL($url)
     
     $wprr_args = array(
 	'timeout' => $timeout,
+	'decompress' => false,
 	'headers' => array(
 	    'Connection' => 'Close',
 	    'Accept' => '*/*'
@@ -109,7 +110,12 @@ function fetchURL($url)
       $erg="<ADC_DATABASE><FAILURE>Connection Error:".$errno. " >> ". $errstr ."</FAILURE></ADC_DATABASE>\n";
     }
   }  
-    
+  
+  // workaround for bug in decompress function, class wp_http in wp 2.9
+  $derg = @gzinflate($erg);
+  if ($derg !== false)
+      $erg = $derg;
+  
   pdebug(1,"End of fetchURL ()");
   
   return $erg;
@@ -179,6 +185,7 @@ function get_wpf_opts($wpfcid)
       $av['dispconfig']   = get_option("wp-forecast-dispconfig".$wpfcid);
       $av['windunit']     = get_option("wp-forecast-windunit".$wpfcid);
       $av['currtime']     = get_option("wp-forecast-currtime".$wpfcid);
+      $av['timeoffset']   = get_option("wp-forecast-timeoffset".$wpfcid);
       $av['title']        = get_option("wp-forecast-title".$wpfcid);
       // replace old options by new one row option
       add_option("wp-forecast-opts".$wpfcid,serialize($av));
@@ -262,6 +269,7 @@ function wp_forecast_css($wpfcid="A")
     $plugin_url = plugins_url("wp-forecast/");
     
     echo '<link rel="stylesheet" id="wp-forecast-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
+    
     
     
     pdebug(1,"End of function wp_forecast_css ()");
@@ -456,7 +464,7 @@ function get_wp_transports()
 }
 
 //
-// function to turn on/off wp-forecast repselected transport
+// function to turn on/off wp-forecast preselected transport
 // 
 function switch_wpf_transport($sw)
 {
