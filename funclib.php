@@ -127,29 +127,44 @@ function fetchURL($url)
 //
 function windstr($metric,$wspeed,$windunit) 
 {
-  pdebug(2,"Start of windstr ()");
+    pdebug(2,"Start of windstr ()");
 
-  // if its mph convert it to m/s
-  if ($metric != 1)
-    $wspeed = round($wspeed * 0.44704,0);
-	
-  // convert it to selected unit
-  switch ($windunit) {
-  case "ms":
-    $wunit="m/s";
-    break;
-  case "kmh":
-    $wspeed=round($wspeed*3.6,0);
-    $wunit="km/h";
-    break;
-  case "mph":
-    $wspeed=round($wspeed*2.23694,0);
-    $wunit="mph";
-    break;
-  case "kts":
-    $wspeed=round($wspeed*1.9438,0);
-    $wunit="kts";
-    break;
+    // if its mph convert it to m/s
+    if ($metric != 1)
+	$wspeed = round($wspeed * 0.44704,0);
+    
+    // convert it to selected unit
+    switch ($windunit) {
+    case "ms":
+	$wunit="m/s";
+	break;
+    case "kmh":
+	$wspeed=round($wspeed*3.6,0);
+	$wunit="km/h";
+	break;
+    case "mph":
+	$wspeed=round($wspeed*2.23694,0);
+	$wunit="mph";
+	break;
+    case "kts":
+	$wspeed=round($wspeed*1.9438,0);
+	$wunit="kts";
+	break;
+    case "bft":
+	$wbft = 0;
+	$bft = array(0.3, 1.6, 3.4, 5.5, 8.0, 10.8, 13.9, 17.2, 20.8, 24.5, 28.5, 32.7);
+	foreach($bft as $b)
+	{
+	    if ($wspeed < $b)
+	    {
+		$wbft--;
+		break;
+	    }
+	    $wbft++;
+	}
+	$wunit="bft";
+	$wspeed = $wbft;
+	break;
   }
   
   pdebug(2,"End of windstr ()");

@@ -518,6 +518,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
               <option value="kmh" <?php if ($av['windunit']=="kmh") echo "selected=\"selected\""?>><?php echo __('Kilometer/Hour (km/h)',"wp-forecast_".$locale)?></option>
               <option value="mph" <?php if ($av['windunit']=="mph") echo "selected=\"selected\""?>><?php echo __('Miles/Hour (mph)',"wp-forecast_".$locale)?></option>
               <option value="kts" <?php if ($av['windunit']=="kts") echo "selected=\"selected\""?>><?php echo __('Knots (kts)',"wp-forecast_".$locale)?></option>
+              <option value="bft" <?php if ($av['windunit']=="bft") echo "selected=\"selected\""?>><?php echo __('Beaufort (bft)',"wp-forecast_".$locale)?></option>
 	 </select></p>
 
 

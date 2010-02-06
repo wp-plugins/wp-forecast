@@ -308,7 +308,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     
     $weather_arr['temperature']=$w["temperature"]. "&deg;".$w['un_temp'];
     $weather_arr['realfeel']=$w["realfeel"]."&deg;".$w['un_temp'];
-    $weather_arr['pressure']=$w["pressure"]." ".$w["un_pres"];
+    $weather_arr['pressure']=round($w["pressure"],0)." ".$w["un_pres"];
     $weather_arr['humidity']=round($w["humidity"],0);
     $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
     $weather_arr['winddir']=translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language);

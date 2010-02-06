@@ -4,7 +4,7 @@ Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.8
 Tested up to: 2.9.1
-Stable tag: 2.7
+Stable tag: 2.8
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -39,7 +39,7 @@ Features:
 Credits:
 
  + Barbary Jany			testing a lot and bring it to valid XHTML
- + Frans Lieshout		translation to dutch
+ + Frans Lieshout&Wim Scholtes	translation to dutch
  + Luís Reis			translation to portugues
  + Håkan Carlström		translation to swedish
  + Gabriele von der Ohe		translation to german with entities
@@ -154,6 +154,13 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v2.8 (2010-01-30) =
+* prevent wp-forecast-nowp.css from being deleted during automatic plugin update
+* added beaufort to set of windunits
+* updated dutch translation, thanks to Wim :-)
+* fixed warning during autoupdate with wordpress >Version 2.8.6
+* rounded pressure to get rid of long values
 
 = v2.7 (2010-01-22) =
 * added unit label to timeoffset field in admindialog

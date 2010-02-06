@@ -32,10 +32,18 @@ function hm_backup_wpf()
 	$wp_filesystem->delete($backupdir,true);
     }
 
+    // backupdir anlegen
+    $wp_filesystem->mkdir($backupdir);
+
     // individuelle css datei sichern
     if ($wp_filesystem->is_file(dirname(__FILE__)."/wp-forecast.css"))
 	$wp_filesystem->copy(dirname(__FILE__)."/wp-forecast.css",
 			     $backupdir."/wp-forecast.css");
+
+    // individuelle css datei sichern
+    if ($wp_filesystem->is_file(dirname(__FILE__)."/wp-forecast-nowp.css"))
+	$wp_filesystem->copy(dirname(__FILE__)."/wp-forecast-nowp.css",
+			     $backupdir."/wp-forecast-nowp.css");
 
 }
 
@@ -50,6 +58,11 @@ function hm_recover_wpf()
     if ($wp_filesystem->is_file($backupdir."/wp-forecast.css"))
 	$wp_filesystem->copy( $backupdir."/wp-forecast.css",
 			      $pdir."/wp-forecast.css");
+
+    // individuelle css datei zurück holen
+    if ($wp_filesystem->is_file($backupdir."/wp-forecast-nowp.css"))
+	$wp_filesystem->copy( $backupdir."/wp-forecast-nowp.css",
+			      $pdir."/wp-forecast-nowp.css");
     
     // backup verzeichnis löschen
     $wp_filesystem->delete($backupdir,true);
