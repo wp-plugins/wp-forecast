@@ -295,6 +295,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     
     $cts = $w['fc_obsdate_1']." ".$w['time'];
     $ct = strtotime($cts);
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['accudate']=date_i18n($fc_date_format, $ct);
     $weather_arr['accutime']=date_i18n($fc_time_format, $ct);
     
@@ -307,7 +308,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     
     $weather_arr['temperature']=$w["temperature"]. "&deg;".$w['un_temp'];
     $weather_arr['realfeel']=$w["realfeel"]."&deg;".$w['un_temp'];
-    $weather_arr['pressure']=$w["pressure"]." ".$w["un_pres"];
+    $weather_arr['pressure']=round($w["pressure"],0)." ".$w["un_pres"];
     $weather_arr['humidity']=round($w["humidity"],0);
     $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
     $weather_arr['winddir']=translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language);
@@ -315,7 +316,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $sunarr = explode(" ",$w["sun"]);
     $weather_arr['sunrise']=$sunarr[0];
     $weather_arr['sunset']=$sunarr[1];
-    $weather_arr['copyright']='<a href="http://www.accuweather.com">Copyright 2009 AccuWeather, Inc.</a>';
+    $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; 2009 AccuWeather, Inc.</a>';
     
     
     // calc values for forecast
