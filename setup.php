@@ -89,26 +89,30 @@ function wp_forecast_activate()
       $av['daytime']="000000000"; // Switches for Daytime forecast
       $av['nighttime']="000000000"; // Switches for Nighttime forecast
       $av['currtime']="1"; // 1 if you want to use current time, else 0
+      $av['timeoffset']="0"; // offset to correct wrong accuweather time
       $av['title']=__("The Weather","wp-forecast_".$av['wpf_language']); // the widget title    
       // Displayconfigurationmatrix
-      //                  CC    FC Day    FC Night
-      // Icon              0     10        14
-      // Datum            18     -         -
-      // Zeit              1     -         -
-      // Shorttext         2     11        15
-      // Temperatur        3     12        16
-      // gef. Temp         4     -         -
-      // Luftdruck         5     -         - 
-      // Luftfeuchte       6     -         - 
-      // Wind              7     13        17
-      // Windboen         22     23        24
-      // Sonnenaufgang     8     -         -
-      // Sonnenuntergang   9     -         - 
-      // Copyright        21     -         -
-      // accuweather link 25     -         -
+      //                    CC    FC Day    FC Night
+      // Icon                0     10        14
+      // Datum              18     -         -
+      // Zeit                1     -         -
+      // Shorttext           2     11        15
+      // Temperatur          3     12        16
+      // gef. Temp           4     -         -
+      // Luftdruck           5     -         - 
+      // Luftfeuchte         6     -         - 
+      // Wind                7     13        17
+      // Windboen           22     23        24
+      // Sonnenaufgang       8     -         -
+      // Sonnenuntergang     9     -         - 
+      // Copyright          21     -         -
+      // accuweather link   25     -         -
+      // open in new window 26     -         -
       //
-      $av['dispconfig']="11111111111111111111111111"; 
+      $av['dispconfig']="111111111111111111111111111"; 
       $av['windunit']="ms"; // Choose between ms, kmh, mph or kts
+      $av['pdforecast']="0"; // pulldown forecast 0=No, 1=Yes
+      $av['pdfirstday']="0"; // day to start pulldown with
 
       add_option( "wp-forecast-opts".$wpfcid, serialize($av) );
     }

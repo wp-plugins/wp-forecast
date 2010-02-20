@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog.de)
+/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@ function fetchURL($url)
     
     $wprr_args = array(
 	'timeout' => $timeout,
+	'decompress' => false,
 	'headers' => array(
 	    'Connection' => 'Close',
 	    'Accept' => '*/*'
@@ -109,7 +110,12 @@ function fetchURL($url)
       $erg="<ADC_DATABASE><FAILURE>Connection Error:".$errno. " >> ". $errstr ."</FAILURE></ADC_DATABASE>\n";
     }
   }  
-    
+  
+  // workaround for bug in decompress function, class wp_http in wp 2.9
+  $derg = @gzinflate($erg);
+  if ($derg !== false)
+      $erg = $derg;
+  
   pdebug(1,"End of fetchURL ()");
   
   return $erg;
@@ -121,29 +127,44 @@ function fetchURL($url)
 //
 function windstr($metric,$wspeed,$windunit) 
 {
-  pdebug(2,"Start of windstr ()");
+    pdebug(2,"Start of windstr ()");
 
-  // if its mph convert it to m/s
-  if ($metric != 1)
-    $wspeed = round($wspeed * 0.44704,0);
-	
-  // convert it to selected unit
-  switch ($windunit) {
-  case "ms":
-    $wunit="m/s";
-    break;
-  case "kmh":
-    $wspeed=round($wspeed*3.6,0);
-    $wunit="km/h";
-    break;
-  case "mph":
-    $wspeed=round($wspeed*2.23694,0);
-    $wunit="mph";
-    break;
-  case "kts":
-    $wspeed=round($wspeed*1.9438,0);
-    $wunit="kts";
-    break;
+    // if its mph convert it to m/s
+    if ($metric != 1)
+	$wspeed = round($wspeed * 0.44704,0);
+    
+    // convert it to selected unit
+    switch ($windunit) {
+    case "ms":
+	$wunit="m/s";
+	break;
+    case "kmh":
+	$wspeed=round($wspeed*3.6,0);
+	$wunit="km/h";
+	break;
+    case "mph":
+	$wspeed=round($wspeed*2.23694,0);
+	$wunit="mph";
+	break;
+    case "kts":
+	$wspeed=round($wspeed*1.9438,0);
+	$wunit="kts";
+	break;
+    case "bft":
+	$wbft = 0;
+	$bft = array(0.3, 1.6, 3.4, 5.5, 8.0, 10.8, 13.9, 17.2, 20.8, 24.5, 28.5, 32.7);
+	foreach($bft as $b)
+	{
+	    if ($wspeed < $b)
+	    {
+		$wbft--;
+		break;
+	    }
+	    $wbft++;
+	}
+	$wunit="bft";
+	$wspeed = $wbft;
+	break;
   }
   
   pdebug(2,"End of windstr ()");
@@ -179,6 +200,7 @@ function get_wpf_opts($wpfcid)
       $av['dispconfig']   = get_option("wp-forecast-dispconfig".$wpfcid);
       $av['windunit']     = get_option("wp-forecast-windunit".$wpfcid);
       $av['currtime']     = get_option("wp-forecast-currtime".$wpfcid);
+      $av['timeoffset']   = get_option("wp-forecast-timeoffset".$wpfcid);
       $av['title']        = get_option("wp-forecast-title".$wpfcid);
       // replace old options by new one row option
       add_option("wp-forecast-opts".$wpfcid,serialize($av));
@@ -262,6 +284,7 @@ function wp_forecast_css($wpfcid="A")
     $plugin_url = plugins_url("wp-forecast/");
     
     echo '<link rel="stylesheet" id="wp-forecast-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
+    
     
     
     pdebug(1,"End of function wp_forecast_css ()");
@@ -456,7 +479,7 @@ function get_wp_transports()
 }
 
 //
-// function to turn on/off wp-forecast repselected transport
+// function to turn on/off wp-forecast preselected transport
 // 
 function switch_wpf_transport($sw)
 {
