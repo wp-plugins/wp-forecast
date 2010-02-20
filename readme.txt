@@ -3,8 +3,8 @@ Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.8
-Tested up to: 2.9.1
-Stable tag: 2.8
+Tested up to: 2.9.2
+Stable tag: 2.9
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -154,6 +154,9 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v2.9 (2010-02-19)
+* fixed an javascript, jquery incompatibility with ie6, ie7, ie8 concenring the selection dialog widget
 
 = v2.8 (2010-01-30) =
 * prevent wp-forecast-nowp.css from being deleted during automatic plugin update

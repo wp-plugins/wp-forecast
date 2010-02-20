@@ -15,9 +15,11 @@ function wpf_update()
     jQuery.get(siteuri + "/wp-forecast-show.php", 
 	       { wpfcid: newloc, header: "0" , selector: "1" },
 	       function(data){
+		   /*
 		   var b = data.indexOf(">");
 		   var e = data.lastIndexOf("<");
-		   data = data.substring(b + 1, e - 1);
+		   data  = data.substring(b + 1, e - 1);
+		   */
 		   jQuery("div#wp-forecastA").html(data);
 	       });
 }
