@@ -2,9 +2,9 @@
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
-Requires at least: 2.8
+Requires at least: 2.7
 Tested up to: 2.9.2
-Stable tag: 2.9
+Stable tag: 3.0
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -39,9 +39,11 @@ Features:
 Credits:
 
  + Barbary Jany			testing a lot and bring it to valid XHTML
- + Frans Lieshout&Wim Scholtes	translation to dutch
+ + Frans Lieshout
+   Wim Scholtes			translation to dutch
  + Luís Reis			translation to portugues
- + Håkan Carlström		translation to swedish
+ + Håkan Carlström, 
+   Susanne Svensso		translation to swedish
  + Gabriele von der Ohe		translation to german with entities
 	        		(for iso-8859-1 or latin1 blogs)
  + Martin Loyer/Jean-Pierre	translation to french
@@ -56,6 +58,8 @@ Credits:
  + Valeria Pellegrini		translation to russian
  + Valentina Boeri		translation to romanian
  + Roland Geci			translation to slovak
+ + Pavel Soukenik		translation to czech
+ + Pavel Karnaukhov		translation to ukraine
  + All the others giving feedback about missing features and bugs.   
    Thank you very much for your contribution to wp-forecast.   
 
@@ -155,8 +159,17 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
-= v2.9 (2010-02-19)
-* fixed an javascript, jquery incompatibility with ie6, ie7, ie8 concenring the selection dialog widget
+= v3.0 (2010-05-15) =
+* timeoffset is now considered for current time too
+* added support for wpmu (maintain settings on a per blog base, support for wpmu admin plugin)
+* updated dansk translation
+* fixed handling of country specific characters in accuweather data
+* added "Less..." link at the top (pull down widget)
+* updated swedish translation
+* added css class for iframe tag for shortcodes
+
+= v2.9 (2010-02-19) =
+* fixed an javascript, jquery incompatibility with ie6, ie7, ie8 concerning the selection dialog widget
 
 = v2.8 (2010-01-30) =
 * prevent wp-forecast-nowp.css from being deleted during automatic plugin update

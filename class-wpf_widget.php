@@ -54,7 +54,7 @@ if ( !class_exists('wpf_widget') )
 	{
 	    pdebug(1,"Start of wpf_widget::form()");
 	    
-	    $count = get_option('wp-forecast-count');
+	    $count = wpf_get_option('wp-forecast-count');
 	    
             // get translation 
 	    $locale = get_locale();

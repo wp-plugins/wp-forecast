@@ -265,7 +265,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
   } 
 
   extract($wpf_vars);
-  $w=unserialize(get_option("wp-forecast-cache".$wpfcid));
+  $w=maybe_unserialize(wpf_get_option("wp-forecast-cache".$wpfcid));
 
   // get translations
   if(function_exists('load_textdomain')) {
@@ -288,14 +288,20 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     
     $lt = time() - date("Z"); // this is the GMT
     $ct  = $lt + (3600 * ($w['gmtdiff'])); // local time
+    
+    
     if ( $w['gmtdiffdls'] == 1)
       $ct += 3600; // time with daylightsavings 
+
+    
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
+    
     $weather_arr['blogdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
     
     $cts = $w['fc_obsdate_1']." ".$w['time'];
     $ct = strtotime($cts);
-    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
+    //$ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['accudate']=date_i18n($fc_date_format, $ct);
     $weather_arr['accutime']=date_i18n($fc_time_format, $ct);
     

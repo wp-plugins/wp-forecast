@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast danish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-18 08:18+0100\n"
-"PO-Revision-Date: 2009-03-20 15:25+0100\n"
-"Last-Translator: Michael S.R. Petersen\n"
+"POT-Creation-Date: 2010-04-09 07:27+0200\n"
+"PO-Revision-Date: 2010-02-21 17:08+0100\n"
+"Last-Translator: Michael S.R. Petersen <msrp(at)mail.dk>\n"
 "Language-Team: Michael S.R. Petersen\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,11 +29,11 @@ msgstr "Tilgængelige Widgets"
 
 #: func_bug.php:222
 msgid "Location does not exist"
-msgstr ""
+msgstr "Lokalitet findes ikke"
 
 #: func_bug.php:361 func_bug.php:388 xgettextdummy.php:150
 msgid "Unknown"
-msgstr ""
+msgstr "Ukendt"
 
 #: setup.php:93
 msgid "The Weather"
@@ -41,7 +41,7 @@ msgstr "Vejret"
 
 #: shortcodes.php:40
 msgid "wp-forecast shortcode: This browser does not support iframes."
-msgstr ""
+msgstr "wp-forecast shortcode: Denne 'browser' understøtter ikke 'iframes'."
 
 #: wp-forecast-admin.php:105
 msgid "widget_hint"
@@ -49,12 +49,12 @@ msgstr ""
 "Parametrering af wp-forecast Widget,<br /> foretages på WP-Forecast Admin "
 "siden under indstillinger."
 
-#: wp-forecast-admin.php:205 wp-forecast.php:349
+#: wp-forecast-admin.php:205 wp-forecast.php:353
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Hvor mange wp-forecast widgets Ønsker De?"
 
 #: wp-forecast-admin.php:214 wp-forecast-admin.php:240
-#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:358
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:362
 msgid "Save"
 msgstr "Gem"
 
@@ -63,26 +63,24 @@ msgid "Select widget"
 msgstr "Vælg widget"
 
 #: wp-forecast-admin.php:238
-#, fuzzy
 msgid "Timeout for weatherprovider connections (secs.)?"
-msgstr "Timeout for accuweather forbindelse (sek.)?"
+msgstr "Timeout for forbindelse til leverandør af vejrudsigter (sek.)?"
 
 #: wp-forecast-admin.php:244
 msgid "Preselect wordpress transfer method"
-msgstr ""
+msgstr "Forudvælg wordpress overførsels metode"
 
 #: wp-forecast-admin.php:246
 msgid "default"
-msgstr ""
+msgstr "standard"
 
 #: wp-forecast-admin.php:260
 msgid "Delete options during plugin deactivation?"
 msgstr "Slet indstillinger ved deaktiveret plugin?"
 
 #: wp-forecast-admin.php:268
-#, fuzzy
 msgid "Check connection to Weatherprovider"
-msgstr "Link til Accuweather"
+msgstr "Test forbindelse til leverandør af vejrudsigter"
 
 #: wp-forecast-admin.php:431
 msgid "Settings successfully updated"
@@ -100,30 +98,27 @@ msgstr "WP-Forecast indstillinger"
 
 #: wp-forecast-admin.php:482
 msgid "Weatherservice"
-msgstr ""
+msgstr "Vejrtjeneste"
 
 #: wp-forecast-admin.php:484
-#, fuzzy
 msgid "AccuWeather"
-msgstr "Link til Accuweather"
+msgstr "AccuWeather"
 
 #: wp-forecast-admin.php:485
-#, fuzzy
 msgid "WeatherBug"
-msgstr "Vejret"
+msgstr "WeatherBug"
 
 #: wp-forecast-admin.php:487
-#, fuzzy
 msgid "Weather.com"
-msgstr "Vejret"
+msgstr "Weather.com"
 
 #: wp-forecast-admin.php:490
 msgid "Partner ID"
-msgstr ""
+msgstr "Partner ID"
 
 #: wp-forecast-admin.php:493
 msgid "Licensekey"
-msgstr ""
+msgstr "Licensnøgle"
 
 #: wp-forecast-admin.php:498
 msgid "Location"
@@ -155,12 +150,11 @@ msgstr "Benyt aktuel tid"
 
 #: wp-forecast-admin.php:513
 msgid "Time-Offset"
-msgstr ""
+msgstr "Tidsforskydelse"
 
 #: wp-forecast-admin.php:513
-#, fuzzy
 msgid "minutes"
-msgstr "Vindstød"
+msgstr "minutter"
 
 #: wp-forecast-admin.php:516
 msgid "Windspeed-Unit"
@@ -182,236 +176,237 @@ msgstr "Mil/time (mph)"
 msgid "Knots (kts)"
 msgstr "Knob (kts)"
 
-#: wp-forecast-admin.php:527
+#: wp-forecast-admin.php:521
+msgid "Beaufort (bft)"
+msgstr ""
+
+#: wp-forecast-admin.php:528
 msgid "Language"
 msgstr "Sprog"
 
-#: wp-forecast-admin.php:546
+#: wp-forecast-admin.php:547
 msgid "Show forecast as ajax pull-down"
-msgstr ""
+msgstr "Vis vejrudsigt som en ajax pull-down"
 
-#: wp-forecast-admin.php:550
+#: wp-forecast-admin.php:551
 msgid "First day in pull-down"
-msgstr ""
+msgstr "Første dag i pull-down"
 
-#: wp-forecast-admin.php:566
+#: wp-forecast-admin.php:568
 msgid "Display Configuration"
 msgstr "Vis indstillinger"
 
-#: wp-forecast-admin.php:570
+#: wp-forecast-admin.php:572
 msgid "Current Conditions"
 msgstr "Aktuelt vejr"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:573
 msgid "Forecast Day"
 msgstr "Prognose dag"
 
-#: wp-forecast-admin.php:572
+#: wp-forecast-admin.php:574
 msgid "Forecast Night"
 msgstr "Prognose nat"
 
-#: wp-forecast-admin.php:575
+#: wp-forecast-admin.php:577
 msgid "Icon"
 msgstr "Ikon"
 
-#: wp-forecast-admin.php:584
+#: wp-forecast-admin.php:586
 msgid "Date"
 msgstr "Dato"
 
-#: wp-forecast-admin.php:591
+#: wp-forecast-admin.php:593
 msgid "Time"
 msgstr "Tid"
 
-#: wp-forecast-admin.php:598
+#: wp-forecast-admin.php:600
 msgid "Short Description"
 msgstr "Kort beskrivelse"
 
-#: wp-forecast-admin.php:607
+#: wp-forecast-admin.php:609
 msgid "Temperature"
 msgstr "Temperatur"
 
-#: wp-forecast-admin.php:616
+#: wp-forecast-admin.php:618
 msgid "Realfeel"
 msgstr "Føles som"
 
-#: wp-forecast-admin.php:623
+#: wp-forecast-admin.php:625
 msgid "Pressure"
 msgstr "Lufttryk"
 
-#: wp-forecast-admin.php:630
+#: wp-forecast-admin.php:632
 msgid "Humidity"
 msgstr "Luftfugtighed"
 
-#: wp-forecast-admin.php:637
+#: wp-forecast-admin.php:639
 msgid "Wind"
 msgstr "Vind"
 
-#: wp-forecast-admin.php:646 wp-forecast-show.php:296 wp-forecast-show.php:394
-#: wp-forecast-show.php:438
+#: wp-forecast-admin.php:648 wp-forecast-show.php:300 wp-forecast-show.php:398
+#: wp-forecast-show.php:442
 msgid "Windgusts"
 msgstr "Vindstød"
 
-#: wp-forecast-admin.php:655
+#: wp-forecast-admin.php:657
 msgid "Sunrise"
 msgstr "Solopgang"
 
-#: wp-forecast-admin.php:662
+#: wp-forecast-admin.php:664
 msgid "Sunset"
 msgstr "Solnedgang"
 
-#: wp-forecast-admin.php:669
+#: wp-forecast-admin.php:671
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:676
-#, fuzzy
+#: wp-forecast-admin.php:678
 msgid "Link to Weatherprovider"
-msgstr "Link til Accuweather"
+msgstr "Link til leverandør af vejrudsigter"
 
-#: wp-forecast-admin.php:679
+#: wp-forecast-admin.php:681
 msgid "Open in new Window"
-msgstr ""
+msgstr "Åbn i nyt vindue"
 
-#: wp-forecast-admin.php:687 wp-forecast-show.php:345
+#: wp-forecast-admin.php:689 wp-forecast-show.php:349
 msgid "Forecast"
 msgstr "Vejrprognose"
 
-#: wp-forecast-admin.php:692
+#: wp-forecast-admin.php:694
 msgid "All"
 msgstr "Alle"
 
-#: wp-forecast-admin.php:693 wp-forecast-admin.php:694
 #: wp-forecast-admin.php:695 wp-forecast-admin.php:696
 #: wp-forecast-admin.php:697 wp-forecast-admin.php:698
 #: wp-forecast-admin.php:699 wp-forecast-admin.php:700
-#: wp-forecast-admin.php:701
+#: wp-forecast-admin.php:701 wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
 msgid "Day"
 msgstr "Dag"
 
-#: wp-forecast-admin.php:703
+#: wp-forecast-admin.php:705
 msgid "Daytime"
 msgstr "Dagtid"
 
-#: wp-forecast-admin.php:724
+#: wp-forecast-admin.php:726
 msgid "Nighttime"
 msgstr "Nattetid"
 
-#: wp-forecast-admin.php:754
+#: wp-forecast-admin.php:756
 msgid "Update options"
 msgstr "Gem"
 
-#: wp-forecast-admin.php:761 wp-forecast-admin.php:778
+#: wp-forecast-admin.php:763 wp-forecast-admin.php:780
 msgid "Search location"
 msgstr "Søg efter sted"
 
-#: wp-forecast-admin.php:765
+#: wp-forecast-admin.php:767
 msgid "Searchterm"
 msgstr "Søgebegreb"
 
-#: wp-forecast-admin.php:769
+#: wp-forecast-admin.php:771
 msgid "No locations found."
 msgstr "Intet sted fundet."
 
-#: wp-forecast-admin.php:773
+#: wp-forecast-admin.php:775
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr ""
 "Erstat specialkarakterer med deres tilsvarende vokaler (f.eks. ä erstattes "
 "med a)"
 
-#: wp-forecast-admin.php:783
+#: wp-forecast-admin.php:785
 msgid "Search result"
 msgstr "Søgeresultat"
 
-#: wp-forecast-admin.php:790
+#: wp-forecast-admin.php:792
 msgid "Please select your city and press set location."
 msgstr "Vælg korrekt stednavn og tryk Gem sted"
 
-#: wp-forecast-admin.php:794
+#: wp-forecast-admin.php:796
 msgid "Set location"
 msgstr "Gem sted"
 
 #: wp-forecast-check.php:165
 msgid "Connection-check"
-msgstr ""
+msgstr "Forbindelsestest"
 
 #: wp-forecast-check.php:168
-#, fuzzy
 msgid "Select weatherprovider"
-msgstr "Link til Accuweather"
+msgstr "Vælg leverandør af vejrudsigter"
 
 #: wp-forecast-check.php:180
 msgid "Start check"
-msgstr ""
+msgstr "Start test"
 
 #: wp-forecast-check.php:183
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
-#: wp-forecast.php:393
+#: wp-forecast.php:397
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:126
-#, fuzzy
+#: wp-forecast-show.php:137
 msgid "Locations:"
-msgstr "Sted"
+msgstr "Lokaliteter:"
 
-#: wp-forecast-show.php:167
+#: wp-forecast-show.php:171
 msgid "Failure notice from provider"
-msgstr ""
+msgstr "Fejlbesked fra leverandør"
 
-#: wp-forecast-show.php:184
+#: wp-forecast-show.php:188
 msgid "Sorry, no valid weather data available."
 msgstr "Der er desværre ingen gyldig vejrinformation tilgængelig."
 
-#: wp-forecast-show.php:185
+#: wp-forecast-show.php:189
 msgid "Please try again later."
 msgstr "Prøv igen senere."
 
-#: wp-forecast-show.php:239
+#: wp-forecast-show.php:243
 msgid "time"
 msgstr "Tid"
 
-#: wp-forecast-show.php:276
+#: wp-forecast-show.php:280
 msgid "flik"
 msgstr "Følt temperatur"
 
-#: wp-forecast-show.php:279
+#: wp-forecast-show.php:283
 msgid "barr"
 msgstr "Aktuelt lufttryk"
 
-#: wp-forecast-show.php:287
+#: wp-forecast-show.php:291
 msgid "hmid"
 msgstr "Luftfugtighed"
 
-#: wp-forecast-show.php:291 wp-forecast-show.php:389 wp-forecast-show.php:431
+#: wp-forecast-show.php:295 wp-forecast-show.php:393 wp-forecast-show.php:435
 msgid "winds"
 msgstr "Vind"
 
-#: wp-forecast-show.php:301
+#: wp-forecast-show.php:305
 msgid "sunrise"
 msgstr "Solopgang"
 
-#: wp-forecast-show.php:305
+#: wp-forecast-show.php:309
 msgid "sunset"
 msgstr "Solnedgang"
 
-#: wp-forecast-show.php:354
+#: wp-forecast-show.php:358
 msgid "day"
 msgstr "Dag"
 
-#: wp-forecast-show.php:406
+#: wp-forecast-show.php:410
 msgid "night"
 msgstr "Nat"
 
-#: wp-forecast-show.php:461
+#: wp-forecast-show.php:468 wp-forecast-show.php:469
 msgid "Less forecast..."
-msgstr ""
+msgstr "Mindre detaljeret..."
 
-#: wp-forecast-show.php:462
+#: wp-forecast-show.php:470
 msgid "More forecast..."
-msgstr ""
+msgstr "Mere detaljeret..."
 
 #: xgettextdummy.php:5
 msgid "loc"
@@ -623,390 +618,387 @@ msgstr "S"
 
 #: xgettextdummy.php:57
 msgid "30% Chance Drizzle"
-msgstr ""
+msgstr "Risiko for stormvejr"
 
 #: xgettextdummy.php:58
 msgid "30% Chance Freezing Drizzle"
-msgstr ""
+msgstr "30% sandsynlighed for frysende støvregn"
 
 #: xgettextdummy.php:59
 msgid "30% Chance Freezing Rain"
-msgstr ""
+msgstr "30% sandsynlighed for isslag"
 
 #: xgettextdummy.php:60
 msgid "30% Chance Frozen Drizzle"
-msgstr ""
+msgstr "30% sandsynlighed for frosset støvregn"
 
 #: xgettextdummy.php:61
 msgid "30% Chance Frozen Mix"
-msgstr ""
+msgstr "30% sandsynlighed for tøsne"
 
 #: xgettextdummy.php:62
 msgid "30% Chance Rain Shower"
-msgstr ""
+msgstr "30% sandsynlighed for regnvejr"
 
 #: xgettextdummy.php:63
 msgid "30% Chance Snow Shower"
-msgstr ""
+msgstr "30% sandsynlighed for snevejr"
 
 #: xgettextdummy.php:64
 msgid "30% Chance of Drizzle"
-msgstr ""
+msgstr "30% sandsynlighed for støvregn"
 
 #: xgettextdummy.php:65 xgettextdummy.php:66
 msgid "30% Chance of Flurry"
-msgstr ""
+msgstr "30% sandsynlighed for fygesne"
 
 #: xgettextdummy.php:67
 msgid "30% Chance of Frozen Mix"
-msgstr ""
+msgstr "30% sandsynlighed for tøsne"
 
 #: xgettextdummy.php:68
 msgid "30% Chance of Light Snow"
-msgstr ""
+msgstr "30% sandsynlighed for let snefald"
 
 #: xgettextdummy.php:69
 msgid "30% Chance of Rain"
-msgstr ""
+msgstr "30% sandsynlighed for regn"
 
 #: xgettextdummy.php:70
 msgid "30% Chance of Sleet"
-msgstr ""
+msgstr "30% sandsynlighed for slud"
 
 #: xgettextdummy.php:71
 msgid "30% Chance of Snow"
-msgstr ""
+msgstr "30% sandsynlighed for sne"
 
 #: xgettextdummy.php:72
 msgid "30% Chance of Storms"
-msgstr ""
+msgstr "30% sandsynlighed for storm"
 
 #: xgettextdummy.php:73
 msgid "40% Chance Drizzle"
-msgstr ""
+msgstr "40% sandsynlighed for støvregn"
 
 #: xgettextdummy.php:74
 msgid "40% Chance Fozen Drizzle"
-msgstr ""
+msgstr "40% sandsynlighed for frosset støvregn"
 
 #: xgettextdummy.php:75
 msgid "40% Chance Freezing Drizzle"
-msgstr ""
+msgstr "40% sandsynlighed for frysende støvregn"
 
 #: xgettextdummy.php:76
 msgid "40% Chance Freezing Rain"
-msgstr ""
+msgstr "40% sandsynlighed for isslag"
 
 #: xgettextdummy.php:77
 msgid "40% Chance Frozen Drizzle"
-msgstr ""
+msgstr "40% sandsynlighed for frosset støvregn"
 
 #: xgettextdummy.php:78
 msgid "40% Chance Frozen Mix"
-msgstr ""
+msgstr "40% sandsynlighed for tøsne"
 
 #: xgettextdummy.php:79
 msgid "40% Chance Rain Shower"
-msgstr ""
+msgstr "40% sandsynlighed for regnvejr"
 
 #: xgettextdummy.php:80
 msgid "40% Chance Snow Shower"
-msgstr ""
+msgstr "40% sandsynlighed for snevejr"
 
 #: xgettextdummy.php:81
 msgid "40% Chance of Drizzle"
-msgstr ""
+msgstr "40% sandsynlighed for støvregn"
 
 #: xgettextdummy.php:82
 msgid "40% Chance of Flurry"
-msgstr ""
+msgstr "40% sandsynlighed for fygesne"
 
 #: xgettextdummy.php:83
 msgid "40% Chance of Frozen Mix"
-msgstr ""
+msgstr "40% sandsynlighed for tøsne"
 
 #: xgettextdummy.php:84
 msgid "40% Chance of Light Snow"
-msgstr ""
+msgstr "40% sandsynlighed for let snefald"
 
 #: xgettextdummy.php:85
 msgid "40% Chance of Rain"
-msgstr ""
+msgstr "40% sandsynlighed for regn"
 
 #: xgettextdummy.php:86
 msgid "40% Chance of Sleet"
-msgstr ""
+msgstr "40% sandsynlighed for slud"
 
 #: xgettextdummy.php:87
 msgid "40% Chance of Snow"
-msgstr ""
+msgstr "40% sandsynlighed for sne"
 
 #: xgettextdummy.php:88
 msgid "40% Chance of Storms"
-msgstr ""
+msgstr "40% sandsynlighed for storm"
 
 #: xgettextdummy.php:89
 msgid "50% Chance Freezing Drizzle"
-msgstr ""
+msgstr "50% sandsynlighed for frysende støvregn"
 
 #: xgettextdummy.php:90
 msgid "50% Chance Freezing Rain"
-msgstr ""
+msgstr "50% sandsynlighed for isslag"
 
 #: xgettextdummy.php:91
 msgid "50% Chance Rain Shower"
-msgstr ""
+msgstr "50% sandsynlighed for regnvejr"
 
 #: xgettextdummy.php:92
 msgid "50% Chance Snow Shower"
-msgstr ""
+msgstr "50% sandsynlighed for snevejr"
 
 #: xgettextdummy.php:93
 msgid "50% Chance of Drizzle"
-msgstr ""
+msgstr "50% sandsynlighed for støvregn"
 
 #: xgettextdummy.php:94
 msgid "50% Chance of Flurry"
-msgstr ""
+msgstr "50% sandsynlighed for fygesne"
 
 #: xgettextdummy.php:95
 msgid "50% Chance of Frozen Mix"
-msgstr ""
+msgstr "50% sandsynlighed for tøsne"
 
 #: xgettextdummy.php:96
 msgid "50% Chance of Light Snow"
-msgstr ""
+msgstr "50% sandsynlighed for let snefald"
 
 #: xgettextdummy.php:97
 msgid "50% Chance of Rain"
-msgstr ""
+msgstr "50% sandsynlighed for regn"
 
 #: xgettextdummy.php:98
 msgid "50% Chance of Sleet"
-msgstr ""
+msgstr "50% sandsynlighed for slud"
 
 #: xgettextdummy.php:99
 msgid "50% Chance of Snow"
-msgstr ""
+msgstr "50% sandsynlighed for sne"
 
 #: xgettextdummy.php:100
 msgid "50% Chance of Storms"
-msgstr ""
+msgstr "50% sandsynlighed for storm"
 
 #: xgettextdummy.php:101
 msgid "Chance Freezing Drizzle"
-msgstr ""
+msgstr "Mulighed for frysende støvregn"
 
 #: xgettextdummy.php:102
 msgid "Chance Freezing Rain"
-msgstr ""
+msgstr "Mulighed for isslag"
 
 #: xgettextdummy.php:103
 msgid "Chance Rain Shower"
-msgstr ""
+msgstr "Mulighed for regnbyger"
 
 #: xgettextdummy.php:104
 msgid "Chance Snow Shower"
-msgstr ""
+msgstr "Mulighed for snebyger"
 
 #: xgettextdummy.php:105
 msgid "Chance of Drizzle"
-msgstr ""
+msgstr "Mulighed for støvregn"
 
 #: xgettextdummy.php:106
 msgid "Chance of Flurry"
-msgstr ""
+msgstr "Mulighed for fygesne"
 
 #: xgettextdummy.php:107
 msgid "Chance of Freezing Drizzle"
-msgstr ""
+msgstr "Mulighed for frysende støvregn"
 
 #: xgettextdummy.php:108
 msgid "Chance of Frozen Drizzle"
-msgstr ""
+msgstr "Mulighed for frosset støvregn"
 
 #: xgettextdummy.php:109
 msgid "Chance of Frozen Mix"
-msgstr ""
+msgstr "Mulighed for tøsne"
 
 #: xgettextdummy.php:110
 msgid "Chance of Light Snow"
-msgstr ""
+msgstr "Mulighed for let snefald"
 
 #: xgettextdummy.php:111
 msgid "Chance of Rain"
-msgstr ""
+msgstr "Mulighed for regn"
 
 #: xgettextdummy.php:112
 msgid "Chance of Rain Showers"
-msgstr ""
+msgstr "Mulighed for regnbyger"
 
 #: xgettextdummy.php:113
 msgid "Chance of Sleet "
-msgstr ""
+msgstr "Mulighed for slud"
 
 #: xgettextdummy.php:114
 msgid "Chance of Snow"
-msgstr ""
+msgstr "Mulighed for sne"
 
 #: xgettextdummy.php:115
 msgid "Chance of Snow Showers"
-msgstr ""
+msgstr "Mulighed for snestorme"
 
 #: xgettextdummy.php:116
 msgid "Chance of Storms"
-msgstr ""
+msgstr "Mulighed for stormvejr"
 
 #: xgettextdummy.php:117
 msgid "Clear"
-msgstr ""
+msgstr "Klart"
 
 #: xgettextdummy.php:118
 msgid "Clearing"
-msgstr ""
+msgstr "Opklaring"
 
 #: xgettextdummy.php:119
 msgid "Cloudy"
-msgstr ""
+msgstr "Skyet"
 
 #: xgettextdummy.php:120
 msgid "Drizzle"
-msgstr ""
+msgstr "Støvregn"
 
 #: xgettextdummy.php:121
 msgid "Fair"
-msgstr ""
+msgstr "Skyfri"
 
 #: xgettextdummy.php:122
 msgid "Flurries"
-msgstr ""
+msgstr "Fygesne"
 
 #: xgettextdummy.php:123
 msgid "Fog"
-msgstr ""
+msgstr "Tåge"
 
 #: xgettextdummy.php:124
 msgid "Foggy"
-msgstr ""
+msgstr "Tåget"
 
 #: xgettextdummy.php:125
 msgid "Freezing Drizzle"
-msgstr ""
+msgstr "Frysende støvregn"
 
 #: xgettextdummy.php:126
 msgid "Freezing Rain"
-msgstr ""
+msgstr "Isslag"
 
 #: xgettextdummy.php:127
 msgid "Frozen Mix"
-msgstr ""
+msgstr "Tøsne"
 
 #: xgettextdummy.php:128
 msgid "Hazy"
-msgstr ""
+msgstr "Diset"
 
 #: xgettextdummy.php:129
 msgid "Headline"
-msgstr ""
+msgstr "Overskrift"
 
 #: xgettextdummy.php:130
 msgid "Heavy Rain"
-msgstr ""
+msgstr "Tætte regnbyger"
 
 #: xgettextdummy.php:131
 msgid "Heavy Snow"
-msgstr ""
+msgstr "Tæt snefald"
 
 #: xgettextdummy.php:132
 msgid "Hot and Humid"
-msgstr ""
+msgstr "Varmt og fugtigt"
 
 #: xgettextdummy.php:133
 msgid "Increasing Clouds"
-msgstr ""
+msgstr "Tiltagende skydække"
 
 #: xgettextdummy.php:134
 msgid "Light Snow"
-msgstr ""
+msgstr "Let snefald"
 
 #: xgettextdummy.php:135
 msgid "Mostly Clear"
-msgstr ""
+msgstr "Overvejdende klart"
 
 #: xgettextdummy.php:136
 msgid "Mostly Cloudy"
-msgstr ""
+msgstr "Overvejende skyet"
 
 #: xgettextdummy.php:137
 msgid "Mostly Sunny"
-msgstr ""
+msgstr "Overvejdende solrigt"
 
 #: xgettextdummy.php:138
-#, fuzzy
 msgid "Nowcast"
-msgstr "Vejrprognose"
+msgstr "Aktueludsigt"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"
-msgstr ""
+msgstr "Delvist skyet"
 
 #: xgettextdummy.php:140
 msgid "Partly Sunny"
-msgstr ""
+msgstr "Delvist solrigt"
 
 #: xgettextdummy.php:141
 msgid "Rain"
-msgstr ""
+msgstr "Regn"
 
 #: xgettextdummy.php:142
 msgid "Rain Showers"
-msgstr ""
+msgstr "Regnbyger"
 
 #: xgettextdummy.php:143
 msgid "Scattered Showers"
-msgstr ""
+msgstr "Spredte byger"
 
 #: xgettextdummy.php:144
 msgid "Scattered Thunderstorms"
-msgstr ""
+msgstr "Spredt tordenvejr"
 
 #: xgettextdummy.php:145
 msgid "Sleet"
-msgstr ""
+msgstr "Slud"
 
 #: xgettextdummy.php:146
 msgid "Snow"
-msgstr ""
+msgstr "Sne"
 
 #: xgettextdummy.php:147
 msgid "Snow Showers"
-msgstr ""
+msgstr "Snebyger"
 
 #: xgettextdummy.php:148
-#, fuzzy
 msgid "Sunny"
-msgstr "Søndag"
+msgstr "Solskin"
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
-msgstr ""
+msgstr "Torden"
 
 #: xgettextdummy.php:151
 msgid "Very Cold"
-msgstr ""
+msgstr "Meget koldt"
 
 #: xgettextdummy.php:152
 msgid "Very Hot"
-msgstr ""
+msgstr "Meget varmt"
 
 #: xgettextdummy.php:153
 msgid "Warm and Humid"
-msgstr ""
+msgstr "Varmt og fugtigt"
 
 #: xgettextdummy.php:154
-#, fuzzy
 msgid "Windy"
-msgstr "Vind"
+msgstr "Blæsende"
 
 #~ msgid "tmp"
 #~ msgstr "Aktuel temperatur"

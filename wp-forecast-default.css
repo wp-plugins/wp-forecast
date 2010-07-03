@@ -135,3 +135,14 @@ div.wpf-selector {
     padding: 5px;
     font-size: 11px;
 }
+
+iframe.wpf-iframe {
+    border: 0px;
+}
+
+/* styles for super admin admin dialog */
+
+.wpfbcg {
+    background-color:#99FF99;
+    padding: 0px;
+}

@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2010  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ function wp_forecast_admin_init()
 {
   pdebug(1,"Start of wp_forecast_admin_init ()");
   
-  $count = get_option('wp-forecast-count');
+  $count = wpf_get_option('wp-forecast-count');
 
   if ( ($_SERVER['QUERY_STRING']=="page=wp-forecast-admin.php") && 
        (isset($_POST['info_update']) ))
@@ -45,8 +45,8 @@ function wp_forecast_admin_init()
 	$wpfcid = get_widget_id( $i );
 
 	// delete cache for old location
-	update_option("wp-forecast-expire".$wpfcid,"0");
-	update_option("wp-forecast-cache".$wpfcid,"");
+	wpf_update_option("wp-forecast-expire".$wpfcid,"0");
+	wpf_update_option("wp-forecast-cache".$wpfcid,"");
       }
     }
  
@@ -64,7 +64,7 @@ function wp_forecast_admin()
 {
   pdebug(1,"Start of wp_forecast_admin ()");
   
-  add_menu_page('wp-Forecast', 'wp-Forecast', 6, 
+  add_menu_page('wp-Forecast', 'wp-Forecast', 'manage_options', 
 		basename(__FILE__), 'wpf_admin_form',
 		site_url("/wp-content/plugins/wp-forecast") . '/wpf.png');
 
@@ -96,7 +96,7 @@ function wpf_admin_hint($args = null)
 
   if ( $av['title'] != $newtitle ) {
     $av['title'] = $newtitle;
-    update_option('wp-forecast-opts'.$wpfcid, serialize($av));
+    wpf_update_option('wp-forecast-opts'.$wpfcid, serialize($av));
   }
 
   echo __("Title:","wp-forecast_".$locale);
@@ -132,9 +132,9 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 
   pdebug(1,"Start of wpf_admin_form ()");  
 
-  $count = get_option('wp-forecast-count');
-  $wpf_timeout = get_option("wp-forecast-timeout");
-  $wpf_delopt = get_option("wp-forecast-delopt");
+  $count       = wpf_get_option('wp-forecast-count');
+  $wpf_timeout = wpf_get_option("wp-forecast-timeout");
+  $wpf_delopt  = wpf_get_option("wp-forecast-delopt");
 
   // get locale 
   $locale = get_locale();
@@ -150,14 +150,14 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 
     // if this is a post call, number of widgets 
     if ( isset($_POST['wpf-count-submit']) ) {
-      $number = (int) $_POST['wpf-number'];
+      $number = (int) $_POST['wp-forecast-count'];
       if ( $number > $wpf_maxwidgets ) $number = $wpf_maxwidgets;
       if ( $number < 1 ) $number = 1;
       $newcount = $number;
 
       if ( $count != $newcount ) {
 	$count = $newcount;
-	update_option('wp-forecast-count', $count);
+	wpf_update_option('wp-forecast-count', $count);
 	// add missing option to database
 	wp_forecast_activate();
 	// init the new number of widgets
@@ -167,24 +167,24 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 
     // if this is a post call, timeout
     if ( isset($_POST['wpf-timeout-submit']) ) {
-      $timeout = (int) $_POST['wpf-timeout'];
+      $timeout = (int) $_POST['wp-forecast-timeout'];
       if ( $timeout < 0 ) $timeout = 1;
       
       if ( $wpf_timeout != $timeout ) {
 	$wpf_timeout = $timeout;
-	update_option('wp-forecast-timeout', $wpf_timeout);
+	wpf_update_option('wp-forecast-timeout', $wpf_timeout);
       }
     } 
   
     // if this is a post call, delopt 
     if ( isset($_POST['wpf-delopt-submit']) ) 
     {
-	if ( empty($_POST['wpf-delopt']) )
-	     $_POST['wpf-delopt'] = 'off';
-	$delopt = (int) ($_POST['wpf-delopt'] == "on");
+	if ( empty($_POST['wp-forecast-delopt']) )
+	     $_POST['wp-forecast-delopt'] = 'off';
+	$delopt = (int) ($_POST['wp-forecast-delopt'] == "on");
 	if ( $wpf_delopt != $delopt ) {
 	    $wpf_delopt = $delopt;
-	    update_option('wp-forecast-delopt', $wpf_delopt);
+	    wpf_update_option('wp-forecast-delopt', $wpf_delopt);
 	}
     } 
 
@@ -192,9 +192,9 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     // if this is a post call, pre-transport
     if ( isset($_POST['wpf-pre-transport-submit']) ) 
     {
-	$pre_trans = get_option('wp-forecast-pre-transport');
-	if ($_POST['wpf-pre-transport'] != $pre_trans)
-	    update_option('wp-forecast-pre-transport', $_POST['wpf-pre-transport']);
+	$pre_trans = wpf_get_option('wp-forecast-pre-transport');
+	if ($_POST['wp-forecast-pre-transport'] != $pre_trans)
+	    wpf_update_option('wp-forecast-pre-transport', $_POST['wp-forecast-pre-transport']);
     } 
 
 
@@ -203,7 +203,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "<h2>WP-Forecast Widgets</h2>";
     $out .= "<form name='options' id='options' method='post' action=''>";
     $out .= "<table><tr><td width=\"60%\">".__('How many wp-forecast widgets would you like?',"wp-forecast_".$locale)."</td>";
-    $out .= "<td width=\"20%\"><select id='wpf-number' name='wpf-number'>";
+    $out .= "<td width=\"20%\"><select id='wp-forecast-count' name='wp-forecast-count'>";
     
     for ( $i = 1; $i <= $wpf_maxwidgets; ++$i ) {
       $out .= "<option value='$i' ";
@@ -211,7 +211,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 	$out .= "selected='selected' ";
       $out .= ">$i</option>";
     } 
-    $out .= "</select></td><td><span class='submit'><input class='button' type='submit' name='wpf-count-submit' id='wpf-count-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "</select></td><td><span class='submit'><input class='button' type='submit' name='wpf-count-submit' id='wpf-count-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
     // print out widget selection form
     $out .="<tr><td>".__('Available widgets',"wp-forecast_".$locale).": </td>";
@@ -236,33 +236,33 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     // print out timeout input field for transport
     // (timeout for data connection)
     $out .= "<tr><td>".__('Timeout for weatherprovider connections (secs.)?',"wp-forecast_".$locale)."</td>";
-    $out .= "<td><input id='wpf-timeout' name='wpf-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
-    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "<td><input id='wp-forecast-timeout' name='wp-forecast-timeout' type='text' size='3' maxlength='3' value='".$wpf_timeout. "' />";
+    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-timeout-submit' id='wpf-timeout-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
     
     // show transport method selection 
     $out .= "<tr><td>".__('Preselect wordpress transfer method',"wp-forecast_".$locale)." :</td>";
-    $out .= "<td><select name='wpf-pre-transport' id='wpf-pre-transport' size='1' >";
+    $out .= "<td><select name='wp-forecast-pre-transport' id='wp-forecast-pre-transport' size='1' >";
     $out .= "<option value='default'>". __("default","wp-forecast".$locale)."</option>";
 
     // get wordpress default transports
-    $pre_trans = get_option("wp-forecast-pre-transport");
+    $pre_trans = wpf_get_option("wp-forecast-pre-transport");
     $tlist = get_wp_transports();
     foreach($tlist as $t)
     {
 	$out .= "<option value='$t'" . ($t == $pre_trans ? 'selected="selected"':'')  . ">$t</option>";
     }
     $out .= "</select></td>";
-    $out .= "<td><span class='submit'><input class='button' type='submit' name='wpf-pre-transport-submit' id='wpf-pre-transport-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
+    $out .= "<td><span class='submit'><input class='button' type='submit' name='wpf-pre-transport-submit' id='wpf-pre-transport-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr>";
 
 
     // print out option deletion switch
     $out .= "<tr><td>".__('Delete options during plugin deactivation?',"wp-forecast_".$locale)."</td>";
-    $out .= "<td><input id='wpf-delopt' name='wpf-delopt' type='checkbox' ";
+    $out .= "<td><input id='wp-forecast-delopt' name='wp-forecast-delopt' type='checkbox' ";
     if ($wpf_delopt)
       $out .= 'checked="checked"';
     $out .= " />";
-    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".attribute_escape(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
+    $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
     
     // add link to checklist dialog
     $out .= '<div style="text-align:right"><a href="../wp-content/plugins/wp-forecast/wp-forecast-check.php?height=600&amp;width=800" class="thickbox" title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
@@ -301,6 +301,11 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 
   // get parameters
   $av=get_wpf_opts($wpfcid);
+  $allowed  = maybe_unserialize(wpf_get_option("wpf_sa_allowed"));
+  if ( function_exists("is_multisite") && is_multisite() )
+      $ismulti = true;
+  else
+      $ismulti = false;
 
   // get translation 
   $locale = get_locale();
@@ -314,70 +319,70 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
   if (isset($_POST['info_update'])) {
     $upflag=false;
 
-    if ($av['service'] != $_POST["service"]) {
-      $av['service'] =  $_POST["service"];
-      $upflag=true;
+    if ($av['service'] != $_POST["service"] and (!$ismulti or isset($allowed["ue_service"])) ) {
+	$av['service'] =  $_POST["service"];
+	$upflag = true;
     } 
-
-    if ($av['apikey1'] != $_POST["apikey1"]) {
+	
+    if ($av['apikey1'] != $_POST["apikey1"] and (!$ismulti or isset($allowed["ue_apikey1"]))) {
       $av['apikey1'] =  $_POST["apikey1"];
       $upflag=true;
     }
 
-    if ($av['apikey2'] != $_POST["apikey2"]) {
+    if ($av['apikey2'] != $_POST["apikey2"] and (!$ismulti or isset($allowed["ue_apikey2"]))) {
       $av['apikey2'] =  $_POST["apikey2"];
       $upflag=true;
     }
     
-    if ($av['location'] != $_POST["location"]) {
+    if ($av['location'] != $_POST["location"] and (!$ismulti or isset($allowed["ue_location"]))) {
       $av['location'] =  $_POST["location"];
       $upflag=true;
     }
     
-    if ($av['locname'] != $_POST["locname"]) {
+    if ($av['locname'] != $_POST["locname"] and (!$ismulti or isset($allowed["ue_locname"]))) {
       $av['locname'] =  $_POST["locname"];
       $upflag=true;
     }	
     
-    if ($av['refresh'] != $_POST["refresh"]) {
+    if ($av['refresh'] != $_POST["refresh"] and (!$ismulti or isset($allowed["ue_refresh"]))) {
       $av['refresh'] =  $_POST["refresh"];
       $upflag=true;
     }
     
-    if ($av['metric'] != $_POST["metric"]) {
+    if ($av['metric'] != $_POST["metric"] and (!$ismulti or isset($allowed["ue_metric"]))) {
       $av['metric'] =  $_POST["metric"];
       if ($av['metric']=="") $av['metric']="0";
       $upflag=true;
     }
     
-    if ($av['windunit'] != $_POST["windunit"]) {
+    if ($av['windunit'] != $_POST["windunit"] and (!$ismulti or isset($allowed["ue_windunit"]))) {
       $av['windunit'] =  $_POST["windunit"];
       $upflag=true;
     }
-    
-    if ($av['wpf_language'] != $_POST["language"]) {
-      $av['wpf_language'] =  $_POST["language"];
+
+    if ($av['wpf_language'] != $_POST["wpf_language"] and (!$ismulti or isset($allowed["ue_wpf_language"]))) {
+      $av['wpf_language'] =  $_POST["wpf_language"];
       $upflag=true;
     }
    
-    if ($av['currtime'] != $_POST["currtime"]) {
+    if ($av['currtime'] != $_POST["currtime"] and (!$ismulti or isset($allowed["ue_currtime"]))) {
       $av['currtime'] =  $_POST["currtime"];
       if ($av['currtime']=="") $av['currtime']="0";
       $upflag=true;
     } 
 
-    if ($av['timeoffset'] != $_POST["timeoffset"]) {
+    if ($av['timeoffset'] != $_POST["timeoffset"] and (!$ismulti or isset($allowed["ue_timeoffset"]))) {
       $av['timeoffset'] =  $_POST["timeoffset"];
       $upflag=true;
     }
 
-    if ($av['pdfirstday'] != $_POST["pdfirstday"]) {
+    if ($av['pdfirstday'] != $_POST["pdfirstday"] and (!$ismulti or isset($allowed["ue_pdfirstday"]))) {
       $av['pdfirstday'] =  $_POST["pdfirstday"];
       if ($av['pdfirstday']=="") $av['pdfirstday']="0";
       $upflag=true;
     }
 
-    if ($av['pdforecast'] != $_POST["pdforecast"]) {
+    if ($av['pdforecast'] != $_POST["pdforecast"] and (!$ismulti or isset($allowed["ue_pdforecast"]))) {
 	$av['pdforecast'] =  $_POST["pdforecast"];
       if ($av['pdforecast']=="") $av['pdforecast']="0";
       $upflag=true;
@@ -403,7 +408,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     foreach ($do as $i) 
       $newdispconfig.=$_POST[$i];
     
-    if (strcmp($av['dispconfig'],$newdispconfig) != 0) {
+    if ( (!$ismulti or isset($allowed["ue_dispconfig"])) and strcmp($av['dispconfig'],$newdispconfig) != 0) {
       $av['dispconfig'] =  $newdispconfig;
       $upflag=true;
     }
@@ -412,22 +417,22 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     // build config string for forecast and update if necessary
     $newdaytime=$_POST["day1"].$_POST["day2"].$_POST["day3"].$_POST["day4"].$_POST["day5"].$_POST["day6"].$_POST["day7"].$_POST["day8"].$_POST["day9"];
     
-    if ($av['daytime'] != $newdaytime) {
+    if ( (!$ismulti or isset($allowed["ue_forecast"])) and $av['daytime'] != $newdaytime) {
       $av['daytime'] =  $newdaytime;
       $upflag=true;
     }
     // build config string for forecast and update if necessary
     $newnighttime=$_POST["night1"].$_POST["night2"].$_POST["night3"].$_POST["night4"].$_POST["night5"].$_POST["night6"].$_POST["night7"].$_POST["night8"].$_POST["night9"];
     
-    if ($av['nighttime'] != $newnighttime) {
+    if ( (!$ismulti or isset($allowed["ue_forecast"])) and $av['nighttime'] != $newnighttime) {
       $av['nighttime'] =  $newnighttime;
       $upflag=true;
     }	
     // put message after update
     echo"<div class='updated'><p><strong>";
     if ($upflag) {
-      update_option("wp-forecast-opts".$wpfcid,serialize($av));
-      update_option("wp-forecast-expire".$wpfcid,"0");
+      wpf_update_option("wp-forecast-opts".$wpfcid,serialize($av));
+      wpf_update_option("wp-forecast-expire".$wpfcid,"0");
       echo __('Settings successfully updated',"wp-forecast_".$locale);
     }  else
       echo __('You have to change a field to update settings.',"wp-forecast_".$locale);
@@ -480,7 +485,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	  <?php if ($widgetcall == 0): ?><fieldset id="set1"><?php endif; ?>
 	 <div style="float: left; width: 49%">
          <p><b><?php echo __('Weatherservice',"wp-forecast_".$locale)?>:</b>
-         <select name="service" size="1" onchange="apifields(document.woptions.service.value);">
+         <select name="service" id="service" size="1" onchange="apifields(document.woptions.service.value);">
 	   <option value="accu" <?php if ($av['service']=="accu") echo "selected=\"selected\""?>><?php echo __('AccuWeather',"wp-forecast_".$locale)?></option>
            <option value="bug" <?php if ($av['service']=="bug") echo "selected=\"selected\""?>><?php echo __('WeatherBug',"wp-forecast_".$locale)?></option>
            <!--
@@ -488,32 +493,32 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	 </select></p>
 
          <p><?php echo __('Partner ID',"wp-forecast_".$locale)?>:
-         <input name="apikey1" type="text" size="30" maxlength="80" value="<?php echo $av['apikey1'] ?>" /></p>
+         <input name="apikey1" id="apikey1" type="text" size="30" maxlength="80" value="<?php echo $av['apikey1'] ?>" /></p>
          <!--
          <p><?php echo __('Licensekey',"wp-forecast_".$locale)?>:
-         <input name="apikey2" type="text" size="30" maxlength="80" value="<?php echo $av['apikey2'] ?>" /></p>
+         <input name="apikey2" id="apikey2" type="text" size="30" maxlength="80" value="<?php echo $av['apikey2'] ?>" /></p>
          -->
          <script type="text/javascript">apifields(document.woptions.service.value);</script>
 
 	 <p><b><?php echo __('Location',"wp-forecast_".$locale)?>:</b>
-	 <input name="location" type="text" size="30" maxlength="80" value="<?php echo $av['location'] ?>"<?php if ($widgetcall==1) echo "readonly" ?> /></p>
+	 <input name="location" id="location" type="text" size="30" maxlength="80" value="<?php echo $av['location'] ?>"<?php if ($widgetcall==1) echo "readonly" ?> /></p>
 	 <?php if (isset($_POST['set_loc'])) { ?>
 	       <p><b><?php echo __('Press Update options to save new location.',"wp-forecast_".$locale)?></b></p>
          <?php } ?>
          
          <p><b><?php echo __('Locationname',"wp-forecast_".$locale)?>:</b>
-         <input name="locname" type="text" size="30" maxlength="80" value="<?php echo $av['locname'] ?>" /></p>
+         <input name="locname" id="locname" type="text" size="30" maxlength="80" value="<?php echo $av['locname'] ?>" /></p>
 	 <p><b><?php echo __('Refresh cache after',"wp-forecast_".$locale)?></b>
-         <input name="refresh" type="text" size="10" maxlength="6" value="<?php echo $av['refresh'] ?>"/>
+         <input name="refresh" id="refresh" type="text" size="10" maxlength="6" value="<?php echo $av['refresh'] ?>"/>
          <b><?php echo __('secs.',"wp-forecast_".$locale)?></b><br /></p>
-	 <p><input type="checkbox" name="metric" value="1" <?php if ($av['metric']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use metric units',"wp-forecast_".$locale)?></b>
+	 <p><input type="checkbox" name="metric" id="metric" value="1" <?php if ($av['metric']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use metric units',"wp-forecast_".$locale)?></b>
 	 </p>
 
-	 <p><input type="checkbox" name="currtime" value="1" <?php if ($av['currtime']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use current time',"wp-forecast_".$locale)?></b>
-												 / <b><?php echo __('Time-Offset',"wp-forecast_".$locale)?> :</b> <input type="text" name="timeoffset" size="5" maxlength="5" value="<?php echo $av['timeoffset'] ?>" /> <b><?php echo __('minutes',"wp-forecast_".$locale);?></b> 
+	 <p><input type="checkbox" name="currtime" id="currtime" value="1" <?php if ($av['currtime']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use current time',"wp-forecast_".$locale)?></b>
+												 / <b><?php echo __('Time-Offset',"wp-forecast_".$locale)?> :</b> <input type="text" name="timeoffset" id="timeoffset" size="5" maxlength="5" value="<?php echo $av['timeoffset'] ?>" /> <b><?php echo __('minutes',"wp-forecast_".$locale);?></b> 
          </p>
 
-         <p><b><?php echo __('Windspeed-Unit',"wp-forecast_".$locale)?>: </b><select name="windunit" size="1">
+         <p><b><?php echo __('Windspeed-Unit',"wp-forecast_".$locale)?>: </b><select name="windunit" id="windunit" size="1">
 	      <option value="ms" <?php if ($av['windunit']=="ms") echo "selected=\"selected\""?>><?php echo __('Meter/Second (m/s)',"wp-forecast_".$locale)?></option>
               <option value="kmh" <?php if ($av['windunit']=="kmh") echo "selected=\"selected\""?>><?php echo __('Kilometer/Hour (km/h)',"wp-forecast_".$locale)?></option>
               <option value="mph" <?php if ($av['windunit']=="mph") echo "selected=\"selected\""?>><?php echo __('Miles/Hour (mph)',"wp-forecast_".$locale)?></option>
@@ -525,7 +530,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
         
 
 	 <p>
-         <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="language" size="1">
+         <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="wpf_language" id="wpf_language" size="1">
 	    <option value="en_US" <?php if ($av['wpf_language']=="en_US") echo "selected=\"selected\""?>>english</option>
 	    <option value="de_DE" <?php if ($av['wpf_language']=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
             <option value="da_DK" <?php if ($av['wpf_language']=="da_DK") echo "selected=\"selected\""?>>dansk</option>
@@ -544,11 +549,11 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	    
          </select></p>
  
-         <p><input type="checkbox" id="pdforecast" name="pdforecast" value="1" <?php if ($av['pdforecast']=="1") echo "checked=\"checked\""?> onchange="pdfields_update();" /> <b><?php echo __('Show forecast as ajax pull-down',"wp-forecast_".$locale)?></b>
+         <p><input type="checkbox" name="pdforecast" id="pdforecast" value="1" <?php if ($av['pdforecast']=="1") echo "checked=\"checked\""?> onchange="pdfields_update();" /> <b><?php echo __('Show forecast as ajax pull-down',"wp-forecast_".$locale)?></b>
          </p>
 
          <p>
-         <b><?php echo __('First day in pull-down',"wp-forecast_".$locale)?>: </b><select id="pdfirstday" name="pdfirstday" size="1">
+         <b><?php echo __('First day in pull-down',"wp-forecast_".$locale)?>: </b><select name="pdfirstday" id="pdfirstday" size="1">
    <option value="0" <?php if ($av['pdfirstday']=="0") echo "selected=\"selected\""?>>0</option>
    <option value="1" <?php if ($av['pdfirstday']=="1") echo "selected=\"selected\""?>>1</option>
    <option value="2" <?php if ($av['pdfirstday']=="2") echo "selected=\"selected\""?>>2</option>
@@ -575,101 +580,101 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
         </tr>
         <tr>
         <td><?php echo __('Icon',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_icon" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_icon" id="d_c_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],0,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_icon" value="1" 
+        <td align='center'><input type="checkbox" name="d_d_icon" id="d_d_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],10,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_icon" value="1" 
+        <td align='center'><input type="checkbox" name="d_n_icon" id="d_n_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],14,1)=="1") echo "checked=\"checked\""?> /></td>
          </tr>
           <tr>
          <td><?php echo __('Date',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_date" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_date" id="d_c_date" value="1" 
 		 <?php if (substr($av['dispconfig'],18,1)=="1") echo "checked=\"checked\""?> /></td>
          <td align='center'>&nbsp;</td>
          <td align='center'>&nbsp;</td>
          </tr>
 	 <tr>
          <td><?php echo __('Time',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_time" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_time" id="d_c_time" value="1" 
 		 <?php if (substr($av['dispconfig'],1,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Short Description',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_short" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_short" id="d_c_short" value="1" 
 	     <?php if (substr($av['dispconfig'],2,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_short" value="1" 
+        <td align='center'><input type="checkbox" name="d_d_short" id="d_d_short" value="1" 
 	     <?php if (substr($av['dispconfig'],11,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_short" value="1" 
+        <td align='center'><input type="checkbox" name="d_n_short" id="d_n_short" value="1" 
 	     <?php if (substr($av['dispconfig'],15,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
         <tr>
         <td><?php echo __('Temperature',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_temp" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_temp" id="d_c_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],3,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_temp" value="1" 
+        <td align='center'><input type="checkbox" name="d_d_temp" id="d_d_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],12,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_temp" value="1" 
+        <td align='center'><input type="checkbox" name="d_n_temp" id="d_n_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],16,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
         <tr>
         <td><?php echo __('Realfeel',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_real" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_real" id="d_c_real" value="1" 
 	     <?php if (substr($av['dispconfig'],4,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Pressure',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_press" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_press" id="d_c_press" value="1" 
 	     <?php if (substr($av['dispconfig'],5,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Humidity',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_humid" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_humid" id="d_c_humid" value="1" 
 	     <?php if (substr($av['dispconfig'],6,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Wind',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_wind" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_wind" id="d_c_wind" value="1" 
 	     <?php if (substr($av['dispconfig'],7,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_wind" value="1" 
+        <td align='center'><input type="checkbox" name="d_d_wind" id="d_d_wind" value="1" 
 	     <?php if (substr($av['dispconfig'],13,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_wind" value="1" 
+        <td align='center'><input type="checkbox" name="d_n_wind" id="d_n_wind" value="1" 
   	    <?php if (substr($av['dispconfig'],17,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
 	<tr>
         <td><?php echo __('Windgusts',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_wgusts" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_wgusts" id="d_c_wgusts" value="1" 
 	     <?php if (substr($av['dispconfig'],22,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_wgusts" value="1" 
+        <td align='center'><input type="checkbox" name="d_d_wgusts" id="d_d_wgusts" value="1" 
 	     <?php if (substr($av['dispconfig'],23,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_wgusts" value="1" 
+        <td align='center'><input type="checkbox" name="d_n_wgusts" id="d_n_wgusts" value="1" 
   	     <?php if (substr($av['dispconfig'],24,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr>         
 	<tr>
         <td><?php echo __('Sunrise',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_sunrise" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_sunrise" id="d_c_sunrise" value="1" 
 		 <?php if (substr($av['dispconfig'],8,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Sunset',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_sunset" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_sunset" id="d_c_sunset" value="1" 
 		 <?php if (substr($av['dispconfig'],9,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
         </tr>
         <tr>
         <td><?php echo __('Copyright',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_copyright" value="1" 
+        <td align='center'><input type="checkbox" name="d_c_copyright" id="d_c_copyright" value="1" 
 		 <?php if (substr($av['dispconfig'],21,1)=="1") echo "checked=\"checked\""?> /></td>
         <td align='center'>&nbsp;</td>
         <td align='center'>&nbsp;</td>
@@ -704,51 +709,51 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          </tr>
          <tr><td><?php echo __('Daytime',"wp-forecast_".$locale)?></td>
              <td><input type="checkbox" name="alldays" onclick="this.value=check('day')" /></td>
-             <td><input type="checkbox" name="day1" value="1" 
+             <td><input type="checkbox" name="day1" id="day1" value="1" 
 		   <?php if (substr($av['daytime'],0,1)=="1") echo "checked=\"checked\""?> /></td>
-             <td><input type="checkbox" name="day2" value="1" 
+             <td><input type="checkbox" name="day2" id="day2"  value="1" 
 		   <?php if (substr($av['daytime'],1,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day3" value="1" 
+             <td><input type="checkbox" name="day3" id="day3" value="1" 
 		   <?php if (substr($av['daytime'],2,1)=="1") echo "checked=\"checked\""?> /></td> 
-	     <td><input type="checkbox" name="day4" value="1" 
+	     <td><input type="checkbox" name="day4" id="day4" value="1" 
 		   <?php if (substr($av['daytime'],3,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day5" value="1" 
+             <td><input type="checkbox" name="day5" id="day5" value="1" 
 		   <?php if (substr($av['daytime'],4,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day6" value="1" 
+             <td><input type="checkbox" name="day6" id="day6" value="1" 
 		   <?php if (substr($av['daytime'],5,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day7" value="1" 
+             <td><input type="checkbox" name="day7" id="day7" value="1" 
 		   <?php if (substr($av['daytime'],6,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day8" value="1" 
+             <td><input type="checkbox" name="day8" id="day8" value="1" 
 		   <?php if (substr($av['daytime'],7,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="day9" value="1" 
+             <td><input type="checkbox" name="day9" id="day9" value="1" 
 		   <?php if (substr($av['daytime'],8,1)=="1") echo "checked=\"checked\""?> /></td>
          </tr>
          <tr><td><?php echo __('Nighttime',"wp-forecast_".$locale)?></td>
              <td><input type="checkbox" name="allnight" onclick="this.value=check('night')" /></td>
-             <td><input type="checkbox" name="night1" value="1" 
+             <td><input type="checkbox" name="night1" id="night1" value="1" 
 		 <?php if (substr($av['nighttime'],0,1)=="1") echo "checked=\"checked\""?> /></td>
-             <td><input type="checkbox" name="night2" value="1" 
+             <td><input type="checkbox" name="night2" id="night2" value="1" 
 		 <?php if (substr($av['nighttime'],1,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night3" value="1" 
+             <td><input type="checkbox" name="night3" id="night3" value="1" 
 		 <?php if (substr($av['nighttime'],2,1)=="1") echo "checked=\"checked\""?> /></td> 
-	     <td><input type="checkbox" name="night4" value="1" 
+	     <td><input type="checkbox" name="night4" id="night4" value="1" 
 		 <?php if (substr($av['nighttime'],3,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night5" value="1" 
+             <td><input type="checkbox" name="night5" id="night5" value="1" 
 		 <?php if (substr($av['nighttime'],4,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night6" value="1" 
+             <td><input type="checkbox" name="night6" id="night6" value="1" 
 		 <?php if (substr($av['nighttime'],5,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night7" value="1" 
+             <td><input type="checkbox" name="night7" id="night7" value="1" 
 		 <?php if (substr($av['nighttime'],6,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night8" value="1" 
+             <td><input type="checkbox" name="night8" id="night8" value="1" 
 		 <?php if (substr($av['nighttime'],7,1)=="1") echo "checked=\"checked\""?> /></td> 
-             <td><input type="checkbox" name="night9" value="1" 
+             <td><input type="checkbox" name="night9" id="night9" value="1" 
 		 <?php if (substr($av['nighttime'],8,1)=="1") echo "checked=\"checked\""?> /></td>
          </tr>
        </table>
        </div>
        <!-- finally update field attributes -->		   
        <script type="text/javascript">
-	       apifields(document.woptions.service.value); 
+	       apifields(document.woptions.service.value);wpf_wpmu_disable_fields(); 
        </script>
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
 <?php

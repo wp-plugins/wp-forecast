@@ -19,7 +19,7 @@ if (!function_exists('wpforecast'))
 	    $id='A';
 	
 	// iframe tag zusammen bauen
-	$res='<iframe src="'.get_settings('siteurl').
+	$res='<iframe class="wpf-iframe" src="'.get_settings('siteurl').
 	    '/wp-content/plugins/wp-forecast/wp-forecast-show.php?wpfcid='.
 	    $id.'&amp;header=1';
 

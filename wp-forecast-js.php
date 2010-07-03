@@ -110,5 +110,47 @@ function nwfields_update()
     objb=document.getElementById('d_c_aw_newwindow');
     objb.disabled = (obja.checked == false);
 }
-</script>
 
+
+<?php
+// the part for wpmu disabled fields by admin
+if ( function_exists("is_multisite") && is_multisite())
+{
+    echo "function wpf_wpmu_disable_fields()\n{\n";
+    // read defaults and allowed fields
+    $allowed  = maybe_unserialize(wpf_get_option("wpf_sa_allowed"));
+    
+    foreach($allowed as $f => $fswitch)
+    {
+	$fname = substr($f,3); // strip ue_ prefix
+	
+	if ( $fswitch != "1" )
+	{
+	    if ($fname != "dispconfig" and $fname != "forecast") {
+		// replace value in av with forced default
+		echo "document.getElementById('$fname').disabled=true;\n";
+	    }
+	    else if ($fname == "dispconfig") {
+		$do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press',
+			    'd_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short',
+			    'd_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date',
+			    'd_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts',
+			    'd_c_accuweather','d_c_aw_newwindow','d_c_copyright','d_c_accuweather');
+		
+		foreach ($do as $i) {
+		    echo "document.getElementById('$i').disabled=true;\n";
+		}
+	    } else {
+		// for forecast options
+		$nd = array('day1','day2','day3','day4','day5','day6','day7','day8','day9',
+			    'night1','night2','night3','night4','night5','night6','night7','night8','night9');
+		foreach ($nd as $i) {
+		    echo "document.getElementById('$i').disabled=true;\n"; 
+		}
+	    } 
+	}
+    }
+    echo "}\n";   
+}
+?>
+</script>

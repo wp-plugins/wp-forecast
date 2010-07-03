@@ -108,43 +108,43 @@ if (!empty($_POST)) {
 
     
     // remember selected transport
-    $wp_transport = get_option("wp-forecast-wp-transport"); 
+    $wp_transport = wpf_get_option("wp-forecast-wp-transport"); 
 
     // checking for standard connection method
     $out .= "Checking default transport"."<br />";
-    update_option("wp-forecast-wp-transport","default");
+    wpf_update_option("wp-forecast-wp-transport","default");
     $erg = checkURL($url);
     $out .= showCheckResult($erg);
 
     // checking fsockopen
     $out .= "Checking fsockopen transport"."<br />";
-    update_option("wp-forecast-wp-transport","fsockopen");
+    wpf_update_option("wp-forecast-wp-transport","fsockopen");
     $erg = checkURL($url);
     $out .= showCheckResult($erg);
 
     // checking exthttp
     $out .= "Checking exthttp transport"."<br />";
-    update_option("wp-forecast-wp-transport","exthttp");
+    wpf_update_option("wp-forecast-wp-transport","exthttp");
     $erg = checkURL($url);
     $out .= showCheckResult($erg);
 
 
     // checking streams
     $out .= "Checking streams transport"."<br />";
-    update_option("wp-forecast-wp-transport","streams");
+    wpf_update_option("wp-forecast-wp-transport","streams");
     $erg = checkURL($url);
     $out .= showCheckResult($erg);
 
 
     // checking curl
     $out .= "Checking curl transport"."<br />";
-    update_option("wp-forecast-wp-transport","curl");
+    wpf_update_option("wp-forecast-wp-transport","curl");
     $erg = checkURL($url);
     $out .= showCheckResult($erg);
 
 
     // write back selected transport
-    update_option("wp-forecast-wp-transport",$wp_transport);
+    wpf_update_option("wp-forecast-wp-transport",$wp_transport);
 
 
     echo $out;

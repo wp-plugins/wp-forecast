@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-forecast-norsk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-18 08:18+0100\n"
+"POT-Creation-Date: 2010-04-09 07:27+0200\n"
 "PO-Revision-Date: 2008-05-08 13:33+0100\n"
 "Last-Translator: Eilif Nordseth <enordset@online.no>\n"
 "Language-Team: Eilif Nordseth <enordset@online.no>\n"
@@ -46,12 +46,12 @@ msgstr ""
 msgid "widget_hint"
 msgstr "widget_hint"
 
-#: wp-forecast-admin.php:205 wp-forecast.php:349
+#: wp-forecast-admin.php:205 wp-forecast.php:353
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Hvor mange ' wp-forecast' programtillegg vil du bruke?"
 
 #: wp-forecast-admin.php:214 wp-forecast-admin.php:240
-#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:358
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:362
 msgid "Save"
 msgstr "Lagre"
 
@@ -175,148 +175,152 @@ msgstr "Mil/Time (mph)"
 msgid "Knots (kts)"
 msgstr "Knop (kts)"
 
-#: wp-forecast-admin.php:527
+#: wp-forecast-admin.php:521
+msgid "Beaufort (bft)"
+msgstr ""
+
+#: wp-forecast-admin.php:528
 msgid "Language"
 msgstr "Språk"
 
-#: wp-forecast-admin.php:546
+#: wp-forecast-admin.php:547
 msgid "Show forecast as ajax pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:550
+#: wp-forecast-admin.php:551
 msgid "First day in pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:566
+#: wp-forecast-admin.php:568
 msgid "Display Configuration"
 msgstr "Vis konfigurering"
 
-#: wp-forecast-admin.php:570
+#: wp-forecast-admin.php:572
 msgid "Current Conditions"
 msgstr "Nåværende forhold"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:573
 msgid "Forecast Day"
 msgstr "Værmelding dag"
 
-#: wp-forecast-admin.php:572
+#: wp-forecast-admin.php:574
 msgid "Forecast Night"
 msgstr "Værmelding natt"
 
-#: wp-forecast-admin.php:575
+#: wp-forecast-admin.php:577
 msgid "Icon"
 msgstr "Ikon"
 
-#: wp-forecast-admin.php:584
+#: wp-forecast-admin.php:586
 msgid "Date"
 msgstr "Dato"
 
-#: wp-forecast-admin.php:591
+#: wp-forecast-admin.php:593
 msgid "Time"
 msgstr "Tid"
 
-#: wp-forecast-admin.php:598
+#: wp-forecast-admin.php:600
 msgid "Short Description"
 msgstr "Kort beskrivelse"
 
-#: wp-forecast-admin.php:607
+#: wp-forecast-admin.php:609
 msgid "Temperature"
 msgstr "Temperatur"
 
-#: wp-forecast-admin.php:616
+#: wp-forecast-admin.php:618
 msgid "Realfeel"
 msgstr "Føles som"
 
-#: wp-forecast-admin.php:623
+#: wp-forecast-admin.php:625
 msgid "Pressure"
 msgstr "Trykk"
 
-#: wp-forecast-admin.php:630
+#: wp-forecast-admin.php:632
 msgid "Humidity"
 msgstr "Fuktighet"
 
-#: wp-forecast-admin.php:637
+#: wp-forecast-admin.php:639
 msgid "Wind"
 msgstr "Vind"
 
-#: wp-forecast-admin.php:646 wp-forecast-show.php:296 wp-forecast-show.php:394
-#: wp-forecast-show.php:438
+#: wp-forecast-admin.php:648 wp-forecast-show.php:300 wp-forecast-show.php:398
+#: wp-forecast-show.php:442
 msgid "Windgusts"
 msgstr "Vindkast"
 
-#: wp-forecast-admin.php:655
+#: wp-forecast-admin.php:657
 msgid "Sunrise"
 msgstr "Soloppgang"
 
-#: wp-forecast-admin.php:662
+#: wp-forecast-admin.php:664
 msgid "Sunset"
 msgstr "Solnedgang"
 
-#: wp-forecast-admin.php:669
+#: wp-forecast-admin.php:671
 msgid "Copyright"
 msgstr "© Kopirettighet"
 
-#: wp-forecast-admin.php:676
+#: wp-forecast-admin.php:678
 msgid "Link to Weatherprovider"
 msgstr ""
 
-#: wp-forecast-admin.php:679
+#: wp-forecast-admin.php:681
 msgid "Open in new Window"
 msgstr ""
 
-#: wp-forecast-admin.php:687 wp-forecast-show.php:345
+#: wp-forecast-admin.php:689 wp-forecast-show.php:349
 msgid "Forecast"
 msgstr "Værmelding"
 
-#: wp-forecast-admin.php:692
+#: wp-forecast-admin.php:694
 msgid "All"
 msgstr ""
 
-#: wp-forecast-admin.php:693 wp-forecast-admin.php:694
 #: wp-forecast-admin.php:695 wp-forecast-admin.php:696
 #: wp-forecast-admin.php:697 wp-forecast-admin.php:698
 #: wp-forecast-admin.php:699 wp-forecast-admin.php:700
-#: wp-forecast-admin.php:701
+#: wp-forecast-admin.php:701 wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
 msgid "Day"
 msgstr "Dag"
 
-#: wp-forecast-admin.php:703
+#: wp-forecast-admin.php:705
 msgid "Daytime"
 msgstr "Dagtid"
 
-#: wp-forecast-admin.php:724
+#: wp-forecast-admin.php:726
 msgid "Nighttime"
 msgstr "Nattid"
 
-#: wp-forecast-admin.php:754
+#: wp-forecast-admin.php:756
 msgid "Update options"
 msgstr "Oppdater alternativer"
 
-#: wp-forecast-admin.php:761 wp-forecast-admin.php:778
+#: wp-forecast-admin.php:763 wp-forecast-admin.php:780
 msgid "Search location"
 msgstr "Søk etter sted"
 
-#: wp-forecast-admin.php:765
+#: wp-forecast-admin.php:767
 msgid "Searchterm"
 msgstr "Søkeord"
 
-#: wp-forecast-admin.php:769
+#: wp-forecast-admin.php:771
 msgid "No locations found."
 msgstr "Ingen steder funnet"
 
-#: wp-forecast-admin.php:773
+#: wp-forecast-admin.php:775
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Erstatt tyske omlyder ä, ö, ü med a, o, u i søkeordene dine."
 
-#: wp-forecast-admin.php:783
+#: wp-forecast-admin.php:785
 msgid "Search result"
 msgstr "Søkeresultat"
 
-#: wp-forecast-admin.php:790
+#: wp-forecast-admin.php:792
 msgid "Please select your city and press set location."
 msgstr "Velg stedet ditt og trykk Bestem sted"
 
-#: wp-forecast-admin.php:794
+#: wp-forecast-admin.php:796
 msgid "Set location"
 msgstr "Bestem sted"
 
@@ -337,69 +341,69 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: wp-forecast.php:393
+#: wp-forecast.php:397
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:126
+#: wp-forecast-show.php:137
 #, fuzzy
 msgid "Locations:"
 msgstr "Sted"
 
-#: wp-forecast-show.php:167
+#: wp-forecast-show.php:171
 msgid "Failure notice from provider"
 msgstr ""
 
-#: wp-forecast-show.php:184
+#: wp-forecast-show.php:188
 msgid "Sorry, no valid weather data available."
 msgstr "Beklager, ingen gyldige værdata tilgjengelige."
 
-#: wp-forecast-show.php:185
+#: wp-forecast-show.php:189
 msgid "Please try again later."
 msgstr "Vennligst prøv igjen senere."
 
-#: wp-forecast-show.php:239
+#: wp-forecast-show.php:243
 msgid "time"
 msgstr "Tid"
 
-#: wp-forecast-show.php:276
+#: wp-forecast-show.php:280
 msgid "flik"
 msgstr "Føles"
 
-#: wp-forecast-show.php:279
+#: wp-forecast-show.php:283
 msgid "barr"
 msgstr "Trykk"
 
-#: wp-forecast-show.php:287
+#: wp-forecast-show.php:291
 msgid "hmid"
 msgstr "Fuktighet"
 
-#: wp-forecast-show.php:291 wp-forecast-show.php:389 wp-forecast-show.php:431
+#: wp-forecast-show.php:295 wp-forecast-show.php:393 wp-forecast-show.php:435
 msgid "winds"
 msgstr "Vind"
 
-#: wp-forecast-show.php:301
+#: wp-forecast-show.php:305
 msgid "sunrise"
 msgstr "Soloppgang"
 
-#: wp-forecast-show.php:305
+#: wp-forecast-show.php:309
 msgid "sunset"
 msgstr "Solnedgang"
 
-#: wp-forecast-show.php:354
+#: wp-forecast-show.php:358
 msgid "day"
 msgstr "Dag"
 
-#: wp-forecast-show.php:406
+#: wp-forecast-show.php:410
 msgid "night"
 msgstr "Natt"
 
-#: wp-forecast-show.php:461
+#: wp-forecast-show.php:468 wp-forecast-show.php:469
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:462
+#: wp-forecast-show.php:470
 msgid "More forecast..."
 msgstr ""
 

@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2010  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ function wp_forecast_activate()
    
   if ($count == "") {
     $count="1";
-    add_option("wp-forecast-count",$count);
+    wpf_add_option("wp-forecast-count",$count);
   };
   
   // add timeout for accuweather connections, default: 30
@@ -39,7 +39,7 @@ function wp_forecast_activate()
    
   if ($timeout == "") {
     $timeout="10";
-    add_option("wp-forecast-timeout",$timeout);
+    wpf_add_option("wp-forecast-timeout",$timeout);
   };
 
   // add switch to control option deletion during plugin deactivation
@@ -47,7 +47,7 @@ function wp_forecast_activate()
    
   if ($delopt == "") {
     $delopt="0";
-    add_option("wp-forecast-delopt",$delopt);
+    wpf_add_option("wp-forecast-delopt",$delopt);
   };
 
   // add preselected transport method for wp-forecast
@@ -55,7 +55,7 @@ function wp_forecast_activate()
    
   if ($pre_trans == "") {
     $pre_trans="default";
-    add_option("wp-forecast-pre-transport",$pre_tans);
+    wpf_add_option("wp-forecast-pre-transport",$pre_trans);
   };
 
   // add transport to use by wordpress only for wp-forecast
@@ -63,7 +63,7 @@ function wp_forecast_activate()
    
   if ($wp_trans == "") {
     $wp_trans="default";
-    add_option("wp-forecast-wp-transport",$wp_trans);
+    wpf_add_option("wp-forecast-wp-transport",$wp_trans);
   };
 
   for ($i=0;$i<$count;$i++) {
@@ -114,19 +114,34 @@ function wp_forecast_activate()
       $av['pdforecast']="0"; // pulldown forecast 0=No, 1=Yes
       $av['pdfirstday']="0"; // day to start pulldown with
 
-      add_option( "wp-forecast-opts".$wpfcid, serialize($av) );
+      wpf_add_option( "wp-forecast-opts".$wpfcid, serialize($av) );
     }
     
     if ($weather == "") {
       $weather="";
-      add_option("wp-forecast-cache".$wpfcid,$weather);
+      wpf_add_option("wp-forecast-cache".$wpfcid,$weather);
     }; 
     
     if ($expire == "") {
       $expire="0";
-      add_option("wp-forecast-expire".$wpfcid, $expire );
+      wpf_add_option("wp-forecast-expire".$wpfcid, $expire );
     };    
   } // end of for 
+   
+
+  // add options for super admin on multisites
+  $wpf_sa_defaults = maybe_unserialize(get_option("wpf_sa_defaults"));
+  $wpf_sa_allowed  = maybe_unserialize(get_option("wpf_sa_allowed"));
+  
+  if ($wpf_sa_defaults == "") {
+      $wpf_sa_defaults = serialize(array());
+      add_option("wpf_sa_defaults",$wpf_sa_defaults);
+  }
+  
+  if ($wpf_sa_allowed == "") {
+      $wpf_sa_allowed = serialize(array());
+      add_option("wpf_sa_allowed",$wpf_sa_allowed);
+  }
   
   pdebug(1,"End of wp_forecast_activate ()");
 }
@@ -160,7 +175,10 @@ function wp_forecast_deactivate($wpfcid)
 	delete_option('wp-forecast-count');
 	delete_option('wp-forecast-delopt');
 	delete_option("wp-forecast-pre-transport");
-	delete_option("wp-forecast-wp-transport");
+	delete_option("wp-forecast-wp-transport"); 
+	// delete options for superadmin on multisites
+	delete_option("wpf_sa_defaults");
+	delete_option("wpf_sa_allowed");
     }
     
     pdebug(1,"End of wp_forecast_deactivate ()");

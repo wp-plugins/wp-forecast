@@ -321,7 +321,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
   } 
 
   extract($wpf_vars);
-  $w=unserialize(get_option("wp-forecast-cache".$wpfcid));
+  $w=maybe_unserialize(wpf_get_option("wp-forecast-cache".$wpfcid));
 
   // get translations
   if(function_exists('load_textdomain')) {
@@ -341,14 +341,15 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     
     
 
-    $ct = time(); // this is the GMT
+    $ct = time(); // this is the GMT 
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['blogdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
     
     $cts = $w['time'];
-    $gmtoffset=0; // get_option("gmt_offset");
+    $gmtoffset=0; // wpf_get_option("gmt_offset");
     $ct = strtotime($cts) + ($gmtoffset * 3600); 
-    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
+  
     $weather_arr['bugdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['bugtime']=date_i18n($fc_time_format, $ct);
     

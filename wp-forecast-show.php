@@ -65,10 +65,10 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   require_once("funclib.php");
   require_once( dirname(__FILE__) . '/../../../wp-config.php');
   
-  $wpfcid = attribute_escape($_GET['wpfcid']);
-  $language_override = attribute_escape($_GET['language_override']);
-  $header = attribute_escape($_GET['header']);
-  $selector = attribute_escape($_GET['selector']);
+  $wpfcid = esc_attr($_GET['wpfcid']);
+  $language_override = esc_attr($_GET['language_override']);
+  $header = esc_attr($_GET['header']);
+  $selector = esc_attr($_GET['selector']);
   if ($selector == "1")
       $selector = "?";
   $args=array();
@@ -77,7 +77,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
   if (!empty($language_override)) {
     $wpf_vars['wpf_language']=$language_override;
   }
-  $weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
+  $weather=maybe_unserialize(wpf_get_option("wp-forecast-cache".$wpfcid));
   
 
   if ($header) {
@@ -132,7 +132,7 @@ function show($wpfcid,$args,$wpfvars)
       if ($wpfcid == "")
 	  $wpfcid = "A";
 
-      $count = get_option('wp-forecast-count');
+      $count = wpf_get_option('wp-forecast-count');
       $fout .= "<div class='wpf-selector'><form action=''>" .
 	  __("Locations:","wp-forecast_".$wpf_language);
       $fout .= "<select id='wpf_selector' size='1' onchange='wpf_update();' >";	
@@ -465,7 +465,8 @@ function show($wpfcid,$args,$wpfvars)
   //
   // mark ids: wpfbl wpfc1 wpfc2 wpfbm with widget id have disjunct ods when using more than one pulldown widget
   if ( $pdforecast == 1 ) {
-      $out1 .= "<div class='wpff_nav' id='wpfbl".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n";
+      $out1 .= "<div class='wpff_nav' id='wpfbl".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n"; 
+      $out1 = "<div class='wpff_nav' id='wpfbl".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n" . $out1;
       $out2 .= "<div class='wpff_nav' id='wpfbm".$wpfcid."' onclick=\"document.getElementById('wpfc2".$wpfcid."').style.display='none';document.getElementById('wpfc1".$wpfcid."').style.display='block';return false;\">" . __("More forecast...","wp-forecast_" . $wpf_language) . "</div>\n";
       
       $out1 = '<div id="wpfc1'.$wpfcid.'"  style="display:none;">' . $out1 . "</div>\n";
