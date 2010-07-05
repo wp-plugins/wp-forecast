@@ -1,0 +1,996 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-forecast 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-09 07:27+0200\n"
+"PO-Revision-Date: 2010-04-04 23:15-0800\n"
+"Last-Translator: Pavel Soukenik <pavel@soukie.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+
+#: class-wpf_widget.php:73 wp-forecast-admin.php:102
+msgid "Title:"
+msgstr "Nadpis:"
+
+#: class-wpf_widget.php:81 wp-forecast-admin.php:217
+msgid "Available widgets"
+msgstr "Dostupné widgety"
+
+#: func_bug.php:222
+msgid "Location does not exist"
+msgstr "Místo neexistuje"
+
+#: func_bug.php:361 func_bug.php:388 xgettextdummy.php:150
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: setup.php:93
+msgid "The Weather"
+msgstr "The Weather"
+
+#: shortcodes.php:40
+msgid "wp-forecast shortcode: This browser does not support iframes."
+msgstr "shortcode pro wp-forecast: Tento prohlížeč nepodporuje iframes."
+
+#: wp-forecast-admin.php:105
+msgid "widget_hint"
+msgstr "widget_hint"
+
+#: wp-forecast-admin.php:205 wp-forecast.php:353
+msgid "How many wp-forecast widgets would you like?"
+msgstr "Kolik widgetů wp-forecast chcete mít?"
+
+#: wp-forecast-admin.php:214 wp-forecast-admin.php:240
+#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:362
+msgid "Save"
+msgstr "Uložit"
+
+#: wp-forecast-admin.php:233
+msgid "Select widget"
+msgstr "Zvolit widget"
+
+#: wp-forecast-admin.php:238
+msgid "Timeout for weatherprovider connections (secs.)?"
+msgstr "Doba čekání na připojení accuweather (s)?"
+
+#: wp-forecast-admin.php:244
+msgid "Preselect wordpress transfer method"
+msgstr "Předvolte komunikační metodu:"
+
+#: wp-forecast-admin.php:246
+msgid "default"
+msgstr "výchozí"
+
+#: wp-forecast-admin.php:260
+msgid "Delete options during plugin deactivation?"
+msgstr "Odstranit při deaktivaci pluginu nastavení?"
+
+#: wp-forecast-admin.php:268
+msgid "Check connection to Weatherprovider"
+msgstr "Kontrola připojení k Weatherprovider"
+
+#: wp-forecast-admin.php:431
+msgid "Settings successfully updated"
+msgstr "Nastavení bylo úspěšně aktualizováno"
+
+#: wp-forecast-admin.php:433
+msgid "You have to change a field to update settings."
+msgstr "Aktualizaci lze provést po změně některého pole."
+
+#: wp-forecast-admin.php:479
+msgid "WP-Forecast Setup"
+msgstr "Nastavení widgetu WP-Forecast"
+
+#: wp-forecast-admin.php:482
+msgid "Weatherservice"
+msgstr "Weatherservice"
+
+#: wp-forecast-admin.php:484
+msgid "AccuWeather"
+msgstr "AccuWeather"
+
+#: wp-forecast-admin.php:485
+msgid "WeatherBug"
+msgstr "WeatherBug"
+
+#: wp-forecast-admin.php:487
+msgid "Weather.com"
+msgstr "Weather.com"
+
+#: wp-forecast-admin.php:490
+msgid "Partner ID"
+msgstr "Partnerské ID"
+
+#: wp-forecast-admin.php:493
+msgid "Licensekey"
+msgstr "Licenční klíč"
+
+#: wp-forecast-admin.php:498
+msgid "Location"
+msgstr "Lokace"
+
+#: wp-forecast-admin.php:501
+msgid "Press Update options to save new location."
+msgstr "Novou lokaci uložíte kliknutím na tlačítko Aktualizovat možnosti."
+
+#: wp-forecast-admin.php:504
+msgid "Locationname"
+msgstr "Locationname"
+
+#: wp-forecast-admin.php:506
+msgid "Refresh cache after"
+msgstr "Obnovit vyrovnávací paměť po"
+
+#: wp-forecast-admin.php:508
+msgid "secs."
+msgstr "s"
+
+#: wp-forecast-admin.php:509
+msgid "Use metric units"
+msgstr "Použít metrickou soustavu"
+
+#: wp-forecast-admin.php:512
+msgid "Use current time"
+msgstr "Použít aktuální čas"
+
+#: wp-forecast-admin.php:513
+msgid "Time-Offset"
+msgstr "Časový posun"
+
+#: wp-forecast-admin.php:513
+msgid "minutes"
+msgstr "minut"
+
+#: wp-forecast-admin.php:516
+msgid "Windspeed-Unit"
+msgstr "Jednotky rychlosti větru"
+
+#: wp-forecast-admin.php:517
+msgid "Meter/Second (m/s)"
+msgstr "metr/sekundu (m/s)"
+
+#: wp-forecast-admin.php:518
+msgid "Kilometer/Hour (km/h)"
+msgstr "kilometr/hodinu (km/h)"
+
+#: wp-forecast-admin.php:519
+msgid "Miles/Hour (mph)"
+msgstr "míle/hodinu (mph)"
+
+#: wp-forecast-admin.php:520
+msgid "Knots (kts)"
+msgstr "Uzly (kts)"
+
+#: wp-forecast-admin.php:521
+msgid "Beaufort (bft)"
+msgstr ""
+
+#: wp-forecast-admin.php:528
+msgid "Language"
+msgstr "Jazyk"
+
+#: wp-forecast-admin.php:547
+msgid "Show forecast as ajax pull-down"
+msgstr "Zobrazit předpověď rozevírací metodou Ajax"
+
+#: wp-forecast-admin.php:551
+msgid "First day in pull-down"
+msgstr "První rozevírací den"
+
+#: wp-forecast-admin.php:568
+msgid "Display Configuration"
+msgstr "Konfigurace zobrazení"
+
+#: wp-forecast-admin.php:572
+msgid "Current Conditions"
+msgstr "Aktuální podmínky"
+
+#: wp-forecast-admin.php:573
+msgid "Forecast Day"
+msgstr "Předpověď na den"
+
+#: wp-forecast-admin.php:574
+msgid "Forecast Night"
+msgstr "Předpověď na noc"
+
+#: wp-forecast-admin.php:577
+msgid "Icon"
+msgstr "Ikona"
+
+#: wp-forecast-admin.php:586
+msgid "Date"
+msgstr "Datum"
+
+#: wp-forecast-admin.php:593
+msgid "Time"
+msgstr "Čas"
+
+#: wp-forecast-admin.php:600
+msgid "Short Description"
+msgstr "Krátký popis"
+
+#: wp-forecast-admin.php:609
+msgid "Temperature"
+msgstr "Teplota"
+
+#: wp-forecast-admin.php:618
+msgid "Realfeel"
+msgstr "Odpovídá teplotě"
+
+#: wp-forecast-admin.php:625
+msgid "Pressure"
+msgstr "Tlak"
+
+#: wp-forecast-admin.php:632
+msgid "Humidity"
+msgstr "Vlhkost"
+
+#: wp-forecast-admin.php:639
+msgid "Wind"
+msgstr "Vítr"
+
+#: wp-forecast-admin.php:648 wp-forecast-show.php:300 wp-forecast-show.php:398
+#: wp-forecast-show.php:442
+msgid "Windgusts"
+msgstr "Nárazový vítr"
+
+#: wp-forecast-admin.php:657
+msgid "Sunrise"
+msgstr "Východ slunce"
+
+#: wp-forecast-admin.php:664
+msgid "Sunset"
+msgstr "Západ slunce"
+
+#: wp-forecast-admin.php:671
+msgid "Copyright"
+msgstr "Copyright"
+
+#: wp-forecast-admin.php:678
+msgid "Link to Weatherprovider"
+msgstr "Odkaz na Weatherprovider"
+
+#: wp-forecast-admin.php:681
+msgid "Open in new Window"
+msgstr "Otevřít v novém okně"
+
+#: wp-forecast-admin.php:689 wp-forecast-show.php:349
+msgid "Forecast"
+msgstr "Předpověď"
+
+#: wp-forecast-admin.php:694
+msgid "All"
+msgstr "Všechny"
+
+#: wp-forecast-admin.php:695 wp-forecast-admin.php:696
+#: wp-forecast-admin.php:697 wp-forecast-admin.php:698
+#: wp-forecast-admin.php:699 wp-forecast-admin.php:700
+#: wp-forecast-admin.php:701 wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
+msgid "Day"
+msgstr "Den"
+
+#: wp-forecast-admin.php:705
+msgid "Daytime"
+msgstr "Denní"
+
+#: wp-forecast-admin.php:726
+msgid "Nighttime"
+msgstr "Noční"
+
+#: wp-forecast-admin.php:756
+msgid "Update options"
+msgstr "Aktualizovat možnosti"
+
+#: wp-forecast-admin.php:763 wp-forecast-admin.php:780
+msgid "Search location"
+msgstr "Hledat lokaci"
+
+#: wp-forecast-admin.php:767
+msgid "Searchterm"
+msgstr "Hledaný pojem"
+
+#: wp-forecast-admin.php:771
+msgid "No locations found."
+msgstr "Žádná lokace nebyla nalezena."
+
+#: wp-forecast-admin.php:775
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr "V hledaných pojmech nahraďte znaky ä,ö,ü za a, o, u."
+
+#: wp-forecast-admin.php:785
+msgid "Search result"
+msgstr "Výsledek hledání"
+
+#: wp-forecast-admin.php:792
+msgid "Please select your city and press set location."
+msgstr "Vyberte požadované město a klikněte na Nastavit lokaci."
+
+#: wp-forecast-admin.php:796
+msgid "Set location"
+msgstr "Nastavit lokaci"
+
+#: wp-forecast-check.php:165
+msgid "Connection-check"
+msgstr "Kontrola připojení"
+
+#: wp-forecast-check.php:168
+msgid "Select weatherprovider"
+msgstr "Zvolte poskytovatele počasí"
+
+#: wp-forecast-check.php:180
+msgid "Start check"
+msgstr "Zahájit kontrolu"
+
+#: wp-forecast-check.php:183
+msgid "Close"
+msgstr "Zavřít"
+
+#: wp-forecast.php:397
+#, php-format
+msgid "wp-forecast %s"
+msgstr "wp-forecast %s"
+
+#: wp-forecast-show.php:137
+msgid "Locations:"
+msgstr "Lokace:"
+
+#: wp-forecast-show.php:171
+msgid "Failure notice from provider"
+msgstr "Oznámení o chybě od poskytovatele"
+
+#: wp-forecast-show.php:188
+msgid "Sorry, no valid weather data available."
+msgstr "Nejsou dostupná žádné platné údaje o počasí."
+
+#: wp-forecast-show.php:189
+msgid "Please try again later."
+msgstr "Zkuste to později."
+
+#: wp-forecast-show.php:243
+msgid "time"
+msgstr "čas"
+
+#: wp-forecast-show.php:280
+msgid "flik"
+msgstr "odopovídá teplotě"
+
+#: wp-forecast-show.php:283
+msgid "barr"
+msgstr "aktuální tlak"
+
+#: wp-forecast-show.php:291
+msgid "hmid"
+msgstr "vlhkost"
+
+#: wp-forecast-show.php:295 wp-forecast-show.php:393 wp-forecast-show.php:435
+msgid "winds"
+msgstr "rychlost větru"
+
+#: wp-forecast-show.php:305
+msgid "sunrise"
+msgstr "východ slunce"
+
+#: wp-forecast-show.php:309
+msgid "sunset"
+msgstr "západ slunce"
+
+#: wp-forecast-show.php:358
+msgid "day"
+msgstr "den"
+
+#: wp-forecast-show.php:410
+msgid "night"
+msgstr "noc"
+
+#: wp-forecast-show.php:468 wp-forecast-show.php:469
+msgid "Less forecast..."
+msgstr "Méně dnů..."
+
+#: wp-forecast-show.php:470
+msgid "More forecast..."
+msgstr "Více dnů..."
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr "lokace"
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "Slunečno"
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "Převážně slunečno"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "Částečně slunečno"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "Částečně oblačno"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "Opar"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "Převážně oblačno"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "Zataženo"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "Deštivo (zataženo)"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "Mlha"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "Přeháňky"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "Převážně oblačno s přeháňkami"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "Částečně slunečno se sprškami"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "Bouřky"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "Převážně oblačno s bouřkami"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "Částečně slunečno s bouřkami"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "Déšť"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "Déšť se sněhem"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "Převážně oblačno a déšť se sněhem"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "Částečně slunečno a a déšť se sněhem"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "Sněžení"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "Převážně oblačno se sněžením"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "Led"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "Déšť se sněhem"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "Namrzající déšť"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "Déšť se sněhem"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "Horko"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "Chladno"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "Větrno"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "Jasno"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "Převážně jasno"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "Částečně zataženo"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "Trhající se oblačnost"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "Zamlžený měsíc"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "Převážně oblačno"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "Převážně oblačno s přeháňkami"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "Převážně oblačno s přeháňkami"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "Částečně oblačno s bouřkami"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "Převážně oblačno s bouřkami"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "Převážně oblačno a déšť se sněhem"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "Převážně oblačno se sněhem"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr "Pondělí"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "Úterý"
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "Středa"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "Pátek"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "Sobota"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "Neděle"
+
+#: xgettextdummy.php:53
+msgid "N"
+msgstr "S"
+
+#: xgettextdummy.php:54
+msgid "E"
+msgstr "V"
+
+#: xgettextdummy.php:55
+msgid "W"
+msgstr "Z"
+
+#: xgettextdummy.php:56
+msgid "S"
+msgstr "J"
+
+#: xgettextdummy.php:57
+msgid "30% Chance Drizzle"
+msgstr "30% mrholení"
+
+#: xgettextdummy.php:58
+msgid "30% Chance Freezing Drizzle"
+msgstr "30% namrzající mrholení"
+
+#: xgettextdummy.php:59
+msgid "30% Chance Freezing Rain"
+msgstr "30% namrzající déšť"
+
+#: xgettextdummy.php:60
+msgid "30% Chance Frozen Drizzle"
+msgstr "30% mrznoucí mrholení"
+
+#: xgettextdummy.php:61
+msgid "30% Chance Frozen Mix"
+msgstr "30% mrznoucí sníh s deštěm"
+
+#: xgettextdummy.php:62
+msgid "30% Chance Rain Shower"
+msgstr "30% dešťové přeháňky"
+
+#: xgettextdummy.php:63
+msgid "30% Chance Snow Shower"
+msgstr "30% sněhové přeháňky"
+
+#: xgettextdummy.php:64
+msgid "30% Chance of Drizzle"
+msgstr "30% mrholení"
+
+#: xgettextdummy.php:65 xgettextdummy.php:66
+msgid "30% Chance of Flurry"
+msgstr "30% lehké sněžení"
+
+#: xgettextdummy.php:67
+msgid "30% Chance of Frozen Mix"
+msgstr "30% mrznoucí déšť se sněhem"
+
+#: xgettextdummy.php:68
+msgid "30% Chance of Light Snow"
+msgstr "30% lehké sněžení"
+
+#: xgettextdummy.php:69
+msgid "30% Chance of Rain"
+msgstr "30% déšť"
+
+#: xgettextdummy.php:70
+msgid "30% Chance of Sleet"
+msgstr "30% déšť se sněhem"
+
+#: xgettextdummy.php:71
+msgid "30% Chance of Snow"
+msgstr "30% sníh"
+
+#: xgettextdummy.php:72
+msgid "30% Chance of Storms"
+msgstr "30% bouřky"
+
+#: xgettextdummy.php:73
+msgid "40% Chance Drizzle"
+msgstr "40% mrholení"
+
+#: xgettextdummy.php:74
+msgid "40% Chance Fozen Drizzle"
+msgstr "40% mrznoucí mrholení"
+
+#: xgettextdummy.php:75
+msgid "40% Chance Freezing Drizzle"
+msgstr "40% namrzající mrholení"
+
+#: xgettextdummy.php:76
+msgid "40% Chance Freezing Rain"
+msgstr "40% namrzající déšť"
+
+#: xgettextdummy.php:77
+msgid "40% Chance Frozen Drizzle"
+msgstr "40% mrznoucí mrholení"
+
+#: xgettextdummy.php:78
+msgid "40% Chance Frozen Mix"
+msgstr "40% mrznoucí déšť se sněhem"
+
+#: xgettextdummy.php:79
+msgid "40% Chance Rain Shower"
+msgstr "40% dešťové přeháňky"
+
+#: xgettextdummy.php:80
+msgid "40% Chance Snow Shower"
+msgstr "40% sněhové přeháňky"
+
+#: xgettextdummy.php:81
+msgid "40% Chance of Drizzle"
+msgstr "40% mrholení"
+
+#: xgettextdummy.php:82
+msgid "40% Chance of Flurry"
+msgstr "40% lehké sněžení"
+
+#: xgettextdummy.php:83
+msgid "40% Chance of Frozen Mix"
+msgstr "40% mrznoucí déšť se sněhem"
+
+#: xgettextdummy.php:84
+msgid "40% Chance of Light Snow"
+msgstr "40% lehké sněžení"
+
+#: xgettextdummy.php:85
+msgid "40% Chance of Rain"
+msgstr "40% déšť"
+
+#: xgettextdummy.php:86
+msgid "40% Chance of Sleet"
+msgstr "40% déšť se sněhem"
+
+#: xgettextdummy.php:87
+msgid "40% Chance of Snow"
+msgstr "40% sníh"
+
+#: xgettextdummy.php:88
+msgid "40% Chance of Storms"
+msgstr "40% bouřky"
+
+#: xgettextdummy.php:89
+msgid "50% Chance Freezing Drizzle"
+msgstr "50% namrzající mrholení"
+
+#: xgettextdummy.php:90
+msgid "50% Chance Freezing Rain"
+msgstr "50% namrzající déšť"
+
+#: xgettextdummy.php:91
+msgid "50% Chance Rain Shower"
+msgstr "50% dešťové přeháňky"
+
+#: xgettextdummy.php:92
+msgid "50% Chance Snow Shower"
+msgstr "50% sněhové přeháňky"
+
+#: xgettextdummy.php:93
+msgid "50% Chance of Drizzle"
+msgstr "50% mrholení"
+
+#: xgettextdummy.php:94
+msgid "50% Chance of Flurry"
+msgstr "50% lehké sněžení"
+
+#: xgettextdummy.php:95
+msgid "50% Chance of Frozen Mix"
+msgstr "50% mrznoucí déšť se sněhem"
+
+#: xgettextdummy.php:96
+msgid "50% Chance of Light Snow"
+msgstr "50% lehký sníh"
+
+#: xgettextdummy.php:97
+msgid "50% Chance of Rain"
+msgstr "50% déšť"
+
+#: xgettextdummy.php:98
+msgid "50% Chance of Sleet"
+msgstr "50% déšť se sněhem"
+
+#: xgettextdummy.php:99
+msgid "50% Chance of Snow"
+msgstr "50% sníh"
+
+#: xgettextdummy.php:100
+msgid "50% Chance of Storms"
+msgstr "50% bouřky"
+
+#: xgettextdummy.php:101
+msgid "Chance Freezing Drizzle"
+msgstr "Možnost mrholení"
+
+#: xgettextdummy.php:102
+msgid "Chance Freezing Rain"
+msgstr "Možnost namrzajícího deště"
+
+#: xgettextdummy.php:103
+msgid "Chance Rain Shower"
+msgstr "Možnost přeháněk"
+
+#: xgettextdummy.php:104
+msgid "Chance Snow Shower"
+msgstr "Možnost sněhových přeháněk"
+
+#: xgettextdummy.php:105
+msgid "Chance of Drizzle"
+msgstr "Možnost mrholení"
+
+#: xgettextdummy.php:106
+msgid "Chance of Flurry"
+msgstr "Možnost lehkého sněžení"
+
+#: xgettextdummy.php:107
+msgid "Chance of Freezing Drizzle"
+msgstr "Možnost namrzajícího mrholení"
+
+#: xgettextdummy.php:108
+msgid "Chance of Frozen Drizzle"
+msgstr "Možnost mrznoucího mrholení"
+
+#: xgettextdummy.php:109
+msgid "Chance of Frozen Mix"
+msgstr "Možnost mrznoucího deště se sněhem"
+
+#: xgettextdummy.php:110
+msgid "Chance of Light Snow"
+msgstr "Možnost lehkého sněžení"
+
+#: xgettextdummy.php:111
+msgid "Chance of Rain"
+msgstr "Možnost deště"
+
+#: xgettextdummy.php:112
+msgid "Chance of Rain Showers"
+msgstr "Možnost dešťových přeháněk"
+
+#: xgettextdummy.php:113
+msgid "Chance of Sleet "
+msgstr "Možnost deště se sněhem"
+
+#: xgettextdummy.php:114
+msgid "Chance of Snow"
+msgstr "Možnost sněžení"
+
+#: xgettextdummy.php:115
+msgid "Chance of Snow Showers"
+msgstr "Možnost sněhových přeháněk"
+
+#: xgettextdummy.php:116
+msgid "Chance of Storms"
+msgstr "Možnost bouřek"
+
+#: xgettextdummy.php:117
+msgid "Clear"
+msgstr "Jasno"
+
+#: xgettextdummy.php:118
+msgid "Clearing"
+msgstr "Vyjasnění"
+
+#: xgettextdummy.php:119
+msgid "Cloudy"
+msgstr "Zataženo"
+
+#: xgettextdummy.php:120
+msgid "Drizzle"
+msgstr "Mrholení"
+
+#: xgettextdummy.php:121
+msgid "Fair"
+msgstr "Hezky"
+
+#: xgettextdummy.php:122
+msgid "Flurries"
+msgstr "Lehké sněžení"
+
+#: xgettextdummy.php:123
+msgid "Fog"
+msgstr "Mlha"
+
+#: xgettextdummy.php:124
+msgid "Foggy"
+msgstr "Mlhavě"
+
+#: xgettextdummy.php:125
+msgid "Freezing Drizzle"
+msgstr "Namrzající mrholení"
+
+#: xgettextdummy.php:126
+msgid "Freezing Rain"
+msgstr "Namrzající déšť"
+
+#: xgettextdummy.php:127
+msgid "Frozen Mix"
+msgstr "Mrznoucí déšť se sněhem"
+
+#: xgettextdummy.php:128
+msgid "Hazy"
+msgstr "Opar"
+
+#: xgettextdummy.php:129
+msgid "Headline"
+msgstr "Jasno"
+
+#: xgettextdummy.php:130
+msgid "Heavy Rain"
+msgstr "Silný déšť"
+
+#: xgettextdummy.php:131
+msgid "Heavy Snow"
+msgstr "Silné sněžení"
+
+#: xgettextdummy.php:132
+msgid "Hot and Humid"
+msgstr "Horko a vlhko"
+
+#: xgettextdummy.php:133
+msgid "Increasing Clouds"
+msgstr "Přibývající oblačnost"
+
+#: xgettextdummy.php:134
+msgid "Light Snow"
+msgstr "Lehké sněžení"
+
+#: xgettextdummy.php:135
+msgid "Mostly Clear"
+msgstr "Převážně jasno"
+
+#: xgettextdummy.php:136
+msgid "Mostly Cloudy"
+msgstr "Převážně zataženo"
+
+#: xgettextdummy.php:137
+msgid "Mostly Sunny"
+msgstr "Převážně slunečno"
+
+#: xgettextdummy.php:138
+msgid "Nowcast"
+msgstr "Nowcast"
+
+#: xgettextdummy.php:139
+msgid "Partly Cloudy"
+msgstr "Částečně zataženo"
+
+#: xgettextdummy.php:140
+msgid "Partly Sunny"
+msgstr "Částečně slunečno"
+
+#: xgettextdummy.php:141
+msgid "Rain"
+msgstr "Déšť"
+
+#: xgettextdummy.php:142
+msgid "Rain Showers"
+msgstr "Dešťové přeháňky"
+
+#: xgettextdummy.php:143
+msgid "Scattered Showers"
+msgstr "Občasné přeháňky"
+
+#: xgettextdummy.php:144
+msgid "Scattered Thunderstorms"
+msgstr "Občasné bouřky"
+
+#: xgettextdummy.php:145
+msgid "Sleet"
+msgstr "Déšť se sněhem"
+
+#: xgettextdummy.php:146
+msgid "Snow"
+msgstr "Sníh"
+
+#: xgettextdummy.php:147
+msgid "Snow Showers"
+msgstr "Sněhové přeháňky"
+
+#: xgettextdummy.php:148
+msgid "Sunny"
+msgstr "slunečno"
+
+#: xgettextdummy.php:149
+msgid "Thunderstorms"
+msgstr "Bouřky"
+
+#: xgettextdummy.php:151
+msgid "Very Cold"
+msgstr "Velmi chladno"
+
+#: xgettextdummy.php:152
+msgid "Very Hot"
+msgstr "Velmi teplo"
+
+#: xgettextdummy.php:153
+msgid "Warm and Humid"
+msgstr "Teplo a vlhko"
+
+#: xgettextdummy.php:154
+msgid "Windy"
+msgstr "Větrno"
+
+#~ msgid "tmp"
+#~ msgstr "current temperature"
+
+#~ msgid "Accuweather failure notice"
+#~ msgstr "Accuweather failure notice"
