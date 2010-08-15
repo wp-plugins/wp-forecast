@@ -1,5 +1,5 @@
 /*
-  javascript function for wp-monalisa import dialog
+  javascript function for wp-forecast import dialog
 */
 function submit_this(){
     // the fields that are to be processed

@@ -62,6 +62,47 @@
 	//document.options.apikey2.disabled=false;
       }
 
+      if (service=="google") {
+	document.woptions.apikey1.disabled=false;
+	//document.woptions.apikey2.disabled=false;
+	if (typeof(document.woptions.allnight) != "undefined"){
+	    document.woptions.allnight.disabled=true;
+	    document.woptions.night1.disabled=true;
+	    document.woptions.night2.disabled=true;
+	    document.woptions.night3.disabled=true;
+	    document.woptions.night4.disabled=true;
+	    document.woptions.night5.disabled=true;
+	    document.woptions.night6.disabled=true;
+	    document.woptions.night7.disabled=true;
+	    document.woptions.night8.disabled=true;
+	    document.woptions.night9.disabled=true;
+	    document.woptions.day6.disabled=true; 
+	    document.woptions.day7.disabled=true; 
+	    document.woptions.day8.disabled=true; 
+	    document.woptions.day9.disabled=true;
+	    document.woptions.d_c_sunrise.checked=false; 
+	    document.woptions.d_c_sunset.checked=false; 
+	    document.woptions.d_d_wind.checked=false;
+	    document.woptions.d_n_wind.checked=false;	
+	    document.woptions.d_c_wgusts.checked=false;
+	    document.woptions.d_d_wgusts.checked=false;	
+	    document.woptions.d_n_wgusts.checked=false;
+	    document.woptions.d_c_humid.checked=false;
+	    document.woptions.d_c_press.checked=false;
+	    document.woptions.d_c_real.checked=false;
+	    document.woptions.d_c_sunrise.disabled=true;
+	    document.woptions.d_c_sunset.disabled=true;
+	    document.woptions.d_d_wind.disabled=true;
+	    document.woptions.d_n_wind.disabled=true; 
+	    document.woptions.d_c_humid.disabled=true;
+	    document.woptions.d_c_press.disabled=true;
+	    document.woptions.d_c_real.disabled=true;	
+	    document.woptions.d_c_wgusts.disabled=true;
+	    document.woptions.d_d_wgusts.disabled=true;	
+	    document.woptions.d_n_wgusts.disabled=true;
+	}
+      }
+
       if (service=="bug") {
 	document.options.apikey1.disabled=false;
 	//document.options.apikey2.disabled=true;

@@ -128,21 +128,46 @@ function wp_forecast_activate()
     };    
   } // end of for 
    
+  global $blog_id;
+  if ( function_exists("is_multisite") && is_multisite() && $blog_id!=1) {
+      // add options for super admin on multisites
+      $wpf_sa_defaults = get_option("wpf_sa_defaults");
+      $wpf_sa_allowed  = get_option("wpf_sa_allowed");
 
-  // add options for super admin on multisites
-  $wpf_sa_defaults = maybe_unserialize(get_option("wpf_sa_defaults"));
-  $wpf_sa_allowed  = maybe_unserialize(get_option("wpf_sa_allowed"));
-  
-  if ($wpf_sa_defaults == "") {
-      $wpf_sa_defaults = serialize(array());
-      add_option("wpf_sa_defaults",$wpf_sa_defaults);
+      $allallowed = array(
+	  "ue_wp-forecast-count"         => 1,
+	  "ue_wp-forecast-timeout"       => 1,
+	  "ue_wp-forecast-pre-transport" => 1,
+	  "ue_wp-forecast-delopt"        => 1,
+	  "ue_service"                   => 1,
+	  "ue_apikey1"                   => 1,
+	  "ue_location"                  => 1,
+	  "ue_locname"                   => 1,
+	  "ue_refresh"                   => 1,
+	  "ue_metric"                    => 1,
+	  "ue_currtime"                  => 1,
+	  "ue_timeoffset"                => 1,
+	  "ue_windunit"                  => 1,
+	  "ue_wpf_language"              => 1,
+	  "ue_pdforecast"                => 1,
+	  "ue_pdfirstday"                => 1,
+	  "ue_dispconfig"                => 1,
+	  "ue_forecast"                  => 1,
+	  "ue_daytime"                   => 1,
+	  "ue_nighttime"                 => 1
+	  );
+      
+      if (!$wpf_sa_defaults) {
+	  $wpf_sa_defaults = serialize(array());
+	  add_blog_option(1,"wpf_sa_defaults",$wpf_sa_defaults);
+      }
+      
+      if (!$wpf_sa_allowed) {
+	  $wpf_sa_allowed = serialize($allallowed);
+	  add_blog_option(1,"wpf_sa_allowed",$wpf_sa_allowed);
+      }
   }
-  
-  if ($wpf_sa_allowed == "") {
-      $wpf_sa_allowed = serialize(array());
-      add_option("wpf_sa_allowed",$wpf_sa_allowed);
-  }
-  
+
   pdebug(1,"End of wp_forecast_activate ()");
 }
 

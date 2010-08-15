@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 3.0
+Version: 3.1
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
@@ -45,7 +45,7 @@ static $wp_forecast_pre_transport="";
 //
 // maximal number of widgets to use
 //
-static $wpf_maxwidgets=20;
+$wpf_maxwidgets=20;
 
 //
 // set to 0 for no debugging information
@@ -61,6 +61,8 @@ static $wpf_debug=0;
 require_once("func_accu.php");
 // weatherbug data functions
 require_once("func_bug.php");
+// google data functions
+require_once("func_google.php");
 
 // generic functions
 require_once("funclib.php");
@@ -81,6 +83,7 @@ require_once("wpf_autoupdate.php");
 if (! function_exists('wp_get_current_user'))
 	require_once(ABSPATH . '/wp-includes/pluggable.php');
 
+global $blog_id;
 if ( function_exists("is_multisite") && is_multisite() && 
      function_exists('is_super_admin') && is_super_admin() ) {
     pdebug(1,"I am a SuperAdmin. :-)");
@@ -141,6 +144,13 @@ function wp_forecast_init()
 
 	    case "com":
 		// to be done
+		break;
+		
+	    case "google":
+		$w = google_get_weather($wpf_vars['GOOGLE_BASE_URI'],
+					$wpf_vars['location'],
+					substr($wpf_vars['wpf_language'],0,2));
+		$weather=google_xml_parser(utf8_encode($w));
 		break;
 	    }
 
@@ -303,7 +313,10 @@ function wp_forecast_data($wpfcid="A", $language_override=null)
     break;
   case "com":
     // to be done
-    break;
+    break; 
+  case "google":
+      $weather_arr= google_forecast_data($wpfcid,$language_override);
+      break;
   }
 
   return $weather_arr;

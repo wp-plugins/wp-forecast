@@ -370,7 +370,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     list($dummy, $weather_arr['sunrise']) = split(" ",$w['sunrise'],2);
     list($dummy, $weather_arr['sunset'] ) = split(" ",$w['sunset'] ,2);
-    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; 2009 WeatherBug</a>';
+    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; 2010 WeatherBug</a>';
     
     // additional info
     $weather_arr['lat']=$w['lat'];

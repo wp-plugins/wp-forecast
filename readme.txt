@@ -4,7 +4,7 @@ Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 3.0
+Stable tag: 3.1
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -60,6 +60,7 @@ Credits:
  + Roland Geci			translation to slovak
  + Pavel Soukenik		translation to czech
  + Pavel Karnaukhov		translation to ukraine
+ + Zoran Maric			translation to serbian (latin)
  + All the others giving feedback about missing features and bugs.   
    Thank you very much for your contribution to wp-forecast.   
 
@@ -158,6 +159,16 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v3.1 (2010-08-02) =
+* fixed several bugs when using presettings in multiusermode
+* added support for GoogleWeather API
+* added serbian latin translation (thanks to Zoran)
+* fixed year in copyright notice
+* update accuweather servicelink to new server
+* fixed translation for superadmin dialog on multisites
+* added colored checkboxes to superadmin dialog
+* removed examples folder from package
 
 = v3.0 (2010-05-15) =
 * timeoffset is now considered for current time too

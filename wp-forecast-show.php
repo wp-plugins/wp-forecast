@@ -233,6 +233,11 @@ function show($wpfcid,$args,$wpfvars)
 	// else take given weatherbug time
 	$cd = $w['bugdate'];
 	$ct = $w['bugtime'];
+    } else  if ($service=="google")
+    {
+	// else take given weatherbug time
+	$cd = $w['googledate'];
+	$ct = $w['googletime'];
     }	
     
     if (substr($dispconfig,18,1) == "1" or substr($dispconfig,1,1) == "1") {
@@ -258,6 +263,9 @@ function show($wpfcid,$args,$wpfvars)
       if ($service=="accu")
 	$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
       if ($service=="bug")
+	$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+
+      if ($service=="google")
 	$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
     }     
     
@@ -333,7 +341,8 @@ function show($wpfcid,$args,$wpfvars)
       $maxdays=7;  break;
   case "com":
       // to be done
-      break;
+  case "google":
+      $maxdays=4; break;
   }
 
   $out1 = "<div class=\"wp-forecast-fc\">\n";
@@ -366,6 +375,10 @@ function show($wpfcid,$args,$wpfvars)
 		      __($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language)."' />";
 
 	  if ($service=="bug")
+	    $out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
+		"' alt='".$w["fc_dt_desc_".$i]."' />"; 
+
+	  if ($service=="google")
 	    $out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
 		"' alt='".$w["fc_dt_desc_".$i]."' />"; 
 	  } 

@@ -128,13 +128,17 @@ function get_loclist($uri,$loc)
 //
 function wpf_admin_form($wpfcid='A',$widgetcall=0) 
 {
-    global $wpf_maxwidgets;
+    global $wpf_maxwidgets, $blog_id;
+
+    if ( function_exists("is_multisite") && is_multisite() && $blog_id!=1
+	 && ! wpf_get_option('wpf_sa_allowed'))
+	wp_forecast_activate();
 
   pdebug(1,"Start of wpf_admin_form ()");  
 
   $count       = wpf_get_option('wp-forecast-count');
-  $wpf_timeout = wpf_get_option("wp-forecast-timeout");
-  $wpf_delopt  = wpf_get_option("wp-forecast-delopt");
+  $wpf_timeout = wpf_get_option('wp-forecast-timeout');
+  $wpf_delopt  = wpf_get_option('wp-forecast-delopt');
 
   // get locale 
   $locale = get_locale();
@@ -197,7 +201,8 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 	    wpf_update_option('wp-forecast-pre-transport', $_POST['wp-forecast-pre-transport']);
     } 
 
-
+    // start of form ---------------------------------------------------------------------------
+    //
     // print out number of widgets selection
     $out  = "<div class='wrap'>";
     $out .= "<h2>WP-Forecast Widgets</h2>";
@@ -295,14 +300,15 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
 // the form also has a search function to search the wright location
 //
 function wpf_sub_admin_form($wpfcid,$widgetcall) {
-  global $loc;
+    global $loc, $blog_id;
 
   pdebug(1,"Start of wpf_sub_admin_form ()");  
 
   // get parameters
   $av=get_wpf_opts($wpfcid);
   $allowed  = maybe_unserialize(wpf_get_option("wpf_sa_allowed"));
-  if ( function_exists("is_multisite") && is_multisite() )
+
+  if ( function_exists("is_multisite") && is_multisite() && $blog_id!=1 )
       $ismulti = true;
   else
       $ismulti = false;
@@ -488,8 +494,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <select name="service" id="service" size="1" onchange="apifields(document.woptions.service.value);">
 	   <option value="accu" <?php if ($av['service']=="accu") echo "selected=\"selected\""?>><?php echo __('AccuWeather',"wp-forecast_".$locale)?></option>
            <option value="bug" <?php if ($av['service']=="bug") echo "selected=\"selected\""?>><?php echo __('WeatherBug',"wp-forecast_".$locale)?></option>
-           <!--
-           <option value="com" <?php if ($av['service']=="com") echo "selected=\"selected\""?>><?php echo __('Weather.com',"wp-forecast_".$locale)?></option> -->
+           <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> 
 	 </select></p>
 
          <p><?php echo __('Partner ID',"wp-forecast_".$locale)?>:
@@ -751,10 +756,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          </tr>
        </table>
        </div>
-       <!-- finally update field attributes -->		   
-       <script type="text/javascript">
-	       apifields(document.woptions.service.value);wpf_wpmu_disable_fields(); 
-       </script>
+       
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
 <?php
    if ($widgetcall ==0) 
@@ -804,6 +806,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
        echo "</div></form></div>";
      }
    
+   echo '<script type="text/javascript">apifields(document.woptions.service.value);wpf_wpmu_disable_fields();</script>';
+
    pdebug(1,"End of wpf_sub_admin_form ()");
 }
 ?>

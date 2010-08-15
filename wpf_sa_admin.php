@@ -24,26 +24,18 @@ require_once("funclib.php");
 
 
 //
-// delete cache if parameters are changed, to make sure
-// current data will be available with next call
-//
-function wpmu_forecast_admin_init() 
-{
-  pdebug(1,"Start of wpmu_forecast_admin_init ()");
-  
-  // add thickbox and jquery for checklist 
-  wp_enqueue_script( 'thickbox' );
-  wp_enqueue_style ( 'thickbox' );
-
-  pdebug(1,"End of wpmu_forecast_admin_init ()");
-}
-
-//
 // add menuitem for options menu
 //
 function wpmu_forecast_admin() 
 {
   pdebug(1,"Start of wpmu_forecast_admin ()");
+
+   $cssurl  = WP_PLUGIN_URL . '/wp-forecast/wpf_sa_admin.css';
+   $cssfile = WP_PLUGIN_DIR . '/wp-forecast/wpf_sa_admin.css';
+   if ( file_exists($cssfile) ) {
+       wp_register_style('wpf_sa_admin', $cssurl);
+       wp_enqueue_style( 'wpf_sa_admin');
+   }
 
   add_submenu_page("ms-admin.php", 'wp-forecast', 'wp-forecast', 'edit_plugins', 
 		    basename(__FILE__), 'wpf_wpmu_admin_form',
@@ -69,6 +61,14 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
     if ( ! is_plugin_active("wp-forecast/wp-forecast.php") )
 	$out .= '<div class="error"><p>'.__("wp-forecast plugin not found. Please install and activate wp-forecast.").'</p></div>';
 
+
+    // if this is a post call delete_sa_opts
+    if ( isset( $_POST['del_sa_opts'] ) && $_POST['delete_sa_opts']==1 ) {
+	delete_option("wpf_sa_defaults");
+	delete_option("wpf_sa_allowed");
+    }
+
+    // get opts
     $defaults = maybe_unserialize(get_option("wpf_sa_defaults"));
     $allowed  = maybe_unserialize(get_option("wpf_sa_allowed"));
     if ($defaults == "") $defaults=array();
@@ -86,12 +86,13 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 
     // load translation
     if(function_exists('load_textdomain')) 
-	load_textdomain("wp-forecast_".$locale, PLUGINDIR ."/wp-forecast/lang/".$locale.".mo");
+	load_textdomain("wp-forecast_".$locale, ABSPATH . PLUGINDIR ."/wp-forecast/lang/".$locale.".mo");
+ 
+    
 
     // if this is a post call
     if ( isset($_POST['info_update']) ) {
-	
-	$allowed['ue_wp-forecast-count']        = $_POST['ue_wp-forecast-count'];	
+	$allowed['ue_wp-forecast-count']         = $_POST['ue_wp-forecast-count'];	
 	$allowed['ue_wp-forecast-timeout']       = $_POST['ue_wp-forecast-timeout'];
 	$allowed['ue_wp-forecast-pre-transport'] = $_POST['ue_wp-forecast-pre-transport'];
 	$allowed['ue_wp-forecast-delopt']        = $_POST['ue_wp-forecast-delopt'];	
@@ -199,12 +200,12 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "<div class='wrap'>";
     $out .= "<h2>WPMU-Admin-Settings for WP-Forecast</h2>";
     
-    $out .= "<span class='wpfbcg'>Check the checkbox in front of each line to user enable this option.</span>";
+    $out .= "<span class='wpfbcg'><b>" . __("Check the colored checkboxes to user enable the options","wp-forecast_".$locale) . "</b></span>";
     $out .= "<form name='options' id='options' method='post' action=''>";
     
     $out .= "<table><tr><td><span class='wpfbcg'><input type='checkbox' name='ue_wp-forecast-count' value='1'";
     if ($allowed['ue_wp-forecast-count']=="1") $out .= "checked='checked'";
-    $out .= "/></span>".__('Number of widgets per user',"wp-forecast_".$locale)."</td>";
+    $out .= "/></span>".__('Maximal number of widgets per user',"wp-forecast_".$locale)."</td>";
     $out .= "<td><input id='wp-forecast-count' name='wp-forecast-count' type='text' size='2' maxlength='2' value='".$defaults['wp-forecast-count']. "' /></td></tr>";
     
     
@@ -241,6 +242,11 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 	$out .= 'checked="checked"';
     $out .= " />";
     $out .= "</td></tr></table>\n"; 
+
+    // button to delete superadmin options
+    $out .= '<div style="text-align:right;"><label for="delete_sa_opts">'.__('Delete SuperAdmin options',"wp-forecast_".$locale).':</label><input name="delete_sa_opts" id="delete_sa_opts" type="checkbox" value="1"  />';
+    $out .= '&nbsp;&nbsp;&nbsp;<input type="submit" name="del_sa_opts" value="'.__('Delete SA-Options','wp-forecast_'.$locale).' &raquo;" /></div>'."\n";
+
     
     echo $out;
 ?>

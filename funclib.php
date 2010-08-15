@@ -179,18 +179,17 @@ function windstr($metric,$wspeed,$windunit)
 //
 function wpf_get_option($name)
 {
-    if ( !function_exists("is_multisite") || ! is_multisite() )
+    global $blog_id;
+    
+    if ( !function_exists("is_multisite") || ! is_multisite() || $blog_id==1 )
 	return get_option($name);
     else {
 	// this is the multisite part 
-	if ( $name=="wpf_sa_defaults" or
+	if ( $name == "wpf_sa_defaults" or
 	     $name == "wpf_sa_allowed" )
 	    return get_blog_option(1, $name);
-	else {
-	    global $blog_id;
-	    $val = get_blog_option($blog_id, $name);
-	    return $val;
-	}
+	else 
+	    return get_blog_option($blog_id, $name);
     }
 }
 
@@ -200,12 +199,12 @@ function wpf_get_option($name)
 //
 function wpf_update_option($name, $value)
 {
-    if ( !function_exists("is_multisite") || ! is_multisite() )
+    global $blog_id;
+    
+    if ( !function_exists("is_multisite") || ! is_multisite() || $blog_id==1)
 	update_option($name, $value);
-    else {
-	global $blog_id;
-	update_blog_option($blog_id, $name, $value);
-    }
+    else 
+	update_blog_option($blog_id, $name, $value);    
 }
 
 //
@@ -214,12 +213,12 @@ function wpf_update_option($name, $value)
 //
 function wpf_add_option($name, $value)
 {
-    if ( !function_exists("is_multisite") || ! is_multisite() )
+    global $blog_id;
+    
+    if ( !function_exists("is_multisite") || ! is_multisite() || $blog_id==1 )
 	add_option($name, $value);
-    else {
-	global $blog_id;
+    else 
 	add_blog_option($blog_id, $name, $value);
-    }
 }
 
 //
@@ -228,7 +227,9 @@ function wpf_add_option($name, $value)
 function get_wpf_opts($wpfcid) 
 {
   pdebug(1,"Start of get_wpf_opts ($wpfcid)");
- 
+
+  global $blog_id;
+
   $av=array();
   $opt = wpf_get_option("wp-forecast-opts".$wpfcid);
 
@@ -296,10 +297,13 @@ function get_wpf_opts($wpfcid)
   $av['BUG_BASE_URI']="http://#apicode#.api.wxbug.net/getLiveWeatherRSS.aspx?ACode=#apicode#&cityCode=";
   $av['BUG_FORC_URI']="http://#apicode#.api.wxbug.net/getForecastRSS.aspx?ACode=#apicode#&cityCode=";
   
-
+  $av['GOOGLE_LOC_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/locate_city.asp?location=";
+  $av['GOOGLE_BASE_URI']="http://www.google.com/ig/api?";
+  
   // if we use multisite then merge admin options
-  if ( function_exists("is_multisite") && is_multisite() )
+  if ( function_exists("is_multisite") && is_multisite() && $blog_id !=1)
   {
+
       // read defaults and allowed fields
       $defaults = maybe_unserialize(wpf_get_option("wpf_sa_defaults"));
       $allowed  = maybe_unserialize(wpf_get_option("wpf_sa_allowed"));
@@ -307,6 +311,12 @@ function get_wpf_opts($wpfcid)
       if (!$allowed)
 	  $allowed=array();
 
+      // set wpf_maxwidgets for users
+      global $blog_id, $wpf_maxwidgets;
+      if ($blog_id > "1" and isset($defaults["wp-forecast-count"]))
+	  $wpf_maxwidgets = $defaults["wp-forecast-count"];
+     
+      // map rest of fields
       foreach($allowed as $f => $fswitch)
       {
   	  $fname = substr($f,3); // strip ue_ prefix
@@ -314,7 +324,8 @@ function get_wpf_opts($wpfcid)
   	  if ( $fswitch != "1" or ! isset($av[ $fname ]) )
   	  {
   	      // replace value in av with forced default
-  	      $av[ $fname ] = $defaults[$fname];
+	      if (array_key_exists($fname, $defaults))
+		  $av[ $fname ] = $defaults[$fname];
   	  }
       }
       

@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2010  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -279,7 +279,8 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
   // --------------------------------------------------------------
   // calc values for current conditions
   if ( ! isset($w['failure'])) {
-    $weather_arr['servicelink']= 'http://www.accuweather.com/world-index-forecast.asp?locCode=' . $location . '&amp;metric=' . $metric;
+
+    $weather_arr['servicelink']= 'http://www.accuweather.com/quick-look.aspx?partner=accuweather&amp;loc=' . $location . '&amp;metric=' . $metric;
     // next line is for compatibility
     $weather_arr['acculink']=$weather_arr['servicelink'];
     $weather_arr['location'] = $locname;
@@ -322,7 +323,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $sunarr = explode(" ",$w["sun"]);
     $weather_arr['sunrise']=$sunarr[0];
     $weather_arr['sunset']=$sunarr[1];
-    $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; 2009 AccuWeather, Inc.</a>';
+    $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; 2010 AccuWeather, Inc.</a>';
     
     
     // calc values for forecast
