@@ -478,8 +478,8 @@ function show($wpfcid,$args,$wpfvars)
   //
   // mark ids: wpfbl wpfc1 wpfc2 wpfbm with widget id have disjunct ods when using more than one pulldown widget
   if ( $pdforecast == 1 ) {
-      $out1 .= "<div class='wpff_nav' id='wpfbl".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n"; 
-      $out1 = "<div class='wpff_nav' id='wpfbl".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n" . $out1;
+      $out1 .= "<div class='wpff_nav' id='wpfbl1".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n"; 
+      $out1 = "<div class='wpff_nav' id='wpfbl2".$wpfcid."' onclick=\"document.getElementById('wpfc1".$wpfcid."').style.display='none';document.getElementById('wpfc2".$wpfcid."').style.display='block';return false;\">" . __("Less forecast...","wp-forecast_" . $wpf_language) . "</div>\n" . $out1;
       $out2 .= "<div class='wpff_nav' id='wpfbm".$wpfcid."' onclick=\"document.getElementById('wpfc2".$wpfcid."').style.display='none';document.getElementById('wpfc1".$wpfcid."').style.display='block';return false;\">" . __("More forecast...","wp-forecast_" . $wpf_language) . "</div>\n";
       
       $out1 = '<div id="wpfc1'.$wpfcid.'"  style="display:none;">' . $out1 . "</div>\n";
