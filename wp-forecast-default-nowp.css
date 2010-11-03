@@ -101,7 +101,7 @@ div.wp-forecast-fc-right {
     padding: 3px;
     text-align:left; 
     width: 90px;
-    float: right; 
+    float: right;
 }
 
 /* style for forecast weather icon */
@@ -110,4 +110,26 @@ img.wp-forecast-fc-left {
     padding: 0px;
 }
 
+/* style for navigation when using ajax pulldown */
+div.wpff_nav {
+    font-size: 11px; 
+    border: 0px solid;
+    padding: 1px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    float: left;
+    height: 11px;
+}
 
+div.wpff_nav:hover {
+    color:#147;
+    text-decoration:underline; 
+    cursor:pointer;
+}
+
+/* style for selection widget */
+div.wpf-selector {
+    padding: 5px;
+    font-size: 11px;
+}
