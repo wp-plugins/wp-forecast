@@ -148,7 +148,7 @@ function show($wpfcid,$args,$wpfvars)
       $fout .="<input id='wpf_selector_site' type='hidden' value='" .
 	  site_url("/wp-content/plugins/wp-forecast")."' />";
       $fout .= "</form>";
-      $fout .='<script type="text/javascript">window.onDomReady(wpf_update);</script>';
+      $fout .='<script type="text/javascript">window.onDomReady(wpf_load);</script>';
       $fout .= "</div>";
      
   }

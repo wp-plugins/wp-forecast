@@ -5,12 +5,36 @@ and corresponding data on the fly
 
  */
 
-
+/* load widget for the first time on this page */
+function wpf_load() 
+{
+    // get cookie
+    if(document.cookie){ 
+	a = document.cookie;
+	cookiename = a.substring(0,a.indexOf('='));
+	if(a.indexOf(';') != -1){
+	    cookiewert = a.substring(a.indexOf('=')+1,a.indexOf(';'));
+	} else {
+	    cookiewert = a.substr(a.indexOf('=')+1,a.length);
+	}
+	// set selected location
+	if (cookiename == 'location')
+	   document.getElementById("wpf_selector").value = cookiewert;
+    }
+    // update widget
+    wpf_update();
+}
 /* get the data for the new location */
 function wpf_update()
 {
     var newloc  = document.getElementById("wpf_selector").value;
     var siteuri = document.getElementById("wpf_selector_site").value; 
+
+    // set cookie with newloc
+    var expire = new Date();
+    expire = new Date(expire.getTime() +1000*60*60*24*365);
+    document.cookie = escape("location=" + newloc) + 
+	'; expires='+expire.toGMTString()+';';
 
     jQuery.get(siteuri + "/wp-forecast-show.php", 
 	       { wpfcid: newloc, header: "0" , selector: "1" },
