@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2010 Hans Matzen
+/*  Copyright 2010-2011 Hans Matzen
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,9 +37,11 @@ function wpmu_forecast_admin()
        wp_enqueue_style( 'wpf_sa_admin');
    }
 
-  add_submenu_page("ms-admin.php", 'wp-forecast', 'wp-forecast', 'edit_plugins', 
-		    basename(__FILE__), 'wpf_wpmu_admin_form',
-		    site_url("/wp-content/wp-forecast").'/wpf_sa.png');
+   // check if we are superadmin and may see the super admin dialog
+   if ( function_exists("is_multisite") && is_multisite() && is_super_admin() )
+       add_submenu_page("options-general.php", 'wp-forecast', 'wp-forecast', 'edit_plugins', 
+			basename(__FILE__), 'wpf_wpmu_admin_form',
+			site_url("/wp-content/wp-forecast").'/wpf_sa.png');
 
   pdebug(1,"End of wpmu_forecast_admin ()");
 } 

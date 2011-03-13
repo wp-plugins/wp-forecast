@@ -3,13 +3,13 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 3.3
+Version: 3.4
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
 
 /*  
-    Copyright 2006-2010  Hans Matzen 
+    Copyright 2006-2011  Hans Matzen 
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -67,7 +67,7 @@ require_once("func_google.php");
 // generic functions
 require_once("funclib.php");
 // include setup functions
-require_once("setup.php");
+require_once("wpf_setup.php");
 // include admin options page
 require_once("wp-forecast-admin.php");
 // display functions
@@ -76,20 +76,11 @@ require_once("wp-forecast-show.php");
 require_once("shortcodes.php");
 // support for wordpress autoupdate
 require_once("wpf_autoupdate.php");
+// super admin dialog
+require_once("wpf_sa_admin.php");
 
-// include super admin admin dialog on multisite
-
-// work around a bug in wp 3.0beta2-
-if (! function_exists('wp_get_current_user'))
-	require_once(ABSPATH . '/wp-includes/pluggable.php');
 
 global $blog_id;
-if ( function_exists("is_multisite") && is_multisite() && 
-     function_exists('is_super_admin') && is_super_admin() ) {
-    pdebug(1,"I am a SuperAdmin. :-)");
-    require_once("wpf_sa_admin.php");
-}
-
 
 //
 // set cache with weather data for current parameters
@@ -469,8 +460,9 @@ register_deactivation_hook(__FILE__,'wp_forecast_deactivate');
 
 // add option page 
 add_action('admin_menu', 'wp_forecast_admin');
-if ( function_exists("is_multisite") && is_multisite() && is_super_admin() )
-    add_action('admin_menu', 'wpmu_forecast_admin');
+
+// add super admin options page (check for super admin is done inside)
+add_action('admin_menu', 'wpmu_forecast_admin');
 
 // Run our code later in case this loads prior to any required plugins.
 add_action('plugins_loaded', 'widget_wp_forecast_init');
