@@ -92,7 +92,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
       wp_forecast_css_nowp($wpfcid);
       echo "</head>\n<body>\n";
   }
-
+  
   show($selector . $wpfcid,$args,$wpf_vars);
 
   if ($header)
@@ -113,7 +113,6 @@ function show($wpfcid,$args,$wpfvars)
   extract($wpfvars);
   extract($args);
  
-
   // get translations
   if(function_exists('load_textdomain')) {
       global $l10n;
@@ -147,6 +146,7 @@ function show($wpfcid,$args,$wpfvars)
       $fout .= "</select>";
       $fout .="<input id='wpf_selector_site' type='hidden' value='" .
 	  site_url("/wp-content/plugins/wp-forecast")."' />";
+      $fout .="<input id='wpf_language' type='hidden' value='" . $wpf_language ."' />";
       $fout .= "</form>";
       $fout .='<script type="text/javascript">window.onDomReady(wpf_load);</script>';
       $fout .= "</div>";

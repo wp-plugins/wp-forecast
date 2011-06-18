@@ -4,7 +4,7 @@ Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
 Tested up to: 3.1
-Stable tag: 3.4
+Stable tag: 3.5
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -161,13 +161,17 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
+= v3.5 (2011-04-21) =
+* added updated finish translation from Jaakko
+* selection widget now accepts language_override to set langauge different from default
+
 = v3.4 (2011-03-13) =
 * added updated dansk translation (thanks to Michael S.R. Petersen)
 * fixed a problem with wp 3.1 in network mode, due to a different search path th
 e wrong setup.php was included
 
 
-= v3.3 (2010-11-02)
+= v3.3 (2010-11-02) =
 * moved enqueue script to init hook where it should be to avoid conflicts with other plugins
 * added bulgarian translation
 * if you return to a wp-forecast site which uses selection widget, your selected location will be remembered and automatically displayed when you return (uses cookies)

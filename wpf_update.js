@@ -27,8 +27,9 @@ function wpf_load()
 /* get the data for the new location */
 function wpf_update()
 {
-    var newloc  = document.getElementById("wpf_selector").value;
-    var siteuri = document.getElementById("wpf_selector_site").value; 
+    var newloc   = document.getElementById("wpf_selector").value;
+    var siteuri  = document.getElementById("wpf_selector_site").value; 
+    var language = document.getElementById("wpf_language").value;
 
     // set cookie with newloc
     var expire = new Date();
@@ -37,7 +38,7 @@ function wpf_update()
 	'; expires='+expire.toGMTString()+';';
 
     jQuery.get(siteuri + "/wp-forecast-show.php", 
-	       { wpfcid: newloc, header: "0" , selector: "1" },
+	       { wpfcid: newloc, header: "0" , selector: "1" , language_override: language },
 	       function(data){
 		   /*
 		   var b = data.indexOf(">");
