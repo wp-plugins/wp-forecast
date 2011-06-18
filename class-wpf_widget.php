@@ -15,25 +15,30 @@ if ( !class_exists('wpf_widget') )
 	
 	function widget( $args, $instance )
 	{ 
-	    pdebug(1,"Start of function wp_forecast_widget ()");
+	    pdebug(1,"Start of function class wpf_widget::widget ()");
 	    
-	    //extract($args);
 	    // get widget params from instance
 	    $title = $instance['title'];  
 	    $wpfcid = $instance['wpfcid']; 
 
+	    if (trim($wpfcid) =="") 
+		$wpfcid="A";
+
 	    // pass title to show function
 	    $args['title'] = $title;
 
-	    $wpf_vars=get_wpf_opts($wpfcid);
+	    if ( $wpfcid == "?")
+		 $wpf_vars=get_wpf_opts("A");
+	    else
+		$wpf_vars=get_wpf_opts($wpfcid);
+
 	    if (!empty($language_override)) {
 		$wpf_vars['wpf_language']=$language_override;
 	    }
-	    //$weather=unserialize(get_option("wp-forecast-cache".$wpfcid));
 	    
 	    show($wpfcid,$args,$wpf_vars);
 	     
-	    pdebug(1,"End of function wp_forecast_widget ()");
+	    pdebug(1,"End of function  class wpf_widget::widget () ");
 	}
 	
 	function update( $new_instance, $old_instance )
@@ -49,7 +54,7 @@ if ( !class_exists('wpf_widget') )
 	{
 	    pdebug(1,"Start of wpf_widget::form()");
 	    
-	    $count = get_option('wp-forecast-count');
+	    $count = wpf_get_option('wp-forecast-count');
 	    
             // get translation 
 	    $locale = get_locale();
@@ -74,15 +79,21 @@ if ( !class_exists('wpf_widget') )
             // print out widget selector
 	    $out .='<p><label for ="'. $this->get_field_id('wpfcid') . '" >';
 	    $out .= __('Available widgets',"wp-forecast_".$locale);
-	    $out .= "<select name='". $this->get_field_name("wpfcid") ."' size='1' >";
+	    $out .= "<select name='". $this->get_field_name("wpfcid") ."' size='1' >";	
+	    // option for choose dialog
+	    $out .="<option value='?' ";
+	    if ( $wpfcid == $id )
+		$out .=" selected='selected' ";
+	    $out .=">?</option>";
+
 	    for ($i=0;$i<$count;$i++) {
 		$id = get_widget_id( $i );
 		$out .="<option value='".$id."' ";
-		if ( $wpfcid == $id )
+		if ( $wpfcid == $id or ($wpfcid == "" and $id="A"))
 		    $out .=" selected='selected' ";
 		$out .=">".$id."</option>";
 	    }
-	    $out .= "</select></p>";
+	    $out .= "</select></label></p>";
 	    echo $out;
 	    
 	    pdebug(1,"End of wpf_widget::form()");
