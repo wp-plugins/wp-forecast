@@ -3,8 +3,8 @@ Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
-Tested up to: 3.1
-Stable tag: 3.5
+Tested up to: 3.2
+Stable tag: 3.6
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -160,6 +160,10 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v3.6 (2011-07-06) =
+* changed accuweather copyright notice to 2011
+* removed use of HttpExt class for transport, since it was removed from wordpress 3.2
 
 = v3.5 (2011-04-21) =
 * added updated finish translation from Jaakko

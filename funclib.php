@@ -548,8 +548,8 @@ if (! function_exists("get_wp_transports") )
 	    // get wordpress default transports
 	    $wplist = array();
 	    
-	    if ( true === WP_Http_ExtHttp::test( array() ) ) 
-		$tlist[] = "exthttp";
+	    //if ( true === WP_Http_ExtHttp::test( array() ) ) 
+		//$tlist[] = "exthttp";
 	    
 	    if ( true === WP_Http_Fsockopen::test( array() ) ) 
 		$tlist[] = "fsockopen";
