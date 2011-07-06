@@ -1,45 +1,41 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-forecast dutch translation\n"
+"Project-Id-Version: wp-forecast 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 07:56+0200\n"
-"PO-Revision-Date: 2010-01-25 19:35+0100\n"
-"Last-Translator: Wim Scholtes <wim@iScholtes.nl>\n"
-"Language-Team: Frans Lieshout\n"
+"PO-Revision-Date: 2010-07-10 19:56+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: class-wpf_widget.php:73 wp-forecast-admin.php:102
 msgid "Title:"
-msgstr "Titel:"
+msgstr "Naslov:"
 
 #: class-wpf_widget.php:81 wp-forecast-admin.php:217
 msgid "Available widgets"
-msgstr "Beschikbare widgets"
+msgstr "Raspoloživi vidžeti"
 
 #: func_bug.php:222
 msgid "Location does not exist"
-msgstr "Locatie bestaat niet"
+msgstr ""
 
 #: func_bug.php:362 func_bug.php:389 xgettextdummy.php:150
 msgid "Unknown"
-msgstr "Onbekend"
+msgstr ""
 
 #: setup.php:93
 msgid "The Weather"
-msgstr "Het weer"
+msgstr "Prognoza"
 
 #: shortcodes.php:40
 msgid "wp-forecast shortcode: This browser does not support iframes."
-msgstr "wp-forecast afkorting: Deze browser ondersteunt geen iframes."
+msgstr ""
 
 #: wp-forecast-admin.php:105
 msgid "widget_hint"
@@ -47,52 +43,52 @@ msgstr "widget_hint"
 
 #: wp-forecast-admin.php:205 wp-forecast.php:378
 msgid "How many wp-forecast widgets would you like?"
-msgstr "Hoeveel wp-forecast widgets wil je hebben?"
+msgstr "Koliko vidžeta hocete?"
 
 #: wp-forecast-admin.php:214 wp-forecast-admin.php:240
 #: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:387
 msgid "Save"
-msgstr "Bewaar"
+msgstr "Snimi"
 
 #: wp-forecast-admin.php:233
 msgid "Select widget"
-msgstr "Selecteer widget"
+msgstr "Odaberi vidžet"
 
 #: wp-forecast-admin.php:238 wpf_sa_admin.php:207
 msgid "Timeout for weatherprovider connections (secs.)?"
-msgstr "Timeout voor weerprovider connecties (sec.)?"
+msgstr "Timeout za konekcuju ka provajderu (secs.)?"
 
 #: wp-forecast-admin.php:244 wpf_sa_admin.php:215
 msgid "Preselect wordpress transfer method"
-msgstr "Selecteer WordPress overdrachtsmodus"
+msgstr ""
 
 #: wp-forecast-admin.php:246 wpf_sa_admin.php:217
 msgid "default"
-msgstr "standaard"
+msgstr ""
 
 #: wp-forecast-admin.php:260 wpf_sa_admin.php:230
 msgid "Delete options during plugin deactivation?"
-msgstr "Opties verwijderen tijdens plugin de-activatie?"
+msgstr "Obrisati opcije prilikom dektivacije?"
 
 #: wp-forecast-admin.php:268
 msgid "Check connection to Weatherprovider"
-msgstr "Controleer connectie met weerprovider"
+msgstr "Proverite vezu ka provajderu."
 
 #: wp-forecast-admin.php:436 wpf_sa_admin.php:181
 msgid "Settings successfully updated"
-msgstr "Instellingen succesvol bijgewerkt"
+msgstr "Podešavanja su uspešno ažurirana."
 
 #: wp-forecast-admin.php:438
 msgid "You have to change a field to update settings."
-msgstr "Je moet een veld wijzigen om de instellingen te kunnen bijwerken."
+msgstr "Morate nešto da promenite da bi ste izvršili ažuriranje."
 
 #: wp-forecast-admin.php:484
 msgid "WP-Forecast Setup"
-msgstr "WP-Forecast instellingen"
+msgstr "WP-Forecast podešavanja."
 
 #: wp-forecast-admin.php:487 wpf_sa_admin.php:246
 msgid "Weatherservice"
-msgstr "Weerservice"
+msgstr ""
 
 #: wp-forecast-admin.php:489 wpf_sa_admin.php:248
 msgid "AccuWeather"
@@ -105,71 +101,71 @@ msgstr "WeatherBug"
 #: wp-forecast-admin.php:491
 #, fuzzy
 msgid "GoogleWeather"
-msgstr "Het weer"
+msgstr "Prognoza"
 
 #: wp-forecast-admin.php:494
 msgid "Partner ID"
-msgstr "Partner ID"
+msgstr ""
 
 #: wp-forecast-admin.php:497 wpf_sa_admin.php:255
 msgid "Licensekey"
-msgstr "Licentiesleutel"
+msgstr ""
 
 #: wp-forecast-admin.php:502 wpf_sa_admin.php:260
 msgid "Location"
-msgstr "Locatie"
+msgstr "Lokacija"
 
 #: wp-forecast-admin.php:505 wpf_sa_admin.php:263
 msgid "Press Update options to save new location."
-msgstr "Druk op bijwerken om nieuwe locatie te bewaren."
+msgstr "Press Update options to save new location."
 
 #: wp-forecast-admin.php:508 wpf_sa_admin.php:266
 msgid "Locationname"
-msgstr "Locatienaam"
+msgstr "Lokacija"
 
 #: wp-forecast-admin.php:510 wpf_sa_admin.php:269
 msgid "Refresh cache after"
-msgstr "Ververs geheugen na"
+msgstr "Osvežiti keš posle"
 
 #: wp-forecast-admin.php:512 wpf_sa_admin.php:271
 msgid "secs."
-msgstr "sec."
+msgstr "secs."
 
 #: wp-forecast-admin.php:513 wpf_sa_admin.php:272
 msgid "Use metric units"
-msgstr "Gebruik metriek stelsel"
+msgstr "Korisiti metričke jedinice"
 
 #: wp-forecast-admin.php:516 wpf_sa_admin.php:275
 msgid "Use current time"
-msgstr "Gebruik huidige tijd"
+msgstr "Koristi trenutno vreme"
 
 #: wp-forecast-admin.php:517 wpf_sa_admin.php:276
 msgid "Time-Offset"
-msgstr "Tijd offset"
+msgstr ""
 
 #: wp-forecast-admin.php:517 wpf_sa_admin.php:276
 msgid "minutes"
-msgstr "minuten"
+msgstr "minuta"
 
 #: wp-forecast-admin.php:520 wpf_sa_admin.php:279
 msgid "Windspeed-Unit"
-msgstr "Windsnelheid eenheid"
+msgstr "Jedinica brzine vetra"
 
 #: wp-forecast-admin.php:521 wpf_sa_admin.php:280
 msgid "Meter/Second (m/s)"
-msgstr "Meter/Seconde (m/s)"
+msgstr "(m/s)"
 
 #: wp-forecast-admin.php:522 wpf_sa_admin.php:281
 msgid "Kilometer/Hour (km/h)"
-msgstr "Kilometer/Uur (km/h)"
+msgstr "(km/h)"
 
 #: wp-forecast-admin.php:523 wpf_sa_admin.php:282
 msgid "Miles/Hour (mph)"
-msgstr "Mijl/Uur (mph)"
+msgstr "(mph)"
 
 #: wp-forecast-admin.php:524 wpf_sa_admin.php:283
 msgid "Knots (kts)"
-msgstr "Knopen (knpn)"
+msgstr "(kts)"
 
 #: wp-forecast-admin.php:525 wpf_sa_admin.php:284
 msgid "Beaufort (bft)"
@@ -177,35 +173,35 @@ msgstr ""
 
 #: wp-forecast-admin.php:532 wpf_sa_admin.php:291
 msgid "Language"
-msgstr "Taal"
+msgstr "Jezik"
 
 #: wp-forecast-admin.php:551 wpf_sa_admin.php:310
 msgid "Show forecast as ajax pull-down"
-msgstr "Toon verwachting als ajax pull-down"
+msgstr ""
 
 #: wp-forecast-admin.php:555 wpf_sa_admin.php:314
 msgid "First day in pull-down"
-msgstr "Eerste dag in pull-down"
+msgstr ""
 
 #: wp-forecast-admin.php:572 wpf_sa_admin.php:332
 msgid "Display Configuration"
-msgstr "Toon configuratie"
+msgstr "Prikaz Konfiguracije"
 
 #: wp-forecast-admin.php:576 wpf_sa_admin.php:336
 msgid "Current Conditions"
-msgstr "Huidig weerbeeld"
+msgstr "Trenutni uslovi"
 
 #: wp-forecast-admin.php:577 wpf_sa_admin.php:337
 msgid "Forecast Day"
-msgstr "Verwachting dag"
+msgstr "Prognoza Dan"
 
 #: wp-forecast-admin.php:578 wpf_sa_admin.php:338
 msgid "Forecast Night"
-msgstr "Verwachting nacht"
+msgstr "Prognoza Noć"
 
 #: wp-forecast-admin.php:581 wpf_sa_admin.php:341
 msgid "Icon"
-msgstr "Icoon"
+msgstr "Ikonica"
 
 #: wp-forecast-admin.php:590 wpf_sa_admin.php:350
 msgid "Date"
@@ -213,44 +209,44 @@ msgstr "Datum"
 
 #: wp-forecast-admin.php:597 wpf_sa_admin.php:357
 msgid "Time"
-msgstr "Tijd"
+msgstr "Vreme"
 
 #: wp-forecast-admin.php:604 wpf_sa_admin.php:364
 msgid "Short Description"
-msgstr "Korte omschrijving"
+msgstr "Kratak opis"
 
 #: wp-forecast-admin.php:613 wpf_sa_admin.php:373
 msgid "Temperature"
-msgstr "Temperatuur"
+msgstr "Temperature"
 
 #: wp-forecast-admin.php:622 wpf_sa_admin.php:382
 msgid "Realfeel"
-msgstr "Werkelijk gevoel"
+msgstr "Subjektivno"
 
 #: wp-forecast-admin.php:629 wpf_sa_admin.php:389
 msgid "Pressure"
-msgstr "Druk"
+msgstr "Pritisak"
 
 #: wp-forecast-admin.php:636 wpf_sa_admin.php:396
 msgid "Humidity"
-msgstr "Vochtigheid"
+msgstr "Vlažnost"
 
 #: wp-forecast-admin.php:643 wpf_sa_admin.php:403
 msgid "Wind"
-msgstr "Wind"
+msgstr "Vetar"
 
 #: wp-forecast-admin.php:652 wp-forecast-show.php:308 wp-forecast-show.php:411
 #: wp-forecast-show.php:455 wpf_sa_admin.php:412
 msgid "Windgusts"
-msgstr "Windstoten"
+msgstr "Naleti vetra"
 
 #: wp-forecast-admin.php:661 wpf_sa_admin.php:421
 msgid "Sunrise"
-msgstr "Zonsopgang"
+msgstr "Izlazak sunca"
 
 #: wp-forecast-admin.php:668 wpf_sa_admin.php:428
 msgid "Sunset"
-msgstr "Zonsondergang"
+msgstr "Zalazak sunca"
 
 #: wp-forecast-admin.php:675 wpf_sa_admin.php:435
 msgid "Copyright"
@@ -258,19 +254,19 @@ msgstr "Copyright"
 
 #: wp-forecast-admin.php:682 wpf_sa_admin.php:442
 msgid "Link to Weatherprovider"
-msgstr "Link naar weerprovider"
+msgstr "Link to Weatherprovider"
 
 #: wp-forecast-admin.php:685 wpf_sa_admin.php:445
 msgid "Open in new Window"
-msgstr "Open in een nieuw venster"
+msgstr ""
 
 #: wp-forecast-admin.php:693 wp-forecast-show.php:358 wpf_sa_admin.php:453
 msgid "Forecast"
-msgstr "Verwachting"
+msgstr "Prognoza za"
 
 #: wp-forecast-admin.php:698 wpf_sa_admin.php:458
 msgid "All"
-msgstr "Alle"
+msgstr "All"
 
 #: wp-forecast-admin.php:699 wp-forecast-admin.php:700
 #: wp-forecast-admin.php:701 wp-forecast-admin.php:702
@@ -281,128 +277,128 @@ msgstr "Alle"
 #: wpf_sa_admin.php:464 wpf_sa_admin.php:465 wpf_sa_admin.php:466
 #: wpf_sa_admin.php:467
 msgid "Day"
-msgstr "Dag"
+msgstr "Dan"
 
 #: wp-forecast-admin.php:709 wpf_sa_admin.php:469
 msgid "Daytime"
-msgstr "Overdag"
+msgstr "Danju"
 
 #: wp-forecast-admin.php:730 wpf_sa_admin.php:490
 msgid "Nighttime"
-msgstr "'s Nacht"
+msgstr "Noću"
 
 #: wp-forecast-admin.php:757 wpf_sa_admin.php:519
 msgid "Update options"
-msgstr "Bijwerken opties"
+msgstr "Opcije ažuriranja"
 
 #: wp-forecast-admin.php:764 wp-forecast-admin.php:781
 msgid "Search location"
-msgstr "Zoek locatie"
+msgstr "Pretraži lokaciju"
 
 #: wp-forecast-admin.php:768
 msgid "Searchterm"
-msgstr "Zoekterm"
+msgstr "Termin pretrage"
 
 #: wp-forecast-admin.php:772
 msgid "No locations found."
-msgstr "Geen locaties gevonden."
+msgstr "Lokacija nije nadjenja"
 
 #: wp-forecast-admin.php:776
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Vervang Duitse umlaut ä,ö,ü met a, o, u in je zoekterm."
+msgstr "Slova kao što su ä,ö,ü zamenite sa a, o, u, u vašem sistemu pretrage."
 
 #: wp-forecast-admin.php:786
 msgid "Search result"
-msgstr "Zoekresultaat"
+msgstr "Rezultati pretrage"
 
 #: wp-forecast-admin.php:793
 msgid "Please select your city and press set location."
-msgstr "Selecteer uw stad en druk op stel locatie in."
+msgstr "Odaberite grad i postavite lokaciju."
 
 #: wp-forecast-admin.php:797
 msgid "Set location"
-msgstr "Stel locatie in"
+msgstr "Postavi lokaciju"
 
 #: wp-forecast-check.php:165
 msgid "Connection-check"
-msgstr "Connectie controle"
+msgstr ""
 
 #: wp-forecast-check.php:168
 msgid "Select weatherprovider"
-msgstr "Selecteer weerprovider"
+msgstr "Odaberite porvajdera."
 
 #: wp-forecast-check.php:180
 msgid "Start check"
-msgstr "Start controle"
+msgstr ""
 
 #: wp-forecast-check.php:183
 msgid "Close"
-msgstr "Sluit"
+msgstr ""
 
 #: wp-forecast.php:422
 #, php-format
 msgid "wp-forecast %s"
-msgstr "wp-forecast %s"
+msgstr "prognoza %s"
 
 #: wp-forecast-show.php:137
 msgid "Locations:"
-msgstr "Locaties:"
+msgstr "Lokacije:"
 
 #: wp-forecast-show.php:171
 msgid "Failure notice from provider"
-msgstr "Mislukkingsbericht van provider"
+msgstr ""
 
 #: wp-forecast-show.php:188
 msgid "Sorry, no valid weather data available."
-msgstr "Sorry, geen geldige weerdata beschikbaar."
+msgstr "Nema podataka"
 
 #: wp-forecast-show.php:189
 msgid "Please try again later."
-msgstr "Probeer later opnieuw svp."
+msgstr "Molimo, pokušajte kasnije..."
 
 #: wp-forecast-show.php:248
 msgid "time"
-msgstr "tijd"
+msgstr "Vreme"
 
 #: wp-forecast-show.php:288
 msgid "flik"
-msgstr "gevoelstemperatuur"
+msgstr "Subjektivno"
 
 #: wp-forecast-show.php:291
 msgid "barr"
-msgstr "luchtdruk"
+msgstr "Trenutni pritisak"
 
 #: wp-forecast-show.php:299
 msgid "hmid"
-msgstr "vochtigheid"
+msgstr "Vlažnost"
 
 #: wp-forecast-show.php:303 wp-forecast-show.php:406 wp-forecast-show.php:448
 msgid "winds"
-msgstr "windsnelheid"
+msgstr "Brzina vetra"
 
 #: wp-forecast-show.php:313
 msgid "sunrise"
-msgstr "zonsopgang"
+msgstr "Izlazak sunca"
 
 #: wp-forecast-show.php:317
 msgid "sunset"
-msgstr "zonsondergang"
+msgstr "Zalazak sunca"
 
 #: wp-forecast-show.php:367
 msgid "day"
-msgstr "dag"
+msgstr "Dan"
 
 #: wp-forecast-show.php:423
 msgid "night"
-msgstr "nacht"
+msgstr "Noć"
 
 #: wp-forecast-show.php:481 wp-forecast-show.php:482
 msgid "Less forecast..."
-msgstr "Minder verwachtingen..."
+msgstr "Smanjen prikaz."
 
 #: wp-forecast-show.php:483
 msgid "More forecast..."
-msgstr "Meer verwachtingen..."
+msgstr "POGLEDAJTE PROGNOZU ZA JOŠ SEDAM DANA!"
 
 #: wpf_sa_admin.php:62
 msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
@@ -421,604 +417,606 @@ msgid "Widget-Setup"
 msgstr ""
 
 #: wpf_sa_admin.php:252
-#, fuzzy
 msgid "Partner-ID"
-msgstr "Partner ID"
+msgstr ""
 
 #: xgettextdummy.php:5
 msgid "loc"
-msgstr "loc."
+msgstr "Lokacija"
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr "Zonnig"
+msgstr "Lepo vreme."
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Meest zonnig"
+msgstr "Uglavnom lepo vreme."
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Deels zonning"
+msgstr "Uglavnom lepo vreme."
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Af en toe bewolking"
+msgstr "Mestimično oblačno."
 
 #: xgettextdummy.php:10
 msgid "05"
-msgstr "Nevel"
+msgstr "Uglavnom sunčano, sa mogućom prolaznom oblačnošću."
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr "Meest bewolkt"
+msgstr "Uglavnom oblačno."
 
 #: xgettextdummy.php:12
 msgid "07"
-msgstr "Bewolkt"
+msgstr "Oblačno."
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Sober (betrokken lucht)"
+msgstr "Umereno do znatno oblačno!"
 
 #: xgettextdummy.php:14
 msgid "11"
-msgstr "Mist"
+msgstr "Moguća pojava magle."
 
 #: xgettextdummy.php:15
 msgid "12"
-msgstr "Stortbuien"
+msgstr "Mogući pljuskovi."
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Meest bewolkt met regen"
+msgstr "Uglavnom oblačno sa mogućim pljuskovima..."
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Deels zonnig met buien"
+msgstr "Pretežno lepo vreme, sa mogućim padavinama."
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Onweer"
+msgstr "Moguća grmljavina."
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Meest bewolkt met onweersbuien"
+msgstr "Umereno oblačno. Moguća grmaljvina."
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Deels zonnig met onweersbuien"
+msgstr "Umereno oblačno. Smena kišnih i suvih intervala. Moguća grmljvina."
 
 #: xgettextdummy.php:21
 msgid "18"
-msgstr "Regen"
+msgstr "Kišovito."
 
 #: xgettextdummy.php:22
 msgid "19"
-msgstr "Hagel en regen"
+msgstr "Naleti vetra."
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Meest bewolkt en hagel en regen"
+msgstr "Uglavnom oblačno sa naletima vetra."
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Deels zonnig met hagel en regen"
+msgstr "Uglavnom lepo vreme sa mogućim naletima vetra."
 
 #: xgettextdummy.php:25
 msgid "22"
-msgstr "Sneeuw"
+msgstr "Sneg."
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Meest bewolkt met sneeuw"
+msgstr "Uglavnim oblačno sa mogućim snegom."
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "IJs"
+msgstr "Uglavnom hladno vreme. Poledica."
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "Natte sneeuw"
+msgstr "Susnežica"
 
 #: xgettextdummy.php:29
 msgid "26"
-msgstr "Hagelbuien"
+msgstr "Moguća ledena kiša."
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "Regen en sneeuw"
+msgstr "Kiša i sneg."
 
 #: xgettextdummy.php:31
 msgid "30"
-msgstr "Heet"
+msgstr "Veoma toplo vreme."
 
 #: xgettextdummy.php:32
 msgid "31"
-msgstr "Koud"
+msgstr "Veoma hladno vreme."
 
 #: xgettextdummy.php:33
 msgid "32"
-msgstr "Winderig"
+msgstr "Vetrovito"
 
 #: xgettextdummy.php:34
 msgid "33"
-msgstr "Helder"
+msgstr "Lepo vreme."
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr "Meest helder"
+msgstr "Uglavnom lepo vreme."
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Deels bewolkt"
+msgstr "Delimično oblačno."
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr "Af en toe bewolking"
+msgstr "Mestimično oblačno."
 
 #: xgettextdummy.php:38
 msgid "37"
-msgstr "Nevelig"
+msgstr "Izmaglica."
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr "Meest bewolkt"
+msgstr "Uglavnom oblačno."
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Deels bewolkt met buien"
+msgstr "Umereno do znatno oblačno sa pljuskovima."
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Meest bewolkt met buien"
+msgstr "Umereno oblačno sa pljuskovima."
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Deels bewolkt met onweer"
+msgstr "Umereno oblačno sa mogućom grmljavinom."
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "Meest bewolkt met onweer"
+msgstr "Uglavnom oblačno sa grmljavinom."
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr "Meest bewolkt met hagel en regen"
+msgstr "Uglavnom oblačno i vetrovito."
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Meest bewolkt met sneeuw"
+msgstr "Uglavnom oblačno sa snegom."
 
 #: xgettextdummy.php:46
 msgid "Monday"
-msgstr "Maandag"
+msgstr "Ponedeljak"
 
 #: xgettextdummy.php:47
 msgid "Tuesday"
-msgstr "Dinsdag"
+msgstr "Utorak"
 
 #: xgettextdummy.php:48
 msgid "Wednesday"
-msgstr "Woensdag"
+msgstr "Sreda"
 
 #: xgettextdummy.php:49
 msgid "Thursday"
-msgstr "Donderdag"
+msgstr "Četvrtak"
 
 #: xgettextdummy.php:50
 msgid "Friday"
-msgstr "Vrijdag"
+msgstr "Petak"
 
 #: xgettextdummy.php:51
 msgid "Saturday"
-msgstr "Zaterdag"
+msgstr "Subota"
 
 #: xgettextdummy.php:52
 msgid "Sunday"
-msgstr "Zondag"
+msgstr "Nedelja"
 
 #: xgettextdummy.php:53
 msgid "N"
-msgstr "N"
+msgstr "S"
 
 #: xgettextdummy.php:54
 msgid "E"
-msgstr "O"
+msgstr "I"
 
 #: xgettextdummy.php:55
 msgid "W"
-msgstr "W"
+msgstr "Z"
 
 #: xgettextdummy.php:56
 msgid "S"
-msgstr "Z"
+msgstr "J"
 
 #: xgettextdummy.php:57
 msgid "30% Chance Drizzle"
-msgstr "30% kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:58
 msgid "30% Chance Freezing Drizzle"
-msgstr "30% Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:59
 msgid "30% Chance Freezing Rain"
-msgstr "30% Kans op bevriezende regen"
+msgstr ""
 
 #: xgettextdummy.php:60
 msgid "30% Chance Frozen Drizzle"
-msgstr "30% Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:61
 msgid "30% Chance Frozen Mix"
-msgstr "30% Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:62
 msgid "30% Chance Rain Shower"
-msgstr "30% Kans op regenbui"
+msgstr ""
 
 #: xgettextdummy.php:63
 msgid "30% Chance Snow Shower"
-msgstr "30% Kans op sneeuwbui"
+msgstr ""
 
 #: xgettextdummy.php:64
 msgid "30% Chance of Drizzle"
-msgstr "30% Kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:65 xgettextdummy.php:66
 msgid "30% Chance of Flurry"
-msgstr "30% kans op vlagen"
+msgstr ""
 
 #: xgettextdummy.php:67
 msgid "30% Chance of Frozen Mix"
-msgstr "30% Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:68
 msgid "30% Chance of Light Snow"
-msgstr "30% Kans op lichte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:69
 msgid "30% Chance of Rain"
-msgstr "30% Kans op regen"
+msgstr ""
 
 #: xgettextdummy.php:70
 msgid "30% Chance of Sleet"
-msgstr "30% kans op ijzel"
+msgstr ""
 
 #: xgettextdummy.php:71
 msgid "30% Chance of Snow"
-msgstr "30% Kans op sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:72
 msgid "30% Chance of Storms"
-msgstr "30% Kans op storm"
+msgstr ""
 
 #: xgettextdummy.php:73
 msgid "40% Chance Drizzle"
-msgstr "34% kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:74
 msgid "40% Chance Fozen Drizzle"
-msgstr "40% Kans op bevroren motregen"
+msgstr ""
 
 #: xgettextdummy.php:75
 msgid "40% Chance Freezing Drizzle"
-msgstr "40% Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:76
 msgid "40% Chance Freezing Rain"
-msgstr "40% Kans op bevriezende regen"
+msgstr ""
 
 #: xgettextdummy.php:77
 msgid "40% Chance Frozen Drizzle"
-msgstr "40% Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:78
 msgid "40% Chance Frozen Mix"
-msgstr "40% Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:79
 msgid "40% Chance Rain Shower"
-msgstr "40% Kans op regenbui"
+msgstr ""
 
 #: xgettextdummy.php:80
 msgid "40% Chance Snow Shower"
-msgstr "40% Kans op sneeuwbui"
+msgstr ""
 
 #: xgettextdummy.php:81
 msgid "40% Chance of Drizzle"
-msgstr "40% Kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:82
 msgid "40% Chance of Flurry"
-msgstr "34% kans op vlagen"
+msgstr ""
 
 #: xgettextdummy.php:83
 msgid "40% Chance of Frozen Mix"
-msgstr "40% Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:84
 msgid "40% Chance of Light Snow"
-msgstr "40% Kans op lichte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:85
 msgid "40% Chance of Rain"
-msgstr "40% Kans op regen"
+msgstr ""
 
 #: xgettextdummy.php:86
 msgid "40% Chance of Sleet"
-msgstr "40% Kans op ijzel"
+msgstr ""
 
 #: xgettextdummy.php:87
 msgid "40% Chance of Snow"
-msgstr "40% Kans op sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:88
 msgid "40% Chance of Storms"
-msgstr "40% Kans op storm"
+msgstr ""
 
 #: xgettextdummy.php:89
 msgid "50% Chance Freezing Drizzle"
-msgstr "50% Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:90
 msgid "50% Chance Freezing Rain"
-msgstr "50% Kans op bevriezende regen"
+msgstr ""
 
 #: xgettextdummy.php:91
 msgid "50% Chance Rain Shower"
-msgstr "50% Kans op regenbui"
+msgstr ""
 
 #: xgettextdummy.php:92
 msgid "50% Chance Snow Shower"
-msgstr "50% Kans op sneeuwbui"
+msgstr ""
 
 #: xgettextdummy.php:93
 msgid "50% Chance of Drizzle"
-msgstr "50% kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:94
 msgid "50% Chance of Flurry"
-msgstr "50% Kans op vlagen"
+msgstr ""
 
 #: xgettextdummy.php:95
 msgid "50% Chance of Frozen Mix"
-msgstr "50% Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:96
 msgid "50% Chance of Light Snow"
-msgstr "50% Kans op lichte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:97
 msgid "50% Chance of Rain"
-msgstr "50% Kans op regen"
+msgstr ""
 
 #: xgettextdummy.php:98
 msgid "50% Chance of Sleet"
-msgstr "50% kans op ijzel"
+msgstr ""
 
 #: xgettextdummy.php:99
 msgid "50% Chance of Snow"
-msgstr "50% Kans op sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:100
 msgid "50% Chance of Storms"
-msgstr "50% Kans op storm"
+msgstr ""
 
 #: xgettextdummy.php:101
 msgid "Chance Freezing Drizzle"
-msgstr "Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:102
 msgid "Chance Freezing Rain"
-msgstr "Kans op bevriezende regen"
+msgstr ""
 
 #: xgettextdummy.php:103
 msgid "Chance Rain Shower"
-msgstr "Kans op regenbui"
+msgstr ""
 
 #: xgettextdummy.php:104
 msgid "Chance Snow Shower"
-msgstr "Kans op sneeuwbui"
+msgstr ""
 
 #: xgettextdummy.php:105
 msgid "Chance of Drizzle"
-msgstr "Kans op motregen"
+msgstr ""
 
 #: xgettextdummy.php:106
 msgid "Chance of Flurry"
-msgstr "Kans op vlagen"
+msgstr ""
 
 #: xgettextdummy.php:107
 msgid "Chance of Freezing Drizzle"
-msgstr "Kans op bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:108
 msgid "Chance of Frozen Drizzle"
-msgstr "Kans op bevroren motregen"
+msgstr ""
 
 #: xgettextdummy.php:109
 msgid "Chance of Frozen Mix"
-msgstr "Kans op natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:110
 msgid "Chance of Light Snow"
-msgstr "Kans op lichte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:111
 msgid "Chance of Rain"
-msgstr "Kans op regen"
+msgstr ""
 
 #: xgettextdummy.php:112
 msgid "Chance of Rain Showers"
-msgstr "Kans op regenbui"
+msgstr ""
 
 #: xgettextdummy.php:113
 msgid "Chance of Sleet "
-msgstr "Kans op ijzel"
+msgstr ""
 
 #: xgettextdummy.php:114
 msgid "Chance of Snow"
-msgstr "Kans op sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:115
 msgid "Chance of Snow Showers"
-msgstr "Kans op sneeuwbuien"
+msgstr ""
 
 #: xgettextdummy.php:116
 msgid "Chance of Storms"
-msgstr "Kans op storm"
+msgstr ""
 
 #: xgettextdummy.php:117
 msgid "Clear"
-msgstr "Helder"
+msgstr ""
 
 #: xgettextdummy.php:118
 msgid "Clearing"
-msgstr "Opheldering"
+msgstr ""
 
 #: xgettextdummy.php:119
 msgid "Cloudy"
-msgstr "Bewolkt"
+msgstr ""
 
 #: xgettextdummy.php:120
 msgid "Drizzle"
-msgstr "Miezer"
+msgstr ""
 
 #: xgettextdummy.php:121
 msgid "Fair"
-msgstr "Helder"
+msgstr ""
 
 #: xgettextdummy.php:122
 msgid "Flurries"
-msgstr "Vlagen"
+msgstr ""
 
 #: xgettextdummy.php:123
 msgid "Fog"
-msgstr "Mist"
+msgstr ""
 
 #: xgettextdummy.php:124
 msgid "Foggy"
-msgstr "Mistig"
+msgstr ""
 
 #: xgettextdummy.php:125
 msgid "Freezing Drizzle"
-msgstr "Bevriezende motregen"
+msgstr ""
 
 #: xgettextdummy.php:126
 msgid "Freezing Rain"
-msgstr "Bevriezende regen"
+msgstr ""
 
 #: xgettextdummy.php:127
 msgid "Frozen Mix"
-msgstr "Natte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:128
 msgid "Hazy"
-msgstr "Heiig"
+msgstr ""
 
 #: xgettextdummy.php:129
 msgid "Headline"
-msgstr "Titel"
+msgstr ""
 
 #: xgettextdummy.php:130
 msgid "Heavy Rain"
-msgstr "Hevige regen"
+msgstr ""
 
 #: xgettextdummy.php:131
 msgid "Heavy Snow"
-msgstr "Hevige sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:132
 msgid "Hot and Humid"
-msgstr "Heet en vochtig"
+msgstr ""
 
 #: xgettextdummy.php:133
 msgid "Increasing Clouds"
-msgstr "Toenemende bewolking"
+msgstr ""
 
 #: xgettextdummy.php:134
 msgid "Light Snow"
-msgstr "Lichte sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:135
 msgid "Mostly Clear"
-msgstr "Meest helder"
+msgstr ""
 
 #: xgettextdummy.php:136
 msgid "Mostly Cloudy"
-msgstr "Meest bewolkt"
+msgstr ""
 
 #: xgettextdummy.php:137
 msgid "Mostly Sunny"
-msgstr "Meest zonnig"
+msgstr ""
 
 #: xgettextdummy.php:138
 msgid "Nowcast"
-msgstr "Voorspelling"
+msgstr "Trenutno"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"
-msgstr "Gedeeltelijk bewolkt"
+msgstr ""
 
 #: xgettextdummy.php:140
 msgid "Partly Sunny"
-msgstr "Gedeeltelijk zonnig"
+msgstr ""
 
 #: xgettextdummy.php:141
 msgid "Rain"
-msgstr "Regen"
+msgstr ""
 
 #: xgettextdummy.php:142
 msgid "Rain Showers"
-msgstr "Regenbuien"
+msgstr ""
 
 #: xgettextdummy.php:143
 msgid "Scattered Showers"
-msgstr "Verspreide buien"
+msgstr ""
 
 #: xgettextdummy.php:144
 msgid "Scattered Thunderstorms"
-msgstr "Verspreide onweersbuien"
+msgstr ""
 
 #: xgettextdummy.php:145
 msgid "Sleet"
-msgstr "IJzel"
+msgstr ""
 
 #: xgettextdummy.php:146
 msgid "Snow"
-msgstr "Sneeuw"
+msgstr ""
 
 #: xgettextdummy.php:147
 msgid "Snow Showers"
-msgstr "Sneeuwbuien"
+msgstr ""
 
 #: xgettextdummy.php:148
 msgid "Sunny"
-msgstr "Zonnig"
+msgstr "Lepo vreme."
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
-msgstr "Onweersbuien"
+msgstr ""
 
 #: xgettextdummy.php:151
 msgid "Very Cold"
-msgstr "Zeer koud"
+msgstr ""
 
 #: xgettextdummy.php:152
 msgid "Very Hot"
-msgstr "Zeer heet"
+msgstr ""
 
 #: xgettextdummy.php:153
 msgid "Warm and Humid"
-msgstr "Warm en vochtig"
+msgstr ""
 
 #: xgettextdummy.php:154
 msgid "Windy"
-msgstr "Winderig"
+msgstr "Vetrovito."
 
 #~ msgid "Weather.com"
 #~ msgstr "Weather.com"
 
 #~ msgid "tmp"
-#~ msgstr "Huidige temperatuur"
+#~ msgstr "current temperature"
+
+#~ msgid "Accuweather failure notice"
+#~ msgstr "Accuweather failure notice"
