@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kangosjarvi.net\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 09:54+0200\n"
-"PO-Revision-Date: 2008-11-22 06:19+0100\n"
-"Last-Translator: Jaakko Kangosjärvi <jaakko@kangosjarvi.net>\n"
+"POT-Creation-Date: 2010-08-03 07:56+0200\n"
+"PO-Revision-Date: 2011-03-31 11:01+0200\n"
+"Last-Translator: Jaakko Kangosjärvi <jaakko@mediamonttu.fi>\n"
 "Language-Team: Monttu <jaakko@kangosjarvi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,336 +13,487 @@ msgstr ""
 "X-Poedit-Country: FINLAND\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: class-wpf_widget.php:68 wp-forecast-admin.php:98
+#: class-wpf_widget.php:73
+#: wp-forecast-admin.php:102
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: class-wpf_widget.php:76 wp-forecast-admin.php:213
+#: class-wpf_widget.php:81
+#: wp-forecast-admin.php:217
 msgid "Available widgets"
 msgstr "Vimpaimet"
 
 #: func_bug.php:222
 msgid "Location does not exist"
-msgstr ""
+msgstr "Paikkaa ei löydy"
 
-#: func_bug.php:360 func_bug.php:387 xgettextdummy.php:150
+#: func_bug.php:362
+#: func_bug.php:389
+#: xgettextdummy.php:150
 msgid "Unknown"
-msgstr ""
+msgstr "Tuntematon"
 
-#: setup.php:92
+#: setup.php:93
 msgid "The Weather"
 msgstr "S&auml;&auml;"
 
-#: shortcodes.php:30
+#: shortcodes.php:40
 msgid "wp-forecast shortcode: This browser does not support iframes."
-msgstr ""
+msgstr "wp-froecasta pikakoodi: Selaimesi ei tue iframe-toimintoa."
 
-#: wp-forecast-admin.php:101
+#: wp-forecast-admin.php:105
 msgid "widget_hint"
 msgstr "vimpain_apu"
 
-#: wp-forecast-admin.php:201 wp-forecast.php:340
+#: wp-forecast-admin.php:205
+#: wp-forecast.php:378
 msgid "How many wp-forecast widgets would you like?"
 msgstr "WP-Forecast-vimpainten m&auml;&auml;r&auml;:"
 
-#: wp-forecast-admin.php:210 wp-forecast-admin.php:236
-#: wp-forecast-admin.php:252 wp-forecast-admin.php:261 wp-forecast.php:349
+#: wp-forecast-admin.php:214
+#: wp-forecast-admin.php:240
+#: wp-forecast-admin.php:256
+#: wp-forecast-admin.php:265
+#: wp-forecast.php:387
 msgid "Save"
 msgstr "Tallenna"
 
-#: wp-forecast-admin.php:229
+#: wp-forecast-admin.php:233
 msgid "Select widget"
 msgstr "Valitse vimpain"
 
-#: wp-forecast-admin.php:234
-msgid "Timeout for accuweather connections (secs.)?"
-msgstr "Accuweather-yhteysaika (sekuntia):"
+#: wp-forecast-admin.php:238
+#: wpf_sa_admin.php:207
+msgid "Timeout for weatherprovider connections (secs.)?"
+msgstr "Säätiedontarjoajan yhteysaika (sekuntia):"
 
-#: wp-forecast-admin.php:240
+#: wp-forecast-admin.php:244
+#: wpf_sa_admin.php:215
 msgid "Preselect wordpress transfer method"
-msgstr ""
+msgstr "Esivalittu WordPressin tiedonsiirtomenetelmä"
 
-#: wp-forecast-admin.php:242
+#: wp-forecast-admin.php:246
+#: wpf_sa_admin.php:217
 msgid "default"
-msgstr ""
+msgstr "oletus"
 
-#: wp-forecast-admin.php:256
+#: wp-forecast-admin.php:260
+#: wpf_sa_admin.php:230
 msgid "Delete options during plugin deactivation?"
-msgstr ""
+msgstr "Tyhjennä asetukset, kun lisäosa poistetaan käytöstä?"
 
-#: wp-forecast-admin.php:407
+#: wp-forecast-admin.php:268
+msgid "Check connection to Weatherprovider"
+msgstr "Tarkista yhteys tiedontarjoajaan"
+
+#: wp-forecast-admin.php:436
+#: wpf_sa_admin.php:181
 msgid "Settings successfully updated"
 msgstr "Asetukset p&auml;ivitetty"
 
-#: wp-forecast-admin.php:409
+#: wp-forecast-admin.php:438
 msgid "You have to change a field to update settings."
 msgstr "Asetukset p&auml;ivitet&auml;&auml;n ylemp&auml;n&auml;."
 
-#: wp-forecast-admin.php:455
+#: wp-forecast-admin.php:484
 msgid "WP-Forecast Setup"
 msgstr "WP-Forecast Asennus"
 
-#: wp-forecast-admin.php:458
+#: wp-forecast-admin.php:487
+#: wpf_sa_admin.php:246
 msgid "Weatherservice"
-msgstr ""
+msgstr "Sääpalvelu"
 
-#: wp-forecast-admin.php:460
-#, fuzzy
+#: wp-forecast-admin.php:489
+#: wpf_sa_admin.php:248
 msgid "AccuWeather"
-msgstr "Accuweather-linkki"
+msgstr "Accuweather"
 
-#: wp-forecast-admin.php:461
-#, fuzzy
+#: wp-forecast-admin.php:490
+#: wpf_sa_admin.php:249
 msgid "WeatherBug"
-msgstr "S&auml;&auml;"
+msgstr "WeatherBug"
 
-#: wp-forecast-admin.php:463
-#, fuzzy
-msgid "Weather.com"
-msgstr "S&auml;&auml;"
+#: wp-forecast-admin.php:491
+msgid "GoogleWeather"
+msgstr "GoogleWeather"
 
-#: wp-forecast-admin.php:466
+#: wp-forecast-admin.php:494
 msgid "Partner ID"
-msgstr ""
+msgstr "Partner ID"
 
-#: wp-forecast-admin.php:469
+#: wp-forecast-admin.php:497
+#: wpf_sa_admin.php:255
 msgid "Licensekey"
-msgstr ""
+msgstr "Lisenssiavain"
 
-#: wp-forecast-admin.php:474
+#: wp-forecast-admin.php:502
+#: wpf_sa_admin.php:260
 msgid "Location"
 msgstr "Paikkakunta"
 
-#: wp-forecast-admin.php:477
+#: wp-forecast-admin.php:505
+#: wpf_sa_admin.php:263
 msgid "Press Update options to save new location."
 msgstr "Tallenna uusi paikkakunta klikkaamalla P&auml;ivit&auml; valinnat."
 
-#: wp-forecast-admin.php:480
+#: wp-forecast-admin.php:508
+#: wpf_sa_admin.php:266
 msgid "Locationname"
 msgstr "Paikannimi"
 
-#: wp-forecast-admin.php:482
+#: wp-forecast-admin.php:510
+#: wpf_sa_admin.php:269
 msgid "Refresh cache after"
 msgstr "Virkist&auml; v&auml;limuisti"
 
-#: wp-forecast-admin.php:484
+#: wp-forecast-admin.php:512
+#: wpf_sa_admin.php:271
 msgid "secs."
 msgstr "sekunnin j&auml;lkeen"
 
-#: wp-forecast-admin.php:485
+#: wp-forecast-admin.php:513
+#: wpf_sa_admin.php:272
 msgid "Use metric units"
 msgstr "K&auml;yt&auml; metrisi&auml; yksikk&ouml;j&auml;"
 
-#: wp-forecast-admin.php:488
+#: wp-forecast-admin.php:516
+#: wpf_sa_admin.php:275
 msgid "Use current time"
 msgstr "K&auml;yt&auml; t&auml;m&auml;nhetkist&auml; aikaa"
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:517
+#: wpf_sa_admin.php:276
+msgid "Time-Offset"
+msgstr "Time-Offset"
+
+#: wp-forecast-admin.php:517
+#: wpf_sa_admin.php:276
+msgid "minutes"
+msgstr "minuuttia"
+
+#: wp-forecast-admin.php:520
+#: wpf_sa_admin.php:279
 msgid "Windspeed-Unit"
 msgstr "Tuulennopeuden yksikk&ouml;"
 
-#: wp-forecast-admin.php:492
+#: wp-forecast-admin.php:521
+#: wpf_sa_admin.php:280
 msgid "Meter/Second (m/s)"
 msgstr "Metri&auml; sekunnissa (m/s)"
 
-#: wp-forecast-admin.php:493
+#: wp-forecast-admin.php:522
+#: wpf_sa_admin.php:281
 msgid "Kilometer/Hour (km/h)"
 msgstr "Kilometri&auml; tunnissa (km/h)"
 
-#: wp-forecast-admin.php:494
+#: wp-forecast-admin.php:523
+#: wpf_sa_admin.php:282
 msgid "Miles/Hour (mph)"
 msgstr "Mailia tunnissa (mph)"
 
-#: wp-forecast-admin.php:495
+#: wp-forecast-admin.php:524
+#: wpf_sa_admin.php:283
 msgid "Knots (kts)"
 msgstr "Solmua (kts)"
 
-#: wp-forecast-admin.php:500
+#: wp-forecast-admin.php:525
+#: wpf_sa_admin.php:284
+msgid "Beaufort (bft)"
+msgstr "Beaufort (bft)"
+
+#: wp-forecast-admin.php:532
+#: wpf_sa_admin.php:291
 msgid "Language"
 msgstr "Kieli"
 
-#: wp-forecast-admin.php:521
+#: wp-forecast-admin.php:551
+#: wpf_sa_admin.php:310
+msgid "Show forecast as ajax pull-down"
+msgstr "Näytä ennusteet ajax-vetovalikossa"
+
+#: wp-forecast-admin.php:555
+#: wpf_sa_admin.php:314
+msgid "First day in pull-down"
+msgstr "Vetovalikon ensimmäinen päivä"
+
+#: wp-forecast-admin.php:572
+#: wpf_sa_admin.php:332
 msgid "Display Configuration"
 msgstr "N&auml;yt&auml; muotoilu"
 
-#: wp-forecast-admin.php:525
+#: wp-forecast-admin.php:576
+#: wpf_sa_admin.php:336
 msgid "Current Conditions"
 msgstr "S&auml;&auml; t&auml;n&auml;&auml;n"
 
-#: wp-forecast-admin.php:526
+#: wp-forecast-admin.php:577
+#: wpf_sa_admin.php:337
 msgid "Forecast Day"
 msgstr "Ennuste p&auml;iv&auml;lle"
 
-#: wp-forecast-admin.php:527
+#: wp-forecast-admin.php:578
+#: wpf_sa_admin.php:338
 msgid "Forecast Night"
 msgstr "Ennuste y&ouml;lle"
 
-#: wp-forecast-admin.php:530
+#: wp-forecast-admin.php:581
+#: wpf_sa_admin.php:341
 msgid "Icon"
 msgstr "Kuvake"
 
-#: wp-forecast-admin.php:539
+#: wp-forecast-admin.php:590
+#: wpf_sa_admin.php:350
 msgid "Date"
 msgstr "P&auml;iv&auml;ys"
 
-#: wp-forecast-admin.php:546
+#: wp-forecast-admin.php:597
+#: wpf_sa_admin.php:357
 msgid "Time"
 msgstr "Aika"
 
-#: wp-forecast-admin.php:553
+#: wp-forecast-admin.php:604
+#: wpf_sa_admin.php:364
 msgid "Short Description"
 msgstr "Kuvaus"
 
-#: wp-forecast-admin.php:562
+#: wp-forecast-admin.php:613
+#: wpf_sa_admin.php:373
 msgid "Temperature"
 msgstr "L&auml;mp&ouml;tila"
 
-#: wp-forecast-admin.php:571
+#: wp-forecast-admin.php:622
+#: wpf_sa_admin.php:382
 msgid "Realfeel"
 msgstr "Tuntuma"
 
-#: wp-forecast-admin.php:578
+#: wp-forecast-admin.php:629
+#: wpf_sa_admin.php:389
 msgid "Pressure"
 msgstr "Ilmanpaine"
 
-#: wp-forecast-admin.php:585
+#: wp-forecast-admin.php:636
+#: wpf_sa_admin.php:396
 msgid "Humidity"
 msgstr "Kosteus"
 
-#: wp-forecast-admin.php:592
+#: wp-forecast-admin.php:643
+#: wpf_sa_admin.php:403
 msgid "Wind"
 msgstr "Tuuli"
 
-#: wp-forecast-admin.php:601 wp-forecast-show.php:253 wp-forecast-show.php:349
-#: wp-forecast-show.php:393
+#: wp-forecast-admin.php:652
+#: wp-forecast-show.php:308
+#: wp-forecast-show.php:411
+#: wp-forecast-show.php:455
+#: wpf_sa_admin.php:412
 msgid "Windgusts"
 msgstr "Puuskissa"
 
-#: wp-forecast-admin.php:610
+#: wp-forecast-admin.php:661
+#: wpf_sa_admin.php:421
 msgid "Sunrise"
 msgstr "Aurinko nousee"
 
-#: wp-forecast-admin.php:617
+#: wp-forecast-admin.php:668
+#: wpf_sa_admin.php:428
 msgid "Sunset"
 msgstr "Aurinko laskee"
 
-#: wp-forecast-admin.php:624
+#: wp-forecast-admin.php:675
+#: wpf_sa_admin.php:435
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:631
-#, fuzzy
+#: wp-forecast-admin.php:682
+#: wpf_sa_admin.php:442
 msgid "Link to Weatherprovider"
-msgstr "Accuweather-linkki"
+msgstr "Linkki säätiedontarjoajaan"
 
-#: wp-forecast-admin.php:640 wp-forecast-show.php:300
+#: wp-forecast-admin.php:685
+#: wpf_sa_admin.php:445
+msgid "Open in new Window"
+msgstr "Avaa uudessa ikkunassa"
+
+#: wp-forecast-admin.php:693
+#: wp-forecast-show.php:358
+#: wpf_sa_admin.php:453
 msgid "Forecast"
 msgstr "Ennuste"
 
-#: wp-forecast-admin.php:645
+#: wp-forecast-admin.php:698
+#: wpf_sa_admin.php:458
 msgid "All"
-msgstr ""
+msgstr "Kaikki"
 
-#: wp-forecast-admin.php:646 wp-forecast-admin.php:647
-#: wp-forecast-admin.php:648 wp-forecast-admin.php:649
-#: wp-forecast-admin.php:650 wp-forecast-admin.php:651
-#: wp-forecast-admin.php:652 wp-forecast-admin.php:653
-#: wp-forecast-admin.php:654
+#: wp-forecast-admin.php:699
+#: wp-forecast-admin.php:700
+#: wp-forecast-admin.php:701
+#: wp-forecast-admin.php:702
+#: wp-forecast-admin.php:703
+#: wp-forecast-admin.php:704
+#: wp-forecast-admin.php:705
+#: wp-forecast-admin.php:706
+#: wp-forecast-admin.php:707
+#: wpf_sa_admin.php:459
+#: wpf_sa_admin.php:460
+#: wpf_sa_admin.php:461
+#: wpf_sa_admin.php:462
+#: wpf_sa_admin.php:463
+#: wpf_sa_admin.php:464
+#: wpf_sa_admin.php:465
+#: wpf_sa_admin.php:466
+#: wpf_sa_admin.php:467
 msgid "Day"
 msgstr "P&auml;iv&auml;"
 
-#: wp-forecast-admin.php:656
+#: wp-forecast-admin.php:709
+#: wpf_sa_admin.php:469
 msgid "Daytime"
 msgstr "P&auml;iv&auml;ll&auml;"
 
-#: wp-forecast-admin.php:677
+#: wp-forecast-admin.php:730
+#: wpf_sa_admin.php:490
 msgid "Nighttime"
 msgstr "Y&ouml;ll&auml;"
 
-#: wp-forecast-admin.php:707
+#: wp-forecast-admin.php:757
+#: wpf_sa_admin.php:519
 msgid "Update options"
 msgstr "P&auml;ivit&auml; valinnat"
 
-#: wp-forecast-admin.php:714 wp-forecast-admin.php:731
+#: wp-forecast-admin.php:764
+#: wp-forecast-admin.php:781
 msgid "Search location"
 msgstr "Hae paikkakuntaa"
 
-#: wp-forecast-admin.php:718
+#: wp-forecast-admin.php:768
 msgid "Searchterm"
 msgstr "Hakusana"
 
-#: wp-forecast-admin.php:722
+#: wp-forecast-admin.php:772
 msgid "No locations found."
 msgstr "Ei tuloksia"
 
-#: wp-forecast-admin.php:726
+#: wp-forecast-admin.php:776
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Korvaa &auml; ja &ouml; hakusanassa kirjaimilla a ja o."
 
-#: wp-forecast-admin.php:736
+#: wp-forecast-admin.php:786
 msgid "Search result"
 msgstr "Hakutulos"
 
-#: wp-forecast-admin.php:743
+#: wp-forecast-admin.php:793
 msgid "Please select your city and press set location."
 msgstr "Valitse paikkakuntasi ja klikkaa Aseta paikkakunta."
 
-#: wp-forecast-admin.php:747
+#: wp-forecast-admin.php:797
 msgid "Set location"
 msgstr "Aseta paikkakunta"
 
-#: wp-forecast.php:379
+#: wp-forecast-check.php:165
+msgid "Connection-check"
+msgstr "Yhteyden tarkistus"
+
+#: wp-forecast-check.php:168
+msgid "Select weatherprovider"
+msgstr "Valitse säätietojen tarjoaja"
+
+#: wp-forecast-check.php:180
+msgid "Start check"
+msgstr "Aloita tarkistus"
+
+#: wp-forecast-check.php:183
+msgid "Close"
+msgstr "Sulje"
+
+#: wp-forecast.php:422
 #, php-format
 msgid "wp-forecast %s"
 msgstr "wp-forecast %s"
 
-#: wp-forecast-show.php:130
-msgid "Failure notice from provider"
-msgstr ""
+#: wp-forecast-show.php:137
+msgid "Locations:"
+msgstr "Paikkakunnat"
 
-#: wp-forecast-show.php:147
+#: wp-forecast-show.php:171
+msgid "Failure notice from provider"
+msgstr "Virheilmoitus tiedontuottajalta"
+
+#: wp-forecast-show.php:188
 msgid "Sorry, no valid weather data available."
 msgstr "S&auml;&auml;tietoja ei l&ouml;ytynyt."
 
-#: wp-forecast-show.php:148
+#: wp-forecast-show.php:189
 msgid "Please try again later."
 msgstr "Ole hyv&auml; ja yrit&auml; uudelleen."
 
-#: wp-forecast-show.php:196
+#: wp-forecast-show.php:248
 msgid "time"
 msgstr "Aika"
 
-#: wp-forecast-show.php:233
+#: wp-forecast-show.php:288
 msgid "flik"
 msgstr "Tuntuma"
 
-#: wp-forecast-show.php:236
+#: wp-forecast-show.php:291
 msgid "barr"
 msgstr "Ilmanpaine"
 
-#: wp-forecast-show.php:244
+#: wp-forecast-show.php:299
 msgid "hmid"
 msgstr "Kosteus"
 
-#: wp-forecast-show.php:248 wp-forecast-show.php:344 wp-forecast-show.php:386
+#: wp-forecast-show.php:303
+#: wp-forecast-show.php:406
+#: wp-forecast-show.php:448
 msgid "winds"
 msgstr "Tuuli"
 
-#: wp-forecast-show.php:258
+#: wp-forecast-show.php:313
 msgid "sunrise"
 msgstr "Aurinko nousee"
 
-#: wp-forecast-show.php:262
+#: wp-forecast-show.php:317
 msgid "sunset"
 msgstr "Aurinko laskee"
 
-#: wp-forecast-show.php:309
+#: wp-forecast-show.php:367
 msgid "day"
 msgstr "P&auml;iv&auml;ll&auml;"
 
-#: wp-forecast-show.php:361
+#: wp-forecast-show.php:423
 msgid "night"
 msgstr "Y&ouml;ll&auml;"
+
+#: wp-forecast-show.php:481
+#: wp-forecast-show.php:482
+msgid "Less forecast..."
+msgstr "Vähemmän päiviä..."
+
+#: wp-forecast-show.php:483
+msgid "More forecast..."
+msgstr "Lisää päiviä..."
+
+#: wpf_sa_admin.php:62
+msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
+msgstr "Lisäosaa wp-forecast ei löydy. Asenna ja ota wp-forecast käyttöön ensin."
+
+#: wpf_sa_admin.php:194
+msgid "Check the colored checkboxes to user enable the options"
+msgstr "Valitse värilliset ruudut, jos haluat antaa käyttäjälle vaihtoehtoja"
+
+#: wpf_sa_admin.php:199
+msgid "Number of widgets per user"
+msgstr "Vimpainten määrä käyttäjällä"
+
+#: wpf_sa_admin.php:243
+msgid "Widget-Setup"
+msgstr "Vimpainasetukset"
+
+#: wpf_sa_admin.php:252
+msgid "Partner-ID"
+msgstr "Partner-ID"
 
 #: xgettextdummy.php:5
 msgid "loc"
@@ -354,15 +505,15 @@ msgstr "Selke&auml;&auml;"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Melko selke&auml;&auml;"
+msgstr "Melkein selke&auml;&auml;"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Osin selke&auml;&auml;"
+msgstr "Verrattain selke&auml;&auml;"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Vaihtelevaa pilvisyytt&auml;"
+msgstr "Puolipilvist&auml;"
 
 #: xgettextdummy.php:10
 msgid "05"
@@ -370,7 +521,7 @@ msgstr "Utua"
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr "Melko pilvist&auml;"
+msgstr "Melkein pilvist&auml;"
 
 #: xgettextdummy.php:12
 msgid "07"
@@ -378,7 +529,7 @@ msgstr "Pilvist&auml;"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Synk&auml;n pilvist&auml;"
+msgstr "Pilvist&auml;"
 
 #: xgettextdummy.php:14
 msgid "11"
@@ -390,23 +541,23 @@ msgstr "Sadekuuroja"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Melko selke&auml;&auml;"
+msgstr "Melkein pilvist&auml;, sadekuuroja"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Osin pilvist&auml;"
+msgstr "Verrattain pilvist&auml;, sadekuuroja"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Vaihtelevaa pilvisyytt&auml;"
+msgstr "Ukkosta"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Melko pilvist&auml;, ukkoskuuroja"
+msgstr "Melkein pilvist&auml;, ukkoskuuroja"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Melko pilvist&auml;"
+msgstr "Verrattain selke&auml;&auml;, ukkoskuuroja"
 
 #: xgettextdummy.php:21
 msgid "18"
@@ -418,11 +569,11 @@ msgstr "Lumikuuroja"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Melko pilvist&auml;, lumikuuroja"
+msgstr "Melkein pilvist&auml;, lumikuuroja"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Osin selke&auml;&auml;, lumikuuroja"
+msgstr "Verrattain selke&auml;&auml;, lumikuuroja"
 
 #: xgettextdummy.php:25
 msgid "22"
@@ -430,15 +581,15 @@ msgstr "Lumisadetta"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Sadekuuroja"
+msgstr "Melkein pilvist&auml; lumisadetta"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "R&auml;nt&auml;&auml;"
+msgstr "J&auml;&auml;t&auml;"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "Osin selke&auml;&auml;, sadekuuroja"
+msgstr "R&auml;nt&auml;&auml;"
 
 #: xgettextdummy.php:29
 msgid "26"
@@ -446,7 +597,7 @@ msgstr "J&auml;&auml;t&auml;v&auml;&auml; tihkua"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "R&auml;nt&auml;&auml;"
+msgstr "Lumi- ja vesisadetta"
 
 #: xgettextdummy.php:31
 msgid "30"
@@ -466,15 +617,15 @@ msgstr "Selke&auml;&auml;"
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr "Melko selke&auml;&auml;"
+msgstr "Melkein selke&auml;&auml;"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Lumisadetta"
+msgstr "Verrattain pilvist&auml;"
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr "Vaihtelevaa pilvisyytt&auml;"
+msgstr "Puolipilvist&auml;"
 
 #: xgettextdummy.php:38
 msgid "37"
@@ -482,31 +633,31 @@ msgstr "Utua"
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr "Melko pilvist&auml;"
+msgstr "Melkein pilvist&auml;"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Osin pilvist&auml;, sadekuuroja"
+msgstr "Verrattain pilvist&auml;, sadekuuroja"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Melko selke&auml;&auml;"
+msgstr "Melkein pilvist&auml;, sadekuuroja"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Melko pilvist&auml;"
+msgstr "Verrattain pilvist&auml;, ukkoskuuroja"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "R&auml;nt&auml;&auml;"
+msgstr "Melkein pilvist&auml;, ukkoskuuroja"
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr "Melko pilvist&auml;, lumikuuroja"
+msgstr "Melkein pilvist&auml;, lumikuuroja"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Melko pilvist&auml;, lumikuuroja"
+msgstr "Melkein pilvist&auml;, lumisadetta"
 
 #: xgettextdummy.php:46
 msgid "Monday"
@@ -538,406 +689,408 @@ msgstr "Sunnuntai"
 
 #: xgettextdummy.php:53
 msgid "N"
-msgstr ""
+msgstr "P"
 
 #: xgettextdummy.php:54
 msgid "E"
-msgstr ""
+msgstr "I"
 
 #: xgettextdummy.php:55
 msgid "W"
-msgstr ""
+msgstr "L"
 
 #: xgettextdummy.php:56
 msgid "S"
-msgstr ""
+msgstr "E"
 
 #: xgettextdummy.php:57
 msgid "30% Chance Drizzle"
-msgstr ""
+msgstr "30 % todennäköisyydellä tihkusadetta"
 
 #: xgettextdummy.php:58
 msgid "30% Chance Freezing Drizzle"
-msgstr ""
+msgstr "30 % todennäköisyydellä jäätävää tihkusadetta"
 
 #: xgettextdummy.php:59
 msgid "30% Chance Freezing Rain"
-msgstr ""
+msgstr "30 % todennäköisyydellä jäätävää sadetta"
 
 #: xgettextdummy.php:60
 msgid "30% Chance Frozen Drizzle"
-msgstr ""
+msgstr "30 % todennäköisyydellä jäätynyttä tihkua"
 
 #: xgettextdummy.php:61
 msgid "30% Chance Frozen Mix"
-msgstr ""
+msgstr "30 % todennäköisyydellä jäätynyttä sadetta"
 
 #: xgettextdummy.php:62
 msgid "30% Chance Rain Shower"
-msgstr ""
+msgstr "30 % todennäköisyydellä sadekuuroja"
 
 #: xgettextdummy.php:63
 msgid "30% Chance Snow Shower"
-msgstr ""
+msgstr "30 % todennäköisyydellä lumikuuroja"
 
 #: xgettextdummy.php:64
 msgid "30% Chance of Drizzle"
-msgstr ""
+msgstr "30 % todennäköisyydellä tihkusadetta"
 
-#: xgettextdummy.php:65 xgettextdummy.php:66
+#: xgettextdummy.php:65
+#: xgettextdummy.php:66
 msgid "30% Chance of Flurry"
-msgstr ""
+msgstr "30 % todennäköisyydellä puuskittaista tuulta"
 
 #: xgettextdummy.php:67
 msgid "30% Chance of Frozen Mix"
-msgstr ""
+msgstr "30 % todennäköisyydellä jäätynyttä lumi- ja vesisadetta"
 
 #: xgettextdummy.php:68
 msgid "30% Chance of Light Snow"
-msgstr ""
+msgstr "30 % todennäköisyydellä heikkoa lumisadetta"
 
 #: xgettextdummy.php:69
 msgid "30% Chance of Rain"
-msgstr ""
+msgstr "30 % todennäköisyydellä sadetta"
 
 #: xgettextdummy.php:70
 msgid "30% Chance of Sleet"
-msgstr ""
+msgstr "30 % todennäköisyydellä räntää"
 
 #: xgettextdummy.php:71
 msgid "30% Chance of Snow"
-msgstr ""
+msgstr "30 % todennäköisyydellä lumisadetta"
 
 #: xgettextdummy.php:72
 msgid "30% Chance of Storms"
-msgstr ""
+msgstr "30 % todennäköisyydellä myrskyistä"
 
 #: xgettextdummy.php:73
 msgid "40% Chance Drizzle"
-msgstr ""
+msgstr "40 % todennäköisyydellä "
 
 #: xgettextdummy.php:74
 msgid "40% Chance Fozen Drizzle"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätynyttä tihkua"
 
 #: xgettextdummy.php:75
 msgid "40% Chance Freezing Drizzle"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätävää tihkua"
 
 #: xgettextdummy.php:76
 msgid "40% Chance Freezing Rain"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätävää sadetta"
 
 #: xgettextdummy.php:77
 msgid "40% Chance Frozen Drizzle"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätynyttä tihkua"
 
 #: xgettextdummy.php:78
 msgid "40% Chance Frozen Mix"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätynyttä sadetta"
 
 #: xgettextdummy.php:79
 msgid "40% Chance Rain Shower"
-msgstr ""
+msgstr "40 % todennäköisyydellä sadekuuroja"
 
 #: xgettextdummy.php:80
 msgid "40% Chance Snow Shower"
-msgstr ""
+msgstr "40 % todennäköisyydellä lumikuuroja"
 
 #: xgettextdummy.php:81
 msgid "40% Chance of Drizzle"
-msgstr ""
+msgstr "40 % todennäköisyydellä tihkusadetta"
 
 #: xgettextdummy.php:82
 msgid "40% Chance of Flurry"
-msgstr ""
+msgstr "40 % todennäköisyydellä puuskittaista tuulta"
 
 #: xgettextdummy.php:83
 msgid "40% Chance of Frozen Mix"
-msgstr ""
+msgstr "40 % todennäköisyydellä jäätynyttä lumi- ja vesisadetta"
 
 #: xgettextdummy.php:84
 msgid "40% Chance of Light Snow"
-msgstr ""
+msgstr "40 % todennäköisyydellä heikkoa lumisadetta"
 
 #: xgettextdummy.php:85
 msgid "40% Chance of Rain"
-msgstr ""
+msgstr "40 % todennäköisyydellä sadetta"
 
 #: xgettextdummy.php:86
 msgid "40% Chance of Sleet"
-msgstr ""
+msgstr "40 % todennäköisyydellä räntää"
 
 #: xgettextdummy.php:87
 msgid "40% Chance of Snow"
-msgstr ""
+msgstr "40 % todennäköisyydellä lumisadetta"
 
 #: xgettextdummy.php:88
 msgid "40% Chance of Storms"
-msgstr ""
+msgstr "40 % todennäköisyydellä myrkyistä"
 
 #: xgettextdummy.php:89
 msgid "50% Chance Freezing Drizzle"
-msgstr ""
+msgstr "50 % todennäköisyydellä jäätävää tihkusadetta"
 
 #: xgettextdummy.php:90
 msgid "50% Chance Freezing Rain"
-msgstr ""
+msgstr "50 % todennäköisyydellä jäätävää sadetta"
 
 #: xgettextdummy.php:91
 msgid "50% Chance Rain Shower"
-msgstr ""
+msgstr "50 % todennäköisyydellä sadekuuroja"
 
 #: xgettextdummy.php:92
 msgid "50% Chance Snow Shower"
-msgstr ""
+msgstr "50 % todennäköisyydellä lumikuuroja"
 
 #: xgettextdummy.php:93
 msgid "50% Chance of Drizzle"
-msgstr ""
+msgstr "50 % todennäköisyydellä tihkusadetta"
 
 #: xgettextdummy.php:94
 msgid "50% Chance of Flurry"
-msgstr ""
+msgstr "50 % todennäköisyydellä puuskittaista tuulta"
 
 #: xgettextdummy.php:95
 msgid "50% Chance of Frozen Mix"
-msgstr ""
+msgstr "50 % todennäköisyydellä jäätynyttä sadetta"
 
 #: xgettextdummy.php:96
 msgid "50% Chance of Light Snow"
-msgstr ""
+msgstr "50 % todennäköisyydellä heikkoa lumisadetta"
 
 #: xgettextdummy.php:97
 msgid "50% Chance of Rain"
-msgstr ""
+msgstr "50 % todennäköisyydellä sadetta"
 
 #: xgettextdummy.php:98
 msgid "50% Chance of Sleet"
-msgstr ""
+msgstr "50 % todennäköisyydellä räntää"
 
 #: xgettextdummy.php:99
 msgid "50% Chance of Snow"
-msgstr ""
+msgstr "50 % todennäköisyydellä lumisadetta"
 
 #: xgettextdummy.php:100
 msgid "50% Chance of Storms"
-msgstr ""
+msgstr "50 % todennäköisyydellä myrkyistä"
 
 #: xgettextdummy.php:101
 msgid "Chance Freezing Drizzle"
-msgstr ""
+msgstr "Satunnaisesti jäätävää tihkusadetta"
 
 #: xgettextdummy.php:102
 msgid "Chance Freezing Rain"
-msgstr ""
+msgstr "Satunnaisesti jäätävää sadetta"
 
 #: xgettextdummy.php:103
 msgid "Chance Rain Shower"
-msgstr ""
+msgstr "Satunnaisia sadekuuroja"
 
 #: xgettextdummy.php:104
 msgid "Chance Snow Shower"
-msgstr ""
+msgstr "Satunnaisia lumikuuroja"
 
 #: xgettextdummy.php:105
 msgid "Chance of Drizzle"
-msgstr ""
+msgstr "Mahdollisesti tihkusadetta"
 
 #: xgettextdummy.php:106
 msgid "Chance of Flurry"
-msgstr ""
+msgstr "Mahdollisesti puuskittaista tuulta"
 
 #: xgettextdummy.php:107
 msgid "Chance of Freezing Drizzle"
-msgstr ""
+msgstr "Mahdollisesti jäätävää tihkusadetta"
 
 #: xgettextdummy.php:108
 msgid "Chance of Frozen Drizzle"
-msgstr ""
+msgstr "Mahdollisesti jäätynyttä tihkua"
 
 #: xgettextdummy.php:109
 msgid "Chance of Frozen Mix"
-msgstr ""
+msgstr "Mahdollisesti jäätynyttä sadetta"
 
 #: xgettextdummy.php:110
 msgid "Chance of Light Snow"
-msgstr ""
+msgstr "Mahdollisesti heikkoa lumisadetta"
 
 #: xgettextdummy.php:111
 msgid "Chance of Rain"
-msgstr ""
+msgstr "Mahdollisesti sadetta"
 
 #: xgettextdummy.php:112
 msgid "Chance of Rain Showers"
-msgstr ""
+msgstr "Mahdollisesti sadekuuroja"
 
 #: xgettextdummy.php:113
 msgid "Chance of Sleet "
-msgstr ""
+msgstr "Mahdollisesti räntää"
 
 #: xgettextdummy.php:114
 msgid "Chance of Snow"
-msgstr ""
+msgstr "Mahdollisesti lumisadetta"
 
 #: xgettextdummy.php:115
 msgid "Chance of Snow Showers"
-msgstr ""
+msgstr "Mahdollisesti lumikuuroja"
 
 #: xgettextdummy.php:116
 msgid "Chance of Storms"
-msgstr ""
+msgstr "Mahdollisesti myrskyistä"
 
 #: xgettextdummy.php:117
 msgid "Clear"
-msgstr ""
+msgstr "Selkeää"
 
 #: xgettextdummy.php:118
 msgid "Clearing"
-msgstr ""
+msgstr "Selkenevää"
 
 #: xgettextdummy.php:119
 msgid "Cloudy"
-msgstr ""
+msgstr "Pilvistä"
 
 #: xgettextdummy.php:120
 msgid "Drizzle"
-msgstr ""
+msgstr "Tihkusadetta"
 
 #: xgettextdummy.php:121
 msgid "Fair"
-msgstr ""
+msgstr "Kohtalaista"
 
 #: xgettextdummy.php:122
 msgid "Flurries"
-msgstr ""
+msgstr "Puuskittaista tuulta"
 
 #: xgettextdummy.php:123
 msgid "Fog"
-msgstr ""
+msgstr "Sumua"
 
 #: xgettextdummy.php:124
 msgid "Foggy"
-msgstr ""
+msgstr "Sumuista"
 
 #: xgettextdummy.php:125
 msgid "Freezing Drizzle"
-msgstr ""
+msgstr "Jäätävää tihkusadetta"
 
 #: xgettextdummy.php:126
 msgid "Freezing Rain"
-msgstr ""
+msgstr "Jäätävä sadetta"
 
 #: xgettextdummy.php:127
 msgid "Frozen Mix"
-msgstr ""
+msgstr "Jäätynyttä sadetta"
 
 #: xgettextdummy.php:128
 msgid "Hazy"
-msgstr ""
+msgstr "Utua"
 
 #: xgettextdummy.php:129
 msgid "Headline"
-msgstr ""
+msgstr "Otsikko"
 
 #: xgettextdummy.php:130
 msgid "Heavy Rain"
-msgstr ""
+msgstr "Rankkaa sadetta"
 
 #: xgettextdummy.php:131
 msgid "Heavy Snow"
-msgstr ""
+msgstr "Sankkaa lumisadetta"
 
 #: xgettextdummy.php:132
 msgid "Hot and Humid"
-msgstr ""
+msgstr "Kuumaa ja kosteaa"
 
 #: xgettextdummy.php:133
 msgid "Increasing Clouds"
-msgstr ""
+msgstr "Lisääntyvää pilvisyyttä"
 
 #: xgettextdummy.php:134
 msgid "Light Snow"
-msgstr ""
+msgstr "Heikkoa lumisadetta"
 
 #: xgettextdummy.php:135
 msgid "Mostly Clear"
-msgstr ""
+msgstr "Melkein selkeää"
 
 #: xgettextdummy.php:136
 msgid "Mostly Cloudy"
-msgstr ""
+msgstr "Melkein pilvistä"
 
 #: xgettextdummy.php:137
 msgid "Mostly Sunny"
-msgstr ""
+msgstr "Melkein selkeää"
 
 #: xgettextdummy.php:138
-#, fuzzy
 msgid "Nowcast"
-msgstr "Ennuste"
+msgstr "Sää nyt"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"
-msgstr ""
+msgstr "Verrattain pilvistä"
 
 #: xgettextdummy.php:140
 msgid "Partly Sunny"
-msgstr ""
+msgstr "Verrattain selkeää"
 
 #: xgettextdummy.php:141
 msgid "Rain"
-msgstr ""
+msgstr "Sadetta"
 
 #: xgettextdummy.php:142
 msgid "Rain Showers"
-msgstr ""
+msgstr "Sadekuuroja"
 
 #: xgettextdummy.php:143
 msgid "Scattered Showers"
-msgstr ""
+msgstr "Paikallisia sadekuuroja"
 
 #: xgettextdummy.php:144
 msgid "Scattered Thunderstorms"
-msgstr ""
+msgstr "Paikallisia ukkoskuuroja"
 
 #: xgettextdummy.php:145
 msgid "Sleet"
-msgstr ""
+msgstr "Räntää"
 
 #: xgettextdummy.php:146
 msgid "Snow"
-msgstr ""
+msgstr "Lumisadetta"
 
 #: xgettextdummy.php:147
 msgid "Snow Showers"
-msgstr ""
+msgstr "Lumikuuroja"
 
 #: xgettextdummy.php:148
-#, fuzzy
 msgid "Sunny"
-msgstr "Sunnuntai"
+msgstr "Aurinkoista"
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
-msgstr ""
+msgstr "Ukkosta"
 
 #: xgettextdummy.php:151
 msgid "Very Cold"
-msgstr ""
+msgstr "Hyvin kylmää"
 
 #: xgettextdummy.php:152
 msgid "Very Hot"
-msgstr ""
+msgstr "Hyvin kuumaa"
 
 #: xgettextdummy.php:153
 msgid "Warm and Humid"
-msgstr ""
+msgstr "Lämmintä ja kosteaa"
 
 #: xgettextdummy.php:154
-#, fuzzy
 msgid "Windy"
-msgstr "Tuuli"
+msgstr "Tuulista"
+
+#, fuzzy
+#~ msgid "Weather.com"
+#~ msgstr "S&auml;&auml;"
 
 #~ msgid "tmp"
 #~ msgstr "L&auml;mp&ouml;tila"
