@@ -19,7 +19,13 @@
 */
 
 // include wordpress stuff
-require_once("../../../wp-config.php");
+//include wp-config or wp-load.php
+$root = dirname(dirname(dirname(dirname(__FILE__))));
+if (file_exists($root.'/wp-load.php')) {				// since WP 2.6
+	require_once($root.'/wp-load.php');
+} elseif (file_exists($root.'/wp-config.php')) {		// Before 2.6
+	require_once($root.'/wp-config.php');
+} 
 require_once("funclib.php");
 
 function checkURL($url) 

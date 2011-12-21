@@ -47,7 +47,7 @@ div.wp-forecast-curr-right {
 /* style for current weather data details */
 div.wp-forecast-curr-details {
     font-size: 11px; 
-    padding: 3px;
+    padding: 6px;
     text-align:left;
     float:left;
 }
@@ -140,4 +140,6 @@ iframe.wpf-iframe {
     border: 0px;
 }
 
-
+td.td-center {
+	text-align: center;
+}

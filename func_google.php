@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2010  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2010-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -223,7 +223,7 @@ function google_forecast_data($wpfcid="A", $language_override=null)
     $wdirarr = explode(" ", $w['wind']);
     $weather_arr['windspeed']=windstr($metric,$wdirarr[3] / 3.6,"kmh");
     $weather_arr['winddir']=translate_winddir($wdirarr[1],"wp-forecast_".$wpf_language);
-    $weather_arr['copyright']='<a href="http://www.google.com">&copy; 2010 GoogleWeather</a>';
+    $weather_arr['copyright']='<a href="http://www.google.com">&copy; '.date("Y").' GoogleWeather</a>';
     
     
     // calc values for forecast

@@ -79,17 +79,17 @@ if ( !class_exists('wpf_widget') )
             // print out widget selector
 	    $out .='<p><label for ="'. $this->get_field_id('wpfcid') . '" >';
 	    $out .= __('Available widgets',"wp-forecast_".$locale);
-	    $out .= "<select name='". $this->get_field_name("wpfcid") ."' size='1' >";	
+	    $out .= "<select name='". $this->get_field_name("wpfcid") ."' id='".$this->get_field_id('wpfcid')."' size='1' >";	
 	    // option for choose dialog
 	    $out .="<option value='?' ";
-	    if ( $wpfcid == $id )
-		$out .=" selected='selected' ";
+	    if ( $wpfcid == "?" )
+			$out .=" selected='selected' ";
 	    $out .=">?</option>";
 
 	    for ($i=0;$i<$count;$i++) {
 		$id = get_widget_id( $i );
 		$out .="<option value='".$id."' ";
-		if ( $wpfcid == $id or ($wpfcid == "" and $id="A"))
+		if ( $wpfcid == $id or ($wpfcid == "" and $id=="A"))
 		    $out .=" selected='selected' ";
 		$out .=">".$id."</option>";
 	    }

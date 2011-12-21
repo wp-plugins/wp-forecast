@@ -6,3 +6,7 @@
     padding: 0px;
     margin: 4px;
 }
+
+td.td-center {
+	text-align: center;
+}

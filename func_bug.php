@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -370,7 +370,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     list($dummy, $weather_arr['sunrise']) = split(" ",$w['sunrise'],2);
     list($dummy, $weather_arr['sunset'] ) = split(" ",$w['sunset'] ,2);
-    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; 2010 WeatherBug</a>';
+    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; '.date("Y").' WeatherBug</a>';
     
     // additional info
     $weather_arr['lat']=$w['lat'];

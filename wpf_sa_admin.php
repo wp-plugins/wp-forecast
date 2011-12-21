@@ -182,7 +182,7 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 	
 	$defaults['nighttime'] = $newnighttime; 
 	
-	// put message after update
+	// put message after 'pdate
 	echo"<div class='updated'><p><strong>";
 	update_option("wpf_sa_defaults",serialize($defaults));
 	update_option("wpf_sa_allowed",serialize($allowed));
@@ -203,7 +203,7 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "<h2>WPMU-Admin-Settings for WP-Forecast</h2>";
     
     $out .= "<span class='wpfbcg'><b>" . __("Check the colored checkboxes to user enable the options","wp-forecast_".$locale) . "</b></span>";
-    $out .= "<form name='options' id='options' method='post' action=''>";
+    $out .= "<form name='options' id='options' method='post' action='#'>";
     
     $out .= "<table><tr><td><span class='wpfbcg'><input type='checkbox' name='ue_wp-forecast-count' value='1'";
     if ($allowed['ue_wp-forecast-count']=="1") $out .= "checked='checked'";
@@ -355,110 +355,110 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
         </tr>
         <tr>
         <td><?php echo __('Icon',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_icon" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],0,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_icon" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_d_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],10,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_icon" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_n_icon" value="1" 
 		 <?php if (substr($av['dispconfig'],14,1)=="1") echo "checked=\"checked\""?> /></td>
          </tr>
           <tr>
          <td><?php echo __('Date',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_date" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_date" value="1" 
 		 <?php if (substr($av['dispconfig'],18,1)=="1") echo "checked=\"checked\""?> /></td>
-         <td align='center'>&nbsp;</td>
-         <td align='center'>&nbsp;</td>
+         <td class='td-center'>&nbsp;</td>
+         <td class='td-center'>&nbsp;</td>
          </tr>
 	 <tr>
          <td><?php echo __('Time',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_time" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_time" value="1" 
 		 <?php if (substr($av['dispconfig'],1,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Short Description',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_short" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_short" value="1" 
 	     <?php if (substr($av['dispconfig'],2,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_short" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_d_short" value="1" 
 	     <?php if (substr($av['dispconfig'],11,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_short" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_n_short" value="1" 
 	     <?php if (substr($av['dispconfig'],15,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
         <tr>
         <td><?php echo __('Temperature',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_temp" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],3,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_temp" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_d_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],12,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_temp" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_n_temp" value="1" 
 	     <?php if (substr($av['dispconfig'],16,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
         <tr>
         <td><?php echo __('Realfeel',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_real" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_real" value="1" 
 	     <?php if (substr($av['dispconfig'],4,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Pressure',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_press" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_press" value="1" 
 	     <?php if (substr($av['dispconfig'],5,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Humidity',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_humid" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_humid" value="1" 
 	     <?php if (substr($av['dispconfig'],6,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Wind',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_wind" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_wind" value="1" 
 	     <?php if (substr($av['dispconfig'],7,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_wind" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_d_wind" value="1" 
 	     <?php if (substr($av['dispconfig'],13,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_wind" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_n_wind" value="1" 
   	    <?php if (substr($av['dispconfig'],17,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr> 
 	<tr>
         <td><?php echo __('Windgusts',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_wgusts" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_wgusts" value="1" 
 	     <?php if (substr($av['dispconfig'],22,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_d_wgusts" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_d_wgusts" value="1" 
 	     <?php if (substr($av['dispconfig'],23,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'><input type="checkbox" name="d_n_wgusts" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_n_wgusts" value="1" 
   	     <?php if (substr($av['dispconfig'],24,1)=="1") echo "checked=\"checked\""?> /></td>
         </tr>         
 	<tr>
         <td><?php echo __('Sunrise',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_sunrise" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_sunrise" value="1" 
 		 <?php if (substr($av['dispconfig'],8,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
         <tr>
         <td><?php echo __('Sunset',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_sunset" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_sunset" value="1" 
 		 <?php if (substr($av['dispconfig'],9,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr>
         <tr>
         <td><?php echo __('Copyright',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_copyright" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_copyright" value="1" 
 		 <?php if (substr($av['dispconfig'],21,1)=="1") echo "checked=\"checked\""?> /></td>
-        <td align='center'>&nbsp;</td>
-        <td align='center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
+        <td class='td-center'>&nbsp;</td>
         </tr> 
 	<tr>
         <td><?php echo __('Link to Weatherprovider',"wp-forecast_".$locale)?></td>
-        <td align='center'><input type="checkbox" name="d_c_accuweather" id="d_c_accuweather" value="1" 
+        <td class='td-center'><input type="checkbox" name="d_c_accuweather" id="d_c_accuweather" value="1" 
 	    <?php if (substr($av['dispconfig'],25,1)=="1") echo "checked=\"checked\""?> onchange="nwfields_update();" /></td>
-            <td colspan="2" align='left'>(<?php echo __('Open in new Window',"wp-forecast_".$locale)?>: 
+            <td colspan="2" >(<?php echo __('Open in new Window',"wp-forecast_".$locale)?>: 
             <input type="checkbox" name="d_c_aw_newwindow" id="d_c_aw_newwindow" value="1" 
  	    <?php if (substr($av['dispconfig'],26,1)=="1") echo "checked=\"checked\""?> />)</td>
         </tr> 

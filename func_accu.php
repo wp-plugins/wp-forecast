@@ -323,7 +323,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $sunarr = explode(" ",$w["sun"]);
     $weather_arr['sunrise']=$sunarr[0];
     $weather_arr['sunset']=$sunarr[1];
-    $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; 2011 AccuWeather, Inc.</a>';
+    $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; '.date("Y").' AccuWeather, Inc.</a>';
     
     
     // calc values for forecast
