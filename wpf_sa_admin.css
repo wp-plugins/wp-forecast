@@ -1,0 +1,12 @@
+/* styles for super admin admin dialog */
+
+.wpfbcg {
+    background-color: #eaf3fa;
+    border:1px solid #22749b;
+    padding: 0px;
+    margin: 4px;
+}
+
+td.td-center {
+	text-align: center;
+}
