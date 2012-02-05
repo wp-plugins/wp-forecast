@@ -55,8 +55,8 @@
 	    document.woptions.d_d_wgusts.disabled=false;	
 	    document.woptions.d_n_wgusts.disabled=false;
 	    
-	    document.woptions.searchloc.disabled=false;
-	    document.woptions.search_loc.disabled=false;
+	    //document.woptions.searchloc.disabled=false;
+	    //document.woptions.search_loc.disabled=false;
 	}
       }
       
@@ -99,8 +99,8 @@
 	    document.woptions.d_d_wgusts.disabled=true;	
 	    document.woptions.d_n_wgusts.disabled=true; 
 
-	    document.woptions.searchloc.disabled=true;
-	    document.woptions.search_loc.disabled=true;
+	    //document.woptions.searchloc.disabled=true;
+	    //document.woptions.search_loc.disabled=true;
 	}
       }
 
@@ -129,8 +129,8 @@
 	    document.woptions.d_d_wgusts.disabled=true;	
 	    document.woptions.d_n_wgusts.disabled=true;
 
-	    document.woptions.searchloc.disabled=false;
-	    document.woptions.search_loc.disabled=false;
+	    //document.woptions.searchloc.disabled=false;
+	    //document.woptions.search_loc.disabled=false;
 
 	   
 	}

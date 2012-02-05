@@ -3,13 +3,13 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 3.7
+Version: 3.8
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
 
 /*  
-    Copyright 2006-2011  Hans Matzen 
+    Copyright 2006-2012  Hans Matzen 
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -402,7 +402,7 @@ function widget_wp_forecast_init()
 
   // add fetch weather data to init the cache before any headers are sent
   add_action('init','wp_forecast_init');
-  add_action('init','wp_forecast_admin_init');
+  add_action('admin_init','wp_forecast_admin_init');
   
   // add css in header
   add_action('wp_head', 'wp_forecast_css');

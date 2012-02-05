@@ -270,7 +270,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
     
     // add link to checklist dialog
-    $out .= '<div style="text-align:right"><a href="../wp-content/plugins/wp-forecast/wp-forecast-check.php?height=600&amp;width=800" class="thickbox" title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
+    $out .= '<div style="text-align:right;padding-right:20px;"><a href="../wp-content/plugins/wp-forecast/wp-forecast-check.php?height=600&amp;width=800" class="thickbox" title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
 
     echo $out;
   }
@@ -472,10 +472,11 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
       //com_get_locations($xml); // modifies global array $loc
     }
   }
-  
+
   // if this is a POST call, set location
   if (isset($_POST['set_loc'])) {
-    $av['location']=$_POST["newloc"];
+    $av['location'] = $_POST["new_loc"];
+    $av['service']  = $_POST['provider'];
   }
 ?>
 
@@ -495,10 +496,10 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	       <option value="accu" <?php if ($av['service']=="accu") echo "selected=\"selected\""?>><?php echo __('AccuWeather',"wp-forecast_".$locale)?></option>
            <option value="bug" <?php if ($av['service']=="bug") echo "selected=\"selected\""?>><?php echo __('WeatherBug',"wp-forecast_".$locale)?></option>
            <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> 
-	 </select></p>
+	 </select>&nbsp;
 
-         <p><?php echo __('Partner ID',"wp-forecast_".$locale)?>:
-         <input name="apikey1" id="apikey1" type="text" size="30" maxlength="80" value="<?php echo $av['apikey1'] ?>" /></p>
+         <?php echo __('Partner ID',"wp-forecast_".$locale)?>:
+         <input name="apikey1" id="apikey1" type="text" size="20" maxlength="80" value="<?php echo $av['apikey1'] ?>" /></p>
          <!--
          <p><?php echo __('Licensekey',"wp-forecast_".$locale)?>:
          <input name="apikey2" id="apikey2" type="text" size="30" maxlength="80" value="<?php echo $av['apikey2'] ?>" /></p>
@@ -506,7 +507,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <script type="text/javascript">apifields(document.woptions.service.value);</script>
 
 	 <p><b><?php echo __('Location',"wp-forecast_".$locale)?>:</b>
-	 <input name="location" id="location" type="text" size="30" maxlength="80" value="<?php echo $av['location'] ?>"<?php if ($widgetcall==1) echo "readonly" ?> /></p>
+	 <input name="location" id="location" type="text" size="30" maxlength="80" value="<?php echo $av['location'] ?>"<?php if ($widgetcall==1) echo "readonly" ?> />
+	 <a href="<?php echo plugin_dir_url( __FILE__ ); ?>/wp-forecast-search.php?height=600&amp;width=800" class="thickbox" title="">
+	 	<img alt="Search Icon" src="<?php echo plugin_dir_url( __FILE__ ); ?>/Searchicon16x16.png" />
+	 </a>
+	 
+	 
+	 </p>
 	 <?php if (isset($_POST['set_loc'])) { ?>
 	       <p><b><?php echo __('Press Update options to save new location.',"wp-forecast_".$locale)?></b></p>
          <?php } ?>
@@ -571,8 +578,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
    <option value="9" <?php if ($av['pdfirstday']=="9") echo "selected=\"selected\""?>>9</option>
    </select></p>
    <script type="text/javascript">pdfields_update();</script>
-
-       </div>
+<?php 
+ if ($widgetcall ==0) 
+     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
+   else
+     echo "<input type='hidden' name='info_update' value='1' />";
+?>
+   </div>
        <!-- start of right column -->
        <div  style="padding-left: 2%; float: left; width: 49%;">
        <b><?php echo __('Display Configuration',"wp-forecast_".$locale)?></b>
@@ -759,53 +771,53 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
        
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
 <?php
-   if ($widgetcall ==0) 
-     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
-   else
-     echo "<input type='hidden' name='info_update' value='1' />";
-   
+//   if ($widgetcall ==0) 
+//     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
+//   else
+//     echo "<input type='hidden' name='info_update' value='1' />";
+//   
    //  suchformular fuer locations
-   if ($widgetcall==0) 
-     {
-       echo "<hr /><fieldset id=\"set2\"><legend>".__('Search location',"wp-forecast_".$locale)."</legend><br />";
-     
-       if (count($loc)<=0 ) 
-	 { 	 
-	   echo "<p><b>".__('Searchterm',"wp-forecast_".$locale).":</b>\n";
-	   echo "<input name=\"searchloc\" type=\"text\" size=\"30\" maxlength=\"30\" /><br /></p>\n";
-	   if (isset($_POST['search_loc'])) 
-	     { 
-	       echo "<p>".__('No locations found.',"wp-forecast_".$locale)."</p>";
-	     } 
-	   else 
-	     {
-	       echo "<p>".__('Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm.',"wp-forecast_".$locale)."</p>";
-	     }
-	   echo "</fieldset>\n";
-	   echo "<div class='submit'>\n";
-	   echo "<input class='button-primary' type='submit' name='search_loc' value='" ;
-	   echo __('Search location',"wp-forecast_".$locale);
-	   echo " »' />\n";
-	 } 
-       else 
-	 {
-	   echo "<b>".__('Search result',"wp-forecast_".$locale).": </b><select name=\"newloc\" size=\"1\">\n";
-	   foreach ($loc as $l) 
-	     {
-	       echo "<option value=\"".$l['location']."\">";
-	       echo $l['city']."/".$l['state'];
-	       echo "</option>\n";
-	     }
-	   echo "</select><br /><p>".__('Please select your city and press set location.',"wp-forecast_".$locale)."</p>\n";
-	   echo "</fieldset>\n";
-	   echo "<div class='submit'>\n";
-	   echo "<input class='button-primary' type='submit' name='set_loc' value='" ;
-	   echo  __('Set location',"wp-forecast_".$locale);
-	   echo " »' />\n";
-	 }
-       echo "</div></form></div>";
-     }
-   
+//   if ($widgetcall==0) 
+//     {
+//       echo "<hr /><fieldset id=\"set2\"><legend>".__('Search location',"wp-forecast_".$locale)."</legend><br />";
+//     
+//       if (count($loc)<=0 ) 
+//	 { 	 
+//	   echo "<p><b>".__('Searchterm',"wp-forecast_".$locale).":</b>\n";
+//	   echo "<input name=\"searchloc\" type=\"text\" size=\"30\" maxlength=\"30\" /><br /></p>\n";
+//	   if (isset($_POST['search_loc'])) 
+//	     { 
+//	       echo "<p>".__('No locations found.',"wp-forecast_".$locale)."</p>";
+//	     } 
+//	   else 
+//	     {
+//	       echo "<p>".__('Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm.',"wp-forecast_".$locale)."</p>";
+//	     }
+//	   echo "</fieldset>\n";
+//	   echo "<div class='submit'>\n";
+//	   echo "<input class='button-primary' type='submit' name='search_loc' value='" ;
+//	   echo __('Search location',"wp-forecast_".$locale);
+//	   echo " »' />\n";
+//	 } 
+//       else 
+//	 {
+//	   echo "<b>".__('Search result',"wp-forecast_".$locale).": </b><select name=\"newloc\" size=\"1\">\n";
+//	   foreach ($loc as $l) 
+//	     {
+//	       echo "<option value=\"".$l['location']."\">";
+//	       echo $l['city']."/".$l['state'];
+//	       echo "</option>\n";
+//	     }
+//	   echo "</select><br /><p>".__('Please select your city and press set location.',"wp-forecast_".$locale)."</p>\n";
+//	   echo "</fieldset>\n";
+//	   echo "<div class='submit'>\n";
+//	   echo "<input class='button-primary' type='submit' name='set_loc' value='" ;
+//	   echo  __('Set location',"wp-forecast_".$locale);
+//	   echo " »' />\n";
+//	 }
+//       echo "</div></form></div>";
+//     }
+//   
    echo '<script type="text/javascript">apifields(document.woptions.service.value);wpf_wpmu_disable_fields();</script>';
 
    pdebug(1,"End of wpf_sub_admin_form ()");

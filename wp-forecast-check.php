@@ -44,7 +44,7 @@ function checkURL($url)
     $s = time();
     $resp = wp_remote_request($url, $wprr_args);
     $e = time();
-
+	
     // switch to wordpress transport
     switch_wpf_transport(false);
 
@@ -71,6 +71,7 @@ function showCheckResult($erg)
     $space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     if ($erg['error'] == "") {
 	$out .= $space . "Test was successfull.". "<br/>";
+
 	$out .= $space . "Fetched " . $erg['len'] . " Bytes in ";
 	$out .= $erg['duration'] . " seconds."."<br/>";
     } else {
@@ -98,7 +99,7 @@ if (!empty($_POST)) {
     $transports = get_wp_transports();
     
     if ( $_POST['wprovider'] == "Accuweather")
-	$url = $wpf_vars["ACCU_BASE_URI"] . "metric=1&location=EUR|DE|GM007|FRANKFURT AM MAIN";
+	$url = $wpf_vars["ACCU_BASE_URI"] . "metric=1&location=EUR|DE|GM007|FRANKFURT%20AM%20MAIN";
     if ( $_POST['wprovider'] == "WeatherBug") {
 	if ( !isset($wpf_vars['apikey1'])) {
 	    $out .= "You have to set the API-Key to test WeatherBug.";
@@ -171,7 +172,7 @@ $out .= '<div id="checkorm" class="wrap" >';
 $out .= '<h2>wp-forecast '.__('Connection-check',"wp-forecast_".$locale).'</h2>';
 $out .= '<table class="editform" cellspacing="5" cellpadding="5">';
 $out .= '<tr>';
-$out .= '<th scope="row" valign="top"><label for="wprovider">'.__('Select weatherprovider','wp-forecast_'.$locale).':</label></th>'."\n";
+$out .= '<th scope="row"><label for="wprovider">'.__('Select weatherprovider','wp-forecast_'.$locale).':</label></th>'."\n";
 $out .= '<td><select name="wprovider" id="wprovider">'."\n";
 
 $out .= "<option value='Accuweather'>Accuweather</option>\n";
