@@ -8,25 +8,25 @@ msgstr ""
 "Project-Id-Version: wp-forecast\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-26 20:02+0200\n"
-"PO-Revision-Date: 2009-02-02 17:03+0100\n"
-"Last-Translator: Stefano <steve196404@virgilio.it>\n"
-"Language-Team: Valeria Pellegirini <info@2bsoftware>\n"
+"PO-Revision-Date: 2010-04-06 17:03+0100\n"
+"Last-Translator: Pavel <p.karnaukhov@gmail.com>\n"
+"Language-Team: Pavel <p.karnaukhov@gmail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_c\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: class-wpf_widget.php:73 wp-forecast-admin.php:102
 msgid "Title:"
-msgstr "Название"
+msgstr "Назва"
 
 #: class-wpf_widget.php:81 wp-forecast-admin.php:222
 msgid "Available widgets"
-msgstr "Доступные виджеты"
+msgstr "Доступні віджети"
 
 #: func_bug.php:222
 msgid "Location does not exist"
@@ -42,25 +42,25 @@ msgstr ""
 
 #: wp-forecast-admin.php:105
 msgid "widget_hint"
-msgstr "Виджет"
+msgstr "Віджет"
 
 #: wp-forecast-admin.php:210 wp-forecast.php:375
 msgid "How many wp-forecast widgets would you like?"
-msgstr "Сколько WP-прогноз виджетов вы хотели?"
+msgstr "Скільки WP-прогноз віджетів ви хотіли?"
 
 #: wp-forecast-admin.php:219 wp-forecast-admin.php:245
 #: wp-forecast-admin.php:261 wp-forecast-admin.php:270 wp-forecast.php:384
 msgid "Save"
-msgstr "Сохранить"
+msgstr "Записати"
 
 #: wp-forecast-admin.php:238
 msgid "Select widget"
-msgstr "Выберите виджет"
+msgstr "Виберіть віджет"
 
 #: wp-forecast-admin.php:243 wpf_sa_admin.php:218
 #, fuzzy
 msgid "Timeout for weatherprovider connections (secs.)?"
-msgstr "Тайм-аут для соединения AccuWeather (сек.)"
+msgstr "Тайм-аут для з'єднання з AccuWeather (сек.)"
 
 #: wp-forecast-admin.php:249 wpf_sa_admin.php:226
 msgid "Preselect wordpress transfer method"
@@ -72,24 +72,24 @@ msgstr ""
 
 #: wp-forecast-admin.php:265 wpf_sa_admin.php:241
 msgid "Delete options during plugin deactivation?"
-msgstr "Удалить плагин в ходе дизактивации ?"
+msgstr "Видалити плагін під час дизактивації?"
 
 #: wp-forecast-admin.php:273
 #, fuzzy
 msgid "Check connection to Weatherprovider"
-msgstr "Ссылка на AccuWeather"
+msgstr "Лінк на AccuWeather"
 
 #: wp-forecast-admin.php:442 wpf_sa_admin.php:192
 msgid "Settings successfully updated"
-msgstr "Настройки успешно обновлены"
+msgstr "Налаштування поновлено успішно"
 
 #: wp-forecast-admin.php:444
 msgid "You have to change a field to update settings."
-msgstr "Вы должны изменить поле для обновления настроек"
+msgstr "Ви повинні змінити поле для поновлення налаштувань"
 
 #: wp-forecast-admin.php:491
 msgid "WP-Forecast Setup"
-msgstr "WP-прогноз установки"
+msgstr "WP-прогноз Опції"
 
 #: wp-forecast-admin.php:494 wpf_sa_admin.php:262
 msgid "Weatherservice"
@@ -98,7 +98,7 @@ msgstr ""
 #: wp-forecast-admin.php:496 wpf_sa_admin.php:264
 #, fuzzy
 msgid "AccuWeather"
-msgstr "Ссылка на AccuWeather"
+msgstr "Лінк на AccuWeather"
 
 #: wp-forecast-admin.php:497 wpf_sa_admin.php:265
 #, fuzzy
@@ -120,19 +120,19 @@ msgstr ""
 
 #: wp-forecast-admin.php:509 wpf_sa_admin.php:276
 msgid "Location"
-msgstr "Местонахождение"
+msgstr "Місцезнаходження"
 
 #: wp-forecast-admin.php:518 wpf_sa_admin.php:279
 msgid "Press Update options to save new location."
-msgstr "Нажмите  на  Обновить страницу, чтобы сохранить новое местонахождение."
+msgstr "Нажміть  на  Поновити сторінку, щоб установити нове місцезнаходження."
 
 #: wp-forecast-admin.php:521 wpf_sa_admin.php:282
 msgid "Locationname"
-msgstr " Название местонахождения"
+msgstr "Назва місцезнаходження"
 
 #: wp-forecast-admin.php:523 wpf_sa_admin.php:285
 msgid "Refresh cache after"
-msgstr "Обновление кэш-памяти"
+msgstr "Поновлення кеш-пам'яті"
 
 #: wp-forecast-admin.php:525 wpf_sa_admin.php:287
 msgid "secs."
@@ -140,11 +140,11 @@ msgstr "сек."
 
 #: wp-forecast-admin.php:526 wpf_sa_admin.php:288
 msgid "Use metric units"
-msgstr "Использование метрических единиц"
+msgstr "Використання метричних одиниць"
 
 #: wp-forecast-admin.php:529 wpf_sa_admin.php:291
 msgid "Use current time"
-msgstr "Использовать текущее время"
+msgstr "Використовувати поточний час"
 
 #: wp-forecast-admin.php:530 wpf_sa_admin.php:292
 msgid "Time-Offset"
@@ -153,27 +153,27 @@ msgstr ""
 #: wp-forecast-admin.php:530 wpf_sa_admin.php:292
 #, fuzzy
 msgid "minutes"
-msgstr "Направление ветра"
+msgstr "хвилини"
 
 #: wp-forecast-admin.php:533 wpf_sa_admin.php:295
 msgid "Windspeed-Unit"
-msgstr "Скорость ветра"
+msgstr "Швидкість вітру"
 
 #: wp-forecast-admin.php:534 wpf_sa_admin.php:296
 msgid "Meter/Second (m/s)"
-msgstr "Метр /Сек. "
+msgstr "Метр/Сек. (м/с)"
 
 #: wp-forecast-admin.php:535 wpf_sa_admin.php:297
 msgid "Kilometer/Hour (km/h)"
-msgstr "Километр в час (км / ч)"
+msgstr "Кілометр за годину (км/г)"
 
 #: wp-forecast-admin.php:536 wpf_sa_admin.php:298
 msgid "Miles/Hour (mph)"
-msgstr "Миль в час (миль / ч) "
+msgstr "Міль за годину (міль/г) "
 
 #: wp-forecast-admin.php:537 wpf_sa_admin.php:299
 msgid "Knots (kts)"
-msgstr "Узлы в час (KTS)"
+msgstr "Вузлів за годину (KTS)"
 
 #: wp-forecast-admin.php:538 wpf_sa_admin.php:300
 msgid "Beaufort (bft)"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: wp-forecast-admin.php:545 wpf_sa_admin.php:307
 msgid "Language"
-msgstr "Язык "
+msgstr "Мова"
 
 #: wp-forecast-admin.php:564 wpf_sa_admin.php:326
 msgid "Show forecast as ajax pull-down"
@@ -193,11 +193,11 @@ msgstr ""
 
 #: wp-forecast-admin.php:583 wpf_sa_admin.php:535
 msgid "Update options"
-msgstr "Обновить  страницу"
+msgstr "Поновити сторінку"
 
 #: wp-forecast-admin.php:590 wpf_sa_admin.php:348
 msgid "Display Configuration"
-msgstr "Настройка дисплея"
+msgstr "Налаштування дісплею"
 
 #: wp-forecast-admin.php:594 wpf_sa_admin.php:352
 msgid "Current Conditions"
@@ -209,11 +209,11 @@ msgstr "Прогноз на день"
 
 #: wp-forecast-admin.php:596 wpf_sa_admin.php:354
 msgid "Forecast Night"
-msgstr "Прогноз на вечер"
+msgstr "Прогноз на вечір"
 
 #: wp-forecast-admin.php:599 wpf_sa_admin.php:357
 msgid "Icon"
-msgstr "Икона РС"
+msgstr "Иконка РС"
 
 #: wp-forecast-admin.php:608 wpf_sa_admin.php:366
 msgid "Date"
@@ -221,7 +221,7 @@ msgstr "Дата"
 
 #: wp-forecast-admin.php:615 wpf_sa_admin.php:373
 msgid "Time"
-msgstr "Время"
+msgstr "Час"
 
 #: wp-forecast-admin.php:622 wpf_sa_admin.php:380
 msgid "Short Description"
@@ -229,45 +229,45 @@ msgstr "Краткое описание "
 
 #: wp-forecast-admin.php:631 wpf_sa_admin.php:389
 msgid "Temperature"
-msgstr "Температура "
+msgstr "Температура"
 
 #: wp-forecast-admin.php:640 wpf_sa_admin.php:398
 msgid "Realfeel"
-msgstr "Температура на данный момент"
+msgstr "Температура на поточний момент"
 
 #: wp-forecast-admin.php:647 wpf_sa_admin.php:405
 msgid "Pressure"
-msgstr "Давление мм.рт.ст."
+msgstr "Тиск"
 
 #: wp-forecast-admin.php:654 wpf_sa_admin.php:412
 msgid "Humidity"
-msgstr "Влажность%"
+msgstr "Вологість%"
 
 #: wp-forecast-admin.php:661 wpf_sa_admin.php:419
 msgid "Wind"
-msgstr "Ветер"
+msgstr "Вітер"
 
 #: wp-forecast-admin.php:670 wp-forecast-show.php:315 wp-forecast-show.php:418
 #: wp-forecast-show.php:462 wpf_sa_admin.php:428
 msgid "Windgusts"
-msgstr "Направление ветра"
+msgstr "Напрям вітру"
 
 #: wp-forecast-admin.php:679 wpf_sa_admin.php:437
 msgid "Sunrise"
-msgstr "Восход"
+msgstr "Схід"
 
 #: wp-forecast-admin.php:686 wpf_sa_admin.php:444
 msgid "Sunset"
-msgstr "Закат"
+msgstr "Захід"
 
 #: wp-forecast-admin.php:693 wpf_sa_admin.php:451
 msgid "Copyright"
-msgstr "Авторские права"
+msgstr "Авторські права"
 
 #: wp-forecast-admin.php:700 wpf_sa_admin.php:458
 #, fuzzy
 msgid "Link to Weatherprovider"
-msgstr "Ссылка на AccuWeather"
+msgstr "Лінк на AccuWeather"
 
 #: wp-forecast-admin.php:703 wpf_sa_admin.php:461
 msgid "Open in new Window"
@@ -275,7 +275,7 @@ msgstr ""
 
 #: wp-forecast-admin.php:711 wp-forecast-show.php:365 wpf_sa_admin.php:469
 msgid "Forecast"
-msgstr "Прогноз "
+msgstr "Прогноз"
 
 #: wp-forecast-admin.php:716 wpf_sa_admin.php:474
 msgid "All"
@@ -290,15 +290,15 @@ msgstr "Все"
 #: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
 #: wpf_sa_admin.php:483
 msgid "Day"
-msgstr "День "
+msgstr "День"
 
 #: wp-forecast-admin.php:727 wpf_sa_admin.php:485
 msgid "Daytime"
-msgstr "Дневное время"
+msgstr "Денний час"
 
 #: wp-forecast-admin.php:748 wpf_sa_admin.php:506
 msgid "Nighttime"
-msgstr "Вечернее время"
+msgstr "Вечірній час"
 
 #: wp-forecast-check.php:172
 msgid "Connection-check"
@@ -307,7 +307,7 @@ msgstr ""
 #: wp-forecast-check.php:175
 #, fuzzy
 msgid "Select weatherprovider"
-msgstr "Ссылка на AccuWeather"
+msgstr "Лінк на AccuWeather"
 
 #: wp-forecast-check.php:187
 msgid "Start check"
@@ -320,7 +320,7 @@ msgstr ""
 #: wp-forecast-search.php:35
 #, fuzzy
 msgid "Searchresults"
-msgstr "Результат поиска"
+msgstr "Результат пошуку"
 
 #: wp-forecast-search.php:37
 msgid "No WeatherBug Partner-ID given. WeatherBug will not be searched."
@@ -339,12 +339,12 @@ msgstr ""
 #: wp-forecast-search.php:44
 #, fuzzy
 msgid "Please select a location"
-msgstr "Пожалуйста, выберите ваш город и нажмите поиск"
+msgstr "Будь ласка, выберіть ваше місто та нажміть пошук"
 
 #: wp-forecast-search.php:68
 #, fuzzy
 msgid "Accuweather Hits"
-msgstr "Ссылка на AccuWeather"
+msgstr "Лінк на AccuWeather"
 
 #: wp-forecast-search.php:69
 #, fuzzy
@@ -353,15 +353,15 @@ msgstr "Погода"
 
 #: wp-forecast-search.php:147 wp-forecast-search.php:155
 msgid "Search location"
-msgstr "Поиск местоположения"
+msgstr "Пошук місцезнаходження"
 
 #: wp-forecast-search.php:149
 msgid "Searchterm"
-msgstr "Поиск"
+msgstr "Пошук"
 
 #: wp-forecast-search.php:151
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Просьба заменить немецкие Umlaute ä,ö,ü    на a ,o, u  при поиске"
+msgstr "Будь ласка, заменіть німецькі Umlaute ä,ö,ü    на a ,o, u  при пошуку"
 
 #: wp-forecast-search.php:152
 msgid ""
@@ -372,7 +372,7 @@ msgstr ""
 #: wp-forecast-show.php:143
 #, fuzzy
 msgid "Locations:"
-msgstr "Местонахождение"
+msgstr "Місцезнаходження"
 
 #: wp-forecast-show.php:178
 msgid "Failure notice from provider"
@@ -380,47 +380,47 @@ msgstr ""
 
 #: wp-forecast-show.php:195
 msgid "Sorry, no valid weather data available."
-msgstr "К сожалению, отсутствуют данные о погоде"
+msgstr "На жаль, відсутні дані про погоду"
 
 #: wp-forecast-show.php:196
 msgid "Please try again later."
-msgstr "Пожалуйста, повторите попытку позже."
+msgstr "Будь ласка, повторіть спробу пізніше."
 
 #: wp-forecast-show.php:255
 msgid "time"
-msgstr "Время"
+msgstr "час"
 
 #: wp-forecast-show.php:295
 msgid "flik"
-msgstr "Температура на данный момент"
+msgstr "температура на даний момент"
 
 #: wp-forecast-show.php:298
 msgid "barr"
-msgstr "Давление"
+msgstr "тиск"
 
 #: wp-forecast-show.php:306
 msgid "hmid"
-msgstr "Влажность"
+msgstr "волог."
 
 #: wp-forecast-show.php:310 wp-forecast-show.php:413 wp-forecast-show.php:455
 msgid "winds"
-msgstr "Ветер"
+msgstr "вітер"
 
 #: wp-forecast-show.php:320
 msgid "sunrise"
-msgstr "Восход"
+msgstr "схід"
 
 #: wp-forecast-show.php:324
 msgid "sunset"
-msgstr "Закат "
+msgstr "захід"
 
 #: wp-forecast-show.php:374
 msgid "day"
-msgstr "День"
+msgstr "день"
 
 #: wp-forecast-show.php:430
 msgid "night"
-msgstr "Ночь"
+msgstr "ніч"
 
 #: wp-forecast-show.php:488 wp-forecast-show.php:489
 msgid "Less forecast..."
@@ -469,15 +469,15 @@ msgstr "Погода"
 
 #: xgettextdummy.php:5
 msgid "loc"
-msgstr "Loc"
+msgstr "loc"
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr "Безоблачно"
+msgstr "Безхмарно"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Местами солнечно"
+msgstr "Місцями сонячно"
 
 #: xgettextdummy.php:8
 msgid "03"
@@ -485,23 +485,23 @@ msgstr "Ясно"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Облачно"
+msgstr "Хмарно"
 
 #: xgettextdummy.php:10
 msgid "05"
-msgstr "Солнечно"
+msgstr "Сонячно"
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr "Частичная облачность"
+msgstr "Часткова хмарність"
 
 #: xgettextdummy.php:12
 msgid "07"
-msgstr "Облачно"
+msgstr "Хмарно"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Пасмурно"
+msgstr "Похмуро"
 
 #: xgettextdummy.php:14
 msgid "11"
@@ -509,59 +509,59 @@ msgstr "Туман"
 
 #: xgettextdummy.php:15
 msgid "12"
-msgstr "Дождь"
+msgstr "Дощ"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Малооблачно , дождь"
+msgstr "Малохмарно, дощ"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Малооблачно, местами дожди"
+msgstr "Малохмарно, місцями дощі"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr "Грозы"
+msgstr "Грози"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Малооблачно , ливни"
+msgstr "Малохмарно, ливні"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr "Малооблачно ,грозы"
+msgstr "Малохмарно, грози"
 
 #: xgettextdummy.php:21
 msgid "18"
-msgstr "Дождь"
+msgstr "Дощ"
 
 #: xgettextdummy.php:22
 msgid "19"
-msgstr "Порывистый ветер"
+msgstr "Поривчастий вітер"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Пасмурно,  порывистый ветер"
+msgstr "Похмуро, поривчастий вітер"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Малооблачно , порывистый ветер"
+msgstr "Малохмарно, поривчастий вітер"
 
 #: xgettextdummy.php:25
 msgid "22"
-msgstr "Снег"
+msgstr "Сніг"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Местами снег"
+msgstr "Місцями сніг"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr "Лед"
+msgstr "Лід"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr "Мокрый снег"
+msgstr "Мокрий сніг"
 
 #: xgettextdummy.php:29
 msgid "26"
@@ -569,7 +569,7 @@ msgstr "Град"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr "Дождь со снегом"
+msgstr "Дощ зі снігом"
 
 #: xgettextdummy.php:31
 msgid "30"
@@ -581,7 +581,7 @@ msgstr "Холодно"
 
 #: xgettextdummy.php:33
 msgid "32"
-msgstr "Ветренно"
+msgstr "Вітрено"
 
 #: xgettextdummy.php:34
 msgid "33"
@@ -589,59 +589,59 @@ msgstr "Ясно"
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr "Малооблачно"
+msgstr "Малохмарно"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr "Местами облачно"
+msgstr "Місцями хмарно"
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr "Переменная облачность"
+msgstr "Перемінна хмарність"
 
 #: xgettextdummy.php:38
 msgid "37"
-msgstr "Дымка"
+msgstr "Димка"
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr "Частичная облачность"
+msgstr "Часткова хмарність"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Малооблачно, осадки"
+msgstr "Малохмарно, осадки"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr "Облачно,дожди"
+msgstr "Хмарно, дощі"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr "Облачно, гроза"
+msgstr "Хмарно, гроза"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr "Пасмурно, гроза"
+msgstr "Похмуро, гроза"
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr "Пасмурно, дожди"
+msgstr "Похмуро, дощі"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr "Пасмурно, снег"
+msgstr "Похмуро, сніг"
 
 #: xgettextdummy.php:46
 msgid "Monday"
-msgstr "Понедельник"
+msgstr "Понеділок"
 
 #: xgettextdummy.php:47
 msgid "Tuesday"
-msgstr "Вторник"
+msgstr "Вівторок"
 
 #: xgettextdummy.php:48
 msgid "Wednesday"
-msgstr "Среда"
+msgstr "Середа"
 
 #: xgettextdummy.php:49
 msgid "Thursday"
@@ -649,31 +649,31 @@ msgstr "Четверг"
 
 #: xgettextdummy.php:50
 msgid "Friday"
-msgstr "Пятница"
+msgstr "П'ятниця"
 
 #: xgettextdummy.php:51
 msgid "Saturday"
-msgstr "Суббота"
+msgstr "Субота"
 
 #: xgettextdummy.php:52
 msgid "Sunday"
-msgstr "Воскресенье"
+msgstr "Неділя"
 
 #: xgettextdummy.php:53
 msgid "N"
-msgstr "Север"
+msgstr "Північ"
 
 #: xgettextdummy.php:54
 msgid "E"
-msgstr "Запад"
+msgstr "Захід"
 
 #: xgettextdummy.php:55
 msgid "W"
-msgstr "Восток"
+msgstr "Схід"
 
 #: xgettextdummy.php:56
 msgid "S"
-msgstr "Юг"
+msgstr "Південь"
 
 #: xgettextdummy.php:57
 msgid "30% Chance Drizzle"
@@ -1039,7 +1039,7 @@ msgstr ""
 #: xgettextdummy.php:148
 #, fuzzy
 msgid "Sunny"
-msgstr "Воскресенье"
+msgstr "Сонячно"
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
@@ -1060,13 +1060,13 @@ msgstr ""
 #: xgettextdummy.php:154
 #, fuzzy
 msgid "Windy"
-msgstr "Ветер"
+msgstr "Вітер"
 
 #~ msgid "No locations found."
-#~ msgstr "Местоположение не найдено"
+#~ msgstr "Місцезнаходження не знайдено"
 
 #~ msgid "Set location"
-#~ msgstr "Установить местонахождение"
+#~ msgstr "Установити Місцезнаходження"
 
 #, fuzzy
 #~ msgid "Weather.com"
