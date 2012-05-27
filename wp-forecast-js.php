@@ -54,7 +54,20 @@
 	    document.woptions.d_n_wind.disabled=false;	
 	    document.woptions.d_d_wgusts.disabled=false;	
 	    document.woptions.d_n_wgusts.disabled=false;
-	    
+	    document.woptions.day6.disabled=false; 
+	    document.woptions.day7.disabled=false; 
+	    document.woptions.day8.disabled=false; 
+	    document.woptions.day9.disabled=false;
+	    document.woptions.d_c_sunrise.disabled=false;
+	    document.woptions.d_c_sunset.disabled=false;
+	    document.woptions.d_d_wind.disabled=false;
+	    document.woptions.d_n_wind.disabled=false; 
+	    document.woptions.d_c_humid.disabled=false;
+	    document.woptions.d_c_press.disabled=false;
+	    document.woptions.d_c_real.disabled=false;	
+	    document.woptions.d_c_wgusts.disabled=false;
+	    document.woptions.d_d_wgusts.disabled=false;	
+	    document.woptions.d_n_wgusts.disabled=false;
 	    //document.woptions.searchloc.disabled=false;
 	    //document.woptions.search_loc.disabled=false;
 	}
@@ -135,6 +148,7 @@
 	   
 	}
       }
+      nwfields_update();
       return 0;
     }   
 <?php

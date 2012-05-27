@@ -330,12 +330,12 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	$upflag = true;
     } 
 	
-    if ($av['apikey1'] != $_POST["apikey1"] and (!$ismulti or isset($allowed["ue_apikey1"]))) {
+    if (isset($av['apikey1']) && $av['apikey1'] != $_POST["apikey1"] and (!$ismulti or isset($allowed["ue_apikey1"]))) {
       $av['apikey1'] =  $_POST["apikey1"];
       $upflag=true;
     }
 
-    if ($av['apikey2'] != $_POST["apikey2"] and (!$ismulti or isset($allowed["ue_apikey2"]))) {
+    if (isset($_POST['apikey2']) && isset($av['apikey2']) && $av['apikey2'] != $_POST["apikey2"] and (!$ismulti or isset($allowed["ue_apikey2"]))) {
       $av['apikey2'] =  $_POST["apikey2"];
       $upflag=true;
     }
@@ -398,15 +398,15 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     // for forecast options
     $nd = array('day1','day2','day3','day4','day5','day6','day7','day8','day9','night1','night2','night3','night4','night5','night6','night7','night8','night9');
     foreach ($nd as $i) {
-      if ($_POST[$i]=="")
-	$_POST["$i"]="0";
+      if (!isset($_POST[$i]) || $_POST[$i]=="")
+		$_POST["$i"]="0";
     }
     
     // set empty checkboxes to 0
     $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather','d_c_aw_newwindow');
     foreach ($do as $i) {
-      if ($_POST[$i]=="")
-	$_POST["$i"]="0";
+      if (!isset($_POST[$i]) || $_POST[$i]=="")
+		$_POST["$i"]="0";
     }
     
     // build config string for dispconfig and update if necessary
@@ -508,7 +508,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 
 	 <p><b><?php echo __('Location',"wp-forecast_".$locale)?>:</b>
 	 <input name="location" id="location" type="text" size="30" maxlength="80" value="<?php echo $av['location'] ?>"<?php if ($widgetcall==1) echo "readonly" ?> />
-	 <a href="<?php echo plugin_dir_url( __FILE__ ); ?>/wp-forecast-search.php?height=600&amp;width=800" class="thickbox" title="">
+	 <a href="<?php echo plugin_dir_url( __FILE__ ); ?>/wp-forecast-search.php?height=600&amp;width=800&amp;wpfcid=<?php echo $wpfcid;?>" class="thickbox" title="">
 	 	<img alt="Search Icon" src="<?php echo plugin_dir_url( __FILE__ ); ?>/Searchicon16x16.png" />
 	 </a>
 	 

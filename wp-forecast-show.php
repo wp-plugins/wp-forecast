@@ -127,7 +127,7 @@ function show($wpfcid,$args,$wpfvars)
 		load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
 	}
 
-	$plugin_path = get_settings('siteurl') . '/wp-content/plugins/wp-forecast';
+	$plugin_path = get_option('siteurl') . '/wp-content/plugins/wp-forecast';
 
 	// show location selection dialog and handle it ajax like
 	$fout="";

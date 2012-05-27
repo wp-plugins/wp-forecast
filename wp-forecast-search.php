@@ -12,7 +12,12 @@ require_once("funclib.php");
 require_once("func_accu.php");
 require_once("func_bug.php");
 
-$wpf_vars=$av=get_wpf_opts("A");
+$wpfcid="A";
+if (isset($_GET['wpfcid'])) 
+	$wpfcid=$_GET["wpfcid"];
+
+
+$wpf_vars=$av=get_wpf_opts($wpfcid);
 $locale = $wpf_vars['wpf_language'];
 
 // get translations
@@ -28,12 +33,15 @@ $post_url = site_url("wp-admin/admin.php?page=wp-forecast-admin.php");
 if (isset($_GET['searchterm'])) {
 
 	echo "<h2>". __("Searchresults","wp-forecast_".$locale) . ":</h2>";
-	
+	if ($av['apikey1']=="") {
+		echo "<p>" . __("No WeatherBug Partner-ID given. WeatherBug will not be searched.","wp-forecast_".$locale) . "<br/>";
+		echo __("Enter a correct Partner-ID in the admin panel and save it to search WeatherBug.","wp-forecast_".$locale) . "</p>";
+	}
 	if (trim($_GET['searchterm']) == "") {
 		echo "<p>" . __("Please enter a non empty searchstring","wp-forecast_".$locale) . "</p>";
 		exit;
 	} else
-		echo "<p>" . __("Please select a location","wp-forecast_".$locale) . "</p>";
+		echo "<p>" . __("Please select a location","wp-forecast_".$locale) . ":</p>";
 	
     // search locations for accuweather
     $xml=get_loclist($av['ACCU_LOC_URI'],$_GET['searchterm']);
@@ -69,13 +77,13 @@ if (isset($_GET['searchterm'])) {
 		echo "<tr>";
 		
 		if ($i < count($accu_loc)) {			 
-			echo "<td>" . '<a href="#" onclick="wpf_set_loc(\'accu\',\''.$accu_loc[$i]['location'].'\');" >'; 
+			echo "<td>" . '<a href="#" onclick="wpf_set_loc(\''.$wpfcid.'\',\'accu\',\''.$accu_loc[$i]['location'].'\');" >'; 
 			echo $accu_loc[$i]['city'] . " ," . $accu_loc[$i]['state'] . " </a></td>";
 		} else
 			echo "<td>&nbsp;-&nbsp;</td>";
 		
 		if (count($bug_loc) > 0) {	
-			echo "<td>" . '<a href="#" onclick="wpf_set_loc(\'bug\',\''.$bug_loc[$i]['location'].'\');" >'; 
+			echo "<td>" . '<a href="#" onclick="wpf_set_loc(\''.$wpfcid.'\',\'bug\',\''.$bug_loc[$i]['location'].'\');" >'; 
 			echo $bug_loc[$i]['city'] . " ," . $bug_loc[$i]['state'] . " </td>";
 		} else
 			echo "<td>&nbsp;-&nbsp;</td>";
@@ -94,24 +102,27 @@ if (isset($_GET['searchterm'])) {
 <script type="text/javascript"> 
 
 var siteuri    = document.getElementById("wpf_search_site").value; 
-var posturi    = document.getElementById("wpf_post_site").value; 
+var posturi    = document.getElementById("wpf_post_site").value;
+
 /* get the data for the new location */
 function wpf_search()
 {
     var searchterm = document.getElementById("searchloc").value;
     //var siteuri    = document.getElementById("wpf_search_site").value;
     var language   = document.getElementById("wpf_search_language").value;
+    var wid        = document.getElementById("wpfcid").value;  
 
     jQuery.get(siteuri, 
-	       { searchterm: searchterm, language: language },
+	       { searchterm: searchterm, language: language, wpfcid: wid },
 	       function(data){
 		   jQuery("div#search_results").html(data);
 	       });
 }
 
-function wpf_set_loc(p,l) { 
+function wpf_set_loc(w,p,l) { 
 
-	params = { set_loc: 'set_loc', provider: p, new_loc: l };
+	params = { set_loc: 'set_loc', provider: p, new_loc: l, widgetid: w, wid: w };
+	
 	var form = document.createElement("form");
 	form.setAttribute("method", "post");
 	form.setAttribute("action", posturi);
@@ -145,6 +156,7 @@ function wpf_set_loc(p,l) {
 <input id='wpf_search_site' type='hidden' value='<?php echo $search_url?>' />
 <input id='wpf_post_site' type='hidden' value='<?php echo $post_url?>' />
 <input id='wpf_search_language' type='hidden' value='<?php echo $locale;?>' />
+<input id='wpfcid' type='hidden' value='<?php echo $wpfcid;?>' />
 </div>
 </form>
 </div>

@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-forecast-norsk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 07:56+0200\n"
+"POT-Creation-Date: 2012-05-26 20:02+0200\n"
 "PO-Revision-Date: 2008-05-08 13:33+0100\n"
 "Last-Translator: Eilif Nordseth <enordset@online.no>\n"
 "Language-Team: Eilif Nordseth <enordset@online.no>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +23,7 @@ msgstr ""
 msgid "Title:"
 msgstr "Tittel:"
 
-#: class-wpf_widget.php:81 wp-forecast-admin.php:217
+#: class-wpf_widget.php:81 wp-forecast-admin.php:222
 msgid "Available widgets"
 msgstr "Tilgjengelige programtillegg"
 
@@ -34,10 +35,6 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: setup.php:93
-msgid "The Weather"
-msgstr "Været"
-
 #: shortcodes.php:40
 msgid "wp-forecast shortcode: This browser does not support iframes."
 msgstr ""
@@ -46,389 +43,425 @@ msgstr ""
 msgid "widget_hint"
 msgstr "widget_hint"
 
-#: wp-forecast-admin.php:205 wp-forecast.php:378
+#: wp-forecast-admin.php:210 wp-forecast.php:375
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Hvor mange ' wp-forecast' programtillegg vil du bruke?"
 
-#: wp-forecast-admin.php:214 wp-forecast-admin.php:240
-#: wp-forecast-admin.php:256 wp-forecast-admin.php:265 wp-forecast.php:387
+#: wp-forecast-admin.php:219 wp-forecast-admin.php:245
+#: wp-forecast-admin.php:261 wp-forecast-admin.php:270 wp-forecast.php:384
 msgid "Save"
 msgstr "Lagre"
 
-#: wp-forecast-admin.php:233
+#: wp-forecast-admin.php:238
 msgid "Select widget"
 msgstr "Velg programtillegg"
 
-#: wp-forecast-admin.php:238 wpf_sa_admin.php:207
+#: wp-forecast-admin.php:243 wpf_sa_admin.php:218
 msgid "Timeout for weatherprovider connections (secs.)?"
 msgstr ""
 
-#: wp-forecast-admin.php:244 wpf_sa_admin.php:215
+#: wp-forecast-admin.php:249 wpf_sa_admin.php:226
 msgid "Preselect wordpress transfer method"
 msgstr ""
 
-#: wp-forecast-admin.php:246 wpf_sa_admin.php:217
+#: wp-forecast-admin.php:251 wpf_sa_admin.php:228
 msgid "default"
 msgstr ""
 
-#: wp-forecast-admin.php:260 wpf_sa_admin.php:230
+#: wp-forecast-admin.php:265 wpf_sa_admin.php:241
 msgid "Delete options during plugin deactivation?"
 msgstr ""
 
-#: wp-forecast-admin.php:268
+#: wp-forecast-admin.php:273
 msgid "Check connection to Weatherprovider"
 msgstr ""
 
-#: wp-forecast-admin.php:436 wpf_sa_admin.php:181
+#: wp-forecast-admin.php:442 wpf_sa_admin.php:192
 msgid "Settings successfully updated"
 msgstr "Alternativer oppdatert"
 
-#: wp-forecast-admin.php:438
+#: wp-forecast-admin.php:444
 msgid "You have to change a field to update settings."
 msgstr "Du må endre et felt for å oppdatere alternativer"
 
-#: wp-forecast-admin.php:484
+#: wp-forecast-admin.php:491
 msgid "WP-Forecast Setup"
 msgstr "WP-Forecast Alternativer"
 
-#: wp-forecast-admin.php:487 wpf_sa_admin.php:246
+#: wp-forecast-admin.php:494 wpf_sa_admin.php:262
 msgid "Weatherservice"
 msgstr ""
 
-#: wp-forecast-admin.php:489 wpf_sa_admin.php:248
+#: wp-forecast-admin.php:496 wpf_sa_admin.php:264
 #, fuzzy
 msgid "AccuWeather"
 msgstr "Været"
 
-#: wp-forecast-admin.php:490 wpf_sa_admin.php:249
+#: wp-forecast-admin.php:497 wpf_sa_admin.php:265
 #, fuzzy
 msgid "WeatherBug"
 msgstr "Været"
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:498
 #, fuzzy
 msgid "GoogleWeather"
 msgstr "Været"
 
-#: wp-forecast-admin.php:494
+#: wp-forecast-admin.php:501
 msgid "Partner ID"
 msgstr ""
 
-#: wp-forecast-admin.php:497 wpf_sa_admin.php:255
+#: wp-forecast-admin.php:504 wpf_sa_admin.php:271
 msgid "Licensekey"
 msgstr ""
 
-#: wp-forecast-admin.php:502 wpf_sa_admin.php:260
+#: wp-forecast-admin.php:509 wpf_sa_admin.php:276
 msgid "Location"
 msgstr "Sted"
 
-#: wp-forecast-admin.php:505 wpf_sa_admin.php:263
+#: wp-forecast-admin.php:518 wpf_sa_admin.php:279
 msgid "Press Update options to save new location."
 msgstr "Trykk Oppdater alternativer for å lagre et nytt sted"
 
-#: wp-forecast-admin.php:508 wpf_sa_admin.php:266
+#: wp-forecast-admin.php:521 wpf_sa_admin.php:282
 msgid "Locationname"
 msgstr "Stedsnavn"
 
-#: wp-forecast-admin.php:510 wpf_sa_admin.php:269
+#: wp-forecast-admin.php:523 wpf_sa_admin.php:285
 msgid "Refresh cache after"
 msgstr "Forny 'cache' etter"
 
-#: wp-forecast-admin.php:512 wpf_sa_admin.php:271
+#: wp-forecast-admin.php:525 wpf_sa_admin.php:287
 msgid "secs."
 msgstr "sekunder"
 
-#: wp-forecast-admin.php:513 wpf_sa_admin.php:272
+#: wp-forecast-admin.php:526 wpf_sa_admin.php:288
 msgid "Use metric units"
 msgstr "Bruk metriske enheter"
 
-#: wp-forecast-admin.php:516 wpf_sa_admin.php:275
+#: wp-forecast-admin.php:529 wpf_sa_admin.php:291
 msgid "Use current time"
 msgstr "Bruk aktuell tid"
 
-#: wp-forecast-admin.php:517 wpf_sa_admin.php:276
+#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
 msgid "Time-Offset"
 msgstr ""
 
-#: wp-forecast-admin.php:517 wpf_sa_admin.php:276
+#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
 #, fuzzy
 msgid "minutes"
 msgstr "Vindkast"
 
-#: wp-forecast-admin.php:520 wpf_sa_admin.php:279
+#: wp-forecast-admin.php:533 wpf_sa_admin.php:295
 msgid "Windspeed-Unit"
 msgstr "Vindhastighets-enhet"
 
-#: wp-forecast-admin.php:521 wpf_sa_admin.php:280
+#: wp-forecast-admin.php:534 wpf_sa_admin.php:296
 msgid "Meter/Second (m/s)"
 msgstr "Meter/Sekund (m/s)"
 
-#: wp-forecast-admin.php:522 wpf_sa_admin.php:281
+#: wp-forecast-admin.php:535 wpf_sa_admin.php:297
 msgid "Kilometer/Hour (km/h)"
 msgstr "Kilometer/Time (km/h)"
 
-#: wp-forecast-admin.php:523 wpf_sa_admin.php:282
+#: wp-forecast-admin.php:536 wpf_sa_admin.php:298
 msgid "Miles/Hour (mph)"
 msgstr "Mil/Time (mph)"
 
-#: wp-forecast-admin.php:524 wpf_sa_admin.php:283
+#: wp-forecast-admin.php:537 wpf_sa_admin.php:299
 msgid "Knots (kts)"
 msgstr "Knop (kts)"
 
-#: wp-forecast-admin.php:525 wpf_sa_admin.php:284
+#: wp-forecast-admin.php:538 wpf_sa_admin.php:300
 msgid "Beaufort (bft)"
 msgstr ""
 
-#: wp-forecast-admin.php:532 wpf_sa_admin.php:291
+#: wp-forecast-admin.php:545 wpf_sa_admin.php:307
 msgid "Language"
 msgstr "Språk"
 
-#: wp-forecast-admin.php:551 wpf_sa_admin.php:310
+#: wp-forecast-admin.php:564 wpf_sa_admin.php:326
 msgid "Show forecast as ajax pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:555 wpf_sa_admin.php:314
+#: wp-forecast-admin.php:568 wpf_sa_admin.php:330
 msgid "First day in pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:572 wpf_sa_admin.php:332
-msgid "Display Configuration"
-msgstr "Vis konfigurering"
-
-#: wp-forecast-admin.php:576 wpf_sa_admin.php:336
-msgid "Current Conditions"
-msgstr "Nåværende forhold"
-
-#: wp-forecast-admin.php:577 wpf_sa_admin.php:337
-msgid "Forecast Day"
-msgstr "Værmelding dag"
-
-#: wp-forecast-admin.php:578 wpf_sa_admin.php:338
-msgid "Forecast Night"
-msgstr "Værmelding natt"
-
-#: wp-forecast-admin.php:581 wpf_sa_admin.php:341
-msgid "Icon"
-msgstr "Ikon"
-
-#: wp-forecast-admin.php:590 wpf_sa_admin.php:350
-msgid "Date"
-msgstr "Dato"
-
-#: wp-forecast-admin.php:597 wpf_sa_admin.php:357
-msgid "Time"
-msgstr "Tid"
-
-#: wp-forecast-admin.php:604 wpf_sa_admin.php:364
-msgid "Short Description"
-msgstr "Kort beskrivelse"
-
-#: wp-forecast-admin.php:613 wpf_sa_admin.php:373
-msgid "Temperature"
-msgstr "Temperatur"
-
-#: wp-forecast-admin.php:622 wpf_sa_admin.php:382
-msgid "Realfeel"
-msgstr "Føles som"
-
-#: wp-forecast-admin.php:629 wpf_sa_admin.php:389
-msgid "Pressure"
-msgstr "Trykk"
-
-#: wp-forecast-admin.php:636 wpf_sa_admin.php:396
-msgid "Humidity"
-msgstr "Fuktighet"
-
-#: wp-forecast-admin.php:643 wpf_sa_admin.php:403
-msgid "Wind"
-msgstr "Vind"
-
-#: wp-forecast-admin.php:652 wp-forecast-show.php:308 wp-forecast-show.php:411
-#: wp-forecast-show.php:455 wpf_sa_admin.php:412
-msgid "Windgusts"
-msgstr "Vindkast"
-
-#: wp-forecast-admin.php:661 wpf_sa_admin.php:421
-msgid "Sunrise"
-msgstr "Soloppgang"
-
-#: wp-forecast-admin.php:668 wpf_sa_admin.php:428
-msgid "Sunset"
-msgstr "Solnedgang"
-
-#: wp-forecast-admin.php:675 wpf_sa_admin.php:435
-msgid "Copyright"
-msgstr "© Kopirettighet"
-
-#: wp-forecast-admin.php:682 wpf_sa_admin.php:442
-msgid "Link to Weatherprovider"
-msgstr ""
-
-#: wp-forecast-admin.php:685 wpf_sa_admin.php:445
-msgid "Open in new Window"
-msgstr ""
-
-#: wp-forecast-admin.php:693 wp-forecast-show.php:358 wpf_sa_admin.php:453
-msgid "Forecast"
-msgstr "Værmelding"
-
-#: wp-forecast-admin.php:698 wpf_sa_admin.php:458
-msgid "All"
-msgstr ""
-
-#: wp-forecast-admin.php:699 wp-forecast-admin.php:700
-#: wp-forecast-admin.php:701 wp-forecast-admin.php:702
-#: wp-forecast-admin.php:703 wp-forecast-admin.php:704
-#: wp-forecast-admin.php:705 wp-forecast-admin.php:706
-#: wp-forecast-admin.php:707 wpf_sa_admin.php:459 wpf_sa_admin.php:460
-#: wpf_sa_admin.php:461 wpf_sa_admin.php:462 wpf_sa_admin.php:463
-#: wpf_sa_admin.php:464 wpf_sa_admin.php:465 wpf_sa_admin.php:466
-#: wpf_sa_admin.php:467
-msgid "Day"
-msgstr "Dag"
-
-#: wp-forecast-admin.php:709 wpf_sa_admin.php:469
-msgid "Daytime"
-msgstr "Dagtid"
-
-#: wp-forecast-admin.php:730 wpf_sa_admin.php:490
-msgid "Nighttime"
-msgstr "Nattid"
-
-#: wp-forecast-admin.php:757 wpf_sa_admin.php:519
+#: wp-forecast-admin.php:583 wpf_sa_admin.php:535
 msgid "Update options"
 msgstr "Oppdater alternativer"
 
-#: wp-forecast-admin.php:764 wp-forecast-admin.php:781
-msgid "Search location"
-msgstr "Søk etter sted"
+#: wp-forecast-admin.php:590 wpf_sa_admin.php:348
+msgid "Display Configuration"
+msgstr "Vis konfigurering"
 
-#: wp-forecast-admin.php:768
-msgid "Searchterm"
-msgstr "Søkeord"
+#: wp-forecast-admin.php:594 wpf_sa_admin.php:352
+msgid "Current Conditions"
+msgstr "Nåværende forhold"
 
-#: wp-forecast-admin.php:772
-msgid "No locations found."
-msgstr "Ingen steder funnet"
+#: wp-forecast-admin.php:595 wpf_sa_admin.php:353
+msgid "Forecast Day"
+msgstr "Værmelding dag"
 
-#: wp-forecast-admin.php:776
-msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Erstatt tyske omlyder ä, ö, ü med a, o, u i søkeordene dine."
+#: wp-forecast-admin.php:596 wpf_sa_admin.php:354
+msgid "Forecast Night"
+msgstr "Værmelding natt"
 
-#: wp-forecast-admin.php:786
-msgid "Search result"
-msgstr "Søkeresultat"
+#: wp-forecast-admin.php:599 wpf_sa_admin.php:357
+msgid "Icon"
+msgstr "Ikon"
 
-#: wp-forecast-admin.php:793
-msgid "Please select your city and press set location."
-msgstr "Velg stedet ditt og trykk Bestem sted"
+#: wp-forecast-admin.php:608 wpf_sa_admin.php:366
+msgid "Date"
+msgstr "Dato"
 
-#: wp-forecast-admin.php:797
-msgid "Set location"
-msgstr "Bestem sted"
+#: wp-forecast-admin.php:615 wpf_sa_admin.php:373
+msgid "Time"
+msgstr "Tid"
 
-#: wp-forecast-check.php:165
+#: wp-forecast-admin.php:622 wpf_sa_admin.php:380
+msgid "Short Description"
+msgstr "Kort beskrivelse"
+
+#: wp-forecast-admin.php:631 wpf_sa_admin.php:389
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: wp-forecast-admin.php:640 wpf_sa_admin.php:398
+msgid "Realfeel"
+msgstr "Føles som"
+
+#: wp-forecast-admin.php:647 wpf_sa_admin.php:405
+msgid "Pressure"
+msgstr "Trykk"
+
+#: wp-forecast-admin.php:654 wpf_sa_admin.php:412
+msgid "Humidity"
+msgstr "Fuktighet"
+
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:419
+msgid "Wind"
+msgstr "Vind"
+
+#: wp-forecast-admin.php:670 wp-forecast-show.php:315 wp-forecast-show.php:418
+#: wp-forecast-show.php:462 wpf_sa_admin.php:428
+msgid "Windgusts"
+msgstr "Vindkast"
+
+#: wp-forecast-admin.php:679 wpf_sa_admin.php:437
+msgid "Sunrise"
+msgstr "Soloppgang"
+
+#: wp-forecast-admin.php:686 wpf_sa_admin.php:444
+msgid "Sunset"
+msgstr "Solnedgang"
+
+#: wp-forecast-admin.php:693 wpf_sa_admin.php:451
+msgid "Copyright"
+msgstr "© Kopirettighet"
+
+#: wp-forecast-admin.php:700 wpf_sa_admin.php:458
+msgid "Link to Weatherprovider"
+msgstr ""
+
+#: wp-forecast-admin.php:703 wpf_sa_admin.php:461
+msgid "Open in new Window"
+msgstr ""
+
+#: wp-forecast-admin.php:711 wp-forecast-show.php:365 wpf_sa_admin.php:469
+msgid "Forecast"
+msgstr "Værmelding"
+
+#: wp-forecast-admin.php:716 wpf_sa_admin.php:474
+msgid "All"
+msgstr ""
+
+#: wp-forecast-admin.php:717 wp-forecast-admin.php:718
+#: wp-forecast-admin.php:719 wp-forecast-admin.php:720
+#: wp-forecast-admin.php:721 wp-forecast-admin.php:722
+#: wp-forecast-admin.php:723 wp-forecast-admin.php:724
+#: wp-forecast-admin.php:725 wpf_sa_admin.php:475 wpf_sa_admin.php:476
+#: wpf_sa_admin.php:477 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
+#: wpf_sa_admin.php:483
+msgid "Day"
+msgstr "Dag"
+
+#: wp-forecast-admin.php:727 wpf_sa_admin.php:485
+msgid "Daytime"
+msgstr "Dagtid"
+
+#: wp-forecast-admin.php:748 wpf_sa_admin.php:506
+msgid "Nighttime"
+msgstr "Nattid"
+
+#: wp-forecast-check.php:172
 msgid "Connection-check"
 msgstr ""
 
-#: wp-forecast-check.php:168
+#: wp-forecast-check.php:175
 #, fuzzy
 msgid "Select weatherprovider"
 msgstr "Velg programtillegg"
 
-#: wp-forecast-check.php:180
+#: wp-forecast-check.php:187
 msgid "Start check"
 msgstr ""
 
-#: wp-forecast-check.php:183
+#: wp-forecast-check.php:190
 msgid "Close"
 msgstr ""
 
-#: wp-forecast.php:422
-#, php-format
-msgid "wp-forecast %s"
-msgstr "wp-forecast %s"
+#: wp-forecast-search.php:35
+#, fuzzy
+msgid "Searchresults"
+msgstr "Søkeresultat"
 
-#: wp-forecast-show.php:137
+#: wp-forecast-search.php:37
+msgid "No WeatherBug Partner-ID given. WeatherBug will not be searched."
+msgstr ""
+
+#: wp-forecast-search.php:38
+msgid ""
+"Enter a correct Partner-ID in the admin panel and save it to search "
+"WeatherBug."
+msgstr ""
+
+#: wp-forecast-search.php:41
+msgid "Please enter a non empty searchstring"
+msgstr ""
+
+#: wp-forecast-search.php:44
+#, fuzzy
+msgid "Please select a location"
+msgstr "Velg stedet ditt og trykk Bestem sted"
+
+#: wp-forecast-search.php:68
+#, fuzzy
+msgid "Accuweather Hits"
+msgstr "Været"
+
+#: wp-forecast-search.php:69
+#, fuzzy
+msgid "WeatherBug Hits"
+msgstr "Været"
+
+#: wp-forecast-search.php:147 wp-forecast-search.php:155
+msgid "Search location"
+msgstr "Søk etter sted"
+
+#: wp-forecast-search.php:149
+msgid "Searchterm"
+msgstr "Søkeord"
+
+#: wp-forecast-search.php:151
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr "Erstatt tyske omlyder ä, ö, ü med a, o, u i søkeordene dine."
+
+#: wp-forecast-search.php:152
+msgid ""
+"Google does not support searching for locations. Only Accuweather and "
+"WeatherBug will be searched."
+msgstr ""
+
+#: wp-forecast-show.php:143
 #, fuzzy
 msgid "Locations:"
 msgstr "Sted"
 
-#: wp-forecast-show.php:171
+#: wp-forecast-show.php:178
 msgid "Failure notice from provider"
 msgstr ""
 
-#: wp-forecast-show.php:188
+#: wp-forecast-show.php:195
 msgid "Sorry, no valid weather data available."
 msgstr "Beklager, ingen gyldige værdata tilgjengelige."
 
-#: wp-forecast-show.php:189
+#: wp-forecast-show.php:196
 msgid "Please try again later."
 msgstr "Vennligst prøv igjen senere."
 
-#: wp-forecast-show.php:248
+#: wp-forecast-show.php:255
 msgid "time"
 msgstr "Tid"
 
-#: wp-forecast-show.php:288
+#: wp-forecast-show.php:295
 msgid "flik"
 msgstr "Føles"
 
-#: wp-forecast-show.php:291
+#: wp-forecast-show.php:298
 msgid "barr"
 msgstr "Trykk"
 
-#: wp-forecast-show.php:299
+#: wp-forecast-show.php:306
 msgid "hmid"
 msgstr "Fuktighet"
 
-#: wp-forecast-show.php:303 wp-forecast-show.php:406 wp-forecast-show.php:448
+#: wp-forecast-show.php:310 wp-forecast-show.php:413 wp-forecast-show.php:455
 msgid "winds"
 msgstr "Vind"
 
-#: wp-forecast-show.php:313
+#: wp-forecast-show.php:320
 msgid "sunrise"
 msgstr "Soloppgang"
 
-#: wp-forecast-show.php:317
+#: wp-forecast-show.php:324
 msgid "sunset"
 msgstr "Solnedgang"
 
-#: wp-forecast-show.php:367
+#: wp-forecast-show.php:374
 msgid "day"
 msgstr "Dag"
 
-#: wp-forecast-show.php:423
+#: wp-forecast-show.php:430
 msgid "night"
 msgstr "Natt"
 
-#: wp-forecast-show.php:481 wp-forecast-show.php:482
+#: wp-forecast-show.php:488 wp-forecast-show.php:489
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:483
+#: wp-forecast-show.php:490
 msgid "More forecast..."
 msgstr ""
 
-#: wpf_sa_admin.php:62
+#: wp-forecast.php:419
+#, php-format
+msgid "wp-forecast %s"
+msgstr "wp-forecast %s"
+
+#: wpf_sa_admin.php:64
 msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
 msgstr ""
 
-#: wpf_sa_admin.php:194
+#: wpf_sa_admin.php:205
 msgid "Check the colored checkboxes to user enable the options"
 msgstr ""
 
-#: wpf_sa_admin.php:199
-msgid "Number of widgets per user"
+#: wpf_sa_admin.php:210
+msgid "Maximal number of widgets per user"
 msgstr ""
 
-#: wpf_sa_admin.php:243
+#: wpf_sa_admin.php:249
+msgid "Delete SuperAdmin options"
+msgstr ""
+
+#: wpf_sa_admin.php:250
+msgid "Delete SA-Options"
+msgstr ""
+
+#: wpf_sa_admin.php:259
 msgid "Widget-Setup"
 msgstr ""
 
-#: wpf_sa_admin.php:252
+#: wpf_sa_admin.php:268
 msgid "Partner-ID"
 msgstr ""
+
+#: wpf_setup.php:93
+msgid "The Weather"
+msgstr "Været"
 
 #: xgettextdummy.php:5
 msgid "loc"
@@ -1024,6 +1057,12 @@ msgstr ""
 #, fuzzy
 msgid "Windy"
 msgstr "Vind"
+
+#~ msgid "No locations found."
+#~ msgstr "Ingen steder funnet"
+
+#~ msgid "Set location"
+#~ msgstr "Bestem sted"
 
 #, fuzzy
 #~ msgid "Weather.com"
