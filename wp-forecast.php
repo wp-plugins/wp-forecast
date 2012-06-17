@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 3.9
+Version: 4.0
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
@@ -56,7 +56,8 @@ static $wpf_debug=0;
 
 
 /* ---------- no parameters to change after this point -------------------- */
-
+// define path to wp-forecast plugin
+define( 'WPF_PATH', plugin_dir_path(__FILE__) );
 // accuweather data functions
 require_once("func_accu.php");
 // weatherbug data functions
@@ -162,7 +163,7 @@ function wp_forecast_init()
     
     // javascript hinzufügen fuer ajax widget
     wp_enqueue_script('wpf_update',
-		      '/' . PLUGINDIR . '/wp-forecast/wpf_update.js',
+		      plugin_dir_url(__FILE__) . '/wpf_update.js',
 		      array('jquery'), "9999");
 
     pdebug(1,"End of function wp_forecast_init ()");
@@ -366,7 +367,7 @@ function wpf_widget_page() {
     $locale = 'en_US';
   // load translation
   if(function_exists('load_textdomain')) {
-    load_textdomain("wp-forecast_".$locale,ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
   }
 
 
@@ -407,10 +408,7 @@ function widget_wp_forecast_init()
   // add css in header
   add_action('wp_head', 'wp_forecast_css');
  
-  // javascript hinzufügen
-  //wp_enqueue_script('wpf_update',
-//		    '/' . PLUGINDIR . '/wp-forecast/wpf_update.js',
-//		    array('jquery'), "9999");
+  
 
   for ($i=0;$i<=$wpf_maxwidgets;$i++) {
     $wpfcid = get_widget_id( $i );

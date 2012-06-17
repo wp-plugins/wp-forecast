@@ -327,7 +327,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
   if(function_exists('load_textdomain')) {
     global $l10n;
     if (!isset($l10n["wp-forecast_".$wpf_language])) 
-      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+      load_textdomain("wp-forecast_".$wpf_language, WPF_PATH . "/lang/".$wpf_language.".mo");
   }
 
   $weather_arr=array();

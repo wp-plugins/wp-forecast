@@ -61,8 +61,7 @@ if ( !class_exists('wpf_widget') )
 	    if ( empty($locale) )
 		$locale = 'en_US';
 	    if(function_exists('load_textdomain')) 
-		load_textdomain("wp-forecast_".$locale,ABSPATH . 
-				"wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+		load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/" . $locale . ".mo");
 
 	    $title  = esc_attr($instance['title']);
 	    $wpfcid = esc_attr($instance['wpfcid']);

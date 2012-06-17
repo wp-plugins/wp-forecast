@@ -24,10 +24,10 @@ $locale = $wpf_vars['wpf_language'];
 if(function_exists('load_textdomain')) {
     global $l10n;
     if (!isset($l10n["wp-forecast_".$locale])) 
-	load_textdomain("wp-forecast_".$locale, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+	load_textdomain("wp-forecast_".$locale, WPF_PATH . "/lang/".$locale.".mo");
 }
 
-$search_url = site_url("/wp-content/plugins/wp-forecast/wp-forecast-search.php") ;
+$search_url = plugins_url("/wp-forecast-search.php",__FILE__) ;
 $post_url = site_url("wp-admin/admin.php?page=wp-forecast-admin.php");
 
 if (isset($_GET['searchterm'])) {

@@ -64,7 +64,7 @@ function initReady(fn)
     }
     //IE
     else {
-	document.onreadystatechange = function(){readyState(fn)}
+	document.onreadystatechange = function(){readyState(fn);};
     }
       }
 

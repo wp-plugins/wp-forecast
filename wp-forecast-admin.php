@@ -66,7 +66,7 @@ function wp_forecast_admin()
   
   add_menu_page('wp-Forecast', 'wp-Forecast', 'manage_options', 
 		basename(__FILE__), 'wpf_admin_form',
-		site_url("/wp-content/plugins/wp-forecast") . '/wpf.png');
+		plugins_url('/wpf.png', __FILE__) );
 
   pdebug(1,"End of wp_forecast_admin ()");
 } 
@@ -85,7 +85,7 @@ function wpf_admin_hint($args = null)
   if ( empty($locale) )
     $locale = 'en_US';
   if(function_exists('load_textdomain')) 
-    load_textdomain("wp-forecast_".$locale,ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
   
   // code for widget title form 
   $av=get_wpf_opts($wpfcid);
@@ -149,7 +149,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
   if ($widgetcall==0) {
     // load translation
     if(function_exists('load_textdomain')) {
-      load_textdomain("wp-forecast_".$locale,ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+      load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
     }
 
     // if this is a post call, number of widgets 
@@ -270,7 +270,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     $out .= "</td><td><span class='submit'><input class='button' type='submit' name='wpf-delopt-submit' id='wpf-delopt-submit' value='".esc_attr(__('Save'),"wp-forecast_".$locale)."' /></span></td></tr></table></form></div>\n"; 
     
     // add link to checklist dialog
-    $out .= '<div style="text-align:right;padding-right:20px;"><a href="../wp-content/plugins/wp-forecast/wp-forecast-check.php?height=600&amp;width=800" class="thickbox" title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
+    $out .= '<div style="text-align:right;padding-right:20px;"><a href="' . plugins_url('/wp-forecast-check.php?height=600&amp;width=800',__FILE__).'" class="thickbox" title="">'.__("Check connection to Weatherprovider","wp-forecast_".$locale).'</a></div>'."\n";
 
     echo $out;
   }
@@ -318,7 +318,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
   if ( empty($locale) )
     $locale = 'en_US';
   if(function_exists('load_textdomain')) 
-    load_textdomain("wp-forecast_".$locale,ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
   
   
   // if this is a POST call, save new values
@@ -549,6 +549,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	    <option value="nl_NL" <?php if ($av['wpf_language']=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fi_FI" <?php if ($av['wpf_language']=="fi_FI") echo "selected=\"selected\""?>>finnish</option>
             <option value="fr_FR" <?php if ($av['wpf_language']=="fr_FR") echo "selected=\"selected\""?>>french</option>
+            <option value="he_IL" <?php if ($av['wpf_language']=="he_IL") echo "selected=\"selected\""?>>hebrew</option>
             <option value="hu_HU" <?php if ($av['wpf_language']=="hu_HU") echo "selected=\"selected\""?>>hungarian</option>
             <option value="it_IT" <?php if ($av['wpf_language']=="it_IT") echo "selected=\"selected\""?>>italian</option>
 	    <option value="pl_PL" <?php if ($av['wpf_language']=="pl_PL") echo "selected=\"selected\""?>>polish</option>

@@ -89,7 +89,7 @@ $locale = $wpf_vars['wpf_language'];
 if(function_exists('load_textdomain')) {
     global $l10n;
     if (!isset($l10n["wp-forecast_".$locale])) 
-	load_textdomain("wp-forecast_".$locale, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$locale.".mo");
+	load_textdomain("wp-forecast_".$locale, WPF_PATH . "/lang/".$locale.".mo");
 }
 
 if (!empty($_POST)) {
@@ -164,7 +164,7 @@ if (!empty($_POST)) {
 //
 $out = "";
 // add function to submit form data by adrian callaghan
-$out .= '<script type="text/javascript"  src="'.site_url('/wp-content/plugins/wp-forecast').'/wp-forecast-check.js" ></script>';
+$out .= '<script type="text/javascript"  src="'.plugins_url('/wp-forecast-check.js',__FILE__).'" ></script>';
 // add log area style
 $out .= "<style>#message {margin:20px; padding:20px; background:#cccccc; color:#cc0000;}</style>";
  
@@ -184,7 +184,7 @@ $out .= "</select></td>\n";
 $href= site_url("wp-admin") . "/admin.php?page=wp-forecast-admin.php";
 $out .= '<tr><td><p class="submit">';
 $out .= '<input type="submit" name="startcheck" id="startcheck" value="'.
-    __('Start check','wp-forecast_'.$locale).' &raquo;" onclick="submit_this()" />';
+    __('Start check','wp-forecast_'.$locale).' &raquo;" onclick="submit_this(\''.plugins_url( 'wp-forecast-check.php' , __FILE__ ).'\')" />';
 $out .= '<td><p class="submit">';
 $out .= '<input type="submit" name="cancel" id="cancel" value="'.
     __('Close','wpml').'" onclick="tb_remove();" /></p></td>';

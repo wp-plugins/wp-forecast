@@ -4,7 +4,7 @@ Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
 Tested up to: 3.3
-Stable tag: 3.9
+Stable tag: 4.0
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -38,30 +38,31 @@ Features:
 
 Credits:
 
- + Barbary Jany			testing a lot and bring it to valid XHTML
+ + Barbary Jany					testing a lot and bring it to valid XHTML
  + Frans Lieshout
-   Wim Scholtes			translation to dutch
- + Luís Reis			translation to portugues
+   Wim Scholtes					translation to dutch
+ + Luís Reis					translation to portugues
  + Håkan Carlström, 
-   Susanne Svensso		translation to swedish
- + Gabriele von der Ohe		translation to german with entities
-	        		(for iso-8859-1 or latin1 blogs)
- + Martin Loyer/Jean-Pierre	translation to french
- + Robert Lang			language file for en_US
+   Susanne Svensso				translation to swedish
+ + Gabriele von der Ohe			translation to german with entities
+	        					(for iso-8859-1 or latin1 blogs)
+ + Martin Loyer/Jean-Pierre		translation to french
+ + Robert Lang					language file for en_US
  + Detti Giulio/Stefano Boeri	translation to italian
- + Eilif Nordseth		translation to norwegian
- + Michael S.R. Petersen	translation to dansk
- + Jaakko Kangosjärvi		translation to finish
- + Lukasz "linshi" Linhard	translation to polish
- + Castmir	     		translation to spanish
- + Tamas Koos			translation to hungarian
- + Valeria Pellegrini		translation to russian
- + Valentina Boeri		translation to romanian
- + Roland Geci			translation to slovak
- + Pavel Soukenik		translation to czech
- + Pavel Karnaukhov		translation to ukraine
- + Zoran Maric			translation to serbian (latin)
+ + Eilif Nordseth				translation to norwegian
+ + Michael S.R. Petersen		translation to dansk
+ + Jaakko Kangosjärvi			translation to finish
+ + Lukasz "linshi" Linhard		translation to polish
+ + Castmir	     				translation to spanish
+ + Tamas Koos					translation to hungarian
+ + Valeria Pellegrini			translation to russian
+ + Valentina Boeri				translation to romanian
+ + Roland Geci					translation to slovak
+ + Pavel Soukenik				translation to czech
+ + Pavel Karnaukhov				translation to ukraine
+ + Zoran Maric					translation to serbian (latin)
  + Petar Petrov                 translation to bulgarian
+ + Udi Burg						translation to hebrew
  + All the others giving feedback about missing features and bugs.   
    Thank you very much for your contribution to wp-forecast.   
 
@@ -160,6 +161,11 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v4.0 (2012-06-10) =
+* support individual wp-content folder
+* added hebrew translation from Udi Burg
+
 
 = v3.9 (2012-05-26) =
 * fixed a bug with new search dialog and multiwidgets

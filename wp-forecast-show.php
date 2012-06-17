@@ -109,7 +109,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 function show($wpfcid,$args,$wpfvars)
 {
 	pdebug(1,"Start of show ()");
-
+	
 	// check how we are called as a widget or from sidebar
 	if (sizeof($args)==0)
 	$show_from_widget=0;
@@ -124,10 +124,10 @@ function show($wpfcid,$args,$wpfvars)
 	if(function_exists('load_textdomain')) {
 		global $l10n;
 		if (!isset($l10n["wp-forecast_".$wpf_language]))
-		load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+		load_textdomain("wp-forecast_".$wpf_language, WPF_PATH . "/lang/".$wpf_language.".mo");
 	}
 
-	$plugin_path = get_option('siteurl') . '/wp-content/plugins/wp-forecast';
+	$plugin_path = plugins_url("",__FILE__);
 
 	// show location selection dialog and handle it ajax like
 	$fout="";
@@ -152,7 +152,7 @@ function show($wpfcid,$args,$wpfvars)
 		}
 		$fout .= "</select>";
 		$fout .="<input id='wpf_selector_site' type='hidden' value='" .
-		site_url("/wp-content/plugins/wp-forecast")."' />";
+		$plugin_path."' />";
 		$fout .="<input id='wpf_language' type='hidden' value='" . $wpf_language ."' />";
 		$fout .= "</form>";
 		$fout .='<script type="text/javascript">window.onDomReady(wpf_load);</script>';

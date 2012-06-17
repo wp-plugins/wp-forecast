@@ -437,7 +437,7 @@ function get_widget_id($number)
 //
 function find_icon($ino) 
 {
-  $path = ABSPATH . "wp-content/plugins/wp-forecast/icons/".$ino;
+  $path = WPF_PATH . "/icons/".$ino;
   $ext=".gif";
   
   if ( file_exists($path.".gif") )

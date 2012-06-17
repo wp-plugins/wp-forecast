@@ -19,9 +19,7 @@ if (!function_exists('wpforecast'))
 	    $id='A';
 	
 	// iframe tag zusammen bauen
-	$res='<iframe class="wpf-iframe" src="'.get_settings('siteurl').
-	    '/wp-content/plugins/wp-forecast/wp-forecast-show.php?wpfcid='.
-	    $id.'&amp;header=1';
+	$res='<iframe class="wpf-iframe" src="'.plugins_url( 'wp-forecast-show.php?wpfcid='.$id.'&amp;header=1' , __FILE__ );
 
 	// falls eine sprache angegeben wurde haengen wir sie hinten dran
 	if ($lang != '')

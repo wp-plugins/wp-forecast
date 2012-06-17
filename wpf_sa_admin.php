@@ -41,7 +41,7 @@ function wpmu_forecast_admin()
    if ( function_exists("is_multisite") && is_multisite() && is_super_admin() )
        add_submenu_page("options-general.php", 'wp-forecast', 'wp-forecast', 'edit_plugins', 
 			basename(__FILE__), 'wpf_wpmu_admin_form',
-			site_url("/wp-content/wp-forecast").'/wpf_sa.png');
+			plugins_url('/wpf_sa.png',__FILE__));
 
   pdebug(1,"End of wpmu_forecast_admin ()");
 } 
@@ -88,7 +88,7 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 
     // load translation
     if(function_exists('load_textdomain')) 
-	load_textdomain("wp-forecast_".$locale, ABSPATH . PLUGINDIR ."/wp-forecast/lang/".$locale.".mo");
+	load_textdomain("wp-forecast_".$locale, plugin_dir_path(__FILE__) ."/lang/".$locale.".mo");
  
     
 
