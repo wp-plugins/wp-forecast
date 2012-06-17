@@ -1,10 +1,10 @@
 === wp-forecast ===
-Tags: weather,forecast,widget
-Requires at least: 2.2
-Tested up to: 2.8
-Stable tag: 2.4
 Contributors: tuxlog
-Donate link: http://www.tuxlog.de/
+Donate link: http://www.tuxlog.de
+Tags: weather,forecast,widget
+Requires at least: 2.7
+Tested up to: 3.3
+Stable tag: 4.0
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -17,7 +17,7 @@ please also refer to the terms of usage of accuweather.com and weatherbug.com
 Features:
 
    + Displays the weather data from AccuWeather.com and or WeatherBug.com 
-     at your wordpress pages
+     at your wordpress pages, posts or sidebar
    + Let you choose the 
 	 * location (of course)
 	 * the time after the weather data is refreshed
@@ -30,30 +30,39 @@ Features:
 	 * the nighttime forecast for up to nine nights
    + support wordpress widgets, easy placement :-)
    + customize the information you want to show
+   + supports pull-down forecast data to efficiently use space
    + multiple wp-forecast widget support 
    + integration into your site via css (see below)
    + comes with an api for wordpress-pro's ;-)
+   + comes with a checklist to validate your connection settings
 
 Credits:
 
- + Barbary Jany			testing a lot and bring it to valid XHTML
- + Frans Lieshout		translation to dutch
- + Luís Reis			translation to portugues
- + Håkan Carlström		translation to swedish
- + Gabriele von der Ohe		translation to german with entities
-	        		(for iso-8859-1 or latin1 blogs)
- + Martin Loyer/Jean-Pierre	translation to french
- + Robert Lang			language file for en_US
+ + Barbary Jany					testing a lot and bring it to valid XHTML
+ + Frans Lieshout
+   Wim Scholtes					translation to dutch
+ + Luís Reis					translation to portugues
+ + Håkan Carlström, 
+   Susanne Svensso				translation to swedish
+ + Gabriele von der Ohe			translation to german with entities
+	        					(for iso-8859-1 or latin1 blogs)
+ + Martin Loyer/Jean-Pierre		translation to french
+ + Robert Lang					language file for en_US
  + Detti Giulio/Stefano Boeri	translation to italian
- + Eilif Nordseth		translation to norwegian
- + Michael S.R. Petersen	translation to dansk
- + Jaakko Kangosjärvi		translation to finish
- + Lukasz "linshi" Linhard	translation to polish
- + Castmir	     		translation to spanish
- + Tamas Koos			translation to hungarian
- + Valeria Pellegrini		translation to russian
- + Valentina Boeri		translation to romanian
- + Roland Geci			translation to slovak
+ + Eilif Nordseth				translation to norwegian
+ + Michael S.R. Petersen		translation to dansk
+ + Jaakko Kangosjärvi			translation to finish
+ + Lukasz "linshi" Linhard		translation to polish
+ + Castmir	     				translation to spanish
+ + Tamas Koos					translation to hungarian
+ + Valeria Pellegrini			translation to russian
+ + Valentina Boeri				translation to romanian
+ + Roland Geci					translation to slovak
+ + Pavel Soukenik				translation to czech
+ + Pavel Karnaukhov				translation to ukraine
+ + Zoran Maric					translation to serbian (latin)
+ + Petar Petrov                 translation to bulgarian
+ + Udi Burg						translation to hebrew
  + All the others giving feedback about missing features and bugs.   
    Thank you very much for your contribution to wp-forecast.   
 
@@ -64,7 +73,7 @@ Credits:
    the directory structure intact \(i.e. wp-forecast.php should end up 
    in `wp-content/plugins/wp-forecast/`\).
 
-1. Activate the plugin on the plugin screen.
+2. Activate the plugin on the plugin screen.
 
 3. Visit the configuration page \(`Options -> WP-forecast`\) to pick the 
    number of widgets, data to display and to change any other option.
@@ -153,8 +162,105 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
-= v2.4 (2009-xx-xx) =
+= v4.0 (2012-06-10) =
+* support individual wp-content folder
+* added hebrew translation from Udi Burg
 
+
+= v3.9 (2012-05-26) =
+* fixed a bug with new search dialog and multiwidgets
+* fixed some php notices
+* fixed weather provider switch in admin dialog
+* check for apikey in search dialog for weatherbug
+
+
+
+= v3.8 (2012-02-05) =
+* fixed a special data constellation returned by accuweather for the pressure
+* changed js loading to load thickbox only in admin dialog
+* changed search dialog to an ajax like replacement
+* redesigned the admin dialog a bit more convenient
+* fixed an url problem in connection check
+
+= v3.7 (2011-12-21) =
+* fixed include of wordpress specific vars (wp-config.php, wp-load.php) to support secure setting
+* various html5 validity fixes 
+* calculate copyright year automatically
+
+= v3.6 (2011-07-06) =
+* changed accuweather copyright notice to 2011
+* removed use of HttpExt class for transport, since it was removed from wordpress 3.2
+
+= v3.5 (2011-04-21) =
+* added updated finish translation from Jaakko
+* selection widget now accepts language_override to set langauge different from default
+
+= v3.4 (2011-03-13) =
+* added updated dansk translation (thanks to Michael S.R. Petersen)
+* fixed a problem with wp 3.1 in network mode, due to a different search path th
+e wrong setup.php was included
+
+
+= v3.3 (2010-11-02) =
+* moved enqueue script to init hook where it should be to avoid conflicts with other plugins
+* added bulgarian translation
+* if you return to a wp-forecast site which uses selection widget, your selected location will be remembered and automatically displayed when you return (uses cookies)
+
+= v3.2 (2010-10-01) =
+* fixed duplicate id in selection widget
+
+= v3.1 (2010-08-02) =
+* fixed several bugs when using presettings in multiusermode
+* added support for GoogleWeather API
+* added serbian latin translation (thanks to Zoran)
+* fixed year in copyright notice
+* update accuweather servicelink to new server
+* fixed translation for superadmin dialog on multisites
+* added colored checkboxes to superadmin dialog
+* removed examples folder from package
+
+= v3.0 (2010-05-15) =
+* timeoffset is now considered for current time too
+* added support for wpmu (maintain settings on a per blog base, support for wpmu admin plugin)
+* updated dansk translation
+* fixed handling of country specific characters in accuweather data
+* added "Less..." link at the top (pull down widget)
+* updated swedish translation
+* added css class for iframe tag for shortcodes
+
+= v2.9 (2010-02-19) =
+* fixed an javascript, jquery incompatibility with ie6, ie7, ie8 concerning the selection dialog widget
+
+= v2.8 (2010-01-30) =
+* prevent wp-forecast-nowp.css from being deleted during automatic plugin update
+* added beaufort to set of windunits
+* updated dutch translation, thanks to Wim :-)
+* fixed warning during autoupdate with wordpress >Version 2.8.6
+* rounded pressure to get rid of long values
+
+= v2.7 (2010-01-22) =
+* added unit label to timeoffset field in admindialog
+* added selection dialog widget to let user choose which location to view
+* extended pulldown widget to use more than one pulldown widget per page 
+* prevent wp-forecast.css from being deleted during automatic plugin update
+
+= v2.6 (2009-12-17) =
+* fixed wrong urlencoded link to weather forecast at accuweather
+* fixed undefined variable warning for $wp_forecast_pre_transport in wp-forecast.php
+* fixed uncompress bug in wordpress 2.9 with workaround in fetch_url
+* fixed invalid xhtml/javascript in admin dialog once more
+* added open in new window feature for weather provider link
+* added time offset to correct wrong calculated accuweather times
+
+= v2.5 (2009-10-17) =
+* fixed wrong html in widget dialog with wordpress v2.8, that leads to problems with placing widgets in internet explorer
+* set default for widget call via v2.8.1 widgetdialog
+* replaced "Copyright" with &copy; 
+* added parameters width and height to shortcode
+* added feature to show/hide forecast data with javascript
+* added transport check to admin dialog
+
+= v2.4 (2009-07-04) =
 * changed readme to support new changelog feature at wordpress.org
 * fixed faq section in readme, resized icon
 * added default css file which is used when no user specific one is available

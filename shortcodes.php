@@ -19,15 +19,23 @@ if (!function_exists('wpforecast'))
 	    $id='A';
 	
 	// iframe tag zusammen bauen
-	$res='<iframe src="'.get_settings('siteurl').
-	    '/wp-content/plugins/wp-forecast/wp-forecast-show.php?wpfcid='.
-	    $id.'&amp;header=1';
+	$res='<iframe class="wpf-iframe" src="'.plugins_url( 'wp-forecast-show.php?wpfcid='.$id.'&amp;header=1' , __FILE__ );
 
 	// falls eine sprache angegeben wurde haengen wir sie hinten dran
 	if ($lang != '')
 	    $res .= '&amp;lang='.$lang;
 	
-	$res .='">'.__("wp-forecast shortcode: This browser does not support iframes.","wp-forecast_".$lang).'</iframe>';
+	$res .= '" ';
+	
+	// falls eine breite angegeben wurde haengen wir sie hinten dran
+	if ($width != '')
+	    $res .= "width='$width' ";
+	
+        // falls eine sprache angegeben wurde haengen wir sie hinten dran
+	if ($height != '')
+	    $res .= "height='$height' ";
+	
+	$res .='>'.__("wp-forecast shortcode: This browser does not support iframes.","wp-forecast_".$lang).'</iframe>';
 
 	return $res;
     }

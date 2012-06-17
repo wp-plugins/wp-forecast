@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -260,7 +260,7 @@ if (!function_exists('bug_xml_parser'))
     pdebug(1,"Start of bug_get_locations ()");
     
     // start_element() - wird vom XML-Parser bei öffnenden Tags aufgerufen
-    function s_element( $parser, $name, $attribute )
+    function bug_s_element( $parser, $name, $attribute )
     {
       global $loc,$i;
       if ($name == "AWS:LOCATION") {
@@ -276,7 +276,7 @@ if (!function_exists('bug_xml_parser'))
     }
     
     // end_element() - dummy function
-    function e_element( $parser, $name ){}
+    function bug_e_element( $parser, $name ){}
     
     // Instanz des XML-Parsers erzeugen
     $parser = xml_parser_create();
@@ -285,7 +285,7 @@ if (!function_exists('bug_xml_parser'))
     xml_parser_set_option( $parser, XML_OPTION_CASE_FOLDING, true ); 
     
     // Handler für Elemente ( öffnende / schließende Tags ) setzen 
-    xml_set_element_handler( $parser, "s_element", "e_element" ); 
+    xml_set_element_handler( $parser, "bug_s_element", "bug_e_element" ); 
     
     // try to parse the xml
     if( !xml_parse( $parser, $xml,true ) )
@@ -321,13 +321,13 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
   } 
 
   extract($wpf_vars);
-  $w=unserialize(get_option("wp-forecast-cache".$wpfcid));
+  $w=maybe_unserialize(wpf_get_option("wp-forecast-cache".$wpfcid));
 
   // get translations
   if(function_exists('load_textdomain')) {
     global $l10n;
     if (!isset($l10n["wp-forecast_".$wpf_language])) 
-      load_textdomain("wp-forecast_".$wpf_language, ABSPATH . "wp-content/plugins/wp-forecast/lang/".$wpf_language.".mo");
+      load_textdomain("wp-forecast_".$wpf_language, WPF_PATH . "/lang/".$wpf_language.".mo");
   }
 
   $weather_arr=array();
@@ -341,13 +341,15 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     
     
 
-    $ct = time(); // this is the GMT
+    $ct = time(); // this is the GMT 
+    $ct = $ct + $wpf_vars['timeoffset'] * 60; // add or subtract time offset
     $weather_arr['blogdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['blogtime']=date_i18n($fc_time_format, $ct);
     
     $cts = $w['time'];
-    $gmtoffset=get_option("gmt_offset");
-    $ct = strtotime($cts) + ($gmtoffset * 3600);
+    $gmtoffset=0; // wpf_get_option("gmt_offset");
+    $ct = strtotime($cts) + ($gmtoffset * 3600); 
+  
     $weather_arr['bugdate']=date_i18n($fc_date_format, $ct);
     $weather_arr['bugtime']=date_i18n($fc_time_format, $ct);
     
@@ -368,7 +370,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     list($dummy, $weather_arr['sunrise']) = split(" ",$w['sunrise'],2);
     list($dummy, $weather_arr['sunset'] ) = split(" ",$w['sunset'] ,2);
-    $weather_arr['copyright']='<a href="http://www.weatherbug.com">Copyright 2009 WeatherBug</a>';
+    $weather_arr['copyright']='<a href="http://www.weatherbug.com">&copy; '.date("Y").' WeatherBug</a>';
     
     // additional info
     $weather_arr['lat']=$w['lat'];
