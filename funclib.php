@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2009 Hans Matzen (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2012 Hans Matzen (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -585,5 +585,15 @@ function switch_wpf_transport($sw)
 
     pdebug(1,"Setting preselected transport to ".$wptrans);
     update_option("wp-forecast-wp-transport",$wptrans);
+}
+
+//
+// function for plugin_locale filter hook
+// only returns the first parameter
+//
+function wpf_lplug($locale,$domain) {
+	// extract locale from domain
+	$wpf_locale = substr($domain,12,5);
+	return $locale;
 }
 ?>

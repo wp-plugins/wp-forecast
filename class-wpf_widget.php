@@ -59,9 +59,12 @@ if ( !class_exists('wpf_widget') )
             // get translation 
 	    $locale = get_locale();
 	    if ( empty($locale) )
-		$locale = 'en_US';
-	    if(function_exists('load_textdomain')) 
-		load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/" . $locale . ".mo");
+		$locale = 'en_US'; 
+		if(function_exists('load_plugin_textdomain')) {
+  			add_filter("plugin_locale","wpf_lplug",10,2);
+   			load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+   			remove_filter("plugin_locale","wpf_lplug",10,2);
+		}
 
 	    $title  = esc_attr($instance['title']);
 	    $wpfcid = esc_attr($instance['wpfcid']);

@@ -87,9 +87,12 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 	$locale = 'en_US';
 
     // load translation
-    if(function_exists('load_textdomain')) 
-	load_textdomain("wp-forecast_".$locale, plugin_dir_path(__FILE__) ."/lang/".$locale.".mo");
- 
+    if(function_exists('load_plugin_textdomain')) {
+    	add_filter("plugin_locale","wpf_lplug",10,2);
+    	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+    	remove_filter("plugin_locale","wpf_lplug",10,2);
+    }
+    
     
 
     // if this is a post call

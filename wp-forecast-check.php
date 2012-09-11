@@ -86,11 +86,12 @@ $wpf_vars=get_wpf_opts("A");
 $locale = $wpf_vars['wpf_language'];
 
 // get translations
-if(function_exists('load_textdomain')) {
-    global $l10n;
-    if (!isset($l10n["wp-forecast_".$locale])) 
-	load_textdomain("wp-forecast_".$locale, WPF_PATH . "/lang/".$locale.".mo");
-}
+ if(function_exists('load_plugin_textdomain')) {
+  	add_filter("plugin_locale","wpf_lplug",10,2);
+   	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+   	remove_filter("plugin_locale","wpf_lplug",10,2);
+  }
+  
 
 if (!empty($_POST)) {
     $out = "";

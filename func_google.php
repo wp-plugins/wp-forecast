@@ -177,11 +177,12 @@ function google_forecast_data($wpfcid="A", $language_override=null)
   $w=maybe_unserialize(wpf_get_option("wp-forecast-cache".$wpfcid));
 
   // get translations
-  if(function_exists('load_textdomain')) {
-    global $l10n;
-    if (!isset($l10n["wp-forecast_".$wpf_language])) 
-      load_textdomain("wp-forecast_".$wpf_language, WPF_PATH . "/lang/".$wpf_language.".mo");
+ if(function_exists('load_plugin_textdomain')) {
+  	add_filter("plugin_locale","wpf_lplug",10,2);
+   	load_plugin_textdomain("wp-forecast_".$wpf_language, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+   	remove_filter("plugin_locale","wpf_lplug",10,2);
   }
+  
   
   $weather_arr=array();
 

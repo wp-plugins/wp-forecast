@@ -84,8 +84,12 @@ function wpf_admin_hint($args = null)
   $locale = get_locale();
   if ( empty($locale) )
     $locale = 'en_US';
-  if(function_exists('load_textdomain')) 
-    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
+  
+  if(function_exists('load_plugin_textdomain')) {
+  	add_filter("plugin_locale","wpf_lplug",10,2);
+  	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+  	remove_filter("plugin_locale","wpf_lplug",10,2);
+  }
   
   // code for widget title form 
   $av=get_wpf_opts($wpfcid);
@@ -148,9 +152,12 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
   // called via the options menu not from widgets
   if ($widgetcall==0) {
     // load translation
-    if(function_exists('load_textdomain')) {
-      load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
+    if(function_exists('load_plugin_textdomain')) {
+    	add_filter("plugin_locale","wpf_lplug",10,2);
+    	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+    	remove_filter("plugin_locale","wpf_lplug",10,2);
     }
+    
 
     // if this is a post call, number of widgets 
     if ( isset($_POST['wpf-count-submit']) ) {
@@ -316,10 +323,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
   // get translation 
   $locale = get_locale();
   if ( empty($locale) )
-    $locale = 'en_US';
-  if(function_exists('load_textdomain')) 
-    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
-  
+	$locale = 'en_US';
+ 
+  if(function_exists('load_plugin_textdomain')) {
+  	add_filter("plugin_locale","wpf_lplug",10,2);
+   	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+   	remove_filter("plugin_locale","wpf_lplug",10,2);
+   }
   
   // if this is a POST call, save new values
   if (isset($_POST['info_update'])) {
@@ -330,7 +340,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	$upflag = true;
     } 
 	
-    if (isset($av['apikey1']) && $av['apikey1'] != $_POST["apikey1"] and (!$ismulti or isset($allowed["ue_apikey1"]))) {
+    if (isset($_POST['apikey1']) && $av['apikey1'] != $_POST["apikey1"] and (!$ismulti or isset($allowed["ue_apikey1"]))) {
+    	echo "Tschaka";
       $av['apikey1'] =  $_POST["apikey1"];
       $upflag=true;
     }

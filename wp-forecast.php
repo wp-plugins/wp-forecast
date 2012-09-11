@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 4.0
+Version: 4.1
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
@@ -162,10 +162,9 @@ function wp_forecast_init()
     }
     
     // javascript hinzufügen fuer ajax widget
-    wp_enqueue_script('wpf_update',
-		      plugin_dir_url(__FILE__) . '/wpf_update.js',
-		      array('jquery'), "9999");
-
+   if (! is_admin())
+   	 wp_enqueue_script('wpf_update', plugins_url('wpf_update.js', __FILE__),  array('jquery'),"9999");
+    
     pdebug(1,"End of function wp_forecast_init ()");
 }
 
@@ -365,11 +364,13 @@ function wpf_widget_page() {
   $locale = get_locale();
   if ( empty($locale) )
     $locale = 'en_US';
-  // load translation
-  if(function_exists('load_textdomain')) {
-    load_textdomain("wp-forecast_".$locale,WPF_PATH . "/lang/".$locale.".mo");
+  // load translation 
+  if(function_exists('load_plugin_textdomain')) {
+  	add_filter("plugin_locale","wpf_lplug",10,2);
+   	load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+   	remove_filter("plugin_locale","wpf_lplug",10,2);
   }
-
+  
 
   $out  = "<div class='wrap'><form method='POST' action='#'>";
   $out .= "<h2>WP-Forecast Widgets</h2>";
