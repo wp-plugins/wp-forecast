@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-26 20:02+0200\n"
-"PO-Revision-Date: 2012-10-21 01:51-1000\n"
+"PO-Revision-Date: 2012-10-22 22:45-1000\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -458,163 +458,163 @@ msgstr ""
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr ""
+msgstr "Cerah"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr ""
+msgstr "Cerah Berawan"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr ""
+msgstr "Cerah hingga sebagian berawan"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr ""
+msgstr "Berawan sebagian"
 
 #: xgettextdummy.php:10
 msgid "05"
-msgstr ""
+msgstr "Cerah berkabut"
 
 #: xgettextdummy.php:11
 msgid "06"
-msgstr ""
+msgstr "Berawan"
 
 #: xgettextdummy.php:12
 msgid "07"
-msgstr ""
+msgstr "Berawan"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr ""
+msgstr "Mendung"
 
 #: xgettextdummy.php:14
 msgid "11"
-msgstr ""
+msgstr "Kabut"
 
 #: xgettextdummy.php:15
 msgid "12"
-msgstr ""
+msgstr "Hujan lebat "
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr ""
+msgstr "Umumnya Bberawan dng hujan deras"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr ""
+msgstr "Cerah hingga sebagian berawan dgn hujan dears"
 
 #: xgettextdummy.php:18
 msgid "15"
-msgstr ""
+msgstr "Hujan dan petir"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr ""
+msgstr "Berawan dan petir"
 
 #: xgettextdummy.php:20
 msgid "17"
-msgstr ""
+msgstr "Cerah hingga sebagian berawan dgn petir"
 
 #: xgettextdummy.php:21
 msgid "18"
-msgstr ""
+msgstr "Hujan"
 
 #: xgettextdummy.php:22
 msgid "19"
-msgstr ""
+msgstr "Salju ringan"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr ""
+msgstr "Cerah"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr ""
+msgstr "Sebagian Berawan dengan salju ringan"
 
 #: xgettextdummy.php:25
 msgid "22"
-msgstr ""
+msgstr "Salju"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr ""
+msgstr "Berawan dan Bersalju"
 
 #: xgettextdummy.php:27
 msgid "24"
-msgstr ""
+msgstr "Es"
 
 #: xgettextdummy.php:28
 msgid "25"
-msgstr ""
+msgstr "Hujan bercampur salju"
 
 #: xgettextdummy.php:29
 msgid "26"
-msgstr ""
+msgstr "Hujan yang beku"
 
 #: xgettextdummy.php:30
 msgid "29"
-msgstr ""
+msgstr "Hujan dan Salju"
 
 #: xgettextdummy.php:31
 msgid "30"
-msgstr ""
+msgstr "Panas"
 
 #: xgettextdummy.php:32
 msgid "31"
-msgstr ""
+msgstr "Dingin"
 
 #: xgettextdummy.php:33
 msgid "32"
-msgstr ""
+msgstr "Berangin"
 
 #: xgettextdummy.php:34
 msgid "33"
-msgstr ""
+msgstr "Cerah"
 
 #: xgettextdummy.php:35
 msgid "34"
-msgstr ""
+msgstr "Cerah sebagian"
 
 #: xgettextdummy.php:36
 msgid "35"
-msgstr ""
+msgstr "Sebagian berawan"
 
 #: xgettextdummy.php:37
 msgid "36"
-msgstr ""
+msgstr "Sebagian berawan"
 
 #: xgettextdummy.php:38
 msgid "37"
-msgstr ""
+msgstr "Sinar bulan dan berkabut"
 
 #: xgettextdummy.php:39
 msgid "38"
-msgstr ""
+msgstr "Berawan"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr ""
+msgstr "Berawan sebagian dan hujan lebat"
 
 #: xgettextdummy.php:41
 msgid "40"
-msgstr ""
+msgstr "Berawan dan hujan lebat"
 
 #: xgettextdummy.php:42
 msgid "41"
-msgstr ""
+msgstr "Berawan sebagian degn petir"
 
 #: xgettextdummy.php:43
 msgid "42"
-msgstr ""
+msgstr "Berawan dgn petir"
 
 #: xgettextdummy.php:44
 msgid "43"
-msgstr ""
+msgstr "Berawan dgn salju ringan"
 
 #: xgettextdummy.php:45
 msgid "44"
-msgstr ""
+msgstr "Berawan dgn Salju"
 
 #: xgettextdummy.php:46
 msgid "Monday"
