@@ -262,16 +262,16 @@ if (!function_exists('bug_xml_parser'))
     // start_element() - wird vom XML-Parser bei öffnenden Tags aufgerufen
     function bug_s_element( $parser, $name, $attribute )
     {
-      global $loc,$i;
+      global $loc,$wpf_i;
       if ($name == "AWS:LOCATION") {
-	$loc[$i]=array();
-	$loc[$i]['city'] = $attribute['CITYNAME'];
-	$loc[$i]['state'] = $attribute['COUNTRYNAME'];
+	$loc[$wpf_i]=array();
+	$loc[$wpf_i]['city'] = $attribute['CITYNAME'];
+	$loc[$wpf_i]['state'] = $attribute['COUNTRYNAME'];
 	if ($attribute['CITYTYPE']==0)
-	  	$loc[$i]['location'] = $attribute['ZIPCODE'];
+	  	$loc[$wpf_i]['location'] = $attribute['ZIPCODE'];
 	else
-	  $loc[$i]['location'] = $attribute['CITYCODE'];
-	$i++;
+	  $loc[$wpf_i]['location'] = $attribute['CITYCODE'];
+	$wpf_i++;
       }
     }
     

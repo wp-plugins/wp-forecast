@@ -41,7 +41,7 @@ function fetchURL($url)
     
     $wprr_args = array(
 	'timeout' => $timeout,
-	'decompress' => false,
+	'decompress' => true,
 	'headers' => array(
 	    'Connection' => 'Close',
 	    'Accept' => '*/*'
@@ -594,6 +594,6 @@ function switch_wpf_transport($sw)
 function wpf_lplug($locale,$domain) {
 	// extract locale from domain
 	$wpf_locale = substr($domain,12,5);
-	return $locale;
+	return $wpf_locale;
 }
 ?>

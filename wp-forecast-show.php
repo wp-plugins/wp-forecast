@@ -23,42 +23,42 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // the following structure will be used:
 /*
  <div class="wp-forecast">
- <div class="wp-forecast-curr">
- <div class="wp-forecast-curr-head">
- </div>
- <div class="wp-forecast-curr-block">
- <div class='wp-forecast-curr-left'>
- </div>
- <div class='wp-forecast-curr-right'>
- </div>
- </div>
- <div class="wp-forecast-curr-details">
- <div class="wp-forecast-copyright">
- </div>
- </div>
- </div>
- <div class="wp-forecast-fc">
+<div class="wp-forecast-curr">
+<div class="wp-forecast-curr-head">
+</div>
+<div class="wp-forecast-curr-block">
+<div class='wp-forecast-curr-left'>
+</div>
+<div class='wp-forecast-curr-right'>
+</div>
+</div>
+<div class="wp-forecast-curr-details">
+<div class="wp-forecast-copyright">
+</div>
+</div>
+</div>
+<div class="wp-forecast-fc">
 
- <div class="wp-forecast-fc-oneday">
- <div class="wp-forecast-fc-head">
- </div>
- <div class="wp-forecast-fc-block">
- <div class="wp-forecast-fc-left">
- </div>
- <div class='wp-forecast-fc-right'>
- </div>
- </div>
- <div class="wp-forecast-fc-block">
- <div class="wp-forecast-fc-left">
- </div>
- <div class='wp-forecast-fc-right'>
- </div>
- </div>
- </div>
- ... repetead for everey forecast day ...
- </div>
- </div>
- */
+<div class="wp-forecast-fc-oneday">
+<div class="wp-forecast-fc-head">
+</div>
+<div class="wp-forecast-fc-block">
+<div class="wp-forecast-fc-left">
+</div>
+<div class='wp-forecast-fc-right'>
+</div>
+</div>
+<div class="wp-forecast-fc-block">
+<div class="wp-forecast-fc-left">
+</div>
+<div class='wp-forecast-fc-right'>
+</div>
+</div>
+</div>
+... repetead for everey forecast day ...
+</div>
+</div>
+*/
 
 // if called directly, get parameters from GET and output the forecast html
 if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
@@ -77,7 +77,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 	$header = esc_attr($_GET['header']);
 	$selector = (isset($_GET['selector'])?esc_attr($_GET['selector']):"");
 	if ($selector == "1")
-	$selector = "?";
+		$selector = "?";
 	$args=array();
 
 	$wpf_vars=get_wpf_opts($wpfcid);
@@ -103,18 +103,18 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 	show($selector . $wpfcid,$args,$wpf_vars);
 
 	if ($header)
-	echo "</body></html>\n";
+		echo "</body></html>\n";
 }
 
 function show($wpfcid,$args,$wpfvars)
 {
 	pdebug(1,"Start of show ()");
-	
+
 	// check how we are called as a widget or from sidebar
 	if (sizeof($args)==0)
-	$show_from_widget=0;
+		$show_from_widget=0;
 	else
-	$show_from_widget=1;
+		$show_from_widget=1;
 
 	// order is important to override old title in wpfvars with new in args
 	extract($wpfvars);
@@ -122,11 +122,11 @@ function show($wpfcid,$args,$wpfvars)
 
 	// get translations
 	if(function_exists('load_plugin_textdomain')) {
-  		add_filter("plugin_locale","wpf_lplug",10,2);
-   		load_plugin_textdomain("wp-forecast_".$wpf_language, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
-   		remove_filter("plugin_locale","wpf_lplug",10,2);
-  	}
-	
+		add_filter("plugin_locale","wpf_lplug",10,2);
+		load_plugin_textdomain("wp-forecast_".$wpf_language, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+		remove_filter("plugin_locale","wpf_lplug",10,2);
+	}
+
 	$plugin_path = plugins_url("",__FILE__);
 
 	// show location selection dialog and handle it ajax like
@@ -136,11 +136,11 @@ function show($wpfcid,$args,$wpfvars)
 	{
 		$wpfcid = substr($wpfcid,1);
 		if ($wpfcid == "")
-		$wpfcid = "A";
+			$wpfcid = "A";
 
 		$count = wpf_get_option('wp-forecast-count');
 		$fout .= "<div class='wpf-selector'><form action='#'>" .
-		__("Locations:","wp-forecast_".$wpf_language);
+				__("Locations:","wp-forecast_".$wpf_language);
 		$fout .= "<select id='wpf_selector' size='1' onchange='wpf_update();' >";
 		for ($i=0;$i<$count;$i++) {
 	  $id = get_widget_id( $i );
@@ -152,21 +152,21 @@ function show($wpfcid,$args,$wpfvars)
 		}
 		$fout .= "</select>";
 		$fout .="<input id='wpf_selector_site' type='hidden' value='" .
-		$plugin_path."' />";
+				$plugin_path."' />";
 		$fout .="<input id='wpf_language' type='hidden' value='" . $wpf_language ."' />";
 		$fout .= "</form>";
 		$fout .='<script type="text/javascript">window.onDomReady(wpf_load);</script>';
 		$fout .= "</div>";
-		 
+			
 	}
 
 	$w = wp_forecast_data($wpfcid, $wpf_language);
 
 	// current conditions nur ausgeben, wenn mindestens ein feld aktiv ist
 	if ( strpos(substr($dispconfig,0,9),"1") >= 0 or
-	substr($dispconfig,18,1) == "1" or
-	substr($dispconfig,21,1) == "1" or
-	substr($dispconfig,22,1) == "1" )
+			substr($dispconfig,18,1) == "1" or
+			substr($dispconfig,21,1) == "1" or
+			substr($dispconfig,22,1) == "1" )
 	{
 		// ouput current conditions
 		$out ="";
@@ -177,14 +177,14 @@ function show($wpfcid,$args,$wpfvars)
 		{
 	  $out .= __("Failure notice from provider","wp-forecast_".$wpf_language).":<br />";
 	  $out .= $w['failure']."</div>";
-	   
+
 	  // print it
 	  if ( $show_from_widget == 1 )
-	  echo $before_widget . $before_title . $title . $after_title
-	  . $out . $after_widget;
+	  	echo $before_widget . $before_title . $title . $after_title
+	  	. $out . $after_widget;
 	  else
-	  echo $out;
-	   
+	  	echo $out;
+
 	  return false;
 		}
 
@@ -196,11 +196,11 @@ function show($wpfcid,$args,$wpfvars)
 	  $out .= __("Please try again later.","wp-forecast_".$wpf_language)."</div>";
 	  // print it
 	  if ( $show_from_widget == 1 )
-	  echo $before_widget . $before_title . $title . $after_title .
-	  $out . $after_widget;
+	  	echo $before_widget . $before_title . $title . $after_title .
+	  	$out . $after_widget;
 	  else
-	  echo $out;
-	   
+	  	echo $out;
+
 	  return false;
 		}
 
@@ -212,17 +212,17 @@ function show($wpfcid,$args,$wpfvars)
 			$servicelink_end="</a>";
 
 			if (substr($dispconfig,26,1) == "1")
-	  $servicelink= $servicelink . ' target="_blank" >';
+				$servicelink= $servicelink . ' target="_blank" >';
 	  else
-	  $servicelink= $servicelink.' >';
+	  	$servicelink= $servicelink.' >';
 		}
 
 
 		$out .= '<div class="wp-forecast-curr-head">';
 		if ( $w['location'] == "" )
-		$out .= "<div>".$servicelink.$w['locname']. $servicelink_end."</div>\n";
+			$out .= "<div>".$servicelink.$w['locname']. $servicelink_end."</div>\n";
 		else if ( trim($w['location']) !="" and $w['location'] != "&nbsp;")
-		$out .= "<div>".$servicelink.$w['location'].$servicelink_end."</div>\n";
+			$out .= "<div>".$servicelink.$w['location'].$servicelink_end."</div>\n";
 
 		// show date / time
 		// if current time should be used
@@ -250,15 +250,15 @@ function show($wpfcid,$args,$wpfvars)
 		if (substr($dispconfig,18,1) == "1" or substr($dispconfig,1,1) == "1") {
 			$out .= "<div>";
 			if (substr($dispconfig,18,1) == "1")
-			$out .= $cd;
+				$out .= $cd;
 			else
-			$out .= __('time',"wp-forecast_".$wpf_language).": ";
+				$out .= __('time',"wp-forecast_".$wpf_language).": ";
 
 			if (substr($dispconfig,18,1) == "1" and substr($dispconfig,1,1) == "1")
-			$out .= ", ";
+				$out .= ", ";
 
 			if (substr($dispconfig,1,1) == "1")
-			$out .= $ct;
+				$out .= $ct;
 			$out .= "</div>\n";
 		}
 		$out .= "</div>\n";
@@ -267,24 +267,31 @@ function show($wpfcid,$args,$wpfvars)
 
 		// show icon
 		if (substr($dispconfig,0,1) == "1") {
-			if ($service=="accu")
-			$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+			if ($service=="accu") {
+				$breite=0; $hoehe=0;
+				$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
+				if ($isize != false) {
+					$breite=$isize[0];
+					$hoehe=$isize[1];
+				}
+				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' /></div>\n";
+			}
 			if ($service=="bug")
-			$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
 
 			if ($service=="google")
-			$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
 		}
 
 		$out .= "<div class='wp-forecast-curr-right'>";
 
 		// show short description
 		if (substr($dispconfig,2,1) == "1")
-		$out .= "<div>". $w["shorttext"]."</div>";
+			$out .= "<div>". $w["shorttext"]."</div>";
 
 		// show temperatur
 		if (substr($dispconfig,3,1) == "1")
-		$out .= $w["temperature"];
+			$out .= $w["temperature"];
 		//$out .= __('tmp',"wp-forecast_".$wpf_language).": ".$w["temperature"];
 		$out .= "</div>\n"; // end of right
 		$out .= "</div>\n";  // end of block
@@ -292,40 +299,40 @@ function show($wpfcid,$args,$wpfvars)
 		$out .= "<div class=\"wp-forecast-curr-details\">";
 		// show realfeel
 		if (substr($dispconfig,4,1) == "1")
-		$out .= "<div>".__('flik',"wp-forecast_".$wpf_language).": ".$w["realfeel"]."</div>\n";
+			$out .= "<div>".__('flik',"wp-forecast_".$wpf_language).": ".$w["realfeel"]."</div>\n";
 		// show pressure
 		if (substr($dispconfig,5,1) == "1")
-		$out .= "<div>".__('barr',"wp-forecast_".$wpf_language).": ".$w["pressure"]."</div>\n";
+			$out .= "<div>".__('barr',"wp-forecast_".$wpf_language).": ".$w["pressure"]."</div>\n";
 
 		// show humiditiy
 		if (substr($dispconfig,6,1) == "1")
-		//
-		// you can change the decimals of humditiy by switching
-		// the 0 to whatever you need
+			//
+			// you can change the decimals of humditiy by switching
+			// the 0 to whatever you need
 		//
 		$out .= "<div>".__('hmid',"wp-forecast_".$wpf_language).": ".$w["humidity"]."%</div>\n";
 
 		// show wind
 		if (substr($dispconfig,7,1) == "1")
-		$out .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".$w['windspeed']." " . $w['winddir']."</div>\n";
+			$out .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".$w['windspeed']." " . $w['winddir']."</div>\n";
 
 
 		// show windgusts
 		if (substr($dispconfig,22,1) == "1")
-		$out .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".$w['windgusts']."</div>\n";
+			$out .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".$w['windgusts']."</div>\n";
 
 
 		// show sunrise
 		if (substr($dispconfig,8,1) == "1")
-		$out .="<div>". __('sunrise',"wp-forecast_".$wpf_language).": ".$w['sunrise']."</div>\n";
+			$out .="<div>". __('sunrise',"wp-forecast_".$wpf_language).": ".$w['sunrise']."</div>\n";
 
 		// show sunset
 		if (substr($dispconfig,9,1) == "1")
-		$out .= "<div>".__('sunset',"wp-forecast_".$wpf_language).": ".$w['sunset']."</div>\n";
+			$out .= "<div>".__('sunset',"wp-forecast_".$wpf_language).": ".$w['sunset']."</div>\n";
 
 		// show copyright
 		if (substr($dispconfig,21,1) == "1")
-		$out .= "<div class=\"wp-forecast-copyright\">".$w['copyright']."</div>";
+			$out .= "<div class=\"wp-forecast-copyright\">".$w['copyright']."</div>";
 
 		$out .="</div>\n"; // end of details
 		$out .="</div>\n"; // end of curr
@@ -360,7 +367,7 @@ function show($wpfcid,$args,$wpfvars)
 		if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1")
 		{
 	  $out1 .="<div class=\"wp-forecast-fc-oneday\">\n";
-	   
+
 	  $out1 .="<div class=\"wp-forecast-fc-head\">";
 	  $out1 .= __("Forecast","wp-forecast_".$wpf_language)." ";
 	  $out1 .= $w['fc_obsdate_'.$i]."</div>\n";
@@ -372,22 +379,27 @@ function show($wpfcid,$args,$wpfvars)
 	  $out1 .="<div class=\"wp-forecast-fc-block\">\n";
 	  $out1 .="<div class=\"wp-forecast-fc-left\">\n";
 	  $out1 .= "<div>".__('day',"wp-forecast_".$wpf_language)."</div>\n";
-	   
+
 	  // show icon
 	  if (substr($dispconfig,10,1) == "1")
 	  {
-	  	if ($service=="accu")
-		  $out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/".
-		  $w['fc_dt_icon_'.$i]."' alt='".
-		  __($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language)."' />";
-
+	  	if ($service=="accu") {
+	  		$breite=0; $hoehe=0;
+	  		$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_dt_icon_'.$i] );
+	  		if ($isize != false) {
+	  			$breite=$isize[0];
+	  			$hoehe=$isize[1];
+	  		}
+	  		$out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/". $w['fc_dt_icon_'.$i]."' alt='".
+	 	  		__($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language). "' width='$breite' height='$hoehe' />";
+	  	}
 		  if ($service=="bug")
-		  $out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
-		"' alt='".$w["fc_dt_desc_".$i]."' />"; 
+		  	$out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
+		  	"' alt='".$w["fc_dt_desc_".$i]."' />";
 
 		  if ($service=="google")
-		  $out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
-		"' alt='".$w["fc_dt_desc_".$i]."' />"; 
+		  	$out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
+		  	"' alt='".$w["fc_dt_desc_".$i]."' />";
 	  }
 	  else
 	  {
@@ -398,7 +410,7 @@ function show($wpfcid,$args,$wpfvars)
 
 	  // show short description
 	  if (substr($dispconfig,11,1) == "1")
-	  $out1 .= "<div>".$w["fc_dt_desc_".$i]."</div>";
+	  	$out1 .= "<div>".$w["fc_dt_desc_".$i]."</div>";
 
 	  // show temperature
 	  if (substr($dispconfig,12,1) == "1")
@@ -410,14 +422,14 @@ function show($wpfcid,$args,$wpfvars)
 
 	  // show wind
 	  if (substr($dispconfig,13,1) == "1")
-	  $out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".
-	  $w["fc_dt_windspeed_".$i]." ".$w["fc_dt_winddir_".$i]."</div>";
+	  	$out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_dt_windspeed_".$i]." ".$w["fc_dt_winddir_".$i]."</div>";
 
 	  // show windgusts
 	  if (substr($dispconfig,23,1) == "1")
-	  $out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".
-	  $w["fc_dt_wgusts_".$i]."</div>\n";
-	   
+	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_dt_wgusts_".$i]."</div>\n";
+
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
 		}
 
@@ -431,9 +443,14 @@ function show($wpfcid,$args,$wpfvars)
 			if (substr($dispconfig,14,1) == "1")
 	  {
 	  	$iconfile=find_icon($w["fc_nt_icon_".$i]);
-	  	$out1 .= "<img class='wp-forecast-fc-left' src='"
-	  	.$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
-	  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' />";
+	  	$breite=64; $hoehe=40;
+	  	$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_nt_icon_'.$i] );
+	  	if ($isize != false) {
+	  		$breite=$isize[0];
+	  		$hoehe=$isize[1];
+	  	}
+	  	$out1 .= "<img class='wp-forecast-fc-left' src='" .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
+	  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' width='$breite' height='$hoehe' />";
 	  }
 	  else
 	  {
@@ -443,24 +460,24 @@ function show($wpfcid,$args,$wpfvars)
 
 	  // show short description
 	  if (substr($dispconfig,15,1) == "1")
-	  $out1 .= "<div>".$w["fc_nt_desc_".$i]."</div>";
+	  	$out1 .= "<div>".$w["fc_nt_desc_".$i]."</div>";
 
 	  // show temperature
 	  if (substr($dispconfig,16,1) == "1")
-	  $out1 .= "<div>".$w["fc_nt_ltemp_".$i]."</div>";
+	  	$out1 .= "<div>".$w["fc_nt_ltemp_".$i]."</div>";
 
 
 	  // show wind
 	  if (substr($dispconfig,17,1) == "1")
-	  $out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language)
-	  .": ".$w["fc_nt_windspeed_".$i]." "
-	  . $w["fc_nt_winddir_".$i]  ."</div>";
+	  	$out1 .= "<div>".__('winds',"wp-forecast_".$wpf_language)
+	  	.": ".$w["fc_nt_windspeed_".$i]." "
+	  	. $w["fc_nt_winddir_".$i]  ."</div>";
 
 
 	  // show windgusts
 	  if (substr($dispconfig,24,1) == "1")
-	  $out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language)
-	  .": ".$w["fc_nt_wgusts_".$i]."</div>\n";
+	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language)
+	  	.": ".$w["fc_nt_wgusts_".$i]."</div>\n";
 
 
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
@@ -470,7 +487,7 @@ function show($wpfcid,$args,$wpfvars)
 
 		// close div block
 		if (substr($daytime,$i-1,1)=="1" or substr($nighttime,$i-1,1) =="1")
-		$out1 .="</div>\n";
+			$out1 .="</div>\n";
 
 		// store first shown forecast in case pulldown is active
 		if ( $pdforecast == 1 and $pdfirstday == $i ) {
@@ -496,14 +513,14 @@ function show($wpfcid,$args,$wpfvars)
 
 	// print it
 	if ( $show_from_widget == 1 )
-	echo $before_widget . $before_title . $title . $after_title;
+		echo $before_widget . $before_title . $title . $after_title;
 
 	echo '<div id="wp-forecast'.$wpfcid.'" class="wp-forecast">' . $fout . $out . $out1 . $out2 . '</div>'."\n";
 	// to come back to theme floating status
 	echo '<div style="clear:inherit;">&nbsp;</div>';
 
 	if ( $show_from_widget == 1 )
-	echo $after_widget;
+		echo $after_widget;
 
 	pdebug(1,"End of show ()");
 

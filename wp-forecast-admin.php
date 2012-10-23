@@ -782,6 +782,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
        </div>
        
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
+       </form></div>
 <?php
 //   if ($widgetcall ==0) 
 //     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
@@ -831,7 +832,6 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 //     }
 //   
    echo '<script type="text/javascript">apifields(document.woptions.service.value);wpf_wpmu_disable_fields();</script>';
-
    pdebug(1,"End of wpf_sub_admin_form ()");
 }
 ?>

@@ -210,13 +210,13 @@ if (!function_exists('accu_xml_parser')) {
     // start_element() - wird vom XML-Parser bei öffnenden Tags aufgerufen
     function s_element( $parser, $name, $attribute )
     {
-      global $loc,$i;
+      global $loc,$wpf_i;
       if ($name == "LOCATION") {
-	$loc[$i]=array();
-	$loc[$i]['city'] = $attribute['CITY'];
-	$loc[$i]['state'] = $attribute['STATE'];
-	$loc[$i]['location'] = $attribute['LOCATION'];
-	$i++;
+	$loc[$wpf_i]=array();
+	$loc[$wpf_i]['city'] = $attribute['CITY'];
+	$loc[$wpf_i]['state'] = $attribute['STATE'];
+	$loc[$wpf_i]['location'] = $attribute['LOCATION'];
+	$wpf_i++;
       }
     }
     
