@@ -163,7 +163,7 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 == Changelog ==
 
-= v4.3 (2012-11-24) =
+= v4.3 (2012-12-24) =
 * added new hebrew translation by Udi :-)
 * added new greek translation by Nikos :-)
 * added updated serbian translation by Zoran :-)
