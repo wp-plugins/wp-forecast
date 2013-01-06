@@ -54,10 +54,12 @@ if (isset($_GET['searchterm'])) {
     $i = 0;
     
     // search location for weather bug
-    $blu=str_replace('#apicode#',$av['apikey1'],$av['BUG_LOC_URI']);
-    $xml=get_loclist($blu,$_GET['searchterm']);
-    $xml=utf8_encode($xml);
-    bug_get_locations($xml); // modifies global array $loc
+    if ($av['apikey1']!="") {
+    	$blu=str_replace('#apicode#',$av['apikey1'],$av['BUG_LOC_URI']);
+    	$xml=get_loclist($blu,$_GET['searchterm']);
+    	$xml=utf8_encode($xml);
+    	bug_get_locations($xml); // modifies global array $loc
+    }
 	$bug_loc = $loc;
     
 	// output searchresults
