@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2010-2011 Hans Matzen
+/*  Copyright 2010-2013 Hans Matzen
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -254,8 +254,8 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
 
     
     echo $out;
-?>
-    <div class="wrap">
+	echo '<div class="wrap">';
+    ?>
     <!-- add javascript for field control -->
     <?php include("wpf_sa_js.php"); ?>
 	 <input name='wid' type='hidden' value='<?php echo $wpfcid; ?>'/>   
@@ -536,11 +536,7 @@ function wpf_wpmu_admin_form($wpfcid='A',$widgetcall=0)
        </fieldset>
 <?php
      echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
-   
-?>
-</div></form></div>
-<?php
-   
-   pdebug(1,"End of wpf_sub_admin_form ()");
+     echo "</div></form></div>";
+    pdebug(1,"End of wpf_sub_admin_form ()");
 }
 ?>
