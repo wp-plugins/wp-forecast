@@ -1,0 +1,1059 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-forecast 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-26 20:02+0200\n"
+"PO-Revision-Date: 2013-02-06 10:50+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: class-wpf_widget.php:73 wp-forecast-admin.php:102
+msgid "Title:"
+msgstr "عنوان : "
+
+#: class-wpf_widget.php:81 wp-forecast-admin.php:222
+msgid "Available widgets"
+msgstr "ابزارک های در دسترس"
+
+#: func_bug.php:222
+msgid "Location does not exist"
+msgstr "مکان پیدا نشد!"
+
+#: func_bug.php:362 func_bug.php:389 xgettextdummy.php:150
+msgid "Unknown"
+msgstr "ناشناس"
+
+#: shortcodes.php:40
+msgid "wp-forecast shortcode: This browser does not support iframes."
+msgstr "مرورگر قابلیت iframe را پشتیبانی نمی کند!"
+
+#: wp-forecast-admin.php:105
+msgid "widget_hint"
+msgstr "widget_hint"
+
+#: wp-forecast-admin.php:210 wp-forecast.php:375
+msgid "How many wp-forecast widgets would you like?"
+msgstr "چه تعداد ابزارک نیاز دارید ؟"
+
+#: wp-forecast-admin.php:219 wp-forecast-admin.php:245
+#: wp-forecast-admin.php:261 wp-forecast-admin.php:270 wp-forecast.php:384
+msgid "Save"
+msgstr "ذخیره"
+
+#: wp-forecast-admin.php:238
+msgid "Select widget"
+msgstr "انتخاب ابزارک"
+
+#: wp-forecast-admin.php:243 wpf_sa_admin.php:218
+msgid "Timeout for weatherprovider connections (secs.)?"
+msgstr "زمان وقفه برای اتصال به سرویس هواشناسی (ثانیه )"
+
+#: wp-forecast-admin.php:249 wpf_sa_admin.php:226
+msgid "Preselect wordpress transfer method"
+msgstr "متد انتقالی اطلاعات وردپرس را انتخاب کنید."
+
+#: wp-forecast-admin.php:251 wpf_sa_admin.php:228
+msgid "default"
+msgstr "پیشفرض"
+
+#: wp-forecast-admin.php:265 wpf_sa_admin.php:241
+msgid "Delete options during plugin deactivation?"
+msgstr "حذف کردن اطلاعات هنگام غیر فعال کردن افزونه ؟"
+
+#: wp-forecast-admin.php:273
+msgid "Check connection to Weatherprovider"
+msgstr "معتبر سازی اتصال به سرویس"
+
+#: wp-forecast-admin.php:442 wpf_sa_admin.php:192
+msgid "Settings successfully updated"
+msgstr "تنظیمات با موفقیت به روز رسانی شد ."
+
+#: wp-forecast-admin.php:444
+msgid "You have to change a field to update settings."
+msgstr "You have to change a field to update settings."
+
+#: wp-forecast-admin.php:491
+msgid "WP-Forecast Setup"
+msgstr "نصب WP-Forecast"
+
+#: wp-forecast-admin.php:494 wpf_sa_admin.php:262
+msgid "Weatherservice"
+msgstr "سرویس هواشناسی"
+
+#: wp-forecast-admin.php:496 wpf_sa_admin.php:264
+msgid "AccuWeather"
+msgstr "AccuWeather"
+
+#: wp-forecast-admin.php:497 wpf_sa_admin.php:265
+msgid "WeatherBug"
+msgstr "WeatherBug"
+
+#: wp-forecast-admin.php:498
+msgid "GoogleWeather"
+msgstr "سرویس هواشناسی گوگل"
+
+#: wp-forecast-admin.php:501
+msgid "Partner ID"
+msgstr "کد اشتراک"
+
+#: wp-forecast-admin.php:504 wpf_sa_admin.php:271
+msgid "Licensekey"
+msgstr "کد مجوز"
+
+#: wp-forecast-admin.php:509 wpf_sa_admin.php:276
+msgid "Location"
+msgstr "مکان"
+
+#: wp-forecast-admin.php:518 wpf_sa_admin.php:279
+msgid "Press Update options to save new location."
+msgstr "دکمه ی به روز رسانی را فشار دهید تا مکان جدید ذخیره شود ."
+
+#: wp-forecast-admin.php:521 wpf_sa_admin.php:282
+msgid "Locationname"
+msgstr "نام مکان"
+
+#: wp-forecast-admin.php:523 wpf_sa_admin.php:285
+msgid "Refresh cache after"
+msgstr "به روز رسانی کش بعد از "
+
+#: wp-forecast-admin.php:525 wpf_sa_admin.php:287
+msgid "secs."
+msgstr "ثانیه."
+
+#: wp-forecast-admin.php:526 wpf_sa_admin.php:288
+msgid "Use metric units"
+msgstr "استفاده از سیستم متریک (متر و کیلومتر)"
+
+#: wp-forecast-admin.php:529 wpf_sa_admin.php:291
+msgid "Use current time"
+msgstr "استفاده از زمان جاری"
+
+#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
+msgid "Time-Offset"
+msgstr "زمان افست"
+
+#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
+msgid "minutes"
+msgstr "دقیقه"
+
+#: wp-forecast-admin.php:533 wpf_sa_admin.php:295
+msgid "Windspeed-Unit"
+msgstr "واحد سرعت باد "
+
+#: wp-forecast-admin.php:534 wpf_sa_admin.php:296
+msgid "Meter/Second (m/s)"
+msgstr "متر با ثانیه (M/S)"
+
+#: wp-forecast-admin.php:535 wpf_sa_admin.php:297
+msgid "Kilometer/Hour (km/h)"
+msgstr "کیلومتر بر ساعت (KM/H)"
+
+#: wp-forecast-admin.php:536 wpf_sa_admin.php:298
+msgid "Miles/Hour (mph)"
+msgstr "مایل بر ساعت(mph)"
+
+#: wp-forecast-admin.php:537 wpf_sa_admin.php:299
+msgid "Knots (kts)"
+msgstr "مایل بر ساعت"
+
+#: wp-forecast-admin.php:538 wpf_sa_admin.php:300
+msgid "Beaufort (bft)"
+msgstr ""
+
+#: wp-forecast-admin.php:545 wpf_sa_admin.php:307
+msgid "Language"
+msgstr "زبان"
+
+#: wp-forecast-admin.php:564 wpf_sa_admin.php:326
+msgid "Show forecast as ajax pull-down"
+msgstr "نمایش اطلاعات به صورت منوی افتادنی آژاکس"
+
+#: wp-forecast-admin.php:568 wpf_sa_admin.php:330
+msgid "First day in pull-down"
+msgstr "اولین روز در منوی افتادنی"
+
+#: wp-forecast-admin.php:583 wpf_sa_admin.php:535
+msgid "Update options"
+msgstr "به روز رسانی تنظیمات"
+
+#: wp-forecast-admin.php:590 wpf_sa_admin.php:348
+msgid "Display Configuration"
+msgstr "نمایش تنظیمات"
+
+#: wp-forecast-admin.php:594 wpf_sa_admin.php:352
+msgid "Current Conditions"
+msgstr "شرایط کنونی"
+
+#: wp-forecast-admin.php:595 wpf_sa_admin.php:353
+msgid "Forecast Day"
+msgstr "پیشبینی روز"
+
+#: wp-forecast-admin.php:596 wpf_sa_admin.php:354
+msgid "Forecast Night"
+msgstr "پیش بینی شب "
+
+#: wp-forecast-admin.php:599 wpf_sa_admin.php:357
+msgid "Icon"
+msgstr "آیکون"
+
+#: wp-forecast-admin.php:608 wpf_sa_admin.php:366
+msgid "Date"
+msgstr "تاریخ"
+
+#: wp-forecast-admin.php:615 wpf_sa_admin.php:373
+msgid "Time"
+msgstr "زمان"
+
+#: wp-forecast-admin.php:622 wpf_sa_admin.php:380
+msgid "Short Description"
+msgstr "توضیح کوتاه"
+
+#: wp-forecast-admin.php:631 wpf_sa_admin.php:389
+msgid "Temperature"
+msgstr "دما "
+
+#: wp-forecast-admin.php:640 wpf_sa_admin.php:398
+msgid "Realfeel"
+msgstr "احساس واقعی"
+
+#: wp-forecast-admin.php:647 wpf_sa_admin.php:405
+msgid "Pressure"
+msgstr "فشار"
+
+#: wp-forecast-admin.php:654 wpf_sa_admin.php:412
+msgid "Humidity"
+msgstr "رطوبت"
+
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:419
+msgid "Wind"
+msgstr "باد"
+
+#: wp-forecast-admin.php:670 wp-forecast-show.php:315 wp-forecast-show.php:418
+#: wp-forecast-show.php:462 wpf_sa_admin.php:428
+msgid "Windgusts"
+msgstr "تند باد"
+
+#: wp-forecast-admin.php:679 wpf_sa_admin.php:437
+msgid "Sunrise"
+msgstr "طلوع خورشید"
+
+#: wp-forecast-admin.php:686 wpf_sa_admin.php:444
+msgid "Sunset"
+msgstr "غروب خورشید"
+
+#: wp-forecast-admin.php:693 wpf_sa_admin.php:451
+msgid "Copyright"
+msgstr "کپی رایت"
+
+#: wp-forecast-admin.php:700 wpf_sa_admin.php:458
+msgid "Link to Weatherprovider"
+msgstr "لینک به سرویس هواشناسی ؟"
+
+#: wp-forecast-admin.php:703 wpf_sa_admin.php:461
+msgid "Open in new Window"
+msgstr "باز شدن در پنجره ی دیگر"
+
+#: wp-forecast-admin.php:711 wp-forecast-show.php:365 wpf_sa_admin.php:469
+msgid "Forecast"
+msgstr "پیش بینی"
+
+#: wp-forecast-admin.php:716 wpf_sa_admin.php:474
+msgid "All"
+msgstr "همه"
+
+#: wp-forecast-admin.php:717 wp-forecast-admin.php:718
+#: wp-forecast-admin.php:719 wp-forecast-admin.php:720
+#: wp-forecast-admin.php:721 wp-forecast-admin.php:722
+#: wp-forecast-admin.php:723 wp-forecast-admin.php:724
+#: wp-forecast-admin.php:725 wpf_sa_admin.php:475 wpf_sa_admin.php:476
+#: wpf_sa_admin.php:477 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
+#: wpf_sa_admin.php:483
+msgid "Day"
+msgstr "روز "
+
+#: wp-forecast-admin.php:727 wpf_sa_admin.php:485
+msgid "Daytime"
+msgstr "هنگام روز"
+
+#: wp-forecast-admin.php:748 wpf_sa_admin.php:506
+msgid "Nighttime"
+msgstr "هنگام شب"
+
+#: wp-forecast-check.php:172
+msgid "Connection-check"
+msgstr "معتبر سازی اتصال"
+
+#: wp-forecast-check.php:175
+msgid "Select weatherprovider"
+msgstr "انتخاب سرویس هواشناسی"
+
+#: wp-forecast-check.php:187
+msgid "Start check"
+msgstr "شروع معتبر سازی"
+
+#: wp-forecast-check.php:190
+msgid "Close"
+msgstr "بستن"
+
+#: wp-forecast-search.php:35
+msgid "Searchresults"
+msgstr "نتایج جستجو"
+
+#: wp-forecast-search.php:37
+msgid "No WeatherBug Partner-ID given. WeatherBug will not be searched."
+msgstr "کد اشتراک WeatherBug وارد نشده است . WeatherBug قابل استفاده نیست"
+
+#: wp-forecast-search.php:38
+msgid ""
+"Enter a correct Partner-ID in the admin panel and save it to search "
+"WeatherBug."
+msgstr "برای جستجو کردن در WeatherBug کد اشتراک معتبری باید وارد شود ."
+
+#: wp-forecast-search.php:41
+msgid "Please enter a non empty searchstring"
+msgstr "یک عنوان غیر خالی برای جستجو وارد کنید."
+
+#: wp-forecast-search.php:44
+msgid "Please select a location"
+msgstr "لطفا یک مکان را انتخاب کنید"
+
+#: wp-forecast-search.php:68
+#, fuzzy
+msgid "Accuweather Hits"
+msgstr "AccuWeather"
+
+#: wp-forecast-search.php:69
+#, fuzzy
+msgid "WeatherBug Hits"
+msgstr "WeatherBug"
+
+#: wp-forecast-search.php:147 wp-forecast-search.php:155
+msgid "Search location"
+msgstr "جستجوی مکان"
+
+#: wp-forecast-search.php:149
+msgid "Searchterm"
+msgstr "جستجوی مکان"
+
+#: wp-forecast-search.php:151
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr ""
+
+#: wp-forecast-search.php:152
+msgid ""
+"Google does not support searching for locations. Only Accuweather and "
+"WeatherBug will be searched."
+msgstr ""
+"گوگل قابلیت جستجو بر اساس مکان را دارا نمی باشید . فقط Accuweather  و  "
+"WeatherBug  قابلیا جسجتو دارند."
+
+#: wp-forecast-show.php:143
+msgid "Locations:"
+msgstr "مکان"
+
+#: wp-forecast-show.php:178
+msgid "Failure notice from provider"
+msgstr "اعلان خطا از سرویس دهنده!"
+
+#: wp-forecast-show.php:195
+msgid "Sorry, no valid weather data available."
+msgstr "متاسفیم. اطلاعات هواشناسی معتبری در دسترس نیست !"
+
+#: wp-forecast-show.php:196
+msgid "Please try again later."
+msgstr "لطفا دوباره تلاش کنید"
+
+#: wp-forecast-show.php:255
+msgid "time"
+msgstr "تاریخ"
+
+#: wp-forecast-show.php:295
+msgid "flik"
+msgstr "احساس واقعی"
+
+#: wp-forecast-show.php:298
+msgid "barr"
+msgstr "فشار کنونی"
+
+#: wp-forecast-show.php:306
+msgid "hmid"
+msgstr "رطوبت"
+
+#: wp-forecast-show.php:310 wp-forecast-show.php:413 wp-forecast-show.php:455
+msgid "winds"
+msgstr "سرعت باد"
+
+#: wp-forecast-show.php:320
+msgid "sunrise"
+msgstr "طلوع خورشید"
+
+#: wp-forecast-show.php:324
+msgid "sunset"
+msgstr "غروب خورشید"
+
+#: wp-forecast-show.php:374
+msgid "day"
+msgstr "روز"
+
+#: wp-forecast-show.php:430
+msgid "night"
+msgstr "شب"
+
+#: wp-forecast-show.php:488 wp-forecast-show.php:489
+msgid "Less forecast..."
+msgstr "اطلاعات کمتر..."
+
+#: wp-forecast-show.php:490
+msgid "More forecast..."
+msgstr "اطلاعات بیشتر..."
+
+#: wp-forecast.php:419
+#, php-format
+msgid "wp-forecast %s"
+msgstr "wp-forecast %s"
+
+#: wpf_sa_admin.php:64
+msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
+msgstr "افزونه ی هواشناسی پیدا نشد . افزونه را نصب و دوباره فعال نمایید."
+
+#: wpf_sa_admin.php:205
+msgid "Check the colored checkboxes to user enable the options"
+msgstr "Check the colored checkboxes to user enable the options"
+
+#: wpf_sa_admin.php:210
+msgid "Maximal number of widgets per user"
+msgstr "حداکثر تعداد ابزارک ها برای هر کابر"
+
+#: wpf_sa_admin.php:249
+msgid "Delete SuperAdmin options"
+msgstr "حذف تنظیمات مدیر کل"
+
+#: wpf_sa_admin.php:250
+msgid "Delete SA-Options"
+msgstr "حذف تنظیمات SA"
+
+#: wpf_sa_admin.php:259
+msgid "Widget-Setup"
+msgstr "تنظیمات ابزارک"
+
+#: wpf_sa_admin.php:268
+msgid "Partner-ID"
+msgstr "کد اشتراک"
+
+#: wpf_setup.php:93
+msgid "The Weather"
+msgstr "پیشبینی وضعیت آب و هوا "
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr "مکان"
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "آفتابی "
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "اغلب آفتابی"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "بیشتر آفتابی"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "ابری متناوب"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "آفتابی مه آلود"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "اغلب ابری"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "ابری"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "ابری"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "مه"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "بارش شدید"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "اغلب ابری همراه با بارش شدید"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "بیشتر آفتابی همراه با بارش شدید"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "رعد و برق"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "اغلب ابری همراه رگبار"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "بیشتر آفتابی همراه با رعد و برق"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "باران"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "طوفان ناگهانی"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "اغلب ابری همراه با طوفان ناگهانی"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "بیشتر آفتابی همراه با طوفان ناگهانی"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "برف"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "اغلب ابری همراه با بارش برف"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "یخ"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "برف و باران"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "تبلور سطحی شدید"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "برف و باران"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "گرم"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "سرد"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "ابری"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "صاف"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "اغلب صاف"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "بیشتر ابری"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "ابری متناوبت"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "مهتابی مه آلود"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "اغلب ابری"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "بیشتر ابری همراه با راش شدید"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "اغلب ابری همراه با بارش شدید"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "بیشتر ابری همراه با رگبار"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "اغلب ابری همراه رگبار"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "اغلب ابری همراه با طوفان ناگهانی"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "اغلب ابری همراه با بارش برف"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr " دوشنبه"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "سه شنبه "
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "چهار شنبه"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "پنج شنبه"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "جمعه"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "شنبه"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "یک شنبه"
+
+#: xgettextdummy.php:53
+msgid "N"
+msgstr "شمال"
+
+#: xgettextdummy.php:54
+msgid "E"
+msgstr "شرق"
+
+#: xgettextdummy.php:55
+msgid "W"
+msgstr "غرب"
+
+#: xgettextdummy.php:56
+msgid "S"
+msgstr "جنوب"
+
+#: xgettextdummy.php:57
+msgid "30% Chance Drizzle"
+msgstr "30 % احتمال نم نم باران"
+
+#: xgettextdummy.php:58
+msgid "30% Chance Freezing Drizzle"
+msgstr "30 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:59
+msgid "30% Chance Freezing Rain"
+msgstr "30 درصد احتمال بارش همراه با تبلور سطحی"
+
+#: xgettextdummy.php:60
+msgid "30% Chance Frozen Drizzle"
+msgstr "30 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:61
+msgid "30% Chance Frozen Mix"
+msgstr "30 درصد احتمال تبلور سطحی و برف و تگرگ"
+
+#: xgettextdummy.php:62
+msgid "30% Chance Rain Shower"
+msgstr "30 درصد احتمال بارش برف شدید"
+
+#: xgettextdummy.php:63
+msgid "30% Chance Snow Shower"
+msgstr "30  درصد احتمال بارش برف شدید"
+
+#: xgettextdummy.php:64
+msgid "30% Chance of Drizzle"
+msgstr "30  درصد احتمال نم نم باران"
+
+#: xgettextdummy.php:65 xgettextdummy.php:66
+msgid "30% Chance of Flurry"
+msgstr "30  درصد احتمال طوفان ناگهانی"
+
+#: xgettextdummy.php:67
+msgid "30% Chance of Frozen Mix"
+msgstr "30  درصد احتمال  تبلور سطحی همراه با بارش برف و باران"
+
+#: xgettextdummy.php:68
+msgid "30% Chance of Light Snow"
+msgstr "30  درصد احتمال بارش برف ملایم"
+
+#: xgettextdummy.php:69
+msgid "30% Chance of Rain"
+msgstr "30 درصد احتمال بارش باران"
+
+#: xgettextdummy.php:70
+msgid "30% Chance of Sleet"
+msgstr "30  درصد احتمال برف و باران"
+
+#: xgettextdummy.php:71
+msgid "30% Chance of Snow"
+msgstr "30  درصد احتمال بارش برف"
+
+#: xgettextdummy.php:72
+msgid "30% Chance of Storms"
+msgstr "30  درصدر احتمال طوفان"
+
+#: xgettextdummy.php:73
+msgid "40% Chance Drizzle"
+msgstr "40  درصد احتمال نم نم باران"
+
+#: xgettextdummy.php:74
+msgid "40% Chance Fozen Drizzle"
+msgstr "40 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:75
+msgid "40% Chance Freezing Drizzle"
+msgstr "40 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:76
+msgid "40% Chance Freezing Rain"
+msgstr "40 درصد احتمال تبلور سطحی شدید"
+
+#: xgettextdummy.php:77
+msgid "40% Chance Frozen Drizzle"
+msgstr "40 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:78
+msgid "40% Chance Frozen Mix"
+msgstr "40  درصد احتمال  تبلور سطحی همراه با بارش برف و باران"
+
+#: xgettextdummy.php:79
+msgid "40% Chance Rain Shower"
+msgstr "40  درصد احتمال بارندگی شدید"
+
+#: xgettextdummy.php:80
+msgid "40% Chance Snow Shower"
+msgstr "40  درصد احتمال بارش برف شدید"
+
+#: xgettextdummy.php:81
+msgid "40% Chance of Drizzle"
+msgstr "40  درصد احتمال نم نم باران"
+
+#: xgettextdummy.php:82
+msgid "40% Chance of Flurry"
+msgstr "40  درصد احتمال طوفان ناگهانی"
+
+#: xgettextdummy.php:83
+msgid "40% Chance of Frozen Mix"
+msgstr "40  درصد احتمال  تبلور سطحی همراه با بارش برف و باران"
+
+#: xgettextdummy.php:84
+msgid "40% Chance of Light Snow"
+msgstr "40  درصد احتمال بارش برف ملایم"
+
+#: xgettextdummy.php:85
+msgid "40% Chance of Rain"
+msgstr "40 درصد احتمال بارش باران"
+
+#: xgettextdummy.php:86
+msgid "40% Chance of Sleet"
+msgstr "40  درصد احتمال برف و باران"
+
+#: xgettextdummy.php:87
+msgid "40% Chance of Snow"
+msgstr "40  درصد احتمال بارش برف"
+
+#: xgettextdummy.php:88
+msgid "40% Chance of Storms"
+msgstr "40  درصدر احتمال طوفان"
+
+#: xgettextdummy.php:89
+msgid "50% Chance Freezing Drizzle"
+msgstr "50 درصد احتمال تبلور سطحی"
+
+#: xgettextdummy.php:90
+msgid "50% Chance Freezing Rain"
+msgstr "50 درصد احتمال تبلور سطحی شدید"
+
+#: xgettextdummy.php:91
+msgid "50% Chance Rain Shower"
+msgstr "50 درصد احتمال بارندگی شدید"
+
+#: xgettextdummy.php:92
+msgid "50% Chance Snow Shower"
+msgstr "50 درصد احتمال بارش برف شدید"
+
+#: xgettextdummy.php:93
+msgid "50% Chance of Drizzle"
+msgstr "50 درصد احتمال نم نم باران"
+
+#: xgettextdummy.php:94
+msgid "50% Chance of Flurry"
+msgstr "50 درصد احتمال طوفان ناگهانی"
+
+#: xgettextdummy.php:95
+msgid "50% Chance of Frozen Mix"
+msgstr "50 درصد احتمال  تبلور سطحی همراه با بارش برف و باران"
+
+#: xgettextdummy.php:96
+msgid "50% Chance of Light Snow"
+msgstr "50 درصد احتمال بارش برف ملایم"
+
+#: xgettextdummy.php:97
+msgid "50% Chance of Rain"
+msgstr "50 درصد احتمال بارش باران"
+
+#: xgettextdummy.php:98
+msgid "50% Chance of Sleet"
+msgstr "50 درصد احتمال برف و باران"
+
+#: xgettextdummy.php:99
+msgid "50% Chance of Snow"
+msgstr "50 درصد احتمال بارش برف"
+
+#: xgettextdummy.php:100
+msgid "50% Chance of Storms"
+msgstr "50 درصدر احتمال طوفان"
+
+#: xgettextdummy.php:101
+msgid "Chance Freezing Drizzle"
+msgstr "احتمال تبلور سطحی"
+
+#: xgettextdummy.php:102
+msgid "Chance Freezing Rain"
+msgstr "احتمال تبلور سطحی شدید"
+
+#: xgettextdummy.php:103
+msgid "Chance Rain Shower"
+msgstr "احتمال بارندگی شدید"
+
+#: xgettextdummy.php:104
+msgid "Chance Snow Shower"
+msgstr "احتمال بارش برف شدید"
+
+#: xgettextdummy.php:105
+msgid "Chance of Drizzle"
+msgstr "احتمال نم نم باران"
+
+#: xgettextdummy.php:106
+msgid "Chance of Flurry"
+msgstr "احتمال طوفان ناگهانی"
+
+#: xgettextdummy.php:107
+msgid "Chance of Freezing Drizzle"
+msgstr "احتمال نم نم همراه با تبلور سطحی"
+
+#: xgettextdummy.php:108
+msgid "Chance of Frozen Drizzle"
+msgstr "احتمال  تبلور سطحی"
+
+#: xgettextdummy.php:109
+msgid "Chance of Frozen Mix"
+msgstr "احتمال  تبلور سطحی همراه با بارش برف و باران"
+
+#: xgettextdummy.php:110
+msgid "Chance of Light Snow"
+msgstr "احتمال بارش برف ملایم"
+
+#: xgettextdummy.php:111
+msgid "Chance of Rain"
+msgstr "احتمال بارش باران"
+
+#: xgettextdummy.php:112
+msgid "Chance of Rain Showers"
+msgstr "احتمال بارش شدید"
+
+#: xgettextdummy.php:113
+msgid "Chance of Sleet "
+msgstr "احتمال برف و باران"
+
+#: xgettextdummy.php:114
+msgid "Chance of Snow"
+msgstr "احتمال بارش برف"
+
+#: xgettextdummy.php:115
+msgid "Chance of Snow Showers"
+msgstr "احتمال بارش برف شدید"
+
+#: xgettextdummy.php:116
+msgid "Chance of Storms"
+msgstr "احتمال طوفان"
+
+#: xgettextdummy.php:117
+msgid "Clear"
+msgstr "صاف"
+
+#: xgettextdummy.php:118
+msgid "Clearing"
+msgstr "رو به صافی"
+
+#: xgettextdummy.php:119
+msgid "Cloudy"
+msgstr "ابری"
+
+#: xgettextdummy.php:120
+msgid "Drizzle"
+msgstr "نم نم باران"
+
+#: xgettextdummy.php:121
+msgid "Fair"
+msgstr "بدون ابر"
+
+#: xgettextdummy.php:122
+msgid "Flurries"
+msgstr "بارندگی ناگهانی"
+
+#: xgettextdummy.php:123
+msgid "Fog"
+msgstr "مه"
+
+#: xgettextdummy.php:124
+msgid "Foggy"
+msgstr "مه آلود"
+
+#: xgettextdummy.php:125
+msgid "Freezing Drizzle"
+msgstr " تبلور سطحی"
+
+#: xgettextdummy.php:126
+msgid "Freezing Rain"
+msgstr "بارش همراه با انجماد سطحی"
+
+#: xgettextdummy.php:127
+msgid "Frozen Mix"
+msgstr "بارش تبلور سطحی همراه با برف و تگرگ"
+
+#: xgettextdummy.php:128
+msgid "Hazy"
+msgstr "نامعلوم"
+
+#: xgettextdummy.php:129
+msgid "Headline"
+msgstr "عنوان"
+
+#: xgettextdummy.php:130
+msgid "Heavy Rain"
+msgstr "بارش سنگین"
+
+#: xgettextdummy.php:131
+msgid "Heavy Snow"
+msgstr "برف سنگین"
+
+#: xgettextdummy.php:132
+msgid "Hot and Humid"
+msgstr "گرم و مرطوب"
+
+#: xgettextdummy.php:133
+msgid "Increasing Clouds"
+msgstr "ابری رو به افزایش"
+
+#: xgettextdummy.php:134
+msgid "Light Snow"
+msgstr "برف ملایم"
+
+#: xgettextdummy.php:135
+msgid "Mostly Clear"
+msgstr "اغلب صاف"
+
+#: xgettextdummy.php:136
+msgid "Mostly Cloudy"
+msgstr "اغلب ابری"
+
+#: xgettextdummy.php:137
+msgid "Mostly Sunny"
+msgstr "اغلب آفتابی"
+
+#: xgettextdummy.php:138
+msgid "Nowcast"
+msgstr "Nowcast"
+
+#: xgettextdummy.php:139
+msgid "Partly Cloudy"
+msgstr "قسمتی ابری"
+
+#: xgettextdummy.php:140
+msgid "Partly Sunny"
+msgstr "قسمتی آفتابی"
+
+#: xgettextdummy.php:141
+msgid "Rain"
+msgstr "بارندگی"
+
+#: xgettextdummy.php:142
+msgid "Rain Showers"
+msgstr "باراندگی شدید"
+
+#: xgettextdummy.php:143
+msgid "Scattered Showers"
+msgstr "رعد و برق شدید"
+
+#: xgettextdummy.php:144
+msgid "Scattered Thunderstorms"
+msgstr "رعد و برق پراکنده"
+
+#: xgettextdummy.php:145
+msgid "Sleet"
+msgstr "برف و باران"
+
+#: xgettextdummy.php:146
+msgid "Snow"
+msgstr "برف"
+
+#: xgettextdummy.php:147
+msgid "Snow Showers"
+msgstr "برف شدید"
+
+#: xgettextdummy.php:148
+msgid "Sunny"
+msgstr "آفتابی "
+
+#: xgettextdummy.php:149
+msgid "Thunderstorms"
+msgstr "رعد و برق"
+
+#: xgettextdummy.php:151
+msgid "Very Cold"
+msgstr "خیلی سرد"
+
+#: xgettextdummy.php:152
+msgid "Very Hot"
+msgstr "خیلی گرم"
+
+#: xgettextdummy.php:153
+msgid "Warm and Humid"
+msgstr "گرم و مرطوب"
+
+#: xgettextdummy.php:154
+msgid "Windy"
+msgstr "ابری"
+
+#~ msgid "No locations found."
+#~ msgstr "No locations found."
+
+#~ msgid "Set location"
+#~ msgstr "Set location"
+
+#~ msgid "Weather.com"
+#~ msgstr "Weather.com"
+
+#~ msgid "tmp"
+#~ msgstr "current temperature"
+
+#~ msgid "Accuweather failure notice"
+#~ msgstr "Accuweather failure notice"

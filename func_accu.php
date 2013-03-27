@@ -330,8 +330,8 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['winddir']=translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language);
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     $sunarr = explode(" ",$w["sun"]);
-    $weather_arr['sunrise']=$sunarr[0];
-    $weather_arr['sunset']=$sunarr[1];
+    $weather_arr['sunrise']= date_i18n($fc_time_format,strtotime($sunarr[0]));
+    $weather_arr['sunset'] = date_i18n($fc_time_format, strtotime($sunarr[1]));
     $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; '.date("Y").' AccuWeather, Inc.</a>';
     
     

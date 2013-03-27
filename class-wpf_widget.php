@@ -66,8 +66,8 @@ if ( !class_exists('wpf_widget') )
    			remove_filter("plugin_locale","wpf_lplug",10,2);
 		}
 
-	    $title  = esc_attr($instance['title']);
-	    $wpfcid = esc_attr($instance['wpfcid']);
+	    $title  = (isset($instance['title'])?esc_attr($instance['title']):"");
+	    $wpfcid = (isset($instance['wpfcid'])?esc_attr($instance['wpfcid']):"");
 
 	    // code for widget title form 
 	    $out  = "";
