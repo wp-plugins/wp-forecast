@@ -554,10 +554,13 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 
 	 <p>
          <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="wpf_language" id="wpf_language" size="1">
-	    <option value="en_US" <?php if ($av['wpf_language']=="en_US") echo "selected=\"selected\""?>>english</option>
-	    <option value="de_DE" <?php if ($av['wpf_language']=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+	    	<option value="en_US" <?php if ($av['wpf_language']=="en_US") echo "selected=\"selected\""?>>english</option>
+	    	<option value="de_DE" <?php if ($av['wpf_language']=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+	    	<option value="bg_BG" <?php if ($av['wpf_language']=="bg_BG") echo "selected=\"selected\""?>>bulgarian</option>
+	    	<option value="bs_BA" <?php if ($av['wpf_language']=="bs_BA") echo "selected=\"selected\""?>>bosnian</option>
+	    	<option value="cs_CZ" <?php if ($av['wpf_language']=="cs_CZ") echo "selected=\"selected\""?>>czech</option>
             <option value="da_DK" <?php if ($av['wpf_language']=="da_DK") echo "selected=\"selected\""?>>dansk</option>
-	    <option value="nl_NL" <?php if ($av['wpf_language']=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
+	    	<option value="nl_NL" <?php if ($av['wpf_language']=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fi_FI" <?php if ($av['wpf_language']=="fi_FI") echo "selected=\"selected\""?>>finnish</option>
             <option value="fr_FR" <?php if ($av['wpf_language']=="fr_FR") echo "selected=\"selected\""?>>french</option>
             <option value="el_EL" <?php if ($av['wpf_language']=="el_EL") echo "selected=\"selected\""?>>greek</option>
@@ -565,14 +568,17 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
             <option value="hu_HU" <?php if ($av['wpf_language']=="hu_HU") echo "selected=\"selected\""?>>hungarian</option>
             <option value="id_ID" <?php if ($av['wpf_language']=="id_ID") echo "selected=\"selected\""?>>indonesian</option>
             <option value="it_IT" <?php if ($av['wpf_language']=="it_IT") echo "selected=\"selected\""?>>italian</option>
+            <option value="nb_NO" <?php if ($av['wpf_language']=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
             <option value="fa_IR" <?php if ($av['wpf_language']=="fa_IR") echo "selected=\"selected\""?>>persian</option>
-	    <option value="pl_PL" <?php if ($av['wpf_language']=="pl_PL") echo "selected=\"selected\""?>>polish</option>
+	    	<option value="pl_PL" <?php if ($av['wpf_language']=="pl_PL") echo "selected=\"selected\""?>>polish</option>
             <option value="pt_PT" <?php if ($av['wpf_language']=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option>
             <option value="ro_RO" <?php if ($av['wpf_language']=="ro_RO") echo "selected=\"selected\""?>>romanian</option>
             <option value="ru_RU" <?php if ($av['wpf_language']=="ru_RU") echo "selected=\"selected\""?>>russian</option> 
-            <option value="nb_NO" <?php if ($av['wpf_language']=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
-	    <option value="es_ES" <?php if ($av['wpf_language']=="es_ES") echo "selected=\"selected\""?>>spanish</option>
+            <option value="sr_SR" <?php if ($av['wpf_language']=="sr_SR") echo "selected=\"selected\""?>>serbian</option>
+            <option value="sk_SK" <?php if ($av['wpf_language']=="sk_SK") echo "selected=\"selected\""?>>slovak</option>
+	    	<option value="es_ES" <?php if ($av['wpf_language']=="es_ES") echo "selected=\"selected\""?>>spanish</option>
             <option value="sv_SE" <?php if ($av['wpf_language']=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
+            <option value="uk_UA" <?php if ($av['wpf_language']=="uk_UA") echo "selected=\"selected\""?>>ukrainian</option>
 	    
          </select></p>
  
