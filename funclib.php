@@ -289,7 +289,8 @@ function get_wpf_opts($wpfcid)
   
   // set static uris for each provider
   //$av['BASE_URI']="http://host1/accuweather/weather_data.php?"; // for testing
-  $av['ACCU_LOC_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/locate_city.asp?location=";
+  //$av['ACCU_LOC_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/locate_city.asp?location="; // old one
+  $av['ACCU_LOC_URI']="http://thale.accu-weather.com/widget/thale/city-find.asp?location="; //new one
   $av['ACCU_BASE_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/weather_data.asp?";
   
   $av['BUG_LOC_URI']="http://#apicode#.api.wxbug.net/getLocationsXML.aspx?ACode=#apicode#&SearchString=";
