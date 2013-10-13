@@ -368,13 +368,9 @@ function wp_forecast_css($wpfcid="A")
     $user = "wp-forecast.css";
     
     if (file_exists( WP_PLUGIN_DIR . "/wp-forecast/" . $user))
-	$def =$user;
+		$def =$user;
     
     $plugin_url = plugins_url("wp-forecast/");
-    
-    //wp_register_style('wpf_css', $plugin_url . $def);
-    //wp_enqueue_style( 'wpf_css');
-    
     echo '<link rel="stylesheet" id="wp-forecast-css" href="'. $plugin_url . $def . '" type="text/css" media="screen" />' ."\n";
    
     pdebug(1,"End of function wp_forecast_css ()");

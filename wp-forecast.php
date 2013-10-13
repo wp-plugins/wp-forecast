@@ -3,7 +3,7 @@
 Plugin Name: wp-forecast
 Plugin URI: http://www.tuxlog.de
 Description: wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com.
-Version: 4.5
+Version: 4.6
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
 */
@@ -408,7 +408,7 @@ function widget_wp_forecast_init()
   add_action('admin_init','wp_forecast_admin_init');
   
   // add css in header
-  add_action('wp_head', 'wp_forecast_css');
+  add_action('wp_enqueue_scripts', 'wp_forecast_css');
  
   
 

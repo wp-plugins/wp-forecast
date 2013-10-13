@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2012  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -414,7 +414,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     }
     
     // set empty checkboxes to 0
-    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather','d_c_aw_newwindow');
+    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather','d_c_aw_newwindow','d_c_uvindex','d_d_maxuv','d_n_maxuv');
     foreach ($do as $i) {
       if (!isset($_POST[$i]) || $_POST[$i]=="")
 		$_POST["$i"]="0";
@@ -506,7 +506,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <select name="service" id="service" size="1" onchange="apifields(document.woptions.service.value);">
 	       <option value="accu" <?php if ($av['service']=="accu") echo "selected=\"selected\""?>><?php echo __('AccuWeather',"wp-forecast_".$locale)?></option>
            <option value="bug" <?php if ($av['service']=="bug") echo "selected=\"selected\""?>><?php echo __('WeatherBug',"wp-forecast_".$locale)?></option>
-           <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> 
+           <!-- <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> --> 
 	 </select>&nbsp;
 
          <?php echo __('Partner ID',"wp-forecast_".$locale)?>:
@@ -695,7 +695,18 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	     <?php if (substr($av['dispconfig'],23,1)=="1") echo "checked=\"checked\""?> /></td>
         <td class='td-center'><input type="checkbox" name="d_n_wgusts" id="d_n_wgusts" value="1" 
   	     <?php if (substr($av['dispconfig'],24,1)=="1") echo "checked=\"checked\""?> /></td>
-        </tr>         
+        </tr>      
+        
+        <tr>
+        <td><?php echo __('UV-Index',"wp-forecast_".$locale)?></td>
+        <td class='td-center'><input type="checkbox" name="d_c_uvindex" id="d_c_uvindex" value="1" 
+	     <?php if (substr($av['dispconfig'],27,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td class='td-center'><input type="checkbox" name="d_d_maxuv" id="d_d_maxuv" value="1" 
+	     <?php if (substr($av['dispconfig'],28,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td class='td-center'><input type="checkbox" name="d_n_maxuv" id="d_n_maxuv" value="1" 
+  	     <?php if (substr($av['dispconfig'],29,1)=="1") echo "checked=\"checked\""?> /></td>
+        </tr>    
+           
 	<tr>
         <td><?php echo __('Sunrise',"wp-forecast_".$locale)?></td>
         <td class='td-center'><input type="checkbox" name="d_c_sunrise" id="d_c_sunrise" value="1" 

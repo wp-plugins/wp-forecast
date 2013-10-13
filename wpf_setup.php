@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2010  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -108,8 +108,9 @@ function wp_forecast_activate()
       // Copyright          21     -         -
       // accuweather link   25     -         -
       // open in new window 26     -         -
+      // uvindex            27	   28  		 29
       //
-      $av['dispconfig']="111111111111111111111111111"; 
+      $av['dispconfig']="111111111111111111111111111111"; 
       $av['windunit']="ms"; // Choose between ms, kmh, mph or kts
       $av['pdforecast']="0"; // pulldown forecast 0=No, 1=Yes
       $av['pdfirstday']="0"; // day to start pulldown with

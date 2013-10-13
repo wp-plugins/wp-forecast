@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2012  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -68,6 +68,7 @@ if (!function_exists('accu_xml_parser')) {
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDSPEED"  => "windspeed",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDDIRECTION"  => "winddirection",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDGUSTS"  => "wgusts",
+		  "/ADC_DATABASE/CURRENTCONDITIONS/UVINDEX"  => "uvindex",
 	      "/ADC_DATABASE/PLANETS/SUN" => "sun",
 	      "/ADC_DATABASE/FORECAST/DAY/OBSDATE"  => "fc_obsdate",
 	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/TXTSHORT"  => "fc_dt_short",
@@ -83,6 +84,8 @@ if (!function_exists('accu_xml_parser')) {
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDDIRECTION"  => "fc_nt_winddir",
 	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/WINDGUST"  => "fc_dt_wgusts",
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDGUST"  => "fc_nt_wgusts",
+ 		  "/ADC_DATABASE/FORECAST/DAY/DAYTIME/MAXUV"  => "fc_dt_maxuv",
+		  "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/MAXUV"  => "fc_nt_maxuv",
 	      "/ADC_DATABASE/FAILURE" => "failure"
 	      );
 
@@ -101,16 +104,20 @@ if (!function_exists('accu_xml_parser')) {
       
       // for current sun rise/set
       if ($wpf_pstack=="/ADC_DATABASE/PLANETS/SUN") 
-	$wpf_weather["sun"]=$attribute["RISE"]." ".$attribute["SET"];
+		$wpf_weather["sun"]=$attribute["RISE"]." ".$attribute["SET"];
 
       // for current time daylightsavings
       if ($wpf_pstack== "/ADC_DATABASE/LOCAL/GMTDIFF") {
-	 if ( $attribute["DAYLIGHTSAVINGS"] !="")
-	  $wpf_weather['gmtdiffdls'] = $attribute["DAYLIGHTSAVINGS"];
-	else
-	  $wpf_weather['gmtdiffdls'] = 0;
+	  if ( $attribute["DAYLIGHTSAVINGS"] !="")
+	  	$wpf_weather['gmtdiffdls'] = $attribute["DAYLIGHTSAVINGS"];
+	  else
+	  	$wpf_weather['gmtdiffdls'] = 0;
       }
-    
+      
+      // for current uvindex
+      if ($wpf_pstack=="/ADC_DATABASE/CURRENTCONDITIONS/UVINDEX")
+      	$wpf_weather['uvindex']=$attribute["INDEX"];
+      
       pdebug(2,"End of start_element ()");
     }
   
@@ -125,7 +132,7 @@ if (!function_exists('accu_xml_parser')) {
       $wpf_pstack = substr($wpf_pstack,0, strrpos($wpf_pstack,"/"));
       
       if ($name=="DAY")
-	$wpf_fc_daynumber=0;
+		$wpf_fc_daynumber=0;
 
       pdebug(2,"End of end_element ()");
     }
@@ -138,7 +145,7 @@ if (!function_exists('accu_xml_parser')) {
  
       pdebug(2,"Start of daten ()");
 
-      if ( strlen($wpf_go_ahead) > 0 and $wpf_go_ahead != "sun" and $wpf_go_ahead != "gmtdiffdls")
+      if ( strlen($wpf_go_ahead) > 0 and $wpf_go_ahead != "sun" and $wpf_go_ahead != "gmtdiffdls" and $wpf_go_ahead != "uvindex")
 	{
 	  $wpf_weather[$wpf_go_ahead]=$data;
 	  $wpf_go_ahead = '';
@@ -333,7 +340,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['sunrise']= date_i18n($fc_time_format,strtotime($sunarr[0]));
     $weather_arr['sunset'] = date_i18n($fc_time_format, strtotime($sunarr[1]));
     $weather_arr['copyright']='<a href="http://www.accuweather.com">&copy; '.date("Y").' AccuWeather, Inc.</a>';
-    
+    $weather_arr['uvindex']=$w["uvindex"];
     
     // calc values for forecast
     for ($i = 1; $i < 10; $i++) {
@@ -348,6 +355,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
       $weather_arr["fc_dt_windspeed_".$i]= $wstr;
       $weather_arr["fc_dt_winddir_".$i]=translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language);
       $weather_arr["fc_dt_wgusts_".$i] = windstr($metric,$w["fc_dt_wgusts_".$i],$windunit);
+      $weather_arr['fc_dt_maxuv_'.$i]=$w['fc_dt_maxuv_'.$i];
       
       // nighttime forecast
       $iconfile=find_icon($w["fc_nt_icon_".$i]);
@@ -359,10 +367,12 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
       $weather_arr["fc_nt_windspeed_".$i]= $wstr;
       $weather_arr["fc_nt_winddir_".$i]=translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language);
       $weather_arr["fc_nt_wgusts_".$i] = windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
+      $weather_arr['fc_nt_maxuv_'.$i]=$w['fc_nt_maxuv_'.$i];
       
       // additional info
       $weather_arr['lat']=$w['lat'];
       $weather_arr['lon']=$w['lon'];
+      
     }
   }
   // fill failure anyway
