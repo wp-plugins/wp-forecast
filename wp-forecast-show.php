@@ -1,6 +1,6 @@
 <?php
 
-/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 
 	if ($header) {
 		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'."\n";
-		echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">'."\n";
+		echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="'. str_replace("_","-",$wpf_vars['wpf_language']) . '">'."\n";
 		echo "<head><title>wp-forecast iframe</title>\n";
 		echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'."\n";
 	}
@@ -320,8 +320,11 @@ function show($wpfcid,$args,$wpfvars)
 		// show windgusts
 		if (substr($dispconfig,22,1) == "1")
 			$out .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".$w['windgusts']."</div>\n";
-
-
+		
+		// show uvindex
+		if (substr($dispconfig,27,1) == "1")
+			$out .= "<div>".__('UV-Index',"wp-forecast_".$wpf_language).": ".$w['uvindex']."</div>\n";
+		
 		// show sunrise
 		if (substr($dispconfig,8,1) == "1")
 			$out .="<div>". __('sunrise',"wp-forecast_".$wpf_language).": ".$w['sunrise']."</div>\n";
@@ -429,6 +432,11 @@ function show($wpfcid,$args,$wpfvars)
 	  if (substr($dispconfig,23,1) == "1")
 	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".
 	  	$w["fc_dt_wgusts_".$i]."</div>\n";
+	  
+	  // show max uv index
+	  if (substr($dispconfig,28,1) == "1")
+	  	$out1 .= "<div>".__('max. UV-Index',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_dt_maxuv_".$i]."</div>\n";
 
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
 		}
@@ -479,6 +487,10 @@ function show($wpfcid,$args,$wpfvars)
 	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language)
 	  	.": ".$w["fc_nt_wgusts_".$i]."</div>\n";
 
+	  // show max uv index
+	  if (substr($dispconfig,29,1) == "1")
+	  	$out1 .= "<div>".__('max. UV-Index',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_nt_maxuv_".$i]."</div>\n";
 
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
 		}
