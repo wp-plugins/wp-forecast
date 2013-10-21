@@ -1,0 +1,1064 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-forecast 4.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-13 09:33+0200\n"
+"PO-Revision-Date: 2013-10-21 13:31+0200\n"
+"Last-Translator: Nikos <domnista@hotmail.com>\n"
+"Language-Team: \n"
+"Language: el_EL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: class-wpf_widget.php:75 wp-forecast-admin.php:106
+msgid "Title:"
+msgstr "Τίτλος:"
+
+#: class-wpf_widget.php:83 wp-forecast-admin.php:229
+msgid "Available widgets"
+msgstr "Διαθέσιμες μονάδες"
+
+#: func_bug.php:222
+msgid "Location does not exist"
+msgstr "Η τοποθεσία δεν υπάρχει"
+
+#: func_bug.php:363 func_bug.php:390 xgettextdummy.php:150
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: shortcodes.php:38
+msgid "wp-forecast shortcode: This browser does not support iframes."
+msgstr "wp-forecast shortcode: Αυτός ο περιηγητής δεν υποστηρίζει iframes."
+
+#: wp-forecast-admin.php:109
+msgid "widget_hint"
+msgstr "widget_hint"
+
+#: wp-forecast-admin.php:217 wp-forecast.php:378
+msgid "How many wp-forecast widgets would you like?"
+msgstr "Πόσες μονάδες wp-forecast θέλετε;"
+
+#: wp-forecast-admin.php:226 wp-forecast-admin.php:252
+#: wp-forecast-admin.php:268 wp-forecast-admin.php:277 wp-forecast.php:387
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: wp-forecast-admin.php:245
+msgid "Select widget"
+msgstr "Επιλέξτε μονάδα"
+
+#: wp-forecast-admin.php:250 wpf_sa_admin.php:221
+msgid "Timeout for weatherprovider connections (secs.)?"
+msgstr "Χρονοκαθυστέρηση συνδέσεων από τον πάροχο καιρού (δευτ.);"
+
+#: wp-forecast-admin.php:256 wpf_sa_admin.php:229
+msgid "Preselect wordpress transfer method"
+msgstr "Προεπιλογή μεθόδου μεταφοράς από το wordpress"
+
+#: wp-forecast-admin.php:258 wpf_sa_admin.php:231
+msgid "default"
+msgstr "Προκαθορισμένο"
+
+#: wp-forecast-admin.php:272 wpf_sa_admin.php:244
+msgid "Delete options during plugin deactivation?"
+msgstr "Διαγραφή των επιλογών κατά την απενεργοποίηση του πρόσθετου;"
+
+#: wp-forecast-admin.php:280
+msgid "Check connection to Weatherprovider"
+msgstr "Έλεγχος σύνδεσης με τον πάροχο καιρού"
+
+#: wp-forecast-admin.php:453 wpf_sa_admin.php:195
+msgid "Settings successfully updated"
+msgstr "Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς"
+
+#: wp-forecast-admin.php:455
+msgid "You have to change a field to update settings."
+msgstr ""
+"Θα πρέπει να κάνετε αλλαγή σε κάποιο πεδίο για να ανανεώσετε τις ρυθμίσεις."
+
+#: wp-forecast-admin.php:502
+msgid "WP-Forecast Setup"
+msgstr "Ρυθμίσεις WP-Forecast"
+
+#: wp-forecast-admin.php:505 wpf_sa_admin.php:265
+msgid "Weatherservice"
+msgstr "Υπηρεσία καιρού"
+
+#: wp-forecast-admin.php:507 wpf_sa_admin.php:267
+msgid "AccuWeather"
+msgstr "AccuWeather"
+
+#: wp-forecast-admin.php:508 wpf_sa_admin.php:268
+msgid "WeatherBug"
+msgstr "WeatherBug"
+
+#: wp-forecast-admin.php:509
+msgid "GoogleWeather"
+msgstr "GoogleWeather"
+
+#: wp-forecast-admin.php:512
+msgid "Partner ID"
+msgstr "Partner ID"
+
+#: wp-forecast-admin.php:515 wpf_sa_admin.php:274
+msgid "Licensekey"
+msgstr "Αριθμός κλειδιού"
+
+#: wp-forecast-admin.php:520 wpf_sa_admin.php:279
+msgid "Location"
+msgstr "Τοποθεσία"
+
+#: wp-forecast-admin.php:529 wpf_sa_admin.php:282
+msgid "Press Update options to save new location."
+msgstr "Πατήστε ανανέωση επιλογών για να αποθηκευτεί η νέα τοποθεσία."
+
+#: wp-forecast-admin.php:532 wpf_sa_admin.php:285
+msgid "Locationname"
+msgstr "Όνομα τοποθεσίας"
+
+#: wp-forecast-admin.php:534 wpf_sa_admin.php:288
+msgid "Refresh cache after"
+msgstr "Ανανέωση μνήμης μετά από"
+
+#: wp-forecast-admin.php:536 wpf_sa_admin.php:290
+msgid "secs."
+msgstr "δευτ."
+
+#: wp-forecast-admin.php:537 wpf_sa_admin.php:291
+msgid "Use metric units"
+msgstr "Χρήση μονάδων μετρικού συστήματος"
+
+#: wp-forecast-admin.php:540 wpf_sa_admin.php:294
+msgid "Use current time"
+msgstr "Χρήση τωρινής ώρας"
+
+#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+msgid "Time-Offset"
+msgstr "Time-Offset"
+
+#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+msgid "minutes"
+msgstr "λεπτά"
+
+#: wp-forecast-admin.php:544 wpf_sa_admin.php:298
+msgid "Windspeed-Unit"
+msgstr "Μονάδα ταχύτητας ανέμων"
+
+#: wp-forecast-admin.php:545 wpf_sa_admin.php:299
+msgid "Meter/Second (m/s)"
+msgstr "μέτρα/δευτερόλεπτο (μ/δ)"
+
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:300
+msgid "Kilometer/Hour (km/h)"
+msgstr "Χιλιόμετρα/ώρα (χιλ/ω)"
+
+#: wp-forecast-admin.php:547 wpf_sa_admin.php:301
+msgid "Miles/Hour (mph)"
+msgstr "Μίλια/ώρα (μιλια/ω)"
+
+#: wp-forecast-admin.php:548 wpf_sa_admin.php:302
+msgid "Knots (kts)"
+msgstr "Knots (kts)"
+
+#: wp-forecast-admin.php:549 wpf_sa_admin.php:303
+msgid "Beaufort (bft)"
+msgstr "μποφόρ (bft)"
+
+#: wp-forecast-admin.php:556 wpf_sa_admin.php:310
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: wp-forecast-admin.php:585 wpf_sa_admin.php:329
+msgid "Show forecast as ajax pull-down"
+msgstr "Εμφάνιση πρόβλεψης ως αναδυόμενο μενού ajax"
+
+#: wp-forecast-admin.php:589 wpf_sa_admin.php:333
+msgid "First day in pull-down"
+msgstr "Πρώτη μέρα στο αναδυόμενο μενού"
+
+#: wp-forecast-admin.php:604 wpf_sa_admin.php:538
+msgid "Update options"
+msgstr "Ανανέωση επιλογών"
+
+#: wp-forecast-admin.php:611 wpf_sa_admin.php:351
+msgid "Display Configuration"
+msgstr "Εμφάνιση διαμόρφωσης"
+
+#: wp-forecast-admin.php:615 wpf_sa_admin.php:355
+msgid "Current Conditions"
+msgstr "Τρέχουσες συνθήκες"
+
+#: wp-forecast-admin.php:616 wpf_sa_admin.php:356
+msgid "Forecast Day"
+msgstr "Πρόβλεψη ημέρας"
+
+#: wp-forecast-admin.php:617 wpf_sa_admin.php:357
+msgid "Forecast Night"
+msgstr "Πρόβλεψη νύχτας"
+
+#: wp-forecast-admin.php:620 wpf_sa_admin.php:360
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+#: wp-forecast-admin.php:629 wpf_sa_admin.php:369
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#: wp-forecast-admin.php:636 wpf_sa_admin.php:376
+msgid "Time"
+msgstr "Ώρα"
+
+#: wp-forecast-admin.php:643 wpf_sa_admin.php:383
+msgid "Short Description"
+msgstr "Σύντομη περιγραφή"
+
+#: wp-forecast-admin.php:652 wpf_sa_admin.php:392
+msgid "Temperature"
+msgstr "Θερμοκρασία"
+
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:401
+msgid "Realfeel"
+msgstr "Πραγματική αίσθηση"
+
+#: wp-forecast-admin.php:668 wpf_sa_admin.php:408
+msgid "Pressure"
+msgstr "Πίεση"
+
+#: wp-forecast-admin.php:675 wpf_sa_admin.php:415
+msgid "Humidity"
+msgstr "Υγρασία"
+
+#: wp-forecast-admin.php:682 wpf_sa_admin.php:422
+msgid "Wind"
+msgstr "Άνεμοι"
+
+#: wp-forecast-admin.php:691 wp-forecast-show.php:322 wp-forecast-show.php:433
+#: wp-forecast-show.php:487 wpf_sa_admin.php:431
+msgid "Windgusts"
+msgstr "Ριπές ανέμου"
+
+#: wp-forecast-admin.php:701 wp-forecast-show.php:326
+msgid "UV-Index"
+msgstr "Υπεριώδης ακτινοβολία (UV)"
+
+#: wp-forecast-admin.php:711 wpf_sa_admin.php:440
+msgid "Sunrise"
+msgstr "Ανατολή"
+
+#: wp-forecast-admin.php:718 wpf_sa_admin.php:447
+msgid "Sunset"
+msgstr "Ηλιοβασίλεμα"
+
+#: wp-forecast-admin.php:725 wpf_sa_admin.php:454
+msgid "Copyright"
+msgstr "Πνευματικά δικαιώματα"
+
+#: wp-forecast-admin.php:732 wpf_sa_admin.php:461
+msgid "Link to Weatherprovider"
+msgstr "Σύνδεσμος στον πάροχο καιρού"
+
+#: wp-forecast-admin.php:735 wpf_sa_admin.php:464
+msgid "Open in new Window"
+msgstr "Άνοιγμα σε νέο παράθυρο"
+
+#: wp-forecast-admin.php:743 wp-forecast-show.php:375 wpf_sa_admin.php:472
+msgid "Forecast"
+msgstr "Πρόβλεψη"
+
+#: wp-forecast-admin.php:748 wpf_sa_admin.php:477
+msgid "All"
+msgstr "Όλα"
+
+#: wp-forecast-admin.php:749 wp-forecast-admin.php:750
+#: wp-forecast-admin.php:751 wp-forecast-admin.php:752
+#: wp-forecast-admin.php:753 wp-forecast-admin.php:754
+#: wp-forecast-admin.php:755 wp-forecast-admin.php:756
+#: wp-forecast-admin.php:757 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
+#: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
+#: wpf_sa_admin.php:486
+msgid "Day"
+msgstr "Ημέρα"
+
+#: wp-forecast-admin.php:759 wpf_sa_admin.php:488
+msgid "Daytime"
+msgstr "Διάρκεια ημέρας"
+
+#: wp-forecast-admin.php:780 wpf_sa_admin.php:509
+msgid "Nighttime"
+msgstr "Διάρκεια νύχτας"
+
+#: wp-forecast-check.php:173
+msgid "Connection-check"
+msgstr "Έλεγχος σύνδεσης"
+
+#: wp-forecast-check.php:176
+msgid "Select weatherprovider"
+msgstr "Επιλογή παρόχου καιρού"
+
+#: wp-forecast-check.php:188
+msgid "Start check"
+msgstr "Έναρξη ελέγχου"
+
+#: wp-forecast-check.php:191
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: wp-forecast-search.php:35
+msgid "Searchresults"
+msgstr "Αποτελέσματα αναζήτησης"
+
+#: wp-forecast-search.php:37
+msgid "No WeatherBug Partner-ID given. WeatherBug will not be searched."
+msgstr ""
+"Δεν δόθηκε WeatherBug Partner-ID. Δεν θα γίνει αναζήτηση στο WeatherBug. "
+
+#: wp-forecast-search.php:38
+msgid ""
+"Enter a correct Partner-ID in the admin panel and save it to search "
+"WeatherBug."
+msgstr ""
+"Δηλώστε ένα σωστό Partner-ID στον πίνακα ελέγχου διαχειριστή και αποθηκεύστε "
+"το για να γίνει αναζήτηση στο WeatherBug."
+
+#: wp-forecast-search.php:41
+msgid "Please enter a non empty searchstring"
+msgstr "Παρακαλώ καταχωρίστε μια επιλογή αναζήτησης."
+
+#: wp-forecast-search.php:44
+msgid "Please select a location"
+msgstr "Παρακαλώ επιλέξτε τοποθεσία"
+
+#: wp-forecast-search.php:70
+msgid "Accuweather Hits"
+msgstr "Accuweather Hits"
+
+#: wp-forecast-search.php:71
+msgid "WeatherBug Hits"
+msgstr "WeatherBug Hits"
+
+#: wp-forecast-search.php:149 wp-forecast-search.php:157
+msgid "Search location"
+msgstr "Αναζήτηση τοποθεσίας"
+
+#: wp-forecast-search.php:151
+msgid "Searchterm"
+msgstr "Όρος αναζήτησης"
+
+#: wp-forecast-search.php:153
+msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
+msgstr ""
+"Παρακαλώ αντικαταστήστε τα γερμανικά Umlaute ä,ö,ü με a, o, u στους όρους "
+"αναζήτησης."
+
+#: wp-forecast-search.php:154
+msgid ""
+"Google does not support searching for locations. Only Accuweather and "
+"WeatherBug will be searched."
+msgstr ""
+"Η Google δεν υποστηρίζει την αναζήτηση τοποθεσίς. Θα γίνει αναζήτηση μόνο σε "
+"Accuweather και WeatherBug."
+
+#: wp-forecast-show.php:143
+msgid "Locations:"
+msgstr "Τοποθεσίες:"
+
+#: wp-forecast-show.php:178
+msgid "Failure notice from provider"
+msgstr "Ειδοποίηση σφάλματος από τον πάροχο"
+
+#: wp-forecast-show.php:195
+msgid "Sorry, no valid weather data available."
+msgstr "Συγνώμη, δεν υπάρχουν διαθέσιμα στοιχεία καιρού."
+
+#: wp-forecast-show.php:196
+msgid "Please try again later."
+msgstr "Παρακαλώ δοκιμάστε αργότερα."
+
+#: wp-forecast-show.php:255
+msgid "time"
+msgstr "ώρα"
+
+#: wp-forecast-show.php:302
+msgid "flik"
+msgstr "πραγματική αίσθηση"
+
+#: wp-forecast-show.php:305
+msgid "barr"
+msgstr "πίεση"
+
+#: wp-forecast-show.php:313
+msgid "hmid"
+msgstr "υγρασία"
+
+#: wp-forecast-show.php:317 wp-forecast-show.php:428 wp-forecast-show.php:480
+msgid "winds"
+msgstr "ταχύτητα ανέμου"
+
+#: wp-forecast-show.php:330
+msgid "sunrise"
+msgstr "ανατολή"
+
+#: wp-forecast-show.php:334
+msgid "sunset"
+msgstr "ηλιοβασίλεμα"
+
+#: wp-forecast-show.php:384
+msgid "day"
+msgstr "ημέρα"
+
+#: wp-forecast-show.php:438 wp-forecast-show.php:492
+msgid "max. UV-Index"
+msgstr "μεγ. Υπεριώδης ακτινοβολία (UV)"
+
+#: wp-forecast-show.php:450
+msgid "night"
+msgstr "νύχτα"
+
+#: wp-forecast-show.php:517 wp-forecast-show.php:518
+msgid "Less forecast..."
+msgstr "Λιγότερες ημέρες..."
+
+#: wp-forecast-show.php:519
+msgid "More forecast..."
+msgstr "Περισσότερες ημέρες..."
+
+#: wp-forecast.php:419
+#, php-format
+msgid "wp-forecast %s"
+msgstr "wp-forecast %s"
+
+#: wpf_sa_admin.php:64
+msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
+msgstr ""
+"Το πρόσθετο wp-forecast δεν βρέθηκε. Παρακαλώ εγκαταστήστε και ενεργοποιήστε "
+"το wp-forecast."
+
+#: wpf_sa_admin.php:208
+msgid "Check the colored checkboxes to user enable the options"
+msgstr ""
+"Επιλέξτε τα χρωματισμένα κουτιά επιλογών για να ενεργοποιηθούν οι επιλογές."
+
+#: wpf_sa_admin.php:213
+msgid "Maximal number of widgets per user"
+msgstr "Μέγιστος αριθμός μονάδων ανα χρήστη"
+
+#: wpf_sa_admin.php:252
+msgid "Delete SuperAdmin options"
+msgstr "Διαγραφή επιλογών SuperAdmin"
+
+#: wpf_sa_admin.php:253
+msgid "Delete SA-Options"
+msgstr "Διαγραφή SA-Επιλογών"
+
+#: wpf_sa_admin.php:262
+msgid "Widget-Setup"
+msgstr "Διαμόρφωση μονάδας"
+
+#: wpf_sa_admin.php:271
+msgid "Partner-ID"
+msgstr "Partner-ID"
+
+#: wpf_setup.php:93
+msgid "The Weather"
+msgstr "Ο καιρός"
+
+#: xgettextdummy.php:5
+msgid "loc"
+msgstr "Τοποθεσία"
+
+#: xgettextdummy.php:6
+msgid "01"
+msgstr "Ηλιοφάνεια"
+
+#: xgettextdummy.php:7
+msgid "02"
+msgstr "Κυρίως ηλιοφάνεια"
+
+#: xgettextdummy.php:8
+msgid "03"
+msgstr "Μερική ηλιοφάνεια"
+
+#: xgettextdummy.php:9
+msgid "04"
+msgstr "Περιοδική συννεφιά"
+
+#: xgettextdummy.php:10
+msgid "05"
+msgstr "Μουντή ηλιοφάνεια"
+
+#: xgettextdummy.php:11
+msgid "06"
+msgstr "Κυρίως συννεφιά"
+
+#: xgettextdummy.php:12
+msgid "07"
+msgstr "Συννεφιασμένος"
+
+#: xgettextdummy.php:13
+msgid "08"
+msgstr "Περιοδική συννεφιά"
+
+#: xgettextdummy.php:14
+msgid "11"
+msgstr "Ομίχλη"
+
+#: xgettextdummy.php:15
+msgid "12"
+msgstr "Βροχοπτώσεις"
+
+#: xgettextdummy.php:16
+msgid "13"
+msgstr "Κυρίως συννεφιασμένος με πιθανές βροχοπτώσεις"
+
+#: xgettextdummy.php:17
+msgid "14"
+msgstr "Μερική ηλιοφάνεια με πιθανές βροχοπτώσεις"
+
+#: xgettextdummy.php:18
+msgid "15"
+msgstr "Καταιγίδες"
+
+#: xgettextdummy.php:19
+msgid "16"
+msgstr "Κυρίως συννεφιασμένος με πιθανές καταιγίδες"
+
+#: xgettextdummy.php:20
+msgid "17"
+msgstr "Μερική ηλιοφάνεια με πιθανές καταιγίδες"
+
+#: xgettextdummy.php:21
+msgid "18"
+msgstr "Βροχή"
+
+#: xgettextdummy.php:22
+msgid "19"
+msgstr "Αναταραχές"
+
+#: xgettextdummy.php:23
+msgid "20"
+msgstr "Κυρίως συννεφιασμένος με αναταραχές"
+
+#: xgettextdummy.php:24
+msgid "21"
+msgstr "Μερικώς συννεφιασμένος με αναταραχές"
+
+#: xgettextdummy.php:25
+msgid "22"
+msgstr "Χιόνι"
+
+#: xgettextdummy.php:26
+msgid "23"
+msgstr "Κυρίως συννεφιά και χιόνι"
+
+#: xgettextdummy.php:27
+msgid "24"
+msgstr "Πάγος"
+
+#: xgettextdummy.php:28
+msgid "25"
+msgstr "Χιονόνερο"
+
+#: xgettextdummy.php:29
+msgid "26"
+msgstr "Χαλάζι"
+
+#: xgettextdummy.php:30
+msgid "29"
+msgstr "Βροχή και χιόνι"
+
+#: xgettextdummy.php:31
+msgid "30"
+msgstr "Ζεστό"
+
+#: xgettextdummy.php:32
+msgid "31"
+msgstr "Κρύο"
+
+#: xgettextdummy.php:33
+msgid "32"
+msgstr "Ανεμώδης"
+
+#: xgettextdummy.php:34
+msgid "33"
+msgstr "Καθαρός"
+
+#: xgettextdummy.php:35
+msgid "34"
+msgstr "Κυρίως αίθριος"
+
+#: xgettextdummy.php:36
+msgid "35"
+msgstr "Μερικώς νεφελώδης"
+
+#: xgettextdummy.php:37
+msgid "36"
+msgstr "Περιοδικά σύννεφα"
+
+#: xgettextdummy.php:38
+msgid "37"
+msgstr "Θολό σεληνόφωτο"
+
+#: xgettextdummy.php:39
+msgid "38"
+msgstr "Κυρίως συννεφιασμένος"
+
+#: xgettextdummy.php:40
+msgid "39"
+msgstr "Μερικώς συννεφιασμένος με βροχές"
+
+#: xgettextdummy.php:41
+msgid "40"
+msgstr "Κυρίως συννεφιασμένος με βροχές"
+
+#: xgettextdummy.php:42
+msgid "41"
+msgstr "Μερικώς νεφελώδης με καταιγίδες"
+
+#: xgettextdummy.php:43
+msgid "42"
+msgstr "Κυρίως συννεφιασμένος με καταιγίδες"
+
+#: xgettextdummy.php:44
+msgid "43"
+msgstr "Κυρίως συννεφιασμένος με αναταραχές"
+
+#: xgettextdummy.php:45
+msgid "44"
+msgstr "Κυρίως συννεφιασμένος με χιόνι"
+
+#: xgettextdummy.php:46
+msgid "Monday"
+msgstr "Δευτέρα"
+
+#: xgettextdummy.php:47
+msgid "Tuesday"
+msgstr "Τρίτη"
+
+#: xgettextdummy.php:48
+msgid "Wednesday"
+msgstr "Τετάρτη"
+
+#: xgettextdummy.php:49
+msgid "Thursday"
+msgstr "Πέμπτη"
+
+#: xgettextdummy.php:50
+msgid "Friday"
+msgstr "Παρασκευή"
+
+#: xgettextdummy.php:51
+msgid "Saturday"
+msgstr "Σάββατο"
+
+#: xgettextdummy.php:52
+msgid "Sunday"
+msgstr "Κυριακή"
+
+#: xgettextdummy.php:53
+msgid "N"
+msgstr "Β"
+
+#: xgettextdummy.php:54
+msgid "E"
+msgstr "Α"
+
+#: xgettextdummy.php:55
+msgid "W"
+msgstr "Δ"
+
+#: xgettextdummy.php:56
+msgid "S"
+msgstr "Ν"
+
+#: xgettextdummy.php:57
+msgid "30% Chance Drizzle"
+msgstr "30% Πιθανότητα ψιχάλας"
+
+#: xgettextdummy.php:58
+msgid "30% Chance Freezing Drizzle"
+msgstr "30% Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:59
+msgid "30% Chance Freezing Rain"
+msgstr "30% Πιθανότητα παγωμένης βροχής"
+
+#: xgettextdummy.php:60
+msgid "30% Chance Frozen Drizzle"
+msgstr "30% Πιθανότητα ψιλού χαλαζιού"
+
+#: xgettextdummy.php:61
+msgid "30% Chance Frozen Mix"
+msgstr "30% Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:62
+msgid "30% Chance Rain Shower"
+msgstr "30% Πιθανότητα βροχοπτώσεων"
+
+#: xgettextdummy.php:63
+msgid "30% Chance Snow Shower"
+msgstr "30% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:64
+msgid "30% Chance of Drizzle"
+msgstr "30% Πιθανότητα ψιχάλας"
+
+#: xgettextdummy.php:65 xgettextdummy.php:66
+msgid "30% Chance of Flurry"
+msgstr "30% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:67
+msgid "30% Chance of Frozen Mix"
+msgstr "30% Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:68
+msgid "30% Chance of Light Snow"
+msgstr "30% Πιθανότητα ελαφριάς χιονόπτωσης"
+
+#: xgettextdummy.php:69
+msgid "30% Chance of Rain"
+msgstr "30% Πιθανότητα βροχής"
+
+#: xgettextdummy.php:70
+msgid "30% Chance of Sleet"
+msgstr "30% Πιθανότητα χιονόνερου"
+
+#: xgettextdummy.php:71
+msgid "30% Chance of Snow"
+msgstr "30% Πιθανότητα χιονιού"
+
+#: xgettextdummy.php:72
+msgid "30% Chance of Storms"
+msgstr "30% Πιθανότητα καταιγίδων"
+
+#: xgettextdummy.php:73
+msgid "40% Chance Drizzle"
+msgstr "40% Πιθανότητα Ψιχάλας"
+
+#: xgettextdummy.php:74
+msgid "40% Chance Fozen Drizzle"
+msgstr "40% Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:75
+msgid "40% Chance Freezing Drizzle"
+msgstr "40% Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:76
+msgid "40% Chance Freezing Rain"
+msgstr "40% Πιθανότητα παγωμένης βροχής"
+
+#: xgettextdummy.php:77
+msgid "40% Chance Frozen Drizzle"
+msgstr "40% Πιθανότητα ψιλού χαλαζιού"
+
+#: xgettextdummy.php:78
+msgid "40% Chance Frozen Mix"
+msgstr "40% Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:79
+msgid "40% Chance Rain Shower"
+msgstr "40% Πιθανότητα βροχοπτώσεων"
+
+#: xgettextdummy.php:80
+msgid "40% Chance Snow Shower"
+msgstr "40% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:81
+msgid "40% Chance of Drizzle"
+msgstr "40% Πιθανότητα ψιχάλας"
+
+#: xgettextdummy.php:82
+msgid "40% Chance of Flurry"
+msgstr "40% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:83
+msgid "40% Chance of Frozen Mix"
+msgstr "40% Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:84
+msgid "40% Chance of Light Snow"
+msgstr "40% Πιθανότητα ελαφριάς χιονόπτωσης"
+
+#: xgettextdummy.php:85
+msgid "40% Chance of Rain"
+msgstr "40% Πιθανότητα βροχής"
+
+#: xgettextdummy.php:86
+msgid "40% Chance of Sleet"
+msgstr "40% Πιθανότητα χιονόνερου"
+
+#: xgettextdummy.php:87
+msgid "40% Chance of Snow"
+msgstr "40% Πιθανότητα χιονιού"
+
+#: xgettextdummy.php:88
+msgid "40% Chance of Storms"
+msgstr "40% Πιθανότητα καταιγίδων"
+
+#: xgettextdummy.php:89
+msgid "50% Chance Freezing Drizzle"
+msgstr "50% Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:90
+msgid "50% Chance Freezing Rain"
+msgstr "50% Πιθανότητα παγωμένης βροχής"
+
+#: xgettextdummy.php:91
+msgid "50% Chance Rain Shower"
+msgstr "50% Πιθανότητα βροχοπτώσεων"
+
+#: xgettextdummy.php:92
+msgid "50% Chance Snow Shower"
+msgstr "50% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:93
+msgid "50% Chance of Drizzle"
+msgstr "50% Πιθανότητα ψιχάλας"
+
+#: xgettextdummy.php:94
+msgid "50% Chance of Flurry"
+msgstr "50% Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:95
+msgid "50% Chance of Frozen Mix"
+msgstr "50% Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:96
+msgid "50% Chance of Light Snow"
+msgstr "50% Πιθανότητα ελαφριάς χιονόπτωσης"
+
+#: xgettextdummy.php:97
+msgid "50% Chance of Rain"
+msgstr "50% Πιθανότητα βροχής"
+
+#: xgettextdummy.php:98
+msgid "50% Chance of Sleet"
+msgstr "50% Πιθανότητα χιονόνερου"
+
+#: xgettextdummy.php:99
+msgid "50% Chance of Snow"
+msgstr "50% Πιθανότητα χιονιού"
+
+#: xgettextdummy.php:100
+msgid "50% Chance of Storms"
+msgstr "50% Πιθανότητα καταιγίδων"
+
+#: xgettextdummy.php:101
+msgid "Chance Freezing Drizzle"
+msgstr "Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:102
+msgid "Chance Freezing Rain"
+msgstr "Πιθανότητα παγωμένης βροχής"
+
+#: xgettextdummy.php:103
+msgid "Chance Rain Shower"
+msgstr "Πιθανότητα βροχοπτώσεων"
+
+#: xgettextdummy.php:104
+msgid "Chance Snow Shower"
+msgstr "Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:105
+msgid "Chance of Drizzle"
+msgstr "Πιθανότητα ψιχάλας"
+
+#: xgettextdummy.php:106
+msgid "Chance of Flurry"
+msgstr "Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:107
+msgid "Chance of Freezing Drizzle"
+msgstr "Πιθανότητα παγωμένης ψιχάλας"
+
+#: xgettextdummy.php:108
+msgid "Chance of Frozen Drizzle"
+msgstr "Πιθανότητα ψιλού χαλαζιού"
+
+#: xgettextdummy.php:109
+msgid "Chance of Frozen Mix"
+msgstr "Πιθανότητα χαλαζιού"
+
+#: xgettextdummy.php:110
+msgid "Chance of Light Snow"
+msgstr "Πιθανότητα ελαφριάς χιονόπτωσης"
+
+#: xgettextdummy.php:111
+msgid "Chance of Rain"
+msgstr "Πιθανότητα βροχής"
+
+#: xgettextdummy.php:112
+msgid "Chance of Rain Showers"
+msgstr "Πιθανότητα βροχοπτώσεων"
+
+#: xgettextdummy.php:113
+msgid "Chance of Sleet "
+msgstr "Πιθανότητα χιονόνερου"
+
+#: xgettextdummy.php:114
+msgid "Chance of Snow"
+msgstr "Πιθανότητα χιονιού"
+
+#: xgettextdummy.php:115
+msgid "Chance of Snow Showers"
+msgstr "Πιθανότητα χιονοπτώσεων"
+
+#: xgettextdummy.php:116
+msgid "Chance of Storms"
+msgstr "Πιθανότητα καταιγίδων"
+
+#: xgettextdummy.php:117
+msgid "Clear"
+msgstr "Καθαρός"
+
+#: xgettextdummy.php:118
+msgid "Clearing"
+msgstr "Ξέφωτο"
+
+#: xgettextdummy.php:119
+msgid "Cloudy"
+msgstr "Συννεφιασμένος"
+
+#: xgettextdummy.php:120
+msgid "Drizzle"
+msgstr "Ψιχάλα"
+
+#: xgettextdummy.php:121
+msgid "Fair"
+msgstr "Αίθριος"
+
+#: xgettextdummy.php:122
+msgid "Flurries"
+msgstr "Χιονόπτωση"
+
+#: xgettextdummy.php:123
+msgid "Fog"
+msgstr "Ομίχλη"
+
+#: xgettextdummy.php:124
+msgid "Foggy"
+msgstr "Ομιχλώδης"
+
+#: xgettextdummy.php:125
+msgid "Freezing Drizzle"
+msgstr "Παγωμένη ψιχάλα"
+
+#: xgettextdummy.php:126
+msgid "Freezing Rain"
+msgstr "Παγωμένη βροχή"
+
+#: xgettextdummy.php:127
+msgid "Frozen Mix"
+msgstr "Χαλάζι"
+
+#: xgettextdummy.php:128
+msgid "Hazy"
+msgstr "Ομιχλώδης"
+
+#: xgettextdummy.php:129
+msgid "Headline"
+msgstr "Επικεφαλίδα"
+
+#: xgettextdummy.php:130
+msgid "Heavy Rain"
+msgstr "Δυνατή βροχή"
+
+#: xgettextdummy.php:131
+msgid "Heavy Snow"
+msgstr "Δυνατή χιονόπτωση"
+
+#: xgettextdummy.php:132
+msgid "Hot and Humid"
+msgstr "Ζέστη και υγρασία"
+
+#: xgettextdummy.php:133
+msgid "Increasing Clouds"
+msgstr "Συννεφιά"
+
+#: xgettextdummy.php:134
+msgid "Light Snow"
+msgstr "Ασθενής χιονόπτωση"
+
+#: xgettextdummy.php:135
+msgid "Mostly Clear"
+msgstr "Κυρίως καθαρός"
+
+#: xgettextdummy.php:136
+msgid "Mostly Cloudy"
+msgstr "Κυρίως συννεφιασμένος"
+
+#: xgettextdummy.php:137
+msgid "Mostly Sunny"
+msgstr "Κυριώς ηλιοφάνεια"
+
+#: xgettextdummy.php:138
+msgid "Nowcast"
+msgstr "Τωρινή πρόβλεψη"
+
+#: xgettextdummy.php:139
+msgid "Partly Cloudy"
+msgstr "Μερική συννεφιά"
+
+#: xgettextdummy.php:140
+msgid "Partly Sunny"
+msgstr "Μερική ηλιοφάνεια"
+
+#: xgettextdummy.php:141
+msgid "Rain"
+msgstr "Βροχή"
+
+#: xgettextdummy.php:142
+msgid "Rain Showers"
+msgstr "Βροχοπτώσεις"
+
+#: xgettextdummy.php:143
+msgid "Scattered Showers"
+msgstr "Δυνατές Βροχοπτώσεις"
+
+#: xgettextdummy.php:144
+msgid "Scattered Thunderstorms"
+msgstr "Δυνατές Καταιγίδες"
+
+#: xgettextdummy.php:145
+msgid "Sleet"
+msgstr "Χιονόνερο"
+
+#: xgettextdummy.php:146
+msgid "Snow"
+msgstr "Χιόνι"
+
+#: xgettextdummy.php:147
+msgid "Snow Showers"
+msgstr "Χιονοπτώσεις"
+
+#: xgettextdummy.php:148
+msgid "Sunny"
+msgstr "Ηλιόλουστος"
+
+#: xgettextdummy.php:149
+msgid "Thunderstorms"
+msgstr "Καταιγίδες"
+
+#: xgettextdummy.php:151
+msgid "Very Cold"
+msgstr "Πολύ κρύο"
+
+#: xgettextdummy.php:152
+msgid "Very Hot"
+msgstr "Πολύ ζέστη"
+
+#: xgettextdummy.php:153
+msgid "Warm and Humid"
+msgstr "Ζέστη και υγρασία"
+
+#: xgettextdummy.php:154
+msgid "Windy"
+msgstr "Ανεμώδης"

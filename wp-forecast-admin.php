@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ function get_loclist($uri,$loc)
 
   $url=$uri . urlencode($loc);
   $xml = fetchURL($url);
-
+ 
   pdebug(1,"End of get_loclist ()");
 
   return $xml;
@@ -404,6 +404,12 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
       if ($av['pdforecast']=="") $av['pdforecast']="0";
       $upflag=true;
     }
+    
+    if ($av['windicon'] != $_POST["windicon"] and (!$ismulti or isset($allowed["ue_windicon"]))) {
+    	$av['windicon'] =  $_POST["windicon"];
+    	if ($av['windicon']=="") $av['windicon']="0";
+    	$upflag=true;
+    }
 
     // set checkbox value to zero if not set
     // for forecast options
@@ -414,7 +420,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     }
     
     // set empty checkboxes to 0
-    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather','d_c_aw_newwindow');
+    $do = array('d_c_icon','d_c_time','d_c_short','d_c_temp','d_c_real','d_c_press','d_c_humid','d_c_wind','d_c_sunrise','d_c_sunset','d_d_icon','d_d_short','d_d_temp','d_d_wind','d_n_icon','d_n_short','d_n_temp','d_n_wind','d_c_date','d_d_date','d_n_date','d_c_copyright','d_c_wgusts','d_d_wgusts','d_n_wgusts','d_c_accuweather','d_c_aw_newwindow','d_c_uvindex','d_d_maxuv','d_n_maxuv');
     foreach ($do as $i) {
       if (!isset($_POST[$i]) || $_POST[$i]=="")
 		$_POST["$i"]="0";
@@ -506,7 +512,7 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
          <select name="service" id="service" size="1" onchange="apifields(document.woptions.service.value);">
 	       <option value="accu" <?php if ($av['service']=="accu") echo "selected=\"selected\""?>><?php echo __('AccuWeather',"wp-forecast_".$locale)?></option>
            <option value="bug" <?php if ($av['service']=="bug") echo "selected=\"selected\""?>><?php echo __('WeatherBug',"wp-forecast_".$locale)?></option>
-           <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> 
+           <!-- <option value="google" <?php if ($av['service']=="google") echo "selected=\"selected\""?>><?php echo __('GoogleWeather',"wp-forecast_".$locale)?></option> --> 
 	 </select>&nbsp;
 
          <?php echo __('Partner ID',"wp-forecast_".$locale)?>:
@@ -554,22 +560,31 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 
 	 <p>
          <b><?php echo __('Language',"wp-forecast_".$locale)?>: </b><select name="wpf_language" id="wpf_language" size="1">
-	    <option value="en_US" <?php if ($av['wpf_language']=="en_US") echo "selected=\"selected\""?>>english</option>
-	    <option value="de_DE" <?php if ($av['wpf_language']=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+	    	<option value="en_US" <?php if ($av['wpf_language']=="en_US") echo "selected=\"selected\""?>>english</option>
+	    	<option value="de_DE" <?php if ($av['wpf_language']=="de_DE") echo "selected=\"selected\""?>>deutsch</option>
+	    	<option value="bg_BG" <?php if ($av['wpf_language']=="bg_BG") echo "selected=\"selected\""?>>bulgarian</option>
+	    	<option value="bs_BA" <?php if ($av['wpf_language']=="bs_BA") echo "selected=\"selected\""?>>bosnian</option>
+	    	<option value="cs_CZ" <?php if ($av['wpf_language']=="cs_CZ") echo "selected=\"selected\""?>>czech</option>
             <option value="da_DK" <?php if ($av['wpf_language']=="da_DK") echo "selected=\"selected\""?>>dansk</option>
-	    <option value="nl_NL" <?php if ($av['wpf_language']=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
+	    	<option value="nl_NL" <?php if ($av['wpf_language']=="nl_NL") echo "selected=\"selected\""?>>dutch</option>
             <option value="fi_FI" <?php if ($av['wpf_language']=="fi_FI") echo "selected=\"selected\""?>>finnish</option>
             <option value="fr_FR" <?php if ($av['wpf_language']=="fr_FR") echo "selected=\"selected\""?>>french</option>
+            <option value="el_EL" <?php if ($av['wpf_language']=="el_EL") echo "selected=\"selected\""?>>greek</option>
             <option value="he_IL" <?php if ($av['wpf_language']=="he_IL") echo "selected=\"selected\""?>>hebrew</option>
             <option value="hu_HU" <?php if ($av['wpf_language']=="hu_HU") echo "selected=\"selected\""?>>hungarian</option>
+            <option value="id_ID" <?php if ($av['wpf_language']=="id_ID") echo "selected=\"selected\""?>>indonesian</option>
             <option value="it_IT" <?php if ($av['wpf_language']=="it_IT") echo "selected=\"selected\""?>>italian</option>
-	    <option value="pl_PL" <?php if ($av['wpf_language']=="pl_PL") echo "selected=\"selected\""?>>polish</option>
+            <option value="nb_NO" <?php if ($av['wpf_language']=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
+            <option value="fa_IR" <?php if ($av['wpf_language']=="fa_IR") echo "selected=\"selected\""?>>persian</option>
+	    	<option value="pl_PL" <?php if ($av['wpf_language']=="pl_PL") echo "selected=\"selected\""?>>polish</option>
             <option value="pt_PT" <?php if ($av['wpf_language']=="pt_PT") echo "selected=\"selected\""?>>portugu&#234;s</option>
             <option value="ro_RO" <?php if ($av['wpf_language']=="ro_RO") echo "selected=\"selected\""?>>romanian</option>
             <option value="ru_RU" <?php if ($av['wpf_language']=="ru_RU") echo "selected=\"selected\""?>>russian</option> 
-            <option value="nb_NO" <?php if ($av['wpf_language']=="nb_NO") echo "selected=\"selected\""?>>norwegian</option>
-	    <option value="es_ES" <?php if ($av['wpf_language']=="es_ES") echo "selected=\"selected\""?>>spanish</option>
+            <option value="sr_SR" <?php if ($av['wpf_language']=="sr_SR") echo "selected=\"selected\""?>>serbian</option>
+            <option value="sk_SK" <?php if ($av['wpf_language']=="sk_SK") echo "selected=\"selected\""?>>slovak</option>
+	    	<option value="es_ES" <?php if ($av['wpf_language']=="es_ES") echo "selected=\"selected\""?>>spanish</option>
             <option value="sv_SE" <?php if ($av['wpf_language']=="sv_SE") echo "selected=\"selected\""?>>swedish</option>
+            <option value="uk_UA" <?php if ($av['wpf_language']=="uk_UA") echo "selected=\"selected\""?>>ukrainian</option>
 	    
          </select></p>
  
@@ -590,6 +605,10 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
    <option value="9" <?php if ($av['pdfirstday']=="9") echo "selected=\"selected\""?>>9</option>
    </select></p>
    <script type="text/javascript">pdfields_update();</script>
+    
+   <p><input type="checkbox" name="windicon" id="windicon" value="1" <?php if ($av['windicon']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Show wind condition as icon',"wp-forecast_".$locale)?></b>
+   </p>
+   
 <?php 
  if ($widgetcall ==0) 
      echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
@@ -686,7 +705,18 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	     <?php if (substr($av['dispconfig'],23,1)=="1") echo "checked=\"checked\""?> /></td>
         <td class='td-center'><input type="checkbox" name="d_n_wgusts" id="d_n_wgusts" value="1" 
   	     <?php if (substr($av['dispconfig'],24,1)=="1") echo "checked=\"checked\""?> /></td>
-        </tr>         
+        </tr>      
+        
+        <tr>
+        <td><?php echo __('UV-Index',"wp-forecast_".$locale)?></td>
+        <td class='td-center'><input type="checkbox" name="d_c_uvindex" id="d_c_uvindex" value="1" 
+	     <?php if (substr($av['dispconfig'],27,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td class='td-center'><input type="checkbox" name="d_d_maxuv" id="d_d_maxuv" value="1" 
+	     <?php if (substr($av['dispconfig'],28,1)=="1") echo "checked=\"checked\""?> /></td>
+        <td class='td-center'><input type="checkbox" name="d_n_maxuv" id="d_n_maxuv" value="1" 
+  	     <?php if (substr($av['dispconfig'],29,1)=="1") echo "checked=\"checked\""?> /></td>
+        </tr>    
+           
 	<tr>
         <td><?php echo __('Sunrise',"wp-forecast_".$locale)?></td>
         <td class='td-center'><input type="checkbox" name="d_c_sunrise" id="d_c_sunrise" value="1" 
