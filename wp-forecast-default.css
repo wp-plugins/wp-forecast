@@ -43,6 +43,16 @@ div.wp-forecast-curr-right {
     float: left; 
 }
 
+/* style for forecast data details right side */
+div.wp-forecast-wind-right {
+    font-size: 12px; 
+    font-weight: bolder;
+    font-variant: normal;
+    text-align:left;
+    padding: 3px;
+    float: left;
+    padding-top: 12px; 
+}
 
 /* style for current weather data details */
 div.wp-forecast-curr-details {

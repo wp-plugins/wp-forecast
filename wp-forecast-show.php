@@ -119,7 +119,7 @@ function show($wpfcid,$args,$wpfvars)
 	// order is important to override old title in wpfvars with new in args
 	extract($wpfvars);
 	extract($args);
-
+	
 	// get translations
 	if(function_exists('load_plugin_textdomain')) {
 		add_filter("plugin_locale","wpf_lplug",10,2);
@@ -168,7 +168,7 @@ function show($wpfcid,$args,$wpfvars)
 			substr($dispconfig,21,1) == "1" or
 			substr($dispconfig,22,1) == "1" )
 	{
-		// ouput current conditions
+		// output current conditions
 		$out ="";
 		$out .="\n<div class=\"wp-forecast-curr\">\n";
 
@@ -266,6 +266,7 @@ function show($wpfcid,$args,$wpfvars)
 		$out .= '<div class="wp-forecast-curr-block">';
 
 		// show icon
+		$out .= "<div class='wp-forecast-curr-left'>";
 		if (substr($dispconfig,0,1) == "1") {
 			if ($service=="accu") {
 				$breite=0; $hoehe=0;
@@ -274,25 +275,40 @@ function show($wpfcid,$args,$wpfvars)
 					$breite=$isize[0];
 					$hoehe=$isize[1];
 				}
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' /></div>\n";
+				$out .= "<img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' />\n";
 			}
 			if ($service=="bug")
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
 
 			if ($service=="google")
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
 		}
-
+		$out .="<br />";
+		// show windicon
+		if ($windicon == "1") {
+			$breite=48; $hoehe=48;	
+			$wind_dir = str_replace("O","E",$w['winddir']);
+			$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+			$out .= "<img src='" . $wind_icon_url ."' alt='".$w['winddir']. "' width='".$breite."' height='".$hoehe."' />\n";
+			}
+			
+		$out .= "</div>";
 		$out .= "<div class='wp-forecast-curr-right'>";
+		$out .= "<div>";
 
 		// show short description
 		if (substr($dispconfig,2,1) == "1")
-			$out .= "<div>". $w["shorttext"]."</div>";
+			$out .= $w["shorttext"]."<br/>";
 
 		// show temperatur
 		if (substr($dispconfig,3,1) == "1")
 			$out .= $w["temperature"];
-		//$out .= __('tmp',"wp-forecast_".$wpf_language).": ".$w["temperature"];
+		$out .= "</div>";
+		
+		// show wind on the right side if windicon is active
+		if ($windicon == "1")
+			$out .= '<div class="wp-forecast-wind-right">' . $w['windspeed']."</div>\n";
+		
 		$out .= "</div>\n"; // end of right
 		$out .= "</div>\n";  // end of block
 
@@ -408,6 +424,16 @@ function show($wpfcid,$args,$wpfvars)
 	  {
 	  	$out1 .= "&nbsp;";
 	  }
+	  
+	  $out1 .="<br />";
+	  // show windicon
+	  if ($windicon == "1") {
+	  	$breite=48; $hoehe=48;
+	  	$wind_dir = str_replace("O","E",$w['fc_dt_winddir_'.$i]);
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_dt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
+	  }
+	  
 	  $out1 .= "\n</div>\n"; // end of wp-forecast-fc-left
 	  $out1 .= "<div class='wp-forecast-fc-right'>";
 
@@ -464,6 +490,16 @@ function show($wpfcid,$args,$wpfvars)
 	  {
 	  	$out1 .= "&nbsp;";
 	  }
+	  
+	  $out1 .="<br />";
+	  // show windicon
+	  if ($windicon == "1") {
+	  	$breite=48; $hoehe=48;
+	  	$wind_dir = str_replace("O","E",$w['fc_nt_winddir_'.$i]);
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_nt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
+	  }
+	  
 	  $out1 .= "\n</div>\n<div class='wp-forecast-fc-right'>";
 
 	  // show short description

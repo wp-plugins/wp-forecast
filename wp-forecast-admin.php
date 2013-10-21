@@ -404,6 +404,12 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
       if ($av['pdforecast']=="") $av['pdforecast']="0";
       $upflag=true;
     }
+    
+    if ($av['windicon'] != $_POST["windicon"] and (!$ismulti or isset($allowed["ue_windicon"]))) {
+    	$av['windicon'] =  $_POST["windicon"];
+    	if ($av['windicon']=="") $av['windicon']="0";
+    	$upflag=true;
+    }
 
     // set checkbox value to zero if not set
     // for forecast options
@@ -599,6 +605,10 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
    <option value="9" <?php if ($av['pdfirstday']=="9") echo "selected=\"selected\""?>>9</option>
    </select></p>
    <script type="text/javascript">pdfields_update();</script>
+    
+   <p><input type="checkbox" name="windicon" id="windicon" value="1" <?php if ($av['windicon']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Show wind condition as icon',"wp-forecast_".$locale)?></b>
+   </p>
+   
 <?php 
  if ($widgetcall ==0) 
      echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";

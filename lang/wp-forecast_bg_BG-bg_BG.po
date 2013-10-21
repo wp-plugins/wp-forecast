@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-13 09:33+0200\n"
+"POT-Creation-Date: 2013-10-21 09:34+0200\n"
 "PO-Revision-Date: 2010-09-08 12:44+0200\n"
 "Last-Translator: Петър Петров <petar.petrov@marketing-forge.com>\n"
 "Language-Team: My Team <petar.petrov@marketing-forge.com>\n"
@@ -75,223 +75,227 @@ msgstr "Да изтрия ли настройките при деактивир�
 msgid "Check connection to Weatherprovider"
 msgstr "Връзка към доставчика"
 
-#: wp-forecast-admin.php:453 wpf_sa_admin.php:195
+#: wp-forecast-admin.php:459 wpf_sa_admin.php:195
 msgid "Settings successfully updated"
 msgstr "Настройките са успешно обновени"
 
-#: wp-forecast-admin.php:455
+#: wp-forecast-admin.php:461
 msgid "You have to change a field to update settings."
 msgstr "Трябва да направите промяна, преди да обновите настройките."
 
-#: wp-forecast-admin.php:502
+#: wp-forecast-admin.php:508
 msgid "WP-Forecast Setup"
 msgstr "Настройки на WP-Forecast"
 
-#: wp-forecast-admin.php:505 wpf_sa_admin.php:265
+#: wp-forecast-admin.php:511 wpf_sa_admin.php:265
 msgid "Weatherservice"
 msgstr "Доставчик"
 
-#: wp-forecast-admin.php:507 wpf_sa_admin.php:267
+#: wp-forecast-admin.php:513 wpf_sa_admin.php:267
 msgid "AccuWeather"
 msgstr "AccuWeather"
 
-#: wp-forecast-admin.php:508 wpf_sa_admin.php:268
+#: wp-forecast-admin.php:514 wpf_sa_admin.php:268
 msgid "WeatherBug"
 msgstr "WeatherBug"
 
-#: wp-forecast-admin.php:509
+#: wp-forecast-admin.php:515
 msgid "GoogleWeather"
 msgstr "Времето"
 
-#: wp-forecast-admin.php:512
+#: wp-forecast-admin.php:518
 msgid "Partner ID"
 msgstr "Партньорско ID"
 
-#: wp-forecast-admin.php:515 wpf_sa_admin.php:274
+#: wp-forecast-admin.php:521 wpf_sa_admin.php:274
 msgid "Licensekey"
 msgstr "Лицензионен ключ"
 
-#: wp-forecast-admin.php:520 wpf_sa_admin.php:279
+#: wp-forecast-admin.php:526 wpf_sa_admin.php:279
 msgid "Location"
 msgstr "Място"
 
-#: wp-forecast-admin.php:529 wpf_sa_admin.php:282
+#: wp-forecast-admin.php:535 wpf_sa_admin.php:282
 msgid "Press Update options to save new location."
 msgstr "Натиснете \"Обнови\", за да запазите новото място."
 
-#: wp-forecast-admin.php:532 wpf_sa_admin.php:285
+#: wp-forecast-admin.php:538 wpf_sa_admin.php:285
 msgid "Locationname"
 msgstr "Име на мястото"
 
-#: wp-forecast-admin.php:534 wpf_sa_admin.php:288
+#: wp-forecast-admin.php:540 wpf_sa_admin.php:288
 msgid "Refresh cache after"
 msgstr "Обнови кеша след"
 
-#: wp-forecast-admin.php:536 wpf_sa_admin.php:290
+#: wp-forecast-admin.php:542 wpf_sa_admin.php:290
 msgid "secs."
 msgstr "сек."
 
-#: wp-forecast-admin.php:537 wpf_sa_admin.php:291
+#: wp-forecast-admin.php:543 wpf_sa_admin.php:291
 msgid "Use metric units"
 msgstr "Използвай метрична система"
 
-#: wp-forecast-admin.php:540 wpf_sa_admin.php:294
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:294
 msgid "Use current time"
 msgstr "Използвай местно време"
 
-#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:547 wpf_sa_admin.php:295
 msgid "Time-Offset"
 msgstr "Измести времето с"
 
-#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:547 wpf_sa_admin.php:295
 msgid "minutes"
 msgstr "минути"
 
-#: wp-forecast-admin.php:544 wpf_sa_admin.php:298
+#: wp-forecast-admin.php:550 wpf_sa_admin.php:298
 msgid "Windspeed-Unit"
 msgstr "Скорост на вятъра в"
 
-#: wp-forecast-admin.php:545 wpf_sa_admin.php:299
+#: wp-forecast-admin.php:551 wpf_sa_admin.php:299
 msgid "Meter/Second (m/s)"
 msgstr "Метри в секунда (м/с)"
 
-#: wp-forecast-admin.php:546 wpf_sa_admin.php:300
+#: wp-forecast-admin.php:552 wpf_sa_admin.php:300
 msgid "Kilometer/Hour (km/h)"
 msgstr "Километри в час (кмч)"
 
-#: wp-forecast-admin.php:547 wpf_sa_admin.php:301
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:301
 msgid "Miles/Hour (mph)"
 msgstr "Мили в час (м/ч)"
 
-#: wp-forecast-admin.php:548 wpf_sa_admin.php:302
+#: wp-forecast-admin.php:554 wpf_sa_admin.php:302
 msgid "Knots (kts)"
 msgstr "Възли (взл)"
 
-#: wp-forecast-admin.php:549 wpf_sa_admin.php:303
+#: wp-forecast-admin.php:555 wpf_sa_admin.php:303
 msgid "Beaufort (bft)"
 msgstr ""
 
-#: wp-forecast-admin.php:556 wpf_sa_admin.php:310
+#: wp-forecast-admin.php:562 wpf_sa_admin.php:310
 msgid "Language"
 msgstr "Език"
 
-#: wp-forecast-admin.php:585 wpf_sa_admin.php:329
+#: wp-forecast-admin.php:591 wpf_sa_admin.php:329
 msgid "Show forecast as ajax pull-down"
 msgstr "Покажи прогнозата като падащо меню"
 
-#: wp-forecast-admin.php:589 wpf_sa_admin.php:333
+#: wp-forecast-admin.php:595 wpf_sa_admin.php:333
 msgid "First day in pull-down"
 msgstr "От кой ден да се скрива прогнозата"
 
-#: wp-forecast-admin.php:604 wpf_sa_admin.php:538
+#: wp-forecast-admin.php:609
+msgid "Show wind condition as icon"
+msgstr ""
+
+#: wp-forecast-admin.php:614 wpf_sa_admin.php:538
 msgid "Update options"
 msgstr "Обнови"
 
-#: wp-forecast-admin.php:611 wpf_sa_admin.php:351
+#: wp-forecast-admin.php:621 wpf_sa_admin.php:351
 msgid "Display Configuration"
 msgstr "Display Configuration"
 
-#: wp-forecast-admin.php:615 wpf_sa_admin.php:355
+#: wp-forecast-admin.php:625 wpf_sa_admin.php:355
 msgid "Current Conditions"
 msgstr "Текущо състояние"
 
-#: wp-forecast-admin.php:616 wpf_sa_admin.php:356
+#: wp-forecast-admin.php:626 wpf_sa_admin.php:356
 msgid "Forecast Day"
 msgstr "Прогноза за деня"
 
-#: wp-forecast-admin.php:617 wpf_sa_admin.php:357
+#: wp-forecast-admin.php:627 wpf_sa_admin.php:357
 msgid "Forecast Night"
 msgstr "Прогноза за вечерта"
 
-#: wp-forecast-admin.php:620 wpf_sa_admin.php:360
+#: wp-forecast-admin.php:630 wpf_sa_admin.php:360
 msgid "Icon"
 msgstr "Икона"
 
-#: wp-forecast-admin.php:629 wpf_sa_admin.php:369
+#: wp-forecast-admin.php:639 wpf_sa_admin.php:369
 msgid "Date"
 msgstr "Дата"
 
-#: wp-forecast-admin.php:636 wpf_sa_admin.php:376
+#: wp-forecast-admin.php:646 wpf_sa_admin.php:376
 msgid "Time"
 msgstr "Час"
 
-#: wp-forecast-admin.php:643 wpf_sa_admin.php:383
+#: wp-forecast-admin.php:653 wpf_sa_admin.php:383
 msgid "Short Description"
 msgstr "Кратко описание"
 
-#: wp-forecast-admin.php:652 wpf_sa_admin.php:392
+#: wp-forecast-admin.php:662 wpf_sa_admin.php:392
 msgid "Temperature"
 msgstr "Температура"
 
-#: wp-forecast-admin.php:661 wpf_sa_admin.php:401
+#: wp-forecast-admin.php:671 wpf_sa_admin.php:401
 msgid "Realfeel"
 msgstr "Усеща се като"
 
-#: wp-forecast-admin.php:668 wpf_sa_admin.php:408
+#: wp-forecast-admin.php:678 wpf_sa_admin.php:408
 msgid "Pressure"
 msgstr "Налягане"
 
-#: wp-forecast-admin.php:675 wpf_sa_admin.php:415
+#: wp-forecast-admin.php:685 wpf_sa_admin.php:415
 msgid "Humidity"
 msgstr "Влажност"
 
-#: wp-forecast-admin.php:682 wpf_sa_admin.php:422
+#: wp-forecast-admin.php:692 wpf_sa_admin.php:422
 msgid "Wind"
 msgstr "Вятър"
 
-#: wp-forecast-admin.php:691 wp-forecast-show.php:322 wp-forecast-show.php:433
-#: wp-forecast-show.php:487 wpf_sa_admin.php:431
+#: wp-forecast-admin.php:701 wp-forecast-show.php:337 wp-forecast-show.php:458
+#: wp-forecast-show.php:522 wpf_sa_admin.php:431
 msgid "Windgusts"
 msgstr "Ветровито"
 
-#: wp-forecast-admin.php:701 wp-forecast-show.php:326
+#: wp-forecast-admin.php:711 wp-forecast-show.php:341
 msgid "UV-Index"
 msgstr ""
 
-#: wp-forecast-admin.php:711 wpf_sa_admin.php:440
+#: wp-forecast-admin.php:721 wpf_sa_admin.php:440
 msgid "Sunrise"
 msgstr "Изгрев"
 
-#: wp-forecast-admin.php:718 wpf_sa_admin.php:447
+#: wp-forecast-admin.php:728 wpf_sa_admin.php:447
 msgid "Sunset"
 msgstr "Залез"
 
-#: wp-forecast-admin.php:725 wpf_sa_admin.php:454
+#: wp-forecast-admin.php:735 wpf_sa_admin.php:454
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:732 wpf_sa_admin.php:461
+#: wp-forecast-admin.php:742 wpf_sa_admin.php:461
 msgid "Link to Weatherprovider"
 msgstr "Връзка към доставчика"
 
-#: wp-forecast-admin.php:735 wpf_sa_admin.php:464
+#: wp-forecast-admin.php:745 wpf_sa_admin.php:464
 msgid "Open in new Window"
 msgstr "Отвори в нов прозорец"
 
-#: wp-forecast-admin.php:743 wp-forecast-show.php:375 wpf_sa_admin.php:472
+#: wp-forecast-admin.php:753 wp-forecast-show.php:390 wpf_sa_admin.php:472
 msgid "Forecast"
 msgstr "Прогноза за"
 
-#: wp-forecast-admin.php:748 wpf_sa_admin.php:477
+#: wp-forecast-admin.php:758 wpf_sa_admin.php:477
 msgid "All"
 msgstr "Всички"
 
-#: wp-forecast-admin.php:749 wp-forecast-admin.php:750
-#: wp-forecast-admin.php:751 wp-forecast-admin.php:752
-#: wp-forecast-admin.php:753 wp-forecast-admin.php:754
-#: wp-forecast-admin.php:755 wp-forecast-admin.php:756
-#: wp-forecast-admin.php:757 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wp-forecast-admin.php:759 wp-forecast-admin.php:760
+#: wp-forecast-admin.php:761 wp-forecast-admin.php:762
+#: wp-forecast-admin.php:763 wp-forecast-admin.php:764
+#: wp-forecast-admin.php:765 wp-forecast-admin.php:766
+#: wp-forecast-admin.php:767 wpf_sa_admin.php:478 wpf_sa_admin.php:479
 #: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
 #: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
 #: wpf_sa_admin.php:486
 msgid "Day"
 msgstr "Ден"
 
-#: wp-forecast-admin.php:759 wpf_sa_admin.php:488
+#: wp-forecast-admin.php:769 wpf_sa_admin.php:488
 msgid "Daytime"
 msgstr "Дневно време"
 
-#: wp-forecast-admin.php:780 wpf_sa_admin.php:509
+#: wp-forecast-admin.php:790 wpf_sa_admin.php:509
 msgid "Nighttime"
 msgstr "Нощно време"
 
@@ -383,47 +387,47 @@ msgstr "Опитайте отново по-късно."
 msgid "time"
 msgstr "Време"
 
-#: wp-forecast-show.php:302
+#: wp-forecast-show.php:317
 msgid "flik"
 msgstr "Усеща се като"
 
-#: wp-forecast-show.php:305
+#: wp-forecast-show.php:320
 msgid "barr"
 msgstr "Налягане"
 
-#: wp-forecast-show.php:313
+#: wp-forecast-show.php:328
 msgid "hmid"
 msgstr "Влажност"
 
-#: wp-forecast-show.php:317 wp-forecast-show.php:428 wp-forecast-show.php:480
+#: wp-forecast-show.php:332 wp-forecast-show.php:453 wp-forecast-show.php:515
 msgid "winds"
 msgstr "Вятър"
 
-#: wp-forecast-show.php:330
+#: wp-forecast-show.php:345
 msgid "sunrise"
 msgstr "Изгрев"
 
-#: wp-forecast-show.php:334
+#: wp-forecast-show.php:349
 msgid "sunset"
 msgstr "Залез"
 
-#: wp-forecast-show.php:384
+#: wp-forecast-show.php:399
 msgid "day"
 msgstr "Ден"
 
-#: wp-forecast-show.php:438 wp-forecast-show.php:492
+#: wp-forecast-show.php:463 wp-forecast-show.php:527
 msgid "max. UV-Index"
 msgstr ""
 
-#: wp-forecast-show.php:450
+#: wp-forecast-show.php:475
 msgid "night"
 msgstr "Нощ"
 
-#: wp-forecast-show.php:517 wp-forecast-show.php:518
+#: wp-forecast-show.php:552 wp-forecast-show.php:553
 msgid "Less forecast..."
 msgstr "Скрий прогнозата"
 
-#: wp-forecast-show.php:519
+#: wp-forecast-show.php:554
 msgid "More forecast..."
 msgstr "Покажи прогнозата за 3 дни"
 

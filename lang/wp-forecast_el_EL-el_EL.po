@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: wp-forecast 4.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-13 09:33+0200\n"
-"PO-Revision-Date: 2012-10-30 13:10+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2013-10-21 13:31+0200\n"
+"Last-Translator: Nikos <domnista@hotmail.com>\n"
 "Language-Team: \n"
 "Language: el_EL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: class-wpf_widget.php:75 wp-forecast-admin.php:106
@@ -247,7 +247,7 @@ msgstr "Ριπές ανέμου"
 
 #: wp-forecast-admin.php:701 wp-forecast-show.php:326
 msgid "UV-Index"
-msgstr ""
+msgstr "Υπεριώδης ακτινοβολία (UV)"
 
 #: wp-forecast-admin.php:711 wpf_sa_admin.php:440
 msgid "Sunrise"
@@ -417,7 +417,7 @@ msgstr "ημέρα"
 
 #: wp-forecast-show.php:438 wp-forecast-show.php:492
 msgid "max. UV-Index"
-msgstr ""
+msgstr "μεγ. Υπεριώδης ακτινοβολία (UV)"
 
 #: wp-forecast-show.php:450
 msgid "night"
