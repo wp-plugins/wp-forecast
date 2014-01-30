@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast 4.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-13 09:33+0200\n"
+"POT-Creation-Date: 2014-01-12 08:00+0100\n"
 "PO-Revision-Date: 2013-10-21 13:31+0200\n"
 "Last-Translator: Nikos <domnista@hotmail.com>\n"
 "Language-Team: \n"
@@ -75,224 +75,232 @@ msgstr "Διαγραφή των επιλογών κατά την απενεργ�
 msgid "Check connection to Weatherprovider"
 msgstr "Έλεγχος σύνδεσης με τον πάροχο καιρού"
 
-#: wp-forecast-admin.php:453 wpf_sa_admin.php:195
+#: wp-forecast-admin.php:465 wpf_sa_admin.php:195
 msgid "Settings successfully updated"
 msgstr "Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς"
 
-#: wp-forecast-admin.php:455
+#: wp-forecast-admin.php:467
 msgid "You have to change a field to update settings."
 msgstr ""
 "Θα πρέπει να κάνετε αλλαγή σε κάποιο πεδίο για να ανανεώσετε τις ρυθμίσεις."
 
-#: wp-forecast-admin.php:502
+#: wp-forecast-admin.php:514
 msgid "WP-Forecast Setup"
 msgstr "Ρυθμίσεις WP-Forecast"
 
-#: wp-forecast-admin.php:505 wpf_sa_admin.php:265
+#: wp-forecast-admin.php:517 wpf_sa_admin.php:265
 msgid "Weatherservice"
 msgstr "Υπηρεσία καιρού"
 
-#: wp-forecast-admin.php:507 wpf_sa_admin.php:267
+#: wp-forecast-admin.php:519 wpf_sa_admin.php:267
 msgid "AccuWeather"
 msgstr "AccuWeather"
 
-#: wp-forecast-admin.php:508 wpf_sa_admin.php:268
+#: wp-forecast-admin.php:520 wpf_sa_admin.php:268
 msgid "WeatherBug"
 msgstr "WeatherBug"
 
-#: wp-forecast-admin.php:509
+#: wp-forecast-admin.php:521
 msgid "GoogleWeather"
 msgstr "GoogleWeather"
 
-#: wp-forecast-admin.php:512
+#: wp-forecast-admin.php:524
 msgid "Partner ID"
 msgstr "Partner ID"
 
-#: wp-forecast-admin.php:515 wpf_sa_admin.php:274
+#: wp-forecast-admin.php:527 wpf_sa_admin.php:274
 msgid "Licensekey"
 msgstr "Αριθμός κλειδιού"
 
-#: wp-forecast-admin.php:520 wpf_sa_admin.php:279
+#: wp-forecast-admin.php:532 wpf_sa_admin.php:279
 msgid "Location"
 msgstr "Τοποθεσία"
 
-#: wp-forecast-admin.php:529 wpf_sa_admin.php:282
+#: wp-forecast-admin.php:541 wpf_sa_admin.php:282
 msgid "Press Update options to save new location."
 msgstr "Πατήστε ανανέωση επιλογών για να αποθηκευτεί η νέα τοποθεσία."
 
-#: wp-forecast-admin.php:532 wpf_sa_admin.php:285
+#: wp-forecast-admin.php:544 wpf_sa_admin.php:285
 msgid "Locationname"
 msgstr "Όνομα τοποθεσίας"
 
-#: wp-forecast-admin.php:534 wpf_sa_admin.php:288
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:288
 msgid "Refresh cache after"
 msgstr "Ανανέωση μνήμης μετά από"
 
-#: wp-forecast-admin.php:536 wpf_sa_admin.php:290
+#: wp-forecast-admin.php:548 wpf_sa_admin.php:290
 msgid "secs."
 msgstr "δευτ."
 
-#: wp-forecast-admin.php:537 wpf_sa_admin.php:291
+#: wp-forecast-admin.php:549 wpf_sa_admin.php:291
 msgid "Use metric units"
 msgstr "Χρήση μονάδων μετρικού συστήματος"
 
-#: wp-forecast-admin.php:540 wpf_sa_admin.php:294
+#: wp-forecast-admin.php:552 wpf_sa_admin.php:294
 msgid "Use current time"
 msgstr "Χρήση τωρινής ώρας"
 
-#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 msgid "Time-Offset"
 msgstr "Time-Offset"
 
-#: wp-forecast-admin.php:541 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 msgid "minutes"
 msgstr "λεπτά"
 
-#: wp-forecast-admin.php:544 wpf_sa_admin.php:298
+#: wp-forecast-admin.php:556 wpf_sa_admin.php:298
 msgid "Windspeed-Unit"
 msgstr "Μονάδα ταχύτητας ανέμων"
 
-#: wp-forecast-admin.php:545 wpf_sa_admin.php:299
+#: wp-forecast-admin.php:557 wpf_sa_admin.php:299
 msgid "Meter/Second (m/s)"
 msgstr "μέτρα/δευτερόλεπτο (μ/δ)"
 
-#: wp-forecast-admin.php:546 wpf_sa_admin.php:300
+#: wp-forecast-admin.php:558 wpf_sa_admin.php:300
 msgid "Kilometer/Hour (km/h)"
 msgstr "Χιλιόμετρα/ώρα (χιλ/ω)"
 
-#: wp-forecast-admin.php:547 wpf_sa_admin.php:301
+#: wp-forecast-admin.php:559 wpf_sa_admin.php:301
 msgid "Miles/Hour (mph)"
 msgstr "Μίλια/ώρα (μιλια/ω)"
 
-#: wp-forecast-admin.php:548 wpf_sa_admin.php:302
+#: wp-forecast-admin.php:560 wpf_sa_admin.php:302
 msgid "Knots (kts)"
 msgstr "Knots (kts)"
 
-#: wp-forecast-admin.php:549 wpf_sa_admin.php:303
+#: wp-forecast-admin.php:561 wpf_sa_admin.php:303
 msgid "Beaufort (bft)"
 msgstr "μποφόρ (bft)"
 
-#: wp-forecast-admin.php:556 wpf_sa_admin.php:310
+#: wp-forecast-admin.php:568 wpf_sa_admin.php:310
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: wp-forecast-admin.php:585 wpf_sa_admin.php:329
+#: wp-forecast-admin.php:597 wpf_sa_admin.php:329
 msgid "Show forecast as ajax pull-down"
 msgstr "Εμφάνιση πρόβλεψης ως αναδυόμενο μενού ajax"
 
-#: wp-forecast-admin.php:589 wpf_sa_admin.php:333
+#: wp-forecast-admin.php:601 wpf_sa_admin.php:333
 msgid "First day in pull-down"
 msgstr "Πρώτη μέρα στο αναδυόμενο μενού"
 
-#: wp-forecast-admin.php:604 wpf_sa_admin.php:538
+#: wp-forecast-admin.php:615
+msgid "Show wind condition as icon"
+msgstr ""
+
+#: wp-forecast-admin.php:617
+msgid "Use CSS-Sprites for showing icons"
+msgstr ""
+
+#: wp-forecast-admin.php:622 wpf_sa_admin.php:538
 msgid "Update options"
 msgstr "Ανανέωση επιλογών"
 
-#: wp-forecast-admin.php:611 wpf_sa_admin.php:351
+#: wp-forecast-admin.php:629 wpf_sa_admin.php:351
 msgid "Display Configuration"
 msgstr "Εμφάνιση διαμόρφωσης"
 
-#: wp-forecast-admin.php:615 wpf_sa_admin.php:355
+#: wp-forecast-admin.php:633 wpf_sa_admin.php:355
 msgid "Current Conditions"
 msgstr "Τρέχουσες συνθήκες"
 
-#: wp-forecast-admin.php:616 wpf_sa_admin.php:356
+#: wp-forecast-admin.php:634 wpf_sa_admin.php:356
 msgid "Forecast Day"
 msgstr "Πρόβλεψη ημέρας"
 
-#: wp-forecast-admin.php:617 wpf_sa_admin.php:357
+#: wp-forecast-admin.php:635 wpf_sa_admin.php:357
 msgid "Forecast Night"
 msgstr "Πρόβλεψη νύχτας"
 
-#: wp-forecast-admin.php:620 wpf_sa_admin.php:360
+#: wp-forecast-admin.php:638 wpf_sa_admin.php:360
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: wp-forecast-admin.php:629 wpf_sa_admin.php:369
+#: wp-forecast-admin.php:647 wpf_sa_admin.php:369
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: wp-forecast-admin.php:636 wpf_sa_admin.php:376
+#: wp-forecast-admin.php:654 wpf_sa_admin.php:376
 msgid "Time"
 msgstr "Ώρα"
 
-#: wp-forecast-admin.php:643 wpf_sa_admin.php:383
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:383
 msgid "Short Description"
 msgstr "Σύντομη περιγραφή"
 
-#: wp-forecast-admin.php:652 wpf_sa_admin.php:392
+#: wp-forecast-admin.php:670 wpf_sa_admin.php:392
 msgid "Temperature"
 msgstr "Θερμοκρασία"
 
-#: wp-forecast-admin.php:661 wpf_sa_admin.php:401
+#: wp-forecast-admin.php:679 wpf_sa_admin.php:401
 msgid "Realfeel"
 msgstr "Πραγματική αίσθηση"
 
-#: wp-forecast-admin.php:668 wpf_sa_admin.php:408
+#: wp-forecast-admin.php:686 wpf_sa_admin.php:408
 msgid "Pressure"
 msgstr "Πίεση"
 
-#: wp-forecast-admin.php:675 wpf_sa_admin.php:415
+#: wp-forecast-admin.php:693 wpf_sa_admin.php:415
 msgid "Humidity"
 msgstr "Υγρασία"
 
-#: wp-forecast-admin.php:682 wpf_sa_admin.php:422
+#: wp-forecast-admin.php:700 wpf_sa_admin.php:422
 msgid "Wind"
 msgstr "Άνεμοι"
 
-#: wp-forecast-admin.php:691 wp-forecast-show.php:322 wp-forecast-show.php:433
-#: wp-forecast-show.php:487 wpf_sa_admin.php:431
+#: wp-forecast-admin.php:709 wp-forecast-show.php:346 wp-forecast-show.php:472
+#: wp-forecast-show.php:541 wpf_sa_admin.php:431
 msgid "Windgusts"
 msgstr "Ριπές ανέμου"
 
-#: wp-forecast-admin.php:701 wp-forecast-show.php:326
+#: wp-forecast-admin.php:719 wp-forecast-show.php:350
 msgid "UV-Index"
 msgstr "Υπεριώδης ακτινοβολία (UV)"
 
-#: wp-forecast-admin.php:711 wpf_sa_admin.php:440
+#: wp-forecast-admin.php:729 wpf_sa_admin.php:440
 msgid "Sunrise"
 msgstr "Ανατολή"
 
-#: wp-forecast-admin.php:718 wpf_sa_admin.php:447
+#: wp-forecast-admin.php:736 wpf_sa_admin.php:447
 msgid "Sunset"
 msgstr "Ηλιοβασίλεμα"
 
-#: wp-forecast-admin.php:725 wpf_sa_admin.php:454
+#: wp-forecast-admin.php:743 wpf_sa_admin.php:454
 msgid "Copyright"
 msgstr "Πνευματικά δικαιώματα"
 
-#: wp-forecast-admin.php:732 wpf_sa_admin.php:461
+#: wp-forecast-admin.php:750 wpf_sa_admin.php:461
 msgid "Link to Weatherprovider"
 msgstr "Σύνδεσμος στον πάροχο καιρού"
 
-#: wp-forecast-admin.php:735 wpf_sa_admin.php:464
+#: wp-forecast-admin.php:753 wpf_sa_admin.php:464
 msgid "Open in new Window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
-#: wp-forecast-admin.php:743 wp-forecast-show.php:375 wpf_sa_admin.php:472
+#: wp-forecast-admin.php:761 wp-forecast-show.php:399 wpf_sa_admin.php:472
 msgid "Forecast"
 msgstr "Πρόβλεψη"
 
-#: wp-forecast-admin.php:748 wpf_sa_admin.php:477
+#: wp-forecast-admin.php:766 wpf_sa_admin.php:477
 msgid "All"
 msgstr "Όλα"
 
-#: wp-forecast-admin.php:749 wp-forecast-admin.php:750
-#: wp-forecast-admin.php:751 wp-forecast-admin.php:752
-#: wp-forecast-admin.php:753 wp-forecast-admin.php:754
-#: wp-forecast-admin.php:755 wp-forecast-admin.php:756
-#: wp-forecast-admin.php:757 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wp-forecast-admin.php:767 wp-forecast-admin.php:768
+#: wp-forecast-admin.php:769 wp-forecast-admin.php:770
+#: wp-forecast-admin.php:771 wp-forecast-admin.php:772
+#: wp-forecast-admin.php:773 wp-forecast-admin.php:774
+#: wp-forecast-admin.php:775 wpf_sa_admin.php:478 wpf_sa_admin.php:479
 #: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
 #: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
 #: wpf_sa_admin.php:486
 msgid "Day"
 msgstr "Ημέρα"
 
-#: wp-forecast-admin.php:759 wpf_sa_admin.php:488
+#: wp-forecast-admin.php:777 wpf_sa_admin.php:488
 msgid "Daytime"
 msgstr "Διάρκεια ημέρας"
 
-#: wp-forecast-admin.php:780 wpf_sa_admin.php:509
+#: wp-forecast-admin.php:798 wpf_sa_admin.php:509
 msgid "Nighttime"
 msgstr "Διάρκεια νύχτας"
 
@@ -387,47 +395,47 @@ msgstr "Παρακαλώ δοκιμάστε αργότερα."
 msgid "time"
 msgstr "ώρα"
 
-#: wp-forecast-show.php:302
+#: wp-forecast-show.php:326
 msgid "flik"
 msgstr "πραγματική αίσθηση"
 
-#: wp-forecast-show.php:305
+#: wp-forecast-show.php:329
 msgid "barr"
 msgstr "πίεση"
 
-#: wp-forecast-show.php:313
+#: wp-forecast-show.php:337
 msgid "hmid"
 msgstr "υγρασία"
 
-#: wp-forecast-show.php:317 wp-forecast-show.php:428 wp-forecast-show.php:480
+#: wp-forecast-show.php:341 wp-forecast-show.php:467 wp-forecast-show.php:534
 msgid "winds"
 msgstr "ταχύτητα ανέμου"
 
-#: wp-forecast-show.php:330
+#: wp-forecast-show.php:354
 msgid "sunrise"
 msgstr "ανατολή"
 
-#: wp-forecast-show.php:334
+#: wp-forecast-show.php:358
 msgid "sunset"
 msgstr "ηλιοβασίλεμα"
 
-#: wp-forecast-show.php:384
+#: wp-forecast-show.php:408
 msgid "day"
 msgstr "ημέρα"
 
-#: wp-forecast-show.php:438 wp-forecast-show.php:492
+#: wp-forecast-show.php:477 wp-forecast-show.php:546
 msgid "max. UV-Index"
 msgstr "μεγ. Υπεριώδης ακτινοβολία (UV)"
 
-#: wp-forecast-show.php:450
+#: wp-forecast-show.php:489
 msgid "night"
 msgstr "νύχτα"
 
-#: wp-forecast-show.php:517 wp-forecast-show.php:518
+#: wp-forecast-show.php:571 wp-forecast-show.php:572
 msgid "Less forecast..."
 msgstr "Λιγότερες ημέρες..."
 
-#: wp-forecast-show.php:519
+#: wp-forecast-show.php:573
 msgid "More forecast..."
 msgstr "Περισσότερες ημέρες..."
 

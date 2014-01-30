@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -114,6 +114,8 @@ function wp_forecast_activate()
       $av['windunit']="ms"; // Choose between ms, kmh, mph or kts
       $av['pdforecast']="0"; // pulldown forecast 0=No, 1=Yes
       $av['pdfirstday']="0"; // day to start pulldown with
+      $av['windicon']="0"; // show windicon 0=No 1=Yes
+      $av['csssprites']="0"; // use csssprites to display icons 0=No 1=Yes
 
       wpf_add_option( "wp-forecast-opts".$wpfcid, serialize($av) );
     }
@@ -155,7 +157,9 @@ function wp_forecast_activate()
 	  "ue_dispconfig"                => 1,
 	  "ue_forecast"                  => 1,
 	  "ue_daytime"                   => 1,
-	  "ue_nighttime"                 => 1
+	  "ue_nighttime"                 => 1,
+	  "ue_windicon"					 => 1,
+	  "ue_csssrpteis"				 => 1
 	  );
       
       if (!$wpf_sa_defaults) {

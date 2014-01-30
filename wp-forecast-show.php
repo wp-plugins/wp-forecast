@@ -1,6 +1,6 @@
 <?php
 
-/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -268,27 +268,34 @@ function show($wpfcid,$args,$wpfvars)
 		// show icon
 		$out .= "<div class='wp-forecast-curr-left'>";
 		if (substr($dispconfig,0,1) == "1") {
-			if ($service=="accu") {
-				$breite=0; $hoehe=0;
-				$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
-				if ($isize != false) {
-					$breite=$isize[0];
-					$hoehe=$isize[1];
+			
+				if ($service=="accu") {
+					$breite=0; $hoehe=0;
+					$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
+					if ($isize != false) {
+						$breite=$isize[0];
+						$hoehe=$isize[1];
+					}
+					if ($csssprites==1) { // mit CSS Sprites
+						$cssid = substr($w['icon'],strpos($w['icon'],"/")+1,strrpos($w['icon'],".")-strpos($w['icon'],"/")-1);
+						$out .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+					} else { // ohne CSS-Sprites		
+						$out .= "<img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' />\n";
+					}
 				}
-				$out .= "<img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' />\n";
-			}
-			if ($service=="bug")
-				$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
+				
+				if ($service=="bug")
+					$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
 
-			if ($service=="google")
-				$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
+				if ($service=="google")
+					$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
+			
 		}
 		$out .="<br />";
 		// show windicon
 		if ($windicon == "1") {
 			$breite=48; $hoehe=48;	
-			$wind_dir = str_replace("O","E",$w['winddir']);
-			$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+			$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['winddir_orig'] . '.png';
 			$out .= "<img src='" . $wind_icon_url ."' alt='".$w['winddir']. "' width='".$breite."' height='".$hoehe."' />\n";
 			}
 			
@@ -409,8 +416,13 @@ function show($wpfcid,$args,$wpfvars)
 	  			$breite=$isize[0];
 	  			$hoehe=$isize[1];
 	  		}
-	  		$out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/". $w['fc_dt_icon_'.$i]."' alt='".
+			if ($csssprites==1) { // mit CSS Sprites
+				$cssid = substr($w['fc_dt_icon_'.$i],strpos($w['fc_dt_icon_'.$i],"/")+1,strrpos($w['fc_dt_icon_'.$i],".")-strpos($w['fc_dt_icon_'.$i],"/")-1);
+				$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+			} else { // ohne CSS-Sprites		
+ 		  		$out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/". $w['fc_dt_icon_'.$i]."' alt='".
 	 	  		__($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language). "' width='$breite' height='$hoehe' />";
+	 	  	}
 	  	}
 		  if ($service=="bug")
 		  	$out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
@@ -429,8 +441,7 @@ function show($wpfcid,$args,$wpfvars)
 	  // show windicon
 	  if ($windicon == "1") {
 	  	$breite=48; $hoehe=48;
-	  	$wind_dir = str_replace("O","E",$w['fc_dt_winddir_'.$i]);
-	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['fc_dt_winddir_orig_'.$i] . '.png';
 	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_dt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
 	  }
 	  
@@ -483,8 +494,13 @@ function show($wpfcid,$args,$wpfvars)
 	  		$breite=$isize[0];
 	  		$hoehe=$isize[1];
 	  	}
-	  	$out1 .= "<img class='wp-forecast-fc-left' src='" .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
-	  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' width='$breite' height='$hoehe' />";
+		if ($csssprites==1) { // mit CSS Sprites
+			$cssid = substr($w['fc_nt_icon_'.$i],strpos($w['fc_nt_icon_'.$i],"/")+1,strrpos($w['fc_nt_icon_'.$i],".")-strpos($w['fc_nt_icon_'.$i],"/")-1);
+			$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+		} else { // ohne CSS-Sprites		
+		  	$out1 .= "<img class='wp-forecast-fc-left' src='" .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
+		  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' width='$breite' height='$hoehe' />";
+		}
 	  }
 	  else
 	  {
@@ -495,8 +511,7 @@ function show($wpfcid,$args,$wpfvars)
 	  // show windicon
 	  if ($windicon == "1") {
 	  	$breite=48; $hoehe=48;
-	  	$wind_dir = str_replace("O","E",$w['fc_nt_winddir_'.$i]);
-	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $wind_dir . '.png';
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['fc_nt_winddir_orig_'.$i] . '.png';
 	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_nt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
 	  }
 	  

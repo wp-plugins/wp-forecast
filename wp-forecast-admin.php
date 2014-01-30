@@ -410,6 +410,12 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
     	if ($av['windicon']=="") $av['windicon']="0";
     	$upflag=true;
     }
+    
+     if ($av['csssprites'] != $_POST["csssprites"] and (!$ismulti or isset($allowed["ue_csssprites"]))) {
+    	$av['csssprites'] =  $_POST["csssprites"];
+    	if ($av['csssprites']=="") $av['csssprites']="0";
+    	$upflag=true;
+    }
 
     // set checkbox value to zero if not set
     // for forecast options
@@ -607,6 +613,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
    <script type="text/javascript">pdfields_update();</script>
     
    <p><input type="checkbox" name="windicon" id="windicon" value="1" <?php if ($av['windicon']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Show wind condition as icon',"wp-forecast_".$locale)?></b>
+   </p>
+   <p><input type="checkbox" name="csssprites" id="csssprites" value="1" <?php if ($av['csssprites']=="1") echo "checked=\"checked\""?> /> <b><?php echo __('Use CSS-Sprites for showing icons',"wp-forecast_".$locale)?></b>
    </p>
    
 <?php 

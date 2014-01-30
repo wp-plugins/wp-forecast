@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-21 09:34+0200\n"
-"PO-Revision-Date: 2012-10-24 20:34+0200\n"
-"Last-Translator: Udi Burg <udi.burg@gmail.com>\n"
+"POT-Creation-Date: 2014-01-12 08:00+0100\n"
+"PO-Revision-Date: 2013-11-04 21:40+0200\n"
+"Last-Translator: Udi's Blog <blog@udiburg.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: class-wpf_widget.php:75 wp-forecast-admin.php:106
 msgid "Title:"
@@ -74,227 +74,231 @@ msgstr "האם למחוק את ההגדרות בזמן הפסקת פעילות �
 msgid "Check connection to Weatherprovider"
 msgstr "בדוק את החיבור לספק מידע מזג האוויר"
 
-#: wp-forecast-admin.php:459 wpf_sa_admin.php:195
+#: wp-forecast-admin.php:465 wpf_sa_admin.php:195
 msgid "Settings successfully updated"
 msgstr "ההגדרות עודכנו בהצלחה"
 
-#: wp-forecast-admin.php:461
+#: wp-forecast-admin.php:467
 msgid "You have to change a field to update settings."
 msgstr "אתם צריכים לשנות ערך על מנת לעדכן את ההגדרות."
 
-#: wp-forecast-admin.php:508
+#: wp-forecast-admin.php:514
 msgid "WP-Forecast Setup"
 msgstr "הגדרת התוסף"
 
-#: wp-forecast-admin.php:511 wpf_sa_admin.php:265
+#: wp-forecast-admin.php:517 wpf_sa_admin.php:265
 msgid "Weatherservice"
 msgstr "שירות מזג האוויר"
 
-#: wp-forecast-admin.php:513 wpf_sa_admin.php:267
+#: wp-forecast-admin.php:519 wpf_sa_admin.php:267
 msgid "AccuWeather"
-msgstr ""
+msgstr "AccuWeather"
 
-#: wp-forecast-admin.php:514 wpf_sa_admin.php:268
+#: wp-forecast-admin.php:520 wpf_sa_admin.php:268
 msgid "WeatherBug"
-msgstr ""
+msgstr "WeatherBug"
 
-#: wp-forecast-admin.php:515
+#: wp-forecast-admin.php:521
 msgid "GoogleWeather"
-msgstr ""
+msgstr "GoogleWeather"
 
-#: wp-forecast-admin.php:518
+#: wp-forecast-admin.php:524
 msgid "Partner ID"
 msgstr "מזהה שותף"
 
-#: wp-forecast-admin.php:521 wpf_sa_admin.php:274
+#: wp-forecast-admin.php:527 wpf_sa_admin.php:274
 msgid "Licensekey"
 msgstr "מספר רישיון"
 
-#: wp-forecast-admin.php:526 wpf_sa_admin.php:279
+#: wp-forecast-admin.php:532 wpf_sa_admin.php:279
 msgid "Location"
 msgstr "מיקום"
 
-#: wp-forecast-admin.php:535 wpf_sa_admin.php:282
+#: wp-forecast-admin.php:541 wpf_sa_admin.php:282
 msgid "Press Update options to save new location."
 msgstr "לחצו על עדכון אפשרויות כדי לשמור מיקום חדש"
 
-#: wp-forecast-admin.php:538 wpf_sa_admin.php:285
+#: wp-forecast-admin.php:544 wpf_sa_admin.php:285
 msgid "Locationname"
 msgstr "שם המיקום"
 
-#: wp-forecast-admin.php:540 wpf_sa_admin.php:288
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:288
 msgid "Refresh cache after"
 msgstr "רעננו לאחר"
 
-#: wp-forecast-admin.php:542 wpf_sa_admin.php:290
+#: wp-forecast-admin.php:548 wpf_sa_admin.php:290
 msgid "secs."
 msgstr "שניות"
 
-#: wp-forecast-admin.php:543 wpf_sa_admin.php:291
+#: wp-forecast-admin.php:549 wpf_sa_admin.php:291
 msgid "Use metric units"
 msgstr "השתמשו ביחידות מטריות"
 
-#: wp-forecast-admin.php:546 wpf_sa_admin.php:294
+#: wp-forecast-admin.php:552 wpf_sa_admin.php:294
 msgid "Use current time"
 msgstr "השתמשו בזמן נוכחי"
 
-#: wp-forecast-admin.php:547 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 msgid "Time-Offset"
 msgstr ""
 
-#: wp-forecast-admin.php:547 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 msgid "minutes"
 msgstr "דקות"
 
-#: wp-forecast-admin.php:550 wpf_sa_admin.php:298
+#: wp-forecast-admin.php:556 wpf_sa_admin.php:298
 msgid "Windspeed-Unit"
 msgstr "יחידות מהירות רוח"
 
-#: wp-forecast-admin.php:551 wpf_sa_admin.php:299
+#: wp-forecast-admin.php:557 wpf_sa_admin.php:299
 msgid "Meter/Second (m/s)"
 msgstr "מטר לשנייה (מ'/שנ')"
 
-#: wp-forecast-admin.php:552 wpf_sa_admin.php:300
+#: wp-forecast-admin.php:558 wpf_sa_admin.php:300
 msgid "Kilometer/Hour (km/h)"
 msgstr "קילומטר/שעה (קמ\"ש)"
 
-#: wp-forecast-admin.php:553 wpf_sa_admin.php:301
+#: wp-forecast-admin.php:559 wpf_sa_admin.php:301
 msgid "Miles/Hour (mph)"
 msgstr "מייל לשעה (מ'/ש')"
 
-#: wp-forecast-admin.php:554 wpf_sa_admin.php:302
+#: wp-forecast-admin.php:560 wpf_sa_admin.php:302
 msgid "Knots (kts)"
 msgstr ""
 
-#: wp-forecast-admin.php:555 wpf_sa_admin.php:303
+#: wp-forecast-admin.php:561 wpf_sa_admin.php:303
 msgid "Beaufort (bft)"
 msgstr ""
 
-#: wp-forecast-admin.php:562 wpf_sa_admin.php:310
+#: wp-forecast-admin.php:568 wpf_sa_admin.php:310
 msgid "Language"
 msgstr "שפה"
 
-#: wp-forecast-admin.php:591 wpf_sa_admin.php:329
+#: wp-forecast-admin.php:597 wpf_sa_admin.php:329
 msgid "Show forecast as ajax pull-down"
 msgstr "הראה את התחזית כתפריט נגלל מטה (אג'קס)"
 
-#: wp-forecast-admin.php:595 wpf_sa_admin.php:333
+#: wp-forecast-admin.php:601 wpf_sa_admin.php:333
 msgid "First day in pull-down"
 msgstr "היום הראשון בתפריט נגלל מטה"
 
-#: wp-forecast-admin.php:609
+#: wp-forecast-admin.php:615
 msgid "Show wind condition as icon"
+msgstr "הראה את מצב הרוח כאייקון"
+
+#: wp-forecast-admin.php:617
+msgid "Use CSS-Sprites for showing icons"
 msgstr ""
 
-#: wp-forecast-admin.php:614 wpf_sa_admin.php:538
+#: wp-forecast-admin.php:622 wpf_sa_admin.php:538
 msgid "Update options"
 msgstr "עדכן אפשרויות"
 
-#: wp-forecast-admin.php:621 wpf_sa_admin.php:351
+#: wp-forecast-admin.php:629 wpf_sa_admin.php:351
 msgid "Display Configuration"
 msgstr "הצג הגדרות"
 
-#: wp-forecast-admin.php:625 wpf_sa_admin.php:355
+#: wp-forecast-admin.php:633 wpf_sa_admin.php:355
 msgid "Current Conditions"
 msgstr "תנאים נוכחיים"
 
-#: wp-forecast-admin.php:626 wpf_sa_admin.php:356
+#: wp-forecast-admin.php:634 wpf_sa_admin.php:356
 msgid "Forecast Day"
 msgstr "תחזית יום"
 
-#: wp-forecast-admin.php:627 wpf_sa_admin.php:357
+#: wp-forecast-admin.php:635 wpf_sa_admin.php:357
 msgid "Forecast Night"
 msgstr "תחזית לילה"
 
-#: wp-forecast-admin.php:630 wpf_sa_admin.php:360
+#: wp-forecast-admin.php:638 wpf_sa_admin.php:360
 msgid "Icon"
 msgstr "אייקון"
 
-#: wp-forecast-admin.php:639 wpf_sa_admin.php:369
+#: wp-forecast-admin.php:647 wpf_sa_admin.php:369
 msgid "Date"
 msgstr "תאריך"
 
-#: wp-forecast-admin.php:646 wpf_sa_admin.php:376
+#: wp-forecast-admin.php:654 wpf_sa_admin.php:376
 msgid "Time"
 msgstr "שעה"
 
-#: wp-forecast-admin.php:653 wpf_sa_admin.php:383
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:383
 msgid "Short Description"
 msgstr "תאור קצר"
 
-#: wp-forecast-admin.php:662 wpf_sa_admin.php:392
+#: wp-forecast-admin.php:670 wpf_sa_admin.php:392
 msgid "Temperature"
 msgstr "טמפרטורה"
 
-#: wp-forecast-admin.php:671 wpf_sa_admin.php:401
+#: wp-forecast-admin.php:679 wpf_sa_admin.php:401
 msgid "Realfeel"
 msgstr "תחושה אמיתית"
 
-#: wp-forecast-admin.php:678 wpf_sa_admin.php:408
+#: wp-forecast-admin.php:686 wpf_sa_admin.php:408
 msgid "Pressure"
 msgstr "לחץ ברומטרי"
 
-#: wp-forecast-admin.php:685 wpf_sa_admin.php:415
+#: wp-forecast-admin.php:693 wpf_sa_admin.php:415
 msgid "Humidity"
 msgstr "לחות"
 
-#: wp-forecast-admin.php:692 wpf_sa_admin.php:422
+#: wp-forecast-admin.php:700 wpf_sa_admin.php:422
 msgid "Wind"
 msgstr "רוח"
 
-#: wp-forecast-admin.php:701 wp-forecast-show.php:337 wp-forecast-show.php:458
-#: wp-forecast-show.php:522 wpf_sa_admin.php:431
+#: wp-forecast-admin.php:709 wp-forecast-show.php:346 wp-forecast-show.php:472
+#: wp-forecast-show.php:541 wpf_sa_admin.php:431
 msgid "Windgusts"
 msgstr "משבי רוח"
 
-#: wp-forecast-admin.php:711 wp-forecast-show.php:341
+#: wp-forecast-admin.php:719 wp-forecast-show.php:350
 msgid "UV-Index"
-msgstr ""
+msgstr "מדד UV"
 
-#: wp-forecast-admin.php:721 wpf_sa_admin.php:440
+#: wp-forecast-admin.php:729 wpf_sa_admin.php:440
 msgid "Sunrise"
 msgstr "זריחה"
 
-#: wp-forecast-admin.php:728 wpf_sa_admin.php:447
+#: wp-forecast-admin.php:736 wpf_sa_admin.php:447
 msgid "Sunset"
 msgstr "שקיעה"
 
-#: wp-forecast-admin.php:735 wpf_sa_admin.php:454
+#: wp-forecast-admin.php:743 wpf_sa_admin.php:454
 msgid "Copyright"
 msgstr "זכויות יוצרים"
 
-#: wp-forecast-admin.php:742 wpf_sa_admin.php:461
+#: wp-forecast-admin.php:750 wpf_sa_admin.php:461
 msgid "Link to Weatherprovider"
 msgstr "קישור לספק מזג האוויר"
 
-#: wp-forecast-admin.php:745 wpf_sa_admin.php:464
+#: wp-forecast-admin.php:753 wpf_sa_admin.php:464
 msgid "Open in new Window"
 msgstr "פתח בחלון חדש"
 
-#: wp-forecast-admin.php:753 wp-forecast-show.php:390 wpf_sa_admin.php:472
+#: wp-forecast-admin.php:761 wp-forecast-show.php:399 wpf_sa_admin.php:472
 msgid "Forecast"
 msgstr "תחזית"
 
-#: wp-forecast-admin.php:758 wpf_sa_admin.php:477
+#: wp-forecast-admin.php:766 wpf_sa_admin.php:477
 msgid "All"
 msgstr "הכל"
 
-#: wp-forecast-admin.php:759 wp-forecast-admin.php:760
-#: wp-forecast-admin.php:761 wp-forecast-admin.php:762
-#: wp-forecast-admin.php:763 wp-forecast-admin.php:764
-#: wp-forecast-admin.php:765 wp-forecast-admin.php:766
-#: wp-forecast-admin.php:767 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wp-forecast-admin.php:767 wp-forecast-admin.php:768
+#: wp-forecast-admin.php:769 wp-forecast-admin.php:770
+#: wp-forecast-admin.php:771 wp-forecast-admin.php:772
+#: wp-forecast-admin.php:773 wp-forecast-admin.php:774
+#: wp-forecast-admin.php:775 wpf_sa_admin.php:478 wpf_sa_admin.php:479
 #: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
 #: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
 #: wpf_sa_admin.php:486
 msgid "Day"
 msgstr "יום"
 
-#: wp-forecast-admin.php:769 wpf_sa_admin.php:488
+#: wp-forecast-admin.php:777 wpf_sa_admin.php:488
 msgid "Daytime"
 msgstr "שעות יום"
 
-#: wp-forecast-admin.php:790 wpf_sa_admin.php:509
+#: wp-forecast-admin.php:798 wpf_sa_admin.php:509
 msgid "Nighttime"
 msgstr "שעות לילה"
 
@@ -382,47 +386,47 @@ msgstr "נסו שוב מאוחר יותר."
 msgid "time"
 msgstr "זמן"
 
-#: wp-forecast-show.php:317
+#: wp-forecast-show.php:326
 msgid "flik"
 msgstr "מרגיש כמו"
 
-#: wp-forecast-show.php:320
+#: wp-forecast-show.php:329
 msgid "barr"
 msgstr "לחץ ברומטרי"
 
-#: wp-forecast-show.php:328
+#: wp-forecast-show.php:337
 msgid "hmid"
 msgstr "לחות"
 
-#: wp-forecast-show.php:332 wp-forecast-show.php:453 wp-forecast-show.php:515
+#: wp-forecast-show.php:341 wp-forecast-show.php:467 wp-forecast-show.php:534
 msgid "winds"
 msgstr "רוחות"
 
-#: wp-forecast-show.php:345
+#: wp-forecast-show.php:354
 msgid "sunrise"
 msgstr "זריחה"
 
-#: wp-forecast-show.php:349
+#: wp-forecast-show.php:358
 msgid "sunset"
 msgstr "שקיעה"
 
-#: wp-forecast-show.php:399
+#: wp-forecast-show.php:408
 msgid "day"
 msgstr "יום"
 
-#: wp-forecast-show.php:463 wp-forecast-show.php:527
+#: wp-forecast-show.php:477 wp-forecast-show.php:546
 msgid "max. UV-Index"
-msgstr ""
+msgstr "מדד UV מקסימלי"
 
-#: wp-forecast-show.php:475
+#: wp-forecast-show.php:489
 msgid "night"
 msgstr "לילה"
 
-#: wp-forecast-show.php:552 wp-forecast-show.php:553
+#: wp-forecast-show.php:571 wp-forecast-show.php:572
 msgid "Less forecast..."
 msgstr "תחזית מקוצרת..."
 
-#: wp-forecast-show.php:554
+#: wp-forecast-show.php:573
 msgid "More forecast..."
 msgstr "תחזית מורחבת..."
 
@@ -437,7 +441,7 @@ msgstr "תוסף מזג האוויר לא נמצא. נא התקן והפעל א�
 
 #: wpf_sa_admin.php:208
 msgid "Check the colored checkboxes to user enable the options"
-msgstr ""
+msgstr "סמנו את תיבות הסימון הצבעוניות כדי להפעיל את האפשרויות"
 
 #: wpf_sa_admin.php:213
 msgid "Maximal number of widgets per user"
@@ -901,11 +905,11 @@ msgstr "סיכוי לשלג"
 
 #: xgettextdummy.php:115
 msgid "Chance of Snow Showers"
-msgstr ""
+msgstr "סיכויים לממטרי שלג"
 
 #: xgettextdummy.php:116
 msgid "Chance of Storms"
-msgstr ""
+msgstr "סיכויים לסופה"
 
 #: xgettextdummy.php:117
 msgid "Clear"
@@ -993,7 +997,7 @@ msgstr "בעיקר שמש"
 
 #: xgettextdummy.php:138
 msgid "Nowcast"
-msgstr ""
+msgstr "Nowcast"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"

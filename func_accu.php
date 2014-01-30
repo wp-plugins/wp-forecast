@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -335,6 +335,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['humidity']=round($w["humidity"],0);
     $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
     $weather_arr['winddir']=translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language);
+    $weather_arr['winddir_orig']=str_replace('O','E',$w["winddirection"]);
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     $sunarr = explode(" ",$w["sun"]);
     $weather_arr['sunrise']= date_i18n($fc_time_format,strtotime($sunarr[0]));
@@ -354,6 +355,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
       $wstr=windstr($metric,$w["fc_dt_windspeed_".$i],$windunit);
       $weather_arr["fc_dt_windspeed_".$i]= $wstr;
       $weather_arr["fc_dt_winddir_".$i]=translate_winddir($w["fc_dt_winddir_".$i],"wp-forecast_".$wpf_language);
+      $weather_arr["fc_dt_winddir_orig_".$i]=str_replace('O','E',$w["fc_dt_winddir_".$i]);
       $weather_arr["fc_dt_wgusts_".$i] = windstr($metric,$w["fc_dt_wgusts_".$i],$windunit);
       $weather_arr['fc_dt_maxuv_'.$i]=$w['fc_dt_maxuv_'.$i];
       
@@ -366,6 +368,7 @@ function accu_forecast_data($wpfcid="A", $language_override=null)
       $wstr=windstr($metric,$w["fc_nt_windspeed_".$i],$windunit);
       $weather_arr["fc_nt_windspeed_".$i]= $wstr;
       $weather_arr["fc_nt_winddir_".$i]=translate_winddir($w["fc_nt_winddir_".$i],"wp-forecast_".$wpf_language);
+      $weather_arr["fc_nt_winddir_orig_".$i]=str_replace('O','E',$w["fc_nt_winddir_".$i]);
       $weather_arr["fc_nt_wgusts_".$i] = windstr($metric,$w["fc_nt_wgusts_".$i],$windunit);
       $weather_arr['fc_nt_maxuv_'.$i]=$w['fc_nt_maxuv_'.$i];
       
