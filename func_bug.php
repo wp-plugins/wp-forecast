@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -368,6 +368,7 @@ function bug_forecast_data($wpfcid="A", $language_override=null)
     $weather_arr['humidity']=round($w["humidity"],0);
     $weather_arr['windspeed']=windstr($metric,$w["windspeed"],$windunit);
     $weather_arr['winddir']=translate_winddir($w["winddirection"],"wp-forecast_".$wpf_language);
+    $weather_arr['winddir_orig']=$w["winddirection"];
     $weather_arr['windgusts']=windstr($metric,$w["wgusts"],$windunit);
     list($dummy, $weather_arr['sunrise']) = split(" ",$w['sunrise'],2);
     list($dummy, $weather_arr['sunset'] ) = split(" ",$w['sunset'] ,2);

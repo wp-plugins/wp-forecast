@@ -1,6 +1,6 @@
 <?php
 
-/*  Copyright 2006-2011  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -89,7 +89,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 
 	if ($header) {
 		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'."\n";
-		echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">'."\n";
+		echo '<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="'. str_replace("_","-",$wpf_vars['wpf_language']) . '">'."\n";
 		echo "<head><title>wp-forecast iframe</title>\n";
 		echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'."\n";
 	}
@@ -119,7 +119,7 @@ function show($wpfcid,$args,$wpfvars)
 	// order is important to override old title in wpfvars with new in args
 	extract($wpfvars);
 	extract($args);
-
+	
 	// get translations
 	if(function_exists('load_plugin_textdomain')) {
 		add_filter("plugin_locale","wpf_lplug",10,2);
@@ -168,7 +168,7 @@ function show($wpfcid,$args,$wpfvars)
 			substr($dispconfig,21,1) == "1" or
 			substr($dispconfig,22,1) == "1" )
 	{
-		// ouput current conditions
+		// output current conditions
 		$out ="";
 		$out .="\n<div class=\"wp-forecast-curr\">\n";
 
@@ -266,33 +266,56 @@ function show($wpfcid,$args,$wpfvars)
 		$out .= '<div class="wp-forecast-curr-block">';
 
 		// show icon
+		$out .= "<div class='wp-forecast-curr-left'>";
 		if (substr($dispconfig,0,1) == "1") {
-			if ($service=="accu") {
-				$breite=0; $hoehe=0;
-				$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
-				if ($isize != false) {
-					$breite=$isize[0];
-					$hoehe=$isize[1];
+			
+				if ($service=="accu") {
+					$breite=0; $hoehe=0;
+					$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
+					if ($isize != false) {
+						$breite=$isize[0];
+						$hoehe=$isize[1];
+					}
+					if ($csssprites==1) { // mit CSS Sprites
+						$cssid = substr($w['icon'],strpos($w['icon'],"/")+1,strrpos($w['icon'],".")-strpos($w['icon'],"/")-1);
+						$out .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+					} else { // ohne CSS-Sprites		
+						$out .= "<img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' />\n";
+					}
 				}
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $plugin_path . "/" . $w['icon']."' alt='".$w['shorttext']. "' width='".$breite."' height='".$hoehe."' /></div>\n";
-			}
-			if ($service=="bug")
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				
+				if ($service=="bug")
+					$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
 
-			if ($service=="google")
-				$out .= "<div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' /></div>\n";
+				if ($service=="google")
+					$out .= "<img class='wp-forecast-curr-left' src='" . $w['icon']."' alt='".$w['shorttext']."' />\n";
+			
 		}
-
+		$out .="<br />";
+		// show windicon
+		if ($windicon == "1") {
+			$breite=48; $hoehe=48;	
+			$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['winddir_orig'] . '.png';
+			$out .= "<img src='" . $wind_icon_url ."' alt='".$w['winddir']. "' width='".$breite."' height='".$hoehe."' />\n";
+			}
+			
+		$out .= "</div>";
 		$out .= "<div class='wp-forecast-curr-right'>";
+		$out .= "<div>";
 
 		// show short description
 		if (substr($dispconfig,2,1) == "1")
-			$out .= "<div>". $w["shorttext"]."</div>";
+			$out .= $w["shorttext"]."<br/>";
 
 		// show temperatur
 		if (substr($dispconfig,3,1) == "1")
 			$out .= $w["temperature"];
-		//$out .= __('tmp',"wp-forecast_".$wpf_language).": ".$w["temperature"];
+		$out .= "</div>";
+		
+		// show wind on the right side if windicon is active
+		if ($windicon == "1")
+			$out .= '<div class="wp-forecast-wind-right">' . $w['windspeed']."</div>\n";
+		
 		$out .= "</div>\n"; // end of right
 		$out .= "</div>\n";  // end of block
 
@@ -320,8 +343,11 @@ function show($wpfcid,$args,$wpfvars)
 		// show windgusts
 		if (substr($dispconfig,22,1) == "1")
 			$out .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".$w['windgusts']."</div>\n";
-
-
+		
+		// show uvindex
+		if (substr($dispconfig,27,1) == "1")
+			$out .= "<div>".__('UV-Index',"wp-forecast_".$wpf_language).": ".$w['uvindex']."</div>\n";
+		
 		// show sunrise
 		if (substr($dispconfig,8,1) == "1")
 			$out .="<div>". __('sunrise',"wp-forecast_".$wpf_language).": ".$w['sunrise']."</div>\n";
@@ -390,8 +416,13 @@ function show($wpfcid,$args,$wpfvars)
 	  			$breite=$isize[0];
 	  			$hoehe=$isize[1];
 	  		}
-	  		$out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/". $w['fc_dt_icon_'.$i]."' alt='".
+			if ($csssprites==1) { // mit CSS Sprites
+				$cssid = substr($w['fc_dt_icon_'.$i],strpos($w['fc_dt_icon_'.$i],"/")+1,strrpos($w['fc_dt_icon_'.$i],".")-strpos($w['fc_dt_icon_'.$i],"/")-1);
+				$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+			} else { // ohne CSS-Sprites		
+ 		  		$out1 .= "<img class='wp-forecast-fc-left' src='".$plugin_path."/". $w['fc_dt_icon_'.$i]."' alt='".
 	 	  		__($w["fc_dt_iconcode_".$i],"wp-forecast_".$wpf_language). "' width='$breite' height='$hoehe' />";
+	 	  	}
 	  	}
 		  if ($service=="bug")
 		  	$out1 .= "<img class='wp-forecast-fc-left' src='".$w['fc_dt_icon_'.$i].
@@ -405,6 +436,15 @@ function show($wpfcid,$args,$wpfvars)
 	  {
 	  	$out1 .= "&nbsp;";
 	  }
+	  
+	  $out1 .="<br />";
+	  // show windicon
+	  if ($windicon == "1") {
+	  	$breite=48; $hoehe=48;
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['fc_dt_winddir_orig_'.$i] . '.png';
+	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_dt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
+	  }
+	  
 	  $out1 .= "\n</div>\n"; // end of wp-forecast-fc-left
 	  $out1 .= "<div class='wp-forecast-fc-right'>";
 
@@ -429,6 +469,11 @@ function show($wpfcid,$args,$wpfvars)
 	  if (substr($dispconfig,23,1) == "1")
 	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language).": ".
 	  	$w["fc_dt_wgusts_".$i]."</div>\n";
+	  
+	  // show max uv index
+	  if (substr($dispconfig,28,1) == "1")
+	  	$out1 .= "<div>".__('max. UV-Index',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_dt_maxuv_".$i]."</div>\n";
 
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
 		}
@@ -449,13 +494,27 @@ function show($wpfcid,$args,$wpfvars)
 	  		$breite=$isize[0];
 	  		$hoehe=$isize[1];
 	  	}
-	  	$out1 .= "<img class='wp-forecast-fc-left' src='" .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
-	  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' width='$breite' height='$hoehe' />";
+		if ($csssprites==1) { // mit CSS Sprites
+			$cssid = substr($w['fc_nt_icon_'.$i],strpos($w['fc_nt_icon_'.$i],"/")+1,strrpos($w['fc_nt_icon_'.$i],".")-strpos($w['fc_nt_icon_'.$i],"/")-1);
+			$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
+		} else { // ohne CSS-Sprites		
+		  	$out1 .= "<img class='wp-forecast-fc-left' src='" .$plugin_path."/".$w['fc_nt_icon_'.$i]."' alt='"
+		  	.__($w["fc_nt_iconcode_".$i],"wp-forecast_".$wpf_language)."' width='$breite' height='$hoehe' />";
+		}
 	  }
 	  else
 	  {
 	  	$out1 .= "&nbsp;";
 	  }
+	  
+	  $out1 .="<br />";
+	  // show windicon
+	  if ($windicon == "1") {
+	  	$breite=48; $hoehe=48;
+	  	$wind_icon_url = $plugin_path . "/" . "icons/wpf-" . $w['fc_nt_winddir_orig_'.$i] . '.png';
+	  	$out1 .= "<img src='" . $wind_icon_url ."' alt='".$w['fc_nt_winddir_'.$i]. "' width='".$breite."' height='".$hoehe."' />\n";
+	  }
+	  
 	  $out1 .= "\n</div>\n<div class='wp-forecast-fc-right'>";
 
 	  // show short description
@@ -479,6 +538,10 @@ function show($wpfcid,$args,$wpfvars)
 	  	$out1 .= "<div>".__('Windgusts',"wp-forecast_".$wpf_language)
 	  	.": ".$w["fc_nt_wgusts_".$i]."</div>\n";
 
+	  // show max uv index
+	  if (substr($dispconfig,29,1) == "1")
+	  	$out1 .= "<div>".__('max. UV-Index',"wp-forecast_".$wpf_language).": ".
+	  	$w["fc_nt_maxuv_".$i]."</div>\n";
 
 	  $out1 .= "</div></div>\n"; // end of wp-forecast-fc-right / block
 		}

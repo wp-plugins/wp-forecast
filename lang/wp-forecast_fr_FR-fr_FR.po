@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-forecast\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-26 20:02+0200\n"
+"POT-Creation-Date: 2014-01-12 08:00+0100\n"
 "PO-Revision-Date: 2009-03-03 07:21+0100\n"
 "Last-Translator: jean pierre gavoille <jpg001@orange.fr>\n"
 "Language-Team: Martin Loyer <martin@exurbis.com>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: D:\\Documents and Settings\\loyerm\\Bureau\\wp-"
 "forecast-1.2\\wp-forecast\n"
 
-#: class-wpf_widget.php:73 wp-forecast-admin.php:102
+#: class-wpf_widget.php:75 wp-forecast-admin.php:106
 msgid "Title:"
 msgstr "Titre : "
 
-#: class-wpf_widget.php:81 wp-forecast-admin.php:222
+#: class-wpf_widget.php:83 wp-forecast-admin.php:229
 msgid "Available widgets"
 msgstr "Widgets disponibles"
 
@@ -31,290 +31,302 @@ msgstr "Widgets disponibles"
 msgid "Location does not exist"
 msgstr ""
 
-#: func_bug.php:362 func_bug.php:389 xgettextdummy.php:150
+#: func_bug.php:363 func_bug.php:390 xgettextdummy.php:150
 msgid "Unknown"
 msgstr ""
 
-#: shortcodes.php:40
+#: shortcodes.php:38
 msgid "wp-forecast shortcode: This browser does not support iframes."
 msgstr ""
 
-#: wp-forecast-admin.php:105
+#: wp-forecast-admin.php:109
 msgid "widget_hint"
 msgstr ""
 "Pour configurer les Widgets de wp-forecast, <br /> veuillez vous rendre sur "
 "la page des Paramètres de WP-Forecast."
 
-#: wp-forecast-admin.php:210 wp-forecast.php:375
+#: wp-forecast-admin.php:217 wp-forecast.php:378
 msgid "How many wp-forecast widgets would you like?"
 msgstr "Combien de widgets wp-forecast souhaitez-vous ?"
 
-#: wp-forecast-admin.php:219 wp-forecast-admin.php:245
-#: wp-forecast-admin.php:261 wp-forecast-admin.php:270 wp-forecast.php:384
+#: wp-forecast-admin.php:226 wp-forecast-admin.php:252
+#: wp-forecast-admin.php:268 wp-forecast-admin.php:277 wp-forecast.php:387
 msgid "Save"
 msgstr "Enregistrer"
 
-#: wp-forecast-admin.php:238
+#: wp-forecast-admin.php:245
 msgid "Select widget"
 msgstr "Séléctionnez un widget"
 
-#: wp-forecast-admin.php:243 wpf_sa_admin.php:218
+#: wp-forecast-admin.php:250 wpf_sa_admin.php:221
 #, fuzzy
 msgid "Timeout for weatherprovider connections (secs.)?"
 msgstr "Temps limite pour les connexions à accuweather (secs.)?"
 
-#: wp-forecast-admin.php:249 wpf_sa_admin.php:226
+#: wp-forecast-admin.php:256 wpf_sa_admin.php:229
 msgid "Preselect wordpress transfer method"
 msgstr ""
 
-#: wp-forecast-admin.php:251 wpf_sa_admin.php:228
+#: wp-forecast-admin.php:258 wpf_sa_admin.php:231
 msgid "default"
 msgstr ""
 
-#: wp-forecast-admin.php:265 wpf_sa_admin.php:241
+#: wp-forecast-admin.php:272 wpf_sa_admin.php:244
 msgid "Delete options during plugin deactivation?"
 msgstr "Détruire les réglages lors de la désactivation ?"
 
-#: wp-forecast-admin.php:273
+#: wp-forecast-admin.php:280
 #, fuzzy
 msgid "Check connection to Weatherprovider"
 msgstr "Lien vers Accuweather"
 
-#: wp-forecast-admin.php:442 wpf_sa_admin.php:192
+#: wp-forecast-admin.php:465 wpf_sa_admin.php:195
 msgid "Settings successfully updated"
 msgstr "Réglages enregistrés"
 
-#: wp-forecast-admin.php:444
+#: wp-forecast-admin.php:467
 msgid "You have to change a field to update settings."
 msgstr "Vous devez changer un champ pour mettre à jour les réglages."
 
-#: wp-forecast-admin.php:491
+#: wp-forecast-admin.php:514
 msgid "WP-Forecast Setup"
 msgstr "Réglages de WP-Forecast"
 
-#: wp-forecast-admin.php:494 wpf_sa_admin.php:262
+#: wp-forecast-admin.php:517 wpf_sa_admin.php:265
 msgid "Weatherservice"
 msgstr ""
 
-#: wp-forecast-admin.php:496 wpf_sa_admin.php:264
+#: wp-forecast-admin.php:519 wpf_sa_admin.php:267
 #, fuzzy
 msgid "AccuWeather"
 msgstr "Lien vers Accuweather"
 
-#: wp-forecast-admin.php:497 wpf_sa_admin.php:265
+#: wp-forecast-admin.php:520 wpf_sa_admin.php:268
 #, fuzzy
 msgid "WeatherBug"
 msgstr "Le temps"
 
-#: wp-forecast-admin.php:498
+#: wp-forecast-admin.php:521
 #, fuzzy
 msgid "GoogleWeather"
 msgstr "Le temps"
 
-#: wp-forecast-admin.php:501
+#: wp-forecast-admin.php:524
 msgid "Partner ID"
 msgstr ""
 
-#: wp-forecast-admin.php:504 wpf_sa_admin.php:271
+#: wp-forecast-admin.php:527 wpf_sa_admin.php:274
 msgid "Licensekey"
 msgstr ""
 
-#: wp-forecast-admin.php:509 wpf_sa_admin.php:276
+#: wp-forecast-admin.php:532 wpf_sa_admin.php:279
 msgid "Location"
 msgstr "Emplacement "
 
-#: wp-forecast-admin.php:518 wpf_sa_admin.php:279
+#: wp-forecast-admin.php:541 wpf_sa_admin.php:282
 msgid "Press Update options to save new location."
 msgstr "Appuyez sur Mise à jour pour enregistrer le nouvel emplacement"
 
-#: wp-forecast-admin.php:521 wpf_sa_admin.php:282
+#: wp-forecast-admin.php:544 wpf_sa_admin.php:285
 msgid "Locationname"
 msgstr "Nom du lieu "
 
-#: wp-forecast-admin.php:523 wpf_sa_admin.php:285
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:288
 msgid "Refresh cache after"
 msgstr "Rafraichir le cache après"
 
-#: wp-forecast-admin.php:525 wpf_sa_admin.php:287
+#: wp-forecast-admin.php:548 wpf_sa_admin.php:290
 msgid "secs."
 msgstr "secs."
 
-#: wp-forecast-admin.php:526 wpf_sa_admin.php:288
+#: wp-forecast-admin.php:549 wpf_sa_admin.php:291
 msgid "Use metric units"
 msgstr "Utiliser des unitées métriques"
 
-#: wp-forecast-admin.php:529 wpf_sa_admin.php:291
+#: wp-forecast-admin.php:552 wpf_sa_admin.php:294
 msgid "Use current time"
 msgstr "Utiliser l'heure courante"
 
-#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 msgid "Time-Offset"
 msgstr ""
 
-#: wp-forecast-admin.php:530 wpf_sa_admin.php:292
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:295
 #, fuzzy
 msgid "minutes"
 msgstr "Rafales "
 
-#: wp-forecast-admin.php:533 wpf_sa_admin.php:295
+#: wp-forecast-admin.php:556 wpf_sa_admin.php:298
 msgid "Windspeed-Unit"
 msgstr "Unitée pour la vitesse du vent"
 
-#: wp-forecast-admin.php:534 wpf_sa_admin.php:296
+#: wp-forecast-admin.php:557 wpf_sa_admin.php:299
 msgid "Meter/Second (m/s)"
 msgstr "Mètre/Seconde (m/s)"
 
-#: wp-forecast-admin.php:535 wpf_sa_admin.php:297
+#: wp-forecast-admin.php:558 wpf_sa_admin.php:300
 msgid "Kilometer/Hour (km/h)"
 msgstr "Kilomètre/Heure (km/h)"
 
-#: wp-forecast-admin.php:536 wpf_sa_admin.php:298
+#: wp-forecast-admin.php:559 wpf_sa_admin.php:301
 msgid "Miles/Hour (mph)"
 msgstr "Miles/Heure (mph)"
 
-#: wp-forecast-admin.php:537 wpf_sa_admin.php:299
+#: wp-forecast-admin.php:560 wpf_sa_admin.php:302
 msgid "Knots (kts)"
 msgstr "Noeuds (kts)"
 
-#: wp-forecast-admin.php:538 wpf_sa_admin.php:300
+#: wp-forecast-admin.php:561 wpf_sa_admin.php:303
 msgid "Beaufort (bft)"
 msgstr ""
 
-#: wp-forecast-admin.php:545 wpf_sa_admin.php:307
+#: wp-forecast-admin.php:568 wpf_sa_admin.php:310
 msgid "Language"
 msgstr "Langue "
 
-#: wp-forecast-admin.php:564 wpf_sa_admin.php:326
+#: wp-forecast-admin.php:597 wpf_sa_admin.php:329
 msgid "Show forecast as ajax pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:568 wpf_sa_admin.php:330
+#: wp-forecast-admin.php:601 wpf_sa_admin.php:333
 msgid "First day in pull-down"
 msgstr ""
 
-#: wp-forecast-admin.php:583 wpf_sa_admin.php:535
+#: wp-forecast-admin.php:615
+msgid "Show wind condition as icon"
+msgstr ""
+
+#: wp-forecast-admin.php:617
+msgid "Use CSS-Sprites for showing icons"
+msgstr ""
+
+#: wp-forecast-admin.php:622 wpf_sa_admin.php:538
 msgid "Update options"
 msgstr "Enregistrer les réglages"
 
-#: wp-forecast-admin.php:590 wpf_sa_admin.php:348
+#: wp-forecast-admin.php:629 wpf_sa_admin.php:351
 msgid "Display Configuration"
 msgstr "Afficher la configuration"
 
-#: wp-forecast-admin.php:594 wpf_sa_admin.php:352
+#: wp-forecast-admin.php:633 wpf_sa_admin.php:355
 msgid "Current Conditions"
 msgstr "Situation actuelle"
 
-#: wp-forecast-admin.php:595 wpf_sa_admin.php:353
+#: wp-forecast-admin.php:634 wpf_sa_admin.php:356
 msgid "Forecast Day"
 msgstr "Prévision journée"
 
-#: wp-forecast-admin.php:596 wpf_sa_admin.php:354
+#: wp-forecast-admin.php:635 wpf_sa_admin.php:357
 msgid "Forecast Night"
 msgstr "Prévision nuit"
 
-#: wp-forecast-admin.php:599 wpf_sa_admin.php:357
+#: wp-forecast-admin.php:638 wpf_sa_admin.php:360
 msgid "Icon"
 msgstr "Icône"
 
-#: wp-forecast-admin.php:608 wpf_sa_admin.php:366
+#: wp-forecast-admin.php:647 wpf_sa_admin.php:369
 msgid "Date"
 msgstr "Date"
 
-#: wp-forecast-admin.php:615 wpf_sa_admin.php:373
+#: wp-forecast-admin.php:654 wpf_sa_admin.php:376
 msgid "Time"
 msgstr "Heure"
 
-#: wp-forecast-admin.php:622 wpf_sa_admin.php:380
+#: wp-forecast-admin.php:661 wpf_sa_admin.php:383
 msgid "Short Description"
 msgstr "Courte description"
 
-#: wp-forecast-admin.php:631 wpf_sa_admin.php:389
+#: wp-forecast-admin.php:670 wpf_sa_admin.php:392
 msgid "Temperature"
 msgstr "Température"
 
-#: wp-forecast-admin.php:640 wpf_sa_admin.php:398
+#: wp-forecast-admin.php:679 wpf_sa_admin.php:401
 msgid "Realfeel"
 msgstr "Température ressentie"
 
-#: wp-forecast-admin.php:647 wpf_sa_admin.php:405
+#: wp-forecast-admin.php:686 wpf_sa_admin.php:408
 msgid "Pressure"
 msgstr "Pression"
 
-#: wp-forecast-admin.php:654 wpf_sa_admin.php:412
+#: wp-forecast-admin.php:693 wpf_sa_admin.php:415
 msgid "Humidity"
 msgstr "Humidité"
 
-#: wp-forecast-admin.php:661 wpf_sa_admin.php:419
+#: wp-forecast-admin.php:700 wpf_sa_admin.php:422
 msgid "Wind"
 msgstr "Vent"
 
-#: wp-forecast-admin.php:670 wp-forecast-show.php:315 wp-forecast-show.php:418
-#: wp-forecast-show.php:462 wpf_sa_admin.php:428
+#: wp-forecast-admin.php:709 wp-forecast-show.php:346 wp-forecast-show.php:472
+#: wp-forecast-show.php:541 wpf_sa_admin.php:431
 msgid "Windgusts"
 msgstr "Rafales "
 
-#: wp-forecast-admin.php:679 wpf_sa_admin.php:437
+#: wp-forecast-admin.php:719 wp-forecast-show.php:350
+msgid "UV-Index"
+msgstr ""
+
+#: wp-forecast-admin.php:729 wpf_sa_admin.php:440
 msgid "Sunrise"
 msgstr "Lever du soleil"
 
-#: wp-forecast-admin.php:686 wpf_sa_admin.php:444
+#: wp-forecast-admin.php:736 wpf_sa_admin.php:447
 msgid "Sunset"
 msgstr "Coucher du soleil"
 
-#: wp-forecast-admin.php:693 wpf_sa_admin.php:451
+#: wp-forecast-admin.php:743 wpf_sa_admin.php:454
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:700 wpf_sa_admin.php:458
+#: wp-forecast-admin.php:750 wpf_sa_admin.php:461
 #, fuzzy
 msgid "Link to Weatherprovider"
 msgstr "Lien vers Accuweather"
 
-#: wp-forecast-admin.php:703 wpf_sa_admin.php:461
+#: wp-forecast-admin.php:753 wpf_sa_admin.php:464
 msgid "Open in new Window"
 msgstr ""
 
-#: wp-forecast-admin.php:711 wp-forecast-show.php:365 wpf_sa_admin.php:469
+#: wp-forecast-admin.php:761 wp-forecast-show.php:399 wpf_sa_admin.php:472
 msgid "Forecast"
 msgstr "Prévisions"
 
-#: wp-forecast-admin.php:716 wpf_sa_admin.php:474
+#: wp-forecast-admin.php:766 wpf_sa_admin.php:477
 msgid "All"
 msgstr "Tout"
 
-#: wp-forecast-admin.php:717 wp-forecast-admin.php:718
-#: wp-forecast-admin.php:719 wp-forecast-admin.php:720
-#: wp-forecast-admin.php:721 wp-forecast-admin.php:722
-#: wp-forecast-admin.php:723 wp-forecast-admin.php:724
-#: wp-forecast-admin.php:725 wpf_sa_admin.php:475 wpf_sa_admin.php:476
-#: wpf_sa_admin.php:477 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wp-forecast-admin.php:767 wp-forecast-admin.php:768
+#: wp-forecast-admin.php:769 wp-forecast-admin.php:770
+#: wp-forecast-admin.php:771 wp-forecast-admin.php:772
+#: wp-forecast-admin.php:773 wp-forecast-admin.php:774
+#: wp-forecast-admin.php:775 wpf_sa_admin.php:478 wpf_sa_admin.php:479
 #: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
-#: wpf_sa_admin.php:483
+#: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
+#: wpf_sa_admin.php:486
 msgid "Day"
 msgstr "Jour"
 
-#: wp-forecast-admin.php:727 wpf_sa_admin.php:485
+#: wp-forecast-admin.php:777 wpf_sa_admin.php:488
 msgid "Daytime"
 msgstr "Journée"
 
-#: wp-forecast-admin.php:748 wpf_sa_admin.php:506
+#: wp-forecast-admin.php:798 wpf_sa_admin.php:509
 msgid "Nighttime"
 msgstr "Nuit"
 
-#: wp-forecast-check.php:172
+#: wp-forecast-check.php:173
 msgid "Connection-check"
 msgstr ""
 
-#: wp-forecast-check.php:175
+#: wp-forecast-check.php:176
 #, fuzzy
 msgid "Select weatherprovider"
 msgstr "Lien vers Accuweather"
 
-#: wp-forecast-check.php:187
+#: wp-forecast-check.php:188
 msgid "Start check"
 msgstr ""
 
-#: wp-forecast-check.php:190
+#: wp-forecast-check.php:191
 msgid "Close"
 msgstr ""
 
@@ -342,29 +354,29 @@ msgstr ""
 msgid "Please select a location"
 msgstr "Veuillez choisir votre ville et validez."
 
-#: wp-forecast-search.php:68
+#: wp-forecast-search.php:70
 #, fuzzy
 msgid "Accuweather Hits"
 msgstr "Lien vers Accuweather"
 
-#: wp-forecast-search.php:69
+#: wp-forecast-search.php:71
 #, fuzzy
 msgid "WeatherBug Hits"
 msgstr "Le temps"
 
-#: wp-forecast-search.php:147 wp-forecast-search.php:155
+#: wp-forecast-search.php:149 wp-forecast-search.php:157
 msgid "Search location"
 msgstr "Rechercher un emplacement"
 
-#: wp-forecast-search.php:149
+#: wp-forecast-search.php:151
 msgid "Searchterm"
 msgstr "Critères "
 
-#: wp-forecast-search.php:151
+#: wp-forecast-search.php:153
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
 msgstr "Ne pas saisir de lettres accentuées dans votre recherche."
 
-#: wp-forecast-search.php:152
+#: wp-forecast-search.php:154
 msgid ""
 "Google does not support searching for locations. Only Accuweather and "
 "WeatherBug will be searched."
@@ -391,43 +403,47 @@ msgstr "Veuillez réessayer plus tard."
 msgid "time"
 msgstr "heure"
 
-#: wp-forecast-show.php:295
+#: wp-forecast-show.php:326
 msgid "flik"
 msgstr "Température ressentie"
 
-#: wp-forecast-show.php:298
+#: wp-forecast-show.php:329
 msgid "barr"
 msgstr "Pression "
 
-#: wp-forecast-show.php:306
+#: wp-forecast-show.php:337
 msgid "hmid"
 msgstr "Humidité "
 
-#: wp-forecast-show.php:310 wp-forecast-show.php:413 wp-forecast-show.php:455
+#: wp-forecast-show.php:341 wp-forecast-show.php:467 wp-forecast-show.php:534
 msgid "winds"
 msgstr "Vents "
 
-#: wp-forecast-show.php:320
+#: wp-forecast-show.php:354
 msgid "sunrise"
 msgstr "Lever du soleil "
 
-#: wp-forecast-show.php:324
+#: wp-forecast-show.php:358
 msgid "sunset"
 msgstr "Coucher du soleil "
 
-#: wp-forecast-show.php:374
+#: wp-forecast-show.php:408
 msgid "day"
 msgstr "jour"
 
-#: wp-forecast-show.php:430
+#: wp-forecast-show.php:477 wp-forecast-show.php:546
+msgid "max. UV-Index"
+msgstr ""
+
+#: wp-forecast-show.php:489
 msgid "night"
 msgstr "nuit"
 
-#: wp-forecast-show.php:488 wp-forecast-show.php:489
+#: wp-forecast-show.php:571 wp-forecast-show.php:572
 msgid "Less forecast..."
 msgstr ""
 
-#: wp-forecast-show.php:490
+#: wp-forecast-show.php:573
 msgid "More forecast..."
 msgstr ""
 
@@ -440,27 +456,27 @@ msgstr "wp-forescat %s"
 msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
 msgstr ""
 
-#: wpf_sa_admin.php:205
+#: wpf_sa_admin.php:208
 msgid "Check the colored checkboxes to user enable the options"
 msgstr ""
 
-#: wpf_sa_admin.php:210
+#: wpf_sa_admin.php:213
 msgid "Maximal number of widgets per user"
 msgstr ""
 
-#: wpf_sa_admin.php:249
+#: wpf_sa_admin.php:252
 msgid "Delete SuperAdmin options"
 msgstr ""
 
-#: wpf_sa_admin.php:250
+#: wpf_sa_admin.php:253
 msgid "Delete SA-Options"
 msgstr ""
 
-#: wpf_sa_admin.php:259
+#: wpf_sa_admin.php:262
 msgid "Widget-Setup"
 msgstr ""
 
-#: wpf_sa_admin.php:268
+#: wpf_sa_admin.php:271
 msgid "Partner-ID"
 msgstr ""
 
