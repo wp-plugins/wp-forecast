@@ -3,7 +3,7 @@ Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 4.8
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
