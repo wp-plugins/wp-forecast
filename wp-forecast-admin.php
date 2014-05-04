@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2013  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@ $i=0;
 require_once("funclib.php");
 require_once("func_accu.php");
 require_once("func_bug.php");
+require_once("supp/supp.php");
 
 //
 // delete cache if parameters are changed, to make sure
@@ -67,6 +68,7 @@ function wp_forecast_admin()
   add_menu_page('wp-Forecast', 'wp-Forecast', 'manage_options', 
 		basename(__FILE__), 'wpf_admin_form',
 		plugins_url('/wpf.png', __FILE__) );
+  add_filter('contextual_help', 'wp_forecast_contextual_help', 10, 2);
 
   pdebug(1,"End of wp_forecast_admin ()");
 } 
@@ -213,6 +215,7 @@ function wpf_admin_form($wpfcid='A',$widgetcall=0)
     // print out number of widgets selection
     $out  = "<div class='wrap'>";
     $out .= "<h2>WP-Forecast Widgets</h2>";
+    $out .= tl_add_supp();
     $out .= "<form name='options' id='options' method='post' action='#'>";
     $out .= '<table><tr><td style="width:60%;" >'.__('How many wp-forecast widgets would you like?',"wp-forecast_".$locale)."</td>";
     $out .= '<td style="width:20%;" ><select id="wp-forecast-count" name="wp-forecast-count">';
@@ -513,6 +516,8 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
 	 <input name='wid' type='hidden' value='<?php echo $wpfcid; ?>'/>   
 	 <h2><?php echo __('WP-Forecast Setup',"wp-forecast_".$locale)." (Widget ".$wpfcid.") ";?></h2>
 	  <?php if ($widgetcall == 0): ?><fieldset id="set1"><?php endif; ?>
+
+        
 	 <div style="float: left; width: 49%">
          <p><b><?php echo __('Weatherservice',"wp-forecast_".$locale)?>:</b>
          <select name="service" id="service" size="1" onchange="apifields(document.woptions.service.value);">
@@ -822,54 +827,56 @@ function wpf_sub_admin_form($wpfcid,$widgetcall) {
        <?php if ($widgetcall==0): ?></fieldset><?php endif; ?>
        </form></div>
 <?php
-//   if ($widgetcall ==0) 
-//     echo "<div class='submit'><input class='button-primary' type='submit' name='info_update' value='".__('Update options',"wp-forecast_".$locale)." »' /></div>";
-//   else
-//     echo "<input type='hidden' name='info_update' value='1' />";
-//   
-   //  suchformular fuer locations
-//   if ($widgetcall==0) 
-//     {
-//       echo "<hr /><fieldset id=\"set2\"><legend>".__('Search location',"wp-forecast_".$locale)."</legend><br />";
-//     
-//       if (count($loc)<=0 ) 
-//	 { 	 
-//	   echo "<p><b>".__('Searchterm',"wp-forecast_".$locale).":</b>\n";
-//	   echo "<input name=\"searchloc\" type=\"text\" size=\"30\" maxlength=\"30\" /><br /></p>\n";
-//	   if (isset($_POST['search_loc'])) 
-//	     { 
-//	       echo "<p>".__('No locations found.',"wp-forecast_".$locale)."</p>";
-//	     } 
-//	   else 
-//	     {
-//	       echo "<p>".__('Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm.',"wp-forecast_".$locale)."</p>";
-//	     }
-//	   echo "</fieldset>\n";
-//	   echo "<div class='submit'>\n";
-//	   echo "<input class='button-primary' type='submit' name='search_loc' value='" ;
-//	   echo __('Search location',"wp-forecast_".$locale);
-//	   echo " »' />\n";
-//	 } 
-//       else 
-//	 {
-//	   echo "<b>".__('Search result',"wp-forecast_".$locale).": </b><select name=\"newloc\" size=\"1\">\n";
-//	   foreach ($loc as $l) 
-//	     {
-//	       echo "<option value=\"".$l['location']."\">";
-//	       echo $l['city']."/".$l['state'];
-//	       echo "</option>\n";
-//	     }
-//	   echo "</select><br /><p>".__('Please select your city and press set location.',"wp-forecast_".$locale)."</p>\n";
-//	   echo "</fieldset>\n";
-//	   echo "<div class='submit'>\n";
-//	   echo "<input class='button-primary' type='submit' name='set_loc' value='" ;
-//	   echo  __('Set location',"wp-forecast_".$locale);
-//	   echo " »' />\n";
-//	 }
-//       echo "</div></form></div>";
-//     }
-//   
    echo '<script type="text/javascript">apifields(document.woptions.service.value);wpf_wpmu_disable_fields();</script>';
    pdebug(1,"End of wpf_sub_admin_form ()");
+}
+
+function wp_forecast_contextual_help($contextual_help, $screen_id) {
+
+  $locale = get_locale();
+  if ( empty($locale) )
+    $locale = 'en_US'; 
+
+  if(function_exists('load_plugin_textdomain')) {
+    load_plugin_textdomain("wp-forecast_".$locale, false, dirname( plugin_basename( __FILE__ ) ) . "/lang/");
+  }
+
+  //echo 'Screen ID = '.$screen_id.'<br />';
+  switch( $screen_id ) {
+  case 'toplevel_page_wp-forecast-admin' :
+    $contextual_help .= "<p>";
+    $contextual_help .= __( 'If you are looking for instructions or help on wp-forecast, 
+   please use the following ressources. If you are stuck you can 
+   always write an email to','wp-forecast_'.$locale);
+    $contextual_help .= ' <a href="mailto:support@tuxlog.de">support@tuxlog.de</a>.';
+    $contextual_help .= "</p>";
+    $contextual_help .= '<ul>';
+    $contextual_help .= '<li><a href="http://www.tuxlog.de/wordpress/2008/wp-forecast-reference-v17-english/" target="_blank">';
+    $contextual_help .= __('English Manual','wp-forecast_'.$locale);
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href=" http://www.tuxlog.de/wp-forecast-handbuch/" target="_blank">';
+    $contextual_help .= __('German Manual','wp-forecast_'.$locale);
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href="http://www.tuxlog.de/wordpress/2009/checkliste-fur-wp-forecast-checklist-for-wp-worecast" target="_blank">';
+    $contextual_help .= __('Checklist for connection test','wp-forecast_'.$locale );
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href="http://www.wordpress.org/extend/plugins/wp-forecast" target="_blank">';
+    $contextual_help .= __('wp-forecast on WordPress.org', 'wp-forecast_'.$locale );
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href="http://www.tuxlog.de/wp-forecast/" target="_blank">';
+    $contextual_help .= __('German wp-forecast Site', 'wp-forecast_'.$locale );
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href="http://www.tuxlog.de/wordpress/2012/wp-forecast-mit-wpml-nutzen" target="_blank">';
+    $contextual_help .= __('Using wp-forecast with WPML (german)', 'wp-forecast_'.$locale );
+    $contextual_help .= '</a></li>';
+    $contextual_help .= '<li><a href="http://wordpress.org/plugins/wp-forecast/changelog/" target="_blank">';
+    $contextual_help .= __('Changelog', 'wp-forecast_'.$locale );
+    $contextual_help .= '</a></li></ul>';
+    $contextual_help .= '<p>';
+    $contextual_help .= __('Links will open in new Window/Tab.', 'wp-forecast_'.$locale );
+    $contextual_help .= '</p>';
+    break;
+  }
+  return $contextual_help;
 }
 ?>

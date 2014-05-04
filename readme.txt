@@ -3,8 +3,8 @@ Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
 Requires at least: 2.7
-Tested up to: 3.8.1
-Stable tag: 4.8
+Tested up to: 3.9
+Stable tag: 4.9
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -72,6 +72,8 @@ Credits:
 
 == Installation ==
 
+0. Install via the WordPress plugin admin dialog (search for wp-forecast) or
+
 1. Upload to your plugins folder, usually `wp-content/plugins/`, keeping 
    the directory structure intact \(i.e. wp-forecast.php should end up 
    in `wp-content/plugins/wp-forecast/`\).
@@ -132,14 +134,17 @@ Credits:
 
 There are severeal ressources to visit:
 
+* [The german wp-forecast page][germanpage]
 * [The german reference][germanref] 
 * [A short FAQ list in german][gerfaq]
 * [A checklist in case of problems (german and english)][checklist] 
 * [The english readme.txt][engreadme]
 * [The english reference (a bit out of date but still useful)][engref]
 
-[germanref]: http://www.tuxlog.de/wordpress/2008/wp-forecast-referenz-v14/ 
-          "German wp-forecastreference"
+[germanpage]: http://www.tuxlog.de/wp-forecast/ 
+          "German wp-forecast-page"
+[germanref]: http://www.tuxlog.de/wp-forecast-handbuch/ 
+          "German wp-forecast-manual"
 [gerfaq]: http://www.tuxlog.de/wordpress/2007/wp-forecast-wie-geht-das/
 	  "wp-forecast FAQ - Wie geht das?"
 [checklist]: http://www.tuxlog.de/uncategorized/2009/checkliste-fur-wp-forecast-checklist-for-wp-worecast/
@@ -164,6 +169,11 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+= v4.9 (2014-05-04) =
+* added contextual help and support email in admin dialog
+* removed unused code (was commented since v3.x)
+* removed old langauge files
+
 = v4.8 (2014-01-30) =
 * add updated hebrew translation
 * optimized default icons with opt-gif and opt-png

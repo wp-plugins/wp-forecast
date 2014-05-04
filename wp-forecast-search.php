@@ -45,7 +45,6 @@ if (isset($_GET['searchterm'])) {
 	
     // search locations for accuweather
     $xml=get_loclist($av['ACCU_LOC_URI'],$_GET['searchterm']);
-    var_dump($xml);
     $xml=utf8_encode($xml);
     accu_get_locations($xml); // modifies global array $loc
     $accu_loc = $loc;
