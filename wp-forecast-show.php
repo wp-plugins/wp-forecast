@@ -109,7 +109,6 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 function show($wpfcid,$args,$wpfvars)
 {
 	pdebug(1,"Start of show ()");
-
 	// check how we are called as a widget or from sidebar
 	if (sizeof($args)==0)
 		$show_from_widget=0;
