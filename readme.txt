@@ -195,7 +195,7 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 = v4.6 (2013-10-13) =
 * fixed css output with wp_enqueue_script
-* disabled service for google weather because google closed the api
+* disabled service for google weather because google shutdown their weather api
 * added uv-index to the accuweather data fields 
 
 = v4.5 (2013-05-07) =
