@@ -173,7 +173,7 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 == Changelog ==
 = v5.0 (2014-07-29) =
 * made the css a bit more responsive
-* added croatian language (Thanks to Lovrenco)
+* added croatian translation (Thanks to Lovrenco)
 
 = v4.9 (2014-05-04) =
 * added contextual help and support email in admin dialog
