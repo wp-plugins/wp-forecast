@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Hans Matzen
- * @copyright 2009
+ * @copyright 2009-2014
  * @since 2.4
  * @description wp-forecast using wordpress shortcode for more features
  * @Docs http://codex.wordpress.org/Shortcode_API
@@ -41,7 +41,9 @@ if (!function_exists('wpforecast'))
     }
 }
 // shortcode bei wp anmelden
-if (function_exists('add_shortcode'))
-    add_shortcode('wpforecast','wpforecast');
+if (function_exists('add_shortcode')) {
+  add_shortcode('wpforecast','wpforecast');
+  add_filter('widget_text', 'do_shortcode');
+}
 
 ?>
