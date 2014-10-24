@@ -3,110 +3,94 @@ msgstr ""
 "Project-Id-Version: wp-forecast 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-04 16:46+0200\n"
-"PO-Revision-Date: 2014-07-29 06:14+0100\n"
-"Last-Translator: tuxlog <webmaster@tuxlog.de>\n"
+"PO-Revision-Date: 2014-10-17 12:49+0100\n"
+"Last-Translator: Amidža Idriz <bijeljina@bahnhof.se>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 
-#: class-wpf_widget.php:75
-#: wp-forecast-admin.php:108
+#: class-wpf_widget.php:75 wp-forecast-admin.php:108
 msgid "Title:"
 msgstr "Naslov:"
 
-#: class-wpf_widget.php:83
-#: wp-forecast-admin.php:232
+#: class-wpf_widget.php:83 wp-forecast-admin.php:232
 msgid "Available widgets"
-msgstr "Raspoloživi dodatci"
+msgstr "Raspoloživi dodaci"
 
 #: func_bug.php:222
 msgid "Location does not exist"
 msgstr "Lokacija ne postoji"
 
-#: func_bug.php:363
-#: func_bug.php:391
-#: xgettextdummy.php:150
+#: func_bug.php:363 func_bug.php:391 xgettextdummy.php:150
 msgid "Unknown"
 msgstr "Nepoznato"
 
 #: shortcodes.php:38
 msgid "wp-forecast shortcode: This browser does not support iframes."
-msgstr "Upozorenje: Ovaj internet preglednik (web browser) ne podržava iframes."
+msgstr "Upozorenje: Ovaj internet preglednik ne podržava iframes."
 
 #: wp-forecast-admin.php:111
 msgid "widget_hint"
-msgstr "dodatak savjet"
+msgstr "dodatak_savjet"
 
-#: wp-forecast-admin.php:220
-#: wp-forecast.php:378
+#: wp-forecast-admin.php:220 wp-forecast.php:378
 msgid "How many wp-forecast widgets would you like?"
-msgstr "Koliko dodataka želite?"
+msgstr "Koliko dodataka hoćete?"
 
-#: wp-forecast-admin.php:229
-#: wp-forecast-admin.php:255
-#: wp-forecast-admin.php:271
-#: wp-forecast-admin.php:280
-#: wp-forecast.php:387
+#: wp-forecast-admin.php:229 wp-forecast-admin.php:255
+#: wp-forecast-admin.php:271 wp-forecast-admin.php:280 wp-forecast.php:387
 msgid "Save"
-msgstr "Snimi (sačuvaj)"
+msgstr "Spremi"
 
 #: wp-forecast-admin.php:248
 msgid "Select widget"
 msgstr "Odaberi dodatak"
 
-#: wp-forecast-admin.php:253
-#: wpf_sa_admin.php:221
+#: wp-forecast-admin.php:253 wpf_sa_admin.php:221
 msgid "Timeout for weatherprovider connections (secs.)?"
-msgstr "Timeout za konekcuju ka provajderu (sek.)?"
+msgstr "Timeout za konekciju k provajderu (sek.)?"
 
-#: wp-forecast-admin.php:259
-#: wpf_sa_admin.php:229
+#: wp-forecast-admin.php:259 wpf_sa_admin.php:229
 msgid "Preselect wordpress transfer method"
 msgstr "Odaberite wordpress transfer metodu"
 
-#: wp-forecast-admin.php:261
-#: wpf_sa_admin.php:231
+#: wp-forecast-admin.php:261 wpf_sa_admin.php:231
 msgid "default"
-msgstr "podrazumijevano"
+msgstr "zadano"
 
-#: wp-forecast-admin.php:275
-#: wpf_sa_admin.php:244
+#: wp-forecast-admin.php:275 wpf_sa_admin.php:244
 msgid "Delete options during plugin deactivation?"
 msgstr "Obrisati opcije prilikom dektivacije?"
 
 #: wp-forecast-admin.php:283
 msgid "Check connection to Weatherprovider"
-msgstr "Provjerite vezu ka provajderu."
+msgstr "Provjerite vezu k pružatelju usluge"
 
-#: wp-forecast-admin.php:468
-#: wpf_sa_admin.php:195
+#: wp-forecast-admin.php:468 wpf_sa_admin.php:195
 msgid "Settings successfully updated"
-msgstr "Postavke su uspješno ažurirane."
+msgstr "Podešavanja su uspješno ažurirana."
 
 #: wp-forecast-admin.php:470
 msgid "You have to change a field to update settings."
-msgstr "Morate promijeniti polje da biste ažurirali postavke."
+msgstr "Morate prvo napraviti izmjenu kako bi izvršili ažuriranje."
 
 #: wp-forecast-admin.php:517
 msgid "WP-Forecast Setup"
 msgstr "WP-Forecast podešavanja."
 
-#: wp-forecast-admin.php:522
-#: wpf_sa_admin.php:265
+#: wp-forecast-admin.php:522 wpf_sa_admin.php:265
 msgid "Weatherservice"
 msgstr "Izaberite servis"
 
-#: wp-forecast-admin.php:524
-#: wpf_sa_admin.php:267
+#: wp-forecast-admin.php:524 wpf_sa_admin.php:267
 msgid "AccuWeather"
 msgstr "AccuWeather"
 
-#: wp-forecast-admin.php:525
-#: wpf_sa_admin.php:268
+#: wp-forecast-admin.php:525 wpf_sa_admin.php:268
 msgid "WeatherBug"
 msgstr "WeatherBug"
 
@@ -118,256 +102,199 @@ msgstr "Google Prognoza"
 msgid "Partner ID"
 msgstr "ID partnera"
 
-#: wp-forecast-admin.php:532
-#: wpf_sa_admin.php:274
+#: wp-forecast-admin.php:532 wpf_sa_admin.php:274
 msgid "Licensekey"
 msgstr "Licenca"
 
-#: wp-forecast-admin.php:537
-#: wpf_sa_admin.php:279
+#: wp-forecast-admin.php:537 wpf_sa_admin.php:279
 msgid "Location"
 msgstr "Lokacija"
 
-#: wp-forecast-admin.php:546
-#: wpf_sa_admin.php:282
+#: wp-forecast-admin.php:546 wpf_sa_admin.php:282
 msgid "Press Update options to save new location."
-msgstr "Kliknite na Update opciju da sačuvate novu lokaciju."
+msgstr "Kliknite na Update kako bi sačuvali novu lokaciju."
 
-#: wp-forecast-admin.php:549
-#: wpf_sa_admin.php:285
+#: wp-forecast-admin.php:549 wpf_sa_admin.php:285
 msgid "Locationname"
 msgstr "Lokacija"
 
-#: wp-forecast-admin.php:551
-#: wpf_sa_admin.php:288
+#: wp-forecast-admin.php:551 wpf_sa_admin.php:288
 msgid "Refresh cache after"
-msgstr "Osvježiti keš nakon"
+msgstr "Osvježi privremeni spremnik nakon"
 
-#: wp-forecast-admin.php:553
-#: wpf_sa_admin.php:290
+#: wp-forecast-admin.php:553 wpf_sa_admin.php:290
 msgid "secs."
 msgstr "sek"
 
-#: wp-forecast-admin.php:554
-#: wpf_sa_admin.php:291
+#: wp-forecast-admin.php:554 wpf_sa_admin.php:291
 msgid "Use metric units"
 msgstr "Korisiti metričke jedinice"
 
-#: wp-forecast-admin.php:557
-#: wpf_sa_admin.php:294
+#: wp-forecast-admin.php:557 wpf_sa_admin.php:294
 msgid "Use current time"
 msgstr "Koristi trenutno vrijeme"
 
-#: wp-forecast-admin.php:558
-#: wpf_sa_admin.php:295
+#: wp-forecast-admin.php:558 wpf_sa_admin.php:295
 msgid "Time-Offset"
 msgstr "Vremenska razlika"
 
-#: wp-forecast-admin.php:558
-#: wpf_sa_admin.php:295
+#: wp-forecast-admin.php:558 wpf_sa_admin.php:295
 msgid "minutes"
 msgstr "minuta"
 
-#: wp-forecast-admin.php:561
-#: wpf_sa_admin.php:298
+#: wp-forecast-admin.php:561 wpf_sa_admin.php:298
 msgid "Windspeed-Unit"
 msgstr "Jedinica za mjerenje brzine vijetra"
 
-#: wp-forecast-admin.php:562
-#: wpf_sa_admin.php:299
+#: wp-forecast-admin.php:562 wpf_sa_admin.php:299
 msgid "Meter/Second (m/s)"
-msgstr "(m/s)"
+msgstr "Metar u sekundi (m/s)"
 
-#: wp-forecast-admin.php:563
-#: wpf_sa_admin.php:300
+#: wp-forecast-admin.php:563 wpf_sa_admin.php:300
 msgid "Kilometer/Hour (km/h)"
-msgstr "(km/h)"
+msgstr "Kilometar na sat(km/h)"
 
-#: wp-forecast-admin.php:564
-#: wpf_sa_admin.php:301
+#: wp-forecast-admin.php:564 wpf_sa_admin.php:301
 msgid "Miles/Hour (mph)"
-msgstr "(mph)"
+msgstr "Milja na sat (mph)"
 
-#: wp-forecast-admin.php:565
-#: wpf_sa_admin.php:302
+#: wp-forecast-admin.php:565 wpf_sa_admin.php:302
 msgid "Knots (kts)"
-msgstr "(kts)"
+msgstr "Čvorovi (kts)"
 
-#: wp-forecast-admin.php:566
-#: wpf_sa_admin.php:303
+#: wp-forecast-admin.php:566 wpf_sa_admin.php:303
 msgid "Beaufort (bft)"
 msgstr "Beaufort (bft)"
 
-#: wp-forecast-admin.php:573
-#: wpf_sa_admin.php:310
+#: wp-forecast-admin.php:573 wpf_sa_admin.php:310
 msgid "Language"
 msgstr "Jezik"
 
-#: wp-forecast-admin.php:602
-#: wpf_sa_admin.php:329
+#: wp-forecast-admin.php:602 wpf_sa_admin.php:329
 msgid "Show forecast as ajax pull-down"
-msgstr "Prikaži prognozu sa ajax padajućim menijem"
+msgstr "Prikaži prognozu sa ajax padajućim izbornikom"
 
-#: wp-forecast-admin.php:606
-#: wpf_sa_admin.php:333
+#: wp-forecast-admin.php:606 wpf_sa_admin.php:333
 msgid "First day in pull-down"
-msgstr "Prvi dan u padajućem meniju"
+msgstr "Prvi dan u padajućem izborniku"
 
 #: wp-forecast-admin.php:620
 msgid "Show wind condition as icon"
-msgstr "Prikaži uvjete vjetra kao ikonu"
+msgstr "Prikaži podatke o vjetru kao ikonu"
 
 #: wp-forecast-admin.php:622
 msgid "Use CSS-Sprites for showing icons"
-msgstr "Koristi CSS-Sprites za prikazivanje ikona"
+msgstr "Koristi CSS spriteove kod prikaza ikona"
 
-#: wp-forecast-admin.php:627
-#: wpf_sa_admin.php:538
+#: wp-forecast-admin.php:627 wpf_sa_admin.php:538
 msgid "Update options"
 msgstr "Opcije ažuriranja"
 
-#: wp-forecast-admin.php:634
-#: wpf_sa_admin.php:351
+#: wp-forecast-admin.php:634 wpf_sa_admin.php:351
 msgid "Display Configuration"
 msgstr "Prikaz Konfiguracije"
 
-#: wp-forecast-admin.php:638
-#: wpf_sa_admin.php:355
+#: wp-forecast-admin.php:638 wpf_sa_admin.php:355
 msgid "Current Conditions"
 msgstr "Trenutni uvjeti"
 
-#: wp-forecast-admin.php:639
-#: wpf_sa_admin.php:356
+#: wp-forecast-admin.php:639 wpf_sa_admin.php:356
 msgid "Forecast Day"
 msgstr "Prognoza za Dan"
 
-#: wp-forecast-admin.php:640
-#: wpf_sa_admin.php:357
+#: wp-forecast-admin.php:640 wpf_sa_admin.php:357
 msgid "Forecast Night"
 msgstr "Prognoza za Noć"
 
-#: wp-forecast-admin.php:643
-#: wpf_sa_admin.php:360
+#: wp-forecast-admin.php:643 wpf_sa_admin.php:360
 msgid "Icon"
-msgstr "Ikona"
+msgstr "Ikonica"
 
-#: wp-forecast-admin.php:652
-#: wpf_sa_admin.php:369
+#: wp-forecast-admin.php:652 wpf_sa_admin.php:369
 msgid "Date"
 msgstr "Datum"
 
-#: wp-forecast-admin.php:659
-#: wpf_sa_admin.php:376
+#: wp-forecast-admin.php:659 wpf_sa_admin.php:376
 msgid "Time"
 msgstr "Vrijeme"
 
-#: wp-forecast-admin.php:666
-#: wpf_sa_admin.php:383
+#: wp-forecast-admin.php:666 wpf_sa_admin.php:383
 msgid "Short Description"
 msgstr "Kratak opis"
 
-#: wp-forecast-admin.php:675
-#: wpf_sa_admin.php:392
+#: wp-forecast-admin.php:675 wpf_sa_admin.php:392
 msgid "Temperature"
 msgstr "Temperature"
 
-#: wp-forecast-admin.php:684
-#: wpf_sa_admin.php:401
+#: wp-forecast-admin.php:684 wpf_sa_admin.php:401
 msgid "Realfeel"
-msgstr "Trenutna temperatura"
+msgstr "Subjektivno"
 
-#: wp-forecast-admin.php:691
-#: wpf_sa_admin.php:408
+#: wp-forecast-admin.php:691 wpf_sa_admin.php:408
 msgid "Pressure"
-msgstr "Tlak"
+msgstr "Pritisak"
 
-#: wp-forecast-admin.php:698
-#: wpf_sa_admin.php:415
+#: wp-forecast-admin.php:698 wpf_sa_admin.php:415
 msgid "Humidity"
 msgstr "Vlažnost"
 
-#: wp-forecast-admin.php:705
-#: wpf_sa_admin.php:422
+#: wp-forecast-admin.php:705 wpf_sa_admin.php:422
 msgid "Wind"
 msgstr "Vjetar"
 
-#: wp-forecast-admin.php:714
-#: wp-forecast-show.php:345
-#: wp-forecast-show.php:470
-#: wp-forecast-show.php:538
-#: wpf_sa_admin.php:431
+#: wp-forecast-admin.php:714 wp-forecast-show.php:345 wp-forecast-show.php:470
+#: wp-forecast-show.php:538 wpf_sa_admin.php:431
 msgid "Windgusts"
 msgstr "Naleti vjetra"
 
-#: wp-forecast-admin.php:724
-#: wp-forecast-show.php:349
+#: wp-forecast-admin.php:724 wp-forecast-show.php:349
 msgid "UV-Index"
 msgstr "UV indeks"
 
-#: wp-forecast-admin.php:734
-#: wpf_sa_admin.php:440
+#: wp-forecast-admin.php:734 wpf_sa_admin.php:440
 msgid "Sunrise"
 msgstr "Izlazak sunca"
 
-#: wp-forecast-admin.php:741
-#: wpf_sa_admin.php:447
+#: wp-forecast-admin.php:741 wpf_sa_admin.php:447
 msgid "Sunset"
 msgstr "Zalazak sunca"
 
-#: wp-forecast-admin.php:748
-#: wpf_sa_admin.php:454
+#: wp-forecast-admin.php:748 wpf_sa_admin.php:454
 msgid "Copyright"
 msgstr "Copyright"
 
-#: wp-forecast-admin.php:755
-#: wpf_sa_admin.php:461
+#: wp-forecast-admin.php:755 wpf_sa_admin.php:461
 msgid "Link to Weatherprovider"
-msgstr "Link ka davatelju prognoze"
+msgstr "Link k pružatelju usluge"
 
-#: wp-forecast-admin.php:758
-#: wpf_sa_admin.php:464
+#: wp-forecast-admin.php:758 wpf_sa_admin.php:464
 msgid "Open in new Window"
 msgstr "Otvoriti u novom prozoru"
 
-#: wp-forecast-admin.php:766
-#: wp-forecast-show.php:398
-#: wpf_sa_admin.php:472
+#: wp-forecast-admin.php:766 wp-forecast-show.php:398 wpf_sa_admin.php:472
 msgid "Forecast"
 msgstr "Prognoza"
 
-#: wp-forecast-admin.php:771
-#: wpf_sa_admin.php:477
+#: wp-forecast-admin.php:771 wpf_sa_admin.php:477
 msgid "All"
 msgstr "Sve"
 
-#: wp-forecast-admin.php:772
-#: wp-forecast-admin.php:773
-#: wp-forecast-admin.php:774
-#: wp-forecast-admin.php:775
-#: wp-forecast-admin.php:776
-#: wp-forecast-admin.php:777
-#: wp-forecast-admin.php:778
-#: wp-forecast-admin.php:779
-#: wp-forecast-admin.php:780
-#: wpf_sa_admin.php:478
-#: wpf_sa_admin.php:479
-#: wpf_sa_admin.php:480
-#: wpf_sa_admin.php:481
-#: wpf_sa_admin.php:482
-#: wpf_sa_admin.php:483
-#: wpf_sa_admin.php:484
-#: wpf_sa_admin.php:485
+#: wp-forecast-admin.php:772 wp-forecast-admin.php:773
+#: wp-forecast-admin.php:774 wp-forecast-admin.php:775
+#: wp-forecast-admin.php:776 wp-forecast-admin.php:777
+#: wp-forecast-admin.php:778 wp-forecast-admin.php:779
+#: wp-forecast-admin.php:780 wpf_sa_admin.php:478 wpf_sa_admin.php:479
+#: wpf_sa_admin.php:480 wpf_sa_admin.php:481 wpf_sa_admin.php:482
+#: wpf_sa_admin.php:483 wpf_sa_admin.php:484 wpf_sa_admin.php:485
 #: wpf_sa_admin.php:486
 msgid "Day"
 msgstr "Dan"
 
-#: wp-forecast-admin.php:782
-#: wpf_sa_admin.php:488
+#: wp-forecast-admin.php:782 wpf_sa_admin.php:488
 msgid "Daytime"
 msgstr "Danju"
 
-#: wp-forecast-admin.php:803
-#: wpf_sa_admin.php:509
+#: wp-forecast-admin.php:803 wpf_sa_admin.php:509
 msgid "Nighttime"
 msgstr "Noću"
 
@@ -377,40 +304,37 @@ msgid ""
 "   please use the following ressources. If you are stuck you can \n"
 "   always write an email to"
 msgstr ""
-"Ako tražite upute ili pomoć za wp-forecast, \n"
-" molimo Vas da koristite sljedeće izvore. Ako ste zapeli možete \n"
-" uvijek napisati e-mail na"
+"Ako trebate pomoć ili upute za korištenje dodatka wp-forecast, \n"
+"molimo vas koristite navedene web adrese. Ako ste ozbiljno zaglavili \n"
+"možete uvijek poslati e-mail na adresu "
 
 #: wp-forecast-admin.php:851
 msgid "English Manual"
-msgstr "Upute na engleskom jeziku"
+msgstr "Upute na engleskom"
 
 #: wp-forecast-admin.php:854
 msgid "German Manual"
-msgstr "Upute na njemačkim jeziku"
+msgstr "Upute na njemačkom"
 
 #: wp-forecast-admin.php:857
-#, fuzzy
 msgid "Checklist for connection test"
-msgstr "Provjerite vezu ka provajderu."
+msgstr "Provjerite vezu"
 
 #: wp-forecast-admin.php:860
-#, fuzzy
 msgid "wp-forecast on WordPress.org"
-msgstr "prognoza %s"
+msgstr "wp-forecast na WordPress.org"
 
 #: wp-forecast-admin.php:863
-#, fuzzy
 msgid "German wp-forecast Site"
-msgstr "prognoza %s"
+msgstr "Njemačka wp-forecast stranica"
 
 #: wp-forecast-admin.php:866
 msgid "Using wp-forecast with WPML (german)"
-msgstr "Korištenje wp-forecast s WPML (njemački)"
+msgstr "Korištenje wp-forecast u kombinaciji s WPML (na njemačkom)"
 
 #: wp-forecast-admin.php:869
 msgid "Changelog"
-msgstr "Lista izmjena"
+msgstr "Izmjene"
 
 #: wp-forecast-admin.php:872
 #, fuzzy
@@ -419,11 +343,11 @@ msgstr "Otvoriti u novom prozoru"
 
 #: wp-forecast-check.php:173
 msgid "Connection-check"
-msgstr "Provjera veze (konekcije)"
+msgstr "Provjera veze"
 
 #: wp-forecast-check.php:176
 msgid "Select weatherprovider"
-msgstr "Odaberite davatelja prognoze"
+msgstr "Odaberite pružatelja usluge"
 
 #: wp-forecast-check.php:188
 msgid "Start check"
@@ -440,15 +364,17 @@ msgstr "Rezultati pretrage"
 
 #: wp-forecast-search.php:37
 msgid "No WeatherBug Partner-ID given. WeatherBug will not be searched."
-msgstr "Nema WeatherBug Parner ID-a. WeatherBug neće biti pretraživan."
+msgstr "Nije upisan WeatherBug Partner-ID. Pretraga u tom servisu nije moguća."
 
 #: wp-forecast-search.php:38
-msgid "Enter a correct Partner-ID in the admin panel and save it to search WeatherBug."
-msgstr "Unesite ispravan Partner-ID u administratorskom panelu i snimite ga kako biste pretražili WeatherBug."
+msgid ""
+"Enter a correct Partner-ID in the admin panel and save it to search "
+"WeatherBug."
+msgstr "Upišite ispravni Partner-ID kako bi pretraživali WeatherBug"
 
 #: wp-forecast-search.php:41
 msgid "Please enter a non empty searchstring"
-msgstr "Molimo unesite popunjeni string za pretragu"
+msgstr "Upišite termin za pretragu"
 
 #: wp-forecast-search.php:44
 #, fuzzy
@@ -465,8 +391,7 @@ msgstr "AccuWeather"
 msgid "WeatherBug Hits"
 msgstr "WeatherBug"
 
-#: wp-forecast-search.php:149
-#: wp-forecast-search.php:157
+#: wp-forecast-search.php:149 wp-forecast-search.php:157
 msgid "Search location"
 msgstr "Pretraži lokaciju"
 
@@ -476,11 +401,17 @@ msgstr "Termin pretrage"
 
 #: wp-forecast-search.php:153
 msgid "Please replace german Umlaute ä,ö,ü with a, o, u in your searchterm."
-msgstr "Slova kao što su č, ž, š, đ, ć zamijenite sa c, s, dj, u vašem terminu pretrage."
+msgstr ""
+"Slova kao što su č, ž, š, đ, ć zamijenite sa c, s, dj, u vašem sistemu "
+"pretrage."
 
 #: wp-forecast-search.php:154
-msgid "Google does not support searching for locations. Only Accuweather and WeatherBug will be searched."
-msgstr "Google ne podržava pretragu lokacija. Samo Accuweather i WeatherBug će biti pretraženi."
+msgid ""
+"Google does not support searching for locations. Only Accuweather and "
+"WeatherBug will be searched."
+msgstr ""
+"Google ne podržava pretragu lokacija. Pretražujem samo Accuweather i "
+"Weatherbug."
 
 #: wp-forecast-show.php:143
 msgid "Locations:"
@@ -488,15 +419,15 @@ msgstr "Lokacije:"
 
 #: wp-forecast-show.php:178
 msgid "Failure notice from provider"
-msgstr "Obavijest o neuspjehu od strane provajdera"
+msgstr "Obavještenje o neuspjehu od provajdera"
 
 #: wp-forecast-show.php:195
 msgid "Sorry, no valid weather data available."
-msgstr "Nema podataka"
+msgstr "Nema podataka o vremenu"
 
 #: wp-forecast-show.php:196
 msgid "Please try again later."
-msgstr "Molimo, pokušajte kasnije..."
+msgstr "Molimo, pokušajte kasnije."
 
 #: wp-forecast-show.php:255
 msgid "time"
@@ -508,15 +439,13 @@ msgstr "Subjektivno"
 
 #: wp-forecast-show.php:328
 msgid "barr"
-msgstr "Trenutni tlak"
+msgstr "Trenutni pritisak"
 
 #: wp-forecast-show.php:336
 msgid "hmid"
 msgstr "Vlažnost"
 
-#: wp-forecast-show.php:340
-#: wp-forecast-show.php:465
-#: wp-forecast-show.php:531
+#: wp-forecast-show.php:340 wp-forecast-show.php:465 wp-forecast-show.php:531
 msgid "winds"
 msgstr "Brzina vjetra"
 
@@ -532,17 +461,15 @@ msgstr "Zalazak sunca"
 msgid "day"
 msgstr "Dan"
 
-#: wp-forecast-show.php:475
-#: wp-forecast-show.php:543
+#: wp-forecast-show.php:475 wp-forecast-show.php:543
 msgid "max. UV-Index"
-msgstr "maks. UV indeks"
+msgstr "Maksimalni UV indeks"
 
 #: wp-forecast-show.php:487
 msgid "night"
 msgstr "Noć"
 
-#: wp-forecast-show.php:568
-#: wp-forecast-show.php:569
+#: wp-forecast-show.php:568 wp-forecast-show.php:569
 msgid "Less forecast..."
 msgstr "Smanjen prikaz..."
 
@@ -557,24 +484,25 @@ msgstr "prognoza %s"
 
 #: wpf_sa_admin.php:64
 msgid "wp-forecast plugin not found. Please install and activate wp-forecast."
-msgstr "wp-forecast dodatak nije pronađen. Molim vas instalirajte i aktivirajte wp-forecast dodatak."
+msgstr ""
+"wp-forecast dodatak nije nađen. Molim vas instalirajte i aktivirajte wp-"
+"forecast dodatak."
 
 #: wpf_sa_admin.php:208
 msgid "Check the colored checkboxes to user enable the options"
-msgstr "Označite obojena polja da omogućite date opcije"
+msgstr "Označite obojena polja kako bi omogućili opcije"
 
 #: wpf_sa_admin.php:213
-#, fuzzy
 msgid "Maximal number of widgets per user"
 msgstr "Broj dodataka po korisiniku"
 
 #: wpf_sa_admin.php:252
 msgid "Delete SuperAdmin options"
-msgstr "Izbriši opcije SuperAdmin-a"
+msgstr "Obiriši SuperAdmin postavke"
 
 #: wpf_sa_admin.php:253
 msgid "Delete SA-Options"
-msgstr "Izbriši SA-Opcije"
+msgstr "Obiriši SuperAdmin postavke"
 
 #: wpf_sa_admin.php:262
 msgid "Widget-Setup"
@@ -594,19 +522,19 @@ msgstr "Lokacija"
 
 #: xgettextdummy.php:6
 msgid "01"
-msgstr "Bez padalina"
+msgstr "Sunčano"
 
 #: xgettextdummy.php:7
 msgid "02"
-msgstr "Uglavnom bez padalina"
+msgstr "Uglavnom sunčano"
 
 #: xgettextdummy.php:8
 msgid "03"
-msgstr "Uglavnom bez padalina"
+msgstr "Mjestimično sunčano"
 
 #: xgettextdummy.php:9
 msgid "04"
-msgstr "Mjestimično oblačno"
+msgstr "Sunčano s povremenom naoblakom"
 
 #: xgettextdummy.php:10
 msgid "05"
@@ -622,7 +550,7 @@ msgstr "Oblačno"
 
 #: xgettextdummy.php:13
 msgid "08"
-msgstr "Umjereno do znatno oblačno"
+msgstr "Umjereno do znatno oblačno!"
 
 #: xgettextdummy.php:14
 msgid "11"
@@ -634,11 +562,11 @@ msgstr "Mogući pljuskovi"
 
 #: xgettextdummy.php:16
 msgid "13"
-msgstr "Uglavnom oblačno s mogućim pljuskovima..."
+msgstr "Uglavnom oblačno s mogućim pljuskovima"
 
 #: xgettextdummy.php:17
 msgid "14"
-msgstr "Pretežito lijepo vrijeme, s mogućim padalinama"
+msgstr "Pretežno lijepo vrijeme, s mogućim padalinama"
 
 #: xgettextdummy.php:18
 msgid "15"
@@ -646,7 +574,7 @@ msgstr "Moguća grmljavina"
 
 #: xgettextdummy.php:19
 msgid "16"
-msgstr "Umjereno oblačno. Moguća grmaljvina."
+msgstr "Umjereno oblačno. Moguća grmljavina."
 
 #: xgettextdummy.php:20
 msgid "17"
@@ -662,11 +590,11 @@ msgstr "Naleti vjetra"
 
 #: xgettextdummy.php:23
 msgid "20"
-msgstr "Uglavnom oblačno sa naletima vjetra"
+msgstr "Uglavnom oblačno s naletima vjetra"
 
 #: xgettextdummy.php:24
 msgid "21"
-msgstr "Uglavnom lijepo vrijeme sa mogućim naletima vijetra"
+msgstr "Uglavnom lijepo vreme s mogućim naletima vjetra"
 
 #: xgettextdummy.php:25
 msgid "22"
@@ -674,7 +602,7 @@ msgstr "Snijeg"
 
 #: xgettextdummy.php:26
 msgid "23"
-msgstr "Uglavnim oblačno sa mogućim snijegom"
+msgstr "Uglavnim oblačno s mogućim snijegom"
 
 #: xgettextdummy.php:27
 msgid "24"
@@ -730,7 +658,7 @@ msgstr "Uglavnom oblačno"
 
 #: xgettextdummy.php:40
 msgid "39"
-msgstr "Umjereno do znatno oblačno sa pljuskovima"
+msgstr "Umjereno do znatno oblačno s pljuskovima"
 
 #: xgettextdummy.php:41
 msgid "40"
@@ -828,8 +756,7 @@ msgstr "30% šanse za snijeg"
 msgid "30% Chance of Drizzle"
 msgstr "30% šanse za sitnu kišu"
 
-#: xgettextdummy.php:65
-#: xgettextdummy.php:66
+#: xgettextdummy.php:65 xgettextdummy.php:66
 msgid "30% Chance of Flurry"
 msgstr "30% šanse za povremene padaline"
 
@@ -1079,7 +1006,7 @@ msgstr "Hladne padaline"
 
 #: xgettextdummy.php:128
 msgid "Hazy"
-msgstr "Maglovit"
+msgstr "Maglovito"
 
 #: xgettextdummy.php:129
 msgid "Headline"
@@ -1099,7 +1026,7 @@ msgstr "Toplo i vlažno"
 
 #: xgettextdummy.php:133
 msgid "Increasing Clouds"
-msgstr "Povećana oblačnost"
+msgstr "Povećana naoblaka"
 
 #: xgettextdummy.php:134
 msgid "Light Snow"
@@ -1115,7 +1042,7 @@ msgstr "Uglavnom oblačno"
 
 #: xgettextdummy.php:137
 msgid "Mostly Sunny"
-msgstr "Uglavnom lijepo vrijeme"
+msgstr "Uglavnom sunčano"
 
 #: xgettextdummy.php:138
 msgid "Nowcast"
@@ -1123,11 +1050,11 @@ msgstr "Trenutno"
 
 #: xgettextdummy.php:139
 msgid "Partly Cloudy"
-msgstr "Djelomično oblačno"
+msgstr "Djelimično oblačno"
 
 #: xgettextdummy.php:140
 msgid "Partly Sunny"
-msgstr "Djelomično sunčano"
+msgstr "Djelimično sunčano"
 
 #: xgettextdummy.php:141
 msgid "Rain"
@@ -1159,7 +1086,7 @@ msgstr "Jak snijeg"
 
 #: xgettextdummy.php:148
 msgid "Sunny"
-msgstr "Bez padalina"
+msgstr "Sunčano"
 
 #: xgettextdummy.php:149
 msgid "Thunderstorms"
