@@ -68,7 +68,7 @@ if (!function_exists('accu_xml_parser')) {
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDSPEED"  => "windspeed",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDDIRECTION"  => "winddirection",
 	      "/ADC_DATABASE/CURRENTCONDITIONS/WINDGUSTS"  => "wgusts",
-		  "/ADC_DATABASE/CURRENTCONDITIONS/UVINDEX"  => "uvindex",
+	      "/ADC_DATABASE/CURRENTCONDITIONS/UVINDEX"  => "uvindex",
 	      "/ADC_DATABASE/PLANETS/SUN" => "sun",
 	      "/ADC_DATABASE/FORECAST/DAY/OBSDATE"  => "fc_obsdate",
 	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/TXTSHORT"  => "fc_dt_short",
@@ -84,13 +84,13 @@ if (!function_exists('accu_xml_parser')) {
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDDIRECTION"  => "fc_nt_winddir",
 	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/WINDGUST"  => "fc_dt_wgusts",
 	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/WINDGUST"  => "fc_nt_wgusts",
- 		  "/ADC_DATABASE/FORECAST/DAY/DAYTIME/MAXUV"  => "fc_dt_maxuv",
-		  "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/MAXUV"  => "fc_nt_maxuv",
+	      "/ADC_DATABASE/FORECAST/DAY/DAYTIME/MAXUV"  => "fc_dt_maxuv",
+	      "/ADC_DATABASE/FORECAST/DAY/NIGHTTIME/MAXUV"  => "fc_nt_maxuv",
 	      "/ADC_DATABASE/FAILURE" => "failure"
 	      );
 
       $wpf_pstack .= "/$name";
-
+     
       if (isset( $wpf_path_table[ $wpf_pstack])) {
 	$wpf_go_ahead = $wpf_path_table[$wpf_pstack];
 
@@ -132,7 +132,7 @@ if (!function_exists('accu_xml_parser')) {
       $wpf_pstack = substr($wpf_pstack,0, strrpos($wpf_pstack,"/"));
       
       if ($name=="DAY")
-		$wpf_fc_daynumber=0;
+      	$wpf_fc_daynumber=0;
 
       pdebug(2,"End of end_element ()");
     }
@@ -182,13 +182,13 @@ if (!function_exists('accu_xml_parser')) {
     xml_set_character_data_handler( $parser,"accu_daten");
     
     // try to parse the xml
+
     if( !xml_parse( $parser, $xmlstring,true ) )
       {
 	// Error --> stop execution
 	$xmlerror="XML Fehler: " . 
 	  xml_error_string( xml_get_error_code( $parser ) ) . " in Zeile " .
-	  xml_get_current_line_number( $parser )
-	  ;
+	  xml_get_current_line_number( $parser );
       }
     
     // Vom XML-Parser belegten Speicher freigeben

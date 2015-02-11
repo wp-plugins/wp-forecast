@@ -410,11 +410,13 @@ function show($wpfcid,$args,$wpfvars)
 	  {
 	  	if ($service=="accu") {
 	  		$breite=0; $hoehe=0;
-	  		$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_dt_icon_'.$i] );
-	  		if ($isize != false) {
-	  			$breite=$isize[0];
-	  			$hoehe=$isize[1];
-	  		}
+			if (file_exists(plugin_dir_path(__FILE__). "/" . $w['fc_dt_icon_'.$i])) {
+			  $isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_dt_icon_'.$i] );
+			  if ($isize != false) {
+			    $breite=$isize[0];
+			    $hoehe=$isize[1];
+			  }
+			}
 			if ($csssprites==1) { // mit CSS Sprites
 				$cssid = substr($w['fc_dt_icon_'.$i],strpos($w['fc_dt_icon_'.$i],"/")+1,strrpos($w['fc_dt_icon_'.$i],".")-strpos($w['fc_dt_icon_'.$i],"/")-1);
 				$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
@@ -488,11 +490,13 @@ function show($wpfcid,$args,$wpfvars)
 	  {
 	  	$iconfile=find_icon($w["fc_nt_icon_".$i]);
 	  	$breite=64; $hoehe=40;
-	  	$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_nt_icon_'.$i] );
-	  	if ($isize != false) {
-	  		$breite=$isize[0];
-	  		$hoehe=$isize[1];
-	  	}
+		if (file_exists(plugin_dir_path(__FILE__). "/" . $w['fc_nt_icon_'.$i])) {
+		  $isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['fc_nt_icon_'.$i] );
+		  if ($isize != false) {
+		    $breite=$isize[0];
+		    $hoehe=$isize[1];
+		  }
+		}
 		if ($csssprites==1) { // mit CSS Sprites
 			$cssid = substr($w['fc_nt_icon_'.$i],strpos($w['fc_nt_icon_'.$i],"/")+1,strrpos($w['fc_nt_icon_'.$i],".")-strpos($w['fc_nt_icon_'.$i],"/")-1);
 			$out1 .= "<div class='wp-forecast-curr-left wpfico$cssid'>&nbsp;</div>\n";
