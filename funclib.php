@@ -288,8 +288,8 @@ function get_wpf_opts($wpfcid)
   $av['xmlerror']="";
   
   // set static uris for each provider
-  $av['ACCU_LOC_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/locate_city.asp?location="; // old one
-  $av['ACCU_BASE_URI']="http://forecastfox.accuweather.com/adcbin/forecastfox/weather_data.asp?";
+  $av['ACCU_LOC_URI']="http://forecastfox3.accuweather.com/adcbin/forecastfox/locate_city.asp?location="; 
+  $av['ACCU_BASE_URI']="http://forecastfox3.accuweather.com/adcbin/forecastfox/weather_data.asp?";
   
   $av['BUG_LOC_URI']="http://#apicode#.api.wxbug.net/getLocationsXML.aspx?ACode=#apicode#&SearchString=";
   //$av['BUG_STAT_URI']="http://#apicode#.api.wxbug.net/getStationsXML.aspx?ACode=#apicode#&cityCode=";

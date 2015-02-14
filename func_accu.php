@@ -1,7 +1,7 @@
 <?php
 /* This file is part of the wp-forecast plugin for wordpress */
 
-/*  Copyright 2006-2014  Hans Matzen  (email : webmaster at tuxlog dot de)
+/*  Copyright 2006-2015  Hans Matzen  (email : webmaster at tuxlog dot de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,13 +29,12 @@ if (!function_exists('accu_xml_parser')) {
   {
     pdebug(1,"Start of accu_get_weather ()");
     
-    $url=$uri . "location=" . urlencode($loc) . "&metric=" . 
-      $metric; 
-    
+    $url=$uri . "location=" . urlencode($loc) . "&metric=" . $metric;
+
     $xml = fetchURL($url);
     
     pdebug(1,"End of accu_get_weather ()");
-    
+
     return $xml;
   }
 

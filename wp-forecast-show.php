@@ -270,10 +270,12 @@ function show($wpfcid,$args,$wpfvars)
 			
 				if ($service=="accu") {
 					$breite=0; $hoehe=0;
-					$isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
-					if ($isize != false) {
-						$breite=$isize[0];
-						$hoehe=$isize[1];
+					if (file_exists(plugin_dir_path(__FILE__). "/" . $w['icon'])) {
+					  $isize=getimagesize(plugin_dir_path(__FILE__). "/" . $w['icon'] );
+					  if ($isize != false) {
+					    $breite=$isize[0];
+					    $hoehe=$isize[1];
+					  }
 					}
 					if ($csssprites==1) { // mit CSS Sprites
 						$cssid = substr($w['icon'],strpos($w['icon'],"/")+1,strrpos($w['icon'],".")-strpos($w['icon'],"/")-1);
