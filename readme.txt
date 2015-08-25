@@ -2,9 +2,9 @@
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
-Requires at least: 2.7
-Tested up to: 4.1
-Stable tag: 5.4
+Requires at least: 3.1
+Tested up to: 4.3
+Stable tag: 5.5
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -171,6 +171,9 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v5.5 (2015-08-25) =
+* fixed deprecated constructor call for WP_Widget which leads to problems with some PHP Versions
 
 = v5.4 (2015-02-14) =
 * error handling if no icon code found in weather data
