@@ -2,9 +2,9 @@
 Contributors: tuxlog
 Donate link: http://www.tuxlog.de
 Tags: weather,forecast,widget
-Requires at least: 2.7
-Tested up to: 4.0
-Stable tag: 5.0
+Requires at least: 3.1
+Tested up to: 4.3
+Stable tag: 5.5
 
 wp-forecast is a highly customizable plugin for wordpress, showing weather-data from accuweather.com and/or weatherbug.com.
 
@@ -117,18 +117,18 @@ Credits:
    wp-forecast comes with various translations, located in the directory `lang`.
    if you would like to add a new translation, just take the file
    wp-forecast.pot (in the wp-forecast main directory) copy it to
-   <iso-code>.po and edit it to add your translations (e.g. with poedit).
+   wp-forecast_<iso-code>-<iso-code>.po and edit it to add your translations 
+   (e.g. with poedit).
 
    please be aware that the number codes stand for the weather-situations.
-   you can see the mapping in en_US.po. there are also the letters N, S, W, E
-   they stand for the winddirections and can be translates either.
+   you can see the mapping in wp-forecast-en_US-en_US.po. there are also 
+   the letters N, S, W, E they stand for the winddirections and can be 
+   translates either.
 
-   there are different translations for the german language using
-   different charsets. the default de\_DE uses UTF-8, de\_DE-iso-8859-1
-   uses iso-8859-1 and de\_DE-latin1 uses HTML entitites.
+   to use your own translation, a different one as the default just rename the 
+   appropriate file wp-forecast_<iso-code>-<iso-code>.po and 
+   wp-forecast_<iso-code>-<iso-code>.mo
 
-   to use a different as the default just rename the appropriate file
-   to de\_DE.po and de\_DE.mo
 
 
 == Frequently Asked Questions ==
@@ -171,6 +171,27 @@ Probably you have enabled "Delete options during plugin deactivation?" and used 
 
 
 == Changelog ==
+
+= v5.5 (2015-08-25) =
+* fixed deprecated constructor call for WP_Widget which leads to problems with some PHP Versions
+
+= v5.4 (2015-02-14) =
+* error handling if no icon code found in weather data
+* updated french translation
+* switched to new accuweather server
+
+= v5.3 (2015-02-11) =
+* error handling if no icon code found in weather data
+
+= v5.2 (2015-02-08) =
+* updated italian translation Thanks to Peter P.
+* fixed some php warnings
+* fixed dutch translation
+
+= v5.1 (2014-10-24) =
+* support for using shortcode in normal textwidget
+* update croatian translation Thanks to Stjepan
+
 = v5.0 (2014-07-29) =
 * made the css a bit more responsive
 * added croatian language (Thanks to Lovrenco)

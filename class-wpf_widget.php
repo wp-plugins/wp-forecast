@@ -9,8 +9,11 @@ if ( !class_exists('wpf_widget') )
 	    $widget_ops = array('classname' => 'wp_forecast_widget',
 				'description' => 'WP Forecast Widget');
 	    $control_ops = array('width' => 300, 'height' => 150);
-	    $this->WP_Widget('wp-forecast', 'WP Forecast', 
+	    //$this->WP_Widget('wp-forecast', 'WP Forecast', 
+	    //		     $widget_ops, $control_ops);
+	    parent::__construct('wp-forecast', 'WP Forecast', 
 			     $widget_ops, $control_ops);
+
 	}
 	
 	function widget( $args, $instance )
