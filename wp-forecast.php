@@ -6,6 +6,10 @@ Description: wp-forecast is a highly customizable plugin for wordpress, showing 
 Version: 5.5
 Author: Hans Matzen
 Author URI: http://www.tuxlog.de
+License:     GPL2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Domain Path: lang
+Text Domain: wp-forecast
 */
 
 /*  
